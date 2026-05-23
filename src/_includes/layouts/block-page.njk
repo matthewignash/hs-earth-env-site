@@ -1,0 +1,76 @@
+---
+layout: layouts/base.njk
+customLayout: true
+extraStylesheets:
+  - /assets/block-page.css
+---
+
+{% if breadcrumbs %}
+<div class="breadcrumbs">
+  <div class="container" style="padding: 0; max-width: 1100px;">
+    {%- for crumb in breadcrumbs %}
+      {%- if not loop.last %}
+        <a href="{{ crumb.url }}">{{ crumb.label }}</a> &nbsp;›&nbsp;
+      {%- else %}
+        <span class="crumb-current">{{ crumb.label }}</span>
+      {%- endif %}
+    {%- endfor %}
+  </div>
+</div>
+{% endif %}
+
+<header class="page-header">
+  <div class="container">
+    <h1>Block {{ block }} — {{ title }}</h1>
+    <div class="meta">
+      <span>📍 Unit {{ unit }} · Block {{ block }} of {{ blocksTotal }}</span>
+      {% if minutes %}<span>⏰ {{ minutes }} minutes</span>{% endif %}
+      {% if week and day %}<span>📅 Week {{ week }}, Day {{ day }}</span>{% endif %}
+    </div>
+    {% if strands %}
+    <div class="strand-chips">
+      <span class="label">Today builds toward:</span>
+      {%- for s in strands.active %}<span class="chip active">{{ s }}</span>{% endfor %}
+      {%- for s in strands.preview %}<span class="chip preview">{{ s }} (preview)</span>{% endfor %}
+      {%- for s in strands.faded %}<span class="chip faded">{{ s }}</span>{% endfor %}
+    </div>
+    {% endif %}
+  </div>
+</header>
+
+<main class="container">
+
+  {% if aiPartners %}
+  <div class="ai-callout">
+    <div class="ai-label">🤖 AI Partners available for today's work</div>
+    <div class="ai-partners">
+      {%- for p in aiPartners %}
+      <a href="/ai-partners/{{ p.slug }}/" class="ai-partner-link">{{ p.label }}</a>
+      {%- endfor %}
+    </div>
+    <div class="ai-reminder">
+      Remember: every AI use gets documented.
+      <a href="/student-hub/ai-documentation-template/">→ AI Documentation Template</a>
+    </div>
+  </div>
+  {% endif %}
+
+  {{ content | safe }}
+
+  {% if prev or next or unitMapUrl %}
+  <nav class="block-nav" aria-label="Block navigation">
+    {% if prev %}
+      <a href="{{ prev.url }}">← {{ prev.label }}</a>
+    {% else %}
+      <span></span>
+    {% endif %}
+    {% if unitMapUrl %}<a href="{{ unitMapUrl }}" class="map-link">Unit {{ unit }} Map</a>{% endif %}
+    {% if next %}
+      <a href="{{ next.url }}">{{ next.label }} →</a>
+    {% else %}
+      <span></span>
+    {% endif %}
+  </nav>
+  {% endif %}
+
+</main>

@@ -3,9 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{% if title %}{{ title }} · {{ site.name }}{% else %}{{ site.name }}{% endif %}</title>
+  <title>{% if title %}{{ title }} · {{ site.fullName }}{% else %}{{ site.fullName }}{% endif %}</title>
   {% if description %}<meta name="description" content="{{ description }}">{% endif %}
   <link rel="stylesheet" href="/assets/styles.css">
+  {% if extraStylesheets %}{% for href in extraStylesheets %}<link rel="stylesheet" href="{{ href }}">{% endfor %}{% endif %}
 </head>
 <body>
 
@@ -22,20 +23,9 @@
   {%- endfor %}
 </nav>
 
-{% if breadcrumbs %}
-<div class="breadcrumbs">
-  <div class="container" style="padding: 0; max-width: 1100px;">
-    {%- for crumb in breadcrumbs %}
-      {%- if not loop.last %}
-        <a href="{{ crumb.url }}">{{ crumb.label }}</a> ·
-      {%- else %}
-        {{ crumb.label }}
-      {%- endif %}
-    {%- endfor %}
-  </div>
-</div>
-{% endif %}
-
+{% if customLayout %}
+{{ content | safe }}
+{% else %}
 <header class="page-header">
   <div class="container">
     <h1>{{ title }}</h1>
@@ -46,9 +36,10 @@
 <main class="container">
   {{ content | safe }}
 </main>
+{% endif %}
 
 <footer class="site-footer">
-  {{ site.course }} · {{ site.school }} · AY {{ site.year }}
+  {{ site.fullName }} · AY {{ site.year }}
 </footer>
 
 </body>

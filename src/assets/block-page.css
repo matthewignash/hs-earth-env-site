@@ -1,0 +1,267 @@
+/* ====== Block page header meta + strand chips ====== */
+.page-header .meta {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  font-size: 14px;
+  color: var(--muted);
+  margin-bottom: 12px;
+}
+.strand-chips {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  flex-wrap: wrap;
+  font-size: 13px;
+}
+.strand-chips .label { color: var(--muted); }
+.chip {
+  padding: 4px 10px;
+  border-radius: 16px;
+  font-weight: 600;
+  font-size: 12px;
+  border: 1.5px solid var(--border);
+}
+.chip.active {
+  background: var(--accent-light);
+  border-color: var(--accent);
+  color: var(--accent);
+}
+.chip.preview {
+  border-style: dashed;
+  color: var(--accent);
+  background: white;
+}
+.chip.faded {
+  color: var(--muted);
+  background: var(--soft);
+}
+
+/* ====== Breadcrumbs (block-page › style) ====== */
+.breadcrumbs .crumb-current { color: var(--ink); font-weight: 600; }
+
+/* ====== AI partner callout ====== */
+.ai-callout {
+  background: linear-gradient(135deg, #fff4d9 0%, #fce4d6 100%);
+  border-radius: 12px;
+  padding: 18px;
+  margin-bottom: 20px;
+  border: 1px solid #e0b870;
+}
+.ai-callout .ai-label {
+  font-weight: 700;
+  color: #8b6914;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.ai-callout .ai-partners {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.ai-partner-link {
+  background: white;
+  border: 1.5px solid #d4a460;
+  color: var(--ink);
+  padding: 8px 14px;
+  border-radius: 20px;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.ai-partner-link:hover {
+  background: #fff4d9;
+  border-color: #b58832;
+  color: var(--ink);
+}
+.ai-callout .ai-reminder {
+  margin-top: 10px;
+  font-size: 12px;
+  color: #8b6914;
+  font-style: italic;
+}
+.ai-callout .ai-reminder a { color: #8b6914; font-weight: 700; }
+
+/* ====== The five block sections ====== */
+.block-section {
+  background: white;
+  border-radius: 12px;
+  padding: 24px;
+  margin-bottom: 20px;
+  border: 1px solid var(--border);
+}
+.block-section .section-tag {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 16px;
+  font-size: 12px;
+  font-weight: 700;
+  margin-bottom: 8px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+.block-section.story .section-tag    { background: var(--story);    color: #6b46c1; }
+.block-section.concepts .section-tag { background: var(--concepts); color: #1e4d8c; }
+.block-section.do .section-tag       { background: var(--do);       color: #8b6914; }
+.block-section.show .section-tag     { background: var(--show);     color: #2d5016; }
+.block-section.reflect .section-tag  { background: var(--reflect);  color: #8b4513; }
+.block-section h2 {
+  font-size: 22px;
+  margin-bottom: 6px;
+  color: var(--ink);
+}
+.block-section .sub {
+  color: var(--muted);
+  font-size: 14px;
+  margin-bottom: 14px;
+  font-style: italic;
+}
+.block-section p { margin-bottom: 10px; }
+
+/* ====== Concepts entry grid ====== */
+.entry-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 14px;
+  margin-top: 14px;
+}
+.entry-card {
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 16px;
+  background: var(--paper);
+  transition: transform 0.1s, border-color 0.1s;
+}
+.entry-card:hover {
+  border-color: var(--accent);
+  transform: translateY(-2px);
+  cursor: pointer;
+}
+.entry-card .entry-icon { font-size: 32px; margin-bottom: 8px; }
+.entry-card .entry-title { font-weight: 700; margin-bottom: 4px; }
+.entry-card .entry-meta { font-size: 12px; color: var(--muted); margin-top: 8px; }
+
+/* ====== Do choice board ====== */
+.choice-intro {
+  background: var(--accent-light);
+  padding: 12px 14px;
+  border-radius: 8px;
+  margin-bottom: 14px;
+  font-size: 14px;
+}
+.choice-board {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 12px;
+}
+.choice {
+  border: 2px solid var(--border);
+  border-radius: 10px;
+  padding: 14px;
+  background: white;
+}
+.choice .choice-letter {
+  display: inline-block;
+  width: 28px;
+  height: 28px;
+  background: var(--accent);
+  color: white;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 28px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+.choice .choice-title { font-weight: 600; margin-bottom: 6px; }
+.choice .choice-detail { font-size: 13px; color: var(--muted); }
+.choice .udl-tag {
+  display: inline-block;
+  font-size: 11px;
+  background: var(--soft);
+  padding: 2px 6px;
+  border-radius: 4px;
+  margin-top: 8px;
+  color: var(--muted);
+}
+
+/* ====== Show / submission callout ====== */
+.submission-callout {
+  background: var(--good);
+  border-left: 4px solid #6b8e3d;
+  padding: 14px;
+  border-radius: 6px;
+  margin: 14px 0;
+}
+.submission-callout .label {
+  font-weight: 700;
+  color: #2d5016;
+  margin-bottom: 4px;
+}
+.rubric-link {
+  display: inline-block;
+  background: var(--accent);
+  color: white;
+  padding: 8px 14px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 600;
+  margin-top: 6px;
+}
+.rubric-link:hover { background: var(--accent-dark); color: white; }
+
+.rubric-meta { font-size: 13px; color: var(--muted); margin-top: 10px; }
+.rubric-meta a { color: var(--accent); font-weight: 600; }
+
+/* ====== Reflect input ====== */
+.reflect-input {
+  background: var(--paper);
+  border: 1px dashed var(--border);
+  border-radius: 8px;
+  padding: 16px;
+  margin-top: 10px;
+  font-size: 13px;
+  color: var(--muted);
+}
+.reflect-input strong { color: var(--ink); }
+.reflect-input a { color: var(--accent); }
+
+/* ====== Bottom block-nav ====== */
+.block-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  background: white;
+  border-radius: 12px;
+  padding: 16px 24px;
+  margin-top: 24px;
+  border: 1px solid var(--border);
+  flex-wrap: wrap;
+}
+.block-nav a {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 14px;
+}
+.block-nav a:hover { text-decoration: underline; }
+.block-nav .map-link {
+  color: var(--muted);
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+.block-nav .nav-spacer { flex: 1; }
+
+/* ====== Responsive ====== */
+@media (max-width: 640px) {
+  .block-section { padding: 18px; }
+  .block-nav { padding: 14px 16px; }
+  .ai-callout { padding: 14px; }
+}
