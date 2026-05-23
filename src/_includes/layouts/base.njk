@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% if title %}{{ title }} · {{ site.name }}{% else %}{{ site.name }}{% endif %}</title>
+  {% if description %}<meta name="description" content="{{ description }}">{% endif %}
+  <link rel="stylesheet" href="/assets/styles.css">
+</head>
+<body>
+
+<nav class="topnav" aria-label="Primary">
+  <a class="brand" href="/">{{ site.name }}</a>
+  {%- for item in nav %}
+    {%- set isActive = page.url | isActiveNav(item.match) %}
+    <a href="{{ item.url }}"
+       class="{% if item.className %}{{ item.className }}{% endif %}{% if isActive %} active{% endif %}"
+       {% if isActive %}aria-current="page"{% endif %}>
+      {{ item.label }}
+    </a>
+    {%- if loop.index == 1 %}<span class="spacer"></span>{% endif %}
+  {%- endfor %}
+</nav>
+
+{% if breadcrumbs %}
+<div class="breadcrumbs">
+  <div class="container" style="padding: 0; max-width: 1100px;">
+    {%- for crumb in breadcrumbs %}
+      {%- if not loop.last %}
+        <a href="{{ crumb.url }}">{{ crumb.label }}</a> ·
+      {%- else %}
+        {{ crumb.label }}
+      {%- endif %}
+    {%- endfor %}
+  </div>
+</div>
+{% endif %}
+
+<header class="page-header">
+  <div class="container">
+    <h1>{{ title }}</h1>
+    {% if tagline %}<p class="tagline">{{ tagline }}</p>{% endif %}
+  </div>
+</header>
+
+<main class="container">
+  {{ content | safe }}
+</main>
+
+<footer class="site-footer">
+  {{ site.course }} · {{ site.school }} · AY {{ site.year }}
+</footer>
+
+</body>
+</html>
