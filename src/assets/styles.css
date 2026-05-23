@@ -170,6 +170,60 @@ img { max-width: 100%; height: auto; display: block; }
 .prose p { margin-bottom: 12px; }
 .prose ul, .prose ol { margin: 8px 0 14px 24px; }
 .prose li { margin-bottom: 6px; }
+.prose strong { color: var(--ink); }
+.prose em { color: var(--ink); }
+.prose blockquote {
+  border-left: 4px solid var(--accent-light);
+  padding: 4px 0 4px 16px;
+  margin: 14px 0;
+  color: var(--muted);
+  font-style: italic;
+}
+
+/* ====== Prose tables ====== */
+.prose table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 16px 0 20px;
+  font-size: 14px;
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  overflow: hidden;
+}
+.prose th, .prose td {
+  padding: 10px 12px;
+  text-align: left;
+  vertical-align: top;
+  border-bottom: 1px solid var(--border);
+}
+.prose th {
+  background: var(--accent-light);
+  color: var(--accent-dark);
+  font-weight: 700;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+}
+.prose tbody tr:last-child td { border-bottom: none; }
+.prose tbody tr:nth-child(even) td { background: var(--paper); }
+
+/* ====== Callouts (prose-scoped) ====== */
+.callout {
+  border-radius: 8px;
+  padding: 14px 16px;
+  margin: 16px 0;
+  border-left: 4px solid var(--accent);
+  background: var(--accent-light);
+  font-size: 14px;
+}
+.callout.warn  { border-left-color: #b58832; background: #fff4d9; }
+.callout.good  { border-left-color: #6b8e3d; background: var(--good); }
+.callout .callout-title {
+  font-weight: 700;
+  margin-bottom: 4px;
+  color: var(--ink);
+}
 
 /* ====== Footer ====== */
 .site-footer {

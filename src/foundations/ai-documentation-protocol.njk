@@ -1,0 +1,91 @@
+---
+layout: layouts/base.njk
+title: AI Documentation Protocol
+tagline: AI outputs are sources. OPVL applies. Every use gets documented — honest disclosure means no penalty.
+---
+
+<div class="prose">
+
+<h2>AI as a source</h2>
+
+<p>Here is the move that makes this class different from most: <strong>AI outputs are sources.</strong> Same as a news article, same as a scientific paper, same as a tweet. The OPVL questions still apply — they just look a little different.</p>
+
+<table>
+  <thead>
+    <tr><th>Letter</th><th>What to ask about an AI source</th></tr>
+  </thead>
+  <tbody>
+    <tr><td><strong>O — Origin</strong></td><td>Which AI did you use? (Gemini, Claude, ChatGPT, BoodleBox-specific box, etc.) What version, if you know it? When was its training data cut off? When did you use it (date matters — AI improves)?</td></tr>
+    <tr><td><strong>P — Purpose</strong></td><td>What is this AI designed for? Is it general-purpose (ChatGPT) or domain-specific (a BoodleBox "Plate Tectonics Tutor")? Is it tuned to be helpful, accurate, brief, or creative?</td></tr>
+    <tr><td><strong>V — Value</strong></td><td>What did it help you do that you couldn't have done as fast or as well alone? Did it surface knowledge, explain a concept, generate options, give feedback, translate, summarise? Be specific about what it added.</td></tr>
+    <tr><td><strong>L — Limitations</strong></td><td>Where is this AI likely wrong? Did it make up a source, a statistic, a date? What domains is it weak in? When did it refuse or hedge? What did it confidently say that you later found was incorrect?</td></tr>
+  </tbody>
+</table>
+
+<div class="callout">
+  <div class="callout-title">Why this works</div>
+  OPVL isn't a separate framework for AI. It's the <em>same</em> framework. That's the point. The skill being built isn't "how do I evaluate AI" — it's "how do I evaluate any source," and AI is one source among many. By the end of the year, evaluating an AI output should feel as automatic as evaluating a news article.
+</div>
+
+<h2>Critical AI failure modes to watch for</h2>
+<ul>
+  <li><strong>Hallucinated citations.</strong> AI will confidently invent paper titles, authors, dates, and DOIs that don't exist. Always check that any citation an AI gives you actually exists.</li>
+  <li><strong>Confident wrongness.</strong> AI rarely says "I don't know." When it doesn't know, it usually makes something up that sounds plausible. Suspicion is appropriate when an AI is highly specific about something it has no reason to know.</li>
+  <li><strong>Training data cutoff.</strong> If you're asking about something that happened recently, the AI may not know. Always check the training cutoff date and the date of the event.</li>
+  <li><strong>Sycophancy.</strong> AI tends to agree with the framing of your question. If you ask "why is X true," it will tell you reasons X is true even if X is false. Try asking the opposite to test.</li>
+  <li><strong>Domain weakness.</strong> Some AI is great at writing but terrible at math, or great at general science but bad at specific regional geology. Test in low-stakes ways before trusting in high-stakes ways.</li>
+</ul>
+
+<h2>The AI Documentation Template</h2>
+
+<p>Every time you submit work where AI was used, you fill out this template. It goes at the END of your deliverable (last page, or a final slide, or a footer paragraph — depending on the format).</p>
+
+<div class="callout warn">
+  <div class="callout-title">Non-negotiable</div>
+  Honest disclosure with this template = no penalty. Hidden AI use = academic integrity violation.
+</div>
+
+<table>
+  <thead>
+    <tr><th>Field</th><th>What you write</th></tr>
+  </thead>
+  <tbody>
+    <tr><td><strong>Tool(s) used</strong></td><td>Name(s) and version(s) of the AI tool(s). Examples: "Gemini 2.5 Flash, May 2026"; "Claude Sonnet 4.6"; "Plate Tectonics Tutor (BoodleBox box)". List all if you used more than one.</td></tr>
+    <tr><td><strong>Prompts (representative)</strong></td><td>1–3 of the prompts you used. Doesn't need to be every prompt — just the ones that shaped the work most. Quote them.</td></tr>
+    <tr><td><strong>What the AI contributed</strong></td><td>Specific tasks: brainstorming, outlining, drafting a paragraph, giving feedback on writing, translating, generating examples, summarising a source, explaining a concept you didn't understand. Be specific.</td></tr>
+    <tr><td><strong>What YOU contributed</strong></td><td>Decisions, evidence selection, your own interpretation, your voice, your final edits, your conclusions. This should be the bulk of the work.</td></tr>
+    <tr><td><strong>OPVL of the AI's contribution</strong></td><td>Quick OPVL on the AI as a source for this specific work. Highlight especially the <strong>Limitations</strong> — what was it wrong about, what did you have to fix, what couldn't it do?</td></tr>
+    <tr><td><strong>One thing the AI got wrong</strong></td><td><strong>Required.</strong> Name at least one specific thing the AI got wrong, missed, refused, or couldn't do well. If you literally couldn't find one, that's a sign you weren't checking carefully enough.</td></tr>
+  </tbody>
+</table>
+
+<h3>Why "one thing it got wrong" is required</h3>
+
+<p>If you submit AI documentation that says the AI was perfect and contributed everything well, one of two things is true. Either (a) you weren't paying enough attention to notice its mistakes, or (b) you let the AI do too much of the work without checking. Both are problems. Requiring a specific failure point forces you into the critical-evaluation mode that makes AI use valuable instead of dangerous.</p>
+
+<h2>Worked examples</h2>
+
+<h3>Strong example</h3>
+<p><strong>Tool(s) used:</strong> Gemini 2.5 Flash (May 2026), Claude Sonnet 4.6 (May 2026), and the BoodleBox "Plate Tectonics Tutor" box.</p>
+<p><strong>Prompts (representative):</strong> "Can you explain how megathrust earthquakes generate tsunamis in plain language?" / "Give me feedback on this draft paragraph — is my mechanism explanation clear?" / [Plate Tectonics Tutor] "What's the difference between liquefaction and lateral spreading?"</p>
+<p><strong>What the AI contributed:</strong> Gemini explained the megathrust→tsunami mechanism three different ways until one clicked. Claude gave feedback on the draft hazard profile and flagged that I'd confused magnitude with intensity. The Plate Tectonics Tutor walked me through liquefaction vs. lateral spreading using a Tokyo-specific example.</p>
+<p><strong>What I contributed:</strong> Topic choice (Tokyo), source selection (USGS, Smithsonian, BBC archive on Tōhoku 2011), the full OPVL on each source, my own writing in the final hazard profile, and the synthesis connecting historical evidence to Tokyo's current risk.</p>
+<p><strong>One thing the AI got wrong:</strong> Gemini initially said the Anchorage 1964 earthquake was M9.0; the actual figure is M9.2 (per USGS). Small but important — corrected before final draft.</p>
+<p><em>Why this is strong:</em> specific tools, specific prompts, clear division of labour, specific identified weakness. A reader could reconstruct what role the AI played.</p>
+
+<h3>Weak example</h3>
+<p><strong>Tool(s) used:</strong> ChatGPT.<br>
+<strong>Prompts:</strong> I asked it to help me with my hazard profile.<br>
+<strong>What the AI contributed:</strong> It helped me a lot.<br>
+<strong>What I contributed:</strong> I wrote it.<br>
+<strong>One thing the AI got wrong:</strong> I don't remember.</p>
+<p><em>Why this is weak:</em> No specificity. The reader can't tell what role the AI played. The "one thing it got wrong" answer is the giveaway — if you can't name it, you probably weren't checking. This earns lower C-strand scores and triggers a conversation about how you actually used the tool.</p>
+
+<h3>The violation</h3>
+<p>No AI Documentation Template submitted with the deliverable. When asked, the student admits to having used an AI to draft most of the work.</p>
+<p><em>Why this is the violation:</em> The student avoided documentation precisely because the AI did the work. The hiding is the problem. Heavy AI use disclosed honestly might earn a low T/T score; hidden AI use is an integrity issue. Always file the documentation — your worst-case grade with honest docs is still better than the consequences of hiding.</p>
+
+<h2>Next</h2>
+<p>See <a href="/foundations/class-expectations/">Class Expectations</a> for what AI use is encouraged, what is not allowed, and the disclosure principle in plain language.</p>
+
+</div>
