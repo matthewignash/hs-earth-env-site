@@ -1,0 +1,63 @@
+---
+layout: layouts/base.njk
+title: The Engineering Coach
+tagline: Helps you reason through design trade-offs. One of the highest-frequency partners across the year.
+launchUrl: ""
+breadcrumbs:
+  - { url: /, label: Home }
+  - { url: /ai-partners/, label: "AI Partners" }
+  - { label: "The Engineering Coach" }
+---
+
+<div class="prose">
+
+<p>A senior engineer who reasons <em>with</em> you, not <em>for</em> you. Direct, practical, comfortable with constraint and ambiguity. Doesn't pretend there are right answers when there are only trade-offs. Used in <strong>U3</strong> (Tectonic City Builder portfolio iterations and Final Defense), <strong>U4</strong> (climate adaptation brief), <strong>U6</strong> (sustainable land plan), and <strong>U7</strong> (energy mix). Expect to use this one a lot.</p>
+
+{% if launchUrl %}
+<a class="partner-launch" href="{{ launchUrl }}" target="_blank" rel="noopener">🚀 Launch the Engineering Coach →</a>
+{% else %}
+<span class="partner-launch placeholder">🚀 Launch the Engineering Coach — TBD: BoodleBox / Gemini Gem URL</span>
+{% endif %}
+
+<h2>How to use this partner</h2>
+
+<p>Bring a specific design decision you're weighing — not a general question about engineering. Tell the Coach what you're trying to accomplish, what your constraints are (budget, geography, deadline), and what choices you're considering. It will help you surface trade-offs, not pick for you.</p>
+
+<p>Two prompts you can paste in to get started:</p>
+
+<ul>
+  <li><em>"I'm designing for Tokyo. I have $1.5M. Help me think through where to spend it."</em></li>
+  <li><em>"My iteration #2 score dropped. I think it's because I moved hospitals inland. Walk me through what might have happened."</em></li>
+</ul>
+
+<h2>Opening message</h2>
+
+<blockquote>"Hi — I'm the Engineering Coach. What are you working on? Walk me through what you're trying to accomplish and what constraints you're working with. Then we'll think through the decisions together."</blockquote>
+
+<h2>Example exchange — what working looks like</h2>
+
+<table>
+  <thead>
+    <tr><th>You</th><th>The Engineering Coach</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>I'm designing for Tokyo. I have $1.5M and I'm trying to figure out where to spend it.</td>
+      <td>Great. Before we talk budget, let's get the priorities clear. If you could only do ONE of these — save the maximum number of lives, keep critical infrastructure (hospitals, power) operational, or protect the most expensive buildings — which would you pick? There's no wrong answer, but you can't optimise for all three with $1.5M. What's your call?</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2>Watch out for</h2>
+
+<p>The Coach can drift into making suggestions that look like decisions ("I'd put the tsunami wall on tile A6"). Even when phrased as a suggestion, this teaches reliance on the AI rather than building your own engineering reasoning. If you catch it naming specific tiles or buildings, ask it to redirect: <em>"Don't tell me where — help me figure out the criteria I should use."</em></p>
+
+<p>If you're confused about <em>why</em> something is a hazard (rather than what to do about it), use the <a href="/ai-partners/plate-tectonics-tutor/">Plate Tectonics Tutor</a> instead.</p>
+
+<h2>Before you go — documentation</h2>
+
+<p>At the end of a substantive conversation, the partner will remind you:</p>
+
+<blockquote>"Before you go — note in your <a href="/foundations/ai-documentation-protocol/">AI Documentation</a>: what's one engineering trade-off we discussed that you're going to act on, and what's one I raised that you decided NOT to act on, with your reasoning?"</blockquote>
+
+</div>

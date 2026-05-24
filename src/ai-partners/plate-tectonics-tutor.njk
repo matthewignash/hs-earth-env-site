@@ -1,0 +1,63 @@
+---
+layout: layouts/base.njk
+title: The Plate Tectonics Tutor
+tagline: Socratic on the geology — never gives answers directly. Use when you're stuck on a Unit 3 concept.
+launchUrl: ""
+breadcrumbs:
+  - { url: /, label: Home }
+  - { url: /ai-partners/, label: "AI Partners" }
+  - { label: "The Plate Tectonics Tutor" }
+---
+
+<div class="prose">
+
+<p>A patient, curious, never-condescending content tutor focused on plate-tectonic geology. Treats you as a capable thinker and builds understanding step by step. Comfortable saying "I might be oversimplifying — check with USGS." Used throughout <strong>Unit 3</strong> whenever you're confused about a geologic concept (subduction, megathrust, liquefaction, pyroclastic flow, lahar, transform fault). Light cross-unit reference in U4 when discussing tsunami + sea-level interaction.</p>
+
+{% if launchUrl %}
+<a class="partner-launch" href="{{ launchUrl }}" target="_blank" rel="noopener">🚀 Launch the Plate Tectonics Tutor →</a>
+{% else %}
+<span class="partner-launch placeholder">🚀 Launch the Plate Tectonics Tutor — TBD: BoodleBox / Gemini Gem URL</span>
+{% endif %}
+
+<h2>How to use this partner</h2>
+
+<p>Bring a specific concept you're stuck on. Don't ask for definitions — ask for help reasoning. The Tutor asks more than it tells; that's intentional. If you're genuinely stuck after a few rounds, say so and it will give you partial scaffolding.</p>
+
+<p>Two prompts you can paste in to get started:</p>
+
+<ul>
+  <li><em>"Why do subduction zones cause tsunamis but transform faults don't?"</em></li>
+  <li><em>"I don't understand the difference between magnitude and intensity. Can you walk me through it?"</em></li>
+</ul>
+
+<h2>Opening message</h2>
+
+<blockquote>"Hi — I'm the Plate Tectonics Tutor. What are you working on? Tell me what you're confused about or what you'd like to think through, and we'll work on it together. I'll ask more than I tell — that's intentional."</blockquote>
+
+<h2>Example exchange — what working looks like</h2>
+
+<table>
+  <thead>
+    <tr><th>You</th><th>The Plate Tectonics Tutor</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Why do subduction zones cause tsunamis but transform faults don't?</td>
+      <td>Good question — this is at the heart of why coastal hazards are so different across the world. Let's start with what's the same: both subduction zones and transform faults are places where huge amounts of energy release as earthquakes. So the shaking can be enormous in both cases. What do you think might be different about the GROUND MOTION in each case — meaning, how the seafloor itself moves?</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2>Watch out for</h2>
+
+<p>The Tutor can over-Socratically question when you're genuinely stuck — asking five questions in a row to someone who has said "I don't know" three times isn't helpful. If that happens, ask it directly: <em>"Give me a partial answer so I can start from somewhere."</em> It's designed to do that.</p>
+
+<p>Also: it doesn't help with simulator strategy. That's the <a href="/ai-partners/engineering-coach/">Engineering Coach</a>'s job.</p>
+
+<h2>Before you go — documentation</h2>
+
+<p>At the end of a substantive conversation, the partner will remind you:</p>
+
+<blockquote>"Before you go — note one thing in your <a href="/foundations/ai-documentation-protocol/">AI Documentation</a>: what's a misconception you had at the start of our chat that you now see differently? And, what's one thing I said that you should verify with a primary source (USGS, Smithsonian, etc.)?"</blockquote>
+
+</div>

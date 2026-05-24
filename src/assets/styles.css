@@ -226,6 +226,40 @@ img { max-width: 100%; height: auto; display: block; }
   color: var(--ink);
 }
 
+/* ====== AI Partner launch button ====== */
+.partner-launch {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--ai-orange);
+  color: var(--ink);
+  font-weight: 700;
+  font-size: 16px;
+  padding: 14px 22px;
+  border-radius: 10px;
+  text-decoration: none;
+  margin: 18px 0 8px;
+  border: 2px solid transparent;
+  transition: background 0.15s, transform 0.1s;
+}
+.partner-launch:hover {
+  background: var(--ai-orange-hover);
+  color: var(--ink);
+  transform: translateY(-1px);
+}
+.partner-launch.placeholder {
+  background: transparent;
+  color: var(--muted);
+  border: 2px dashed var(--border);
+  font-weight: 600;
+  cursor: not-allowed;
+}
+.partner-launch.placeholder:hover {
+  background: transparent;
+  color: var(--muted);
+  transform: none;
+}
+
 /* ====== Simulator iframe ====== */
 .simulator-frame {
   width: 100%;

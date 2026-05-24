@@ -1,0 +1,61 @@
+---
+layout: layouts/base.njk
+title: The Defense Practice Partner
+tagline: Role-plays the audience for defense rehearsal. Use before any defense — engineering, policy, stakeholder, public.
+launchUrl: ""
+breadcrumbs:
+  - { url: /, label: Home }
+  - { url: /ai-partners/, label: "AI Partners" }
+  - { label: "The Defense Practice Partner" }
+---
+
+<div class="prose">
+
+<p>A peer audience that asks tough but fair questions. Engaged and curious — skeptical the way a good audience is, not hostile. Used in <strong>U3</strong> defense rehearsal (peer city councillor), <strong>U4</strong> policy panel, <strong>U5</strong> stakeholder roundtable, <strong>U6</strong> regional planning board, <strong>U7</strong> skeptical public reader. Tell it which unit you're rehearsing for and it sets the role.</p>
+
+{% if launchUrl %}
+<a class="partner-launch" href="{{ launchUrl }}" target="_blank" rel="noopener">🚀 Launch the Defense Practice Partner →</a>
+{% else %}
+<span class="partner-launch placeholder">🚀 Launch the Defense Practice Partner — TBD: BoodleBox / Gemini Gem URL</span>
+{% endif %}
+
+<h2>How to use this partner</h2>
+
+<p>Open it the day before your real defense (or earlier). Tell it which unit you're in, then deliver your full pitch in one go — don't break it up. It listens all the way through without interrupting, then asks 2–3 audience-appropriate questions and gives short feedback on each answer. At the end it gives a short overall assessment.</p>
+
+<p>Two prompts you can paste in to get started:</p>
+
+<ul>
+  <li><em>"I'm rehearsing my U3 Engineering Portfolio defense. My city is Tokyo. Here's my pitch: [paste or speak]"</em></li>
+  <li><em>"I'm rehearsing my U4 Climate Brief. The audience is a policy advisor. Here's the brief: [paste]"</em></li>
+</ul>
+
+<h2>Opening message</h2>
+
+<blockquote>"Hi — I'm the Defense Practice Partner. Tell me which unit you're rehearsing for, and I'll set the role — city councillor (U3), policy reviewer (U4), stakeholder (U5), planning board (U6), or skeptical public (U7). Then walk me through your defense. I'll listen all the way through, then ask 2–3 questions."</blockquote>
+
+<h2>Example exchange — what working looks like</h2>
+
+<table>
+  <thead>
+    <tr><th>You</th><th>The Defense Practice Partner</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>[Delivers 5-min defense for U3 — Tokyo engineering portfolio]</td>
+      <td>Good defense overall. Three questions: (1) You spent $400K on tsunami walls in zone B. What evidence shaped that specific number versus, say, $200K or $600K? (2) You moved your hospital to tile C5 to get it off the reclaimed-land liquefaction zone — but tile C5 is closer to the volcanic ash plume area in your hazard profile. How are you handling that trade-off? (3) You said your design "learns from Tōhoku." Be more specific — what one engineering choice are you making BECAUSE of Tōhoku that you wouldn't have made otherwise?</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2>Watch out for</h2>
+
+<p>The Defense Partner can drift into being too easy — accepting weak answers and giving "good job" feedback that isn't earned. The real-defense audience will push harder. If your rehearsal feels suspiciously frictionless, ask it directly: <em>"Be harder on me — push back at least once."</em> Rehearsal is only useful when it surfaces weak spots.</p>
+
+<h2>Before you go — documentation</h2>
+
+<p>At the end of a substantive conversation, the partner will remind you:</p>
+
+<blockquote>"Before you go — note in your <a href="/foundations/ai-documentation-protocol/">AI Documentation</a>: which of my questions did you handle well, and which one revealed something you still need to sharpen before your real defense? That's the move that makes rehearsal valuable."</blockquote>
+
+</div>
