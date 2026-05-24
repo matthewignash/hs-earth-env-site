@@ -26,6 +26,18 @@
 {% if customLayout %}
 {{ content | safe }}
 {% else %}
+{% if breadcrumbs %}
+<div class="breadcrumbs">
+  <div class="container" style="padding: 0; max-width: 1100px;">
+    {%- for crumb in breadcrumbs %}
+      {%- if not loop.last %}<a href="{{ crumb.url }}">{{ crumb.label }}</a> &nbsp;›&nbsp;
+      {%- else %}<span class="crumb-current">{{ crumb.label }}</span>
+      {%- endif %}
+    {%- endfor %}
+  </div>
+</div>
+{% endif %}
+
 <header class="page-header">
   <div class="container">
     <h1>{{ title }}</h1>

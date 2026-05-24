@@ -37,9 +37,6 @@
   background: var(--soft);
 }
 
-/* ====== Breadcrumbs (block-page › style) ====== */
-.breadcrumbs .crumb-current { color: var(--ink); font-weight: 600; }
-
 /* ====== AI partner callout ====== */
 .ai-callout {
   background: linear-gradient(135deg, #fff4d9 0%, #fce4d6 100%);
@@ -258,6 +255,36 @@
   letter-spacing: 0.5px;
 }
 .block-nav .nav-spacer { flex: 1; }
+
+/* ====== Placeholder variants (Hybrid content marker) ====== */
+.entry-card.placeholder,
+.choice.placeholder {
+  border-style: dashed;
+  border-width: 2px;
+  border-color: var(--muted);
+  background: var(--paper);
+}
+.entry-card.placeholder .entry-title,
+.choice.placeholder .choice-title {
+  color: var(--muted);
+}
+.entry-card.placeholder > div:not(.entry-icon):not(.entry-title):not(.entry-meta),
+.choice.placeholder .choice-detail {
+  font-style: italic;
+  color: var(--muted);
+}
+.placeholder-tag {
+  display: inline-block;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  background: var(--soft);
+  color: var(--muted);
+  padding: 2px 6px;
+  border-radius: 4px;
+  margin-bottom: 6px;
+}
 
 /* ====== Responsive ====== */
 @media (max-width: 640px) {
