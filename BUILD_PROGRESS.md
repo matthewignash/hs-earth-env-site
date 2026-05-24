@@ -2,17 +2,17 @@
 
 > **Purpose:** Living status doc. Tells you (and future Claude Code sessions) what's built, what's stubbed, what to build next, and in what order. The charter is in `CLAUDE.md` — do NOT modify that. Update this file at the end of each build session.
 
-**Last updated:** 2026-05-24 (Unit 1 deep build phase 2 — Blocks 7 + 10 full)
+**Last updated:** 2026-05-24 (Unit 1 deep build phase 3 — all remaining blocks full · Unit 1 fully complete)
 
 ---
 
 ## TL;DR — pick up here
 
-**Unit 1 deep build phase 2 is complete.** Block 7 (Habitability Framework) is the framework-completion class with a 3-path choice board (Solo / Pair-jigsaw / AI-coached). Block 10 (NASA Committee Defense) is the summative defense day with a structured 4-phase Do sequence (Submit / Q&A round / Reflection circle / Connect-forward to U2) and the 6-category Q&A bank listed inline.
+**Unit 1 is now fully complete.** All 10 blocks are deep content. The full Goldilocks Report handout is in place. Both new AI partners (Planet Hunter, Systems Diagrammer) are full 7-section pages. The unit landing is full content with zero "Stub." markers anywhere. Unit 1 is the second unit (after Unit 0) to reach this state — and the first 10-block unit fully built out.
 
-**Unit 1 now has 4 deep blocks (1, 2, 7, 10)** covering every key teaching move — phenomenon launch, systems-thinking intro, framework completion, and audience defense — plus the full Goldilocks Report assessment and both new AI partners. Blocks 3, 4, 5, 6, 8, 9 remain stubs (supporting content blocks, lower leverage). The unit can teach competently with this set — same shape as Unit 3 (4 deep blocks + stubs).
+**Phase 3 just added Blocks 3, 4, 5, 6, 8, and 9** — Mars Calibration, Scale of the Cosmos, Exoplanet Detection, Choose Your Exoplanet, Drafting Day, and Stakeholder Q&A Prep. Each uses the canonical Hybrid pattern. Block 4 introduces the Goldilocks Report assignment with a prominent callout. Block 6 introduces the Planet Hunter AI partner. Block 9 introduces the Defense Practice Partner and uses the structured 3-phase Do sequence (Solo prep / Pair rehearsal / AI rehearsal) for rehearsal day.
 
-**Next-phase recommendation: pivot to Unit 2 (Surface Processes) skeleton.** Parallel to how we approached U1: landing + 9 block stubs + Landscape Reading assessment stub + Field Geologist AI partner stub. After that comes U2 deep build, then U4–U7 in teach-order.
+**Next-phase recommendation: pivot to Unit 2 (Surface Processes) skeleton.** Parallel to how we approached U1: landing + 9 block stubs + Landscape Reading assessment stub + Field Geologist AI partner stub. After U2 skeleton: U2 deep build, then U4 → U5 → U6 → U7 in teach-order.
 
 After Unit 1 deep build: teach-order priority is **U2 → U4 → U5 → U6 → U7**. (U3 is fully built and the simulator behind it is functionally complete.)
 
@@ -119,19 +119,19 @@ The site is **LIVE on Vercel** — every push to `main` auto-deploys. Don't brea
 - `units/unit-3/assessment-engineering-portfolio.njk` — full content
 - `units/unit-3/tectonic-city-builder.njk` — simulator launcher (iframes v2 of the sim)
 
-### Unit 1 — Earth and Universe (landing full · 4 deep blocks · assessment full · Blocks 3, 4, 5, 6, 8, 9 stubbed)
-- `units/unit-1/index.njk` — full landing (anchor question, 10-block grid, Goldilocks Report card, AI partners + resources panels)
-- `units/unit-1/block-1.njk` (Phenomenon Launch) — **full content** (5 sections, Hybrid pattern, whole-class Do, aiPartners callout)
-- `units/unit-1/block-2.njk` (Earth as Baseline) — **full content** (5 sections, 3-path choice board for systems-diagram entry)
-- `units/unit-1/block-3.njk` (Mars as Calibration) — stub
-- `units/unit-1/block-4.njk` (Scale of the Cosmos) — stub
-- `units/unit-1/block-5.njk` (Exoplanet Detection) — stub
-- `units/unit-1/block-6.njk` (Choose Your Exoplanet) — stub
-- `units/unit-1/block-7.njk` (Habitability Framework) — **full content** (5 sections, 3-path choice board: Solo / Pair-jigsaw / AI-coached; framework template feeds Block 8 draft)
-- `units/unit-1/block-8.njk` (Drafting Day) — stub
-- `units/unit-1/block-9.njk` (Stakeholder Q&A Prep) — stub
-- `units/unit-1/block-10.njk` (NASA Committee Defense) — **full content** (5 sections, structured 4-phase Do sequence with 6-category Q&A bank inline, unit reflection bookends Block 1)
-- `units/unit-1/assessment-goldilocks-report.njk` — **full handout** (GRASPS, 8-exoplanet table, 4 steps, two gates callout, format options, K/U+T/T+C rubric tables, AI Documentation pointer)
+### Unit 1 — Earth and Universe (complete: landing + 10 blocks + assessment)
+- `units/unit-1/index.njk` — full landing (anchor question, 10-block grid with real card descriptions, Goldilocks Report card, AI partners + resources panels)
+- `units/unit-1/block-1.njk` (Phenomenon Launch) — full content; whole-class See/Guess/Need-to-know Do sequence
+- `units/unit-1/block-2.njk` (Earth as Baseline) — full content; 3-path choice for first systems diagram; Systems Diagrammer introduced
+- `units/unit-1/block-3.njk` (Mars as Calibration) — full content; inline Earth/Mars data table; causal-chain story
+- `units/unit-1/block-4.njk` (Scale of the Cosmos) — full content; inline HZ table for 9 stars; Goldilocks Report assigned today
+- `units/unit-1/block-5.njk` (Exoplanet Detection) — full content; 3-sentence transit definition callout
+- `units/unit-1/block-6.njk` (Choose Your Exoplanet) — full content; inline 8-candidate table; Planet Hunter introduced
+- `units/unit-1/block-7.njk` (Habitability Framework) — full content; 3-path choice (Solo / Pair-jigsaw / AI-coached); framework template feeds Block 8 draft
+- `units/unit-1/block-8.njk` (Drafting Day) — full content; Kepler-22 b worked-example "Honest reading" quoted; AI gate flagged
+- `units/unit-1/block-9.njk` (Stakeholder Q&A Prep) — full content; structured 3-phase rehearsal day; Defense Practice Partner introduced
+- `units/unit-1/block-10.njk` (NASA Committee Defense) — full content; structured 4-phase Do with 6-category Q&A bank inline; unit reflection bookends Block 1
+- `units/unit-1/assessment-goldilocks-report.njk` — full handout (GRASPS, 8-exoplanet table, 4 steps, two gates callout, format options, K/U+T/T+C rubric tables, AI Documentation pointer)
 
 ### AI Partners (7 of 16 — all 7 currently used in U0/U1/U3 are full)
 - `ai-partners/index.njk` — hub landing with all 7 cards

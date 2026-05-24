@@ -10,6 +10,9 @@ week: 2
 day: A
 strands:
   active: ["K/U Knowledge"]
+aiPartners:
+  - { slug: planet-hunter, label: "🔭 The Planet Hunter" }
+  - { slug: the-source-evaluator, label: "🔍 The Source Evaluator" }
 breadcrumbs:
   - { url: /, label: Home }
   - { url: /units/unit-1/, label: "Unit 1 — Earth and Universe" }
@@ -19,9 +22,104 @@ next: { url: /units/unit-1/block-4/, label: "Block 4 — Scale of the Cosmos" }
 unitMapUrl: /units/unit-1/
 ---
 
+<section class="block-section story">
+  <span class="section-tag">📖 Story</span>
+  <h2>Why this block matters</h2>
+  <p class="sub">Mars is the failed-habitable case. Today we use it to test our framework.</p>
+  <p>Four billion years ago, Mars had a thicker atmosphere than Earth has today, liquid water carving river valleys on its surface, and a global magnetic field. The riverbeds, deltas, clay minerals, and sulfate deposits are still there — we can see them. Then Mars lost all three. The question is how, and the answer chains together every framework criterion you're building this unit.</p>
+  <p>The chain: Mars is smaller than Earth, so its iron core cooled faster. By about 4.1 billion years ago its magnetic field collapsed. With no magnetic field to deflect the solar wind, Mars's atmosphere was stripped over hundreds of millions of years. Thinner atmosphere meant less greenhouse warming and lower surface pressure — both required for liquid surface water. With no liquid water at the surface there was no carbon-silicate weathering thermostat. The climate fell into a stable frozen state. Habitability isn't a property — it's a balance, and Mars lost it.</p>
+  <p>Today's move is calibration. A habitability framework that classifies Earth and Mars identically is broken (Mars isn't habitable). A framework that says only Earth could ever be habitable is also broken (Mars almost certainly was, briefly). The framework should classify Earth as MEETS, Mars as FAILS or PARTIAL on most criteria, and explain <em>why</em> Mars fails with a mechanism — not just "Mars is cold."</p>
+</section>
+
+<section class="block-section concepts">
+  <span class="section-tag">💡 Concepts</span>
+  <h2>Three ways in</h2>
+  <p class="sub">Reference data for today's framework calibration.</p>
+  <div class="entry-grid">
+    <div class="entry-card placeholder">
+      <span class="placeholder-tag">Placeholder</span>
+      <div class="entry-icon">🎥</div>
+      <div class="entry-title">Watch (5 min)</div>
+      <div>TBD: Mars history visualization — Noachian-era riverbeds and atmosphere through to today's frozen, stripped state. Best if it shows the causal chain visually.</div>
+      <div class="entry-meta">To be sourced from NASA / MAVEN team press materials.</div>
+    </div>
+    <a class="entry-card" href="/units/unit-1/assessment-goldilocks-report/" style="text-decoration: none; color: inherit;">
+      <div class="entry-icon">📄</div>
+      <div class="entry-title">Read</div>
+      <div>Goldilocks Report — Step 3 uses Mars as the failed-habitable case in your final analysis. Printed Calibration Profiles handout (Earth + Mars data side-by-side) provided in class.</div>
+      <div class="entry-meta">Real link · Unit 1 assessment</div>
+    </a>
+    <a class="entry-card" href="/ai-partners/planet-hunter/" style="text-decoration: none; color: inherit;">
+      <div class="entry-icon">🔭</div>
+      <div class="entry-title">Interact</div>
+      <div>The Planet Hunter — useful for Mars-as-calibration reasoning. Push it to make you defend each MEETS / PARTIAL / FAILS classification.</div>
+      <div class="entry-meta">Real link · AI Partner</div>
+    </a>
+  </div>
+  <table style="margin-top: 16px;">
+    <thead>
+      <tr><th>Criterion</th><th>Earth (today)</th><th>Mars (today)</th><th>Mars (~4 Gya)</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Distance from star</td><td>1.00 AU</td><td>1.52 AU</td><td>1.52 AU (same)</td></tr>
+      <tr><td>Atmospheric pressure</td><td>101 kPa</td><td>0.6 kPa (~0.6% of Earth)</td><td>0.5–1.0+ bar (estimated)</td></tr>
+      <tr><td>Surface temperature</td><td>−89 to +57 °C (mean +15)</td><td>−143 to +35 °C (mean −60)</td><td>Liquid water possible</td></tr>
+      <tr><td>Magnetic field</td><td>Active (25–65 μT)</td><td>Absent globally; crustal remnants only</td><td>Present (paleomagnetic evidence)</td></tr>
+      <tr><td>Surface water</td><td>71% liquid, all three phases</td><td>Subsurface + polar ice; trace vapor</td><td>Dendritic valleys, deltas, riverbeds</td></tr>
+    </tbody>
+  </table>
+</section>
+
 <section class="block-section do">
-  <span class="section-tag">🚧 Stub</span>
-  <h2>This block is a Phase 1-stub for Unit 1</h2>
-  <p class="sub">Full content lands when Unit 1 is built out.</p>
-  <p>Block 3 calibrates the framework against Mars — the failed-habitable case. Students compare Earth and Mars across distance, magnetic field, atmosphere, and surface water; explain why Mars lost its atmosphere; and apply the early habitability framework to identify where Mars fails. The Mars story previews everything Units 2-7 do about how systems can degrade.</p>
+  <span class="section-tag">🛠️ Do</span>
+  <h2>Today's work — choose one path</h2>
+  <p class="sub">Three real paths, same destination: Mars classified against at least 3 of your framework criteria.</p>
+  <div class="choice-intro">
+    <strong>Learning Intention:</strong> I can name three differences between Earth and Mars relevant to habitability, explain why Mars lost its atmosphere, and apply the habitability framework to identify where Mars fails.
+  </div>
+  <div class="choice-board">
+    <div class="choice">
+      <div class="choice-letter">A</div>
+      <div class="choice-title">Causal-chain diagram</div>
+      <div class="choice-detail">Sketch the Mars decay sequence as arrows: small size → fast core cooling → magnetic field loss → atmospheric stripping → liquid water loss → climate collapse. One arrow per causal step. Add one sentence under the diagram naming the criterion in your framework that captures each step.</div>
+      <span class="udl-tag">Visual · Solo</span>
+    </div>
+    <div class="choice">
+      <div class="choice-letter">B</div>
+      <div class="choice-title">Pair-classified Mars</div>
+      <div class="choice-detail">With a partner, pick 3 framework criteria from your draft. For each, classify Mars as MEETS / PARTIAL / FAILS with one-sentence reasoning that names the mechanism (not just the symptom). "Mars FAILS atmospheric retention because its core cooled and the magnetic field collapsed" — not "Mars is cold."</div>
+      <span class="udl-tag">Verbal · Pair</span>
+    </div>
+    <div class="choice">
+      <div class="choice-letter">C</div>
+      <div class="choice-title">AI-coached calibration</div>
+      <div class="choice-detail">Use the <a href="/ai-partners/planet-hunter/">Planet Hunter</a> to talk through Mars as a "framework calibration" case. Ask it to push back on any classification you can't justify with a mechanism. Document the conversation in the <a href="/foundations/ai-documentation-protocol/">AI Documentation Template</a>.</div>
+      <span class="udl-tag">Conversational · Solo</span>
+    </div>
+  </div>
+</section>
+
+<section class="block-section show">
+  <span class="section-tag">📊 Show</span>
+  <h2>What you're submitting today</h2>
+  <p class="sub">Mars classification artifact — feeds Step 3 of your Goldilocks Report.</p>
+  <div class="submission-callout">
+    <div class="label">📥 Mars classification (submit by end of class)</div>
+    <p>At minimum <strong>3 framework criteria</strong>, each labelled <strong>MEETS / PARTIAL / FAILS</strong> for Mars, with <strong>one-sentence reasoning</strong> that names the mechanism. Photo of the causal-chain diagram or your written classification.</p>
+    <a href="#" class="rubric-link">Submit via Google Classroom →</a>
+  </div>
+  <p class="rubric-meta">
+    <strong>Rubric link:</strong> Today's work maps to the <strong>K/U Knowledge</strong> strand of the <a href="/foundations/the-rubric/">Goldilocks Report rubric</a>. "Mars's failure mechanism explained" is the exact phrase that separates Proficient from Developing on K/U.
+  </p>
+</section>
+
+<section class="block-section reflect">
+  <span class="section-tag">🪞 Reflect</span>
+  <h2>One question before you leave</h2>
+  <p class="sub">Mars as a window onto Earth's possible futures.</p>
+  <div class="reflect-input">
+    <strong>Prompt:</strong> <em>One claim about why Mars is not currently habitable. One question you have about Mars. One connection between Mars's story and Earth's future.</em>
+    <br><br>
+    📝 Type in your Reflection Journal, or 🎤 record a voice memo.
+  </div>
 </section>
