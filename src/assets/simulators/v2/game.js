@@ -1,0 +1,929 @@
+/**
+ * Tectonic City Builder v2 — game logic.
+ *
+ * Phase A scope: gameplay loop with 5 scenarios, emoji buildings (sprites
+ * in Phase B), text-only damage outcomes (visual damage states in Phase C),
+ * no case-study integration (Phase D), no Sheet logging (Phase E).
+ *
+ * Rendering uses DOM construction (createElement + textContent), not
+ * innerHTML — keeps everything XSS-safe by construction.
+ */
+
+// ════════════════════════════════════════════════════════════════════
+// STATE
+// ════════════════════════════════════════════════════════════════════
+
+const STARTING_BUDGET = 1500000; // $1.5M per scenario, matches v1
+
+const state = {
+  scenarioKey: null,
+  grid: [],
+  placements: new Map(),       // "col,row" -> { building, tech: Set<string> }
+  budget: STARTING_BUDGET,
+  selected: null,              // { type: 'building'|'tech', key }
+  citywideEarlyWarning: false,
+  lastOutcome: null,
+};
+
+// ════════════════════════════════════════════════════════════════════
+// DOM HELPERS — no innerHTML anywhere
+// ════════════════════════════════════════════════════════════════════
+
+function el(tag, props, ...children) {
+  const e = document.createElement(tag);
+  if (props) {
+    for (const [k, v] of Object.entries(props)) {
+      if (k === "class") e.className = v;
+      else if (k === "style") Object.assign(e.style, v);
+      else if (k === "text") e.textContent = v;
+      else if (k.startsWith("on") && typeof v === "function") e.addEventListener(k.slice(2), v);
+      else if (k === "title") e.title = v;
+      else if (k === "id") e.id = v;
+      else e.setAttribute(k, v);
+    }
+  }
+  for (const c of children) {
+    if (c == null || c === false) continue;
+    if (typeof c === "string" || typeof c === "number") e.appendChild(document.createTextNode(String(c)));
+    else e.appendChild(c);
+  }
+  return e;
+}
+
+function clear(node) {
+  while (node.firstChild) node.removeChild(node.firstChild);
+}
+
+// ════════════════════════════════════════════════════════════════════
+// SVG HELPERS — DOMParser turns trusted sprite strings into safe DOM nodes
+// ════════════════════════════════════════════════════════════════════
+
+const SVG_NS = "http://www.w3.org/2000/svg";
+
+function svgChildrenFromString(s) {
+  const wrapper = `<svg xmlns="${SVG_NS}">${s}</svg>`;
+  const doc = new DOMParser().parseFromString(wrapper, "image/svg+xml");
+  const root = doc.documentElement;
+  if (root.getElementsByTagName("parsererror").length) {
+    console.error("SVG parse error in fragment:", root.textContent);
+    return [];
+  }
+  return Array.from(root.childNodes);
+}
+
+function appendSvgChildren(parent, svgFragmentString) {
+  for (const node of svgChildrenFromString(svgFragmentString)) {
+    parent.appendChild(node);
+  }
+}
+
+function appendOverlay(parent, techKey) {
+  const overlay = TECH_OVERLAYS[techKey];
+  if (!overlay) return;
+  appendSvgChildren(parent, overlay.svg);
+}
+
+function buildBuildingNode(buildingKey, techSet, damageState) {
+  const svg = document.createElementNS(SVG_NS, "svg");
+  svg.setAttribute("viewBox", "0 0 72 64");
+  svg.setAttribute("preserveAspectRatio", "xMidYMax meet");
+  svg.classList.add("tile-sprite");
+  if (damageState) svg.classList.add(`damage-${damageState}`);
+
+  // Destroyed: skip the building entirely, show rubble + flame + smoke
+  if (damageState === "destroyed") {
+    appendSvgChildren(svg, RUBBLE_SPRITE);
+    return svg;
+  }
+
+  // Otherwise compose normally
+  for (const tk of behindLayerOrder(techSet)) appendOverlay(svg, tk);
+  for (const tk of frontTileLayerOrder(techSet)) appendOverlay(svg, tk);
+  appendSvgChildren(svg, BUILDING_SPRITES[buildingKey]);
+  const roofKey = techSet.has("ash_roof") ? `${buildingKey}_steep` : `${buildingKey}_flat`;
+  appendSvgChildren(svg, BUILDING_ROOFS[roofKey]);
+  for (const tk of frontLayerOrder(techSet)) appendOverlay(svg, tk);
+
+  // Damage marks on top
+  if (damageState === "cracked") appendSvgChildren(svg, DAMAGE_OVERLAYS.cracked);
+  if (damageState === "heavy")   appendSvgChildren(svg, DAMAGE_OVERLAYS.heavy);
+
+  return svg;
+}
+
+// ════════════════════════════════════════════════════════════════════
+// SCREEN MANAGEMENT
+// ════════════════════════════════════════════════════════════════════
+
+function showScreen(name) {
+  document.querySelectorAll(".screen").forEach((s) => s.classList.remove("active"));
+  document.getElementById("screen-" + name).classList.add("active");
+  window.scrollTo(0, 0);
+}
+
+// ════════════════════════════════════════════════════════════════════
+// TITLE / SCENARIO PICKER
+// ════════════════════════════════════════════════════════════════════
+
+const SCENARIO_HAZARD_SUMMARY = {
+  tohoku: "M9 megathrust + 30 m tsunami + reclaimed-land liquefaction",
+  cascadia: "M9 megathrust + tsunami — 300+ years overdue",
+  anatolian: "M7.6 strike-slip rupture + fire — fault under the city",
+  merapi: "VEI 4 explosion — pyroclastic flow, lahar, ashfall",
+  hawaii: "Effusive lava flows — distance is your only defense",
+};
+
+function renderScenarioPicker() {
+  const container = document.getElementById("scenario-picker");
+  clear(container);
+  for (const [key, sc] of Object.entries(SCENARIOS)) {
+    const card = el("div", { class: "scenario-card", onclick: () => selectScenario(key) },
+      el("h3", { text: sc.name }),
+      el("div", { class: "scenario-meta", text: sc.boundary }),
+      el("div", { class: "scenario-hazards", text: SCENARIO_HAZARD_SUMMARY[key] || sc.disaster })
+    );
+    container.appendChild(card);
+  }
+}
+
+// ════════════════════════════════════════════════════════════════════
+// BRIEFING
+// ════════════════════════════════════════════════════════════════════
+
+function selectScenario(key) {
+  state.scenarioKey = key;
+  renderBriefing();
+  showScreen("briefing");
+}
+
+function renderBriefing() {
+  const sc = SCENARIOS[state.scenarioKey];
+  const root = document.getElementById("briefing-content");
+  clear(root);
+
+  root.append(
+    el("h2", { text: sc.name }),
+    el("div", { class: "briefing-meta", text: `${sc.location} · ${sc.boundary}` }),
+    el("h3", { text: "The situation" }),
+    el("p", { text: sc.intro }),
+    el("h3", { text: "The geology" }),
+    el("p", { text: sc.geology }),
+    el("h3", { text: "Today's disaster (when you click Run)" }),
+    el("p", { text: sc.disaster }),
+    el("h3", { text: "Zone legend" }),
+    buildLegend(sc.legend),
+    el("h3", { text: "Engineering tech available for this scenario" }),
+    buildTechList(sc.tech_relevant),
+    buildNgssFooter(sc),
+    buildRealEventsSection(sc),
+    buildBriefingActions()
+  );
+}
+
+function buildLegend(legendItems) {
+  const wrap = el("div", { class: "legend" });
+  for (const l of legendItems) {
+    wrap.appendChild(el("span", { class: "legend-item" },
+      el("span", { class: "legend-swatch", style: { background: l.swatch.startsWith("var(") ? l.swatch : l.swatch } }),
+      l.label
+    ));
+  }
+  // Fix swatch background — el's style assignment needs the var(--x) syntax preserved as-is
+  Array.from(wrap.querySelectorAll(".legend-swatch")).forEach((sw, i) => {
+    sw.style.background = legendItems[i].swatch;
+  });
+  return wrap;
+}
+
+function buildTechList(techKeys) {
+  const wrap = el("div", { class: "tech-list" });
+  for (const k of techKeys) {
+    const t = TECH[k];
+    wrap.appendChild(el("span", { class: "tech-chip", text: `${t.icon} ${t.name}` }));
+  }
+  return wrap;
+}
+
+function buildNgssFooter(sc) {
+  const wrap = el("div", { class: "ngss-footer" });
+  wrap.append(
+    el("strong", { text: "NGSS standards this scenario exercises: " }),
+    sc.ngss.join(" · "),
+    el("br"),
+    el("strong", { text: "3D learning emphases: " }),
+    `${sc.three_d.sep.join("; ")} | ${sc.three_d.dci.join("; ")} | ${sc.three_d.ccc.join("; ")}`
+  );
+  return wrap;
+}
+
+function buildBriefingActions() {
+  return el("div", { class: "briefing-actions" },
+    el("button", { class: "btn btn-primary", onclick: startBuild, text: "Start building →" }),
+    el("button", { class: "btn btn-secondary", onclick: () => showScreen("title"), text: "← Pick a different scenario" })
+  );
+}
+
+// ════════════════════════════════════════════════════════════════════
+// BUILD SCREEN
+// ════════════════════════════════════════════════════════════════════
+
+function startBuild() {
+  const sc = SCENARIOS[state.scenarioKey];
+  state.grid = sc.zoning();
+  state.placements.clear();
+  state.budget = STARTING_BUDGET;
+  state.selected = null;
+  state.citywideEarlyWarning = false;
+  document.getElementById("build-title").textContent = `Build: ${sc.name}`;
+  document.getElementById("build-subtitle").textContent = sc.boundary;
+  renderGrid();
+  renderPalette();
+  updateBudgetDisplay();
+  showScreen("build");
+}
+
+function renderGrid() {
+  const grid = document.getElementById("grid");
+  clear(grid);
+  for (const tile of state.grid) {
+    const t = el("div", {
+      class: `tile zone-${tile.zone}${isBuildable(tile) ? "" : " unbuildable"}`,
+      title: tileTooltip(tile),
+      onclick: () => placeOnTile(tile.col, tile.row),
+    });
+    const key = `${tile.col},${tile.row}`;
+    const placement = state.placements.get(key);
+    if (placement) {
+      t.appendChild(buildBuildingNode(placement.building, placement.tech));
+      if (placement.tech.size > 0) {
+        t.appendChild(el("span", { class: "tile-tech", text: `+${placement.tech.size}` }));
+      }
+    }
+    grid.appendChild(t);
+  }
+  renderCitywideBadge();
+}
+
+function renderCitywideBadge() {
+  const main = document.querySelector(".build-main");
+  if (!main) return;
+  const existing = main.querySelector(".citywide-badge");
+  if (existing) existing.remove();
+  if (state.citywideEarlyWarning) {
+    main.appendChild(el("div", { class: "citywide-badge", text: "📡 City-wide alert active" }));
+  }
+}
+
+function tileTooltip(tile) {
+  const hazards = Object.entries(tile.hazards)
+    .filter(([, v]) => v > 0)
+    .map(([k, v]) => `${k}: ${v}`)
+    .join(", ");
+  return `${tile.zone}${hazards ? " · " + hazards : ""}`;
+}
+
+function isBuildable(tile) {
+  return tile.zone !== "ocean" && tile.zone !== "volcano";
+}
+
+function renderPalette() {
+  const sc = SCENARIOS[state.scenarioKey];
+  const bList = document.getElementById("palette-buildings");
+  clear(bList);
+  for (const [key, b] of Object.entries(BUILDINGS)) {
+    bList.appendChild(makePaletteItem("building", key, b));
+  }
+  const tList = document.getElementById("palette-tech");
+  clear(tList);
+  for (const key of sc.tech_relevant) {
+    const t = TECH[key];
+    tList.appendChild(makePaletteItem("tech", key, t));
+  }
+}
+
+function makePaletteItem(type, key, item) {
+  const isSelected = state.selected && state.selected.type === type && state.selected.key === key;
+  const classes = ["palette-item"];
+  if (item.cost > state.budget) classes.push("unaffordable");
+  if (isSelected) classes.push("selected");
+  const node = el("div", {
+    class: classes.join(" "),
+    onclick: () => selectItem(type, key),
+  },
+    el("span", { class: "palette-icon", text: item.icon }),
+    el("span", { text: item.name }),
+    el("span", { class: "palette-cost", text: `$${formatCost(item.cost)}` })
+  );
+  node.addEventListener("mouseenter", () => {
+    setPaletteInfo(item.desc || `${item.name} — $${formatCost(item.cost)}`);
+    if (type === "tech") showTechDemo(key, node);
+  });
+  node.addEventListener("mouseleave", () => {
+    setPaletteInfo("Select a building or tech, then click a tile to place.");
+    if (type === "tech") hideTechDemo();
+  });
+  return node;
+}
+
+function showTechDemo(techKey, sourceEl) {
+  const demoSvg = TECH_DEMOS[techKey];
+  const popover = document.getElementById("tech-demo-popover");
+  if (!demoSvg || !popover) return;
+  clear(popover);
+  appendSvgChildren(popover, demoSvg);
+  const rect = sourceEl.getBoundingClientRect();
+  const popWidth = 200;
+  const isMobile = window.innerWidth < 900;
+  if (isMobile) {
+    popover.style.left = `${rect.left}px`;
+    popover.style.top = `${rect.bottom + 8}px`;
+  } else {
+    popover.style.left = `${Math.max(8, rect.left - popWidth - 8)}px`;
+    popover.style.top = `${rect.top}px`;
+  }
+  popover.classList.add("visible");
+}
+
+function hideTechDemo() {
+  const popover = document.getElementById("tech-demo-popover");
+  if (popover) popover.classList.remove("visible");
+}
+
+function setPaletteInfo(text) {
+  document.getElementById("palette-info").textContent = text;
+}
+
+function selectItem(type, key) {
+  state.selected = { type, key };
+  renderPalette();
+}
+
+function placeOnTile(col, row) {
+  const tile = state.grid.find((t) => t.col === col && t.row === row);
+  if (!tile) return;
+  if (!state.selected) {
+    setPaletteInfo("First select a building or tech from the palette.");
+    return;
+  }
+  if (!isBuildable(tile)) {
+    setPaletteInfo(`Can't build on ${tile.zone}.`);
+    return;
+  }
+  const tileKey = `${col},${row}`;
+  const placement = state.placements.get(tileKey);
+
+  if (state.selected.type === "building") {
+    if (placement) {
+      setPaletteInfo("Tile already has a building. Right-click to remove (refunds 50%).");
+      return;
+    }
+    const b = BUILDINGS[state.selected.key];
+    if (b.cost > state.budget) {
+      setPaletteInfo(`Not enough budget for ${b.name}.`);
+      return;
+    }
+    state.placements.set(tileKey, { building: state.selected.key, tech: new Set() });
+    state.budget -= b.cost;
+  } else if (state.selected.type === "tech") {
+    if (!placement) {
+      setPaletteInfo("Place a building on this tile before adding tech.");
+      return;
+    }
+    if (placement.tech.has(state.selected.key)) {
+      setPaletteInfo("This tech is already installed here.");
+      return;
+    }
+    const t = TECH[state.selected.key];
+    if (t.cost > state.budget) {
+      setPaletteInfo(`Not enough budget for ${t.name}.`);
+      return;
+    }
+    placement.tech.add(state.selected.key);
+    state.budget -= t.cost;
+    if (state.selected.key === "early_warning") state.citywideEarlyWarning = true;
+  }
+  renderGrid();
+  renderPalette();
+  updateBudgetDisplay();
+}
+
+function updateBudgetDisplay() {
+  const e = document.getElementById("budget-value");
+  e.textContent = "$" + formatCost(state.budget);
+  e.classList.toggle("low", state.budget < 300000 && state.budget > 0);
+  e.classList.toggle("empty", state.budget <= 0);
+}
+
+function formatCost(n) {
+  if (n >= 1000000) return (n / 1000000).toFixed(2) + "M";
+  if (n >= 1000) return (n / 1000).toFixed(0) + "K";
+  return String(n);
+}
+
+// ════════════════════════════════════════════════════════════════════
+// RUN SIMULATION + SCORING
+// ════════════════════════════════════════════════════════════════════
+
+function runSimulation() {
+  if (state.placements.size === 0) {
+    setPaletteInfo("Place at least one building before running.");
+    return;
+  }
+  const sc = SCENARIOS[state.scenarioKey];
+
+  // Compute outcome upfront so we know the per-tile damage bands.
+  state.lastOutcome = computeOutcome();
+
+  // Stay on the build screen; play the disaster on the grid.
+  showInlineBanner(sc.disaster_banner);
+  insertHazardOverlay(state.scenarioKey);
+  if (scenarioShakes(state.scenarioKey)) {
+    document.getElementById("grid").classList.add("is-shaking");
+  }
+  // Disable the run button to prevent double-runs.
+  const runBtn = document.getElementById("run-button");
+  if (runBtn) runBtn.disabled = true;
+
+  // Stage 1: 0.5s in, start staggered damage application.
+  setTimeout(() => applyDamageStates(state.lastOutcome), 500);
+
+  // Stage 2: 2.5s total — stop shaking, remove overlay, transition to debrief.
+  setTimeout(() => {
+    document.getElementById("grid").classList.remove("is-shaking");
+    removeHazardOverlay();
+    hideInlineBanner();
+    if (runBtn) runBtn.disabled = false;
+    renderDebrief();
+    showScreen("debrief");
+  }, 2500);
+}
+
+// ════════════════════════════════════════════════════════════════════
+// PHASE C — disaster animation helpers
+// ════════════════════════════════════════════════════════════════════
+
+function showInlineBanner(text) {
+  const b = document.getElementById("disaster-banner-inline");
+  if (!b) return;
+  b.textContent = text;
+  b.classList.add("visible");
+}
+function hideInlineBanner() {
+  const b = document.getElementById("disaster-banner-inline");
+  if (b) b.classList.remove("visible");
+}
+
+function scenarioShakes(scenarioKey) {
+  return scenarioKey === "tohoku" || scenarioKey === "cascadia" || scenarioKey === "anatolian" || scenarioKey === "merapi";
+}
+
+function insertHazardOverlay(scenarioKey) {
+  const svgFragment = HAZARD_VISUALS[scenarioKey];
+  if (!svgFragment) return;
+  const gridWrap = document.querySelector(".grid-wrap");
+  if (!gridWrap) return;
+  // Remove any stale overlay first.
+  removeHazardOverlay();
+  // The hazard visual is itself a full <svg> — parse and append.
+  const parsed = new DOMParser().parseFromString(svgFragment, "image/svg+xml");
+  const svg = parsed.documentElement;
+  if (svg.tagName.toLowerCase() === "svg") {
+    gridWrap.appendChild(svg);
+  }
+}
+function removeHazardOverlay() {
+  const existing = document.querySelector(".grid-wrap .hazard-overlay");
+  if (existing) existing.remove();
+}
+
+function damageStateForScore(damage) {
+  if (damage < 30) return null;
+  if (damage < 60) return "cracked";
+  if (damage < 100) return "heavy";
+  return "destroyed";
+}
+
+function applyDamageStates(outcome) {
+  // Map each placement to its tile DOM index in render order, so we can
+  // stagger the updates with setTimeouts.
+  const gridTiles = Array.from(document.getElementById("grid").children);
+  let i = 0;
+  for (const row of outcome.perBuilding) {
+    const damageState = damageStateForScore(row.damage);
+    if (!damageState) { i++; continue; }
+    const tileIndex = state.grid.findIndex((t) => t.col === row.tile.col && t.row === row.tile.row);
+    const tileEl = gridTiles[tileIndex];
+    if (!tileEl) { i++; continue; }
+    const placement = state.placements.get(`${row.tile.col},${row.tile.row}`);
+    setTimeout(() => {
+      // Rebuild the building node with damageState applied.
+      const oldSprite = tileEl.querySelector(".tile-sprite");
+      if (oldSprite) oldSprite.remove();
+      const newSprite = buildBuildingNode(placement.building, placement.tech, damageState);
+      tileEl.insertBefore(newSprite, tileEl.firstChild);
+    }, i * 80);
+    i++;
+  }
+}
+
+/**
+ * Per-hazard "correct" engineering response — used by Phase F's
+ * historical-accuracy scoring. Each entry: threshold below which the
+ * hazard doesn't really require defense, and the tech that defends
+ * against it. `tech: null` means "no engineering helps — the right
+ * answer is don't build here" (fault rupture, pyroclastic zone, the
+ * actual lava-flow path).
+ */
+const CORRECT_TECH_BY_HAZARD = {
+  tsunami:      { threshold: 60, tech: "tsunami_wall" },
+  liquefaction: { threshold: 70, tech: "deep_foundation" },
+  shaking:      { threshold: 70, tech: "base_isolation" },
+  rupture:      { threshold: 80, tech: null },
+  pyroclastic:  { threshold: 80, tech: null },
+  lava:         { threshold: 80, tech: null },
+  lahar:        { threshold: 50, tech: "lahar_diversion" },
+  ashfall:      { threshold: 50, tech: "ash_roof" },
+  // fire isn't directly defended by any tile-level tech in v2; ignored here.
+};
+
+/**
+ * Returns true if the placement made historically-correct choices for
+ * every above-threshold hazard at its tile:
+ *   - For hazards with a defined tech: the matching tech must be installed.
+ *   - For hazards with tech: null: the building shouldn't be there at all
+ *     (counts as incorrect — the lesson was "don't build").
+ * A tile with no above-threshold hazards is automatically correct.
+ */
+function placementIsHistoricallyCorrect(placement, tile) {
+  for (const [hz, intensity] of Object.entries(tile.hazards || {})) {
+    const rule = CORRECT_TECH_BY_HAZARD[hz];
+    if (!rule) continue;
+    if (intensity < rule.threshold) continue;
+    if (rule.tech === null) return false; // shouldn't have built here
+    if (!placement.tech.has(rule.tech)) return false; // missing the right tech
+  }
+  return true;
+}
+
+function computeOutcome() {
+  const perBuilding = [];
+  let totalPopulation = 0;
+  let populationSaved = 0;
+  let criticalPlaced = 0;
+  let criticalIntact = 0;
+
+  for (const [tileKey, placement] of state.placements) {
+    const [col, row] = tileKey.split(",").map(Number);
+    const tile = state.grid.find((t) => t.col === col && t.row === row);
+    const building = BUILDINGS[placement.building];
+    totalPopulation += building.population;
+    if (building.critical) criticalPlaced++;
+
+    // Residual hazards after tech protections
+    const residual = { ...tile.hazards };
+    for (const techKey of placement.tech) {
+      const t = TECH[techKey];
+      for (const [hz, p] of Object.entries(t.protects || {})) {
+        residual[hz] = Math.max(0, (residual[hz] || 0) - p);
+      }
+    }
+
+    let damage = 0;
+    for (const v of Object.values(residual)) damage += v;
+    if ((residual.rupture || 0) >= 100) damage = 200;
+    if ((residual.pyroclastic || 0) >= 100) damage = 200;
+    if ((residual.lava || 0) >= 100) damage = 200;
+    damage = Math.min(damage, 200);
+
+    let casualtyMult = 1.0;
+    if (state.citywideEarlyWarning) casualtyMult *= TECH.early_warning.casualty_multiplier;
+    if (placement.tech.has("pyroclastic_shelter") && tile.zone === "pyroclastic_zone") {
+      casualtyMult *= TECH.pyroclastic_shelter.casualty_multiplier_value;
+    }
+
+    let baseSurvival;
+    if (damage < 30) baseSurvival = 1.0;
+    else if (damage < 100) baseSurvival = 1.0 - (damage - 30) / 70;
+    else baseSurvival = 0;
+    const survival = 1 - (1 - baseSurvival) * casualtyMult;
+
+    const saved = Math.round(building.population * survival);
+    populationSaved += saved;
+
+    const intact = damage < 60;
+    if (building.critical && intact) criticalIntact++;
+
+    perBuilding.push({
+      tile,
+      building,
+      tech: Array.from(placement.tech),
+      damage: Math.round(damage),
+      saved,
+      total: building.population,
+      intact,
+    });
+  }
+
+  const popPct = totalPopulation > 0 ? populationSaved / totalPopulation : 0;
+  const critPct = criticalPlaced > 0 ? criticalIntact / criticalPlaced : 1;
+  const spent = STARTING_BUDGET - state.budget;
+  const spentPct = spent / STARTING_BUDGET;
+  const costEff = 1 - Math.abs(spentPct - 0.75) * 1.2;
+
+  // Historical accuracy — % of placements that made the right tech call
+  let historicallyCorrect = 0;
+  for (const [tileKey, placement] of state.placements) {
+    const [c, r] = tileKey.split(",").map(Number);
+    const tile = state.grid.find((t) => t.col === c && t.row === r);
+    if (placementIsHistoricallyCorrect(placement, tile)) historicallyCorrect++;
+  }
+  const histAccPct = state.placements.size > 0 ? historicallyCorrect / state.placements.size : 1;
+
+  const score = Math.round(
+    Math.max(0, Math.min(100,
+      popPct * 45 + critPct * 25 + Math.max(0, costEff) * 20 + histAccPct * 10
+    ))
+  );
+  const grade =
+    score >= 90 ? "A" : score >= 80 ? "B" : score >= 70 ? "C" : score >= 60 ? "D" : "F";
+
+  return {
+    perBuilding,
+    totalPopulation,
+    populationSaved,
+    criticalPlaced,
+    criticalIntact,
+    historicallyCorrect,
+    placementsTotal: state.placements.size,
+    historicalAccuracyPct: histAccPct,
+    spent,
+    score,
+    grade,
+  };
+}
+
+// ════════════════════════════════════════════════════════════════════
+// DEBRIEF
+// ════════════════════════════════════════════════════════════════════
+
+function renderDebrief() {
+  const sc = SCENARIOS[state.scenarioKey];
+  const o = state.lastOutcome;
+  const root = document.getElementById("debrief-content");
+  clear(root);
+
+  const popRatio = o.populationSaved / Math.max(1, o.totalPopulation);
+  const popClass = popRatio > 0.7 ? "ok" : popRatio > 0.4 ? "warn" : "bad";
+  const critRatio = o.criticalIntact / Math.max(1, o.criticalPlaced);
+  const critClass = critRatio > 0.7 ? "ok" : critRatio > 0.4 ? "warn" : "bad";
+  const histRatio = o.historicalAccuracyPct;
+  const histClass = histRatio > 0.7 ? "ok" : histRatio > 0.4 ? "warn" : "bad";
+
+  root.append(
+    el("h2", { text: `Debrief: ${sc.name}` }),
+    el("div", { class: "debrief-meta", text: sc.disaster }),
+    el("div", { class: `grade-banner grade-${o.grade}`, text: `Final grade: ${o.grade} (${o.score}/100)` }),
+    buildScoreboard(o, popClass, critClass, histClass),
+    buildPerBuildingSection(o),
+    buildCompareToHistorySection(o, sc),
+    buildDebriefNgssSection(sc),
+    buildDebriefActions()
+  );
+}
+
+function buildScoreboard(o, popClass, critClass, histClass) {
+  const histPct = Math.round((o.historicalAccuracyPct || 0) * 100);
+  return el("div", { class: "scoreboard" },
+    scoreCard("Population saved", `${o.populationSaved.toLocaleString()} / ${o.totalPopulation.toLocaleString()}`, popClass),
+    scoreCard("Critical infra intact", `${o.criticalIntact} / ${o.criticalPlaced}`, critClass),
+    scoreCard("Historical Awareness", `${o.historicallyCorrect} / ${o.placementsTotal} (${histPct}%)`, histClass),
+    scoreCard("Budget spent", `$${formatCost(o.spent)}`, "")
+  );
+}
+
+function scoreCard(label, value, cls) {
+  return el("div", { class: "score-card" },
+    el("div", { class: "score-label", text: label }),
+    el("div", { class: `score-value ${cls}`, text: value })
+  );
+}
+
+function buildPerBuildingSection(o) {
+  const section = el("div", { class: "debrief-section" }, el("h3", { text: "Per-building outcomes" }));
+  const list = el("div", { class: "outcome-list" });
+  for (const row of o.perBuilding) {
+    const status = row.damage < 30 ? "Intact" : row.damage < 60 ? "Damaged" : row.damage < 100 ? "Heavily damaged" : "Destroyed";
+    const statusClass = row.damage < 30 ? "ok" : row.damage < 60 ? "warn" : "bad";
+    const techStr = row.tech.length > 0 ? row.tech.map((k) => TECH[k].name).join(", ") : "no upgrades";
+
+    list.appendChild(el("div", { class: "outcome-row" },
+      el("div", null,
+        el("strong", { text: `${row.building.icon} ${row.building.name}` }),
+        ` at (${row.tile.col + 1}, ${row.tile.row + 1})`,
+        el("div", { class: "outcome-detail", text: `${row.tile.zone} · ${techStr}` })
+      ),
+      el("div", { style: { textAlign: "right" } },
+        el("div", { style: { color: `var(--${statusClass})`, fontWeight: "600" }, text: status }),
+        el("div", { class: "outcome-detail", text: `${row.saved} / ${row.total} people` })
+      )
+    ));
+  }
+  section.appendChild(list);
+  return section;
+}
+
+function buildDebriefNgssSection(sc) {
+  const section = el("div", { class: "debrief-section" },
+    el("h3", { text: "What this run exercised" }),
+    el("div", { class: "ngss-footer" },
+      el("strong", { text: "NGSS standards: " }),
+      sc.ngss.join(" · ")
+    )
+  );
+  return section;
+}
+
+function buildDebriefActions() {
+  return el("div", { class: "debrief-actions" },
+    el("button", { class: "btn btn-primary", onclick: startBuild, text: "↺ Rebuild this scenario" }),
+    el("button", { class: "btn btn-secondary", onclick: () => showScreen("title"), text: "← Pick a different scenario" })
+  );
+}
+
+// ════════════════════════════════════════════════════════════════════
+// BOOTSTRAP
+// ════════════════════════════════════════════════════════════════════
+
+// ════════════════════════════════════════════════════════════════════
+// PHASE D — case studies (briefing + debrief + library)
+// ════════════════════════════════════════════════════════════════════
+
+function buildCaseStudyCard(csKey, opts) {
+  opts = opts || {};
+  const cs = CASE_STUDIES[csKey];
+  if (!cs) return el("div", { class: "case-study-card", text: `(missing case study: ${csKey})` });
+
+  const card = el("div", { class: "case-study-card" + (opts.startsExpanded ? " expanded" : "") });
+  card.appendChild(el("div", { class: "cs-title", text: cs.title }));
+  card.appendChild(el("div", { class: "cs-meta", text: `${cs.date} · ${cs.scale} · ${cs.death_toll}` }));
+  card.appendChild(el("div", { class: "cs-hook", text: firstSentence(cs.summary) }));
+  card.appendChild(el("div", { class: "cs-expand-hint", text: "Click to read full case study →" }));
+
+  const detail = el("div", { class: "cs-detail" });
+  if (opts.takeaway) {
+    detail.appendChild(el("div", { class: "cs-takeaway", text: opts.takeaway }));
+  }
+  detail.appendChild(el("h4", { text: "What happened" }));
+  detail.appendChild(el("p", { text: cs.summary }));
+  detail.appendChild(el("h4", { text: "What the engineering taught us" }));
+  detail.appendChild(el("p", { text: cs.lesson }));
+
+  detail.appendChild(el("h4", { text: "Photo" }));
+  const imgPlaceholder = el("div", { class: "cs-image-placeholder" });
+  imgPlaceholder.append(el("strong", { text: "Image placeholder. " }), cs.image.caption || "");
+  detail.appendChild(imgPlaceholder);
+
+  detail.appendChild(el("h4", { text: "Primary sources" }));
+  const sourcesEl = el("div", { class: "cs-sources" });
+  for (const src of cs.sources) {
+    const link = el("a", { href: src.url, target: "_blank", rel: "noopener", text: src.label });
+    link.addEventListener("click", (e) => e.stopPropagation());
+    const opvl = el("div", { class: "cs-source-opvl", text: src.opvl || "" });
+    sourcesEl.appendChild(el("div", { class: "cs-source" }, link, opvl));
+  }
+  detail.appendChild(sourcesEl);
+
+  detail.appendChild(el("h4", { text: "NGSS standards exercised" }));
+  const ngssEl = el("div", { class: "cs-ngss" });
+  for (const code of cs.ngss) {
+    ngssEl.appendChild(el("span", { class: "cs-ngss-chip", text: code }));
+  }
+  detail.appendChild(ngssEl);
+
+  card.appendChild(detail);
+  card.addEventListener("click", () => card.classList.toggle("expanded"));
+  return card;
+}
+
+function firstSentence(text) {
+  const idx = text.indexOf(". ");
+  return idx > 0 ? text.slice(0, idx + 1) : text;
+}
+
+function buildRealEventsSection(scenario) {
+  const linked = (scenario.case_studies || []).filter((k) => CASE_STUDIES[k]);
+  if (linked.length === 0) return el("div");
+  const section = el("div", { class: "cs-section" },
+    el("h3", { class: "cs-section-title", text: "Real events this scenario is based on" })
+  );
+  for (const csKey of linked) section.appendChild(buildCaseStudyCard(csKey));
+  return section;
+}
+
+function buildCompareToHistorySection(outcome, scenario) {
+  // Tally failure modes from destroyed/heavy buildings
+  const modeCount = {};
+  for (const row of outcome.perBuilding) {
+    if (row.damage < 60) continue;
+    const dominant = findDominantHazard(row.tile);
+    if (dominant) modeCount[dominant] = (modeCount[dominant] || 0) + 1;
+  }
+  const picks = pickCaseStudiesForFailureModes(modeCount);
+
+  const section = el("div", { class: "cs-section" });
+  section.appendChild(el("h3", { class: "cs-section-title", text: "Compare to history" }));
+
+  if (picks.length > 0) {
+    section.appendChild(el("p", { class: "cs-lead", text: "Your failure modes echo what happened in these real events:" }));
+    for (const p of picks) section.appendChild(buildCaseStudyCard(p.case, { takeaway: p.takeaway }));
+  } else {
+    section.appendChild(el("p", { class: "cs-lead", text: "You avoided the worst this run — here's what happened when others didn't." }));
+    const linked = (scenario.case_studies || []).filter((k) => CASE_STUDIES[k]).slice(0, 2);
+    for (const csKey of linked) section.appendChild(buildCaseStudyCard(csKey));
+  }
+  return section;
+}
+
+function findDominantHazard(tile) {
+  let best = null, bestV = 0;
+  for (const [k, v] of Object.entries(tile.hazards || {})) {
+    if (v > bestV) { bestV = v; best = k; }
+  }
+  return best;
+}
+
+function pickCaseStudiesForFailureModes(modeCount) {
+  const sorted = Object.entries(modeCount).sort((a, b) => b[1] - a[1]);
+  const seen = new Set();
+  const picks = [];
+  for (const [hazard] of sorted) {
+    const candidates = HAZARD_TO_CASE_STUDY[hazard] || [];
+    for (const c of candidates) {
+      if (!seen.has(c.case)) {
+        picks.push(c);
+        seen.add(c.case);
+        if (picks.length >= 2) return picks;
+      }
+    }
+  }
+  return picks;
+}
+
+function renderLibrary() {
+  const grid = document.getElementById("cs-library-grid");
+  if (!grid) return;
+  clear(grid);
+  for (const csKey of Object.keys(CASE_STUDIES)) {
+    grid.appendChild(buildCaseStudyCard(csKey));
+  }
+}
+
+function showLibrary() {
+  renderLibrary();
+  showScreen("library");
+}
+
+// ════════════════════════════════════════════════════════════════════
+// BOOTSTRAP
+// ════════════════════════════════════════════════════════════════════
+
+document.addEventListener("DOMContentLoaded", () => {
+  renderScenarioPicker();
+  document.getElementById("run-button").addEventListener("click", runSimulation);
+  document.getElementById("back-to-picker").addEventListener("click", () => showScreen("title"));
+
+  // Phase D — Case Study Library
+  const openLib = document.getElementById("open-library");
+  if (openLib) openLib.addEventListener("click", showLibrary);
+  const libBack = document.getElementById("library-back");
+  if (libBack) libBack.addEventListener("click", () => showScreen("title"));
+
+  // Right-click on tile removes placement (refunds 50%)
+  document.getElementById("grid").addEventListener("contextmenu", (e) => {
+    e.preventDefault();
+    const tileEl = e.target.closest(".tile");
+    if (!tileEl) return;
+    const idx = Array.from(tileEl.parentNode.children).indexOf(tileEl);
+    if (idx < 0) return;
+    const tile = state.grid[idx];
+    if (!tile) return;
+    const key = `${tile.col},${tile.row}`;
+    const placement = state.placements.get(key);
+    if (!placement) return;
+    let refund = BUILDINGS[placement.building].cost * 0.5;
+    for (const techKey of placement.tech) refund += TECH[techKey].cost * 0.5;
+    state.budget += Math.round(refund);
+    if (placement.tech.has("early_warning")) {
+      let stillCitywide = false;
+      for (const [k, p] of state.placements) {
+        if (k === key) continue;
+        if (p.tech.has("early_warning")) { stillCitywide = true; break; }
+      }
+      state.citywideEarlyWarning = stillCitywide;
+    }
+    state.placements.delete(key);
+    renderGrid();
+    renderPalette();
+    updateBudgetDisplay();
+  });
+});

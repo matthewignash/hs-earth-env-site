@@ -1,0 +1,760 @@
+/* Tectonic City Builder v2 — palette + layout */
+
+:root {
+  --bg: #f6f4ee;
+  --ink: #1f2a37;
+  --muted: #5b6573;
+  --card: #ffffff;
+  --line: #d9d4c4;
+  --accent: #c9542d;
+  --accent-soft: #f4ddcf;
+  --ok: #2e7d4f;
+  --warn: #c9882d;
+  --bad: #b3261e;
+
+  /* Tile zone colors */
+  --tile: #e9e4d3;
+  --tile-bedrock: #d6cdb0;
+  --tile-fill: #ddd0a0;
+  --tile-reclaimed: #c8b87a;          /* NEW: reclaimed land, deeper than fill */
+  --tile-coast: #c6dbe2;
+  --tile-ocean: #6f9bb0;
+  --tile-fault: #b3826b;
+  --tile-urban: #e5dcc6;              /* NEW: dense urban, lighter than bedrock */
+  --tile-urban-near: #d9c6a5;         /* NEW: near-fault urban */
+  --tile-lava-hi: #d97a4b;
+  --tile-lava-med: #e5b08c;
+  --tile-ash: #b9b09d;
+  --tile-volcano: #5b3a2b;
+  --tile-pyroclastic: #8b3a2b;        /* NEW: lethal pyroclastic zone */
+  --tile-lahar: #8c7a52;              /* NEW: lahar mudflow valley */
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background: var(--bg);
+  color: var(--ink);
+  line-height: 1.5;
+  min-height: 100vh;
+}
+
+/* ───── Screen system ───── */
+.screen { display: none; padding: 24px; max-width: 1200px; margin: 0 auto; }
+.screen.active { display: block; }
+
+/* ───── Title screen ───── */
+.title-hero { text-align: center; padding: 56px 24px 32px; }
+.title-hero h1 { font-size: 36px; color: var(--accent); margin-bottom: 12px; }
+.title-hero p { color: var(--muted); max-width: 600px; margin: 0 auto 24px; font-size: 16px; }
+.scenario-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 16px;
+  margin-top: 24px;
+}
+.scenario-card {
+  background: var(--card);
+  border: 2px solid var(--line);
+  border-radius: 12px;
+  padding: 18px;
+  cursor: pointer;
+  transition: border-color 0.15s, transform 0.1s, box-shadow 0.15s;
+}
+.scenario-card:hover {
+  border-color: var(--accent);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(201, 84, 45, 0.12);
+}
+.scenario-card h3 { font-size: 18px; color: var(--ink); margin-bottom: 4px; }
+.scenario-card .scenario-meta { font-size: 13px; color: var(--muted); margin-bottom: 8px; }
+.scenario-card .scenario-hazards { font-size: 13px; color: var(--ink); }
+
+/* ───── Briefing screen ───── */
+.briefing { background: var(--card); border-radius: 12px; padding: 24px; border: 1px solid var(--line); }
+.briefing h2 { font-size: 26px; color: var(--accent); margin-bottom: 6px; }
+.briefing .briefing-meta { color: var(--muted); margin-bottom: 16px; font-size: 14px; }
+.briefing h3 { font-size: 16px; margin-top: 20px; margin-bottom: 8px; }
+.briefing p { margin-bottom: 10px; }
+.briefing .hazards-list { display: flex; flex-wrap: wrap; gap: 10px; margin: 8px 0 16px; }
+.briefing .hazard-chip {
+  background: var(--accent-soft);
+  color: var(--ink);
+  padding: 6px 12px;
+  border-radius: 16px;
+  font-size: 13px;
+  font-weight: 600;
+}
+.briefing .legend { display: flex; flex-wrap: wrap; gap: 12px; margin: 12px 0; font-size: 13px; }
+.briefing .legend-item { display: inline-flex; align-items: center; gap: 6px; }
+.briefing .legend-swatch { width: 16px; height: 16px; border-radius: 3px; border: 1px solid var(--line); }
+.briefing .tech-list { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px; }
+.briefing .tech-chip { background: var(--bg); border: 1px solid var(--line); padding: 4px 10px; border-radius: 12px; font-size: 13px; }
+.briefing .ngss-footer { margin-top: 24px; padding-top: 16px; border-top: 1px solid var(--line); font-size: 12px; color: var(--muted); }
+.briefing .ngss-footer strong { color: var(--ink); }
+.briefing-actions { margin-top: 20px; display: flex; gap: 12px; }
+
+/* ───── Build screen ───── */
+.build-layout {
+  display: grid;
+  grid-template-columns: 1fr 280px;
+  gap: 20px;
+}
+.build-main { background: var(--card); border-radius: 12px; padding: 16px; border: 1px solid var(--line); }
+.build-header { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 12px; }
+.build-header h2 { font-size: 20px; color: var(--accent); }
+.build-header .scenario-sub { font-size: 13px; color: var(--muted); }
+
+/* Grid */
+.grid-wrap { display: flex; justify-content: center; padding: 12px 0; }
+.grid {
+  display: grid;
+  grid-template-columns: repeat(8, 64px);
+  grid-template-rows: repeat(6, 64px);
+  gap: 2px;
+  background: var(--line);
+  padding: 2px;
+  border-radius: 6px;
+}
+.tile {
+  background: var(--tile-bedrock);
+  border: 1px solid transparent;
+  cursor: pointer;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  user-select: none;
+  transition: transform 0.05s;
+}
+.tile:hover { border-color: var(--accent); transform: scale(1.04); z-index: 2; }
+.tile.zone-ocean { background: var(--tile-ocean); cursor: not-allowed; }
+.tile.zone-coastal { background: var(--tile-coast); }
+.tile.zone-fill { background: var(--tile-fill); }
+.tile.zone-reclaimed_land { background: var(--tile-reclaimed); }
+.tile.zone-bedrock { background: var(--tile-bedrock); }
+.tile.zone-fault { background: var(--tile-fault); }
+.tile.zone-urban { background: var(--tile-urban); }
+.tile.zone-urban-near { background: var(--tile-urban-near); }
+.tile.zone-volcano { background: var(--tile-volcano); cursor: not-allowed; }
+.tile.zone-pyroclastic_zone { background: var(--tile-pyroclastic); }
+.tile.zone-lahar_valley { background: var(--tile-lahar); }
+.tile.zone-ashfall_plume { background: var(--tile-ash); }
+.tile.zone-lava_path { background: var(--tile-lava-hi); }
+.tile.zone-lava_adjacent { background: var(--tile-lava-med); }
+.tile.unbuildable { cursor: not-allowed; }
+.tile .tile-tech {
+  position: absolute;
+  top: 1px;
+  right: 2px;
+  font-size: 11px;
+  background: rgba(255, 255, 255, 0.85);
+  padding: 1px 4px;
+  border-radius: 3px;
+  line-height: 1;
+}
+
+/* Sidebar */
+.build-side { display: flex; flex-direction: column; gap: 14px; }
+.budget-card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 14px;
+}
+.budget-card .budget-label { font-size: 12px; color: var(--muted); }
+.budget-card .budget-value { font-size: 26px; font-weight: 700; color: var(--ok); }
+.budget-card .budget-value.low { color: var(--warn); }
+.budget-card .budget-value.empty { color: var(--bad); }
+.palette {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 14px;
+}
+.palette h3 { font-size: 13px; text-transform: uppercase; letter-spacing: 0.5px; color: var(--muted); margin-bottom: 8px; }
+.palette-list { display: flex; flex-direction: column; gap: 6px; }
+.palette-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--bg);
+  border: 1.5px solid var(--line);
+  border-radius: 6px;
+  padding: 8px 10px;
+  cursor: pointer;
+  font-size: 13px;
+  transition: border-color 0.1s;
+}
+.palette-item:hover { border-color: var(--accent); }
+.palette-item.selected { border-color: var(--accent); background: var(--accent-soft); }
+.palette-item .palette-icon { font-size: 18px; }
+.palette-item .palette-cost { margin-left: auto; color: var(--muted); font-size: 12px; }
+.palette-item.unaffordable { opacity: 0.5; cursor: not-allowed; }
+.palette-info { font-size: 12px; color: var(--muted); margin-top: 6px; min-height: 32px; }
+
+.run-button {
+  background: var(--accent);
+  color: white;
+  border: none;
+  padding: 14px 24px;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  width: 100%;
+  margin-top: auto;
+}
+.run-button:hover { background: #a8421f; }
+.run-button:disabled { background: var(--muted); cursor: not-allowed; }
+
+/* ───── Disaster banner (between Build and Debrief) ───── */
+.disaster-banner {
+  background: var(--bad);
+  color: white;
+  text-align: center;
+  padding: 32px 24px;
+  font-size: 26px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  border-radius: 12px;
+  margin: 100px auto;
+  max-width: 600px;
+}
+
+/* ───── Debrief screen ───── */
+.debrief { background: var(--card); border-radius: 12px; padding: 24px; border: 1px solid var(--line); }
+.debrief h2 { font-size: 26px; color: var(--accent); margin-bottom: 4px; }
+.debrief .debrief-meta { color: var(--muted); margin-bottom: 20px; font-size: 14px; }
+.scoreboard { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 12px; margin: 16px 0; }
+.scoreboard .score-card {
+  background: var(--bg);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 14px;
+}
+.scoreboard .score-label { font-size: 12px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.5px; }
+.scoreboard .score-value { font-size: 24px; font-weight: 700; color: var(--ink); margin-top: 4px; }
+.scoreboard .score-value.ok { color: var(--ok); }
+.scoreboard .score-value.warn { color: var(--warn); }
+.scoreboard .score-value.bad { color: var(--bad); }
+.grade-banner {
+  display: inline-block;
+  padding: 10px 24px;
+  border-radius: 8px;
+  font-size: 22px;
+  font-weight: 800;
+  margin: 8px 0;
+  color: white;
+}
+.grade-banner.grade-A { background: var(--ok); }
+.grade-banner.grade-B { background: #4a8a3b; }
+.grade-banner.grade-C { background: var(--warn); }
+.grade-banner.grade-D { background: #c46b2d; }
+.grade-banner.grade-F { background: var(--bad); }
+.debrief-section { margin-top: 20px; padding-top: 16px; border-top: 1px solid var(--line); }
+.debrief-section h3 { font-size: 16px; margin-bottom: 8px; }
+.outcome-list { font-size: 14px; }
+.outcome-list .outcome-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 6px 0;
+  border-bottom: 1px dashed var(--line);
+}
+.outcome-list .outcome-row:last-child { border-bottom: none; }
+.outcome-list .outcome-detail { color: var(--muted); font-size: 13px; }
+
+.debrief-actions { margin-top: 24px; display: flex; gap: 12px; flex-wrap: wrap; }
+
+/* ───── Buttons ───── */
+.btn {
+  display: inline-block;
+  padding: 10px 18px;
+  border-radius: 8px;
+  border: none;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
+}
+.btn-primary { background: var(--accent); color: white; }
+.btn-primary:hover { background: #a8421f; }
+.btn-secondary { background: var(--bg); color: var(--ink); border: 1.5px solid var(--line); }
+.btn-secondary:hover { border-color: var(--accent); }
+
+/* ───── SVG tile sprites (Phase B) ───── */
+.tile { font-size: 0; /* hide leftover emoji baseline */ }
+.tile-sprite {
+  display: block;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+/* Building piece fills */
+.sprite-building .iso-front  { fill: var(--front-color, #d8c298); stroke: var(--ink); stroke-width: 0.5; }
+.sprite-building .iso-side   { fill: var(--side-color, #b9a378); stroke: var(--ink); stroke-width: 0.5; }
+.sprite-building .iso-door   { fill: #5a4530; }
+.sprite-building .iso-window { fill: #7ba3b0; }
+.sprite-building .iso-trim   { fill: #6b5a3e; }
+.sprite-building .iso-trim-line { stroke: var(--ink); stroke-width: 0.6; fill: none; }
+.sprite-building .iso-arch   { fill: #6b5a3e; }
+.sprite-building .iso-cross  { fill: #c92d2d; }
+.sprite-building .iso-tower  { fill: var(--front-color, #d8c298); stroke: var(--ink); stroke-width: 0.5; }
+.sprite-building .iso-tower-roof { fill: var(--accent); }
+.sprite-building .iso-stack       { fill: #6e6e6e; stroke: var(--ink); stroke-width: 0.4; }
+.sprite-building .iso-stack-rim   { fill: #4a4a4a; }
+.sprite-building .iso-awning      { fill: var(--accent); stroke: var(--ink); stroke-width: 0.5; }
+
+/* Per-building color overrides via CSS variables */
+.sprite-housing  { --front-color: #d8c298; --side-color: #b9a378; }
+.sprite-hospital { --front-color: #f3ecd8; --side-color: #d8d0b8; }
+.sprite-school   { --front-color: #e8d075; --side-color: #c8b055; }
+.sprite-power    { --front-color: #b4ada0; --side-color: #94928a; }
+.sprite-market   { --front-color: #c8b87a; --side-color: #a89858; }
+
+/* Default flat roof */
+.iso-roof { fill: #8b7355; stroke: var(--ink); stroke-width: 0.5; }
+/* Steep pitched roof (when ash_roof installed) */
+.iso-roof-steep polygon { fill: #6b5a3e; stroke: var(--ink); stroke-width: 0.5; }
+
+/* Tech overlay fills */
+.overlay-base-isolation path { fill: none; stroke: var(--accent); stroke-width: 1.5; stroke-linecap: round; }
+.overlay-shear-walls   line  { stroke: rgba(31, 42, 55, 0.55); stroke-width: 1.2; }
+.overlay-tsunami-wall  rect  { fill: #9b9080; stroke: var(--ink); stroke-width: 0.5; }
+.overlay-tsunami-wall  line  { stroke: #5a4530; stroke-width: 0.4; }
+.overlay-deep-foundation line { stroke: #4a3a25; stroke-width: 1.2; }
+.overlay-lava-berm polygon { fill: #8b5a3a; stroke: var(--ink); stroke-width: 0.5; }
+.overlay-lahar-diversion polygon { fill: #4a3a28; stroke: var(--ink); stroke-width: 0.3; }
+.overlay-lahar-diversion .lahar-water { fill: #6b5a3e; stroke: none; }
+.overlay-pyroclastic-shelter rect    { fill: #8a8278; stroke: var(--ink); stroke-width: 0.4; }
+.overlay-pyroclastic-shelter polygon { fill: #6b6058; stroke: var(--ink); stroke-width: 0.4; }
+.overlay-pyroclastic-shelter .bunker-door { fill: #2a2a2a; stroke: none; }
+
+/* ───── City-wide badge (early warning) ───── */
+.citywide-badge {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background: var(--accent);
+  color: white;
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+  pointer-events: none;
+  z-index: 3;
+}
+.build-main { position: relative; }
+
+/* ───── Tech demo popover ───── */
+.tech-demo-popover {
+  position: fixed;
+  display: none;
+  background: var(--card);
+  border: 1.5px solid var(--accent);
+  border-radius: 8px;
+  padding: 6px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
+  z-index: 1000;
+  width: 200px;
+  pointer-events: none;
+}
+.tech-demo-popover.visible { display: block; }
+.tech-demo-popover .demo-svg { width: 100%; height: auto; }
+.tech-demo-popover .demo-label {
+  font-family: sans-serif;
+  font-size: 4px;
+  fill: var(--muted);
+}
+.tech-demo-popover .demo-building       { fill: #d8c298; stroke: var(--ink); stroke-width: 0.6; }
+.tech-demo-popover .demo-window         { fill: #7ba3b0; }
+.tech-demo-popover .demo-door           { fill: #5a4530; }
+.tech-demo-popover .demo-ground         { fill: #b9a378; }
+.tech-demo-popover .demo-ground-line    { stroke: var(--ink); stroke-width: 0.5; }
+.tech-demo-popover .demo-ground-liquid  { fill: #b9a378; }
+.tech-demo-popover .demo-pile           { stroke: #4a3a25; stroke-width: 1; stroke-dasharray: 2 2; }
+.tech-demo-popover .demo-brace          { stroke: rgba(31, 42, 55, 0.6); stroke-width: 1.2; }
+.tech-demo-popover .demo-wall           { fill: #9b9080; stroke: var(--ink); stroke-width: 0.5; }
+.tech-demo-popover .demo-wave           { fill: #6f9bb0; opacity: 0.85; }
+.tech-demo-popover .demo-mast           { stroke: var(--ink); stroke-width: 1.5; }
+.tech-demo-popover .demo-antenna        { fill: var(--accent); }
+.tech-demo-popover .demo-ring           { fill: none; stroke: var(--accent); stroke-width: 1; opacity: 0.7; }
+.tech-demo-popover .demo-person         { fill: var(--ink); }
+.tech-demo-popover .demo-berm           { fill: #8b5a3a; stroke: var(--ink); stroke-width: 0.5; }
+.tech-demo-popover .demo-lava           { fill: #d97a4b; }
+.tech-demo-popover .demo-pitched-roof   { fill: #6b5a3e; stroke: var(--ink); stroke-width: 0.5; }
+.tech-demo-popover .demo-ash            { fill: #888; }
+.tech-demo-popover .demo-trench         { fill: #4a3a28; }
+.tech-demo-popover .demo-mud            { stroke: #6b5a3e; }
+.tech-demo-popover .demo-bunker         { fill: #8a8278; stroke: var(--ink); stroke-width: 0.4; }
+.tech-demo-popover .demo-bunker-roof    { fill: #6b6058; stroke: var(--ink); stroke-width: 0.4; }
+.tech-demo-popover .demo-pyroclastic    { fill: rgba(217, 122, 75, 0.85); }
+
+/* ───── Hover demo animations (~2s loops) ───── */
+@keyframes shakeGround {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(3px); }
+  75% { transform: translateX(-3px); }
+}
+.anim-shake-ground { animation: shakeGround 0.6s ease-in-out infinite; transform-origin: center; }
+
+@keyframes tiltSnap {
+  0%, 100% { transform: rotate(0deg); }
+  40% { transform: rotate(-7deg); }
+  60% { transform: rotate(7deg); }
+}
+.anim-tilt-snap { animation: tiltSnap 1.8s ease-in-out infinite; }
+
+@keyframes waveSweep {
+  0% { transform: translateX(0); opacity: 1; }
+  60% { transform: translateX(20px); opacity: 1; }
+  80% { transform: translateX(20px); opacity: 0.6; }
+  100% { transform: translateX(0); opacity: 0; }
+}
+.anim-wave-sweep { animation: waveSweep 2s ease-out infinite; }
+
+@keyframes liquefy {
+  0%, 100% { opacity: 1; transform: translateY(0); }
+  50% { opacity: 0.6; transform: translateY(2px); }
+}
+.anim-liquefy { animation: liquefy 1.6s ease-in-out infinite; }
+
+@keyframes pulse {
+  0% { opacity: 1; transform: scale(0.6); }
+  100% { opacity: 0; transform: scale(1.4); }
+}
+.anim-pulse circle { animation: pulse 1.6s ease-out infinite; transform-origin: 40px 18px; }
+.anim-pulse circle:nth-child(2) { animation-delay: 0.5s; }
+.anim-pulse circle:nth-child(3) { animation-delay: 1.0s; }
+
+@keyframes peopleFlee {
+  0% { transform: translateX(0); opacity: 1; }
+  100% { transform: translateX(-20px); opacity: 0; }
+}
+.anim-people-flee circle:first-child { animation: peopleFlee 1.8s ease-in infinite; }
+.anim-people-flee circle:last-child  { animation: peopleFlee 1.8s ease-in infinite reverse; }
+
+@keyframes lavaDivert {
+  0%, 100% { transform: translateX(0); opacity: 1; }
+  50% { transform: translateX(-4px); opacity: 0.8; }
+}
+.anim-lava-divert { animation: lavaDivert 1.4s ease-in-out infinite; }
+
+@keyframes ashfall {
+  0% { transform: translateY(-12px); opacity: 0; }
+  20% { opacity: 1; }
+  100% { transform: translateY(34px); opacity: 0; }
+}
+.anim-ashfall circle { animation: ashfall 2s linear infinite; }
+.anim-ashfall circle:nth-child(2) { animation-delay: 0.5s; }
+.anim-ashfall circle:nth-child(3) { animation-delay: 1.0s; }
+.anim-ashfall circle:nth-child(4) { animation-delay: 1.5s; }
+
+@keyframes laharFlow {
+  0% { stroke-dashoffset: 0; }
+  100% { stroke-dashoffset: -40; }
+}
+.anim-lahar-flow .demo-mud { stroke-dasharray: 6 4; animation: laharFlow 1.5s linear infinite; }
+
+@keyframes pyroclasticSweep {
+  0% { transform: translateX(-30px); opacity: 0; }
+  30% { opacity: 1; }
+  70% { opacity: 1; }
+  100% { transform: translateX(80px); opacity: 0; }
+}
+.anim-pyroclastic-sweep polygon { animation: pyroclasticSweep 2.4s ease-out infinite; }
+
+@keyframes buildingDestroy {
+  0%, 30% { opacity: 1; transform: scale(1, 1); }
+  60% { opacity: 0.4; transform: scale(1, 0.6); }
+  100% { opacity: 0.1; transform: scale(1, 0.3); }
+}
+.anim-building-destroy rect {
+  animation: buildingDestroy 2.4s ease-in infinite;
+  transform-origin: center bottom;
+  transform-box: fill-box;
+}
+
+/* ═════════════════════════════════════════════════════════════════
+   Phase C — DAMAGE STATES + DISASTER ANIMATION
+   ═════════════════════════════════════════════════════════════════ */
+
+/* ───── Damage state classes on .tile-sprite ───── */
+.tile-sprite { transition: transform 0.18s ease-out; transform-origin: center bottom; }
+.tile-sprite.damage-cracked { transform: rotate(-2deg); }
+.tile-sprite.damage-heavy   { transform: rotate(-4deg); filter: brightness(0.85) saturate(0.85); }
+.tile-sprite.damage-destroyed { /* rubble sprite handles its own look */ }
+
+/* Crack overlay */
+.damage-cracks path { fill: none; stroke: #2a1a10; stroke-width: 0.8; stroke-linecap: round; }
+.damage-heavy-marks .roof-break  { fill: #2a1a10; }
+.damage-heavy-marks .heavy-crack { fill: none; stroke: #2a1a10; stroke-width: 1.2; stroke-linecap: round; }
+.damage-heavy-marks .smoke-wisp circle {
+  fill: #888;
+  opacity: 0;
+  animation: smokeWisp 1.6s ease-out infinite;
+}
+.damage-heavy-marks .smoke-wisp circle:nth-child(1) { animation-delay: 0s; }
+.damage-heavy-marks .smoke-wisp circle:nth-child(2) { animation-delay: 0.3s; }
+.damage-heavy-marks .smoke-wisp circle:nth-child(3) { animation-delay: 0.6s; }
+@keyframes smokeWisp {
+  0%   { opacity: 0; transform: translateY(0) scale(0.6); }
+  30%  { opacity: 0.6; }
+  100% { opacity: 0; transform: translateY(-12px) scale(1.4); }
+}
+
+/* Rubble sprite (destroyed) */
+.sprite-rubble .rubble-pile  { fill: #7a6a55; stroke: var(--ink); stroke-width: 0.5; }
+.sprite-rubble .rubble-stone { fill: #4a3a28; }
+.sprite-rubble .flame-plume .flame-outer { fill: #d97a4b; opacity: 0.9; animation: flameFlicker 0.35s ease-in-out infinite alternate; }
+.sprite-rubble .flame-plume .flame-inner { fill: #ffcf66; opacity: 0.95; animation: flameFlicker 0.25s ease-in-out infinite alternate-reverse; }
+.sprite-rubble .rubble-smoke circle { fill: #888; opacity: 0; animation: rubbleSmoke 1.8s ease-out infinite; }
+.sprite-rubble .rubble-smoke circle:nth-child(1) { animation-delay: 0s; }
+.sprite-rubble .rubble-smoke circle:nth-child(2) { animation-delay: 0.5s; }
+.sprite-rubble .rubble-smoke circle:nth-child(3) { animation-delay: 1.0s; }
+@keyframes flameFlicker {
+  0%   { transform: scaleY(1)   translateY(0); }
+  100% { transform: scaleY(1.1) translateY(-1px); }
+}
+@keyframes rubbleSmoke {
+  0%   { opacity: 0;   transform: translateY(0)   scale(0.6); }
+  30%  { opacity: 0.6; }
+  100% { opacity: 0;   transform: translateY(-16px) scale(1.6); }
+}
+
+/* ───── Grid shake during quake scenarios ───── */
+.grid.is-shaking { animation: gridShake 0.18s ease-in-out infinite; }
+@keyframes gridShake {
+  0%, 100% { transform: translate(0, 0); }
+  25%      { transform: translate(2px, -1px); }
+  75%      { transform: translate(-2px, 1px); }
+}
+
+/* ───── Inline disaster banner ───── */
+.disaster-banner-inline {
+  background: var(--bad);
+  color: white;
+  text-align: center;
+  padding: 10px 16px;
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 0.6px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  display: none;
+}
+.disaster-banner-inline.visible { display: block; animation: bannerPulse 0.5s ease-out; }
+@keyframes bannerPulse {
+  0%   { transform: scale(0.98); opacity: 0; }
+  100% { transform: scale(1);    opacity: 1; }
+}
+
+/* ───── Hazard overlay (positioned over .grid during animation) ───── */
+.grid-wrap { position: relative; }
+.hazard-overlay {
+  position: absolute;
+  inset: 12px;
+  width: calc(100% - 24px);
+  height: calc(100% - 24px);
+  pointer-events: none;
+  z-index: 5;
+}
+
+/* Tōhoku / Cascadia — blue wave sweeping left → right */
+.hazard-wave .wave-mass  { fill: rgba(111, 155, 176, 0.55); }
+.hazard-wave .wave-crest { fill: none; stroke: rgba(255,255,255,0.7); stroke-width: 3; }
+.anim-wave-sweep-grid {
+  animation: waveSweepGrid 1.5s ease-out forwards;
+  transform-origin: left center;
+}
+@keyframes waveSweepGrid {
+  0%   { transform: translateX(0)    scaleX(0.4); opacity: 0; }
+  20%  { opacity: 1; }
+  100% { transform: translateX(420px) scaleX(1.4); opacity: 0.7; }
+}
+
+/* Anatolian — red glow flash along fault diagonal */
+.hazard-fault .fault-glow { stroke: rgba(217, 122, 75, 0.55); fill: none; stroke-linecap: round; }
+.hazard-fault .fault-line { stroke: var(--bad); fill: none; stroke-linecap: round; }
+.anim-fault-flash {
+  animation: faultFlash 1.5s ease-out forwards;
+  transform-origin: center;
+}
+@keyframes faultFlash {
+  0%   { opacity: 0; }
+  20%  { opacity: 1; }
+  40%  { opacity: 0.3; }
+  60%  { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+/* Merapi — pyroclastic cone expanding + lahar streaming */
+.hazard-merapi .pyroclastic-cone { fill: rgba(217, 122, 75, 0.55); }
+.hazard-merapi .lahar-flow       { fill: none; stroke: rgba(140, 122, 82, 0.75); stroke-width: 28; stroke-linecap: round; }
+.anim-pyroclastic-expand { transform-origin: 480px 32px; animation: pyroclasticExpand 1.5s ease-out forwards; }
+@keyframes pyroclasticExpand {
+  0%   { transform: scale(0.1); opacity: 0; }
+  20%  { opacity: 1; }
+  100% { transform: scale(2);   opacity: 0.5; }
+}
+.anim-lahar-stream path {
+  stroke-dasharray: 400;
+  stroke-dashoffset: 400;
+  animation: laharStream 1.5s 0.2s ease-out forwards;
+}
+@keyframes laharStream {
+  0%   { stroke-dashoffset: 400; }
+  100% { stroke-dashoffset: 0;   }
+}
+
+/* Hawaii — orange lava extending along path */
+.hazard-lava-extend .lava-path {
+  fill: none;
+  stroke: var(--accent);
+  stroke-width: 28;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-dasharray: 100;
+  stroke-dashoffset: 100;
+  animation: lavaReveal 1.5s ease-out forwards;
+}
+@keyframes lavaReveal {
+  0%   { stroke-dashoffset: 100; }
+  100% { stroke-dashoffset: 0;   }
+}
+
+/* ═════════════════════════════════════════════════════════════════
+   Phase D — CASE STUDIES (briefing + debrief + library)
+   ═════════════════════════════════════════════════════════════════ */
+
+/* ───── Title screen — Library entry button ───── */
+.title-actions { text-align: center; margin: 12px 0 16px; }
+.btn-library {
+  background: var(--card);
+  border: 1.5px solid var(--accent);
+  color: var(--accent);
+  font-weight: 700;
+  padding: 8px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+}
+.btn-library:hover { background: var(--accent-soft); }
+
+/* ───── Case study cards (shared across briefing/debrief/library) ───── */
+.cs-section { margin-top: 18px; }
+.cs-section-title {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 8px;
+}
+.cs-lead {
+  font-size: 13px;
+  color: var(--muted);
+  margin-bottom: 8px;
+}
+.case-study-card {
+  background: var(--card);
+  border: 1.5px solid var(--line);
+  border-radius: 10px;
+  padding: 12px 14px;
+  margin-bottom: 8px;
+  cursor: pointer;
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+.case-study-card:hover { border-color: var(--accent); }
+.case-study-card .cs-title { font-weight: 700; color: var(--ink); font-size: 14px; }
+.case-study-card .cs-meta { font-size: 12px; color: var(--muted); margin-top: 2px; }
+.case-study-card .cs-hook { font-size: 13px; color: var(--ink); margin-top: 6px; }
+.case-study-card .cs-expand-hint { font-size: 11px; color: var(--accent); margin-top: 6px; font-weight: 600; }
+.case-study-card.expanded { box-shadow: 0 4px 16px rgba(201, 84, 45, 0.10); border-color: var(--accent); }
+.case-study-card.expanded .cs-expand-hint { display: none; }
+.case-study-card .cs-detail { display: none; margin-top: 10px; padding-top: 10px; border-top: 1px solid var(--line); }
+.case-study-card.expanded .cs-detail { display: block; }
+.case-study-card .cs-detail h4 {
+  font-size: 12px; font-weight: 700; color: var(--muted);
+  text-transform: uppercase; letter-spacing: 0.5px;
+  margin-top: 10px; margin-bottom: 4px;
+}
+.case-study-card .cs-detail h4:first-child { margin-top: 0; }
+.case-study-card .cs-detail p { font-size: 13px; margin-bottom: 8px; line-height: 1.5; }
+.case-study-card .cs-takeaway {
+  background: var(--accent-soft);
+  border-left: 3px solid var(--accent);
+  padding: 8px 10px;
+  border-radius: 4px;
+  font-size: 13px;
+  font-style: italic;
+  margin-bottom: 8px;
+}
+
+/* Sources list */
+.cs-sources { display: flex; flex-direction: column; gap: 6px; }
+.cs-source {
+  font-size: 12px;
+  padding: 6px 8px;
+  background: var(--bg);
+  border-radius: 4px;
+  border-left: 2px solid var(--line);
+}
+.cs-source a { color: var(--accent); font-weight: 600; text-decoration: none; }
+.cs-source a:hover { text-decoration: underline; }
+.cs-source .cs-source-opvl { color: var(--muted); margin-top: 2px; font-size: 11px; }
+
+/* NGSS chips */
+.cs-ngss { display: flex; flex-wrap: wrap; gap: 4px; margin-top: 6px; }
+.cs-ngss-chip {
+  background: var(--bg);
+  border: 1px solid var(--line);
+  padding: 2px 8px;
+  border-radius: 10px;
+  font-size: 11px;
+  color: var(--muted);
+  font-weight: 600;
+}
+
+/* Image placeholder */
+.cs-image-placeholder {
+  border: 2px dashed var(--line);
+  background: var(--bg);
+  padding: 12px;
+  border-radius: 6px;
+  font-size: 12px;
+  color: var(--muted);
+  font-style: italic;
+  text-align: center;
+  margin-bottom: 10px;
+}
+.cs-image-placeholder strong { color: var(--ink); font-style: normal; }
+
+/* ───── Library screen ───── */
+#screen-library .screen-header { text-align: center; padding: 24px 16px 8px; }
+#screen-library .screen-header h1 { font-size: 28px; color: var(--accent); }
+#screen-library .screen-header p { color: var(--muted); margin-top: 6px; max-width: 600px; margin-left: auto; margin-right: auto; }
+.cs-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 12px;
+  margin-top: 16px;
+}
+.cs-grid .case-study-card { margin-bottom: 0; }
+.library-back { margin-top: 18px; text-align: center; }
+
+/* ───── Responsive ───── */
+@media (max-width: 900px) {
+  .build-layout { grid-template-columns: 1fr; }
+  .build-side { order: -1; }
+  .grid { grid-template-columns: repeat(8, 44px); grid-template-rows: repeat(6, 44px); }
+  .tile { font-size: 0; }
+  .tech-demo-popover { width: 160px; }
+  .disaster-banner-inline { font-size: 14px; padding: 8px 12px; }
+}
