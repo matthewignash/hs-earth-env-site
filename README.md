@@ -66,6 +66,18 @@ hs-earth-env-site/
 
 The top nav is shared — change `src/_data/nav.js` to update it everywhere.
 
+## Simulator (separate project)
+
+The Tectonic City Builder lives at `../Plate-Tectonics-City-Builder/` as its own project (own `CLAUDE.md` brief, own development cycle). This site iframes whatever is currently at `src/assets/simulators/tectonic-city-builder.html` — a copy synced from the sibling folder, not a symlink (symlinks break on Vercel's build server).
+
+When the simulator changes:
+
+```bash
+npm run sync-simulator  # re-copies from ../Plate-Tectonics-City-Builder/
+```
+
+Then commit the updated simulator file alongside whatever else changed. The current build embeds the simulator's **v1** — three reference scenarios (Cascadia, San Andreas, generic volcano). **v2** (five named city-anchored scenarios, sprites, damage states, embedded case studies, Google Apps Script Sessions Sheet backend) is specced in `../Plate-Tectonics-City-Builder/CLAUDE.md` and is a separate planning + build cycle.
+
 ## Hosting & Google Sites integration
 
 This site is being built to live inside Google Sites (the school's primary platform) while keeping the option open to host the static build elsewhere. The current integration plan:
