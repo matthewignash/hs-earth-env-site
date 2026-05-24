@@ -226,6 +226,16 @@ img { max-width: 100%; height: auto; display: block; }
   color: var(--ink);
 }
 
+/* ====== Simulator iframe ====== */
+.simulator-frame {
+  width: 100%;
+  min-height: 800px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: white;
+  display: block;
+}
+
 /* ====== Footer ====== */
 .site-footer {
   background: white;
@@ -249,4 +259,5 @@ img { max-width: 100%; height: auto; display: block; }
   .container { padding: 16px; }
   .page-header { padding: 24px 16px 18px; }
   .page-header h1 { font-size: 26px; }
+  .simulator-frame { min-height: 600px; }
 }

@@ -13,7 +13,7 @@ module.exports = function (eleventyConfig) {
       data: "_data",
       output: "_site"
     },
-    templateFormats: ["njk", "html", "md"],
+    templateFormats: ["njk", "md"],
     htmlTemplateEngine: "njk",
     markdownTemplateEngine: "njk"
   };
