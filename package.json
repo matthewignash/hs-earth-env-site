@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "eleventy --serve",
     "build": "eleventy",
-    "clean": "rm -rf _site"
+    "clean": "rm -rf _site",
+    "sync-simulator": "cp ../Plate-Tectonics-City-Builder/tectonic-city-builder.html src/assets/simulators/tectonic-city-builder.html && echo 'Simulator synced from sibling folder.'"
   },
   "devDependencies": {
     "@11ty/eleventy": "^3.0.0"
