@@ -1,0 +1,42 @@
+---
+layout: layouts/base.njk
+title: Page not found
+tagline: That page doesn't exist — or hasn't been built yet. Try one of the entry points below.
+permalink: /404.html
+eleventyExcludeFromCollections: true
+---
+
+<div class="prose">
+  <p>A few likely reasons:</p>
+  <ul>
+    <li>The page is part of a unit (or assessment) that's still stubbed for this build.</li>
+    <li>The URL was mistyped — try the breadcrumb or the top nav.</li>
+    <li>You clicked a deep link from a draft document that didn't ship.</li>
+  </ul>
+  <p>If you got here from a link inside this site, that's worth knowing — tell Mr. Ignash so it can be fixed.</p>
+</div>
+
+<section aria-label="Quick links" style="margin-top: 24px;">
+  <div class="section-grid">
+    <a class="section-card" href="/">
+      <span class="card-icon" aria-hidden="true">🏠</span>
+      <div class="card-title">Home</div>
+      <div class="card-desc">Start over from the top.</div>
+    </a>
+    <a class="section-card" href="/units/">
+      <span class="card-icon" aria-hidden="true">🗺️</span>
+      <div class="card-title">Current Unit</div>
+      <div class="card-desc">Block pages, assessments, simulator.</div>
+    </a>
+    <a class="section-card" href="/foundations/">
+      <span class="card-icon" aria-hidden="true">🧭</span>
+      <div class="card-title">Foundations</div>
+      <div class="card-desc">OPVL, AI documentation protocol, class expectations, the rubric.</div>
+    </a>
+    <a class="section-card" href="/ai-partners/">
+      <span class="card-icon" aria-hidden="true">🤖</span>
+      <div class="card-title">AI Partners</div>
+      <div class="card-desc">The five starter partners.</div>
+    </a>
+  </div>
+</section>

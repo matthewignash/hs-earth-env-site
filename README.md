@@ -26,22 +26,26 @@ hs-earth-env-site/
 ├── README.md                # this file
 ├── package.json
 ├── .eleventy.js             # 11ty config
-├── block-page-mockup.html   # visual reference (Unit 3 Block 3 demo)
 ├── src/                     # 11ty input
 │   ├── _data/
 │   │   ├── nav.js           # top nav items (6 sections)
 │   │   └── site.js          # site-wide metadata
 │   ├── _includes/
 │   │   └── layouts/
-│   │       └── base.njk     # base layout with top nav
+│   │       ├── base.njk     # base layout (top nav, page header, footer)
+│   │       └── block-page.njk  # block-page layout (header, AI callout, sections, nav)
 │   ├── assets/
-│   │   └── styles.css       # shared stylesheet
-│   ├── index.njk            # Home
-│   ├── foundations/         # 6 sub-pages planned
-│   ├── units/               # Unit 0 + Unit 3 deep; 1, 2, 4–7 stubbed
+│   │   ├── styles.css       # base + landing stylesheet
+│   │   ├── block-page.css   # block-page-only styles
+│   │   ├── favicon.svg
+│   │   └── simulators/      # Tectonic City Builder (symlink)
+│   ├── 404.njk              # custom 404 page
+│   ├── index.njk            # Home (hero layout)
+│   ├── foundations/         # 6 full sub-pages
+│   ├── units/               # Unit 0 + Unit 3 with content; 1, 2, 4–7 stubbed
 │   ├── reference/           # glossary, case studies, simulator hub
 │   ├── ai-partners/         # 5 starter partners
-│   └── student-hub/         # submission, rubric, calendar
+│   └── student-hub/         # submission, rubric, AI doc template, calendar
 └── _site/                   # build output (gitignored)
 ```
 
@@ -74,4 +78,4 @@ For Phase 1 (this build), interactive surfaces are styled placeholders.
 
 ## Build sequence
 
-See `CLAUDE.md` Section 8. Current status: **Phase 1 complete** — skeleton with 6 navigable section landing pages.
+See `CLAUDE.md` Section 8. Current status: **Phases 1–10 complete** — all section landings and sub-pages built; Unit 0 (7 blocks + Source Dossier) and Unit 3 (12 blocks + 2 assessments + Tectonic City Builder launcher) shipped; AI Partners hub + 5 partner sub-pages; Reference layer (Liquefaction glossary entry + Tōhoku 2011 case study + Simulator Hub); Student Hub (AI Doc Template + How to Submit + Rubric Quick Reference); polish (hero, favicon, OG meta, skip-to-main, 404, footer nav, mobile sweep). Phase 11 (Deploy) is next.
