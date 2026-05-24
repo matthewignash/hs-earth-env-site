@@ -145,6 +145,33 @@ img { max-width: 100%; height: auto; display: block; }
   color: var(--muted);
 }
 
+/* ====== Stub section card (non-clickable "coming soon" tile) ====== */
+.section-card.stub {
+  border-style: dashed;
+  border-color: var(--muted);
+  cursor: default;
+  background: var(--paper);
+}
+.section-card.stub:hover {
+  transform: none;
+  box-shadow: none;
+  border-color: var(--muted);
+}
+.section-card.stub .card-title { color: var(--muted); }
+.section-card.stub .card-desc { color: var(--muted); }
+.coming-soon-tag {
+  display: inline-block;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  background: var(--soft);
+  color: var(--muted);
+  padding: 2px 8px;
+  border-radius: 4px;
+  margin-bottom: 8px;
+}
+
 /* ====== Stub-page note ====== */
 .stub-note {
   background: var(--accent-light);
