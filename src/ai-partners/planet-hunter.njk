@@ -1,7 +1,7 @@
 ---
 layout: layouts/base.njk
 title: The Planet Hunter
-tagline: Socratic reasoning about specific exoplanets. Helps you apply your habitability framework to any planet without making the verdict for you.
+tagline: Socratic reasoning about specific exoplanets. Pushes you to define what habitability means before evaluating any planet. Never gives a verdict.
 launchUrl: ""
 breadcrumbs:
   - { url: /, label: Home }
@@ -11,7 +11,7 @@ breadcrumbs:
 
 <div class="prose">
 
-<p>An exoplanet-research-focused Socratic tutor. Helps you reason through habitability claims about specific exoplanets without making the call for you. Patient, curious, openly uncertain when the science is genuinely uncertain. Used in <strong>Unit 1</strong> throughout — especially Blocks 5 (Mars), 6 (exoplanet choice), 8 (drafting), and 9-10 (defense rehearsal).</p>
+<p>An exoplanet-research-focused Socratic tutor. Helps you reason through habitability claims about specific exoplanets — TRAPPIST-1e, Proxima Centauri b, K2-18 b, Kepler-186 f, Kepler-452 b, LHS 1140 b, TOI 700 d, Gliese 581 d, or any other you encounter — without making the verdict for you. Patient, curious, openly uncertain when the science is genuinely uncertain. Used in <strong>Unit 1</strong> Blocks 5 (Mars), 8 (exoplanet research + drafting), and 9–10 (Goldilocks Report defense rehearsal + Q&A). Available as a general planetary-science reasoning partner in any later unit too.</p>
 
 {% if launchUrl %}
 <a class="partner-launch" href="{{ launchUrl }}" target="_blank" rel="noopener">🚀 Launch The Planet Hunter →</a>
@@ -19,14 +19,45 @@ breadcrumbs:
 <span class="partner-launch placeholder">🚀 Launch The Planet Hunter — TBD: BoodleBox / Gemini Gem URL</span>
 {% endif %}
 
-<div class="stub-note">
-  <strong>This partner page is a stub.</strong> Full sections — how-to-use, opening message, example exchange, watch-out-for, and the documentation reminder — land when Unit 1 is built out further. Spec is in <code>Unit 1_ Earth and Universe/Assessment Support/U1 Material — AI Partner Specs (Planet Hunter + Systems Diagrammer).docx</code>.
-</div>
+<h2>How to use this partner</h2>
 
-<h2>What this partner does</h2>
-<p>Bring a specific exoplanet — TRAPPIST-1e, Proxima b, K2-18b, Kepler-186f, Kepler-452b, LHS 1140b, TOI 700d, Gliese 581d, or any other you encounter — and the Planet Hunter helps you reason through what we know vs. don't know about its habitability. It will push you to specify what habitability means in your framework before it evaluates anything.</p>
+<p>Bring a specific exoplanet or planetary case. The Planet Hunter will ask what your <a href="/units/unit-1/assessment-goldilocks-report/">habitability framework</a> requires <em>before</em> evaluating anything. It will be honest when the science is genuinely uncertain — it will say "I'm not confident on that value, check the NASA Exoplanet Archive" — and it will push back if you claim more confidence than the evidence supports.</p>
 
-<h2>What this partner won't do</h2>
-<p>It won't give you a verdict. "Is Proxima b habitable?" gets answered with "what does your framework require for habitability — let's evaluate Proxima b against that." It will be honest when the science is genuinely uncertain. It will push back if you claim something more confident than the data supports.</p>
+<p>Two prompts you can paste in to get started:</p>
+
+<ul>
+  <li><em>"I'm working on K2-18 b. Help me reason through whether atmospheric water vapor means anything about habitability."</em></li>
+  <li><em>"I have a habitability framework with six criteria. Can we walk through Proxima Centauri b against each one?"</em></li>
+</ul>
+
+<h2>Opening message</h2>
+
+<blockquote>"Hi — I'm the Planet Hunter. What exoplanet (or planetary case) are you working on? Tell me about your habitability framework first, then we can evaluate your planet against it. I'll ask more than I tell — that's intentional."</blockquote>
+
+<h2>Example exchange — what working looks like</h2>
+
+<table>
+  <thead>
+    <tr><th>You</th><th>The Planet Hunter</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>I'm working on Kepler-452 b. Is it Earth's twin?</td>
+      <td>Good question to push on. Before I respond — what's your framework asking? If your criterion is "orbits a Sun-like star in a temperate orbit," Kepler-452 b passes well. If your criterion is "confirmed rocky composition," we're in much weaker territory. What does YOUR framework require for habitability — and what specifically does the data tell us about Kepler-452 b on that criterion?</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2>Watch out for</h2>
+
+<p>If you push hard for a yes/no — "just tell me, is it habitable?" — the Planet Hunter can drift into giving verdicts. The verdict is your job, not its job. If you notice it filling in your answer instead of asking the next question, say "back to my framework — what's the criterion you'd evaluate next?" and it should steer back.</p>
+
+<p>Also watch for invented specifics. If it states a numeric value for a planet's mass, temperature, or atmospheric composition with high confidence, verify against the <a href="https://exoplanetarchive.ipac.caltech.edu/" target="_blank" rel="noopener">NASA Exoplanet Archive</a> before citing it. The partner is trained to flag uncertainty, but it can still hallucinate specifics under pressure.</p>
+
+<h2>Before you go — documentation</h2>
+
+<p>At the end of a substantive Planet Hunter conversation, the partner will remind you:</p>
+
+<blockquote>"Before you go — note in your <a href="/foundations/ai-documentation-protocol/">AI Documentation</a>: which habitability criterion did our conversation help you sharpen? And what's one claim I made about your exoplanet that you should verify against NASA Exoplanet Archive or the original peer-reviewed paper?"</blockquote>
 
 </div>

@@ -2,13 +2,15 @@
 
 > **Purpose:** Living status doc. Tells you (and future Claude Code sessions) what's built, what's stubbed, what to build next, and in what order. The charter is in `CLAUDE.md` — do NOT modify that. Update this file at the end of each build session.
 
-**Last updated:** 2026-05-24 (Unit 1 skeleton + landing live; blocks/assessment/AI partners stubbed)
+**Last updated:** 2026-05-24 (Unit 1 deep build phase 1 — Blocks 1 + 2 + Goldilocks Report + both new AI partners full)
 
 ---
 
 ## TL;DR — pick up here
 
-**Unit 1 (Earth and Universe) skeleton is in.** The landing page is full content. All ten blocks, the Goldilocks Report assessment, and both new AI partners (Planet Hunter, Systems Diagrammer) are navigable stubs. Next session: fill in the deep blocks (recommended: Blocks 1, 2, 7, 10) using the Unit 0 / Unit 3 Hybrid pattern, write the full Goldilocks Report handout from `Unit 1_ Goldilocks Report Assessment Package.docx`, and flesh out both AI partner pages from `Unit 1_ Earth and Universe/Assessment Support/U1 Material — AI Partner Specs (Planet Hunter + Systems Diagrammer).docx`.
+**Unit 1 deep build phase 1 is complete.** Block 1 (Phenomenon Launch) and Block 2 (Earth as Baseline) now have full Story/Concepts/Do/Show/Reflect content using the Hybrid pattern. The Goldilocks Report assessment page is a full student-facing handout (GRASPS, 8-exoplanet table, 4 steps, two gates, K/U+T/T+C rubric). Both Unit 1 AI partners — Planet Hunter and Systems Diagrammer — are full 7-section pages with launch placeholders.
+
+**Blocks 3–10 in Unit 1 are still stubs.** Next-phase recommendation: deep-build Blocks 7 (Habitability Framework) and 10 (NASA Committee Defense) — they're the assessment-arc closers and the highest-leverage remaining content. After that: U2 (Surface Processes) skeleton, then U2 deep build, then U4–U7 in teach-order.
 
 After Unit 1 deep build: teach-order priority is **U2 → U4 → U5 → U6 → U7**. (U3 is fully built and the simulator behind it is functionally complete.)
 
@@ -115,20 +117,22 @@ The site is **LIVE on Vercel** — every push to `main` auto-deploys. Don't brea
 - `units/unit-3/assessment-engineering-portfolio.njk` — full content
 - `units/unit-3/tectonic-city-builder.njk` — simulator launcher (iframes v2 of the sim)
 
-### Unit 1 — Earth and Universe (skeleton: full landing + 10 block stubs + assessment stub)
+### Unit 1 — Earth and Universe (landing full · Blocks 1 + 2 full · assessment full · Blocks 3–10 stubbed)
 - `units/unit-1/index.njk` — full landing (anchor question, 10-block grid, Goldilocks Report card, AI partners + resources panels)
-- `units/unit-1/block-1.njk` through `block-10.njk` — all 10 stubs (front matter + real titles + one-paragraph summaries from the U1 Block Plans docx)
-- `units/unit-1/assessment-goldilocks-report.njk` — stub (key dates + what-it-is + what-you'll-be-scored-on + AI documentation pointer)
+- `units/unit-1/block-1.njk` (Phenomenon Launch) — **full content** (5 sections, Hybrid pattern, aiPartners callout)
+- `units/unit-1/block-2.njk` (Earth as Baseline) — **full content** (5 sections, Hybrid pattern, 3 real choice paths, aiPartners callout)
+- `units/unit-1/block-3.njk` through `block-10.njk` — stubs (front matter + real titles + one-paragraph summaries from the U1 Block Plans docx)
+- `units/unit-1/assessment-goldilocks-report.njk` — **full handout** (GRASPS, 8-exoplanet table, 4 steps, two gates callout, format options, K/U+T/T+C rubric tables, AI Documentation pointer)
 
-### AI Partners (7 of 16 — 5 starter partners full + 2 Unit 1 partners stubbed)
-- `ai-partners/index.njk` — hub landing with all 7 cards (Planet Hunter + Systems Diagrammer added)
+### AI Partners (7 of 16 — all 7 currently used in U0/U1/U3 are full)
+- `ai-partners/index.njk` — hub landing with all 7 cards
 - `ai-partners/the-skeptic.njk`
 - `ai-partners/the-source-evaluator.njk`
 - `ai-partners/plate-tectonics-tutor.njk`
 - `ai-partners/engineering-coach.njk`
 - `ai-partners/defense-practice-partner.njk`
-- `ai-partners/planet-hunter.njk` — stub (intro + launch placeholder + what-it-does / what-it-won't-do; full spec sections pending)
-- `ai-partners/systems-diagrammer.njk` — stub (same shape)
+- `ai-partners/planet-hunter.njk` — **full 7-section spec** (intro + launch placeholder + how-to + opening message + example exchange + watch-out-for + documentation reminder)
+- `ai-partners/systems-diagrammer.njk` — **full 7-section spec** (same structure)
 
 Each follows a 7-section template (persona+scope → launch button → how to use → opening message → example exchange → watch out for → documentation reminder). Launch URLs are placeholder (`launchUrl: ""` in front matter) — fill in when BoodleBox/Gemini Gems get deployed.
 
