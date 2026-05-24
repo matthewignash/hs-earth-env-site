@@ -1,0 +1,32 @@
+---
+layout: layouts/base.njk
+title: The Planet Hunter
+tagline: Socratic reasoning about specific exoplanets. Helps you apply your habitability framework to any planet without making the verdict for you.
+launchUrl: ""
+breadcrumbs:
+  - { url: /, label: Home }
+  - { url: /ai-partners/, label: "AI Partners" }
+  - { label: "The Planet Hunter" }
+---
+
+<div class="prose">
+
+<p>An exoplanet-research-focused Socratic tutor. Helps you reason through habitability claims about specific exoplanets without making the call for you. Patient, curious, openly uncertain when the science is genuinely uncertain. Used in <strong>Unit 1</strong> throughout — especially Blocks 5 (Mars), 6 (exoplanet choice), 8 (drafting), and 9-10 (defense rehearsal).</p>
+
+{% if launchUrl %}
+<a class="partner-launch" href="{{ launchUrl }}" target="_blank" rel="noopener">🚀 Launch The Planet Hunter →</a>
+{% else %}
+<span class="partner-launch placeholder">🚀 Launch The Planet Hunter — TBD: BoodleBox / Gemini Gem URL</span>
+{% endif %}
+
+<div class="stub-note">
+  <strong>This partner page is a stub.</strong> Full sections — how-to-use, opening message, example exchange, watch-out-for, and the documentation reminder — land when Unit 1 is built out further. Spec is in <code>Unit 1_ Earth and Universe/Assessment Support/U1 Material — AI Partner Specs (Planet Hunter + Systems Diagrammer).docx</code>.
+</div>
+
+<h2>What this partner does</h2>
+<p>Bring a specific exoplanet — TRAPPIST-1e, Proxima b, K2-18b, Kepler-186f, Kepler-452b, LHS 1140b, TOI 700d, Gliese 581d, or any other you encounter — and the Planet Hunter helps you reason through what we know vs. don't know about its habitability. It will push you to specify what habitability means in your framework before it evaluates anything.</p>
+
+<h2>What this partner won't do</h2>
+<p>It won't give you a verdict. "Is Proxima b habitable?" gets answered with "what does your framework require for habitability — let's evaluate Proxima b against that." It will be honest when the science is genuinely uncertain. It will push back if you claim something more confident than the data supports.</p>
+
+</div>
