@@ -2,17 +2,17 @@
 
 > **Purpose:** Living status doc. Tells you (and future Claude Code sessions) what's built, what's stubbed, what to build next, and in what order. The charter is in `CLAUDE.md` — do NOT modify that. Update this file at the end of each build session.
 
-**Last updated:** 2026-05-24 (Unit 1 deep build phase 3 — all remaining blocks full · Unit 1 fully complete)
+**Last updated:** 2026-05-25 (Habitability Zone Calculator integrated into Unit 1 — Phase 5 of the sibling-project build)
 
 ---
 
 ## TL;DR — pick up here
 
-**Unit 1 is now fully complete.** All 10 blocks are deep content. The full Goldilocks Report handout is in place. Both new AI partners (Planet Hunter, Systems Diagrammer) are full 7-section pages. The unit landing is full content with zero "Stub." markers anywhere. Unit 1 is the second unit (after Unit 0) to reach this state — and the first 10-block unit fully built out.
+**Unit 1 is fully complete AND the Habitability Zone Calculator is wired into the site.** The standalone calculator (sibling project at `../Habitability-Zone-Calculator/`) reached v0.4 with 12 presets, Compare mode, JSON export, localStorage, URL params, and a printable HTML view. This commit wires it into the course site: a `sync-habitability` npm script copies the calculator HTML into `src/assets/simulators/habitability/index.html` at build time, a launcher page at `/units/unit-1/habitability-zone-calculator/` iframes it, and Blocks 4 / 6 / 7 / 8 plus the Unit 1 landing now link in with deep URL params for teaching context.
 
-**Phase 3 just added Blocks 3, 4, 5, 6, 8, and 9** — Mars Calibration, Scale of the Cosmos, Exoplanet Detection, Choose Your Exoplanet, Drafting Day, and Stakeholder Q&A Prep. Each uses the canonical Hybrid pattern. Block 4 introduces the Goldilocks Report assignment with a prominent callout. Block 6 introduces the Planet Hunter AI partner. Block 9 introduces the Defense Practice Partner and uses the structured 3-phase Do sequence (Solo prep / Pair rehearsal / AI rehearsal) for rehearsal day.
+**Phase 3 (earlier) added Blocks 3, 4, 5, 6, 8, and 9** — Mars Calibration, Scale of the Cosmos, Exoplanet Detection, Choose Your Exoplanet, Drafting Day, and Stakeholder Q&A Prep. Each uses the canonical Hybrid pattern. Block 4 introduces the Goldilocks Report assignment. Block 6 introduces the Planet Hunter AI partner. Block 9 introduces the Defense Practice Partner.
 
-**Next-phase recommendation: pivot to Unit 2 (Surface Processes) skeleton.** Parallel to how we approached U1: landing + 9 block stubs + Landscape Reading assessment stub + Field Geologist AI partner stub. After U2 skeleton: U2 deep build, then U4 → U5 → U6 → U7 in teach-order.
+**Next-phase recommendation: pivot to Unit 2 (Surface Processes) skeleton.** Parallel to how we approached U1: landing + 9 block stubs + Landscape Reading assessment stub + Field Geologist AI partner stub. After U2 skeleton: U2 deep build, then U4 → U5 → U6 → U7 in teach-order. Or alternatively, start on another simulator brief (Cauvery / Land Allocation / Energy Mix — all at v0-charter-only state).
 
 After Unit 1 deep build: teach-order priority is **U2 → U4 → U5 → U6 → U7**. (U3 is fully built and the simulator behind it is functionally complete.)
 
@@ -132,6 +132,7 @@ The site is **LIVE on Vercel** — every push to `main` auto-deploys. Don't brea
 - `units/unit-1/block-9.njk` (Stakeholder Q&A Prep) — full content; structured 3-phase rehearsal day; Defense Practice Partner introduced
 - `units/unit-1/block-10.njk` (NASA Committee Defense) — full content; structured 4-phase Do with 6-category Q&A bank inline; unit reflection bookends Block 1
 - `units/unit-1/assessment-goldilocks-report.njk` — full handout (GRASPS, 8-exoplanet table, 4 steps, two gates callout, format options, K/U+T/T+C rubric tables, AI Documentation pointer)
+- `units/unit-1/habitability-zone-calculator.njk` — **launcher page** for the iframed Habitability Zone Calculator simulator; supports `?preset=` and `?compare=` URL passthrough to the iframe; linked from Blocks 4 / 6 / 7 / 8 and the Unit 1 landing
 
 ### AI Partners (7 of 16 — all 7 currently used in U0/U1/U3 are full)
 - `ai-partners/index.njk` — hub landing with all 7 cards

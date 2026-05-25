@@ -8,7 +8,8 @@
     "build": "eleventy",
     "clean": "rm -rf _site",
     "sync-simulator": "cp ../Plate-Tectonics-City-Builder/tectonic-city-builder.html src/assets/simulators/tectonic-city-builder.html && echo 'v1 simulator synced from sibling folder.'",
-    "sync-simulator-v2": "rm -rf src/assets/simulators/v2 && mkdir -p src/assets/simulators/v2 && cp ../Plate-Tectonics-City-Builder/v2/index.html ../Plate-Tectonics-City-Builder/v2/styles.css ../Plate-Tectonics-City-Builder/v2/scenarios.js ../Plate-Tectonics-City-Builder/v2/tech.js ../Plate-Tectonics-City-Builder/v2/case-studies.js ../Plate-Tectonics-City-Builder/v2/sprites.js ../Plate-Tectonics-City-Builder/v2/game.js src/assets/simulators/v2/ && echo 'v2 simulator runtime files synced.'"
+    "sync-simulator-v2": "rm -rf src/assets/simulators/v2 && mkdir -p src/assets/simulators/v2 && cp ../Plate-Tectonics-City-Builder/v2/index.html ../Plate-Tectonics-City-Builder/v2/styles.css ../Plate-Tectonics-City-Builder/v2/scenarios.js ../Plate-Tectonics-City-Builder/v2/tech.js ../Plate-Tectonics-City-Builder/v2/case-studies.js ../Plate-Tectonics-City-Builder/v2/sprites.js ../Plate-Tectonics-City-Builder/v2/game.js src/assets/simulators/v2/ && echo 'v2 simulator runtime files synced.'",
+    "sync-habitability": "mkdir -p src/assets/simulators/habitability && cp ../Habitability-Zone-Calculator/habitability-zone-calculator.html src/assets/simulators/habitability/index.html && echo 'Habitability Zone Calculator synced from sibling folder.'"
   },
   "devDependencies": {
     "@11ty/eleventy": "^3.0.0"

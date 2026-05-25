@@ -1,0 +1,2283 @@
+<!--
+  Habitability Zone Calculator — v0.1 (Physics core + UI skeleton)
+  Unit 1 (Earth and Universe) companion simulator · HS Earth & Environmental Science · AISC Chennai
+
+  Single-file architecture per Habitability charter §6; project file-length limit
+  is intentionally exceeded here in line with Plate Tectonics v1 precedent.
+
+  This file: HTML + inline CSS + inline JS. Vanilla. No build step. No deps.
+  See CLAUDE.md (the durable charter) for the design contract.
+  See BUILD_PROGRESS.md for the build sequence and current phase.
+
+  v0.1 scope:
+    - 7 input sliders/dropdowns
+    - 7 computed outputs with hover-to-trace
+    - Earth / Mars / Venus baseline buttons
+    - "Show assumptions" drawer
+    - "This is a model" banner + AI disclosure
+    - NO framework readout, NO exoplanet presets, NO Compare/Export (Phases 2+)
+
+  Security: All DOM updates use textContent + createElement. No innerHTML anywhere.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Habitability Zone Calculator — v0.1</title>
+<style>
+  :root {
+    --bg: #f6f4ee;
+    --ink: #1f2a37;
+    --muted: #5b6573;
+    --card: #ffffff;
+    --line: #d9d4c4;
+    --accent: #c9542d;
+    --accent-soft: #f4ddcf;
+    --ok: #2e7d4f;
+    --warn: #c9882d;
+    --bad: #b3261e;
+    accent-color: var(--accent);
+  }
+
+  * { box-sizing: border-box; }
+
+  html, body {
+    margin: 0;
+    padding: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  .app-header {
+    background: var(--ink);
+    color: white;
+    padding: 14px 24px;
+    border-bottom: 3px solid var(--accent);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+  .app-header h1 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: 0.2px;
+  }
+  .app-header .version-tag {
+    font-size: 12px;
+    color: var(--accent-soft);
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
+  }
+
+  .model-banner {
+    background: var(--accent-soft);
+    color: var(--ink);
+    padding: 10px 24px;
+    font-size: 13px;
+    border-bottom: 1px solid var(--line);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+  .model-banner strong { color: var(--accent); }
+  .model-banner a {
+    color: var(--accent);
+    font-weight: 600;
+    text-decoration: underline;
+    cursor: pointer;
+  }
+  .model-banner a:hover { color: var(--ink); }
+
+  main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px 24px 40px;
+    display: grid;
+    grid-template-columns: minmax(280px, 1fr) minmax(320px, 1.4fr);
+    gap: 20px;
+  }
+  @media (max-width: 720px) {
+    main { grid-template-columns: 1fr; padding: 16px; }
+  }
+
+  .panel, .subpanel {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 14px;
+  }
+  .subpanel { margin-bottom: 12px; }
+  .subpanel:last-child { margin-bottom: 0; }
+
+  .panel-heading, .subpanel-heading {
+    text-transform: uppercase;
+    font-size: 12px;
+    letter-spacing: 0.6px;
+    color: var(--muted);
+    border-bottom: 1px solid var(--line);
+    padding-bottom: 6px;
+    margin: 0 0 10px 0;
+    font-weight: 600;
+  }
+
+  .input-row {
+    display: grid;
+    grid-template-columns: 110px 1fr 64px;
+    align-items: center;
+    gap: 10px;
+    padding: 6px 0;
+  }
+  .input-row label {
+    font-size: 13px;
+    color: var(--ink);
+    font-weight: 500;
+  }
+  .input-row .readout {
+    font-variant-numeric: tabular-nums;
+    text-align: right;
+    color: var(--muted);
+    font-size: 13px;
+  }
+  input[type="range"] {
+    width: 100%;
+    accent-color: var(--accent);
+  }
+  select {
+    padding: 6px 8px;
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    font-size: 13px;
+    background: var(--card);
+    color: var(--ink);
+    grid-column: 2 / span 2;
+    width: 100%;
+    font-family: inherit;
+  }
+  .select-row { grid-template-columns: 110px 1fr; }
+
+  .preset-loader {
+    margin-top: 14px;
+    padding-top: 14px;
+    border-top: 1px solid var(--line);
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+  .preset-loader .preset-label {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
+    color: var(--muted);
+    font-weight: 600;
+  }
+  .preset-loader select {
+    grid-column: 1;
+    width: 100%;
+  }
+  .preset-loader #reset-explore {
+    justify-self: end;
+    font-size: 12px;
+  }
+
+  /* View tabs */
+  .view-tabs {
+    background: var(--bg);
+    border-bottom: 1px solid var(--line);
+    padding: 0 24px;
+    display: flex;
+    gap: 4px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  .view-tabs .tab {
+    background: transparent;
+    border: none;
+    padding: 12px 18px;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--muted);
+    cursor: pointer;
+    border-bottom: 3px solid transparent;
+    margin-bottom: -1px;
+    font-family: inherit;
+    transition: color 0.1s, border-color 0.1s;
+  }
+  .view-tabs .tab:hover { color: var(--ink); }
+  .view-tabs .tab.active {
+    color: var(--ink);
+    border-bottom-color: var(--accent);
+  }
+
+  /* Compare view */
+  .compare-view {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px 24px 40px;
+  }
+  .compare-view[hidden] { display: none; }
+  .compare-intro {
+    color: var(--muted);
+    font-size: 13px;
+    line-height: 1.55;
+    margin: 0 0 16px 0;
+  }
+  .compare-actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 18px;
+    flex-wrap: wrap;
+  }
+  .toast {
+    font-size: 12px;
+    color: var(--ok);
+    font-weight: 600;
+    opacity: 0;
+    transition: opacity 0.2s;
+  }
+  .toast.show { opacity: 1; }
+  .compare-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+  }
+  @media (max-width: 900px) {
+    .compare-grid { grid-template-columns: 1fr; }
+  }
+  .compare-column {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .compare-slot-select {
+    padding: 8px 10px;
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 600;
+    background: var(--card);
+    color: var(--ink);
+    font-family: inherit;
+    width: 100%;
+  }
+  .compare-physics {
+    font-size: 11px;
+    color: var(--muted);
+    line-height: 1.5;
+    padding: 8px 10px;
+    background: #fafaf3;
+    border-radius: 6px;
+    font-variant-numeric: tabular-nums;
+  }
+  .compare-physics .physics-line {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 8px;
+  }
+  .compare-physics .physics-line .label {
+    color: var(--muted);
+    text-transform: uppercase;
+    font-size: 10px;
+    letter-spacing: 0.3px;
+  }
+  .compare-physics .physics-line .value {
+    color: var(--ink);
+    text-align: right;
+  }
+  .compare-criteria {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  .compare-row {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 10px;
+    border-radius: 6px;
+    font-size: 13px;
+  }
+  .compare-row .criterion-label {
+    color: var(--ink);
+    font-weight: 500;
+  }
+  .compare-row.diverging {
+    background: var(--accent-soft);
+    border-left: 3px solid var(--accent);
+    padding-left: 7px;
+  }
+  .compare-flags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+  .compare-flags:empty { display: none; }
+  .compare-flag-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 3px 8px;
+    border-radius: 12px;
+    background: #fff4dc;
+    border: 1px solid #f0c574;
+    color: var(--warn);
+    font-size: 11px;
+    font-weight: 600;
+    cursor: help;
+  }
+  .btn {
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    padding: 10px 12px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.1s;
+    font-family: inherit;
+  }
+  .btn-secondary {
+    background: #e9e4d3;
+    color: var(--ink);
+  }
+  .btn-secondary:hover { background: #ddd5b8; }
+  .btn-ghost {
+    background: transparent;
+    color: var(--muted);
+    border: none;
+    text-decoration: underline;
+    padding: 6px 8px;
+    font-weight: 500;
+  }
+  .btn-ghost:hover { color: var(--accent); }
+  .btn-primary {
+    background: var(--accent);
+    color: white;
+    border-color: var(--accent);
+  }
+  .btn-primary:hover { background: #b04420; }
+
+  .outputs { display: flex; flex-direction: column; gap: 8px; }
+  .output-row {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  .output-row summary {
+    list-style: none;
+    cursor: pointer;
+    padding: 12px 14px;
+    display: grid;
+    grid-template-columns: 1fr auto auto;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+  }
+  .output-row summary::-webkit-details-marker { display: none; }
+  .output-row summary::after {
+    content: "▾";
+    color: var(--muted);
+    font-size: 12px;
+    transition: transform 0.15s;
+  }
+  .output-row[open] summary::after { transform: rotate(180deg); }
+  .output-row summary:hover { background: var(--accent-soft); }
+  .output-row .label { font-weight: 600; color: var(--ink); }
+  .output-row .value {
+    font-variant-numeric: tabular-nums;
+    color: var(--ink);
+    font-weight: 600;
+    text-align: right;
+    min-width: 100px;
+  }
+  .output-row .trace {
+    padding: 12px 14px 14px;
+    border-top: 1px solid var(--line);
+    background: #fafaf3;
+    font-size: 13px;
+    color: var(--muted);
+    line-height: 1.65;
+  }
+  .output-row .trace code,
+  .output-row .trace .codeish {
+    font-family: "SF Mono", Menlo, Consolas, monospace;
+    background: white;
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    padding: 1px 5px;
+    font-size: 12px;
+    color: var(--ink);
+  }
+  .output-row .trace .result {
+    color: var(--ink);
+    font-weight: 600;
+  }
+  .output-row .trace .em { font-style: italic; }
+  .output-row .trace br + br { display: none; }
+
+  .badge {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 10px;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+  }
+  .badge-ok { background: #d8ebdf; color: var(--ok); }
+  .badge-warn { background: #f5e3c4; color: var(--warn); }
+  .badge-bad { background: #f3d3d0; color: var(--bad); }
+  .badge-muted { background: #e9e4d3; color: var(--muted); }
+
+  /* Framework panel + 5-field trace */
+  .panel + .panel { margin-top: 16px; }
+  .panel-sub-note {
+    font-size: 12px;
+    color: var(--muted);
+    margin: 0 0 10px 0;
+    font-style: italic;
+  }
+  .field-list {
+    display: grid;
+    grid-template-columns: 110px 1fr;
+    gap: 6px 12px;
+    font-size: 13px;
+    color: var(--muted);
+    line-height: 1.55;
+  }
+  .field-list dt {
+    font-weight: 600;
+    color: var(--ink);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+    padding-top: 2px;
+  }
+  .field-list dd {
+    margin: 0;
+  }
+
+  /* Flag notes (tidal locking, stellar activity) */
+  .flag-notes {
+    margin-top: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .callout {
+    padding: 10px 12px;
+    border-radius: 6px;
+    font-size: 12px;
+    line-height: 1.5;
+    color: var(--ink);
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-left: 3px solid var(--muted);
+  }
+  .callout.warn {
+    background: #fff4dc;
+    border-left-color: var(--warn);
+  }
+  .callout .callout-title {
+    font-weight: 700;
+    color: var(--warn);
+    text-transform: uppercase;
+    font-size: 11px;
+    letter-spacing: 0.4px;
+    margin-bottom: 4px;
+  }
+
+  .drawer-backdrop {
+    position: fixed;
+    inset: 0;
+    background: rgba(31, 42, 55, 0.4);
+    display: none;
+    z-index: 100;
+  }
+  .drawer-backdrop.open { display: block; }
+  .drawer {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: min(540px, 100vw);
+    height: 100vh;
+    background: var(--bg);
+    border-left: 1px solid var(--line);
+    box-shadow: -8px 0 24px rgba(0,0,0,0.1);
+    transform: translateX(100%);
+    transition: transform 0.2s ease-out;
+    z-index: 110;
+    overflow-y: auto;
+  }
+  .drawer.open { transform: translateX(0); }
+  .drawer-header {
+    background: var(--ink);
+    color: white;
+    padding: 14px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+  }
+  .drawer-header h2 { margin: 0; font-size: 15px; font-weight: 600; }
+  .drawer-close {
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 22px;
+    cursor: pointer;
+    padding: 0 6px;
+    line-height: 1;
+    font-family: inherit;
+  }
+  .drawer-body { padding: 20px; font-size: 13px; line-height: 1.6; }
+  .drawer-body h3 {
+    font-size: 14px;
+    margin: 18px 0 8px;
+    color: var(--accent);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  .drawer-body h3:first-of-type { margin-top: 0; }
+  .drawer-body code {
+    font-family: "SF Mono", Menlo, Consolas, monospace;
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    padding: 1px 5px;
+    font-size: 12px;
+  }
+  .drawer-body table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 8px 0 14px;
+    background: var(--card);
+    border: 1px solid var(--line);
+    font-size: 12px;
+  }
+  .drawer-body th, .drawer-body td {
+    padding: 5px 8px;
+    border-bottom: 1px solid var(--line);
+    text-align: left;
+    vertical-align: top;
+  }
+  .drawer-body th {
+    background: var(--accent-soft);
+    color: var(--ink);
+    font-weight: 600;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+  }
+  .drawer-body .footer-note {
+    margin-top: 22px;
+    padding: 10px 12px;
+    background: var(--accent-soft);
+    border-left: 3px solid var(--accent);
+    border-radius: 4px;
+    color: var(--ink);
+  }
+</style>
+</head>
+<body>
+
+<header class="app-header">
+  <h1>🌍 Habitability Zone Calculator</h1>
+  <span class="version-tag">v0.1 · Physics core</span>
+</header>
+
+<div class="model-banner">
+  <span>⚠️ <strong>This is a model.</strong> The math is simplified. Apply OPVL to it as you would to any source. Built with AI assistance.</span>
+  <a id="open-assumptions" tabindex="0">📋 Show assumptions →</a>
+</div>
+
+<nav class="view-tabs" role="tablist" aria-label="View mode">
+  <button type="button" class="tab active" role="tab" data-view="explore" id="tab-explore">🔬 Explore</button>
+  <button type="button" class="tab" role="tab" data-view="compare" id="tab-compare">⚖️ Compare</button>
+</nav>
+
+<main>
+
+  <section class="panel" aria-label="Inputs">
+    <h2 class="panel-heading">Inputs</h2>
+
+    <div class="subpanel">
+      <h3 class="subpanel-heading">Planet</h3>
+      <div class="input-row">
+        <label for="mass">Mass</label>
+        <input type="range" id="mass" min="0.05" max="10" step="0.01" value="1.0" />
+        <span class="readout" id="mass-readout">1.00 M⊕</span>
+      </div>
+      <div class="input-row">
+        <label for="radius">Radius</label>
+        <input type="range" id="radius" min="0.3" max="3" step="0.01" value="1.0" />
+        <span class="readout" id="radius-readout">1.00 R⊕</span>
+      </div>
+      <div class="input-row">
+        <label for="albedo">Albedo</label>
+        <input type="range" id="albedo" min="0.05" max="0.95" step="0.01" value="0.30" />
+        <span class="readout" id="albedo-readout">0.30</span>
+      </div>
+    </div>
+
+    <div class="subpanel">
+      <h3 class="subpanel-heading">Orbit</h3>
+      <div class="input-row">
+        <label for="distance">Distance</label>
+        <input type="range" id="distance" min="0.05" max="5" step="0.001" value="1.0" />
+        <span class="readout" id="distance-readout">1.000 AU</span>
+      </div>
+    </div>
+
+    <div class="subpanel">
+      <h3 class="subpanel-heading">Star</h3>
+      <div class="input-row select-row">
+        <label for="star">Type</label>
+        <select id="star">
+          <optgroup label="Generic types (Explore mode)">
+            <option value="F8V">F8V — Tau Ceti analog</option>
+            <option value="G2V" selected>G2V — The Sun</option>
+            <option value="K2V">K2V — Epsilon Eridani</option>
+            <option value="M3V">M3V — Proxima Centauri (generic)</option>
+            <option value="M5V">M5V — TRAPPIST-1 (generic)</option>
+          </optgroup>
+          <optgroup label="Specific host stars (set via preset)">
+            <option value="TRAPPIST1">TRAPPIST-1 (M8V) — L=0.00055 L☉</option>
+            <option value="PROXIMA">Proxima Centauri (M5.5V) — L=0.0015</option>
+            <option value="K2_18">K2-18 (M3V) — L=0.0233</option>
+            <option value="KEPLER186">Kepler-186 (M1V) — L=0.0412</option>
+            <option value="KEPLER452">Kepler-452 (G2V) — L=1.19</option>
+            <option value="LHS1140">LHS 1140 (M4.5V) — L=0.00427</option>
+            <option value="TOI700">TOI 700 (M2V) — L=0.0233</option>
+            <option value="GLIESE581">Gliese 581 (M3V) — L=0.0135</option>
+            <option value="KEPLER22">Kepler-22 (G5V) — L=0.79</option>
+          </optgroup>
+        </select>
+      </div>
+    </div>
+
+    <div class="subpanel">
+      <h3 class="subpanel-heading">Atmosphere</h3>
+      <div class="input-row select-row">
+        <label for="atm">Composition</label>
+        <select id="atm">
+          <option value="none">None / vacuum</option>
+          <option value="thinco2">Thin CO₂ (Mars-like, 0.006 bar)</option>
+          <option value="earthlike" selected>Earth-like (N₂/O₂ + GHGs, 1 bar)</option>
+          <option value="thickco2">Thick CO₂ (Venus-like, 92 bar)</option>
+          <option value="h2he">H₂/He thick (gas giant, 1000 bar)</option>
+          <option value="unknown">Unknown / not measured</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="subpanel">
+      <h3 class="subpanel-heading">System</h3>
+      <div class="input-row">
+        <label for="age">Age</label>
+        <input type="range" id="age" min="0.1" max="13" step="0.1" value="4.5" />
+        <span class="readout" id="age-readout">4.5 Gyr</span>
+      </div>
+    </div>
+
+    <div class="preset-loader">
+      <label for="preset" class="preset-label">Load preset</label>
+      <select id="preset">
+        <option value="">— Custom (Explore mode) —</option>
+        <optgroup label="Sanity-check baselines">
+          <option value="earth">🌍 Earth</option>
+          <option value="mars">🔴 Mars</option>
+          <option value="venus">🟡 Venus</option>
+        </optgroup>
+        <optgroup label="Student-choice candidates (8)">
+          <option value="trappist1e">TRAPPIST-1 e</option>
+          <option value="proximab">Proxima Centauri b</option>
+          <option value="k218b">K2-18 b</option>
+          <option value="kepler186f">Kepler-186 f</option>
+          <option value="kepler452b">Kepler-452 b</option>
+          <option value="lhs1140b">LHS 1140 b</option>
+          <option value="toi700d">TOI 700 d</option>
+          <option value="gliese581d">Gliese 581 d</option>
+        </optgroup>
+        <optgroup label="Worked-example reference">
+          <option value="kepler22b">Kepler-22 b — Block 8 exemplar</option>
+        </optgroup>
+      </select>
+      <button class="btn btn-ghost" id="reset-explore" type="button">Reset to Custom</button>
+    </div>
+  </section>
+
+  <section aria-label="Outputs">
+    <div class="panel">
+      <h2 class="panel-heading">Computed outputs</h2>
+      <p style="font-size:11px;color:var(--muted);margin:0 0 10px 0;">Click any row to see the calculation.</p>
+      <div class="outputs" id="outputs">
+        <details class="output-row" data-row="teq">
+          <summary>
+            <span class="label">Equilibrium temperature</span>
+            <span class="value" id="out-teq">— K</span>
+          </summary>
+          <div class="trace" id="trace-teq"></div>
+        </details>
+        <details class="output-row" data-row="tsurf">
+          <summary>
+            <span class="label">Surface temperature</span>
+            <span class="value" id="out-tsurf">— K</span>
+          </summary>
+          <div class="trace" id="trace-tsurf"></div>
+        </details>
+        <details class="output-row" data-row="water">
+          <summary>
+            <span class="label">Water phase at surface</span>
+            <span class="value" id="out-water">—</span>
+          </summary>
+          <div class="trace" id="trace-water"></div>
+        </details>
+        <details class="output-row" data-row="atm">
+          <summary>
+            <span class="label">Atmospheric retention</span>
+            <span class="value" id="out-atm">—</span>
+          </summary>
+          <div class="trace" id="trace-atm"></div>
+        </details>
+        <details class="output-row" data-row="mag">
+          <summary>
+            <span class="label">Magnetic field</span>
+            <span class="value" id="out-mag">—</span>
+          </summary>
+          <div class="trace" id="trace-mag"></div>
+        </details>
+        <details class="output-row" data-row="hz">
+          <summary>
+            <span class="label">Stellar habitable zone</span>
+            <span class="value" id="out-hz">— AU</span>
+          </summary>
+          <div class="trace" id="trace-hz"></div>
+        </details>
+        <details class="output-row" data-row="inhz">
+          <summary>
+            <span class="label">Planet in HZ?</span>
+            <span class="value" id="out-inhz">—</span>
+          </summary>
+          <div class="trace" id="trace-inhz"></div>
+        </details>
+      </div>
+    </div>
+
+    <div class="panel" aria-label="Habitability framework">
+      <h2 class="panel-heading">Habitability framework</h2>
+      <p class="panel-sub-note">Six criteria, each MEETS / PARTIAL / FAILS / UNCERTAIN. Click any row to see the 5-field reasoning. Mirrors the Habitability Framework Template you fill in Block 7.</p>
+      <div class="outputs" id="framework">
+        <details class="output-row" data-criterion="water">
+          <summary>
+            <span class="label">Liquid water</span>
+            <span class="value" id="fw-water">—</span>
+          </summary>
+          <div class="trace" id="fwt-water"></div>
+        </details>
+        <details class="output-row" data-criterion="atm">
+          <summary>
+            <span class="label">Atmosphere</span>
+            <span class="value" id="fw-atm">—</span>
+          </summary>
+          <div class="trace" id="fwt-atm"></div>
+        </details>
+        <details class="output-row" data-criterion="temp">
+          <summary>
+            <span class="label">Temperature</span>
+            <span class="value" id="fw-temp">—</span>
+          </summary>
+          <div class="trace" id="fwt-temp"></div>
+        </details>
+        <details class="output-row" data-criterion="mag">
+          <summary>
+            <span class="label">Magnetic field</span>
+            <span class="value" id="fw-mag">—</span>
+          </summary>
+          <div class="trace" id="fwt-mag"></div>
+        </details>
+        <details class="output-row" data-criterion="energy">
+          <summary>
+            <span class="label">Energy source</span>
+            <span class="value" id="fw-energy">—</span>
+          </summary>
+          <div class="trace" id="fwt-energy"></div>
+        </details>
+        <details class="output-row" data-criterion="orbit">
+          <summary>
+            <span class="label">Stable orbit</span>
+            <span class="value" id="fw-orbit">—</span>
+          </summary>
+          <div class="trace" id="fwt-orbit"></div>
+        </details>
+      </div>
+      <div class="flag-notes" id="flag-notes"></div>
+    </div>
+  </section>
+
+</main>
+
+<section class="compare-view" id="compare-view" aria-label="Compare mode" hidden>
+  <div class="compare-inner">
+    <p class="compare-intro">Pick three planets to evaluate side by side. Inputs are read-only here — to perturb a planet, go back to <strong>Explore</strong> mode. Differences between columns are highlighted so cross-case patterns surface at a glance.</p>
+
+    <div class="compare-actions">
+      <button type="button" class="btn btn-primary" id="copy-compare">📋 Copy as JSON</button>
+      <button type="button" class="btn btn-secondary" id="download-compare">💾 Download JSON</button>
+      <button type="button" class="btn btn-secondary" id="print-compare">📄 Print view</button>
+      <span class="toast" id="toast" aria-live="polite"></span>
+    </div>
+
+    <div class="compare-grid">
+      <!-- 3 columns, each with: preset selector + physics summary + framework rows -->
+      <div class="compare-column">
+        <select class="compare-slot-select" data-slot="0">
+          <optgroup label="Sanity-check baselines">
+            <option value="earth">🌍 Earth</option>
+            <option value="mars">🔴 Mars</option>
+            <option value="venus">🟡 Venus</option>
+          </optgroup>
+          <optgroup label="Student-choice candidates (8)">
+            <option value="trappist1e">TRAPPIST-1 e</option>
+            <option value="proximab">Proxima Centauri b</option>
+            <option value="k218b">K2-18 b</option>
+            <option value="kepler186f">Kepler-186 f</option>
+            <option value="kepler452b">Kepler-452 b</option>
+            <option value="lhs1140b">LHS 1140 b</option>
+            <option value="toi700d">TOI 700 d</option>
+            <option value="gliese581d">Gliese 581 d</option>
+          </optgroup>
+          <optgroup label="Worked-example reference">
+            <option value="kepler22b">Kepler-22 b</option>
+          </optgroup>
+        </select>
+        <div class="compare-physics" id="compare-physics-0"></div>
+        <div class="compare-flags" id="compare-flags-0"></div>
+        <div class="compare-criteria" id="compare-criteria-0"></div>
+      </div>
+      <div class="compare-column">
+        <select class="compare-slot-select" data-slot="1">
+          <optgroup label="Sanity-check baselines">
+            <option value="earth">🌍 Earth</option>
+            <option value="mars">🔴 Mars</option>
+            <option value="venus">🟡 Venus</option>
+          </optgroup>
+          <optgroup label="Student-choice candidates (8)">
+            <option value="trappist1e">TRAPPIST-1 e</option>
+            <option value="proximab">Proxima Centauri b</option>
+            <option value="k218b">K2-18 b</option>
+            <option value="kepler186f">Kepler-186 f</option>
+            <option value="kepler452b">Kepler-452 b</option>
+            <option value="lhs1140b">LHS 1140 b</option>
+            <option value="toi700d">TOI 700 d</option>
+            <option value="gliese581d">Gliese 581 d</option>
+          </optgroup>
+          <optgroup label="Worked-example reference">
+            <option value="kepler22b">Kepler-22 b</option>
+          </optgroup>
+        </select>
+        <div class="compare-physics" id="compare-physics-1"></div>
+        <div class="compare-flags" id="compare-flags-1"></div>
+        <div class="compare-criteria" id="compare-criteria-1"></div>
+      </div>
+      <div class="compare-column">
+        <select class="compare-slot-select" data-slot="2">
+          <optgroup label="Sanity-check baselines">
+            <option value="earth">🌍 Earth</option>
+            <option value="mars">🔴 Mars</option>
+            <option value="venus">🟡 Venus</option>
+          </optgroup>
+          <optgroup label="Student-choice candidates (8)">
+            <option value="trappist1e">TRAPPIST-1 e</option>
+            <option value="proximab">Proxima Centauri b</option>
+            <option value="k218b">K2-18 b</option>
+            <option value="kepler186f">Kepler-186 f</option>
+            <option value="kepler452b">Kepler-452 b</option>
+            <option value="lhs1140b">LHS 1140 b</option>
+            <option value="toi700d">TOI 700 d</option>
+            <option value="gliese581d">Gliese 581 d</option>
+          </optgroup>
+          <optgroup label="Worked-example reference">
+            <option value="kepler22b">Kepler-22 b</option>
+          </optgroup>
+        </select>
+        <div class="compare-physics" id="compare-physics-2"></div>
+        <div class="compare-flags" id="compare-flags-2"></div>
+        <div class="compare-criteria" id="compare-criteria-2"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="drawer-backdrop" id="drawer-backdrop"></div>
+<aside class="drawer" id="drawer" aria-hidden="true">
+  <div class="drawer-header">
+    <h2>Show assumptions — v0.1</h2>
+    <button class="drawer-close" id="close-drawer" type="button" aria-label="Close">×</button>
+  </div>
+  <div class="drawer-body">
+    <p>The calculator uses the formulas, lookup tables, and constants below. Every output above corresponds to one of these — click any row to see the calculation with your current numbers substituted.</p>
+
+    <h3>§3.1 Equilibrium temperature</h3>
+    <p><code>T_eq = T_star × √(R_star / (2 × d)) × (1 − A)^0.25</code></p>
+    <p>Where T_star is host star effective temperature (K), R_star is star radius (m), d is planet orbital distance (m), A is bond albedo (0–1). Earth's T_eq ≈ 255 K (well below freezing — the greenhouse fills the gap).</p>
+
+    <h3>§3.2 Surface temperature (greenhouse adjustment)</h3>
+    <p><code>T_surface ≈ T_eq + ΔT_greenhouse</code></p>
+    <table>
+      <thead><tr><th>Atmosphere</th><th>ΔT (K)</th><th>Pressure (bar)</th></tr></thead>
+      <tbody>
+        <tr><td>None / vacuum</td><td>0</td><td>0</td></tr>
+        <tr><td>Thin CO₂ (Mars-like)</td><td>+5</td><td>0.006</td></tr>
+        <tr><td>Earth-like (N₂/O₂ + GHGs)</td><td>+33</td><td>1.0</td></tr>
+        <tr><td>Thick CO₂ (Venus-like)</td><td>+500</td><td>92</td></tr>
+        <tr><td>H₂/He thick (gas giant)</td><td>+200</td><td>1000</td></tr>
+      </tbody>
+    </table>
+
+    <h3>§3.3 Atmospheric retention (Jeans escape, simplified)</h3>
+    <p>Lookup by surface gravity (relative to Earth). Adjust downward one band if T_surface &gt; 500 K (hot planet loses atmosphere faster).</p>
+    <table>
+      <thead><tr><th>g/g⊕</th><th>H₂</th><th>H₂O</th><th>N₂/O₂</th><th>CO₂</th></tr></thead>
+      <tbody>
+        <tr><td>&lt;0.2</td><td>No</td><td>No</td><td>No</td><td>Marginal</td></tr>
+        <tr><td>0.2–0.4</td><td>No</td><td>No</td><td>Marginal</td><td>Yes</td></tr>
+        <tr><td>0.4–0.7</td><td>No</td><td>Marginal</td><td>Yes</td><td>Yes</td></tr>
+        <tr><td>0.7–1.5</td><td>Marginal</td><td>Yes</td><td>Yes</td><td>Yes</td></tr>
+        <tr><td>&gt;1.5</td><td>Yes</td><td>Yes</td><td>Yes</td><td>Yes</td></tr>
+      </tbody>
+    </table>
+    <p>Surface gravity ratio: <code>g_ratio = (M / M⊕) / (R / R⊕)²</code></p>
+
+    <h3>§3.4 Water phase at surface</h3>
+    <table>
+      <thead><tr><th>T_surface (K)</th><th>Pressure (bar)</th><th>Phase</th></tr></thead>
+      <tbody>
+        <tr><td>&lt;273</td><td>any</td><td>Frozen (subsurface liquid possible if internal heat)</td></tr>
+        <tr><td>273–373</td><td>≥0.1</td><td>Liquid</td></tr>
+        <tr><td>273–373</td><td>&lt;0.1</td><td>Sublimation (no stable surface liquid)</td></tr>
+        <tr><td>&gt;373</td><td>&lt;50</td><td>Gaseous (water vapor)</td></tr>
+        <tr><td>&gt;373</td><td>≥50</td><td>Supercritical water (Venus-like)</td></tr>
+      </tbody>
+    </table>
+
+    <h3>§3.5 Magnetic field plausibility</h3>
+    <p>Rough heuristic based on planet mass + system age. Real magnetic field generation depends on rotation, composition, and interior dynamics that v0.1 does not model.</p>
+    <table>
+      <thead><tr><th>Mass (M⊕)</th><th>Age (Gyr)</th><th>Magnetic field?</th></tr></thead>
+      <tbody>
+        <tr><td>&lt;0.3</td><td>any</td><td>Unlikely (cools too fast, like Mars)</td></tr>
+        <tr><td>0.3–0.5</td><td>&lt;2</td><td>Marginal</td></tr>
+        <tr><td>0.3–0.5</td><td>&gt;2</td><td>Unlikely (Mars-like loss)</td></tr>
+        <tr><td>0.5–2</td><td>&lt;8</td><td>Likely</td></tr>
+        <tr><td>0.5–2</td><td>&gt;8</td><td>Marginal</td></tr>
+        <tr><td>&gt;2</td><td>&lt;10</td><td>Likely (more internal heat)</td></tr>
+      </tbody>
+    </table>
+
+    <h3>§3.6 Stellar habitable zone</h3>
+    <p><code>HZ_inner = 0.95 × √(L_star / L☉)</code> · <code>HZ_outer = 1.67 × √(L_star / L☉)</code></p>
+    <p>For G2V (Sun-like) star, HZ ≈ 0.95–1.67 AU. M-dwarfs have very tight HZs (TRAPPIST-1: 0.022–0.032 AU).</p>
+
+    <h3>Star type defaults (Explore mode)</h3>
+    <table>
+      <thead><tr><th>Type</th><th>T_eff (K)</th><th>R_star (R☉)</th><th>L_star (L☉)</th></tr></thead>
+      <tbody>
+        <tr><td>F8V</td><td>6200</td><td>1.10</td><td>1.50</td></tr>
+        <tr><td>G2V</td><td>5778</td><td>1.00</td><td>1.00</td></tr>
+        <tr><td>K2V</td><td>5000</td><td>0.85</td><td>0.30</td></tr>
+        <tr><td>M3V</td><td>3050</td><td>0.15</td><td>0.0017</td></tr>
+        <tr><td>M5V</td><td>2800</td><td>0.12</td><td>0.00056</td></tr>
+      </tbody>
+    </table>
+
+    <h3>Physical constants</h3>
+    <p><code>G = 6.674 × 10⁻¹¹ m³/(kg·s²)</code> · <code>M⊕ = 5.972 × 10²⁴ kg</code> · <code>R⊕ = 6.371 × 10⁶ m</code> · <code>M☉ = 1.989 × 10³⁰ kg</code> · <code>R☉ = 6.957 × 10⁸ m</code> · <code>T☉ = 5778 K</code> · <code>L☉ = 3.828 × 10²⁶ W</code> · <code>1 AU = 1.496 × 10¹¹ m</code></p>
+
+    <div class="footer-note">
+      <strong>v0.4 partial assumptions panel.</strong> Additional models (e.g., orbital eccentricity, radiative-transfer greenhouse) and primary-source citations may land in future versions. Per the charter §7.8, this calculator was built with AI assistance — apply OPVL to it as you would to any source.
+    </div>
+
+    <h3>Saved state</h3>
+    <p>Your inputs are saved in your browser only — never sent anywhere. Clear them below to start fresh from Earth defaults.</p>
+    <p><button class="btn btn-ghost" id="clear-saved-state" type="button">Clear saved state &amp; reload</button></p>
+
+    <h3>Teacher URL parameters</h3>
+    <p>You can preload the calculator to a specific scenario by adding these query strings to the URL. Useful for emailing class links or embedding in a launcher.</p>
+    <table>
+      <thead><tr><th>URL</th><th>What it does</th></tr></thead>
+      <tbody>
+        <tr><td><code>?preset=trappist1e</code></td><td>Opens Explore mode with TRAPPIST-1 e loaded</td></tr>
+        <tr><td><code>?preset=kepler22b&amp;view=explore</code></td><td>Opens Explore with the Block 8 worked-example planet</td></tr>
+        <tr><td><code>?compare=earth,mars,trappist1e</code></td><td>Opens Compare mode with default Goldilocks loadout</td></tr>
+        <tr><td><code>?compare=earth,mars,k218b</code></td><td>Compare with K2-18 b as the chosen exoplanet</td></tr>
+      </tbody>
+    </table>
+    <p>Valid preset keys: <code>earth</code>, <code>mars</code>, <code>venus</code>, <code>trappist1e</code>, <code>proximab</code>, <code>k218b</code>, <code>kepler186f</code>, <code>kepler452b</code>, <code>lhs1140b</code>, <code>toi700d</code>, <code>gliese581d</code>, <code>kepler22b</code>. URL params override saved state.</p>
+  </div>
+</aside>
+
+<script>
+  'use strict';
+
+  // ─── Constants (per charter §10) ─────────────────────────────
+  const STARS = {
+    // Generic types (Explore mode)
+    F8V:       { tEff: 6200, rStar: 1.10, lStar: 1.50,    name: 'F8V (Tau Ceti analog)',     generic: true,  mClass: false },
+    G2V:       { tEff: 5778, rStar: 1.00, lStar: 1.00,    name: 'G2V (The Sun)',             generic: true,  mClass: false },
+    K2V:       { tEff: 5000, rStar: 0.85, lStar: 0.30,    name: 'K2V (Epsilon Eridani)',     generic: true,  mClass: false },
+    M3V:       { tEff: 3050, rStar: 0.15, lStar: 0.0017,  name: 'M3V (Proxima Centauri)',    generic: true,  mClass: true  },
+    M5V:       { tEff: 2800, rStar: 0.12, lStar: 0.00056, name: 'M5V (TRAPPIST-1)',          generic: true,  mClass: true  },
+    // Named host stars (loaded via preset; specific published values per CLAUDE.md §10)
+    TRAPPIST1: { tEff: 2566, rStar: 0.12, lStar: 0.000553, name: 'TRAPPIST-1 (M8V)',         generic: false, mClass: true  },
+    PROXIMA:   { tEff: 3050, rStar: 0.15, lStar: 0.0015,   name: 'Proxima Centauri (M5.5V)', generic: false, mClass: true  },
+    K2_18:     { tEff: 3457, rStar: 0.45, lStar: 0.0233,   name: 'K2-18 (M3V)',              generic: false, mClass: true  },
+    KEPLER186: { tEff: 3755, rStar: 0.47, lStar: 0.0412,   name: 'Kepler-186 (M1V)',         generic: false, mClass: true  },
+    KEPLER452: { tEff: 5757, rStar: 1.11, lStar: 1.19,     name: 'Kepler-452 (G2V)',         generic: false, mClass: false },
+    LHS1140:   { tEff: 3216, rStar: 0.21, lStar: 0.00427,  name: 'LHS 1140 (M4.5V)',         generic: false, mClass: true  },
+    TOI700:    { tEff: 3480, rStar: 0.42, lStar: 0.0233,   name: 'TOI 700 (M2V)',            generic: false, mClass: true  },
+    GLIESE581: { tEff: 3498, rStar: 0.30, lStar: 0.0135,   name: 'Gliese 581 (M3V)',         generic: false, mClass: true  },
+    KEPLER22:  { tEff: 5518, rStar: 0.98, lStar: 0.79,     name: 'Kepler-22 (G5V)',          generic: false, mClass: false },
+  };
+
+  const ATMS = {
+    none:      { deltaT: 0,    pressure: 0,     label: 'None / vacuum' },
+    thinco2:   { deltaT: 5,    pressure: 0.006, label: 'Thin CO₂ (Mars-like)' },
+    earthlike: { deltaT: 33,   pressure: 1.0,   label: 'Earth-like (N₂/O₂ + GHGs)' },
+    thickco2:  { deltaT: 500,  pressure: 92,    label: 'Thick CO₂ (Venus-like)' },
+    h2he:      { deltaT: 200,  pressure: 1000,  label: 'H₂/He thick' },
+    unknown:   { deltaT: null, pressure: null,  label: 'Unknown / not measured' },
+  };
+
+  // 12 presets per CLAUDE.md §10 (sanity baselines + 8 student-choice candidates + Kepler-22 b worked-example)
+  const PRESETS = {
+    earth:      { name: 'Earth',              group: 'baseline',        mass: 1.000, radius: 1.000, albedo: 0.30, distance: 1.000,  star: 'G2V',       atm: 'earthlike', age: 4.5  },
+    mars:       { name: 'Mars',               group: 'baseline',        mass: 0.107, radius: 0.532, albedo: 0.25, distance: 1.524,  star: 'G2V',       atm: 'thinco2',   age: 4.5  },
+    venus:      { name: 'Venus',              group: 'baseline',        mass: 0.815, radius: 0.949, albedo: 0.75, distance: 0.723,  star: 'G2V',       atm: 'thickco2',  age: 4.5  },
+    trappist1e: { name: 'TRAPPIST-1 e',       group: 'candidate',       mass: 0.692, radius: 0.920, albedo: 0.30, distance: 0.029,  star: 'TRAPPIST1', atm: 'unknown',   age: 7.6  },
+    proximab:   { name: 'Proxima Centauri b', group: 'candidate',       mass: 1.070, radius: 1.030, albedo: 0.30, distance: 0.0485, star: 'PROXIMA',   atm: 'unknown',   age: 4.85 },
+    k218b:      { name: 'K2-18 b',            group: 'candidate',       mass: 8.920, radius: 2.610, albedo: 0.30, distance: 0.143,  star: 'K2_18',     atm: 'unknown',   age: 2.4  },
+    kepler186f: { name: 'Kepler-186 f',       group: 'candidate',       mass: 1.710, radius: 1.170, albedo: 0.30, distance: 0.432,  star: 'KEPLER186', atm: 'unknown',   age: 4.0  },
+    kepler452b: { name: 'Kepler-452 b',       group: 'candidate',       mass: 5.000, radius: 1.630, albedo: 0.30, distance: 1.046,  star: 'KEPLER452', atm: 'unknown',   age: 6.0  },
+    lhs1140b:   { name: 'LHS 1140 b',         group: 'candidate',       mass: 5.600, radius: 1.430, albedo: 0.30, distance: 0.0936, star: 'LHS1140',   atm: 'unknown',   age: 5.0  },
+    toi700d:    { name: 'TOI 700 d',          group: 'candidate',       mass: 1.700, radius: 1.070, albedo: 0.30, distance: 0.163,  star: 'TOI700',    atm: 'unknown',   age: 1.5  },
+    gliese581d: { name: 'Gliese 581 d',       group: 'candidate',       mass: 5.600, radius: 1.500, albedo: 0.30, distance: 0.218,  star: 'GLIESE581', atm: 'unknown',   age: 7.0  },
+    kepler22b:  { name: 'Kepler-22 b',        group: 'worked-example',  mass: 5.000, radius: 2.400, albedo: 0.30, distance: 0.850,  star: 'KEPLER22',  atm: 'unknown',   age: 6.0  },
+  };
+
+  const R_SUN_M = 6.957e8;
+  const AU_M = 1.496e11;
+
+  // ─── State ──────────────────────────────────────────────────
+  const state = {
+    mass: 1.0, radius: 1.0, albedo: 0.30, distance: 1.0,
+    star: 'G2V', atm: 'earthlike', age: 4.5,
+    preset: '',                                              // '' = Custom / Explore mode; otherwise key into PRESETS
+    view: 'explore',                                          // 'explore' or 'compare'
+    compareSlots: ['earth', 'mars', 'trappist1e'],            // 3 preset keys for Compare mode
+  };
+
+  // ─── Physics (pure functions, per charter §3) ───────────────
+  function tEqK(tStar, rStarRsun, distanceAu, albedo) {
+    const rStarM = rStarRsun * R_SUN_M;
+    const dM = distanceAu * AU_M;
+    return tStar * Math.sqrt(rStarM / (2 * dM)) * Math.pow(1 - albedo, 0.25);
+  }
+
+  function tSurfaceK(tEq, atmKey) {
+    const dt = ATMS[atmKey].deltaT;
+    return dt === null ? null : tEq + dt;
+  }
+  function gravityRatio(m, r) { return m / (r * r); }
+
+  function gravityBandFor(g) {
+    if (g < 0.2) return 0;
+    if (g < 0.4) return 1;
+    if (g < 0.7) return 2;
+    if (g < 1.5) return 3;
+    return 4;
+  }
+
+  const RETENTION_TABLE = [
+    ['No',       'No',       'No',       'Marginal'],
+    ['No',       'No',       'Marginal', 'Yes'],
+    ['No',       'Marginal', 'Yes',      'Yes'],
+    ['Marginal', 'Yes',      'Yes',      'Yes'],
+    ['Yes',      'Yes',      'Yes',      'Yes'],
+  ];
+
+  function shiftBandDown(row) {
+    return row.map(v => v === 'Yes' ? 'Marginal' : (v === 'Marginal' ? 'No' : 'No'));
+  }
+
+  function atmosphereRetention(g, tSurf, atmKey) {
+    if (atmKey === 'none' || atmKey === 'unknown') return null;
+    const band = gravityBandFor(g);
+    let row = RETENTION_TABLE[band].slice();
+    const shifted = tSurf !== null && tSurf > 500;
+    if (shifted) row = shiftBandDown(row);
+    return { H2: row[0], H2O: row[1], N2O2: row[2], CO2: row[3], band, shifted };
+  }
+
+  function waterPhase(t, p) {
+    if (t === null || p === null) return 'Unknown';
+    if (t < 273) return 'Frozen';
+    if (t <= 373) return p >= 0.1 ? 'Liquid' : 'Sublimation';
+    return p >= 50 ? 'Supercritical' : 'Gaseous';
+  }
+
+  function magneticFieldPlausibility(mass, age) {
+    if (mass < 0.3) return 'Unlikely';
+    if (mass < 0.5) return age < 2 ? 'Marginal' : 'Unlikely';
+    if (mass <= 2)  return age < 8 ? 'Likely' : 'Marginal';
+    return age < 10 ? 'Likely' : 'Marginal';
+  }
+
+  function hzBounds(l) {
+    return { inner: 0.95 * Math.sqrt(l), outer: 1.67 * Math.sqrt(l) };
+  }
+
+  function inHabitableZone(d, hz) { return d >= hz.inner && d <= hz.outer; }
+
+  // ─── Compute ────────────────────────────────────────────────
+  function computeAll() {
+    const star = STARS[state.star];
+    const atm = ATMS[state.atm];
+    const tEq = tEqK(star.tEff, star.rStar, state.distance, state.albedo);
+    const tSurf = tSurfaceK(tEq, state.atm);
+    const gRatio = gravityRatio(state.mass, state.radius);
+    const retention = atmosphereRetention(gRatio, tSurf, state.atm);
+    const water = waterPhase(tSurf, atm.pressure);
+    const magnetic = magneticFieldPlausibility(state.mass, state.age);
+    const hz = hzBounds(star.lStar);
+    const inHz = inHabitableZone(state.distance, hz);
+    return { star, atm, tEq, tSurf, gRatio, retention, water, magnetic, hz, inHz };
+  }
+
+  // ─── Formatting helpers ─────────────────────────────────────
+  function fmtK(k) {
+    if (k === null) return 'Unknown';
+    const c = k - 273.15;
+    return k.toFixed(0) + ' K (' + (c >= 0 ? '+' : '') + c.toFixed(0) + '°C)';
+  }
+
+  function retentionSummary(retention, atmKey) {
+    if (atmKey === 'unknown') return 'Unknown';
+    if (retention === null) return 'No atmosphere';
+    const gases = { H2: 'H₂', H2O: 'H₂O', N2O2: 'N₂/O₂', CO2: 'CO₂' };
+    const yes = [], marg = [], no = [];
+    Object.keys(gases).forEach(k => {
+      const s = retention[k];
+      if (s === 'Yes') yes.push(gases[k]);
+      else if (s === 'Marginal') marg.push(gases[k]);
+      else no.push(gases[k]);
+    });
+    const parts = [];
+    if (yes.length) parts.push('Retains ' + yes.join(', '));
+    if (marg.length) parts.push('Marginal ' + marg.join(', '));
+    if (no.length) parts.push('Loses ' + no.join(', '));
+    return parts.join(' · ');
+  }
+
+  function badgeClassFor(status) {
+    if (status === 'MEETS' || status === 'Yes' || status === 'Likely' || status === 'Liquid') return 'badge-ok';
+    if (status === 'PARTIAL' || status === 'Marginal' || status === 'Sublimation') return 'badge-warn';
+    if (status === 'FAILS' || status === 'No' || status === 'Unlikely' || status === 'Supercritical') return 'badge-bad';
+    return 'badge-muted';
+  }
+
+  // ─── Safe DOM helpers (no innerHTML) ────────────────────────
+  function el(tag, opts) {
+    const e = document.createElement(tag);
+    if (opts && opts.class) e.className = opts.class;
+    if (opts && opts.text != null) e.textContent = String(opts.text);
+    return e;
+  }
+
+  function txt(s) { return document.createTextNode(String(s)); }
+
+  function clearChildren(node) {
+    while (node.firstChild) node.removeChild(node.firstChild);
+  }
+
+  function setText(id, value) {
+    document.getElementById(id).textContent = String(value);
+  }
+
+  function setBadge(id, status, label) {
+    const parent = document.getElementById(id);
+    clearChildren(parent);
+    parent.appendChild(el('span', { class: 'badge ' + badgeClassFor(status), text: label }));
+  }
+
+  // Build a trace block from a sequence of { kind, value } parts.
+  // Allowed kinds: 'text', 'code', 'result', 'em', 'br'.
+  function buildTrace(parts) {
+    const frag = document.createDocumentFragment();
+    parts.forEach(p => {
+      if (p.kind === 'br') frag.appendChild(document.createElement('br'));
+      else if (p.kind === 'code') frag.appendChild(el('code', { text: p.value }));
+      else if (p.kind === 'result') frag.appendChild(el('span', { class: 'result', text: p.value }));
+      else if (p.kind === 'em') frag.appendChild(el('em', { text: p.value }));
+      else frag.appendChild(txt(p.value));
+    });
+    return frag;
+  }
+
+  function renderTraceTo(id, parts) {
+    const target = document.getElementById(id);
+    clearChildren(target);
+    target.appendChild(buildTrace(parts));
+  }
+
+  // ─── Render ─────────────────────────────────────────────────
+  function renderInputReadouts() {
+    setText('mass-readout', state.mass.toFixed(2) + ' M⊕');
+    setText('radius-readout', state.radius.toFixed(2) + ' R⊕');
+    setText('albedo-readout', state.albedo.toFixed(2));
+    setText('distance-readout', state.distance.toFixed(3) + ' AU');
+    setText('age-readout', state.age.toFixed(1) + ' Gyr');
+  }
+
+  function renderOutputs(r) {
+    setText('out-teq', fmtK(r.tEq));
+    setText('out-tsurf', fmtK(r.tSurf));
+    setBadge('out-water', r.water === 'Unknown' ? 'UNCERTAIN' : r.water, r.water);
+    setText('out-atm', retentionSummary(r.retention, state.atm));
+    setBadge('out-mag', r.magnetic, r.magnetic);
+    setText('out-hz', r.hz.inner.toFixed(3) + ' – ' + r.hz.outer.toFixed(3) + ' AU');
+    setBadge('out-inhz', r.inHz ? 'Yes' : 'No', r.inHz ? 'Yes' : 'No');
+  }
+
+  function buildTeqParts(r) {
+    const factor = Math.sqrt(r.star.rStar * R_SUN_M / (2 * state.distance * AU_M));
+    const albedoFactor = Math.pow(1 - state.albedo, 0.25);
+    return [
+      { kind: 'code', value: 'T_eq = T_star × √(R_star / (2 × d)) × (1 − A)^0.25' },
+      { kind: 'br' },
+      { kind: 'text', value: '= ' },
+      { kind: 'code', value: r.star.tEff + ' K' },
+      { kind: 'text', value: ' × √(' },
+      { kind: 'code', value: r.star.rStar + ' R☉' },
+      { kind: 'text', value: ' / (2 × ' },
+      { kind: 'code', value: state.distance.toFixed(3) + ' AU' },
+      { kind: 'text', value: ')) × (1 − ' },
+      { kind: 'code', value: state.albedo.toFixed(2) },
+      { kind: 'text', value: ')^0.25' },
+      { kind: 'br' },
+      { kind: 'text', value: '= ' + r.star.tEff + ' × ' + factor.toFixed(5) + ' × ' + albedoFactor.toFixed(4) },
+      { kind: 'br' },
+      { kind: 'text', value: '≈ ' },
+      { kind: 'result', value: r.tEq.toFixed(0) + ' K' },
+    ];
+  }
+
+  function buildTsurfParts(r) {
+    if (r.tSurf === null) {
+      return [
+        { kind: 'text', value: 'Atmosphere is unknown — greenhouse adjustment cannot be computed.' },
+        { kind: 'br' },
+        { kind: 'text', value: 'T_eq = ' + r.tEq.toFixed(0) + ' K is the no-atmosphere bound; actual surface temperature depends on the atmosphere we do not yet have data on.' },
+        { kind: 'br' },
+        { kind: 'text', value: '→ ' },
+        { kind: 'result', value: 'Unknown' },
+      ];
+    }
+    return [
+      { kind: 'code', value: 'T_surface ≈ T_eq + ΔT_greenhouse' },
+      { kind: 'br' },
+      { kind: 'text', value: '= ' + r.tEq.toFixed(0) + ' K + ' },
+      { kind: 'code', value: '+' + r.atm.deltaT + ' K' },
+      { kind: 'text', value: '  ' },
+      { kind: 'em', value: '(' + r.atm.label + ')' },
+      { kind: 'br' },
+      { kind: 'text', value: '≈ ' },
+      { kind: 'result', value: r.tSurf.toFixed(0) + ' K (' + (r.tSurf - 273.15).toFixed(0) + '°C)' },
+    ];
+  }
+
+  function waterRuleText(t, p) {
+    if (t < 273) return 'T < 273 K → frozen at surface (subsurface liquid possible if internal heat).';
+    if (t <= 373) return p >= 0.1
+      ? '273 ≤ T ≤ 373 K and P ≥ 0.1 bar → liquid possible at surface.'
+      : '273 ≤ T ≤ 373 K and P < 0.1 bar → sublimation; no stable surface liquid.';
+    return p >= 50
+      ? 'T > 373 K and P ≥ 50 bar → supercritical (Venus-like).'
+      : 'T > 373 K and P < 50 bar → gaseous (water vapor).';
+  }
+
+  function buildWaterParts(r) {
+    if (r.tSurf === null || r.atm.pressure === null) {
+      return [
+        { kind: 'text', value: 'T_surface and pressure both depend on atmospheric data we do not have.' },
+        { kind: 'br' },
+        { kind: 'text', value: '→ ' },
+        { kind: 'result', value: 'Unknown' },
+      ];
+    }
+    return [
+      { kind: 'text', value: 'At T = ' + r.tSurf.toFixed(0) + ' K and pressure = ' + r.atm.pressure + ' bar:' },
+      { kind: 'br' },
+      { kind: 'text', value: waterRuleText(r.tSurf, r.atm.pressure) },
+      { kind: 'br' },
+      { kind: 'text', value: '→ ' },
+      { kind: 'result', value: r.water },
+    ];
+  }
+
+  function magneticRuleText(mass, age) {
+    if (mass < 0.3) return 'Mass < 0.3 M⊕ → cools too fast for sustained dynamo (Mars-like).';
+    if (mass < 0.5) return age < 2
+      ? '0.3–0.5 M⊕, <2 Gyr → marginal; dynamo may still be active.'
+      : '0.3–0.5 M⊕, >2 Gyr → unlikely (Mars-like dynamo loss).';
+    if (mass <= 2) return age < 8
+      ? '0.5–2 M⊕, <8 Gyr → likely dynamo-driven field.'
+      : '0.5–2 M⊕, >8 Gyr → marginal; core may be solidifying.';
+    return age < 10
+      ? '>2 M⊕, <10 Gyr → likely (more internal heat from larger mass).'
+      : '>2 M⊕, >10 Gyr → marginal; even large planets eventually cool.';
+  }
+
+  function buildMagParts(r) {
+    return [
+      { kind: 'text', value: 'Mass = ' + state.mass.toFixed(2) + ' M⊕ · Age = ' + state.age.toFixed(1) + ' Gyr' },
+      { kind: 'br' },
+      { kind: 'text', value: magneticRuleText(state.mass, state.age) },
+      { kind: 'br' },
+      { kind: 'text', value: '→ ' },
+      { kind: 'result', value: r.magnetic },
+    ];
+  }
+
+  function buildAtmParts(r) {
+    if (state.atm === 'unknown') {
+      return [{ kind: 'text', value: 'Atmosphere is unknown / not measured. Retention is not computable until atmospheric composition is known.' }];
+    }
+    if (r.retention === null) {
+      return [{ kind: 'text', value: 'No atmosphere selected → retention not applicable.' }];
+    }
+    const bandLabels = ['<0.2', '0.2–0.4', '0.4–0.7', '0.7–1.5', '>1.5'];
+    const parts = [
+      { kind: 'text', value: 'Surface gravity ratio = (' + state.mass.toFixed(2) + ' / ' + state.radius.toFixed(2) + '²) = ' },
+      { kind: 'code', value: r.gRatio.toFixed(2) + ' g⊕' },
+      { kind: 'text', value: ' → band ' + bandLabels[r.retention.band] + '.' },
+    ];
+    if (r.retention.shifted) {
+      parts.push({ kind: 'br' });
+      parts.push({ kind: 'text', value: 'T_surface = ' + r.tSurf.toFixed(0) + ' K > 500 K → retention shifted down one band (hot atmosphere loss).' });
+    }
+    parts.push({ kind: 'br' });
+    parts.push({ kind: 'text', value: 'Gases: H₂=' + r.retention.H2 + ', H₂O=' + r.retention.H2O + ', N₂/O₂=' + r.retention.N2O2 + ', CO₂=' + r.retention.CO2 + '.' });
+    return parts;
+  }
+
+  function buildHzParts(r) {
+    return [
+      { kind: 'code', value: 'HZ_inner = 0.95 × √(L_star / L☉)' },
+      { kind: 'text', value: '  ·  ' },
+      { kind: 'code', value: 'HZ_outer = 1.67 × √(L_star / L☉)' },
+      { kind: 'br' },
+      { kind: 'text', value: 'L_star = ' },
+      { kind: 'code', value: r.star.lStar + ' L☉' },
+      { kind: 'text', value: ' (' + r.star.name + ')' },
+      { kind: 'br' },
+      { kind: 'text', value: 'HZ_inner = 0.95 × √' + r.star.lStar + ' = ' + r.hz.inner.toFixed(3) + ' AU' },
+      { kind: 'br' },
+      { kind: 'text', value: 'HZ_outer = 1.67 × √' + r.star.lStar + ' = ' + r.hz.outer.toFixed(3) + ' AU' },
+      { kind: 'br' },
+      { kind: 'text', value: '→ ' },
+      { kind: 'result', value: r.hz.inner.toFixed(3) + ' – ' + r.hz.outer.toFixed(3) + ' AU' },
+    ];
+  }
+
+  function buildInHzParts(r) {
+    const parts = [
+      { kind: 'text', value: 'Planet at ' + state.distance.toFixed(3) + ' AU.' },
+      { kind: 'br' },
+      { kind: 'text', value: 'HZ for ' + r.star.name + ': ' + r.hz.inner.toFixed(3) + ' – ' + r.hz.outer.toFixed(3) + ' AU.' },
+      { kind: 'br' },
+    ];
+    if (r.inHz) {
+      parts.push({ kind: 'text', value: state.distance.toFixed(3) + ' is between ' + r.hz.inner.toFixed(3) + ' and ' + r.hz.outer.toFixed(3) + ' → ' });
+      parts.push({ kind: 'result', value: 'In HZ.' });
+    } else {
+      const side = state.distance < r.hz.inner ? 'inside the inner edge' : 'outside the outer edge';
+      parts.push({ kind: 'text', value: state.distance.toFixed(3) + ' is ' + side + ' → ' });
+      parts.push({ kind: 'result', value: 'Not in HZ.' });
+    }
+    return parts;
+  }
+
+  function renderTraces(r) {
+    renderTraceTo('trace-teq', buildTeqParts(r));
+    renderTraceTo('trace-tsurf', buildTsurfParts(r));
+    renderTraceTo('trace-water', buildWaterParts(r));
+    renderTraceTo('trace-atm', buildAtmParts(r));
+    renderTraceTo('trace-mag', buildMagParts(r));
+    renderTraceTo('trace-hz', buildHzParts(r));
+    renderTraceTo('trace-inhz', buildInHzParts(r));
+  }
+
+  // ─── Flags (per charter §7.6, §7.7) ─────────────────────────
+  function isMClass(starKey) {
+    const s = STARS[starKey];
+    return s ? !!s.mClass : false;
+  }
+
+  function computeFlagsFor(starKey, distance, magnetic, hz) {
+    const tidalLocking = isMClass(starKey) && distance <= 0.5 * hz.outer;
+    const stellarActivity = isMClass(starKey) && magnetic !== 'Likely';
+    return { tidalLocking, stellarActivity };
+  }
+
+  function computeFlags(r) {
+    return computeFlagsFor(state.star, state.distance, r.magnetic, r.hz);
+  }
+
+  // ─── Framework (6 criteria, 4-state verdicts, 5-field traces) ─
+  // Verdicts: 'MEETS' / 'PARTIAL' / 'FAILS' / 'UNCERTAIN'
+
+  function verdictWater(r) {
+    if (state.atm === 'unknown') return 'UNCERTAIN';
+    if (r.water === 'Liquid') return 'MEETS';
+    if (r.water === 'Sublimation') return 'PARTIAL';
+    if (r.water === 'Frozen' && state.mass >= 0.3) return 'PARTIAL';
+    return 'FAILS';
+  }
+
+  function verdictAtmosphere(r, flags) {
+    if (state.atm === 'unknown') return 'UNCERTAIN';
+    if (state.atm === 'none') return 'FAILS';
+    if (state.atm === 'thinco2') return 'PARTIAL';
+    const noCount = r.retention ? Object.values({ H2: r.retention.H2, H2O: r.retention.H2O, N2O2: r.retention.N2O2, CO2: r.retention.CO2 }).filter(v => v === 'No').length : 0;
+    let v = noCount === 0 ? 'MEETS' : 'PARTIAL';
+    if (v === 'MEETS' && flags.stellarActivity) v = 'PARTIAL';
+    return v;
+  }
+
+  function verdictTemperature(r, flags) {
+    if (state.atm === 'unknown' || r.tSurf === null) return 'UNCERTAIN';
+    const t = r.tSurf;
+    let v;
+    if (t >= 273 && t <= 373) v = 'MEETS';
+    else if ((t >= 200 && t < 273) || (t > 373 && t <= 500)) v = 'PARTIAL';
+    else v = 'FAILS';
+    if (v === 'MEETS' && flags.tidalLocking) v = 'PARTIAL';
+    return v;
+  }
+
+  function verdictMagnetic(r) {
+    if (r.magnetic === 'Likely') return 'MEETS';
+    if (r.magnetic === 'Marginal') return 'PARTIAL';
+    return 'FAILS';
+  }
+
+  function verdictEnergy() {
+    const isGorK = state.star === 'G2V' || state.star === 'K2V';
+    const age = state.age;
+    if (age < 0.5 || age > 12) return 'FAILS';
+    if (isGorK && age >= 1 && age <= 10) return 'MEETS';
+    return 'PARTIAL';
+  }
+
+  function verdictOrbit() {
+    return state.age >= 0.5 ? 'MEETS' : 'PARTIAL';
+  }
+
+  function computeFramework(r, flags) {
+    return [
+      { key: 'water',  label: 'Liquid water',   verdict: verdictWater(r),               fields: fieldsWater(r) },
+      { key: 'atm',    label: 'Atmosphere',     verdict: verdictAtmosphere(r, flags),   fields: fieldsAtmosphere(r, flags) },
+      { key: 'temp',   label: 'Temperature',    verdict: verdictTemperature(r, flags),  fields: fieldsTemperature(r, flags) },
+      { key: 'mag',    label: 'Magnetic field', verdict: verdictMagnetic(r),            fields: fieldsMagnetic(r) },
+      { key: 'energy', label: 'Energy source',  verdict: verdictEnergy(),               fields: fieldsEnergy() },
+      { key: 'orbit',  label: 'Stable orbit',   verdict: verdictOrbit(),                fields: fieldsOrbit() },
+    ];
+  }
+
+  // ─── 5-field content per criterion ───────────────────────────
+  function fieldsWater(r) {
+    const detect = state.atm === 'unknown'
+      ? 'Atmospheric composition unknown — surface temperature and pressure cannot be computed, so water phase is unknown.'
+      : 'T_surface + atmospheric pressure → water-phase lookup (§3.4). Current: T_surf = ' + (r.tSurf !== null ? r.tSurf.toFixed(0) + ' K' : '—') + ', P = ' + (r.atm.pressure !== null ? r.atm.pressure + ' bar' : '—') + ' → ' + r.water + '.';
+    return {
+      why: 'Life as we know it requires liquid solvent for cell chemistry. Water is the universal solvent on Earth.',
+      detect: detect,
+      earth: 'T_surf = 288 K, P = 1.0 bar → Liquid (the baseline against which everything else is measured).',
+      fail: 'Frozen at T < 273 K with insufficient internal heat (Mars); supercritical at T > 373 K and P ≥ 50 bar (Venus); sublimation if pressure < 0.1 bar (Mars surface).',
+    };
+  }
+
+  function fieldsAtmosphere(r, flags) {
+    let detect;
+    if (state.atm === 'unknown') {
+      detect = 'Atmospheric composition unknown — cannot evaluate.';
+    } else if (state.atm === 'none') {
+      detect = 'No atmosphere selected → criterion FAILS.';
+    } else {
+      detect = 'Atmosphere = ' + r.atm.label + '. Retention via gravity-band lookup (§3.3); per-gas results in the computed-outputs panel above.';
+      if (flags.stellarActivity) {
+        detect += ' §7.7 stellar-activity modifier: M-dwarf host + magnetic field not Likely → downgrade MEETS to PARTIAL (UV stripping concern).';
+      }
+    }
+    return {
+      why: 'An atmosphere holds heat, shields from radiation, and sustains the chemistry that biology runs on. Per §7.4, non-Earth atmospheres can also be habitable in principle — not just Earth-like N₂/O₂.',
+      detect: detect,
+      earth: 'Earth-like N₂/O₂ + GHGs at 1 bar; all four gas classes retained; magnetic field protects from solar wind stripping.',
+      fail: 'No atmosphere (Mercury, our Moon); thin atmosphere insufficient for liquid water (Mars); atmosphere lost to stellar wind or UV (Mars after magnetic field collapse, and a real concern for M-dwarf planets like Proxima b).',
+    };
+  }
+
+  function fieldsTemperature(r, flags) {
+    let detect;
+    if (state.atm === 'unknown' || r.tSurf === null) {
+      detect = 'T_surface requires atmospheric composition (greenhouse adjustment) — atmosphere is unknown.';
+    } else {
+      detect = 'T_surface = T_eq + ΔT_greenhouse = ' + r.tSurf.toFixed(0) + ' K. Verdict: ' + verdictTemperature(r, flags) + '.';
+      if (flags.tidalLocking && verdictTemperature(r, flags) === 'PARTIAL') {
+        detect += ' §7.6 tidal-locking modifier: M-dwarf host + close orbit → likely tidally locked; even MEETS-range temperatures get downgraded to PARTIAL (day/night extremes are severe even when global mean is habitable).';
+      }
+    }
+    return {
+      why: 'Earth-like life requires temperatures where water is liquid and proteins remain folded — roughly 273–373 K. Extremophiles broaden this slightly but the core range is narrow.',
+      detect: detect,
+      earth: 'T_surf = 288 K (+15°C) — comfortably mid-range. Liquid water everywhere.',
+      fail: 'Below 200 K life chemistry stops; above 500 K proteins denature and atmospheres run away (Venus). Tidally-locked planets have huge day/night swings even with a "habitable" global mean.',
+    };
+  }
+
+  function fieldsMagnetic(r) {
+    return {
+      why: 'A magnetic field deflects the solar wind and protects atmospheres from stripping. Without one, even a thick atmosphere can be eroded over billions of years (Mars).',
+      detect: 'Mass + system age → §3.5 dynamo heuristic. Current: mass = ' + state.mass.toFixed(2) + ' M⊕, age = ' + state.age.toFixed(1) + ' Gyr → ' + r.magnetic + '.',
+      earth: 'Mass 1.0 M⊕, age 4.5 Gyr, active dynamo → Likely (35-65 μT at surface).',
+      fail: 'Small planets cool too fast (Mars dynamo died ~4.1 Gya). Old large planets eventually solidify. Venus has the mass and age but slow rotation prevents dynamo — a limitation v1 does not model.',
+    };
+  }
+
+  function fieldsEnergy() {
+    return {
+      why: 'The host star must provide stable energy over biological timescales (billions of years). Per §7.4, this includes both photosynthesis-friendly stars and stars old/stable enough to support chemosynthetic biospheres in subsurface oceans.',
+      detect: 'Star type = ' + state.star + ', system age = ' + state.age.toFixed(1) + ' Gyr → verdict from §4.5 rules.',
+      earth: 'G2V (Sun), 4.5 Gyr — main-sequence lifetime ~10 Gyr, well within stable range.',
+      fail: 'F-type stars have lifetimes ~3-4 Gyr (life may not have time to emerge). M-dwarfs flare frequently (Proxima c superflare delivered ~10× sterilizing dose). Very young or very old systems lack stable energy delivery.',
+    };
+  }
+
+  function fieldsOrbit() {
+    return {
+      why: 'Stable orbital geometry over Gyr timescales prevents catastrophic temperature swings and surface conditions from changing too fast for biology to adapt.',
+      detect: 'System age = ' + state.age.toFixed(1) + ' Gyr. v1 conservatively uses age only — anything ≥ 0.5 Gyr is treated as dynamically settled.',
+      earth: 'Stable orbit for 4.5 Gyr; low eccentricity (0.017); no chaotic interactions with other planets.',
+      fail: 'v1 does not model orbital eccentricity, planet-planet perturbations, or stellar binarity. Real failure modes include young chaotic systems (< 0.1 Gyr), highly eccentric orbits that cross the HZ for only part of the year, and unstable resonances in multi-planet systems.',
+    };
+  }
+
+  function buildFrameworkParts(criterion) {
+    const f = criterion.fields;
+    return [
+      { kind: 'fields-list', whyValue: f.why, detectValue: f.detect, earthValue: f.earth, failValue: f.fail },
+    ];
+  }
+
+  function renderFrameworkRow(criterion) {
+    const badgeId = 'fw-' + criterion.key;
+    const traceId = 'fwt-' + criterion.key;
+    setBadge(badgeId, criterion.verdict, criterion.verdict);
+
+    const target = document.getElementById(traceId);
+    clearChildren(target);
+
+    const dl = el('dl', { class: 'field-list' });
+    const fieldPairs = [
+      ['Why it matters', criterion.fields.why],
+      ['How to detect', criterion.fields.detect],
+      ['Earth\'s value', criterion.fields.earth],
+      ['Where it fails', criterion.fields.fail],
+    ];
+    fieldPairs.forEach(([label, value]) => {
+      dl.appendChild(el('dt', { text: label }));
+      dl.appendChild(el('dd', { text: value }));
+    });
+    target.appendChild(dl);
+  }
+
+  function renderFramework(criteria) {
+    criteria.forEach(renderFrameworkRow);
+  }
+
+  function renderFlags(flags) {
+    const container = document.getElementById('flag-notes');
+    clearChildren(container);
+
+    if (flags.tidalLocking) {
+      const note = el('div', { class: 'callout warn' });
+      note.appendChild(el('div', { class: 'callout-title', text: '🔒 Tidal locking likely' }));
+      note.appendChild(txt('M-dwarf host star + close orbit (within ½ of HZ outer edge). One face always toward the star. Temperature criterion downgraded one step — the terminator zone may be habitable but day/night extremes are severe across the rest of the surface.'));
+      container.appendChild(note);
+    }
+
+    if (flags.stellarActivity) {
+      const note = el('div', { class: 'callout warn' });
+      note.appendChild(el('div', { class: 'callout-title', text: '⚡ Stellar activity concern' }));
+      note.appendChild(txt('M-dwarf hosts produce frequent UV/X-ray flares. Without a strong magnetic field, atmospheric stripping is a real concern over Gyr timescales. Atmosphere criterion downgraded even when retention math passes.'));
+      container.appendChild(note);
+    }
+  }
+
+  // ─── Compare mode ──────────────────────────────────────────
+  // computeForSlot swaps state temporarily so the existing verdict + field functions
+  // (which read state.*) produce results for the slot's preset, then restores state.
+  function computeForSlot(presetKey) {
+    const p = PRESETS[presetKey];
+    if (!p) return null;
+    const saved = {
+      mass: state.mass, radius: state.radius, albedo: state.albedo,
+      distance: state.distance, star: state.star, atm: state.atm, age: state.age,
+    };
+    state.mass = p.mass;
+    state.radius = p.radius;
+    state.albedo = p.albedo;
+    state.distance = p.distance;
+    state.star = p.star;
+    state.atm = p.atm;
+    state.age = p.age;
+    const r = computeAll();
+    const flags = computeFlags(r);
+    const framework = computeFramework(r, flags);
+    Object.assign(state, saved);
+    return { preset: p, presetKey, r, flags, framework };
+  }
+
+  function fmtKShort(k) {
+    if (k === null) return 'Unknown';
+    return k.toFixed(0) + ' K';
+  }
+
+  function renderComparePhysics(slot, containerId) {
+    const target = document.getElementById(containerId);
+    clearChildren(target);
+    const lines = [
+      ['Host star', slot.r.star.name],
+      ['T_surface', fmtKShort(slot.r.tSurf)],
+      ['Water phase', slot.r.water],
+      ['Magnetic field', slot.r.magnetic],
+      ['Distance', slot.preset.distance.toFixed(3) + ' AU'],
+      ['HZ', slot.r.hz.inner.toFixed(3) + '–' + slot.r.hz.outer.toFixed(3) + ' AU'],
+    ];
+    lines.forEach(([label, value]) => {
+      const row = el('div', { class: 'physics-line' });
+      row.appendChild(el('span', { class: 'label', text: label }));
+      row.appendChild(el('span', { class: 'value', text: value }));
+      target.appendChild(row);
+    });
+  }
+
+  function renderCompareCriteria(slots) {
+    // Render 6 rows × 3 columns, with divergence highlight per row
+    const containerIds = ['compare-criteria-0', 'compare-criteria-1', 'compare-criteria-2'];
+    containerIds.forEach(id => clearChildren(document.getElementById(id)));
+
+    const verdictsByRow = [0, 1, 2, 3, 4, 5].map(i => slots.map(s => s.framework[i].verdict));
+    const diverging = verdictsByRow.map(vs => new Set(vs).size > 1);
+
+    slots.forEach((slot, slotIdx) => {
+      const target = document.getElementById(containerIds[slotIdx]);
+      slot.framework.forEach((criterion, rowIdx) => {
+        const row = el('div', { class: 'compare-row' + (diverging[rowIdx] ? ' diverging' : '') });
+        row.appendChild(el('span', { class: 'criterion-label', text: criterion.label }));
+        row.appendChild(el('span', { class: 'badge ' + badgeClassFor(criterion.verdict), text: criterion.verdict }));
+        target.appendChild(row);
+      });
+    });
+  }
+
+  function renderCompareFlags(slot, containerId) {
+    const target = document.getElementById(containerId);
+    clearChildren(target);
+    if (slot.flags.tidalLocking) {
+      const chip = el('span', { class: 'compare-flag-chip', text: '🔒 Tidal locking' });
+      chip.title = 'M-class host star + close orbit (within ½ of HZ outer edge). One face always toward the star. Temperature criterion downgraded one step.';
+      target.appendChild(chip);
+    }
+    if (slot.flags.stellarActivity) {
+      const chip = el('span', { class: 'compare-flag-chip', text: '⚡ Stellar activity' });
+      chip.title = 'M-dwarf hosts produce frequent UV/X-ray flares. Without a strong magnetic field, atmospheric stripping is a real concern. Atmosphere criterion downgraded even when retention math passes.';
+      target.appendChild(chip);
+    }
+  }
+
+  function renderCompareView() {
+    const slots = state.compareSlots.map(k => computeForSlot(k)).filter(Boolean);
+    if (slots.length !== 3) return;
+    slots.forEach((slot, idx) => {
+      document.querySelector('[data-slot="' + idx + '"]').value = slot.presetKey;
+      renderComparePhysics(slot, 'compare-physics-' + idx);
+      renderCompareFlags(slot, 'compare-flags-' + idx);
+    });
+    renderCompareCriteria(slots);
+  }
+
+  function setView(view) {
+    state.view = view;
+    document.getElementById('tab-explore').classList.toggle('active', view === 'explore');
+    document.getElementById('tab-compare').classList.toggle('active', view === 'compare');
+    const mainEl = document.querySelector('main');
+    const compareEl = document.getElementById('compare-view');
+    if (view === 'compare') {
+      mainEl.hidden = true;
+      compareEl.hidden = false;
+      renderCompareView();
+    } else {
+      mainEl.hidden = false;
+      compareEl.hidden = true;
+    }
+  }
+
+  // ─── Export ────────────────────────────────────────────────
+  function buildSlotExport(slot) {
+    return {
+      name: slot.preset.name,
+      presetKey: slot.presetKey,
+      group: slot.preset.group,
+      inputs: {
+        mass: slot.preset.mass,
+        radius: slot.preset.radius,
+        albedo: slot.preset.albedo,
+        distance: slot.preset.distance,
+        star: slot.preset.star,
+        starName: slot.r.star.name,
+        atm: slot.preset.atm,
+        atmLabel: slot.r.atm.label,
+        age: slot.preset.age,
+      },
+      computedOutputs: {
+        tEqK: slot.r.tEq === null ? null : Math.round(slot.r.tEq * 10) / 10,
+        tSurfK: slot.r.tSurf === null ? null : Math.round(slot.r.tSurf * 10) / 10,
+        water: slot.r.water,
+        atmosphericRetention: slot.r.retention,
+        magneticField: slot.r.magnetic,
+        hzInnerAU: Math.round(slot.r.hz.inner * 10000) / 10000,
+        hzOuterAU: Math.round(slot.r.hz.outer * 10000) / 10000,
+        inHz: slot.r.inHz,
+      },
+      framework: slot.framework.map(c => ({
+        criterion: c.label,
+        verdict: c.verdict,
+        whyItMatters: c.fields.why,
+        howToDetect: c.fields.detect,
+        earthsValue: c.fields.earth,
+        whereItFails: c.fields.fail,
+      })),
+      flags: slot.flags,
+    };
+  }
+
+  function buildExportJSON(slots) {
+    return {
+      exportedAt: new Date().toISOString(),
+      calculatorVersion: '0.3',
+      sourceCode: 'https://github.com/matthewignash/habitability-zone-calculator',
+      comparison: slots.map(buildSlotExport),
+      assumptionsPanel: {
+        physicsFormulas: 'See CLAUDE.md §3 in the source repo, or the in-app "Show assumptions" drawer, for the full set of formulas and lookup tables.',
+        limitations: [
+          'Greenhouse adjustment is a 5-band lookup, not a real radiative-transfer model.',
+          'Magnetic field plausibility uses only mass + age; does not model rotation rate or interior composition. Venus gets MEETS even though real Venus has Unlikely magnetic field due to slow rotation — a known v1 limitation.',
+          'Tidal-locking detection is a heuristic (M-class star + distance ≤ 0.5 × HZ outer). Does not compute spin-orbit coupling rigorously.',
+          'Stable orbit is computed conservatively from system age only; does not model eccentricity, planet-planet perturbations, or stellar binarity.',
+          'Atmospheric retention is a Jeans-escape lookup, not full integration; does not account for non-thermal escape mechanisms (sputtering, photoevaporation) that strip atmospheres on M-dwarf planets over Gyr timescales.',
+        ],
+        pedagogyGuardrails: 'No aggregate habitability score, no binary "habitable / not habitable" verdict. Each framework criterion is evaluated independently as MEETS / PARTIAL / FAILS / UNCERTAIN. UNCERTAIN surfaces explicitly when atmospheric composition is unknown — the calculator never silently substitutes Earth-like defaults.',
+      },
+      forYourAIDocumentationTemplate: buildAIDocText(slots),
+    };
+  }
+
+  function summariseFramework(slot) {
+    const counts = { MEETS: 0, PARTIAL: 0, FAILS: 0, UNCERTAIN: 0 };
+    slot.framework.forEach(c => { counts[c.verdict] = (counts[c.verdict] || 0) + 1; });
+    return slot.preset.name + ': ' + Object.entries(counts).filter(([_, n]) => n > 0).map(([v, n]) => n + ' ' + v).join(', ');
+  }
+
+  function buildAIDocText(slots) {
+    const planetList = slots.map(s => s.preset.name).join(', ');
+    const verdictSummary = slots.map(summariseFramework).join('\n- ');
+    const flagsList = slots.flatMap(s => {
+      const out = [];
+      if (s.flags.tidalLocking) out.push(s.preset.name + ' — tidal-locking flag fired');
+      if (s.flags.stellarActivity) out.push(s.preset.name + ' — stellar-activity flag fired');
+      return out;
+    });
+    const flagText = flagsList.length === 0
+      ? 'No flags fired for any of the three planets.'
+      : 'Flags surfaced:\n- ' + flagsList.join('\n- ');
+
+    return [
+      '## AI tools used in this comparison',
+      '',
+      'I used the Habitability Zone Calculator (v0.3) to generate a side-by-side framework comparison of ' + planetList + '. Source: https://github.com/matthewignash/habitability-zone-calculator',
+      '',
+      '## What the calculator told me',
+      '',
+      '- ' + verdictSummary,
+      '',
+      flagText,
+      '',
+      '## OPVL on the calculator',
+      '',
+      '**Origin:** Browser-based static calculator built with AI assistance (Claude Code, 2026). Source code public on GitHub at matthewignash/habitability-zone-calculator. Physics formulas drawn from Kasting et al. 1993 + Kopparapu et al. 2013; preset parameters from NASA Exoplanet Archive.',
+      '',
+      '**Purpose:** To let students apply a multi-criteria habitability framework to Earth, Mars, and a chosen exoplanet without manually doing the math each time. The calculator surfaces UNCERTAIN explicitly when atmospheric data is missing, which is most exoplanets — supporting the §7.3 pedagogy of never silently defaulting to Earth-like assumptions.',
+      '',
+      '**Value:** Most useful for surfacing comparative patterns across planets (e.g., M-dwarf planets in HZ but with tidal-locking concerns) and for showing where a habitability claim is genuinely uncertain vs. genuinely supportable.',
+      '',
+      '**Limitations the calculator surfaced or flagged:**',
+      '- Greenhouse adjustment is a 5-band lookup, not a real radiative-transfer model.',
+      '- Magnetic field uses mass + age only; doesn\'t model rotation. Venus is the canonical case where the calculator says MEETS but real Venus has no magnetic field due to slow rotation.',
+      '- Tidal-locking detection is a heuristic (M-class + distance ≤ 0.5 × HZ outer).',
+      '- Stable orbit is computed from system age only; no eccentricity or n-body modelling.',
+      '- Atmospheric retention is a Jeans-escape lookup; doesn\'t account for non-thermal escape on M-dwarf planets.',
+      '',
+      '**One thing the calculator may have got wrong:**',
+      '',
+      '[Student fills in — e.g., "The calculator says Venus has a Likely magnetic field, but real Venus does not have one. I cross-checked against the NASA Solar System Exploration page for Venus to verify the calculator\'s limitation."]',
+      '',
+    ].join('\n');
+  }
+
+  function showToast(text) {
+    const toast = document.getElementById('toast');
+    toast.textContent = text;
+    toast.classList.add('show');
+    setTimeout(() => toast.classList.remove('show'), 2000);
+  }
+
+  function copyCompareJSON() {
+    const slots = state.compareSlots.map(k => computeForSlot(k)).filter(Boolean);
+    const json = JSON.stringify(buildExportJSON(slots), null, 2);
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(json).then(
+        () => showToast('Copied to clipboard.'),
+        () => showToast('Copy failed — use Download instead.')
+      );
+    } else {
+      showToast('Clipboard API unavailable — use Download.');
+    }
+  }
+
+  function downloadCompareJSON() {
+    const slots = state.compareSlots.map(k => computeForSlot(k)).filter(Boolean);
+    const json = JSON.stringify(buildExportJSON(slots), null, 2);
+    const blob = new Blob([json], { type: 'application/json' });
+    const url = URL.createObjectURL(blob);
+    const dateStr = new Date().toISOString().slice(0, 10);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'goldilocks-comparison-' + dateStr + '.json';
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+    showToast('Downloaded.');
+  }
+
+  // ─── Print view ────────────────────────────────────────────
+  const PRINT_CSS = [
+    '* { box-sizing: border-box; }',
+    'body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif; color: #1f2a37; background: white; margin: 0; padding: 24px; font-size: 12px; line-height: 1.5; }',
+    'header { border-bottom: 2px solid #c9542d; padding-bottom: 12px; margin-bottom: 18px; }',
+    'header h1 { margin: 0; font-size: 20px; color: #1f2a37; }',
+    'header .meta { color: #5b6573; font-size: 11px; margin-top: 4px; }',
+    '.banner { background: #f4ddcf; padding: 8px 12px; border-radius: 4px; margin-bottom: 18px; font-size: 11px; }',
+    '.banner strong { color: #c9542d; }',
+    '.grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }',
+    '.column { border: 1px solid #d9d4c4; border-radius: 8px; padding: 12px; page-break-inside: avoid; }',
+    '.column h2 { margin: 0 0 8px 0; font-size: 14px; color: #1f2a37; border-bottom: 1px solid #d9d4c4; padding-bottom: 6px; }',
+    '.section-label { text-transform: uppercase; font-size: 9px; letter-spacing: 0.4px; color: #5b6573; font-weight: 600; margin-top: 10px; margin-bottom: 4px; }',
+    '.kv { display: grid; grid-template-columns: 1fr auto; gap: 4px 8px; font-size: 11px; }',
+    '.kv dt { color: #5b6573; font-size: 10px; text-transform: uppercase; letter-spacing: 0.3px; }',
+    '.kv dd { margin: 0; font-variant-numeric: tabular-nums; }',
+    '.flags { margin: 8px 0; display: flex; flex-wrap: wrap; gap: 4px; }',
+    '.flag-chip { font-size: 10px; padding: 2px 6px; border-radius: 8px; background: #fff4dc; border: 1px solid #f0c574; color: #c9882d; font-weight: 600; }',
+    '.criteria { margin-top: 8px; }',
+    '.criterion { display: grid; grid-template-columns: 1fr auto; gap: 6px; padding: 6px 8px; border-radius: 4px; font-size: 11px; align-items: center; }',
+    '.criterion.diverging { background: #f4ddcf; border-left: 2px solid #c9542d; padding-left: 6px; }',
+    '.badge { padding: 1px 6px; border-radius: 8px; font-size: 9px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.3px; }',
+    '.badge-ok { background: #d8ebdf; color: #2e7d4f; }',
+    '.badge-warn { background: #f5e3c4; color: #c9882d; }',
+    '.badge-bad { background: #f3d3d0; color: #b3261e; }',
+    '.badge-muted { background: #e9e4d3; color: #5b6573; }',
+    'footer { margin-top: 20px; padding-top: 12px; border-top: 1px solid #d9d4c4; color: #5b6573; font-size: 10px; }',
+    '@media print { body { padding: 12mm; } .banner { background: white; border: 1px solid #d9d4c4; } .column { page-break-inside: avoid; } }',
+  ].join(' ');
+
+  function buildPrintColumn(slot, isDiverging) {
+    const col = el('div', { class: 'column' });
+    col.appendChild(el('h2', { text: slot.preset.name }));
+
+    // Inputs section
+    col.appendChild(el('div', { class: 'section-label', text: 'Inputs' }));
+    const inputsDl = el('dl', { class: 'kv' });
+    const inputs = [
+      ['Host star', slot.r.star.name],
+      ['Mass', slot.preset.mass.toFixed(3) + ' M⊕'],
+      ['Radius', slot.preset.radius.toFixed(3) + ' R⊕'],
+      ['Albedo', slot.preset.albedo.toFixed(2)],
+      ['Distance', slot.preset.distance.toFixed(3) + ' AU'],
+      ['Atmosphere', slot.r.atm.label],
+      ['Age', slot.preset.age.toFixed(1) + ' Gyr'],
+    ];
+    inputs.forEach(([k, v]) => {
+      inputsDl.appendChild(el('dt', { text: k }));
+      inputsDl.appendChild(el('dd', { text: v }));
+    });
+    col.appendChild(inputsDl);
+
+    // Computed outputs
+    col.appendChild(el('div', { class: 'section-label', text: 'Computed outputs' }));
+    const outDl = el('dl', { class: 'kv' });
+    const outs = [
+      ['T_eq', slot.r.tEq === null ? 'Unknown' : slot.r.tEq.toFixed(0) + ' K'],
+      ['T_surface', fmtKShort(slot.r.tSurf)],
+      ['Water phase', slot.r.water],
+      ['Magnetic field', slot.r.magnetic],
+      ['HZ', slot.r.hz.inner.toFixed(3) + '–' + slot.r.hz.outer.toFixed(3) + ' AU'],
+      ['In HZ?', slot.r.inHz ? 'Yes' : 'No'],
+    ];
+    outs.forEach(([k, v]) => {
+      outDl.appendChild(el('dt', { text: k }));
+      outDl.appendChild(el('dd', { text: v }));
+    });
+    col.appendChild(outDl);
+
+    // Flags
+    if (slot.flags.tidalLocking || slot.flags.stellarActivity) {
+      const flagsDiv = el('div', { class: 'flags' });
+      if (slot.flags.tidalLocking) flagsDiv.appendChild(el('span', { class: 'flag-chip', text: '🔒 Tidal locking' }));
+      if (slot.flags.stellarActivity) flagsDiv.appendChild(el('span', { class: 'flag-chip', text: '⚡ Stellar activity' }));
+      col.appendChild(flagsDiv);
+    }
+
+    // Framework
+    col.appendChild(el('div', { class: 'section-label', text: 'Habitability framework' }));
+    const critContainer = el('div', { class: 'criteria' });
+    slot.framework.forEach((c, idx) => {
+      const row = el('div', { class: 'criterion' + (isDiverging[idx] ? ' diverging' : '') });
+      row.appendChild(el('span', { text: c.label }));
+      row.appendChild(el('span', { class: 'badge ' + badgeClassFor(c.verdict), text: c.verdict }));
+      critContainer.appendChild(row);
+    });
+    col.appendChild(critContainer);
+
+    return col;
+  }
+
+  function buildPrintViewDocument(slots) {
+    const doc = document.implementation.createHTMLDocument('Goldilocks Report — Habitability Comparison');
+    const head = doc.head;
+    const meta = doc.createElement('meta');
+    meta.setAttribute('charset', 'UTF-8');
+    head.appendChild(meta);
+    const style = doc.createElement('style');
+    style.textContent = PRINT_CSS;
+    head.appendChild(style);
+
+    const body = doc.body;
+
+    // Header
+    const header = doc.createElement('header');
+    const h1 = doc.createElement('h1');
+    h1.textContent = 'Goldilocks Report — Habitability Comparison';
+    header.appendChild(h1);
+    const metaDiv = doc.createElement('div');
+    metaDiv.className = 'meta';
+    metaDiv.textContent = slots.map(s => s.preset.name).join(' · ') + ' — generated ' + new Date().toISOString().slice(0, 10);
+    header.appendChild(metaDiv);
+    body.appendChild(header);
+
+    // Banner
+    const banner = doc.createElement('div');
+    banner.className = 'banner';
+    const strong = doc.createElement('strong');
+    strong.textContent = 'This is a model.';
+    banner.appendChild(strong);
+    banner.appendChild(doc.createTextNode(' The math is simplified. Apply OPVL to it as you would to any source. Built with AI assistance — see the calculator\'s Show Assumptions panel and the github.com/matthewignash/habitability-zone-calculator source for the full set of formulas and limitations.'));
+    body.appendChild(banner);
+
+    // Compute divergence per criterion row
+    const verdictsByRow = [0, 1, 2, 3, 4, 5].map(i => slots.map(s => s.framework[i].verdict));
+    const diverging = verdictsByRow.map(vs => new Set(vs).size > 1);
+
+    // 3-column grid — built locally because el() is the calculator doc's helper
+    const grid = doc.createElement('div');
+    grid.className = 'grid';
+    slots.forEach(slot => {
+      // Import the el-built nodes into the new doc
+      const localNode = buildPrintColumn(slot, diverging);
+      grid.appendChild(doc.importNode(localNode, true));
+    });
+    body.appendChild(grid);
+
+    // Footer
+    const footer = doc.createElement('footer');
+    footer.textContent = 'Generated by Habitability Zone Calculator v0.4 · github.com/matthewignash/habitability-zone-calculator';
+    body.appendChild(footer);
+
+    return doc;
+  }
+
+  function openPrintView() {
+    const slots = state.compareSlots.map(k => computeForSlot(k)).filter(Boolean);
+    if (slots.length !== 3) {
+      showToast('Compare mode required.');
+      return;
+    }
+    const doc = buildPrintViewDocument(slots);
+    const w = window.open('', '_blank');
+    if (!w) {
+      showToast('Popup blocked — allow popups and retry.');
+      return;
+    }
+    w.document.replaceChild(
+      w.document.importNode(doc.documentElement, true),
+      w.document.documentElement
+    );
+  }
+
+  function update() {
+    renderInputReadouts();
+    const r = computeAll();
+    const flags = computeFlags(r);
+    const framework = computeFramework(r, flags);
+    renderOutputs(r);
+    renderTraces(r);
+    renderFramework(framework);
+    renderFlags(flags);
+    saveState();
+  }
+
+  // ─── Event wiring ───────────────────────────────────────────
+  function bindSlider(id, key) {
+    document.getElementById(id).addEventListener('input', e => {
+      state[key] = parseFloat(e.target.value);
+      clearPresetSelection();
+      update();
+    });
+  }
+
+  function bindSelect(id, key) {
+    document.getElementById(id).addEventListener('change', e => {
+      state[key] = e.target.value;
+      clearPresetSelection();
+      update();
+    });
+  }
+
+  function loadPreset(key) {
+    if (!key) {
+      state.preset = '';
+      syncInputsFromState();
+      update();
+      return;
+    }
+    const p = PRESETS[key];
+    if (!p) return;
+    state.mass = p.mass;
+    state.radius = p.radius;
+    state.albedo = p.albedo;
+    state.distance = p.distance;
+    state.star = p.star;
+    state.atm = p.atm;
+    state.age = p.age;
+    state.preset = key;
+    syncInputsFromState();
+    update();
+  }
+
+  function clearPresetSelection() {
+    if (state.preset !== '') {
+      state.preset = '';
+      document.getElementById('preset').value = '';
+    }
+  }
+
+  function syncInputsFromState() {
+    document.getElementById('mass').value = state.mass;
+    document.getElementById('radius').value = state.radius;
+    document.getElementById('albedo').value = state.albedo;
+    document.getElementById('distance').value = state.distance;
+    document.getElementById('star').value = state.star;
+    document.getElementById('atm').value = state.atm;
+    document.getElementById('age').value = state.age;
+    document.getElementById('preset').value = state.preset;
+  }
+
+  function openDrawer() {
+    document.getElementById('drawer').classList.add('open');
+    document.getElementById('drawer-backdrop').classList.add('open');
+    document.getElementById('drawer').setAttribute('aria-hidden', 'false');
+  }
+
+  function closeDrawer() {
+    document.getElementById('drawer').classList.remove('open');
+    document.getElementById('drawer-backdrop').classList.remove('open');
+    document.getElementById('drawer').setAttribute('aria-hidden', 'true');
+  }
+
+  // ─── Persistence (localStorage) ────────────────────────────
+  const STORAGE_KEY = 'hzc.v04.state';
+  const STORAGE_VERSION = '0.4';
+
+  function saveState() {
+    try {
+      const payload = {
+        version: STORAGE_VERSION,
+        view: state.view,
+        preset: state.preset,
+        inputs: {
+          mass: state.mass, radius: state.radius, albedo: state.albedo,
+          distance: state.distance, star: state.star, atm: state.atm, age: state.age,
+        },
+        compareSlots: state.compareSlots.slice(),
+      };
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(payload));
+    } catch (e) {
+      // Storage unavailable (private mode, quota); fail silently
+    }
+  }
+
+  function loadState() {
+    try {
+      const raw = localStorage.getItem(STORAGE_KEY);
+      if (!raw) return false;
+      const data = JSON.parse(raw);
+      if (data.version !== STORAGE_VERSION) return false;
+      if (data.inputs) Object.assign(state, data.inputs);
+      if (typeof data.preset === 'string') state.preset = data.preset;
+      if (data.view === 'compare' || data.view === 'explore') state.view = data.view;
+      if (Array.isArray(data.compareSlots) && data.compareSlots.length === 3) {
+        const allValid = data.compareSlots.every(k => PRESETS[k]);
+        if (allValid) state.compareSlots = data.compareSlots.slice();
+      }
+      return true;
+    } catch (e) {
+      return false;
+    }
+  }
+
+  function clearSavedState() {
+    try { localStorage.removeItem(STORAGE_KEY); } catch (e) { /* ignore */ }
+    window.location.reload();
+  }
+
+  // ─── URL params ────────────────────────────────────────────
+  function validatePresetKey(k) {
+    return k && PRESETS[k] ? k : null;
+  }
+
+  function validateCompareList(s) {
+    if (!s) return null;
+    const parts = s.split(',').map(x => x.trim());
+    const valid = parts.map(p => validatePresetKey(p)).filter(Boolean);
+    if (valid.length === 0) return null;
+    // Pad with defaults if fewer than 3
+    const defaults = ['earth', 'mars', 'trappist1e'];
+    while (valid.length < 3) valid.push(defaults[valid.length]);
+    return valid.slice(0, 3);
+  }
+
+  function parseURLParams() {
+    const params = new URLSearchParams(window.location.search);
+    const presetKey = validatePresetKey(params.get('preset'));
+    const compareList = validateCompareList(params.get('compare'));
+    let view = params.get('view');
+    if (view !== 'explore' && view !== 'compare') view = null;
+    // Apply: URL wins over localStorage
+    if (presetKey) {
+      const p = PRESETS[presetKey];
+      state.mass = p.mass; state.radius = p.radius; state.albedo = p.albedo;
+      state.distance = p.distance; state.star = p.star; state.atm = p.atm; state.age = p.age;
+      state.preset = presetKey;
+      state.view = view || 'explore';
+    }
+    if (compareList) {
+      state.compareSlots = compareList;
+      state.view = view || 'compare';
+    }
+    if (view && !presetKey && !compareList) {
+      state.view = view;
+    }
+  }
+
+  // ─── Init ───────────────────────────────────────────────────
+  function init() {
+    bindSlider('mass', 'mass');
+    bindSlider('radius', 'radius');
+    bindSlider('albedo', 'albedo');
+    bindSlider('distance', 'distance');
+    bindSelect('star', 'star');
+    bindSelect('atm', 'atm');
+    bindSlider('age', 'age');
+
+    document.getElementById('preset').addEventListener('change', e => loadPreset(e.target.value));
+    document.getElementById('reset-explore').addEventListener('click', () => loadPreset(''));
+
+    document.getElementById('tab-explore').addEventListener('click', () => setView('explore'));
+    document.getElementById('tab-compare').addEventListener('click', () => setView('compare'));
+
+    document.querySelectorAll('.compare-slot-select').forEach(sel => {
+      const slotIdx = parseInt(sel.dataset.slot, 10);
+      sel.value = state.compareSlots[slotIdx];
+      sel.addEventListener('change', e => {
+        state.compareSlots[slotIdx] = e.target.value;
+        renderCompareView();
+        saveState();
+      });
+    });
+
+    document.getElementById('copy-compare').addEventListener('click', copyCompareJSON);
+    document.getElementById('download-compare').addEventListener('click', downloadCompareJSON);
+    document.getElementById('print-compare').addEventListener('click', openPrintView);
+    document.getElementById('clear-saved-state').addEventListener('click', clearSavedState);
+
+    document.getElementById('open-assumptions').addEventListener('click', openDrawer);
+    document.getElementById('open-assumptions').addEventListener('keydown', e => {
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openDrawer(); }
+    });
+    document.getElementById('close-drawer').addEventListener('click', closeDrawer);
+    document.getElementById('drawer-backdrop').addEventListener('click', closeDrawer);
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeDrawer(); });
+
+    // Restore from localStorage (if present + version matches), then apply URL params (which win)
+    loadState();
+    parseURLParams();
+    syncInputsFromState();
+    if (state.view === 'compare') {
+      setView('compare');
+    } else {
+      update();
+    }
+  }
+
+  document.addEventListener('DOMContentLoaded', init);
+</script>
+
+</body>
+</html>

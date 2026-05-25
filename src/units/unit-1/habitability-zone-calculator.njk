@@ -1,0 +1,77 @@
+---
+layout: layouts/base.njk
+title: Habitability Zone Calculator
+tagline: The simulator you'll use to build, test, and defend your habitability framework across Blocks 4–8.
+breadcrumbs:
+  - { url: /, label: Home }
+  - { url: /units/, label: Units }
+  - { url: /units/unit-1/, label: "Unit 1 — Earth and Universe" }
+  - { label: "Habitability Zone Calculator" }
+---
+
+<div class="prose">
+
+<p>A multi-criteria habitability simulator built specifically for the <a href="/units/unit-1/assessment-goldilocks-report/">Goldilocks Report</a>. Three modes: <strong>Explore</strong> (perturb any planet by hand), <strong>Load preset</strong> (12 presets — Earth, Mars, Venus + the 8 student-choice exoplanets + Kepler-22 b worked-example), and <strong>Compare</strong> (Earth, Mars, and your chosen exoplanet side-by-side with framework verdicts). Export the Compare view as JSON — the export includes a pre-formatted "For your AI Documentation Template" section you can paste directly into your Report.</p>
+
+<div class="callout">
+  <div class="callout-title">This is a model</div>
+  The calculator uses simplified physics: greenhouse adjustment is a 5-band lookup (not radiative transfer), magnetic field uses mass + age only (not rotation), atmospheric retention is a Jeans-escape lookup. Click <strong>Show assumptions</strong> inside the calculator to see every formula, lookup table, and known limitation. Apply OPVL to the calculator as you would to any source.
+</div>
+
+</div>
+
+<iframe
+  class="simulator-frame"
+  src="/assets/simulators/habitability/index.html"
+  title="Habitability Zone Calculator simulator"
+  loading="lazy"
+  allow="fullscreen"
+></iframe>
+
+<p style="margin-top: 16px; font-size: 14px; color: var(--muted);">
+  Trouble loading? <a class="open-new-tab" href="/assets/simulators/habitability/index.html" target="_blank" rel="noopener">Open the simulator in a new tab →</a>
+</p>
+
+<div class="prose" style="margin-top: 24px;">
+
+<h2>Where this fits in the unit</h2>
+
+<ul>
+  <li><strong>Block 4 (Scale of the Cosmos)</strong> — first introduction. Load Earth / Mars / Venus, then change the host-star type to see the habitable zone shrink dramatically around M-dwarfs.</li>
+  <li><strong>Block 6 (Choose Your Exoplanet)</strong> — load your candidate's preset. Notice how Atmosphere = Unknown propagates as UNCERTAIN through the framework — that's <a href="/foundations/opvl-framework/">OPVL</a> in action.</li>
+  <li><strong>Block 7 (Habitability Framework)</strong> — switch to <strong>Compare</strong> mode (Earth + Mars + your exoplanet). The 6-row framework readout becomes the spine of your <a href="/units/unit-1/assessment-goldilocks-report/">Goldilocks Report</a> framework section.</li>
+  <li><strong>Block 8 (Drafting Day)</strong> — click <strong>Copy as JSON</strong> or <strong>Download JSON</strong> in Compare mode. The export's "For your AI Documentation Template" section satisfies the K/U gate without extra documentation work.</li>
+</ul>
+
+<h2>Before you start</h2>
+
+<ul>
+  <li>Have your <a href="/units/unit-1/assessment-goldilocks-report/">Goldilocks Report</a> open — Steps 2 (framework) and 3 (compare across cases) are what the calculator's Compare mode supports.</li>
+  <li>Skim the calculator's <strong>Show assumptions</strong> drawer before trusting any verdict. The K/U gate on the rubric requires you OPVL the calculator itself.</li>
+  <li>Pair with the <a href="/ai-partners/planet-hunter/">Planet Hunter</a> — the calculator computes; the Planet Hunter helps you reason about what the numbers mean.</li>
+</ul>
+
+<h2>Teacher links</h2>
+
+<p>Bookmark these to deep-link students into a specific preset or compare loadout:</p>
+
+<ul>
+  <li><code>?preset=trappist1e</code> — opens Explore with TRAPPIST-1 e loaded</li>
+  <li><code>?preset=kepler22b</code> — opens the Block 8 worked-example planet</li>
+  <li><code>?compare=earth,mars,trappist1e</code> — opens Compare mode with the default Goldilocks loadout</li>
+  <li><code>?compare=earth,mars,k218b</code> — Compare with K2-18 b as the chosen exoplanet</li>
+</ul>
+
+</div>
+
+<script>
+  (function () {
+    var iframe = document.querySelector('.simulator-frame');
+    var openLink = document.querySelector('.open-new-tab');
+    var search = window.location.search;
+    if (search) {
+      if (iframe) iframe.src = iframe.src.split('?')[0] + search;
+      if (openLink) openLink.href = openLink.href.split('?')[0] + search;
+    }
+  })();
+</script>
