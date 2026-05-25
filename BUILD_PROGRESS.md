@@ -2,11 +2,29 @@
 
 > **Purpose:** Living status doc. Tells you (and future Claude Code sessions) what's built, what's stubbed, what to build next, and in what order. The charter is in `CLAUDE.md` — do NOT modify that. Update this file at the end of each build session.
 
-**Last updated:** 2026-05-25 (Unit 4 skeleton — 16 new pages + 2 new AI partners)
+**Last updated:** 2026-05-25 (Unit 4 deep build — Phase A: spine deep build)
 
 ---
 
 ## TL;DR — pick up here
+
+**Unit 4 has a teaching-ready spine.** This phase mirrors U2 Phase A: deep-build the 3 highest-leverage blocks (Block 1 Greenhouse Effect, Block 5 IPCC + Brief Assigned, Block 10 Worked-Example Brief + Peer Feedback), convert the Chennai Climate Brief assessment stub to a full handout, and convert the Climate Modeler + Policy Aide stubs to full 7-section specs.
+
+**What shipped this phase:**
+- `src/units/unit-4/block-1.njk` — Greenhouse Effect — stub → full 5-section deep block (~115 lines). Agency-mode framing + 2015 floods / 2019 Day Zero anchor + energy-balance diagram activity + Chennai-amplification exit ticket.
+- `src/units/unit-4/block-5.njk` — IPCC + Brief Assigned — stub → full 5-section deep block (~125 lines). IPCC structure + SSP scenarios + confidence-level language + whole-class OPVL on AR6 figure + assessment kickoff + 8 challenges released.
+- `src/units/unit-4/block-10.njk` — Brief Work Day + Worked Example — stub → full 5-section deep block (~130 lines). Heat Mortality worked-example demo (the highest-leverage teacher move) + Policy Aide voice-coaching + structured peer feedback on the 3 rubric gates.
+- `src/units/unit-4/assessment-chennai-climate-brief.njk` — stub → full handout (~210 lines). GRASPS table, 8-challenges table, 5-section Brief structure, K/U / T/T / C rubric across 4 bands, 3 gates explicitly named (recommendations specificity T/T, policy voice C, AI Doc K/U), grade weighting.
+- `src/ai-partners/climate-modeler.njk` — stub → full 7-section spec (~145 lines). Overview, Pairs with, Quick facts, copy-paste system prompt, Opening message, Example exchange (IPCC AR6 figure interpretation), Failure mode + Recovery, Documentation reminder.
+- `src/ai-partners/policy-aide.njk` — stub → full 7-section spec (~150 lines). Overview (voice coaching + Panel role-play), Pairs with (Climate Modeler + Defense Practice Partner), Quick facts, copy-paste system prompt, Opening message, Example exchange (academic-essay → policy-brief voice revision), Failure mode + Recovery, Documentation reminder.
+
+Site stays at 112 generated files (no new files; content updates only).
+
+**Phases B + C** still ahead — will deepen Blocks 2, 3, 4, 6 (the science chunk) and 7, 8, 9, 11, 12 (the application + workflow blocks). After both, U4 is fully complete.
+
+---
+
+## Previous TL;DR — Unit 4 skeleton (kept for reference)
 
 **Unit 4 (Atmosphere & Climate) is now navigable as a skeleton.** Mirrors the U2 skeleton-first pattern: full landing + 12 block stubs + Chennai Climate Brief assessment stub + 2 new AI partner stubs (Climate Modeler + Policy Aide). Deep block content lands in future phases.
 
