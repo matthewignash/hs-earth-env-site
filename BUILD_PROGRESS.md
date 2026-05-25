@@ -2,11 +2,26 @@
 
 > **Purpose:** Living status doc. Tells you (and future Claude Code sessions) what's built, what's stubbed, what to build next, and in what order. The charter is in `CLAUDE.md` — do NOT modify that. Update this file at the end of each build session.
 
-**Last updated:** 2026-05-25 (Unit 2 deep build — Phase A: realignment + spine deep build)
+**Last updated:** 2026-05-25 (Unit 2 deep build — Phase B: concept-building chunk deep)
 
 ---
 
 ## TL;DR — pick up here
+
+**Unit 2 has 6 of 9 blocks deep.** This phase deepened the concept-building chunk: Block 2 (Erosion), Block 3 (Rivers as Landscape Sculptors), and Block 4 (Coasts). Together with Phase A's spine (Blocks 1, 5, 7), this means 2/3 of U2 is now teaching-ready. Only the workflow chunk remains — Blocks 6 (Map Analysis Work Day), 8 (Drafting + Peer Feedback), and 9 (Share-Out + Unit Close) — which Phase C will deepen.
+
+**What shipped this phase:**
+- `src/units/unit-2/block-2.njk` — Erosion — stub → full 5-section deep block (~115 lines). Four erosion agents + Marina Beach satellite-sequence worked example.
+- `src/units/unit-2/block-3.njk` — Rivers as Landscape Sculptors — stub → full 5-section deep block (~115 lines). River vocabulary + Cooum/Adyar case study + three-sources OPVL practice (government / news / AI).
+- `src/units/unit-2/block-4.njk` — Coasts — stub → full 5-section deep block (~115 lines). Coastal processes + Marina vs. Mahabalipuram contrast (fast-time vs. deep-time coastal reading).
+
+Site stays at 96 generated files (no new files; content updates only).
+
+**Phase C** still ahead — will deepen Blocks 6 (Map Analysis), 8 (Drafting + Peer Feedback), and 9 (Share-Out + Unit Close). After Phase C, Unit 2 is fully complete.
+
+---
+
+## Previous TL;DR — Unit 2 Phase A spine (kept for reference)
 
 **Unit 2 has a teaching-ready spine.** Three highest-leverage blocks now deep (1, 5, 7), the Landscape Reading assessment is a full handout, and the Field Geologist is a full 7-section AI partner spec. All 9 U2 block titles also realigned from the previous Block-Plans-organized structure to the UbD-canonical process-organized structure (weathering → erosion → rivers → coasts → tropical/Chennai → map analysis → worked example → drafting + peer feedback → share-out).
 
