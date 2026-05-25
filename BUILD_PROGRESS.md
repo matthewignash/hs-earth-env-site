@@ -2,13 +2,25 @@
 
 > **Purpose:** Living status doc. Tells you (and future Claude Code sessions) what's built, what's stubbed, what to build next, and in what order. The charter is in `CLAUDE.md` — do NOT modify that. Update this file at the end of each build session.
 
-**Last updated:** 2026-05-25 (Unit 2 deep build — Phase B: concept-building chunk deep)
+**Last updated:** 2026-05-25 (Unit 2 deep build — Phase C: workflow chunk closes out U2)
 
 ---
 
 ## TL;DR — pick up here
 
-**Unit 2 has 6 of 9 blocks deep.** This phase deepened the concept-building chunk: Block 2 (Erosion), Block 3 (Rivers as Landscape Sculptors), and Block 4 (Coasts). Together with Phase A's spine (Blocks 1, 5, 7), this means 2/3 of U2 is now teaching-ready. Only the workflow chunk remains — Blocks 6 (Map Analysis Work Day), 8 (Drafting + Peer Feedback), and 9 (Share-Out + Unit Close) — which Phase C will deepen.
+**Unit 2 is now fully complete.** This phase deepened the final 3 stubs (Block 6 — Map Analysis Work Day, Block 8 — Drafting + Peer Feedback, Block 9 — Share-Out + Unit Close) to full 5-section content matching the rest of U2. Block 9 includes a small Unit 3 preview / connect-forward block at the bottom, mirroring the U0 Block 7 close-out pattern.
+
+After this commit, **U0 + U1 + U2 + U3 are all fully complete** — 38 deep blocks total across the four units, 4 full assessments, 9 AI partner pages (3 of them at deep 7-section spec depth, 5 still at stub depth from earlier phases), the full EAL hub (11 pages), and the full Foundations layer (10 pages). The units/index landing's build-status note now reads "Unit 2 is fully complete" alongside U0, U1, and U3.
+
+Site stays at 96 generated files (no new files; content updates only).
+
+**What's left in the year-map**: Units 4–7 are still landing-card-only with no folders. Plus 5 of the 8 AI partner stubs (Skeptic, Source Evaluator, Plate Tectonics Tutor, Engineering Coach, Defense Practice Partner) are still at pre-deep-build depth — they have working launch placeholders + scope blurbs but not the full 7-section spec yet.
+
+---
+
+## Previous TL;DR — U2 Phase B (kept for reference)
+
+**Unit 2 has 6 of 9 blocks deep.** Phase B deepened the concept-building chunk: Block 2 (Erosion), Block 3 (Rivers as Landscape Sculptors), and Block 4 (Coasts). Together with Phase A's spine (Blocks 1, 5, 7), this means 2/3 of U2 is now teaching-ready. Only the workflow chunk remains — Blocks 6 (Map Analysis Work Day), 8 (Drafting + Peer Feedback), and 9 (Share-Out + Unit Close) — which Phase C will deepen.
 
 **What shipped this phase:**
 - `src/units/unit-2/block-2.njk` — Erosion — stub → full 5-section deep block (~115 lines). Four erosion agents + Marina Beach satellite-sequence worked example.
