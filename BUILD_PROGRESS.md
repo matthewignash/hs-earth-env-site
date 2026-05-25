@@ -2,17 +2,24 @@
 
 > **Purpose:** Living status doc. Tells you (and future Claude Code sessions) what's built, what's stubbed, what to build next, and in what order. The charter is in `CLAUDE.md` — do NOT modify that. Update this file at the end of each build session.
 
-**Last updated:** 2026-05-25 (Habitability Zone Calculator integrated into Unit 1 — Phase 5 of the sibling-project build)
+**Last updated:** 2026-05-25 (Foundations layer expanded — 5 new pages + 2 substantive updates)
 
 ---
 
 ## TL;DR — pick up here
 
-**Unit 1 is fully complete AND the Habitability Zone Calculator is wired into the site.** The standalone calculator (sibling project at `../Habitability-Zone-Calculator/`) reached v0.4 with 12 presets, Compare mode, JSON export, localStorage, URL params, and a printable HTML view. This commit wires it into the course site: a `sync-habitability` npm script copies the calculator HTML into `src/assets/simulators/habitability/index.html` at build time, a launcher page at `/units/unit-1/habitability-zone-calculator/` iframes it, and Blocks 4 / 6 / 7 / 8 plus the Unit 1 landing now link in with deep URL params for teaching context.
+**The Foundations layer just doubled in size.** Matthew wrote 7 new supporting documents (via Claude Cowork) that have now been incorporated into the site:
+- **5 new pages**: `/foundations/welcome/`, `/foundations/for-parents/`, `/foundations/notetaking/`, `/foundations/defending-your-work/`, `/foundations/peer-review/`
+- **2 substantive updates**: `/foundations/class-expectations/` (expanded from 3 sections to full 7-section two-way contract), `/foundations/the-rubric/` (expanded from 3 rubric tables to 10 sections including philosophy, profile examples, assessment-type weighting table, and Q&A)
+- **Foundations index restructured** into 5 logical groupings: Start Here / Core Frameworks / Skills for This Class / Site Mechanics / For Families
 
-**Phase 3 (earlier) added Blocks 3, 4, 5, 6, 8, and 9** — Mars Calibration, Scale of the Cosmos, Exoplanet Detection, Choose Your Exoplanet, Drafting Day, and Stakeholder Q&A Prep. Each uses the canonical Hybrid pattern. Block 4 introduces the Goldilocks Report assignment. Block 6 introduces the Planet Hunter AI partner. Block 9 introduces the Defense Practice Partner.
+**Previous state (still current beyond Foundations):** Unit 1 fully complete with all 10 blocks + Goldilocks Report + 2 new AI partners. Habitability Zone Calculator integrated into the site (sync script, launcher page, deep links from Blocks 4 / 6 / 7 / 8). Unit 0 + Unit 3 also fully built.
 
-**Next-phase recommendation: pivot to Unit 2 (Surface Processes) skeleton.** Parallel to how we approached U1: landing + 9 block stubs + Landscape Reading assessment stub + Field Geologist AI partner stub. After U2 skeleton: U2 deep build, then U4 → U5 → U6 → U7 in teach-order. Or alternatively, start on another simulator brief (Cauvery / Land Allocation / Energy Mix — all at v0-charter-only state).
+**Next-phase candidates:**
+- Apply the AI Partner Deployment Plan (root-level docx) to existing AI partner pages — adds platform decisions (BoodleBox / NotebookLM / Gemini Gems / Flint) to launchUrl placeholders.
+- Unit 2 (Surface Processes) skeleton.
+- Unit 5 (Hydrosphere) skeleton + trial-aware build — U5 is the trial unit per the Deployment Plan and has substantial Trial Materials + Assessment Support docx ready.
+- Another simulator brief (Cauvery / Land Allocation / Energy Mix all at v0-charter-only state).
 
 After Unit 1 deep build: teach-order priority is **U2 → U4 → U5 → U6 → U7**. (U3 is fully built and the simulator behind it is functionally complete.)
 
