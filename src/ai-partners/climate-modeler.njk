@@ -1,0 +1,35 @@
+---
+layout: layouts/base.njk
+title: The Climate Modeler
+tagline: Helps you interpret IPCC AR6 figures and apply them to Chennai — without writing your Climate Brief for you.
+launchUrl: ""
+breadcrumbs:
+  - { url: /, label: Home }
+  - { url: /ai-partners/, label: "AI Partners" }
+  - { label: "The Climate Modeler" }
+---
+
+<div class="prose">
+
+<p>An IPCC-and-models-focused Socratic partner. Helps you reason about climate model outputs, SSP scenarios, and how global projections translate to Chennai-specific impacts — without making the interpretive calls for you. Patient with uncertainty, honest about what models include vs. don't, allergic to confident-sounding answers about specific local events. Used in <strong>Unit 4</strong> — especially Blocks 5-11 (IPCC + climate models + Brief drafting).</p>
+
+{% if launchUrl %}
+<a class="partner-launch" href="{{ launchUrl }}" target="_blank" rel="noopener">🌐 Launch The Climate Modeler →</a>
+{% else %}
+<span class="partner-launch placeholder">🌐 Launch The Climate Modeler — TBD: BoodleBox / Gemini Gem URL</span>
+{% endif %}
+
+<div class="stub-note">
+  <strong>This partner page is a stub.</strong> Full sections — how-to-use, opening message, example exchange, watch-out-for, and the documentation reminder — land when Unit 4 is deep-built. Spec exists in <code>AI Partner Specifications (U4-U7 combined).docx</code> and will be lifted in the deep-build phase.
+</div>
+
+<h2>What this partner does</h2>
+<p>Bring an IPCC AR6 figure (temperature anomaly time series, SSP scenario projection, regional climate-impact map) and the Climate Modeler helps you decode it. What does this projection say? What does it NOT say? What's the confidence-level language doing? What model assumptions sit underneath the number? Particularly useful when you're translating from global-average claims to Chennai-specific implications for your <a href="/units/unit-4/assessment-chennai-climate-brief/">Climate Brief</a>.</p>
+
+<h2>What this partner won't do</h2>
+<p>It won't write your Brief. It won't make confident claims about specific Chennai events (a particular cyclone track, a specific monsoon-onset date). It won't pretend climate models have more precision than they actually have — and it's honest about model limitations (parametrisation choices, grid resolution, what's not included). Projection vs. prediction is a distinction it'll hold the line on. The "one thing the AI got wrong" gate applies — expect to disagree with it at least once per session.</p>
+
+<h2>Documentation reminder</h2>
+<p>Every substantive Climate Modeler conversation that feeds into your Climate Brief gets logged in the <a href="/foundations/ai-documentation-protocol/">AI Documentation Template</a>. Same rules as the last three units.</p>
+
+</div>

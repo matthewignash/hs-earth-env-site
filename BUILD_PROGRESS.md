@@ -2,13 +2,36 @@
 
 > **Purpose:** Living status doc. Tells you (and future Claude Code sessions) what's built, what's stubbed, what to build next, and in what order. The charter is in `CLAUDE.md` — do NOT modify that. Update this file at the end of each build session.
 
-**Last updated:** 2026-05-25 (Unit 2 deep build — Phase C: workflow chunk closes out U2)
+**Last updated:** 2026-05-25 (Unit 4 skeleton — 16 new pages + 2 new AI partners)
 
 ---
 
 ## TL;DR — pick up here
 
-**Unit 2 is now fully complete.** This phase deepened the final 3 stubs (Block 6 — Map Analysis Work Day, Block 8 — Drafting + Peer Feedback, Block 9 — Share-Out + Unit Close) to full 5-section content matching the rest of U2. Block 9 includes a small Unit 3 preview / connect-forward block at the bottom, mirroring the U0 Block 7 close-out pattern.
+**Unit 4 (Atmosphere & Climate) is now navigable as a skeleton.** Mirrors the U2 skeleton-first pattern: full landing + 12 block stubs + Chennai Climate Brief assessment stub + 2 new AI partner stubs (Climate Modeler + Policy Aide). Deep block content lands in future phases.
+
+**What shipped this phase:**
+- `src/units/unit-4/index.njk` — full landing (12-block grid, assessment card, AI partners panel with the 2 new partners + Source Evaluator + Skeptic, Resources panel with EAL Pre-Teach card). Includes explicit emotional-framing prose addressing climate-anxiety (agency mode, trauma-aware option-out for personally-affected students).
+- `src/units/unit-4/block-1.njk` through `block-12.njk` — 12 one-paragraph stubs covering the UbD-canonical 12-block process-organized structure (Greenhouse Effect · Energy Balance Math · Carbon Cycle · Human Acceleration + Warming Signal · IPCC + Brief Assigned · Climate Models · Regional Climate + Lock Challenge · Tipping Points + Feedbacks · Adaptation vs. Mitigation · Brief Work Day + Peer Feedback · Final Drafting + Panel Rehearsal · Policy Panel Q&A)
+- `src/units/unit-4/assessment-chennai-climate-brief.njk` — stub with GRASPS frame, 8-adaptation-challenges table (Monsoon + flooding · Sea-level rise · Urban heat · Water security · Coastal erosion · Public health · Agriculture · Mangroves), 3 deliverable format choices (≤4-page written / ≤6-min video / large infographic), required components, 3 gates named (T/T recommendations specificity, C policy voice, K/U AI Doc).
+
+**New under src/ai-partners/:**
+- `climate-modeler.njk` — NEW AI partner stub (IPCC AR6 + climate model reasoning; Blocks 5-11)
+- `policy-aide.njk` — NEW AI partner stub (policy-brief voice coaching + Policy Panel role-play; Blocks 9-12)
+- `ai-partners/index.njk` — 2 new cards added (now 10 partners total)
+
+**Modified:**
+- `src/units/index.njk` — Unit 4 card-desc refreshed; stub-note refreshed to reflect U4's new skeleton-navigable state
+
+Site goes from 96 → 112 generated files (+16 new).
+
+After this phase, **U0 / U1 / U2 / U3 fully complete · U4 skeleton-navigable · U5 / U6 / U7 still landing-card-only**. 10 AI partner pages total (3 at full 7-section spec depth — Field Geologist + Planet Hunter + Systems Diagrammer; 7 still at pre-deep-build stub depth).
+
+---
+
+## Previous TL;DR — U2 Phase C close-out (kept for reference)
+
+**Unit 2 is now fully complete.** Phase C deepened the final 3 stubs (Block 6 — Map Analysis Work Day, Block 8 — Drafting + Peer Feedback, Block 9 — Share-Out + Unit Close) to full 5-section content matching the rest of U2. Block 9 includes a small Unit 3 preview / connect-forward block at the bottom, mirroring the U0 Block 7 close-out pattern.
 
 After this commit, **U0 + U1 + U2 + U3 are all fully complete** — 38 deep blocks total across the four units, 4 full assessments, 9 AI partner pages (3 of them at deep 7-section spec depth, 5 still at stub depth from earlier phases), the full EAL hub (11 pages), and the full Foundations layer (10 pages). The units/index landing's build-status note now reads "Unit 2 is fully complete" alongside U0, U1, and U3.
 
