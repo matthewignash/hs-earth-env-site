@@ -2,13 +2,31 @@
 
 > **Purpose:** Living status doc. Tells you (and future Claude Code sessions) what's built, what's stubbed, what to build next, and in what order. The charter is in `CLAUDE.md` — do NOT modify that. Update this file at the end of each build session.
 
-**Last updated:** 2026-05-25 (EAL Support hub — 11 new pages + 6 integration updates)
+**Last updated:** 2026-05-25 (U0 deep build — Blocks 4–7 + U1 landing staleness fix)
 
 ---
 
 ## TL;DR — pick up here
 
-**The EAL hub is now live.** Matthew wrote ~150KB of EAL Support documents (10 docx files via Claude Cowork). The site previously *mentioned* "EAL Teacher Strategy Guide" in 5 places with no link to follow. This phase closes all those gaps:
+**Unit 0 is now fully complete.** Blocks 4–7 were genuine stubs (~27 lines each, single section). This phase built them out to the same depth as Blocks 1–3 (~115–135 lines each, full 5-section template). Concurrently, two stale "Stub." prefixes on the Unit 1 landing for Blocks 1 and 2 were dropped — both block files had been fully built but the landing card-descs still flagged them as stubs.
+
+**What shipped this phase:**
+- `src/units/unit-0/block-4.njk` — Source Dossier Work Day 1: Topic + Two Traditional Sources (full)
+- `src/units/unit-0/block-5.njk` — Source Dossier Work Day 2: AI Source + Documentation (full)
+- `src/units/unit-0/block-6.njk` — Source Dossier Due + Defense Rehearsal (full)
+- `src/units/unit-0/block-7.njk` — Defenses + Unit Close (full, includes Unit 1 preview block)
+- `src/units/unit-0/index.njk` — 4 "Stub." prefixes dropped, card-descs rewritten
+- `src/units/unit-1/index.njk` — 2 "Stub." prefixes dropped (Blocks 1 + 2)
+
+Site stays at 84 generated files (no new files; content fill-in only).
+
+After this phase, **U0 + U1 + U3 are all at "deeply built" state** — every block has full 5-section content, every landing card-desc accurately reflects the file behind it. No false "stub" labels anywhere in U0 or U1.
+
+---
+
+## Previous TL;DR — EAL hub (kept for reference)
+
+**The EAL hub is now live.** Matthew wrote ~150KB of EAL Support documents (10 docx files via Claude Cowork). The site previously *mentioned* "EAL Teacher Strategy Guide" in 5 places with no link to follow. This phase closed all those gaps:
 - **11 new pages under `/foundations/eal/`**:
   - `/foundations/eal/` — the hub (For Students / AI as EAL tool / For Families / For Teachers)
   - `/foundations/eal/teacher-guide/` — full 8-section Teacher Strategy Guide with teacher-facing banner
