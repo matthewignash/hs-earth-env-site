@@ -2,11 +2,35 @@
 
 > **Purpose:** Living status doc. Tells you (and future Claude Code sessions) what's built, what's stubbed, what to build next, and in what order. The charter is in `CLAUDE.md` — do NOT modify that. Update this file at the end of each build session.
 
-**Last updated:** 2026-05-25 (Unit 2 skeleton — 12 new pages + 1 new AI partner + units/index title cleanup)
+**Last updated:** 2026-05-25 (Unit 2 deep build — Phase A: realignment + spine deep build)
 
 ---
 
 ## TL;DR — pick up here
+
+**Unit 2 has a teaching-ready spine.** Three highest-leverage blocks now deep (1, 5, 7), the Landscape Reading assessment is a full handout, and the Field Geologist is a full 7-section AI partner spec. All 9 U2 block titles also realigned from the previous Block-Plans-organized structure to the UbD-canonical process-organized structure (weathering → erosion → rivers → coasts → tropical/Chennai → map analysis → worked example → drafting + peer feedback → share-out).
+
+**What shipped this phase:**
+- `src/units/unit-2/block-1.njk` — Weathering — full 5-section deep block (~135 lines)
+- `src/units/unit-2/block-2.njk` — Erosion — realigned stub
+- `src/units/unit-2/block-3.njk` — Rivers as Landscape Sculptors — realigned stub
+- `src/units/unit-2/block-4.njk` — Coasts — realigned stub
+- `src/units/unit-2/block-5.njk` — Tropical Landscapes + Chennai Context + Landscape Reading Assigned — full 5-section deep block (~140 lines, assessment kickoff)
+- `src/units/unit-2/block-6.njk` — Field Photo / Map Analysis Work Day — realigned stub
+- `src/units/unit-2/block-7.njk` — Reading the Landscape: Worked Example + OPVL — full 5-section deep block (~140 lines, highest-leverage teacher move)
+- `src/units/unit-2/block-8.njk` — Landscape Reading Drafting + Peer Feedback — realigned stub
+- `src/units/unit-2/block-9.njk` — Landscape Readings Submitted + Class Share-out — realigned stub
+- `src/units/unit-2/index.njk` — 9 card-descs rewritten to UbD-aligned titles + descriptions
+- `src/units/unit-2/assessment-landscape-reading.njk` — stub → full handout (~210 lines: GRASPS + 8-step walkthrough + 4-band rubric across K/U / T/T / C + 3 gates)
+- `src/ai-partners/field-geologist.njk` — stub → full 7-section spec (~160 lines: Overview / Pairs with / Quick facts / System prompt copy-paste / Opening message / Example exchange / Failure mode / Documentation reminder)
+
+Site stays at 96 generated files (no new files; content updates only).
+
+**Phases B + C** still ahead — Phase B will deepen Blocks 2, 3, 4 (Erosion / Rivers / Coasts — the concept-building chunk); Phase C will deepen Blocks 6, 8, 9 (Map analysis / Drafting + peer feedback / Share-out + reflection).
+
+---
+
+## Previous TL;DR — Unit 2 skeleton (kept for reference)
 
 **Unit 2 (Surface Processes — Reading the Landscape) is now navigable as a skeleton.** Mirrors the way Unit 1 was first built — landing + 9 block stubs + assessment stub + 1 new AI partner stub. Deep block content lands in a future phase.
 
