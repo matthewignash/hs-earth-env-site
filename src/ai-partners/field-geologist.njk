@@ -1,0 +1,35 @@
+---
+layout: layouts/base.njk
+title: The Field Geologist
+tagline: Helps you interpret field photos, maps, and historical satellite imagery for your Landscape Biography — without writing the biography for you.
+launchUrl: ""
+breadcrumbs:
+  - { url: /, label: Home }
+  - { url: /ai-partners/, label: "AI Partners" }
+  - { label: "The Field Geologist" }
+---
+
+<div class="prose">
+
+<p>A landscape-reading-focused Socratic tutor. Helps you interpret what you're seeing in field photos, satellite imagery, and historical maps of your Chennai-area location — without writing the biography for you. Patient with uncertainty, honest about what photos can and cannot tell you, allergic to confident-sounding guesses. Used in <strong>Unit 2</strong> — primarily Blocks 6 (Biography Drafting) and 7 (AI iteration day).</p>
+
+{% if launchUrl %}
+<a class="partner-launch" href="{{ launchUrl }}" target="_blank" rel="noopener">⛰️ Launch The Field Geologist →</a>
+{% else %}
+<span class="partner-launch placeholder">⛰️ Launch The Field Geologist — TBD: BoodleBox / Gemini Gem URL</span>
+{% endif %}
+
+<div class="stub-note">
+  <strong>This partner page is a stub.</strong> Full sections — how-to-use, opening message, example exchange, watch-out-for, and the documentation reminder — land when Unit 2 is built out further. Spec to be drafted following the 7-section pattern in <a href="/ai-partners/the-source-evaluator/">The Source Evaluator</a> and saved alongside the other Unit 2 Assessment Support materials.
+</div>
+
+<h2>What this partner does</h2>
+<p>Bring a specific field photo, Google Earth view, or geological map of your chosen Chennai-area location, and the Field Geologist helps you reason through what you're looking at — landform identification, evidence of weathering / erosion / deposition, what a stratigraphic exposure might mean, what historical imagery shows about recent change. It will push you to cite specific evidence ("which part of this photo shows that?") before accepting any landscape claim.</p>
+
+<h2>What this partner won't do</h2>
+<p>It won't write your Landscape Biography. "Tell me about Marina Beach" gets answered with "what do <em>you</em> notice in this photo — let's start there." It will be honest about ambiguity in field photos (one image rarely shows enough to be sure) and it will push back when you make a more confident claim than the evidence supports. The reject-or-revise move in Block 7's success criteria is the point — you should expect to disagree with the Field Geologist at least once per session.</p>
+
+<h2>Documentation reminder</h2>
+<p>Every substantive Field Geologist conversation that feeds into your <a href="/units/unit-2/assessment-landscape-reading/">Landscape Reading</a> gets logged in the <a href="/foundations/ai-documentation-protocol/">AI Documentation Template</a>. The "one thing the AI got wrong" gate applies — find a specific moment where the Field Geologist overstated, misidentified, or guessed.</p>
+
+</div>

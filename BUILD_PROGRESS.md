@@ -2,13 +2,32 @@
 
 > **Purpose:** Living status doc. Tells you (and future Claude Code sessions) what's built, what's stubbed, what to build next, and in what order. The charter is in `CLAUDE.md` — do NOT modify that. Update this file at the end of each build session.
 
-**Last updated:** 2026-05-25 (U0 deep build — Blocks 4–7 + U1 landing staleness fix)
+**Last updated:** 2026-05-25 (Unit 2 skeleton — 12 new pages + 1 new AI partner + units/index title cleanup)
 
 ---
 
 ## TL;DR — pick up here
 
-**Unit 0 is now fully complete.** Blocks 4–7 were genuine stubs (~27 lines each, single section). This phase built them out to the same depth as Blocks 1–3 (~115–135 lines each, full 5-section template). Concurrently, two stale "Stub." prefixes on the Unit 1 landing for Blocks 1 and 2 were dropped — both block files had been fully built but the landing card-descs still flagged them as stubs.
+**Unit 2 (Surface Processes — Reading the Landscape) is now navigable as a skeleton.** Mirrors the way Unit 1 was first built — landing + 9 block stubs + assessment stub + 1 new AI partner stub. Deep block content lands in a future phase.
+
+**What shipped this phase:**
+- `src/units/unit-2/index.njk` — full landing (9-block grid + assessment card + AI partners panel + Resources panel)
+- `src/units/unit-2/block-1.njk` through `block-9.njk` — 9 one-paragraph stubs (Phenomenon Launch · Surface Trio · Stratigraphy + Geologic Time · Watershed + Monsoon · Location Cards + Field Photo · Biography Drafting · Field Geologist AI · Share-Out Prep · Share-Out + Unit Close)
+- `src/units/unit-2/assessment-landscape-reading.njk` — stub with GRASPS frame, 9-location table, 3 deliverable formats, required components, AI Doc rules
+- `src/ai-partners/field-geologist.njk` — NEW AI partner stub (helps interpret field photos / maps / satellite imagery; primarily Blocks 6 + 7)
+- `src/ai-partners/index.njk` — added Field Geologist card (now 8 partners)
+- `src/units/index.njk` — U2 title fixed to "Surface Processes" (was stale "Weather & Climate"), card-desc refreshed; also fixed stale titles for U4 ("Climate"), U5 ("Hydrosphere"), U6 ("Biosphere & Land Use"), U7 ("Energy & Sustainability"); stub-note refreshed
+- `BUILD_PROGRESS.md` — this update
+
+Site goes from 84 → 96 generated files (+12).
+
+After this phase, **U0 + U1 fully built · U2 skeleton-navigable · U3 fully built · U4–U7 landing-card-only**. The site has accurate titles for every unit. Unit 2 EAL Pre-Teach (already shipped) is wired into the U2 Resources panel.
+
+---
+
+## Previous TL;DR — U0 deep build (kept for reference)
+
+**Unit 0 is now fully complete.** Blocks 4–7 were genuine stubs (~27 lines each, single section). The prior phase built them out to the same depth as Blocks 1–3 (~115–135 lines each, full 5-section template). Concurrently, two stale "Stub." prefixes on the Unit 1 landing for Blocks 1 and 2 were dropped — both block files had been fully built but the landing card-descs still flagged them as stubs.
 
 **What shipped this phase:**
 - `src/units/unit-0/block-4.njk` — Source Dossier Work Day 1: Topic + Two Traditional Sources (full)
