@@ -2,23 +2,31 @@
 
 > **Purpose:** Living status doc. Tells you (and future Claude Code sessions) what's built, what's stubbed, what to build next, and in what order. The charter is in `CLAUDE.md` — do NOT modify that. Update this file at the end of each build session.
 
-**Last updated:** 2026-05-25 (Foundations layer expanded — 5 new pages + 2 substantive updates)
+**Last updated:** 2026-05-25 (EAL Support hub — 11 new pages + 6 integration updates)
 
 ---
 
 ## TL;DR — pick up here
 
-**The Foundations layer just doubled in size.** Matthew wrote 7 new supporting documents (via Claude Cowork) that have now been incorporated into the site:
-- **5 new pages**: `/foundations/welcome/`, `/foundations/for-parents/`, `/foundations/notetaking/`, `/foundations/defending-your-work/`, `/foundations/peer-review/`
-- **2 substantive updates**: `/foundations/class-expectations/` (expanded from 3 sections to full 7-section two-way contract), `/foundations/the-rubric/` (expanded from 3 rubric tables to 10 sections including philosophy, profile examples, assessment-type weighting table, and Q&A)
-- **Foundations index restructured** into 5 logical groupings: Start Here / Core Frameworks / Skills for This Class / Site Mechanics / For Families
+**The EAL hub is now live.** Matthew wrote ~150KB of EAL Support documents (10 docx files via Claude Cowork). The site previously *mentioned* "EAL Teacher Strategy Guide" in 5 places with no link to follow. This phase closes all those gaps:
+- **11 new pages under `/foundations/eal/`**:
+  - `/foundations/eal/` — the hub (For Students / AI as EAL tool / For Families / For Teachers)
+  - `/foundations/eal/teacher-guide/` — full 8-section Teacher Strategy Guide with teacher-facing banner
+  - `/foundations/eal/vocabulary/` — Master Vocabulary Reference with ~140 terms across 8 units, 5-language translations (Tamil / Hindi / French / Korean / Japanese), AI-assisted-translation disclaimer
+  - `/foundations/eal/u0/` through `/foundations/eal/u7/` — 8 per-unit Pre-Teach handouts (15–17 terms each, with sentence stems, in-class activity, paired discussion prompt, and a link back to the multilingual reference)
+- **6 integration updates** wire the EAL hub into the rest of the site:
+  - `foundations/index.njk` — new EAL Support section
+  - `foundations/for-parents.njk` — dead-end "EAL Teacher Strategy Guide" string now linked
+  - `foundations/defending-your-work.njk` §8 + `foundations/notetaking.njk` §7 — "More EAL support →" links at the end of each EAL-relevant section
+  - `units/unit-0/index.njk`, `units/unit-1/index.njk`, `units/unit-3/index.njk` — EAL Pre-Teach cards in the Resources panel
 
-**Previous state (still current beyond Foundations):** Unit 1 fully complete with all 10 blocks + Goldilocks Report + 2 new AI partners. Habitability Zone Calculator integrated into the site (sync script, launcher page, deep links from Blocks 4 / 6 / 7 / 8). Unit 0 + Unit 3 also fully built.
+**Previous state (still current):** Foundations layer fully built (Welcome, Class Expectations 7-section, The Rubric 10-section, Notetaking, Defending Your Work, Peer Review, For Parents). Unit 1 fully complete with all 10 blocks + Goldilocks Report + 2 new AI partners. Habitability Zone Calculator integrated. Unit 0 + Unit 3 also fully built.
 
 **Next-phase candidates:**
 - Apply the AI Partner Deployment Plan (root-level docx) to existing AI partner pages — adds platform decisions (BoodleBox / NotebookLM / Gemini Gems / Flint) to launchUrl placeholders.
-- Unit 2 (Surface Processes) skeleton.
-- Unit 5 (Hydrosphere) skeleton + trial-aware build — U5 is the trial unit per the Deployment Plan and has substantial Trial Materials + Assessment Support docx ready.
+- Unit 2 (Surface Processes) skeleton. Add `/foundations/eal/u2/` card to Resources panel during build.
+- Unit 5 (Hydrosphere) skeleton + trial-aware build — U5 is the trial unit. Add `/foundations/eal/u5/` card to Resources panel during build.
+- U4 / U6 / U7 skeletons — add EAL Pre-Teach cards to Resources panel during each build.
 - Another simulator brief (Cauvery / Land Allocation / Energy Mix all at v0-charter-only state).
 
 After Unit 1 deep build: teach-order priority is **U2 → U4 → U5 → U6 → U7**. (U3 is fully built and the simulator behind it is functionally complete.)
