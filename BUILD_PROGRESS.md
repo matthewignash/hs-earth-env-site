@@ -2,13 +2,29 @@
 
 > **Purpose:** Living status doc. Tells you (and future Claude Code sessions) what's built, what's stubbed, what to build next, and in what order. The charter is in `CLAUDE.md` — do NOT modify that. Update this file at the end of each build session.
 
-**Last updated:** 2026-05-25 (Unit 4 deep build — Phase A: spine deep build)
+**Last updated:** 2026-05-25 (Unit 4 deep build — Phase B: science blocks deep)
 
 ---
 
 ## TL;DR — pick up here
 
-**Unit 4 has a teaching-ready spine.** This phase mirrors U2 Phase A: deep-build the 3 highest-leverage blocks (Block 1 Greenhouse Effect, Block 5 IPCC + Brief Assigned, Block 10 Worked-Example Brief + Peer Feedback), convert the Chennai Climate Brief assessment stub to a full handout, and convert the Climate Modeler + Policy Aide stubs to full 7-section specs.
+**Unit 4 has 7 of 12 blocks deep.** This phase deepened the science chunk: Block 2 (Energy Balance Math), Block 3 (Carbon Cycle), Block 4 (Human Acceleration + Warming Signal), Block 6 (Climate Models). Together with Phase A's spine (Blocks 1, 5, 10), this means ~58% of U4 is now teaching-ready. Only the application + workflow blocks remain — Blocks 7 (Regional Climate + Lock Challenge), 8 (Tipping Points + Feedbacks), 9 (Adaptation vs. Mitigation), 11 (Final Drafting + Panel Rehearsal), 12 (Policy Panel + Submit) — for Phase C.
+
+**What shipped this phase:**
+- `src/units/unit-4/block-2.njk` — Energy Balance Math — stub → full 5-section deep block (~120 lines). Quantitative version of Block 1, anchored in the Habitability Zone Calculator cross-reference.
+- `src/units/unit-4/block-3.njk` — The Carbon Cycle — stub → full 5-section deep block (~120 lines). Fast vs. slow pathways, 4-reservoir flow-diagram modelling activity.
+- `src/units/unit-4/block-4.njk` — Human Acceleration + Warming Signal — stub → full 5-section deep block (~130 lines). Adds anthropogenic perturbations to Block 3's model + Keeling curve + IPCC AR6 attribution evidence.
+- `src/units/unit-4/block-6.njk` — Climate Models — stub → full 5-section deep block (~125 lines). GCM/RCM distinction + parametrisation + IPCC figure decoding + projection-vs-prediction.
+
+Site stays at 112 generated files (no new files; content updates only).
+
+**Phase C** still ahead — will deepen Blocks 7, 8, 9, 11, 12 (the application + workflow chunk). After Phase C, U4 is fully complete.
+
+---
+
+## Previous TL;DR — U4 Phase A spine (kept for reference)
+
+**Unit 4 has a teaching-ready spine.** Phase A mirrored U2 Phase A: deep-built the 3 highest-leverage blocks (Block 1 Greenhouse Effect, Block 5 IPCC + Brief Assigned, Block 10 Worked-Example Brief + Peer Feedback), converted the Chennai Climate Brief assessment stub to a full handout, and converted the Climate Modeler + Policy Aide stubs to full 7-section specs.
 
 **What shipped this phase:**
 - `src/units/unit-4/block-1.njk` — Greenhouse Effect — stub → full 5-section deep block (~115 lines). Agency-mode framing + 2015 floods / 2019 Day Zero anchor + energy-balance diagram activity + Chennai-amplification exit ticket.
