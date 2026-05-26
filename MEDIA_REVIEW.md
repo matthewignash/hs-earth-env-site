@@ -117,6 +117,34 @@ If both are confirmed, the U4 deep build can integrate them as complementary Wat
 
 ---
 
+## Pending — librarian collaboration
+
+### JSTOR + research databases — Foundations page
+
+- **Status**: Idea flagged 2026-05-25. Matthew is working with the AISC librarian on a related project; library-specific content (AISC-JSTOR login workflow, AI-tool feature names, screenshot assets, other AISC databases) will come from that collaboration and feed into this work later. Hold building until that material arrives.
+- **Pedagogical case**: JSTOR is the missing source-type. Students have practiced OPVL extensively on news, government data, AI outputs, and historical maps — but barely on peer-reviewed scholarly papers. JSTOR is also a cross-unit resource, feeding U0 Source Dossier, U2 Landscape Reading, U4 Chennai Climate Brief, U5 Position Paper, U6 Sustainable Land Plan, U7 Energy Mix + Op-Ed. Belongs in Foundations, not in any one unit.
+- **Best placement**: Foundations layer. If JSTOR is the only major AISC database → single `/foundations/jstor/` page. If multiple databases (EBSCO, ProQuest, Britannica Academic, etc.) → `/foundations/research-databases/` hub with JSTOR as the first entry. Wait for librarian to confirm scope before deciding.
+- **The AI Doc trichotomy** — the key intellectual move this page enables: students learn to distinguish three AI-tool categories.
+  1. **General-purpose AI** (Gemini / Claude / ChatGPT) — trained on the open web, can hallucinate citations, broad but unreliable.
+  2. **Corpus-constrained AI** (JSTOR's AI tools, NotebookLM) — scoped to a specific indexed corpus, cannot cite non-corpus sources, narrower but more reliable on citations.
+  3. **Scoped custom AI partners** (Source Evaluator, Field Geologist, Climate Modeler, Policy Aide, etc.) — system-prompted by the teacher, role-bounded, pedagogically tuned.
+  This trichotomy is genuinely useful — it lands cleanly in the AI Documentation Protocol page (Foundations §3) too, and gives students a richer mental model of "AI as a source" than they currently have.
+- **Page structure (sketch — 7 sections)**:
+  1. **What JSTOR is** — plain-language. Academic database, peer-reviewed, AISC has institutional access.
+  2. **How to access** — actual AISC login pathway (librarian provides specifics).
+  3. **Search workflow** — formulate query → filter by date/discipline → scan abstracts → decide what to read → cite properly. One concrete walkthrough.
+  4. **JSTOR's built-in AI tools** — what they do, what they don't. <strong>Same AI Documentation Protocol applies</strong> — JSTOR AI use gets logged like any other AI use, including the "one thing the AI got wrong" gate. Specific feature names depend on what AISC's JSTOR exposes (librarian confirms).
+  5. **OPVL on a JSTOR source** — explicitly different from OPVL on news / AI / government. Origin = peer-reviewed publication (credibility flag) BUT Purpose still = advance the author's research agenda. Value = rigorous methodology + cited evidence chain. Limitations are real and underexplored: publication selection bias, English-language bias, Western-academia bias, paywall-driven access bias, replication-crisis context, methodology limits, sample size, recency.
+  6. **When JSTOR vs. when other sources** — JSTOR is great for some questions (climate science mechanisms, geomorphic processes, policy analysis) and bad for others (current Chennai news, government data, local stakeholder voices, current GCC plans). Source-fit teaching.
+  7. **EAL accessibility moves** — JSTOR's AI tools can summarize dense papers, define terms, translate. Powerful for EAL students <em>if documented</em>. Cross-link to the EAL hub.
+- **Three questions waiting on the librarian**:
+  1. Are AISC-JSTOR-specific assets available (login screenshots, real AI-tool output examples on Chennai-relevant topics, AISC feature inventory)?
+  2. Are other AISC databases in scope (ProQuest, EBSCO, Britannica Academic, etc.)? Determines single-page vs. hub-of-pages.
+  3. What specifically does AISC's JSTOR AI expose — just search-query reformulation, the full Interactive Research Tool, article summarization, translation? Page content varies significantly by feature set.
+- **Cross-link implications when built**: every assessment Sources section gets a "JSTOR + research databases" line. AI Documentation Protocol page (Foundations §3) gets a paragraph naming the three AI-tool categories. EAL hub Teacher Strategy Guide §5 cross-references the EAL-specific JSTOR moves.
+
+---
+
 ## Notes on the OPVL move for documentary sources
 
 Documentary sources are a source type students haven't OPVL'd since U0. By U4, they've practiced OPVL extensively on news articles, government reports, scientific papers, AI outputs, and historical maps — but not on documentary footage. Adding one documentary integration with explicit OPVL framing fills that gap and sharpens the source-evaluation muscle before U5 (where stakeholder voices in the Position Paper work introduce another source category — direct testimony).
