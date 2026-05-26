@@ -2,13 +2,25 @@
 
 > **Purpose:** Living status doc. Tells you (and future Claude Code sessions) what's built, what's stubbed, what to build next, and in what order. The charter is in `CLAUDE.md` — do NOT modify that. Update this file at the end of each build session.
 
-**Last updated:** 2026-05-25 (Unit 4 deep build — Phase B: science blocks deep)
+**Last updated:** 2026-05-25 (Unit 4 deep build — Phase C: application + workflow chunk closes out U4)
 
 ---
 
 ## TL;DR — pick up here
 
-**Unit 4 has 7 of 12 blocks deep.** This phase deepened the science chunk: Block 2 (Energy Balance Math), Block 3 (Carbon Cycle), Block 4 (Human Acceleration + Warming Signal), Block 6 (Climate Models). Together with Phase A's spine (Blocks 1, 5, 10), this means ~58% of U4 is now teaching-ready. Only the application + workflow blocks remain — Blocks 7 (Regional Climate + Lock Challenge), 8 (Tipping Points + Feedbacks), 9 (Adaptation vs. Mitigation), 11 (Final Drafting + Panel Rehearsal), 12 (Policy Panel + Submit) — for Phase C.
+**Unit 4 is now fully complete.** This phase deepened the final 5 stubs (Block 7 Regional Climate + Lock Challenge, Block 8 Tipping Points + Feedbacks, Block 9 Adaptation vs. Mitigation, Block 11 Final Drafting + Panel Rehearsal, Block 12 Policy Panel + Unit Close) to full 5-section content matching the rest of U4. Block 12 includes a Unit 5 preview / connect-forward block at the bottom, mirroring the U0 Block 7 / U2 Block 9 close-out pattern.
+
+After this commit, **U0 + U1 + U2 + U3 + U4 are all fully complete** — 50 deep blocks total across the five built units, 5 full assessments, 10 AI partner pages (5 at deep 7-section spec depth: Field Geologist, Planet Hunter, Systems Diagrammer, Climate Modeler, Policy Aide; 5 still at pre-deep-build stub depth: Skeptic, Source Evaluator, Plate Tectonics Tutor, Engineering Coach, Defense Practice Partner), the full EAL hub (11 pages), and the full Foundations layer (10 pages). The units/index landing's build-status note now reads "Unit 0 / 1 / 2 / 3 / 4 fully complete."
+
+Site stays at 112 generated files (no new files; content updates only).
+
+**What's left in the year-map**: Units 5–7 are still landing-card-only with no folders. Plus 5 of the 10 AI partner stubs (Skeptic, Source Evaluator, Plate Tectonics Tutor, Engineering Coach, Defense Practice Partner) are still at pre-deep-build depth.
+
+---
+
+## Previous TL;DR — U4 Phase B (kept for reference)
+
+**Unit 4 has 7 of 12 blocks deep.** Phase B deepened the science chunk: Block 2 (Energy Balance Math), Block 3 (Carbon Cycle), Block 4 (Human Acceleration + Warming Signal), Block 6 (Climate Models). Together with Phase A's spine (Blocks 1, 5, 10), this means ~58% of U4 is now teaching-ready. Only the application + workflow blocks remain — Blocks 7 (Regional Climate + Lock Challenge), 8 (Tipping Points + Feedbacks), 9 (Adaptation vs. Mitigation), 11 (Final Drafting + Panel Rehearsal), 12 (Policy Panel + Submit) — for Phase C.
 
 **What shipped this phase:**
 - `src/units/unit-4/block-2.njk` — Energy Balance Math — stub → full 5-section deep block (~120 lines). Quantitative version of Block 1, anchored in the Habitability Zone Calculator cross-reference.
