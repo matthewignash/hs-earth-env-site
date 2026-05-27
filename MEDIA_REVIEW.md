@@ -119,6 +119,25 @@ If both are confirmed, the U4 deep build can integrate them as complementary Wat
 
 ## Pending — librarian collaboration
 
+### U0 Anchor Article specification
+
+- **Status**: Structural slot landed in commit (this phase). The placeholder string `[U0 Anchor Article — TBD pending librarian]` appears in 4 files: `src/units/unit-0/block-2.njk`, `src/units/unit-0/block-3.njk`, `src/units/unit-1/block-1.njk`, `src/units/unit-0/block-7.njk`. When the librarian provides a specific article, a single `grep -rn "U0 Anchor Article"` + replace-all delivers the article-specific update across all four files.
+- **Pedagogical role**: One shared article that the whole class OPVLs together. U0 Block 2 OPVLs the article as a traditional source; U0 Block 3 OPVLs an AI summary of the same article; U1 Block 1 carries the article forward as the bridge from "OPVL framework" to "habitability framework." The same source threading through three teaching moments demonstrates that OPVL outputs feed forward — sources don't die after one assessment.
+- **Criteria the librarian-sourced article must meet**:
+  1. **Habitability-relevant.** Bridges to U1's habitability framework. Could be on exoplanets, the Earth-Mars-Venus comparison, the search for life, the habitable zone, planetary atmospheres, or similar.
+  2. **Freely accessible** to all AISC students (open-access, AISC subscription, or hostable in the site's assets folder). No paywall barriers to OPVL practice.
+  3. **AI-knowable.** General-purpose AI (Gemini, Claude) should have some real engagement with the topic so Block 3's AI summary demo is meaningful — not "I don't have information about this."
+  4. **EAL-accessible reading level.** Not so dense that vocabulary alone becomes the barrier. ~800–2000 words ideal.
+  5. **Good OPVL practice piece.** Has identifiable Origin (named author/publisher with a known editorial position), Purpose (advocacy or journalism, not pure scientific neutrality), Value (something useful for understanding habitability), and a real Limitation that students can specifically name. Articles with subtle bias or selective framing are *better* OPVL practice than perfectly neutral pieces.
+  6. **Length-appropriate.** Long enough to support 4–8 sentence OPVL with specific evidence; short enough to read in ~10 minutes.
+- **AI summary prep for Block 3**: When the article lands, the librarian (or Matthew) should also prepare:
+  - One sample AI summary using Gemini or Claude (which AI tool? what prompt?)
+  - The expected OPVL on that AI summary (what Limitations should the class arrive at?)
+  - A "one thing the AI got wrong" reference answer for the AI Doc Template demo
+- **Follow-up commit when article lands**: ~30 minutes of text replacement across the 4 files + the corresponding AI summary prep notes. No structural changes needed — the slots are already in place.
+
+---
+
 ### JSTOR + research databases — Foundations page
 
 - **Status**: Idea flagged 2026-05-25. Matthew is working with the AISC librarian on a related project; library-specific content (AISC-JSTOR login workflow, AI-tool feature names, screenshot assets, other AISC databases) will come from that collaboration and feed into this work later. Hold building until that material arrives.

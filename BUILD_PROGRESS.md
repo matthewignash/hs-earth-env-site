@@ -2,13 +2,32 @@
 
 > **Purpose:** Living status doc. Tells you (and future Claude Code sessions) what's built, what's stubbed, what to build next, and in what order. The charter is in `CLAUDE.md` — do NOT modify that. Update this file at the end of each build session.
 
-**Last updated:** 2026-05-25 (Unit 4 deep build — Phase C: application + workflow chunk closes out U4)
+**Last updated:** 2026-05-25 (U0 → U1 anchor-article bridge — structural refactor)
 
 ---
 
 ## TL;DR — pick up here
 
-**Unit 4 is now fully complete.** This phase deepened the final 5 stubs (Block 7 Regional Climate + Lock Challenge, Block 8 Tipping Points + Feedbacks, Block 9 Adaptation vs. Mitigation, Block 11 Final Drafting + Panel Rehearsal, Block 12 Policy Panel + Unit Close) to full 5-section content matching the rest of U4. Block 12 includes a Unit 5 preview / connect-forward block at the bottom, mirroring the U0 Block 7 / U2 Block 9 close-out pattern.
+**U0 Blocks 2 + 3 + U1 Block 1 + U0 Block 7 now reference a single shared "U0 Anchor Article" placeholder.** Structural refactor only — the actual article is still TBD, waiting on Matthew's collaboration with the AISC librarian (tracked in `MEDIA_REVIEW.md`). When the librarian provides a specific article, a follow-up commit does text replacement only — no structural changes needed.
+
+**What shipped this phase:**
+- `src/units/unit-0/block-2.njk` — Concepts + Do + Show + Story refactored to explicitly anchor to the U0 Anchor Article. The block's choice board now defaults to OPVL'ing the anchor article (with student-found-article alternative for Path C).
+- `src/units/unit-0/block-3.njk` — Concepts + Do + Show + Story refactored to use AI summary of the same anchor article. The day's central move is now the side-by-side comparison: Block 2's anchor-article OPVL vs. Block 3's AI-summary OPVL of the same content.
+- `src/units/unit-1/block-1.njk` — Carry-forward paragraph added to Story (explicitly naming the U0 anchor article + the OPVL muscle continuity) + a "Carry-forward from U0" Concepts entry card.
+- `src/units/unit-0/block-7.njk` — One sentence added to the existing Unit 1 preview section referencing the anchor article as a continuing source.
+- `MEDIA_REVIEW.md` — New "U0 Anchor Article specification" entry under librarian-collaboration pending, with criteria (habitability-relevant, freely accessible, AI-knowable, EAL-accessible, good OPVL practice piece, length-appropriate) + AI summary prep notes for Block 3.
+
+Site stays at 112 generated files (no new files; content updates only).
+
+**Why this refactor**: Unit 0 does substantial pedagogical work (OPVL + AI Doc Protocol + the Source Dossier) but U1 currently makes the OPVL framework appear out of thin air — no callback to a specific U0 source. The shared-anchor-article move lands three things: (1) side-by-side OPVL across source types in U0 Blocks 2 + 3, (2) sources-don't-die-after-one-assessment continuity, (3) U1 starts with familiar evidence (EAL win + confidence boost). Builds the "OPVL outputs feed forward" intuition that's central to every later unit assessment.
+
+**Follow-up phase ahead**: When the librarian lands a specific article, ~30-min text-replacement commit fills the placeholder string across the 4 files.
+
+---
+
+## Previous TL;DR — U4 Phase C close-out (kept for reference)
+
+**Unit 4 is now fully complete.** Phase C deepened the final 5 stubs (Block 7 Regional Climate + Lock Challenge, Block 8 Tipping Points + Feedbacks, Block 9 Adaptation vs. Mitigation, Block 11 Final Drafting + Panel Rehearsal, Block 12 Policy Panel + Unit Close) to full 5-section content matching the rest of U4. Block 12 includes a Unit 5 preview / connect-forward block at the bottom, mirroring the U0 Block 7 / U2 Block 9 close-out pattern.
 
 After this commit, **U0 + U1 + U2 + U3 + U4 are all fully complete** — 50 deep blocks total across the five built units, 5 full assessments, 10 AI partner pages (5 at deep 7-section spec depth: Field Geologist, Planet Hunter, Systems Diagrammer, Climate Modeler, Policy Aide; 5 still at pre-deep-build stub depth: Skeptic, Source Evaluator, Plate Tectonics Tutor, Engineering Coach, Defense Practice Partner), the full EAL hub (11 pages), and the full Foundations layer (10 pages). The units/index landing's build-status note now reads "Unit 0 / 1 / 2 / 3 / 4 fully complete."
 
