@@ -2,11 +2,36 @@
 
 > **Purpose:** Living status doc. Tells you (and future Claude Code sessions) what's built, what's stubbed, what to build next, and in what order. The charter is in `CLAUDE.md` — do NOT modify that. Update this file at the end of each build session.
 
-**Last updated:** 2026-05-25 (U0 → U1 anchor-article bridge — structural refactor)
+**Last updated:** 2026-05-25 (Unit 5 skeleton — 13 new pages + 2 new AI partners + trial-aware framing)
 
 ---
 
 ## TL;DR — pick up here
+
+**Unit 5 (Hydrosphere — Water, Stakeholders, and Position) is now navigable as a skeleton.** U5 is also Matthew's trial unit — three pedagogical arms (Section A BoodleBox bot-building / Section B Flint guided-tutor / Section C paper-based) running concurrently. The landing prose makes that trial-aware framing explicit.
+
+**What shipped this phase:**
+- `src/units/unit-5/index.njk` — full landing (9-block grid, Water Stakeholders + Position Paper assessment card, AI partners panel with 2 new partners + Source Evaluator + Skeptic, Resources panel with U5 EAL Pre-Teach). Includes trial-aware prose (three arms explained) + political-charge UDL prose (Cauvery is local + charged; 7 alternative cases offer distance).
+- `src/units/unit-5/block-1.njk` through `block-9.njk` — 9 one-paragraph stubs covering UbD-canonical structure: Water Cycle + Reservoirs · Watersheds + Water Budgets · Groundwater + Aquifers · Water Quality + Pollution · Water Rights + Stakeholders Map Assigned · Case Deep Dive · Counter-Argument + Stakeholder Voice AI · Drafting + Roundtable Rehearsal · Stakeholder Roundtable + Unit Close.
+- `src/units/unit-5/assessment-water-stakeholders.njk` — stub with GRASPS frame, 8 water-rights cases table (Cauvery / Indus / Colorado / Nile / Mekong / Aral / Cooum / Bangalore), trial-aware callout, three deliverable formats (Position Paper 2pp or 4-min video; Stakeholders Map visual + 1pp narrative; Roundtable live or async), required components, 4 scoring gates explicitly named (voice-match T/T gate, stakeholder specificity K/U gate, AI Doc K/U gate, negotiation move C signal), Boodle Build callout for Section A.
+
+**New under src/ai-partners/:**
+- `the-hydrologist.njk` — NEW AI partner stub (water systems + case-specific hydrology; Blocks 1-9).
+- `stakeholder-voice.njk` — NEW AI partner stub (perspective-taking role-play; Blocks 7-9). **U5's signature partner** — Section A students *build* their own version via the Boodle Build Assignment.
+
+**Modified:**
+- `src/ai-partners/index.njk` — 2 new cards added (now 12 partners total)
+- `src/units/index.njk` — U5 card-desc refreshed; stub-note refreshed to reflect U5's new skeleton-navigable state + trial-unit framing
+
+Site goes from 112 → 125 generated files (+13).
+
+After this phase, **U0 / U1 / U2 / U3 / U4 fully complete · U5 skeleton-navigable · U6 / U7 still landing-card-only**. 12 AI partner pages total (5 deep + 7 at pre-deep-build stub depth).
+
+**Pedagogical move that's unique to U5**: perspective-taking as the year's T/T centerpiece. Carries forward to U6 (Land Use multi-stakeholder planning) + U7 (Energy mix stakeholder tensions). The Stakeholder Voice AI partner is the year's first "students build their own AI" move (Section A Boodle Build Assignment).
+
+---
+
+## Previous TL;DR — U0 → U1 anchor-article bridge (kept for reference)
 
 **U0 Blocks 2 + 3 + U1 Block 1 + U0 Block 7 now reference a single shared "U0 Anchor Article" placeholder.** Structural refactor only — the actual article is still TBD, waiting on Matthew's collaboration with the AISC librarian (tracked in `MEDIA_REVIEW.md`). When the librarian provides a specific article, a follow-up commit does text replacement only — no structural changes needed.
 
