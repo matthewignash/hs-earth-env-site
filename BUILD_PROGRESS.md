@@ -2,11 +2,31 @@
 
 > **Purpose:** Living status doc. Tells you (and future Claude Code sessions) what's built, what's stubbed, what to build next, and in what order. The charter is in `CLAUDE.md` — do NOT modify that. Update this file at the end of each build session.
 
-**Last updated:** 2026-05-25 (Unit 5 skeleton — 13 new pages + 2 new AI partners + trial-aware framing)
+**Last updated:** 2026-05-27 (Unit 5 deep build — Phase A: spine deep build)
 
 ---
 
 ## TL;DR — pick up here
+
+**Unit 5 has a teaching-ready spine.** Mirrors U2 + U4 Phase A: deep-build the 3 highest-leverage blocks (Block 1 Water Cycle anchor, Block 5 Water Rights + Assessment Kickoff, Block 7 Stakeholder Voice AI introduced + Boodle Build for Section A), convert the Water Stakeholders + Position Paper assessment stub to a full handout, convert the Hydrologist + Stakeholder Voice stubs to full 7-section specs.
+
+**Why this is highest priority right now**: U5 is Matthew's trial unit — he teaches it first this year. The Phase A spine is what he needs for live teaching: Day 1 launch, the assessment kickoff day, the signature-partner-introduced day, plus the full assessment package and both AI partner specs.
+
+**What shipped this phase:**
+- `src/units/unit-5/block-1.njk` — Water Cycle + Reservoirs + Residence Times — stub → full 5-section deep block (~115 lines). Anchor in Cauvery dispute, residence-time-as-political-structure framing, paired water-cycle diagram activity, Cauvery-specific stakeholder linkage exit ticket.
+- `src/units/unit-5/block-5.njk` — Water Rights + Stakeholders Map Assigned — stub → full 5-section deep block (~125 lines). Four water-rights frameworks (riparian / prior appropriation / public trust / common-pool), physical-vs-economic scarcity, assessment kickoff with 8 cases + two-tier choice (case + stakeholder), stretch-vs-default decision support.
+- `src/units/unit-5/block-7.njk` — Stakeholder Voice AI Introduced + Counter-Argument + Boodle Build — stub → full 5-section deep block (~135 lines). Signature partner lands. 6-field stakeholder analysis framework. Counter-argument work without strawmanning. Trial-arm split lands in the Interact card: Section A Boodle Build begins, Section B Flint Stakeholder Voice activated, Section C paper Stakeholder Profile Pack opened.
+- `src/units/unit-5/assessment-water-stakeholders.njk` — stub → full handout (~240 lines). GRASPS table, trial-aware callout (3 arms explained), 8-case roster, Stakeholders Map 7-field template, Position Paper 4-part structure with word counts, 4 scoring gates explicitly named (voice-match T/T, stakeholder specificity K/U, AI Doc K/U, negotiation move C), full K/U / T/T / C rubric across 4 bands, AI Documentation expectations including Section A Boodle Build documentation.
+- `src/ai-partners/the-hydrologist.njk` — stub → full 7-section spec (~140 lines). Overview, Pairs with, Quick facts, copy-paste system prompt, opening message, example exchange (the Cauvery "is Karnataka being unfair?" redirect), failure mode (advocacy drift + outdated allocation numbers) + recovery, documentation reminder.
+- `src/ai-partners/stakeholder-voice.njk` — stub → full 7-section spec (~170 lines, preserves trial-aware framing). Overview emphasizes the "make the strongest argument" + "flag projection" moves. Full 4-turn Cauvery example exchange showing the partner in character with a meta-comment. Failure mode (caricature + breaking role) + recovery. Boodle Build documentation requirement for Section A explicit.
+
+Site stays at 125 generated files (no new files; content updates only).
+
+**Phases B + C** still ahead — will deepen Blocks 2, 3, 4, 6 (water systems chunk) and Blocks 8, 9 (workflow / Roundtable). After both, U5 is fully complete.
+
+---
+
+## Previous TL;DR — Unit 5 skeleton (kept for reference)
 
 **Unit 5 (Hydrosphere — Water, Stakeholders, and Position) is now navigable as a skeleton.** U5 is also Matthew's trial unit — three pedagogical arms (Section A BoodleBox bot-building / Section B Flint guided-tutor / Section C paper-based) running concurrently. The landing prose makes that trial-aware framing explicit.
 
