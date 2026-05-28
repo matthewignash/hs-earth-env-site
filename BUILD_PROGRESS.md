@@ -2,11 +2,38 @@
 
 > **Purpose:** Living status doc. Tells you (and future Claude Code sessions) what's built, what's stubbed, what to build next, and in what order. The charter is in `CLAUDE.md` — do NOT modify that. Update this file at the end of each build session.
 
-**Last updated:** 2026-05-28 (Unit 5 deep build — Phase C: workflow + close-out → U5 fully complete)
+**Last updated:** 2026-05-28 (Unit 1 — rolling-summative assessment pattern prototype; year-wide design test case)
 
 ---
 
 ## TL;DR — pick up here
+
+**Unit 1's Goldilocks Report has been restructured around a rolling-summative assessment pattern.** Year-wide design prototype. The Report is now scored as 10 named **components**, each tied to a rubric strand and each due on a specific block. Students get feedback + a locked strand band on each component as it's due — not all at the end. By the time of the Block 10 NASA Committee Defense, K/U and T/T are mostly already locked (across components from Blocks 7, 8, 9). Block 10 marks only the three C-strand components (final assembled Report + pitch + Q&A responses) plus the formative unit-close reflection.
+
+**The design intent** (year-wide, starting with U1): rather than "summative = final submission, formative work in a side bucket," U1 now models "summative = strand-by-strand progression across the unit, final submission = show-what-you-can-do-now." Students see a running rubric in Google Classroom (per-student rubric tool) that fills in as components lock. No end-of-unit surprises on K/U or T/T.
+
+**What shipped this commit:**
+- `src/units/unit-1/assessment-goldilocks-report.njk` — major edit. Replaced "Key dates" callout with a "How this is assessed — rolling summative" callout + 10-row component due-date table (component / due block / strand). Added Step 3a — OPVL your 3 sources, making the previously-implicit OPVL component explicit and bumped from "≥2 sources" to "3 sources." Updated T/T 7-8 rubric band to "3 sources including the AI source." Reframed the K/U gate (AI Documentation) and T/T gate (exoplanet analysis) from post-hoc strand caps to per-component locks — each component still has a watch-out, but it's a component-level band cap not a strand-level cap. Added a rolling-summative reminder above the rubric tables.
+- `src/units/unit-1/block-7.njk` — Show section reframed: Component 1 (K/U-framework) locks today.
+- `src/units/unit-1/block-8.njk` — Show section reframed: Component 2 (K/U-baseline) + Component 3 (T/T-OPVL on 3 sources) both lock today.
+- `src/units/unit-1/block-9.njk` — Show section reframed: Component 4 (T/T-exoplanet) + Component 5 (T/T-synthesis) + Component 6 (K/U-AI-Doc) all lock today. K/U and T/T are now essentially complete after Block 9.
+- `src/units/unit-1/block-10.njk` — Show section reframed: Components 7 (C-final-Report) + 8 (C-pitch) + 9 (C-Q&A) + 10 (formative reflection) lock today. K/U and T/T marks already in from Blocks 7–9.
+
+Site stays at 125 generated files (no new files; content updates only).
+
+**Why this matters / year-wide implication.** The Goldilocks Report is the first place the rolling-summative pattern lands. If it works in practice during AY 2026-27, the pattern propagates to U2 Landscape Reading, U4 Chennai Climate Brief, U5 Position Paper, and U6 / U7 once built. Each summative would be componentized similarly — 6-10 components per summative, mapped to rubric strands, locking progressively across the unit. The shared infrastructure (Google Classroom per-student rubric scoresheet) means students learn the rhythm once and reuse it across the year.
+
+**Out of scope this commit (deliberately):**
+- Propagating the pattern to U2 / U3 / U4 / U5 summatives.
+- A Foundations year-wide explainer page for the rolling-summative model.
+- A new Student Hub "Running Rubric" page.
+- Touching the AISC strand-rubric Foundations page.
+
+After U1 is taught with this model (or as the propagation phase plans), those items become next-phase candidates.
+
+---
+
+## Previous TL;DR — Unit 5 Phase C close-out (kept for reference)
 
 **Unit 5 is now fully complete.** Phase C closed out U5 by deepening the final two stubs — Block 8 (Drafting + Roundtable Rehearsal) and Block 9 (Submission + Stakeholder Roundtable + Unit Close + U6 preview). All 9 blocks are now deep, the full assessment handout shipped Phase A, both signature AI partners (Hydrologist + Stakeholder Voice) are at full 7-section spec depth. U5 is Matthew's trial unit — teaching-ready end-to-end for AY 2026-27.
 
