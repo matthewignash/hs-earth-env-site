@@ -2,11 +2,27 @@
 
 > **Purpose:** Living status doc. Tells you (and future Claude Code sessions) what's built, what's stubbed, what to build next, and in what order. The charter is in `CLAUDE.md` — do NOT modify that. Update this file at the end of each build session.
 
-**Last updated:** 2026-05-27 (Unit 5 deep build — Phase A: spine deep build)
+**Last updated:** 2026-05-28 (Unit 5 deep build — Phase B: water systems chunk + first work day)
 
 ---
 
 ## TL;DR — pick up here
+
+**Unit 5 has 7 of 9 blocks deep.** Phase B deepened the water systems chunk + the first major Position Paper work day: Block 2 (Watersheds + Water Budgets), Block 3 (Groundwater + Aquifers — three-sources OPVL), Block 4 (Water Quality + Pollution), Block 6 (Cauvery Deep Dive + Stakeholders Map Started). Together with Phase A's spine (Blocks 1, 5, 7), this means ~78% of U5 is now teaching-ready. Only Blocks 8 (Drafting + Roundtable Rehearsal) and 9 (Roundtable + Unit Close) remain — Phase C territory.
+
+**What shipped this phase:**
+- `src/units/unit-5/block-2.njk` — Surface Water + Watersheds + Water Budgets — stub → full 5-section deep block (~123 lines). Watershed-as-political-unit framing, water-budget framework (Inputs − Outputs = ΔStorage), paired calculation on a real Chennai-area basin, deficit/balance/surplus classification + what would change it. Cauvery-budget connection as stretch path.
+- `src/units/unit-5/block-3.njk` — Groundwater + Aquifers + Depletion — stub → full 5-section deep block (~125 lines). Confined/unconfined + renewable/fossil distinctions, Chennai 2019 Day Zero anchor, **three-sources OPVL** on Chennai groundwater (government / Hindu article / AI summary — same shape as U2 Block 3's Cooum three-sources move applied to a new domain).
+- `src/units/unit-5/block-4.njk` — Water Quality + Pollution — stub → full 5-section deep block (~124 lines). Six parameters (DO, BOD, pH, TDS, coliforms, turbidity), point vs. non-point pollution, Chennai-area dataset interpretation (Cooum/Adyar), stakeholder-grade recommendation move as the T/T preview.
+- `src/units/unit-5/block-6.njk` — Cauvery Deep Dive + Stakeholders Map Started — stub → full 5-section deep block (~125 lines). **First major work day.** Cauvery case study (basin hydrology + 1924 → 1990 → 2018 dispute arc, both states presented neutrally), Mr. Ignash's **Bangalore worked-example Stakeholders Map** demoed live (deliberately a non-student case so the move transfers without copying), students then start their own 7-field map. Conferencing block — Hydrologist + Source Evaluator open; Stakeholder Voice available for students who want a head start.
+
+Site stays at 125 generated files (no new files; content updates only).
+
+**Phase C** still ahead — will deepen Blocks 8 (Drafting + Roundtable Rehearsal) and 9 (Stakeholder Roundtable + Unit Close + U6 preview). After Phase C, U5 is fully complete.
+
+---
+
+## Previous TL;DR — Unit 5 Phase A spine (kept for reference)
 
 **Unit 5 has a teaching-ready spine.** Mirrors U2 + U4 Phase A: deep-build the 3 highest-leverage blocks (Block 1 Water Cycle anchor, Block 5 Water Rights + Assessment Kickoff, Block 7 Stakeholder Voice AI introduced + Boodle Build for Section A), convert the Water Stakeholders + Position Paper assessment stub to a full handout, convert the Hydrologist + Stakeholder Voice stubs to full 7-section specs.
 
@@ -21,8 +37,6 @@
 - `src/ai-partners/stakeholder-voice.njk` — stub → full 7-section spec (~170 lines, preserves trial-aware framing). Overview emphasizes the "make the strongest argument" + "flag projection" moves. Full 4-turn Cauvery example exchange showing the partner in character with a meta-comment. Failure mode (caricature + breaking role) + recovery. Boodle Build documentation requirement for Section A explicit.
 
 Site stays at 125 generated files (no new files; content updates only).
-
-**Phases B + C** still ahead — will deepen Blocks 2, 3, 4, 6 (water systems chunk) and Blocks 8, 9 (workflow / Roundtable). After both, U5 is fully complete.
 
 ---
 
