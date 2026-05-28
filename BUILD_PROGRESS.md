@@ -2,13 +2,36 @@
 
 > **Purpose:** Living status doc. Tells you (and future Claude Code sessions) what's built, what's stubbed, what to build next, and in what order. The charter is in `CLAUDE.md` — do NOT modify that. Update this file at the end of each build session.
 
-**Last updated:** 2026-05-28 (Unit 5 deep build — Phase B: water systems chunk + first work day)
+**Last updated:** 2026-05-28 (Unit 5 deep build — Phase C: workflow + close-out → U5 fully complete)
 
 ---
 
 ## TL;DR — pick up here
 
-**Unit 5 has 7 of 9 blocks deep.** Phase B deepened the water systems chunk + the first major Position Paper work day: Block 2 (Watersheds + Water Budgets), Block 3 (Groundwater + Aquifers — three-sources OPVL), Block 4 (Water Quality + Pollution), Block 6 (Cauvery Deep Dive + Stakeholders Map Started). Together with Phase A's spine (Blocks 1, 5, 7), this means ~78% of U5 is now teaching-ready. Only Blocks 8 (Drafting + Roundtable Rehearsal) and 9 (Roundtable + Unit Close) remain — Phase C territory.
+**Unit 5 is now fully complete.** Phase C closed out U5 by deepening the final two stubs — Block 8 (Drafting + Roundtable Rehearsal) and Block 9 (Submission + Stakeholder Roundtable + Unit Close + U6 preview). All 9 blocks are now deep, the full assessment handout shipped Phase A, both signature AI partners (Hydrologist + Stakeholder Voice) are at full 7-section spec depth. U5 is Matthew's trial unit — teaching-ready end-to-end for AY 2026-27.
+
+After this commit, **U0 + U1 + U2 + U3 + U4 + U5 are all fully complete** — 59 deep blocks total across the six units, 6 full assessments, 12 AI partner pages (7 at deep 7-section spec depth: Field Geologist, Planet Hunter, Systems Diagrammer, Climate Modeler, Policy Aide, Hydrologist, Stakeholder Voice; 5 still at pre-deep-build stub depth: Skeptic, Source Evaluator, Plate Tectonics Tutor, Engineering Coach, Defense Practice Partner), the full EAL hub (11 pages), and the full Foundations layer (10 pages). The units/index landing's build-status note now reads "Unit 0 / 1 / 2 / 3 / 4 / 5 fully complete."
+
+**What shipped this phase:**
+- `src/units/unit-5/block-8.njk` — Position Paper Drafting + Roundtable Rehearsal — stub → full 5-section deep block (~123 lines). T/T + C primary. Last protected drafting time + Roundtable rehearsal. Trial-arm split surfaces one more time (Section A Boodle / Section B Flint / Section C paper Profile Pack). Concession-vs-capitulation is the C-rubric edge — Path D peer-help structured around exactly that distinction. Submission today: rehearsal artifacts (paper itself submits Block 9).
+- `src/units/unit-5/block-9.njk` — Stakeholders Map + Position Paper Submitted + Stakeholder Roundtable + Unit Close — stub → full 5-section deep block + U6 preview block (~119 lines, 6 block-sections). C primary. Submission → ~55-min Roundtable → debrief → unit-close reflection → U6 preview. **The Roundtable is negotiation, not Q&A** — that's the C signal in the rubric, made explicit throughout. AI partners are deliberately off-stage today (the Roundtable is human-only). Closes with two-paragraph U6 preview tying water perspective-taking → land-use perspective-taking.
+- `src/units/unit-5/index.njk` — Block 6 card-desc refresh (stale skeleton-era wording → accurate "Cauvery Deep Dive + Bangalore worked-example demo + Stakeholders Map started" framing).
+- `src/units/index.njk` — stub-note refreshed: "Unit 0 / 1 / 2 / 3 / 4 / 5 fully complete."
+
+Site stays at 125 generated files (no new files; content updates only).
+
+**What's left in the year-map**:
+- U6 (Biosphere & Land Use) and U7 (Energy & Sustainability) are still landing-card-only with no folders.
+- 5 of the 12 AI partner stubs (Skeptic, Source Evaluator, Plate Tectonics Tutor, Engineering Coach, Defense Practice Partner) are still at pre-deep-build depth.
+- U0 Anchor Article placeholder still pending librarian collaboration.
+- Possible sibling-project simulators (Cauvery Allocation, Land Use Allocator, Energy Mix Designer) not yet briefed.
+- AI Partner Deployment Plan launch URLs not yet applied to AI partner pages (still TBD placeholders).
+
+---
+
+## Previous TL;DR — Unit 5 Phase B water systems chunk (kept for reference)
+
+**Unit 5 had 7 of 9 blocks deep.** Phase B deepened the water systems chunk + the first major Position Paper work day: Block 2 (Watersheds + Water Budgets), Block 3 (Groundwater + Aquifers — three-sources OPVL), Block 4 (Water Quality + Pollution), Block 6 (Cauvery Deep Dive + Stakeholders Map Started). Together with Phase A's spine (Blocks 1, 5, 7), this meant ~78% of U5 was teaching-ready going into Phase C.
 
 **What shipped this phase:**
 - `src/units/unit-5/block-2.njk` — Surface Water + Watersheds + Water Budgets — stub → full 5-section deep block (~123 lines). Watershed-as-political-unit framing, water-budget framework (Inputs − Outputs = ΔStorage), paired calculation on a real Chennai-area basin, deficit/balance/surplus classification + what would change it. Cauvery-budget connection as stretch path.
@@ -17,8 +40,6 @@
 - `src/units/unit-5/block-6.njk` — Cauvery Deep Dive + Stakeholders Map Started — stub → full 5-section deep block (~125 lines). **First major work day.** Cauvery case study (basin hydrology + 1924 → 1990 → 2018 dispute arc, both states presented neutrally), Mr. Ignash's **Bangalore worked-example Stakeholders Map** demoed live (deliberately a non-student case so the move transfers without copying), students then start their own 7-field map. Conferencing block — Hydrologist + Source Evaluator open; Stakeholder Voice available for students who want a head start.
 
 Site stays at 125 generated files (no new files; content updates only).
-
-**Phase C** still ahead — will deepen Blocks 8 (Drafting + Roundtable Rehearsal) and 9 (Stakeholder Roundtable + Unit Close + U6 preview). After Phase C, U5 is fully complete.
 
 ---
 
