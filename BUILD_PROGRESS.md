@@ -2,11 +2,36 @@
 
 > **Purpose:** Living status doc. Tells you (and future Claude Code sessions) what's built, what's stubbed, what to build next, and in what order. The charter is in `CLAUDE.md` — do NOT modify that. Update this file at the end of each build session.
 
-**Last updated:** 2026-05-28 (Unit 1 — rolling-summative assessment pattern prototype; year-wide design test case)
+**Last updated:** 2026-05-28 (U0/U1 — anchor article resolved as Lovelock 1965; website + Block Plans docx)
 
 ---
 
 ## TL;DR — pick up here
+
+**The U0 "anchor article" placeholder is resolved: it's now Lovelock (1965) + Thompson et al. (2022).** The `[U0 Anchor Article — TBD pending librarian]` placeholder that threaded U0 Blocks 2/3/7 + U1 Block 1 has been replaced everywhere with a real, rigorous primary-literature pair. Lovelock 1965 (*Nature*) originated the idea of detecting life by reading a planet's atmosphere for chemical disequilibrium — which is U1's habitability question from the other side, so it's a genuine U0→U1 bridge. Thompson 2022 (*PNAS*) is the modern JWST-era follow-up on TRAPPIST-1e methane. The librarian dependency for the anchor is closed. Source: `Unit 0_ Foundations/U0 Block Plans — Update Brief (v0.2).md` + companion lesson plan.
+
+**What shipped this commit (website):**
+- `src/units/unit-0/block-2.njk` — substantive rewrite. Title "OPVL Deep Dive" → **"OPVL Across Source Types."** Re-anchored on Lovelock 1965: primary-literature OPVL framing, inverse-Goldilocks hook, real citations + "materials in Google Classroom" pointer (no PDFs on the public site, per the lesson plan), Thompson 2022 in the stretch path, 5-term pre-teach vocab callout, stem-based exit slip.
+- `src/units/unit-0/block-3.njk` — anchor-article → "AI summary of Lovelock 1965" swap throughout. The human-OPVL (Block 2) vs. AI-summary-OPVL (Block 3) side-by-side is preserved.
+- `src/units/unit-0/block-7.njk` — preview mention now names Lovelock as the habitability bridge.
+- `src/units/unit-1/block-1.njk` — carry-forward bridge now names Lovelock + Thompson, using the lesson plan's TRAPPIST-1e callback framing. Carry-forward card upgraded from placeholder → real reference.
+- `src/units/unit-1/index.njk` — new "Foundational Papers — Lovelock 1965 + Thompson 2022" resource card.
+- `src/units/unit-1/assessment-goldilocks-report.njk` — Thompson added as a recommended primary source in Step 3a (esp. for TRAPPIST-1 writers).
+- `src/units/unit-1/block-5.njk` — Thompson transit→habitability callback (5–10 JWST transits to detect TRAPPIST-1e methane).
+- `src/units/unit-1/block-7.njk` — "Thompson's three criteria" optional-model callout for framework design.
+- `src/units/unit-0/index.njk`, `block-1.njk` — Block 2 title references updated.
+- `MEDIA_REVIEW.md` — anchor article marked ✅ RESOLVED.
+
+Site stays at 125 generated files (no new files; content edits only).
+
+**Companion docx work (separate commit, in the course-content folder, not this repo):**
+- `Unit 0_ Foundations/U0 Block Plans — LI + SC + Bell Ringers + Reflections.docx` — synced from 5 → 7 blocks (the website was already at 7; the docx was the stale artifact). Block 2 revised to the Lovelock primary-literature lesson; Block 4 tuned; Block 5 repurposed (AI-source OPVL + AI Doc); Blocks 6 + 7 new; header arc line 5→7.
+
+**Deferred (Part C — confirm before building):** 3 supporting handouts (Lovelock Pre-Read Scaffold, 5-term Pre-Teach Vocabulary, Structured OPVL Template) + a light cross-doc validation pass (Source Dossier Assessment Package, U0 UbD, Welcome/Primer for stale "5-block / 2-week" phrasing).
+
+---
+
+## Previous TL;DR — Unit 1 rolling-summative assessment pattern (kept for reference)
 
 **Unit 1's Goldilocks Report has been restructured around a rolling-summative assessment pattern.** Year-wide design prototype. The Report is now scored as 10 named **components**, each tied to a rubric strand and each due on a specific block. Students get feedback + a locked strand band on each component as it's due — not all at the end. By the time of the Block 10 NASA Committee Defense, K/U and T/T are mostly already locked (across components from Blocks 7, 8, 9). Block 10 marks only the three C-strand components (final assembled Report + pitch + Q&A responses) plus the formative unit-close reflection.
 
