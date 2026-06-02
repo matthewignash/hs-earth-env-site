@@ -2,13 +2,32 @@
 
 > **Purpose:** Living status doc. Tells you (and future Claude Code sessions) what's built, what's stubbed, what to build next, and in what order. The charter is in `CLAUDE.md` — do NOT modify that. Update this file at the end of each build session.
 
-**Last updated:** 2026-06-02 (U6 skeleton — Urban 15-Minute Chennai reframe; navigable shell)
+**Last updated:** 2026-06-02 (U6 deep build — Phase A: spine + assessment handout + 2 partner specs)
 
 ---
 
 ## TL;DR — pick up here
 
-**Unit 6 is now navigable as a skeleton, built on the urban 15-minute reframe.** U6 was redesigned from a rural 100 km² land-allocation problem into an **urban 15-minute-neighbourhood** problem set in Chennai (source: `../Unit 6_ Biosphere and Land Use/U6 REWORK — Urban 15-Minute Chennai Design Brief.md` + `U6_BUILD_PLAN.md`). Students each take a Chennai area, redesign it across 8 urban land uses, **name and quantify the trade-offs** (unchanged T/T heart + 5 gates), work two disagreeing AI partners (Urban Planner + Equity & Resilience), and present publicly at the school's environmental showcase to a real municipal audience (the C performance, replacing a peer board).
+**Unit 6 has a teaching-ready spine (Phase A).** Mirrors U5 Phase A: deepened the 3 highest-leverage blocks, converted the assessment stub to a full handout, and converted the 2 partner stubs to full 7-section specs. U6 is the urban 15-minute-Chennai reframe (source: `../Unit 6_ Biosphere and Land Use/U6 REWORK — Urban 15-Minute Chennai Design Brief.md` + `U6_BUILD_PLAN.md`); since the urban content lives only in that sketch (the U6 docx are the rural version), Phase A **authored** the lesson content from the sketch + Chennai urban-planning domain knowledge.
+
+**What shipped this phase:**
+- `src/units/unit-6/block-1.njk` — Phenomenon Launch — stub → full 5-section deep block. "Can you live here on foot?", Chennai test case (eris, 2015 floods, heat, informal settlements), U5→U6 widening, walkability-audit anchor activity, first-trade-off exit ticket.
+- `src/units/unit-6/block-4.njk` — Multi-Objective Optimisation — stub → full deep block. The signature design move: allocate the grid across 8 land uses, Pareto frontier, **both AI partners land here** with their opposite pulls (synthesise, do not average). Land Allocation Optimizer referenced as planned.
+- `src/units/unit-6/block-5.njk` — Trade-off Analysis — stub → full deep block. **The T/T gate.** Quantify across ≥4 objectives + name the sacrifice in one explicit sentence; hiding the trade-off caps T/T; qualitative-only caps at 5-6.
+- `src/units/unit-6/assessment-sustainable-neighbourhood-plan.njk` — stub outline → full handout. Added formats, AI Documentation expectations, grade weighting (Plan 70% / public performance 15% / formative 15%), and the **full K/U / T/T / C rubric across 4 bands** with all 5 gates baked into the band descriptors. Standards stay provisional (alignment pass pending).
+- `src/ai-partners/urban-planner.njk` + `equity-resilience-partner.njk` — stub → full 7-section specs (Overview, Pairs with, Quick facts, copy-paste system prompt, opening message, example exchange, failure mode + recovery, documentation reminder), re-pointed from the Agronomist + Ecologist specs in `AI Partner Specifications (U4-U7 combined).docx`.
+
+Site stays at 139 generated files (no new files; content updates only). U6 now has **3 of 10 blocks deep** (1, 4, 5).
+
+**Conventions held:** no em dashes in U6 student-facing body prose; block-relative language (no calendar dates); spatial unit kept agnostic; simulator referenced as planned.
+
+**Next:** U6 Phase B (urban-systems chunk: Blocks 2, 6, 7 + Block 3 Area Cards once the area-roster decision is settled) → Phase C (public-path: Blocks 8, 9, 10 + Earth Week close-out, once the Earth Week timing + consent decisions are settled). Then U7 skeleton.
+
+---
+
+## Previous TL;DR — U6 skeleton (kept for reference)
+
+**Unit 6 navigable as a skeleton, built on the urban 15-minute reframe.** U6 was redesigned from a rural 100 km² land-allocation problem into an **urban 15-minute-neighbourhood** problem set in Chennai. Students each take a Chennai area, redesign it across 8 urban land uses, **name and quantify the trade-offs** (unchanged T/T heart + 5 gates), work two disagreeing AI partners (Urban Planner + Equity & Resilience), and present publicly at the school's environmental showcase to a real municipal audience (the C performance, replacing a peer board).
 
 **What shipped this commit (U6 skeleton, +14 files):**
 - `src/units/unit-6/index.njk` — landing (anchor question, urban-reframe prose, 10-block grid, assessment card, 4 AI-partner cards, 5 resource cards incl. U6 EAL + Land Allocation Optimizer planned).
