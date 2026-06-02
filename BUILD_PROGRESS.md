@@ -2,13 +2,31 @@
 
 > **Purpose:** Living status doc. Tells you (and future Claude Code sessions) what's built, what's stubbed, what to build next, and in what order. The charter is in `CLAUDE.md` — do NOT modify that. Update this file at the end of each build session.
 
-**Last updated:** 2026-06-02 (U6 deep build — Phase A: spine + assessment handout + 2 partner specs)
+**Last updated:** 2026-06-02 (U6 deep build — Phase B: concept + work chunk, Blocks 2/3/6/7)
 
 ---
 
 ## TL;DR — pick up here
 
-**Unit 6 has a teaching-ready spine (Phase A).** Mirrors U5 Phase A: deepened the 3 highest-leverage blocks, converted the assessment stub to a full handout, and converted the 2 partner stubs to full 7-section specs. U6 is the urban 15-minute-Chennai reframe (source: `../Unit 6_ Biosphere and Land Use/U6 REWORK — Urban 15-Minute Chennai Design Brief.md` + `U6_BUILD_PLAN.md`); since the urban content lives only in that sketch (the U6 docx are the rural version), Phase A **authored** the lesson content from the sketch + Chennai urban-planning domain knowledge.
+**Unit 6 has 7 of 10 blocks deep (Phase B done).** Phase B deepened the concept-and-work chunk: Block 2 (Urban Systems), Block 3 (Area Data Cards + assessment kickoff), Block 6 (Plan Drafting), Block 7 (Equity & Displacement). Together with Phase A's spine (1, 4, 5), U6 is now ~70% teaching-ready. Only the public-path chunk (Blocks 8, 9, 10) remains for Phase C, and that chunk needs the Earth Week timing + consent decisions settled first.
+
+**What shipped this phase:**
+- `src/units/unit-6/block-2.njk` — Urban Systems — stub → full deep block. The five urban systems (access, density, green-blue, heat, flood) as the city-scale analog of ecosystem services, how they feed back on each other (paving for density removes flood-buffering permeable land), Chennai eris/Pallikaranai context, Systems Diagrammer feedback-sketch anchor.
+- `src/units/unit-6/block-3.njk` — Area Data Cards — stub → full deep block. **Assessment kickoff** (Plan assigned, area locked, 15-minute-access baseline recorded). Source Evaluator OPVL on a data claim. Area roster + spatial unit kept as TBD/agnostic placeholders (open decisions).
+- `src/units/unit-6/block-6.njk` — Plan Drafting — stub → full deep block. First major work day; draft all four core sections + recommendations to a named municipal body (what/who/when/cost-or-equity); both partners open; conferencing.
+- `src/units/unit-6/block-7.njk` — Equity & Displacement — stub → full deep block. The perspective planning ignores: informal settlements, affordability, displacement; the direct parallel to U5's stakeholder work; Equity & Resilience Partner central; name a displacement risk + add a concrete safeguard.
+
+Site stays at 139 generated files (no new files; content updates only).
+
+**Conventions held:** no em dashes in U6 student-facing body prose; block-relative language (no calendar dates); spatial unit + area roster kept agnostic/TBD; simulator referenced as planned.
+
+**Next:** U6 Phase C (public-path: Blocks 8 Public-Piece Prep, 9 Earth Week Public Presentation, 10 Unit Reflection + U7 preview) — needs Earth Week timing + consent model settled. Then U7 skeleton.
+
+---
+
+## Previous TL;DR — U6 Phase A spine (kept for reference)
+
+**Unit 6 has a teaching-ready spine (Phase A).** Mirrors U5 Phase A: deepened the 3 highest-leverage blocks (1, 4, 5), converted the assessment stub to a full handout, and converted the 2 partner stubs to full 7-section specs. U6 is the urban 15-minute-Chennai reframe (source: `../Unit 6_ Biosphere and Land Use/U6 REWORK — Urban 15-Minute Chennai Design Brief.md` + `U6_BUILD_PLAN.md`); since the urban content lives only in that sketch (the U6 docx are the rural version), Phase A **authored** the lesson content from the sketch + Chennai urban-planning domain knowledge.
 
 **What shipped this phase:**
 - `src/units/unit-6/block-1.njk` — Phenomenon Launch — stub → full 5-section deep block. "Can you live here on foot?", Chennai test case (eris, 2015 floods, heat, informal settlements), U5→U6 widening, walkability-audit anchor activity, first-trade-off exit ticket.
