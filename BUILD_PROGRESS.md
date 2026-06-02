@@ -2,13 +2,35 @@
 
 > **Purpose:** Living status doc. Tells you (and future Claude Code sessions) what's built, what's stubbed, what to build next, and in what order. The charter is in `CLAUDE.md` — do NOT modify that. Update this file at the end of each build session.
 
-**Last updated:** 2026-06-02 (U6 deep build — Phase B: concept + work chunk, Blocks 2/3/6/7)
+**Last updated:** 2026-06-02 (U6 deep build — Phase C: public-path close-out → U6 fully built)
 
 ---
 
 ## TL;DR — pick up here
 
-**Unit 6 has 7 of 10 blocks deep (Phase B done).** Phase B deepened the concept-and-work chunk: Block 2 (Urban Systems), Block 3 (Area Data Cards + assessment kickoff), Block 6 (Plan Drafting), Block 7 (Equity & Displacement). Together with Phase A's spine (1, 4, 5), U6 is now ~70% teaching-ready. Only the public-path chunk (Blocks 8, 9, 10) remains for Phase C, and that chunk needs the Earth Week timing + consent decisions settled first.
+**Unit 6 is now fully built (10 of 10 blocks deep).** Phase C closed out the public-path chunk: Block 8 (Public-Piece Prep), Block 9 (Earth Week Public Presentation), Block 10 (Unit Reflection + U7 preview). With the spine (1, 4, 5) and the concept-and-work chunk (2, 3, 6, 7) already deep, U6 now has all 10 blocks deep, a full Sustainable Neighbourhood Plan handout (with the 4-band rubric), and both AI partners at full spec. After this, **U0–U6 are all fully complete**; only U7 remains (landing-card-only).
+
+**What shipped this phase:**
+- `src/units/unit-6/block-8.njk` — Public-Piece Prep — stub → full deep block. Turn the plan into a public live activity + shareable artifact; the design tension (outreach rewards a clean message, the rubric rewards naming the sacrifice) made explicit; the public-artifact guardrail (show the trade-off, do not hide it); consent + opt-out + non-public fallback baked in.
+- `src/units/unit-6/block-9.njk` — Earth Week Public Presentation — stub → full deep block. The C-strand performance: present to a real public/municipal audience; the bar is the audience seeing both achievement and cost; live / pre-recorded video / non-public fallback choice board; AI Doc final reflection. Date-free (Earth Week planned-but-unscheduled).
+- `src/units/unit-6/block-10.njk` — Unit Reflection — stub → full deep block + U7 preview. Self-assessment vs. the rubric, the year-long design-thread look-back (U2→U4→U5→U6), and the U7 (Energy & Sustainability) preview.
+- `src/units/unit-6/index.njk` — landing stub-note: "Skeleton" → "Fully built," with the honest pending-specifics list (standards, area cards, public channel/consent, simulator).
+- `src/units/index.njk` — build-status note: U6 moved into the fully-complete list (U0–U6), with the U6 standards-provisional + public-channel-pending caveats noted.
+
+Site stays at 139 generated files (no new files; content updates only).
+
+**Open follow-ups (not blockers, tracked):**
+- **Standards-alignment pass** — the updated U6 UbD (new standards + scope) is incoming; when it lands, replace the provisional standards on the assessment handout with the confirmed set.
+- **Public-posting channel** — pending school social-account access (the "account takeover" email); when confirmed, swap the TBD channel placeholder in Blocks 8/9 for the real one (text replacement only).
+- **Simulator** (Land Allocation Optimizer) stays charter-stage; repoint to urban objectives + build later.
+
+**Next:** U7 skeleton (Energy & Sustainability — Energy Mix Design + Op-Ed; fully sourced from the U7 docx set: UbD, Block Plans, Assessment Package, City Energy Cards, Design Template + Op-Ed Guide, Pune worked-example Op-Ed; partners Energy Analyst + Op-Ed Editor). After U7 skeleton + deep builds, the whole year is navigable.
+
+---
+
+## Previous TL;DR — U6 Phase B concept + work chunk (kept for reference)
+
+**Unit 6 had 7 of 10 blocks deep (Phase B done).** Phase B deepened the concept-and-work chunk: Block 2 (Urban Systems), Block 3 (Area Data Cards + assessment kickoff), Block 6 (Plan Drafting), Block 7 (Equity & Displacement). Together with Phase A's spine (1, 4, 5), U6 reached ~70% teaching-ready, leaving the public-path chunk (8, 9, 10) for Phase C.
 
 **What shipped this phase:**
 - `src/units/unit-6/block-2.njk` — Urban Systems — stub → full deep block. The five urban systems (access, density, green-blue, heat, flood) as the city-scale analog of ecosystem services, how they feed back on each other (paving for density removes flood-buffering permeable land), Chennai eris/Pallikaranai context, Systems Diagrammer feedback-sketch anchor.
