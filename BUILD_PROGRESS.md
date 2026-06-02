@@ -2,11 +2,31 @@
 
 > **Purpose:** Living status doc. Tells you (and future Claude Code sessions) what's built, what's stubbed, what to build next, and in what order. The charter is in `CLAUDE.md` — do NOT modify that. Update this file at the end of each build session.
 
-**Last updated:** 2026-05-28 (U0/U1 — anchor article resolved as Lovelock 1965; website + Block Plans docx)
+**Last updated:** 2026-06-02 (U6 skeleton — Urban 15-Minute Chennai reframe; navigable shell)
 
 ---
 
 ## TL;DR — pick up here
+
+**Unit 6 is now navigable as a skeleton, built on the urban 15-minute reframe.** U6 was redesigned from a rural 100 km² land-allocation problem into an **urban 15-minute-neighbourhood** problem set in Chennai (source: `../Unit 6_ Biosphere and Land Use/U6 REWORK — Urban 15-Minute Chennai Design Brief.md` + `U6_BUILD_PLAN.md`). Students each take a Chennai area, redesign it across 8 urban land uses, **name and quantify the trade-offs** (unchanged T/T heart + 5 gates), work two disagreeing AI partners (Urban Planner + Equity & Resilience), and present publicly at the school's environmental showcase to a real municipal audience (the C performance, replacing a peer board).
+
+**What shipped this commit (U6 skeleton, +14 files):**
+- `src/units/unit-6/index.njk` — landing (anchor question, urban-reframe prose, 10-block grid, assessment card, 4 AI-partner cards, 5 resource cards incl. U6 EAL + Land Allocation Optimizer planned).
+- `src/units/unit-6/block-1.njk … block-10.njk` — 10 block stubs, full 5-section scaffold (Story/Concepts/Do/Show/Reflect) with honest `placeholder`/`TBD:` bodies. Titles: Phenomenon Launch · Urban Systems · Area Data Cards · Multi-Objective Optimisation · Trade-off Analysis · Plan Drafting · Equity & Displacement · Public-Piece Prep · Earth Week Public Presentation · Unit Reflection (+ U7 preview).
+- `src/units/unit-6/assessment-sustainable-neighbourhood-plan.njk` — assessment outline (GRASPS, 8 urban land-use categories, 7 objectives, 8 steps, 5 gates + public-artifact guardrail, provisional standards, simulator TBD).
+- `src/ai-partners/urban-planner.njk` + `equity-resilience-partner.njk` — 2 partner stubs (intro + launch placeholder + Overview + Pairs-with + Quick facts).
+- `src/units/index.njk` — U6 card refreshed (🏘️, real desc) + stub-note ("Unit 6 skeleton built; Unit 7 stubbed").
+- `src/ai-partners/index.njk` — intro line + 2 new cards (now 14 partners).
+
+**Conventions for U6:** block-relative language only (no Earth Week / calendar dates — scheduling is an open decision); no em dashes in U6 student-facing body prose (per `U6_BUILD_PLAN.md` house-style note — NOTE this differs from U0–U5, which use em dashes freely; flagged for Matthew to decide whether to relax for U6 or retrofit earlier units).
+
+**Open decisions deferred to deep builds** (surfaced in stubs): Earth Week timing vs. calendar, spatial unit + grid scale, standards alignment pass, public-posting consent model, area roster. The **Land Allocation Optimizer** sibling sim stays charter-stage; repoint to urban objectives later.
+
+**Next:** U6 deep builds — Phase A (spine + assessment handout + 2 partner full specs, re-pointed from `AI Partner Specifications (U4-U7 combined).docx`) → B (urban-systems chunk + first work day) → C (public-path + Earth Week close-out), mirroring U5. Then U7 skeleton.
+
+---
+
+## Previous TL;DR — U0/U1 anchor article resolved as Lovelock 1965 (kept for reference)
 
 **The U0 "anchor article" placeholder is resolved: it's now Lovelock (1965) + Thompson et al. (2022).** The `[U0 Anchor Article — TBD pending librarian]` placeholder that threaded U0 Blocks 2/3/7 + U1 Block 1 has been replaced everywhere with a real, rigorous primary-literature pair. Lovelock 1965 (*Nature*) originated the idea of detecting life by reading a planet's atmosphere for chemical disequilibrium — which is U1's habitability question from the other side, so it's a genuine U0→U1 bridge. Thompson 2022 (*PNAS*) is the modern JWST-era follow-up on TRAPPIST-1e methane. The librarian dependency for the anchor is closed. Source: `Unit 0_ Foundations/U0 Block Plans — Update Brief (v0.2).md` + companion lesson plan.
 
