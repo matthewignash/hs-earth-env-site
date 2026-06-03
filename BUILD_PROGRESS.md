@@ -14,7 +14,7 @@
 
 **Files touched:** `unit-6/assessment-sustainable-neighbourhood-plan.njk` (standards row, stub-note, step 7, sources section), `unit-6/index.njk` (stub-note), `units/index.njk` (build-status note), `unit-6/block-3.njk` (3-source OPVL line). Site stays at 139 files.
 
-**Remaining U6 follow-ups** (smaller now): the **public-posting channel** (pending school account access — text swap into Blocks 8/9 when confirmed) and the **Land Allocation Optimizer** simulator (charter-stage; HS-ESS3-3 stays contingent on it). The UbD's per-block 0–80 min breakdowns are explicitly marked SUPERSEDED (old agricultural sequence), so nothing to lift from them — the site already implements the new urban arc.
+**Remaining U6 follow-ups** (smaller still): **Earth Week timing** (still being confirmed against the school calendar; all copy stays date-free), and the **Land Allocation Optimizer** simulator (charter-stage; HS-ESS3-3 stays contingent on it). The **public-posting channel is now confirmed** — a student takeover of the school's Instagram account for the unit (approved); named in Blocks 8/9 + the assessment, with consent + opt-out + non-public fallback retained. The UbD's per-block 0–80 min breakdowns are explicitly marked SUPERSEDED (old agricultural sequence), so nothing to lift from them — the site already implements the new urban arc.
 
 **Next:** U7 skeleton (Energy & Sustainability) — fully sourced; completes the year.
 
