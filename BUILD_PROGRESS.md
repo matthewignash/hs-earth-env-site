@@ -2,13 +2,27 @@
 
 > **Purpose:** Living status doc. Tells you (and future Claude Code sessions) what's built, what's stubbed, what to build next, and in what order. The charter is in `CLAUDE.md` — do NOT modify that. Update this file at the end of each build session.
 
-**Last updated:** 2026-06-02 (U6 deep build — Phase C: public-path close-out → U6 fully built)
+**Last updated:** 2026-06-02 (U6 — UbD reconciliation: standards confirmed + OPVL-on-3-sources)
 
 ---
 
 ## TL;DR — pick up here
 
-**Unit 6 is now fully built (10 of 10 blocks deep).** Phase C closed out the public-path chunk: Block 8 (Public-Piece Prep), Block 9 (Earth Week Public Presentation), Block 10 (Unit Reflection + U7 preview). With the spine (1, 4, 5) and the concept-and-work chunk (2, 3, 6, 7) already deep, U6 now has all 10 blocks deep, a full Sustainable Neighbourhood Plan handout (with the 4-band rubric), and both AI partners at full spec. After this, **U0–U6 are all fully complete**; only U7 remains (landing-card-only).
+**Unit 6 is fully built and now reconciled against the updated UbD.** The updated U6 UbD (urban-aligned, 2026-06-02) **validates the entire urban build** — same anchor question, Sustainable Neighbourhood Plan, 8 categories / 7 objectives, trade-off heart + gates, Earth Week public + municipal audience, 3 formats, and all 10 block titles match the site exactly. This pass aligned two things the site still treated as provisional:
+- **Standards confirmed** (no longer provisional): primary HS-ETS1-3 (anchor), HS-ETS1-1, HS-ESS3-1, HS-ESS3-4; secondary HS-ESS3-3 (via the Land Allocation Optimizer) + HS-LS2-7; SEP-2/5/6/7/8. Updated the assessment handout's Standards row + dropped "provisional/pending" from the handout stub-note, the U6 landing stub-note, and the units/index build-status note.
+- **OPVL on 3 sources** added as a named summative expectation (one municipal/government source, one community/NGO, one AI explanation; ≥1 specific Limitation each; cited in the Plan). Folded into the 8 steps, expanded the "Sources, OPVL, and AI Documentation" section, and added a connecting line in Block 3's Source Evaluator choice.
+
+**Files touched:** `unit-6/assessment-sustainable-neighbourhood-plan.njk` (standards row, stub-note, step 7, sources section), `unit-6/index.njk` (stub-note), `units/index.njk` (build-status note), `unit-6/block-3.njk` (3-source OPVL line). Site stays at 139 files.
+
+**Remaining U6 follow-ups** (smaller now): the **public-posting channel** (pending school account access — text swap into Blocks 8/9 when confirmed) and the **Land Allocation Optimizer** simulator (charter-stage; HS-ESS3-3 stays contingent on it). The UbD's per-block 0–80 min breakdowns are explicitly marked SUPERSEDED (old agricultural sequence), so nothing to lift from them — the site already implements the new urban arc.
+
+**Next:** U7 skeleton (Energy & Sustainability) — fully sourced; completes the year.
+
+---
+
+## Previous TL;DR — U6 Phase C close-out (kept for reference)
+
+**Unit 6 fully built (10 of 10 blocks deep).** Phase C closed out the public-path chunk: Block 8 (Public-Piece Prep), Block 9 (Earth Week Public Presentation), Block 10 (Unit Reflection + U7 preview). With the spine (1, 4, 5) and the concept-and-work chunk (2, 3, 6, 7), U6 has all 10 blocks deep, a full Sustainable Neighbourhood Plan handout (4-band rubric), and both AI partners at full spec.
 
 **What shipped this phase:**
 - `src/units/unit-6/block-8.njk` — Public-Piece Prep — stub → full deep block. Turn the plan into a public live activity + shareable artifact; the design tension (outreach rewards a clean message, the rubric rewards naming the sacrifice) made explicit; the public-artifact guardrail (show the trade-off, do not hide it); consent + opt-out + non-public fallback baked in.
