@@ -2,7 +2,7 @@
 
 > **Purpose:** Living status doc. Tells you (and future Claude Code sessions) what's built, what's stubbed, what to build next, and in what order. The charter is in `CLAUDE.md` — do NOT modify that. Update this file at the end of each build session.
 
-**Last updated:** 2026-06-02 (U6 — UbD reconciliation: standards confirmed + OPVL-on-3-sources)
+**Last updated:** 2026-06-02 (U6 fully built + UbD-aligned: standards confirmed, OPVL-on-3-sources, Instagram-takeover channel confirmed. U0–U6 complete; U7 is next.)
 
 ---
 
