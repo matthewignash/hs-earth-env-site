@@ -2,11 +2,29 @@
 
 > **Purpose:** Living status doc. Tells you (and future Claude Code sessions) what's built, what's stubbed, what to build next, and in what order. The charter is in `CLAUDE.md` — do NOT modify that. Update this file at the end of each build session.
 
-**Last updated:** 2026-06-02 (U6 fully built + UbD-aligned: standards confirmed, OPVL-on-3-sources, Instagram-takeover channel confirmed. U0–U6 complete; U7 is next.)
+**Last updated:** 2026-06-03 (U2 Landscape Reading — rolling-summative pattern applied, propagated from the U1 prototype. U0–U6 complete; U7 is next.)
 
 ---
 
 ## TL;DR — pick up here
+
+**Unit 2's Landscape Reading has been restructured around the rolling-summative assessment pattern** — the second unit to get it, propagated from the U1 Goldilocks Report prototype (commit `6aba5fa`). The Reading is now scored as **10 components**, each tied to a rubric strand and each locking on a specific block. Students get feedback + a locked strand band on each component as it's due — not all at the end. By the Block 9 share-out, K/U and T/T are already locked (from Blocks 6–8); Block 9 marks only the three C-strand components (final assembled Reading + 3-min pitch + Q&A responses) plus the formative unit-close reflection.
+
+**Component → block → strand map:** Block 6 = C1 biography-past (K/U) + C2 current-processes (K/U); Block 7 = C3 OPVL-on-3-sources (T/T); Block 8 = C4 projections (T/T) + C5 recommendations (T/T) + C6 AI-Doc-log (K/U); Block 9 = C7 final Reading (C) + C8 pitch (C) + C9 Q&A (C) + C10 unit-close reflection (formative). The two old strand gates are reframed as per-component band caps: T/T-projections (C4) and K/U-AI-Doc (C6).
+
+**What shipped this commit:**
+- `unit-2/assessment-landscape-reading.njk` — replaced "Key dates" callout with the rolling-summative callout + 10-row component due-date table + "what locks means" paragraph; bumped Step 2 + the T/T 7-8 band from "≥2 sources" to "3 sources including the AI source"; reframed the three gates from strand caps to per-component band caps; added the rolling-summative reminder above the rubric tables.
+- `unit-2/block-5.njk` — Show rubric-meta notes the top-3 list is setup (not strand-marked) and points to the first locks at Block 6.
+- `unit-2/block-6.njk` — Show: Components 1 + 2 (K/U) lock today.
+- `unit-2/block-7.njk` — Show: Component 3 (T/T OPVL on 3 sources) locks today.
+- `unit-2/block-8.njk` — Show: Components 4 + 5 (T/T) + 6 (K/U) lock; K/U + T/T essentially complete after today.
+- `unit-2/block-9.njk` — Show: Components 7–9 (C) + 10 (formative) lock; K/U + T/T already in.
+
+**Year-wide propagation status:** U1 (prototype) ✓, U2 (this commit) ✓. Remaining targets named in the U1 commit: U4 Climate Brief, U5 Position Paper, U6 Sustainable Neighbourhood Plan, U7 (once built). Each would be componentized similarly (6–10 components mapped to strands, locking progressively).
+
+---
+
+## Previous TL;DR — U6 UbD reconciliation (kept for reference)
 
 **Unit 6 is fully built and now reconciled against the updated UbD.** The updated U6 UbD (urban-aligned, 2026-06-02) **validates the entire urban build** — same anchor question, Sustainable Neighbourhood Plan, 8 categories / 7 objectives, trade-off heart + gates, Earth Week public + municipal audience, 3 formats, and all 10 block titles match the site exactly. This pass aligned two things the site still treated as provisional:
 - **Standards confirmed** (no longer provisional): primary HS-ETS1-3 (anchor), HS-ETS1-1, HS-ESS3-1, HS-ESS3-4; secondary HS-ESS3-3 (via the Land Allocation Optimizer) + HS-LS2-7; SEP-2/5/6/7/8. Updated the assessment handout's Standards row + dropped "provisional/pending" from the handout stub-note, the U6 landing stub-note, and the units/index build-status note.
