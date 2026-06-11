@@ -2,11 +2,19 @@
 
 > **Purpose:** Living status doc. Tells you (and future Claude Code sessions) what's built, what's stubbed, what to build next, and in what order. The charter is in `CLAUDE.md` — do NOT modify that. Update this file at the end of each build session.
 
-**Last updated:** 2026-06-11 (Site-wide review + cleanup pass. U0–U6 complete; U7 is next.)
+**Last updated:** 2026-06-11 (U4 Climate Brief — rolling-summative pattern applied. U0–U6 complete; U7 is next.)
 
 ---
 
 ## TL;DR — pick up here
+
+**U4 Chennai Climate Brief restructured around the rolling-summative pattern** — third unit to get it (U1 prototype → U2 → U4). Scored as **10 components**, five blocks of locking (8→12). **Component → block → strand map:** Block 8 = C1 feedback diagram (K/U); Block 9 = C2 Recommendations (T/T); Block 10 = C3 Background (K/U) + C4 Evidence & Projected Impacts (T/T), inside the first full draft; Block 11 = C5 OPVL-on-3-sources incl. AI source (T/T) + C6 AI-Doc log (K/U); Block 12 = C7 final Brief + C8 Panel pitch + C9 Q&A (all C) + C10 unit-close reflection (formative). B5 top-3 list and B7 2-source OPVL set stay as unmarked setup (mirrors U2 B5). The three gates are reframed as per-component band caps: T/T-recommendations (C2), K/U-AI-Doc (C6), C-policy-voice (C7–9). Also added the explicit OPVL-on-3-sources requirement (IPCC/gov + local/NGO + AI) that U2/U6 already had.
+
+**Files touched:** `unit-4/assessment-chennai-climate-brief.njk` (rolling-summative callout + component table + locks paragraph + required components + rubric reminder + gates→caps) and Show sections of `unit-4/block-5/7/8/9/10/11/12.njk`.
+
+**Propagation status:** U1 ✓, U2 ✓, U4 ✓ (this commit). Remaining: U5 Position Paper, U6 Sustainable Neighborhood Plan, U7 (once built).
+
+## Previous TL;DR — 2026-06-11 review + cleanup pass (kept for reference)
 
 **2026-06-11 review + cleanup pass** (see `REVIEW.md` for the full audit and remaining plan):
 - `u2-rolling-summative` merged to main.
