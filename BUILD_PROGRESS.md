@@ -2,11 +2,20 @@
 
 > **Purpose:** Living status doc. Tells you (and future Claude Code sessions) what's built, what's stubbed, what to build next, and in what order. The charter is in `CLAUDE.md` — do NOT modify that. Update this file at the end of each build session.
 
-**Last updated:** 2026-06-03 (U2 Landscape Reading — rolling-summative pattern applied, propagated from the U1 prototype. U0–U6 complete; U7 is next.)
+**Last updated:** 2026-06-11 (Site-wide review + cleanup pass. U0–U6 complete; U7 is next.)
 
 ---
 
 ## TL;DR — pick up here
+
+**2026-06-11 review + cleanup pass** (see `REVIEW.md` for the full audit and remaining plan):
+- `u2-rolling-summative` merged to main.
+- **House style: American English.** All UK spellings converted site-wide (~64 files). The U6 summative is now the **Sustainable Neighborhood Plan** (file, URL, and title renamed). Future content must use US spelling.
+- Quick fixes: U7 card on units index de-linked (was the site's only 404), U4 card title now matches its landing page ("Atmosphere & Climate"), U6 assessment stub-note now names exactly what's pending, breadcrumb markup extracted to `src/_includes/partials/breadcrumbs.njk`.
+- AI partner launch placeholders: "TBD: BoodleBox / Gemini Gem URL" replaced with student-facing "link coming soon. Ask Mr. Ignash for access." across all 14 partner pages. Real launch URLs still needed (tracked in REVIEW.md P1.1).
+- Next per REVIEW.md: rolling-summative propagation to U4/U5/U6, `currentUnit` home-page banner, EAL links on unit landings, glossary rubric-term entries, then U7 skeleton.
+
+## Previous TL;DR — U2 rolling-summative (kept for reference)
 
 **Unit 2's Landscape Reading has been restructured around the rolling-summative assessment pattern** — the second unit to get it, propagated from the U1 Goldilocks Report prototype (commit `6aba5fa`). The Reading is now scored as **10 components**, each tied to a rubric strand and each locking on a specific block. Students get feedback + a locked strand band on each component as it's due — not all at the end. By the Block 9 share-out, K/U and T/T are already locked (from Blocks 6–8); Block 9 marks only the three C-strand components (final assembled Reading + 3-min pitch + Q&A responses) plus the formative unit-close reflection.
 
