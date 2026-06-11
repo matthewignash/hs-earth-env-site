@@ -95,6 +95,7 @@ img { max-width: 100%; height: auto; display: block; }
   font-size: 13px;
   color: var(--muted);
 }
+.breadcrumbs-inner { padding: 0; max-width: 1100px; }
 .breadcrumbs a { color: var(--accent); text-decoration: none; }
 .breadcrumbs a:hover { text-decoration: underline; }
 .breadcrumbs .crumb-current { color: var(--ink); font-weight: 600; }

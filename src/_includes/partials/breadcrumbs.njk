@@ -1,0 +1,11 @@
+{% if breadcrumbs %}
+<div class="breadcrumbs">
+  <div class="container breadcrumbs-inner">
+    {%- for crumb in breadcrumbs %}
+      {%- if not loop.last %}<a href="{{ crumb.url }}">{{ crumb.label }}</a> &nbsp;›&nbsp;
+      {%- else %}<span class="crumb-current">{{ crumb.label }}</span>
+      {%- endif %}
+    {%- endfor %}
+  </div>
+</div>
+{% endif %}
