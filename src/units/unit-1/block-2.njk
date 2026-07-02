@@ -36,12 +36,14 @@ unitMapUrl: /units/unit-1/
   <h2>Three ways in</h2>
   <p class="sub">Three entry points to today's material. Choice is yours.</p>
   <div class="entry-grid">
-    <div class="entry-card placeholder">
-      <span class="placeholder-tag">Placeholder</span>
-      <div class="entry-title">Watch (5 min)</div>
-      <div>TBD: short explainer on Earth's four subsystems with one named interaction per pair. Best if it includes a worked carbon-cycle example.</div>
-      <div class="entry-meta">To be selected by Mr. Ignash before the unit starts.</div>
-    </div>
+    {% set video = {
+      id: "EH1kat51jJY",
+      title: "Earth Materials and Systems (Bozeman Science)",
+      cardTitle: "Watch (6 min)",
+      blurb: "Earth's four spheres — geosphere, hydrosphere, atmosphere, biosphere — and how energy and matter flow between them. The NGSS ESS2.A framing behind today's systems diagram.",
+      meta: "Real link · 6 min"
+    } %}
+    {% include "partials/video-card.njk" %}
     <div class="entry-card">
       <div class="entry-title">Read</div>
       <div>Feedback Loops — Three Worked Examples handout: ice-albedo (+), water-vapor (+), carbon-silicate thermostat (−), with the sign-test conventions you'll use in your own diagram. Printed copies in class.</div>

@@ -37,23 +37,24 @@ unitMapUrl: /units/unit-1/
   <h2>Three ways in</h2>
   <p class="sub">Three entry points to the transit method.</p>
   <div class="entry-grid">
-    <div class="entry-card placeholder">
-      <span class="placeholder-tag">Placeholder</span>
-      <div class="entry-title">Watch (4 min)</div>
-      <div>TBD: a transit animation showing a planet crossing its host star with the corresponding light-curve dip building in real time. NASA Kepler outreach has good options.</div>
-      <div class="entry-meta">To be selected by Mr. Ignash.</div>
-    </div>
+    {% set video = {
+      id: "0ZOhJe_7GrE",
+      title: "What Is an Exoplanet? (NASA)",
+      cardTitle: "Watch (4:35)",
+      blurb: "NASA's primer on what exoplanets are and how we find them — including the transit method you'll decode today.",
+      meta: "Real link · NASA · 4:35"
+    } %}
+    {% include "partials/video-card.njk" %}
     <a class="entry-card" href="/ai-partners/the-source-evaluator/" style="text-decoration: none; color: inherit;">
       <div class="entry-title">Read</div>
       <div>The Source Evaluator — OPVL is the right frame for transit data sources. Use it to interrogate any claim that goes beyond what the transit itself tells you.</div>
       <div class="entry-meta">Real link · AI Partner</div>
     </a>
-    <div class="entry-card placeholder">
-      <span class="placeholder-tag">Placeholder</span>
-      <div class="entry-title">Interact</div>
-      <div>TBD: light-curve viewer — interactive tool where students can adjust planet size, orbital period, and stellar brightness and see how the resulting dip changes. NASA Eyes or similar.</div>
-      <div class="entry-meta">To be selected from existing tools.</div>
-    </div>
+    <a class="entry-card" href="https://eyes.nasa.gov/apps/exo/" target="_blank" rel="noopener" style="text-decoration: none; color: inherit;">
+      <div class="entry-title">NASA Eyes on Exoplanets</div>
+      <div>Fly to your actual chosen planet in NASA's 3-D visualization — every planet in the app is real data.</div>
+      <div class="entry-meta">Real link · NASA interactive</div>
+    </a>
     <a class="entry-card" href="/foundations/eal/u1/" style="text-decoration: none; color: inherit;">
       <div class="entry-title">Vocabulary support</div>
       <div>The U1 pre-teach — 15 terms with definitions and sentence stems. Several of them are in today's block.</div>

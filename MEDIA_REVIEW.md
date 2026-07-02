@@ -95,6 +95,15 @@ Notes on external media (documentaries, news clips, podcasts) being considered f
 
 ---
 
+### Rejected / repurposed in the U1 media pass (2026-06-11)
+
+- **Crash Course Kids — four spheres**: rejected for B2 — grade-5 tone, wrong register for HS.
+- **Crash Course Ecology #8**: not placed; kept as a possible enrichment link only.
+- **Powers of Ten (1977)**: not the B1 slot (AMNH Known Universe won it — data-driven vs. hand-animated). Candidate for enrichment / an OPVL-on-a-dated-source exercise.
+- **Cosmic Eye**: attribution murky in the common re-uploads; skipped.
+
+---
+
 ## Comparison: Dhaka vs. Urban Heatscapes
 
 These two documentaries are **complementary, not competing**. They teach different OPVL moves on different parts of the unit:
@@ -113,7 +122,25 @@ If both are confirmed, the U4 deep build can integrate them as complementary Wat
 
 ## Confirmed integrations
 
-*(None yet — entries move here when a clip is verified, embedded, and the implementation phase has shipped.)*
+*(Entries move here when a clip is verified, embedded, and the implementation phase has shipped.)*
+
+### U1 media slate — verified by Matthew, placed 2026-06-11
+
+All URLs re-verified (title + channel via YouTube oembed; NASA pages HTTP 200) on 2026-06-11.
+
+| Media | Source | Placement | Notes |
+|---|---|---|---|
+| *The Known Universe* (6:32, 2009) | AMNH — `https://youtu.be/17jymDn0W6U` | `src/units/unit-1/block-1.njk` Watch (click-to-play lightbox) | Data-driven rendering (Digital Universe Atlas) — the "not artist's imagination" framing is the teaching point |
+| *The Known Universe* — rewatch | same | `src/units/unit-1/block-4.njk` Watch | Same video, different question: spot the moment the camera leaves the Sun's HZ |
+| *ESS2A — Earth Materials and Systems* (~6 min) | Bozeman Science — `youtube.com/watch?v=EH1kat51jJY` | `src/units/unit-1/block-2.njk` Watch (lightbox) | Four spheres + interactions; NGSS ESS2.A framing |
+| *Mars Evolution* (1:52, silent) | NASA Goddard — `youtube.com/watch?v=sKPrwY0Ycno` | `src/units/unit-1/block-3.njk` Watch (a) | Deliberately unnarrated; watch first, observe only |
+| *Is This How Mars Lost Its Atmosphere?* (3:02, 2025) | NASA Goddard — `youtube.com/watch?v=Fwo1jYHlYRU` | `src/units/unit-1/block-3.njk` Watch (b) | The sputtering mechanism MAVEN directly observed in 2025 |
+| *What Is an Exoplanet?* (4:35) | NASA — `youtube.com/watch?v=0ZOhJe_7GrE` | `src/units/unit-1/block-5.njk` Watch (lightbox) | Primer incl. transit method |
+| NASA Eyes on Exoplanets | NASA — `eyes.nasa.gov/apps/exo/` | `src/units/unit-1/block-5.njk` Interact | 3-D visualization; every planet is real data |
+| WASP-96 b transmission spectrum (JWST first images, 2022) | `science.nasa.gov/asset/webb/exoplanet-wasp-96-b-niriss-transmission-spectrum/` | `src/units/unit-1/block-10.njk` bell ringer (a) | Water-vapor features labeled |
+| TRAPPIST-1 e NIRSpec spectrum (Sept 2025) | `science.nasa.gov/asset/webb/trappist-1-e-transmission-spectrum-nirspec/` | `src/units/unit-1/block-10.njk` bell ringer (b) | Ambiguous by design — pairs against B1's artist's impression |
+
+Also placed 2026-06-11 (internal, not external media): the Four Planets, No Labels gallery (`/units/unit-1/planet-gallery/`) is now linked from B1's Interact card and B1 Do step 1.
 
 ---
 

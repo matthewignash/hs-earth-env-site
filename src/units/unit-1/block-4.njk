@@ -41,12 +41,14 @@ unitMapUrl: /units/unit-1/
   <h2>Three ways in</h2>
   <p class="sub">Reference tools for today's scale work.</p>
   <div class="entry-grid">
-    <div class="entry-card placeholder">
-      <span class="placeholder-tag">Placeholder</span>
-      <div class="entry-title">Watch (4 min)</div>
-      <div>TBD: a "powers of ten" zoom video — Earth → solar system → nearest stars → galaxy → Local Group. The unit's shared visual touchstone for scale.</div>
-      <div class="entry-meta">To be selected by Mr. Ignash before the unit starts.</div>
-    </div>
+    {% set video = {
+      id: "17jymDn0W6U",
+      title: "The Known Universe — rewatch",
+      cardTitle: "Watch (6:32) — rewatch",
+      blurb: "You watched this in Block 1 for awe. Watch it again for data: find the moment the camera leaves the Sun's habitable zone. Where is it?",
+      meta: "Rewatch · same video as Block 1, different question"
+    } %}
+    {% include "partials/video-card.njk" %}
     <a class="entry-card" href="/units/unit-1/assessment-goldilocks-report/" style="text-decoration: none; color: inherit;">
       <div class="entry-title">Read</div>
       <div>Goldilocks Report — the assignment is live today. Read Sections 1 (overview) and 2 (build your framework). Printed Quantitative Lookup Tables handout provided in class.</div>
