@@ -2,11 +2,17 @@
 
 > **Purpose:** Living status doc. Tells you (and future Claude Code sessions) what's built, what's stubbed, what to build next, and in what order. The charter is in `CLAUDE.md` — do NOT modify that. Update this file at the end of each build session.
 
-**Last updated:** 2026-06-11 (U4 Climate Brief — rolling-summative pattern applied. U0–U6 complete; U7 is next.)
+**Last updated:** 2026-06-11 (video-card click-to-play pattern + U1 Block 1 Watch; earlier today: U4 rolling-summative. U0–U6 complete; U7 is next.)
 
 ---
 
 ## TL;DR — pick up here
+
+**Video-card click-to-play pattern shipped** — `src/_includes/partials/video-card.njk` + CSS in `block-page.css`. A Watch entry card that shows the YouTube thumbnail with a play overlay; clicking swaps in a youtube-nocookie embed in place (no YouTube code loads until clicked). Progressive enhancement: no JS → plain link out; after embedding, further clicks link out (blocked-embed fallback). **Use this partial whenever a Watch placeholder gets its video resolved** — set a `video` object (`id`, `title`, `cardTitle`, `blurb`, `meta`) then `{% include "partials/video-card.njk" %}`. First applied: **U1 Block 1** — *The Known Universe* (AMNH, `17jymDn0W6U`). Next natural candidate: U1 Block 4's "powers of ten" placeholder (video not yet confirmed for it).
+
+---
+
+## Previous TL;DR — U4 rolling-summative (kept for reference)
 
 **U4 Chennai Climate Brief restructured around the rolling-summative pattern** — third unit to get it (U1 prototype → U2 → U4). Scored as **10 components**, five blocks of locking (8→12). **Component → block → strand map:** Block 8 = C1 feedback diagram (K/U); Block 9 = C2 Recommendations (T/T); Block 10 = C3 Background (K/U) + C4 Evidence & Projected Impacts (T/T), inside the first full draft; Block 11 = C5 OPVL-on-3-sources incl. AI source (T/T) + C6 AI-Doc log (K/U); Block 12 = C7 final Brief + C8 Panel pitch + C9 Q&A (all C) + C10 unit-close reflection (formative). B5 top-3 list and B7 2-source OPVL set stay as unmarked setup (mirrors U2 B5). The three gates are reframed as per-component band caps: T/T-recommendations (C2), K/U-AI-Doc (C6), C-policy-voice (C7–9). Also added the explicit OPVL-on-3-sources requirement (IPCC/gov + local/NGO + AI) that U2/U6 already had.
 
