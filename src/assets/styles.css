@@ -258,8 +258,8 @@ img { max-width: 100%; height: auto; display: block; }
   font-style: italic;
 }
 
-/* ====== Prose tables ====== */
-.prose table {
+/* ====== Prose + block-section tables ====== */
+.prose table, .block-section table {
   width: 100%;
   border-collapse: collapse;
   margin: 16px 0 20px;
@@ -269,13 +269,13 @@ img { max-width: 100%; height: auto; display: block; }
   border-radius: 8px;
   overflow: hidden;
 }
-.prose th, .prose td {
+.prose th, .prose td, .block-section th, .block-section td {
   padding: 10px 12px;
   text-align: left;
   vertical-align: top;
   border-bottom: 1px solid var(--border);
 }
-.prose th {
+.prose th, .block-section th {
   background: var(--accent-light);
   color: var(--accent-dark);
   font-weight: 700;
@@ -283,8 +283,8 @@ img { max-width: 100%; height: auto; display: block; }
   text-transform: uppercase;
   letter-spacing: 0.3px;
 }
-.prose tbody tr:last-child td { border-bottom: none; }
-.prose tbody tr:nth-child(even) td { background: var(--paper); }
+.prose tbody tr:last-child td, .block-section tbody tr:last-child td { border-bottom: none; }
+.prose tbody tr:nth-child(even) td, .block-section tbody tr:nth-child(even) td { background: var(--paper); }
 
 /* ====== Callouts (prose-scoped) ====== */
 .callout {
@@ -395,12 +395,12 @@ img { max-width: 100%; height: auto; display: block; }
   .home-hero .hero-tagline { font-size: 15px; }
   .home-hero .hero-mark { font-size: 140px; right: -30px; opacity: 0.12; }
   /* Wide tables become horizontally-scrollable on small screens */
-  .prose table {
+  .prose table, .block-section table {
     display: block;
     overflow-x: auto;
     max-width: 100%;
     font-size: 13px;
     -webkit-overflow-scrolling: touch;
   }
-  .prose th, .prose td { padding: 8px 10px; }
+  .prose th, .prose td, .block-section th, .block-section td { padding: 8px 10px; }
 }
