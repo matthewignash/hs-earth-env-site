@@ -2,7 +2,9 @@
 layout: layouts/base.njk
 title: The Source Evaluator
 tagline: Walks you through OPVL on any source, one letter at a time. The highest-frequency partner across the year.
-launchUrl: ""
+flintUrl: ""
+boodleboxUrl: ""
+launchEmoji: "🚀"
 breadcrumbs:
   - { url: /, label: Home }
   - { url: /ai-partners/, label: "AI Partners" }
@@ -13,11 +15,7 @@ breadcrumbs:
 
 <p>A research librarian crossed with a critical-thinking coach. Patient, methodical, encouraging. Treats every source as worth careful examination and never dismisses a source as "bad" — every source is good for something and bad for something else. Used in <strong>Unit 0</strong> at launch and <strong>every unit thereafter</strong>, any time you're evaluating a source for a deliverable.</p>
 
-{% if launchUrl %}
-<a class="partner-launch" href="{{ launchUrl }}" target="_blank" rel="noopener">🚀 Launch The Source Evaluator →</a>
-{% else %}
-<span class="partner-launch placeholder">🚀 Launch The Source Evaluator — link coming soon. Ask Mr. Ignash for access.</span>
-{% endif %}
+{% include "partials/partner-launch.njk" %}
 
 <h2>How to use this partner</h2>
 

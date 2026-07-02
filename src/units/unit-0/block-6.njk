@@ -100,7 +100,7 @@ unitMapUrl: /units/unit-0/
   <div class="submission-callout">
     <div class="label">📥 Source Dossier + rehearsal peer-feedback note</div>
     <p>The full dossier goes to Classroom in the first 15 min. The peer-feedback note (one paragraph from your partner, written on the observation guide) goes in the same folder by end of class.</p>
-    <a href="#" class="rubric-link">Submit via Google Classroom →</a>
+    {% set submit = { id: "u0-b6", text: "Submit via Google Classroom" } %}{% include "partials/submit-link.njk" %}
   </div>
   <p class="rubric-meta">
     <strong>Rubric link:</strong> The defense is the C strand on the Source Dossier rubric. See the <a href="/foundations/the-rubric/">rubric</a> — Communication scores are about clarity AND responsiveness under questioning.

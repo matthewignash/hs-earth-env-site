@@ -2,7 +2,9 @@
 layout: layouts/base.njk
 title: The Urban Planner
 tagline: Pushes density, housing supply, and economic vitality for your neighborhood redesign. Reasons about urban form and feasibility, and leaves the values call to you.
-launchUrl: ""
+flintUrl: ""
+boodleboxUrl: ""
+launchEmoji: "🏙️"
 breadcrumbs:
   - { url: /, label: Home }
   - { url: /ai-partners/, label: "AI Partners" }
@@ -13,11 +15,7 @@ breadcrumbs:
 
 <p><strong>One of Unit 6's two design partners.</strong> The Urban Planner argues the case for intensifying a neighborhood: more housing, more mixed use, more economic activity, a denser and better-connected street network. It is the urban version of pushing for yield. It helps you reason about how urban form actually works (what density buys, how mixed use supports walkability, where transit makes intensity viable), and it holds the line on feasibility rather than telling you what a neighborhood ought to value. The values call, and the trade-off, are yours.</p>
 
-{% if launchUrl %}
-<a class="partner-launch" href="{{ launchUrl }}" target="_blank" rel="noopener">🏙️ Launch The Urban Planner →</a>
-{% else %}
-<span class="partner-launch placeholder">🏙️ Launch The Urban Planner — link coming soon. Ask Mr. Ignash for access.</span>
-{% endif %}
+{% include "partials/partner-launch.njk" %}
 
 <h2>Overview — why this partner is useful</h2>
 <p>A neighborhood redesign is easy to soften into something that pleases everyone and decides nothing. The Urban Planner refuses that. It makes the strongest honest case for density and housing supply, so that when your plan protects green space or limits building height, you are deciding against a real argument rather than a strawman. The point is not to obey it. The point is to <strong>synthesize its push against the Equity &amp; Resilience Partner's push</strong> and own the trade-off you land on.</p>

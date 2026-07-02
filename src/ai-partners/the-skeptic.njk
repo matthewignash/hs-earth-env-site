@@ -2,7 +2,9 @@
 layout: layouts/base.njk
 title: The Skeptic
 tagline: Pushes back on your claims to make them stronger. Use before any defense or major submission.
-launchUrl: ""
+flintUrl: ""
+boodleboxUrl: ""
+launchEmoji: "🚀"
 breadcrumbs:
   - { url: /, label: Home }
   - { url: /ai-partners/, label: "AI Partners" }
@@ -13,11 +15,7 @@ breadcrumbs:
 
 <p>A friendly but rigorous skeptic. Genuinely interested in making your argument stronger by stress-testing it — not a contrarian, actively curious about your thinking. Used in <strong>Unit 0</strong> for Source Dossier defense rehearsal and <strong>throughout the year</strong> whenever you're forming or testing a claim. Especially useful before the U3 Engineering Portfolio Defense and the U4 Climate Brief defense.</p>
 
-{% if launchUrl %}
-<a class="partner-launch" href="{{ launchUrl }}" target="_blank" rel="noopener">🚀 Launch The Skeptic →</a>
-{% else %}
-<span class="partner-launch placeholder">🚀 Launch The Skeptic — link coming soon. Ask Mr. Ignash for access.</span>
-{% endif %}
+{% include "partials/partner-launch.njk" %}
 
 <h2>How to use this partner</h2>
 

@@ -2,7 +2,9 @@
 layout: layouts/base.njk
 title: The Field Geologist
 tagline: A geomorphology-focused Socratic partner. Helps you reason from observable landscape evidence to underlying surface processes — without writing your Landscape Reading for you.
-launchUrl: ""
+flintUrl: ""
+boodleboxUrl: ""
+launchEmoji: "⛰️"
 breadcrumbs:
   - { url: /, label: Home }
   - { url: /ai-partners/, label: "AI Partners" }
@@ -13,11 +15,7 @@ breadcrumbs:
 
 <p>The Field Geologist is <strong>Unit 2's signature AI partner</strong>. It helps you reason from observable landscape evidence (field photos, Google Earth imagery, maps) to the underlying surface processes — exactly the move the <a href="/units/unit-2/assessment-landscape-reading/">Landscape Reading</a> assessment requires.</p>
 
-{% if launchUrl %}
-<a class="partner-launch" href="{{ launchUrl }}" target="_blank" rel="noopener">⛰️ Launch The Field Geologist →</a>
-{% else %}
-<span class="partner-launch placeholder">⛰️ Launch The Field Geologist — link coming soon. Ask Mr. Ignash for access.</span>
-{% endif %}
+{% include "partials/partner-launch.njk" %}
 
 <h2>Overview — why this partner is uniquely valuable</h2>
 <p>Most of the Landscape Reading depends on <em>observation</em>. You need to SEE things in field photos and Google Earth imagery, then describe and interpret them. The Field Geologist forces the description step before the interpretation step — it's tuned to push you back to the evidence whenever you're about to skip ahead to a conclusion.</p>

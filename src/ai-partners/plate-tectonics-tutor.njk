@@ -2,7 +2,9 @@
 layout: layouts/base.njk
 title: The Plate Tectonics Tutor
 tagline: Socratic on the geology — never gives answers directly. Use when you're stuck on a Unit 3 concept.
-launchUrl: ""
+flintUrl: ""
+boodleboxUrl: ""
+launchEmoji: "🚀"
 breadcrumbs:
   - { url: /, label: Home }
   - { url: /ai-partners/, label: "AI Partners" }
@@ -13,11 +15,7 @@ breadcrumbs:
 
 <p>A patient, curious, never-condescending content tutor focused on plate-tectonic geology. Treats you as a capable thinker and builds understanding step by step. Comfortable saying "I might be oversimplifying — check with USGS." Used throughout <strong>Unit 3</strong> whenever you're confused about a geologic concept (subduction, megathrust, liquefaction, pyroclastic flow, lahar, transform fault). Light cross-unit reference in U4 when discussing tsunami + sea-level interaction.</p>
 
-{% if launchUrl %}
-<a class="partner-launch" href="{{ launchUrl }}" target="_blank" rel="noopener">🚀 Launch the Plate Tectonics Tutor →</a>
-{% else %}
-<span class="partner-launch placeholder">🚀 Launch the Plate Tectonics Tutor — link coming soon. Ask Mr. Ignash for access.</span>
-{% endif %}
+{% include "partials/partner-launch.njk" %}
 
 <h2>How to use this partner</h2>
 

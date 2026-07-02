@@ -73,6 +73,11 @@ unitMapUrl: /units/unit-1/
   <p class="sub">Whole-class activity. No choice board today — we work this together so everyone's first list of factors is shared evidence we can build on in Block 2.</p>
   <div class="choice-intro">
     <strong>Learning Intention:</strong> I can list at least 5 factors that might affect whether a planet supports life.
+    <ul class="success-criteria">
+      <li>I can list at least 5 factors that might affect whether a planet supports life.</li>
+      <li>I can sort my factors into “definitely required” vs. “maybe negotiable.”</li>
+      <li>I can name one factor I used to think was required and say what changed my mind.</li>
+    </ul>
   </div>
   <div class="choice-board">
     <div class="choice placeholder">
@@ -101,7 +106,7 @@ unitMapUrl: /units/unit-1/
   <div class="submission-callout">
     <div class="label">📥 Exit ticket (submit by end of class)</div>
     <p>Name <strong>at least 5 factors</strong> that might affect whether a planet supports life, and <strong>one thing</strong> you want to learn in this unit. Bullet list is fine.</p>
-    <a href="#" class="rubric-link">Submit via Google Classroom →</a>
+    {% set submit = { id: "u1-b1", text: "Submit via Google Classroom" } %}{% include "partials/submit-link.njk" %}
   </div>
   <p class="rubric-meta">
     <strong>Rubric link:</strong> Today is formative — no scored band. We're seeding the K/U vocabulary that the <a href="/foundations/the-rubric/">rubric</a> will use once we're scoring (starting at the Goldilocks Report).

@@ -85,7 +85,7 @@ unitMapUrl: /units/unit-0/
   <div class="submission-callout">
     <div class="label">📥 Defense delivered + AI Doc reflection paragraph</div>
     <p>The defense (live recording, video, or written response) is captured by end of class. The AI Doc reflection — one paragraph: "what would I do differently next time I use AI on a dossier-scale task?" — gets appended to your dossier.</p>
-    <a href="#" class="rubric-link">Submit via Google Classroom →</a>
+    {% set submit = { id: "u0-b7", text: "Submit via Google Classroom" } %}{% include "partials/submit-link.njk" %}
   </div>
   <p class="rubric-meta">
     <strong>Rubric link:</strong> Today is the C strand score for the Source Dossier — clarity + responsiveness under questioning. See the <a href="/foundations/the-rubric/">rubric</a>.

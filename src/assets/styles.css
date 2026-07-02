@@ -341,6 +341,16 @@ img { max-width: 100%; height: auto; display: block; }
   color: var(--muted);
   transform: none;
 }
+.partner-launch-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.partner-launch-note {
+  font-size: 13px;
+  color: var(--muted);
+  margin-top: 6px;
+}
 
 /* ====== Simulator iframe ====== */
 .simulator-frame {

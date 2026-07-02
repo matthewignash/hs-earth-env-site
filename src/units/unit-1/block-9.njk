@@ -64,6 +64,11 @@ unitMapUrl: /units/unit-1/
   <p class="sub">Not a choice — every student does every phase. Total 75 min across solo prep, pair rehearsal, and AI rehearsal.</p>
   <div class="choice-intro">
     <strong>Learning Intention:</strong> I have rehearsed at least 6 questions from the bank (one per category), can answer a question I haven't seen using my framework, and have identified the strongest objection to my exoplanet's habitability claim with a planned response.
+    <ul class="success-criteria">
+      <li>I have rehearsed at least 6 questions from the bank — one per category.</li>
+      <li>I can answer an unseen question using my framework.</li>
+      <li>I have identified the strongest objection to my claim and planned a response.</li>
+    </ul>
   </div>
   <div class="choice-board">
     <div class="choice">
@@ -99,7 +104,7 @@ unitMapUrl: /units/unit-1/
   <div class="submission-callout">
     <div class="label">📥 Component 6 — AI Documentation log (locks today)</div>
     <p>Your complete AI Doc log to date — every substantive AI partner conversation that informed the Report, with OPVL on each AI response and the "one thing the AI got wrong" entry. If you used AI and this log isn't here, K/U-AI-Doc scores 1–2 Limited (the work isn't there to evaluate).</p>
-    <a href="#" class="rubric-link">Submit all three via Google Classroom →</a>
+    {% set submit = { id: "u1-b9", text: "Submit all three via Google Classroom" } %}{% include "partials/submit-link.njk" %}
   </div>
   <div class="submission-callout">
     <div class="label">📥 Q&A rehearsal notes (formative — not strand-marked)</div>

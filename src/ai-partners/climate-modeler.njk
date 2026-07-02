@@ -2,7 +2,9 @@
 layout: layouts/base.njk
 title: The Climate Modeler
 tagline: A climate-science-focused Socratic tutor. Helps you interpret IPCC AR6 figures and climate model outputs — without writing your Climate Brief for you.
-launchUrl: ""
+flintUrl: ""
+boodleboxUrl: ""
+launchEmoji: "🌐"
 breadcrumbs:
   - { url: /, label: Home }
   - { url: /ai-partners/, label: "AI Partners" }
@@ -13,11 +15,7 @@ breadcrumbs:
 
 <p>The Climate Modeler is <strong>Unit 4's primary science partner</strong>. It helps you reason about climate science, IPCC reports, and climate model outputs — Socratically, with appropriate uncertainty. Patient with climate-anxiety students, honest about uncertainty without being dismissive of urgency, and direct when students slip into hopelessness or denial.</p>
 
-{% if launchUrl %}
-<a class="partner-launch" href="{{ launchUrl }}" target="_blank" rel="noopener">🌐 Launch The Climate Modeler →</a>
-{% else %}
-<span class="partner-launch placeholder">🌐 Launch The Climate Modeler — link coming soon. Ask Mr. Ignash for access.</span>
-{% endif %}
+{% include "partials/partner-launch.njk" %}
 
 <h2>Overview — why this partner is uniquely valuable</h2>
 <p>Most of the <a href="/units/unit-4/assessment-chennai-climate-brief/">Chennai Climate Brief</a> depends on <em>interpreting</em> climate science honestly. The Climate Modeler is tuned for two specific moves: (1) reading IPCC AR6 figures correctly, including the confidence-level language ("likely" / "very likely" / "virtually certain") that has specific probability meanings; and (2) holding the distinction between <strong>projection</strong> (what models say <em>under specific scenario assumptions</em>) and <strong>prediction</strong> (what will happen — which climate models don't do).</p>

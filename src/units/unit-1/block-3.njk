@@ -28,7 +28,7 @@ unitMapUrl: /units/unit-1/
   <p class="sub">Mars is the failed-habitable case. Today we use it to test our framework.</p>
   <p>Four billion years ago, Mars had a thicker atmosphere than Earth has today, liquid water carving river valleys on its surface, and a global magnetic field. The riverbeds, deltas, clay minerals, and sulfate deposits are still there — we can see them. Then Mars lost all three. The question is how, and the answer chains together every framework criterion you're building this unit.</p>
   <p>The chain: Mars is smaller than Earth, so its iron core cooled faster. By about 4.1 billion years ago its magnetic field collapsed. With no magnetic field to deflect the solar wind, Mars's atmosphere was stripped over hundreds of millions of years. Thinner atmosphere meant less greenhouse warming and lower surface pressure — both required for liquid surface water. With no liquid water at the surface there was no carbon-silicate weathering thermostat. The climate fell into a stable frozen state. Habitability isn't a property — it's a balance, and Mars lost it.</p>
-  <p>Today's move is calibration. A habitability framework that classifies Earth and Mars identically is broken (Mars isn't habitable). A framework that says only Earth could ever be habitable is also broken (Mars almost certainly was, briefly). The framework should classify Earth as MEETS, Mars as FAILS or PARTIAL on most criteria, and explain <em>why</em> Mars fails with a mechanism — not just "Mars is cold."</p>
+  <p>Today's move is calibration. A habitability framework that classifies Earth and Mars identically is broken (Mars isn't habitable). A framework that says only Earth could ever be habitable is also broken (Mars almost certainly was, briefly). The framework should classify Earth as MEETS, Mars as FAILS or PARTIAL on most criteria, and explain <em>why</em> Mars fails with a mechanism — not just "Mars is cold." Today also introduces <strong>the Planet Hunter</strong> — an exoplanet-focused Socratic tutor that asks before it tells and never gives habitability verdicts. Read its opening message on the partner page before your first conversation.</p>
 </section>
 
 <section class="block-section concepts">
@@ -53,7 +53,7 @@ unitMapUrl: /units/unit-1/
       <div class="entry-icon">🔭</div>
       <div class="entry-title">Interact</div>
       <div>The Planet Hunter — useful for Mars-as-calibration reasoning. Push it to make you defend each MEETS / PARTIAL / FAILS classification.</div>
-      <div class="entry-meta">Real link · AI Partner</div>
+      <div class="entry-meta">Real link · AI Partner · introduced today</div>
     </a>
   </div>
   <table style="margin-top: 16px;">
@@ -76,6 +76,11 @@ unitMapUrl: /units/unit-1/
   <p class="sub">Three real paths, same destination: Mars classified against at least 3 of your framework criteria.</p>
   <div class="choice-intro">
     <strong>Learning Intention:</strong> I can name three differences between Earth and Mars relevant to habitability, explain why Mars lost its atmosphere, and apply the habitability framework to identify where Mars fails.
+    <ul class="success-criteria">
+      <li>I can name three habitability-relevant differences between Earth and Mars.</li>
+      <li>I can explain the chain that stripped Mars's atmosphere.</li>
+      <li>I can point to where Mars fails the habitability framework.</li>
+    </ul>
   </div>
   <div class="choice-board">
     <div class="choice">
@@ -106,7 +111,7 @@ unitMapUrl: /units/unit-1/
   <div class="submission-callout">
     <div class="label">📥 Mars classification (submit by end of class)</div>
     <p>At minimum <strong>3 framework criteria</strong>, each labeled <strong>MEETS / PARTIAL / FAILS</strong> for Mars, with <strong>one-sentence reasoning</strong> that names the mechanism. Photo of the causal-chain diagram or your written classification.</p>
-    <a href="#" class="rubric-link">Submit via Google Classroom →</a>
+    {% set submit = { id: "u1-b3", text: "Submit via Google Classroom" } %}{% include "partials/submit-link.njk" %}
   </div>
   <p class="rubric-meta">
     <strong>Rubric link:</strong> Today's work maps to the <strong>K/U Knowledge</strong> strand of the <a href="/foundations/the-rubric/">Goldilocks Report rubric</a>. "Mars's failure mechanism explained" is the exact phrase that separates Proficient from Developing on K/U.

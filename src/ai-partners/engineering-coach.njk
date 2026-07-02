@@ -2,7 +2,9 @@
 layout: layouts/base.njk
 title: The Engineering Coach
 tagline: Helps you reason through design trade-offs. One of the highest-frequency partners across the year.
-launchUrl: ""
+flintUrl: ""
+boodleboxUrl: ""
+launchEmoji: "🚀"
 breadcrumbs:
   - { url: /, label: Home }
   - { url: /ai-partners/, label: "AI Partners" }
@@ -13,11 +15,7 @@ breadcrumbs:
 
 <p>A senior engineer who reasons <em>with</em> you, not <em>for</em> you. Direct, practical, comfortable with constraint and ambiguity. Doesn't pretend there are right answers when there are only trade-offs. Used in <strong>U3</strong> (Tectonic City Builder portfolio iterations and Final Defense), <strong>U4</strong> (climate adaptation brief), <strong>U6</strong> (sustainable land plan), and <strong>U7</strong> (energy mix). Expect to use this one a lot.</p>
 
-{% if launchUrl %}
-<a class="partner-launch" href="{{ launchUrl }}" target="_blank" rel="noopener">🚀 Launch the Engineering Coach →</a>
-{% else %}
-<span class="partner-launch placeholder">🚀 Launch the Engineering Coach — link coming soon. Ask Mr. Ignash for access.</span>
-{% endif %}
+{% include "partials/partner-launch.njk" %}
 
 <h2>How to use this partner</h2>
 

@@ -2,7 +2,9 @@
 layout: layouts/base.njk
 title: The Stakeholder Voice
 tagline: Role-plays specific stakeholders in your water-rights case — farmer, government, industry, downstream community, NGO. Helps you argue from a perspective that may not be your own.
-launchUrl: ""
+flintUrl: ""
+boodleboxUrl: ""
+launchEmoji: "🗣️"
 breadcrumbs:
   - { url: /, label: Home }
   - { url: /ai-partners/, label: "AI Partners" }
@@ -13,11 +15,7 @@ breadcrumbs:
 
 <p><strong>U5's signature AI partner.</strong> A perspective-taking coach that role-plays specific stakeholders in water-rights disputes — Tamil Nadu Cauvery delta farmer, Karnataka upstream farmer, Bengaluru urban consumer, Adivasi community member, downstream fisherman, environmental NGO, Cauvery Water Management Authority representative, and so on. Makes the <em>strongest</em> version of any stakeholder's argument so students rehearse responding to well-formed positions rather than caricatures.</p>
 
-{% if launchUrl %}
-<a class="partner-launch" href="{{ launchUrl }}" target="_blank" rel="noopener">🗣️ Launch The Stakeholder Voice →</a>
-{% else %}
-<span class="partner-launch placeholder">🗣️ Launch The Stakeholder Voice — link coming soon. Ask Mr. Ignash for access.</span>
-{% endif %}
+{% include "partials/partner-launch.njk" %}
 
 <h2>Overview — why this partner is uniquely valuable</h2>
 <p>The Position Paper's whole T/T centerpiece is <strong>arguing from a perspective that isn't your own default</strong>. That's hard to do without a partner who can play the perspective convincingly back at you. The Stakeholder Voice does that. It names whichever stakeholder you specify — for whichever case — and gets into character: their interests, the evidence they cite, the framing they use, the concerns they raise. Then you argue with them. The partner is making the <em>strongest</em> version of the stakeholder's argument because weak arguments don't help you rehearse — only strong, well-formed positions force you to develop substantive responses.</p>

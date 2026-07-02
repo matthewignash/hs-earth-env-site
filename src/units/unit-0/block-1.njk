@@ -91,7 +91,7 @@ unitMapUrl: /units/unit-0/
   <div class="submission-callout">
     <div class="label">📥 Exit ticket (submit by end of class)</div>
     <p>Name <strong>one OPVL letter</strong> you feel confident about after today's discussion, and <strong>one</strong> you want to practice more. Two sentences.</p>
-    <a href="#" class="rubric-link">Submit via Google Classroom →</a>
+    {% set submit = { id: "u0-b1", text: "Submit via Google Classroom" } %}{% include "partials/submit-link.njk" %}
   </div>
   <p class="rubric-meta">
     <strong>Rubric link:</strong> Today is formative — no scored band. We're building the K/U vocabulary the rubric uses. See the <a href="/foundations/the-rubric/">full rubric</a> for what K/U bands look like once we're scoring.

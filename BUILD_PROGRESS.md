@@ -2,11 +2,24 @@
 
 > **Purpose:** Living status doc. Tells you (and future Claude Code sessions) what's built, what's stubbed, what to build next, and in what order. The charter is in `CLAUDE.md` — do NOT modify that. Update this file at the end of each build session.
 
-**Last updated:** 2026-06-11 (video-card click-to-play pattern + U1 Block 1 Watch; earlier today: U4 rolling-summative. U0–U6 complete; U7 is next.)
+**Last updated:** 2026-06-11 (U1 content pass — 9 tasks: planet images, Planet Hunter sequencing, success criteria, EAL links, handout cards, lookback-time, dual-platform launch buttons, Classroom link scaffold. U0–U6 complete; U7 is next.)
 
 ---
 
 ## TL;DR — pick up here
+
+**U1 content pass (9 tasks) — 2026-06-11.** Deployment decision recorded: two class sections use Flint, one uses BoodleBox — one AI platform per class.
+1. **Planet gallery is real** — 4 NASA images downloaded, square-cropped (TRAPPIST-1e offset-cropped from the PIA22093 system poster), ≤1200px, at `src/assets/planets/planet-{a,b,c,d}.jpg` (a=Mars PIA00407, b=TRAPPIST-1e, c=Earth AS17-148-22727, d=Venus PIA23791 left/natural disk). Gallery page untouched.
+2. **Planet Hunter sequencing fixed** — introduced in B3 (Story sentence + card meta "introduced today"); B6 reframed to "in your toolkit since Block 3 — today it becomes your main advisor for choice-lock."
+3. **Success criteria visible in all 10 U1 blocks** — `ul.success-criteria` (2–4 "I can…" items) under each Learning Intention, derived from LI clause structure + Reflect prompts (B2/B4/B7/B9 lists match their Reflect rating triplets). New CSS in `block-page.css`.
+4. **EAL links** — "Vocabulary support" entry-card → `/foundations/eal/u1/` on B4 + B5; **misconception callout** "⚠ Positive ≠ good" (warn) closes B2 Concepts.
+5. **Handout cards real** — B2 Read (Feedback Loops — Three Worked Examples) and B5 choice A (Light-Curve Decode) placeholders converted; printed-in-class noted.
+6. **ESS1-2 lookback-time paragraph** — B4 Story now ends the prose with the light-travel-time "time travel" paragraph (Kepler-452 light left ~year 226).
+7. **Dual-platform launch buttons** — all 14 partner pages: `launchUrl` → `flintUrl` + `boodleboxUrl` + `launchEmoji` frontmatter; shared `partials/partner-launch.njk` renders live button(s) ("🚀 Launch on Flint / on BoodleBox" + "Your class uses one platform" note) or the coming-soon line when both empty (current state). Fill the frontmatter URLs as platforms deploy.
+8. **Google Classroom scaffold** — `src/_data/classroomLinks.json` (19 keys: u0-b1…b7, u0-dossier, u1-b1…b10, u1-goldilocks, all "") + `partials/submit-link.njk`. All 17 submit anchors in U0/U1 blocks now data-driven; empty key renders "Submit via Google Classroom (link posted in August)". **One file to fill in August.** (Assessment-page keys are future-use — those pages have no submit buttons yet.)
+9. Verified: build clean (140 files), gallery renders 4 square images, no placeholder markup on touched cards, 14/14 partner fallbacks, 17/17 pending submit spans, live-path tested for both partials.
+
+**Follow-up candidates:** B1's Interact placeholder still says "TBD: live four-planet image gallery" — it can now link `/units/unit-1/planet-gallery/`. U1 B4 Watch placeholder can reuse *The Known Universe* video-card. U0-dossier / u1-goldilocks submit buttons don't exist yet on assessment pages.
 
 **Video-card click-to-play pattern shipped** — `src/_includes/partials/video-card.njk` + CSS in `block-page.css`. A Watch entry card that shows the YouTube thumbnail with a play overlay; clicking opens a large `<dialog>` **lightbox** (min(90vw, 960px), youtube-nocookie, autoplay) — the card itself never links out when JS is on. Lightbox closes via ✕ / backdrop / Esc, and closing removes the iframe (stops playback). "Watch on YouTube ↗" is an explicit link in the lightbox footer. Progressive enhancement: no JS → plain link out. No YouTube code loads until a card is clicked. **Use this partial whenever a Watch placeholder gets its video resolved** — set a `video` object (`id`, `title`, `cardTitle`, `blurb`, `meta`) then `{% include "partials/video-card.njk" %}`. First applied: **U1 Block 1** — *The Known Universe* (AMNH, `17jymDn0W6U`). Next natural candidate: U1 Block 4's "powers of ten" placeholder (video not yet confirmed for it).
 

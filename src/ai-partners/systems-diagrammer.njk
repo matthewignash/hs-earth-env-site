@@ -2,7 +2,9 @@
 layout: layouts/base.njk
 title: The Systems Diagrammer
 tagline: Systems-thinking coach. Helps you build and refine diagrams of complex systems — subsystems, interactions, and feedback loops — without drawing for you.
-launchUrl: ""
+flintUrl: ""
+boodleboxUrl: ""
+launchEmoji: "🚀"
 breadcrumbs:
   - { url: /, label: Home }
   - { url: /ai-partners/, label: "AI Partners" }
@@ -13,11 +15,7 @@ breadcrumbs:
 
 <p>A systems-thinking coach. Helps you draw and refine systems diagrams — naming components, drawing arrows in the correct causal direction, and labeling feedback loops as positive (amplifying) or negative (stabilizing). Launches in <strong>Unit 1 Block 2</strong> as your first systems-thinking class; high value again in Block 7 (Habitability Framework) and across <strong>Units 2, 4, 5, and 6</strong> whenever you're working with a complex Earth or human system.</p>
 
-{% if launchUrl %}
-<a class="partner-launch" href="{{ launchUrl }}" target="_blank" rel="noopener">🚀 Launch The Systems Diagrammer →</a>
-{% else %}
-<span class="partner-launch placeholder">🚀 Launch The Systems Diagrammer — link coming soon. Ask Mr. Ignash for access.</span>
-{% endif %}
+{% include "partials/partner-launch.njk" %}
 
 <h2>How to use this partner</h2>
 

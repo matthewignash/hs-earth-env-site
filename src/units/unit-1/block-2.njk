@@ -43,12 +43,11 @@ unitMapUrl: /units/unit-1/
       <div>TBD: short explainer on Earth's four subsystems with one named interaction per pair. Best if it includes a worked carbon-cycle example.</div>
       <div class="entry-meta">To be selected by Mr. Ignash before the unit starts.</div>
     </div>
-    <div class="entry-card placeholder">
-      <span class="placeholder-tag">Placeholder</span>
+    <div class="entry-card">
       <div class="entry-icon">📄</div>
       <div class="entry-title">Read</div>
-      <div>TBD: a one-page worked-example handout with three feedback loops already diagrammed — ice-albedo (positive), water-vapor (positive), and a stabilizing carbon-silicate (negative) — so students see the sign-and-direction conventions before drawing their own.</div>
-      <div class="entry-meta">Handout to be prepared.</div>
+      <div>Feedback Loops — Three Worked Examples handout: ice-albedo (+), water-vapor (+), carbon-silicate thermostat (−), with the sign-test conventions you'll use in your own diagram. Printed copies in class.</div>
+      <div class="entry-meta">Handout · provided in class</div>
     </div>
     <a class="entry-card" href="/ai-partners/systems-diagrammer/" style="text-decoration: none; color: inherit;">
       <div class="entry-icon">🤖</div>
@@ -56,6 +55,10 @@ unitMapUrl: /units/unit-1/
       <div>The Systems Diagrammer — Socratic coach for diagram-building. Read the opening message and the example exchange before you use it in Path C below.</div>
       <div class="entry-meta">Real link · AI Partner</div>
     </a>
+  </div>
+  <div class="callout warn" style="margin-top: 16px;">
+    <div class="callout-title">⚠ Positive ≠ good</div>
+    In systems language, positive and negative are directions, not judgments. A positive feedback amplifies change — even harmful change. A negative feedback stabilizes. If you catch yourself thinking "positive = good," run the perturbation test instead.
   </div>
 </section>
 
@@ -65,6 +68,11 @@ unitMapUrl: /units/unit-1/
   <p class="sub">Three real paths. All three end at the same exit ticket: a defensible first systems diagram of Earth.</p>
   <div class="choice-intro">
     <strong>Learning Intention:</strong> I can name Earth's four subsystems (atmosphere, hydrosphere, geosphere, biosphere) and give a concrete example of how two of them interact.
+    <ul class="success-criteria">
+      <li>I can name Earth's four subsystems.</li>
+      <li>I can give a concrete example of two subsystems interacting.</li>
+      <li>I can draw a systems diagram of that interaction.</li>
+    </ul>
   </div>
   <div class="choice-board">
     <div class="choice">
@@ -95,7 +103,7 @@ unitMapUrl: /units/unit-1/
   <div class="submission-callout">
     <div class="label">📥 Exit ticket (submit by end of class)</div>
     <p>A photo or scan of your systems diagram. Must include <strong>all four subsystems labeled</strong>, <strong>at least one interaction arrow with a verb</strong>, and <strong>one feedback loop labeled + or −</strong> with a one-sentence justification.</p>
-    <a href="#" class="rubric-link">Submit via Google Classroom →</a>
+    {% set submit = { id: "u1-b2", text: "Submit via Google Classroom" } %}{% include "partials/submit-link.njk" %}
   </div>
   <p class="rubric-meta">
     <strong>Rubric link:</strong> Today is formative T/T practice — no scored band yet. The Goldilocks Report (Block 9) will score your final systems-thinking work against the <a href="/foundations/the-rubric/">T/T rubric</a>.

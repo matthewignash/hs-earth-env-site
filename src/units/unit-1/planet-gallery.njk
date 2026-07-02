@@ -1,0 +1,221 @@
+---
+layout: layouts/base.njk
+title: Four Planets, No Labels
+tagline: The Unit 1 launch gallery. Look first. Name later.
+breadcrumbs:
+  - { url: /, label: Home }
+  - { url: /units/, label: Units }
+  - { url: /units/unit-1/, label: "Unit 1 — Earth and Universe" }
+  - { label: "Four Planets, No Labels" }
+---
+
+<div class="prose">
+
+<p>Four planets, shown as your eye (or a camera, or something else — that's the point) would see them. No names, no labels, no scale. Work through the three questions below <strong>before</strong> anything gets flipped.</p>
+
+<div class="callout">
+  <div class="callout-title">Class rule</div>
+  Nothing gets flipped until we finish question 3. If you're revisiting this page after Block 1 — flip away. First-timers: looking first is the whole exercise.
+</div>
+
+</div>
+
+<style>
+  .pg-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 24px;
+    margin: 28px 0;
+  }
+  .pg-card {
+    perspective: 1200px;
+    cursor: pointer;
+    border: none;
+    background: transparent;
+    padding: 0;
+    font: inherit;
+    text-align: center;
+  }
+  .pg-inner {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 3 / 4;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+  }
+  .pg-card.flipped .pg-inner { transform: rotateY(180deg); }
+  @media (prefers-reduced-motion: reduce) {
+    .pg-inner { transition: none; }
+  }
+  .pg-face {
+    position: absolute;
+    inset: 0;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    border-radius: 12px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 12px;
+  }
+  .pg-front {
+    background: var(--ink);
+    color: var(--paper);
+  }
+  .pg-back {
+    background: var(--accent-light);
+    color: var(--ink);
+    transform: rotateY(180deg);
+    justify-content: center;
+    gap: 8px;
+  }
+  .pg-disk {
+    width: min(180px, 70%);
+    aspect-ratio: 1 / 1;
+    border-radius: 50%;
+    object-fit: cover;
+    background: #000;
+    margin-top: 8px;
+  }
+  .pg-letter {
+    font-size: 1.3rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+  }
+  .pg-hint { font-size: 0.8rem; opacity: 0.7; }
+  .pg-name { font-size: 1.25rem; font-weight: 700; }
+  .pg-origin {
+    font-size: 0.8rem;
+    font-weight: 700;
+    padding: 4px 10px;
+    border-radius: 999px;
+    background: var(--paper);
+    color: var(--accent-dark);
+  }
+  .pg-origin.artist { background: var(--ai-orange); color: var(--ink); }
+  .pg-note { font-size: 0.85rem; line-height: 1.45; }
+  .pg-credit { font-size: 0.72rem; opacity: 0.75; }
+  .pg-controls { display: flex; gap: 12px; margin: 4px 0 8px; }
+  .pg-controls button {
+    font: inherit;
+    font-size: 0.85rem;
+    padding: 6px 14px;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    background: var(--paper);
+    color: var(--ink);
+    cursor: pointer;
+  }
+  .pg-controls button:hover { background: var(--accent-light); }
+</style>
+
+<div class="pg-controls">
+  <button type="button" id="pg-reveal-all">Reveal all</button>
+  <button type="button" id="pg-reset">Hide all</button>
+</div>
+
+<div class="pg-grid">
+  <button type="button" class="pg-card" aria-pressed="false">
+    <div class="pg-inner">
+      <div class="pg-face pg-front">
+        <span class="pg-letter">PLANET A</span>
+        <img class="pg-disk" src="/assets/planets/planet-a.jpg" alt="Full-disk image of Planet A, unlabeled">
+        <span class="pg-hint">Flip to reveal — after question 3</span>
+      </div>
+      <div class="pg-face pg-back">
+        <span class="pg-name">Mars</span>
+        <span class="pg-origin">PHOTOGRAPH — MOSAIC</span>
+        <p class="pg-note">Assembled from ~100 Viking 1 orbiter photographs (1980). Real reflected light — but a composite. The scar across the middle is Valles Marineris.</p>
+        <span class="pg-credit">NASA/JPL-Caltech (PIA00407)</span>
+      </div>
+    </div>
+  </button>
+
+  <button type="button" class="pg-card" aria-pressed="false">
+    <div class="pg-inner">
+      <div class="pg-face pg-front">
+        <span class="pg-letter">PLANET B</span>
+        <img class="pg-disk" src="/assets/planets/planet-b.jpg" alt="Full-disk image of Planet B, unlabeled">
+        <span class="pg-hint">Flip to reveal — after question 3</span>
+      </div>
+      <div class="pg-face pg-back">
+        <span class="pg-name">TRAPPIST-1e</span>
+        <span class="pg-origin artist">ARTIST'S IMPRESSION</span>
+        <p class="pg-note">No photograph of this planet exists. Everything you observed — the color, the "oceans," the clouds — was painted. The planet is real; this image of it is an argument, not a measurement.</p>
+        <span class="pg-credit">NASA/JPL-Caltech (artist's concept, 2018)</span>
+      </div>
+    </div>
+  </button>
+
+  <button type="button" class="pg-card" aria-pressed="false">
+    <div class="pg-inner">
+      <div class="pg-face pg-front">
+        <span class="pg-letter">PLANET C</span>
+        <img class="pg-disk" src="/assets/planets/planet-c.jpg" alt="Full-disk image of Planet C, unlabeled">
+        <span class="pg-hint">Flip to reveal — after question 3</span>
+      </div>
+      <div class="pg-face pg-back">
+        <span class="pg-name">Earth</span>
+        <span class="pg-origin">PHOTOGRAPH</span>
+        <p class="pg-note">A single photograph, taken by a human with a handheld camera — the Apollo 17 crew, December 1972, on the way to the Moon. The "Blue Marble."</p>
+        <span class="pg-credit">NASA (AS17-148-22727)</span>
+      </div>
+    </div>
+  </button>
+
+  <button type="button" class="pg-card" aria-pressed="false">
+    <div class="pg-inner">
+      <div class="pg-face pg-front">
+        <span class="pg-letter">PLANET D</span>
+        <img class="pg-disk" src="/assets/planets/planet-d.jpg" alt="Full-disk image of Planet D, unlabeled">
+        <span class="pg-hint">Flip to reveal — after question 3</span>
+      </div>
+      <div class="pg-face pg-back">
+        <span class="pg-name">Venus</span>
+        <span class="pg-origin">PHOTOGRAPH — VISIBLE LIGHT</span>
+        <p class="pg-note">Mariner 10 (1974), reprocessed 2020. In visible light you cannot see Venus's surface at all — only cloud tops. The famous orange "surface" images are radar, a different instrument answering a different question.</p>
+        <span class="pg-credit">NASA/JPL-Caltech (PIA23791)</span>
+      </div>
+    </div>
+  </button>
+</div>
+
+<div class="prose">
+
+<h2>The three questions</h2>
+
+<ol>
+  <li><strong>What can you see?</strong> Observation only — color, apparent size, surface features, clouds. No naming, no guessing.</li>
+  <li><strong>What can you guess?</strong> Which of these could support life, and how would you decide? Every reason goes on the board.</li>
+  <li><strong>What would you need to know?</strong> What data is missing? What would you measure or look up before answering with confidence?</li>
+</ol>
+
+<div class="callout">
+  <div class="callout-title">After the reveal</div>
+  One of these four images is not like the others — and if you treated them all the same during questions 1 and 2, that's not a mistake, it's the lesson. Every source has an Origin. From here on, we check before we trust. That's <a href="/foundations/opvl-framework/">OPVL</a>, and it applies to images too.
+</div>
+
+</div>
+
+<script>
+  document.querySelectorAll(".pg-card").forEach(function (card) {
+    card.addEventListener("click", function () {
+      card.classList.toggle("flipped");
+      card.setAttribute("aria-pressed", card.classList.contains("flipped") ? "true" : "false");
+    });
+  });
+  document.getElementById("pg-reveal-all").addEventListener("click", function () {
+    document.querySelectorAll(".pg-card").forEach(function (c) {
+      c.classList.add("flipped");
+      c.setAttribute("aria-pressed", "true");
+    });
+  });
+  document.getElementById("pg-reset").addEventListener("click", function () {
+    document.querySelectorAll(".pg-card").forEach(function (c) {
+      c.classList.remove("flipped");
+      c.setAttribute("aria-pressed", "false");
+    });
+  });
+</script>

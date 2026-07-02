@@ -28,7 +28,7 @@ unitMapUrl: /units/unit-1/
   <p class="sub">Choice-lock day. Eight candidates. One verdict to defend.</p>
   <p>You've been hearing about the eight candidate exoplanets since Block 4. Today you read all eight data cards and lock your choice for the <a href="/units/unit-1/assessment-goldilocks-report/">Goldilocks Report</a>. The work between now and Block 10 is built around the planet you pick today — your framework, your sources, your verdict, your defense.</p>
   <p>Not all eight are equally useful for your framework workout. TRAPPIST-1 e has the richest dataset and the most JWST work — but JWST's recent atmospheric non-detections on its siblings have complicated the "most habitable" framing. K2-18 b is the fastest-moving science target on the list — its dimethyl sulfide detection in 2023 is genuinely contested. Gliese 581 d is the pedagogical plant: its very existence is disputed (the 2007 detection may be stellar activity artifact). Kepler-186 f and Kepler-452 b are media darlings with thin primary-source support — useful for OPVL practice but harder to defend a verdict on. Pick the planet that gives you the best framework workout, not the most famous name.</p>
-  <p>Today is also when <strong>the Planet Hunter</strong> AI partner becomes part of your toolkit. It's an exoplanet-focused Socratic tutor — it asks before telling, refuses to give habitability verdicts, and pushes you to define what habitability means in your framework before evaluating any planet. Use it.</p>
+  <p>The Planet Hunter has been in your toolkit since Block 3 — today it becomes your main advisor for choice-lock. It still refuses verdicts: the lock is your call.</p>
 </section>
 
 <section class="block-section concepts">
@@ -52,7 +52,7 @@ unitMapUrl: /units/unit-1/
     <a class="entry-card" href="/ai-partners/planet-hunter/" style="text-decoration: none; color: inherit;">
       <div class="entry-icon">🔭</div>
       <div class="entry-title">Interact</div>
-      <div>The Planet Hunter — introduced today. Read the opening message and example exchange before your first conversation. Bring a specific exoplanet to talk through.</div>
+      <div>The Planet Hunter — read the opening message and example exchange before your first conversation if you haven't yet. Bring a specific exoplanet to talk through.</div>
       <div class="entry-meta">Real link · AI Partner</div>
     </a>
   </div>
@@ -79,6 +79,11 @@ unitMapUrl: /units/unit-1/
   <p class="sub">Three real paths, same destination: a locked exoplanet choice + a profile to defend.</p>
   <div class="choice-intro">
     <strong>Learning Intention:</strong> I can extract key habitability data from a card, justify why I chose this exoplanet, and identify two questions I'll need to answer about my chosen planet in Blocks 7–8.
+    <ul class="success-criteria">
+      <li>I can extract the key habitability data from an exoplanet card.</li>
+      <li>I can justify my planet choice from that data.</li>
+      <li>I can name two questions about my planet I'll need to answer in Blocks 7–8.</li>
+    </ul>
   </div>
   <div class="choice-board">
     <div class="choice">
@@ -109,7 +114,7 @@ unitMapUrl: /units/unit-1/
   <div class="submission-callout">
     <div class="label">📥 Exoplanet choice + profile (submit by end of class)</div>
     <p><strong>Your one-page exoplanet profile</strong> (filled-in data card) PLUS <strong>locked-choice declaration</strong> — the planet you'll defend in the Goldilocks Report. Include <strong>two specific questions</strong> you'll answer in Blocks 7 and 8 about this planet.</p>
-    <a href="#" class="rubric-link">Submit via Google Classroom →</a>
+    {% set submit = { id: "u1-b6", text: "Submit via Google Classroom" } %}{% include "partials/submit-link.njk" %}
   </div>
   <p class="rubric-meta">
     <strong>Rubric link:</strong> Mr. Ignash uses today's submission to redirect duplicate choices — if everyone picked TRAPPIST-1 e, the Stakeholder Q&A in Block 10 would be repetitive. Variety makes the panel work. Submission feeds the T/T strand of the <a href="/foundations/the-rubric/">Goldilocks Report rubric</a>.

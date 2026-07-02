@@ -1,0 +1,12 @@
+{# Dual-platform launch buttons. Partner pages set flintUrl / boodleboxUrl / launchEmoji
+   in frontmatter (both URLs "" until platforms deploy). One AI platform per class:
+   two sections use Flint, one uses BoodleBox. #}
+{% if flintUrl or boodleboxUrl %}
+<div class="partner-launch-row">
+  {% if flintUrl %}<a class="partner-launch" href="{{ flintUrl }}" target="_blank" rel="noopener">🚀 Launch on Flint →</a>{% endif %}
+  {% if boodleboxUrl %}<a class="partner-launch" href="{{ boodleboxUrl }}" target="_blank" rel="noopener">🚀 Launch on BoodleBox →</a>{% endif %}
+</div>
+<p class="partner-launch-note">Your class uses one platform — use your class's button.</p>
+{% else %}
+<span class="partner-launch placeholder">{{ launchEmoji }} Launch {{ title }} — links coming soon. Ask Mr. Ignash for access.</span>
+{% endif %}

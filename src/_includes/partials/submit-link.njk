@@ -1,0 +1,8 @@
+{# Google Classroom submit link driven by src/_data/classroomLinks.json.
+   Usage: {% set submit = { id: "u1-b4", text: "Submit via Google Classroom" } %}{% include "partials/submit-link.njk" %}
+   Fill in the assignment URL in classroomLinks.json (August) and the live link appears site-wide. #}
+{% if classroomLinks[submit.id] %}
+<a href="{{ classroomLinks[submit.id] }}" class="rubric-link" target="_blank" rel="noopener">{{ submit.text }} →</a>
+{% else %}
+<span class="rubric-link-pending">Submit via Google Classroom (link posted in August)</span>
+{% endif %}

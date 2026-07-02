@@ -2,7 +2,9 @@
 layout: layouts/base.njk
 title: The Policy Aide
 tagline: A policy-writing coach. Translates climate science into policy-brief voice. Role-plays Policy Panel questions before the live defense.
-launchUrl: ""
+flintUrl: ""
+boodleboxUrl: ""
+launchEmoji: "📋"
 breadcrumbs:
   - { url: /, label: Home }
   - { url: /ai-partners/, label: "AI Partners" }
@@ -13,11 +15,7 @@ breadcrumbs:
 
 <p>The Policy Aide is <strong>Unit 4's voice + defense partner</strong>. It coaches you to translate climate science into the policy-brief voice an actual Greater Chennai Corporation official would expect — direct, audience-aware, recommendation-anchored, no academic-essay creep. Then role-plays the tough panel questions before Block 12's live defense: cost, feasibility, equity, science credibility.</p>
 
-{% if launchUrl %}
-<a class="partner-launch" href="{{ launchUrl }}" target="_blank" rel="noopener">📋 Launch The Policy Aide →</a>
-{% else %}
-<span class="partner-launch placeholder">📋 Launch The Policy Aide — link coming soon. Ask Mr. Ignash for access.</span>
-{% endif %}
+{% include "partials/partner-launch.njk" %}
 
 <h2>Overview — why this partner is uniquely valuable</h2>
 <p>Two jobs. <strong>First — voice coaching</strong>. You paste a paragraph from your draft Brief and the Policy Aide tells you where it reads as academic paper vs. policy brief, and what to change. It's direct about genre conventions: GCC officials don't have time for hedged academic-paper voice. <strong>Second — panel role-play</strong>. Before Block 12, the Policy Aide plays a tough GCC official and asks the four question categories that come up in real panels: <em>cost</em>, <em>feasibility</em>, <em>equity</em>, and <em>science credibility</em>. It pushes back the way a real panel would.</p>

@@ -2,7 +2,9 @@
 layout: layouts/base.njk
 title: The Defense Practice Partner
 tagline: Role-plays the audience for defense rehearsal. Use before any defense — engineering, policy, stakeholder, public.
-launchUrl: ""
+flintUrl: ""
+boodleboxUrl: ""
+launchEmoji: "🚀"
 breadcrumbs:
   - { url: /, label: Home }
   - { url: /ai-partners/, label: "AI Partners" }
@@ -13,11 +15,7 @@ breadcrumbs:
 
 <p>A peer audience that asks tough but fair questions. Engaged and curious — skeptical the way a good audience is, not hostile. Used in <strong>U3</strong> defense rehearsal (peer city councillor), <strong>U4</strong> policy panel, <strong>U5</strong> stakeholder roundtable, <strong>U6</strong> regional planning board, <strong>U7</strong> skeptical public reader. Tell it which unit you're rehearsing for and it sets the role.</p>
 
-{% if launchUrl %}
-<a class="partner-launch" href="{{ launchUrl }}" target="_blank" rel="noopener">🚀 Launch the Defense Practice Partner →</a>
-{% else %}
-<span class="partner-launch placeholder">🚀 Launch the Defense Practice Partner — link coming soon. Ask Mr. Ignash for access.</span>
-{% endif %}
+{% include "partials/partner-launch.njk" %}
 
 <h2>How to use this partner</h2>
 

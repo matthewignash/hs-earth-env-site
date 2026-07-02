@@ -216,6 +216,13 @@ dialog.video-lightbox::backdrop {
 }
 
 /* ====== Do choice board ====== */
+.success-criteria {
+  margin: 8px 0 0;
+  padding-left: 18px;
+  font-size: 14px;
+  color: var(--muted);
+}
+.success-criteria li { margin: 2px 0; }
 .choice-intro {
   background: var(--accent-light);
   padding: 12px 14px;
@@ -283,6 +290,16 @@ dialog.video-lightbox::backdrop {
   margin-top: 6px;
 }
 .rubric-link:hover { background: var(--accent-dark); color: white; }
+.rubric-link-pending {
+  display: inline-block;
+  background: var(--soft);
+  color: var(--muted);
+  padding: 8px 14px;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  margin-top: 6px;
+}
 
 .rubric-meta { font-size: 13px; color: var(--muted); margin-top: 10px; }
 .rubric-meta a { color: var(--accent); font-weight: 600; }
