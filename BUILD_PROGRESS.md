@@ -8,7 +8,7 @@
 
 ## TL;DR — pick up here
 
-**Video-card click-to-play pattern shipped** — `src/_includes/partials/video-card.njk` + CSS in `block-page.css`. A Watch entry card that shows the YouTube thumbnail with a play overlay; clicking swaps in a youtube-nocookie embed in place (no YouTube code loads until clicked). Progressive enhancement: no JS → plain link out; after embedding, further clicks link out (blocked-embed fallback). **Use this partial whenever a Watch placeholder gets its video resolved** — set a `video` object (`id`, `title`, `cardTitle`, `blurb`, `meta`) then `{% include "partials/video-card.njk" %}`. First applied: **U1 Block 1** — *The Known Universe* (AMNH, `17jymDn0W6U`). Next natural candidate: U1 Block 4's "powers of ten" placeholder (video not yet confirmed for it).
+**Video-card click-to-play pattern shipped** — `src/_includes/partials/video-card.njk` + CSS in `block-page.css`. A Watch entry card that shows the YouTube thumbnail with a play overlay; clicking opens a large `<dialog>` **lightbox** (min(90vw, 960px), youtube-nocookie, autoplay) — the card itself never links out when JS is on. Lightbox closes via ✕ / backdrop / Esc, and closing removes the iframe (stops playback). "Watch on YouTube ↗" is an explicit link in the lightbox footer. Progressive enhancement: no JS → plain link out. No YouTube code loads until a card is clicked. **Use this partial whenever a Watch placeholder gets its video resolved** — set a `video` object (`id`, `title`, `cardTitle`, `blurb`, `meta`) then `{% include "partials/video-card.njk" %}`. First applied: **U1 Block 1** — *The Known Universe* (AMNH, `17jymDn0W6U`). Next natural candidate: U1 Block 4's "powers of ten" placeholder (video not yet confirmed for it).
 
 ---
 
