@@ -184,11 +184,6 @@ img { max-width: 100%; height: auto; display: block; }
   box-shadow: 0 4px 12px rgba(46, 83, 149, 0.08);
   color: var(--ink);
 }
-.section-card .card-icon {
-  font-size: 28px;
-  margin-bottom: 10px;
-  display: block;
-}
 .section-card .card-title {
   font-weight: 700;
   font-size: 18px;

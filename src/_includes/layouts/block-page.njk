@@ -11,9 +11,9 @@ extraStylesheets:
   <div class="container">
     <h1>Block {{ block }} — {{ title }}</h1>
     <div class="meta">
-      <span>📍 Unit {{ unit }} · Block {{ block }} of {{ blocksTotal }}</span>
+      <span>Unit {{ unit }} · Block {{ block }} of {{ blocksTotal }}</span>
       {% if minutes %}<span>⏰ {{ minutes }} minutes</span>{% endif %}
-      {% if week and day %}<span>📅 Week {{ week }}, Day {{ day }}</span>{% endif %}
+      {% if week and day %}<span>Week {{ week }}, Day {{ day }}</span>{% endif %}
     </div>
     {% if strands %}
     <div class="strand-chips">
@@ -30,7 +30,7 @@ extraStylesheets:
 
   {% if aiPartners %}
   <div class="ai-callout">
-    <div class="ai-label">🤖 AI Partners available for today's work</div>
+    <div class="ai-label">AI Partners available for today's work</div>
     <div class="ai-partners">
       {%- for p in aiPartners %}
       <a href="/ai-partners/{{ p.slug }}/" class="ai-partner-link">{{ p.label }}</a>

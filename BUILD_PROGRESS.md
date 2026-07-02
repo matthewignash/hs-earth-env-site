@@ -8,6 +8,12 @@
 
 ## TL;DR — pick up here
 
+**SITE CONVENTION (2026-06-11): no emojis anywhere in student-facing pages.** The site uses typographic labels instead — uppercase small-caps kickers (section tags, submission/AI labels), left-border callouts whose titles carry meaning in words, entry cards led by their bold title. Emojis read as AI-generated and screen readers announce them ("pushpin", "warning sign"). Do NOT reintroduce them in new blocks/units. Typographic symbols are fine: → ← ✕ · ≠ − ×. Exception (tracked follow-up): the three simulator apps under `src/assets/simulators/` still use in-game emoji icons — they're standalone artifacts synced from the simulator projects; de-emoji them at the source project if desired.
+
+**De-emoji pass (2026-06-11)** — ~1,000 emoji instances removed across 126 source files: section tags (Story/Concepts/Do/Show/Reflect), entry-card icons (divs removed entirely), callout titles, submission + AI-callout labels, AI-partner pill labels, launch buttons (+ `launchEmoji` frontmatter removed), hub card-icons (spans removed), site name in `_data/site.js`, block-page meta line, reflect prompts. CSS: `.submission-callout .label` + `.ai-callout .ai-label` became uppercase kickers matching `.section-tag`; `.entry-icon`/`.card-icon` rules deleted. Rendered site verified emoji-free (excl. simulators). Planet gallery untouched.
+
+---
+
 **U1 content pass (9 tasks) — 2026-06-11.** Deployment decision recorded: two class sections use Flint, one uses BoodleBox — one AI platform per class.
 1. **Planet gallery is real** — 4 NASA images downloaded, square-cropped (TRAPPIST-1e offset-cropped from the PIA22093 system poster), ≤1200px, at `src/assets/planets/planet-{a,b,c,d}.jpg` (a=Mars PIA00407, b=TRAPPIST-1e, c=Earth AS17-148-22727, d=Venus PIA23791 left/natural disk). Gallery page untouched.
 2. **Planet Hunter sequencing fixed** — introduced in B3 (Story sentence + card meta "introduced today"); B6 reframed to "in your toolkit since Block 3 — today it becomes your main advisor for choice-lock."
