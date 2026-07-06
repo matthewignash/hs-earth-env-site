@@ -1,0 +1,76 @@
+{# Tap-to-define key terms. Markup on the page:
+   <a class="key-term" href="/foundations/eal/u1/" data-term="light-year" aria-expanded="false"><strong>light-year</strong></a>
+   Tapping toggles an in-place definition panel (definition + sentence stem +
+   exact-anchor link into the 5-language vocabulary reference). No JS → the
+   link goes to the unit's EAL pre-teach page. Include once per page. #}
+<script>
+if (!window.__keyTermsInit) {
+  window.__keyTermsInit = true;
+  window.EAL_TERMS = {{ ealTerms | dump | safe }};
+
+  var openTerm = null;
+  var panel = null;
+
+  function closePanel() {
+    if (panel) panel.remove();
+    if (openTerm) openTerm.setAttribute('aria-expanded', 'false');
+    panel = null;
+    openTerm = null;
+  }
+
+  function buildPanel(entry) {
+    var box = document.createElement('div');
+    box.className = 'key-term-panel';
+    box.setAttribute('role', 'note');
+    var title = document.createElement('div');
+    title.className = 'key-term-panel-title';
+    title.textContent = entry.term;
+    box.appendChild(title);
+    var def = document.createElement('p');
+    def.textContent = entry.def;
+    box.appendChild(def);
+    if (entry.stem) {
+      var stem = document.createElement('p');
+      var stemLabel = document.createElement('strong');
+      stemLabel.textContent = 'Try it: ';
+      stem.appendChild(stemLabel);
+      stem.appendChild(document.createTextNode(entry.stem));
+      box.appendChild(stem);
+    }
+    var links = document.createElement('p');
+    links.className = 'key-term-panel-links';
+    if (entry.vocabAnchor) {
+      var lang = document.createElement('a');
+      lang.href = '/foundations/eal/vocabulary/#' + entry.vocabAnchor;
+      lang.textContent = 'In your language →';
+      links.appendChild(lang);
+      links.appendChild(document.createTextNode(' · '));
+    }
+    var full = document.createElement('a');
+    full.href = entry.eal;
+    full.textContent = 'Full word list →';
+    links.appendChild(full);
+    box.appendChild(links);
+    return box;
+  }
+
+  document.addEventListener('click', function (e) {
+    var termLink = e.target.closest('a.key-term');
+    if (!termLink) return;
+    var entry = window.EAL_TERMS[termLink.dataset.term];
+    if (!entry) return;
+    e.preventDefault();
+    if (openTerm === termLink) { closePanel(); return; }
+    closePanel();
+    openTerm = termLink;
+    termLink.setAttribute('aria-expanded', 'true');
+    panel = buildPanel(entry);
+    var para = termLink.closest('p, li, div');
+    (para || termLink).insertAdjacentElement('afterend', panel);
+  });
+
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') closePanel();
+  });
+}
+</script>
