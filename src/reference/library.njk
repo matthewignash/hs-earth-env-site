@@ -1,0 +1,963 @@
+---
+layout: layouts/base.njk
+title: Resources Library
+tagline: Curated sources, tools, and external simulators — every entry OPVL-tagged.
+breadcrumbs:
+  - { url: /, label: Home }
+  - { url: /reference/, label: Reference }
+  - { label: "Resources Library" }
+---
+
+<div class="prose">
+
+<div class="callout">
+  <div class="callout-title">How this library is organized</div>
+  <p>Two layers. The Cross-Cutting Reference (Sections 1-5 below) is the durable library — sources, tools, simulators used across multiple units. The Per-Unit Selected Sources (Sections 7-14) are short, focused lists of 5-8 unit-specific resources, tagged to the relevant assessment.</p>
+  <p>Every resource has an OPVL tag (Origin / Purpose / Value / Limitations). This is intentional: the Resources page itself models the source-evaluation work students do in U0. Students learn OPVL by seeing it applied to real sources, not just by reading the framework.</p>
+  <p>Indian-specific sources have their own dedicated section (Section 5). The course is anchored in Chennai — many of our cases (Cauvery, Pallikaranai, Western Ghats, Tamil Nadu agriculture) require Indian primary sources, not American secondary ones.</p>
+  <p>AI tools have their own section (Section 4). The course's AI Documentation Protocol makes AI use legitimate and disclosed; the AI tools layer makes the practical options visible.</p>
+</div>
+
+<h2 id="data-sources">1. Cross-Cutting — Authoritative Data Sources</h2>
+
+<p>Live or regularly-updated authoritative datasets. Cite these as primary or near-primary sources in assessment work — not secondary summaries.</p>
+
+<h4 id="our-world-in-data" class="library-entry"><a href="https://ourworldindata.org" target="_blank" rel="noopener">Our World in Data</a></h4>
+<p>Free, openly licensed data + visualizations on climate, energy, food, health. Excellent for HS-readable charts you can cite.</p>
+<dl class="opvl">
+  <dt>Origin</dt><dd>Oxford-affiliated research project; data curated from primary sources (IPCC, IEA, FAO, etc.).</dd>
+  <dt>Purpose</dt><dd>Public-education and policy-informing — explicitly designed to make global data accessible.</dd>
+  <dt>Value</dt><dd>Pre-built downloadable charts, transparent methodology, every chart has its data sources listed.</dd>
+  <dt>Limitations</dt><dd>Synthesis of others' data, not primary collection. Update cadence varies by indicator. Some topics underrepresented (Indigenous data; informal economies).</dd>
+</dl>
+
+<h4 id="ipcc-assessment-reports-ar6" class="library-entry"><a href="https://www.ipcc.ch/assessment-report/ar6/" target="_blank" rel="noopener">IPCC Assessment Reports (AR6)</a></h4>
+<p>Global scientific consensus on climate science. Summary for Policymakers + Technical Summary are HS-accessible.</p>
+<dl class="opvl">
+  <dt>Origin</dt><dd>Intergovernmental Panel on Climate Change; reports written and reviewed by thousands of scientists, signed off by governments.</dd>
+  <dt>Purpose</dt><dd>To inform policy with assessed scientific consensus. NOT advocacy, by design.</dd>
+  <dt>Value</dt><dd>Most authoritative climate-science synthesis available; explicit confidence language ('virtually certain' vs. 'likely').</dd>
+  <dt>Limitations</dt><dd>Summary for Policymakers language is negotiated with governments — consensus-softened. 5-7 year cadence means rapid developments (recent extremes) underrepresented. Long; chapter selection matters.</dd>
+</dl>
+
+<h4 id="usgs-earthquake-catalog-shakemap" class="library-entry"><a href="https://earthquake.usgs.gov" target="_blank" rel="noopener">USGS Earthquake Catalog + ShakeMap</a></h4>
+<p>Real-time + historical earthquake data globally, with shake-intensity mapping. Live updating.</p>
+<dl class="opvl">
+  <dt>Origin</dt><dd>U.S. Geological Survey; aggregates from global seismic networks (IRIS, etc.).</dd>
+  <dt>Purpose</dt><dd>Public hazard awareness + scientific research. Free, official, real-time.</dd>
+  <dt>Value</dt><dd>Comprehensive, authoritative, includes magnitude + intensity + felt reports + tectonic context.</dd>
+  <dt>Limitations</dt><dd>Stronger coverage in instrumented regions (US, Japan, Europe); sparser in low-instrumentation areas. Catalog limits at small magnitudes.</dd>
+</dl>
+
+<h4 id="nasa-exoplanet-archive" class="library-entry"><a href="https://exoplanetarchive.ipac.caltech.edu" target="_blank" rel="noopener">NASA Exoplanet Archive</a></h4>
+<p>Confirmed exoplanet catalog with measured parameters, detection methods, host star data.</p>
+<dl class="opvl">
+  <dt>Origin</dt><dd>NASA-funded research database, IPAC at Caltech, peer-reviewed publication confirmations.</dd>
+  <dt>Purpose</dt><dd>Authoritative scientific reference for exoplanet research and education.</dd>
+  <dt>Value</dt><dd>Every entry traceable to a peer-reviewed paper. Filter/sort interface excellent for student research.</dd>
+  <dt>Limitations</dt><dd>Parameters often have wide uncertainty (atmospheric composition usually unknown). Discovery-method biased (transit-survey heavy).</dd>
+</dl>
+
+<h4 id="global-forest-watch" class="library-entry"><a href="https://www.globalforestwatch.org" target="_blank" rel="noopener">Global Forest Watch</a></h4>
+<p>Near-real-time global tree-cover loss mapping, plus drivers and historical context.</p>
+<dl class="opvl">
+  <dt>Origin</dt><dd>World Resources Institute (WRI) + university partners; uses Landsat + Sentinel satellite imagery.</dd>
+  <dt>Purpose</dt><dd>Transparency for forest loss + conservation advocacy. Partly funded by foundations with conservation agendas.</dd>
+  <dt>Value</dt><dd>Granular spatial data, downloadable, free, regularly updated.</dd>
+  <dt>Limitations</dt><dd>Tree-cover loss ≠ deforestation (includes plantations harvested in rotation); drivers algorithmically estimated. Recent loss may be over- or under-counted depending on cloud cover.</dd>
+</dl>
+
+<h4 id="iea-world-energy-outlook-iea-data" class="library-entry"><a href="https://www.iea.org/data-and-statistics" target="_blank" rel="noopener">IEA World Energy Outlook + IEA data</a></h4>
+<p>Global energy data, country profiles, scenarios. Annual flagship WEO is the standard reference.</p>
+<dl class="opvl">
+  <dt>Origin</dt><dd>International Energy Agency, OECD-affiliated, member-government funded.</dd>
+  <dt>Purpose</dt><dd>Inform energy policy across OECD + member states. Historically fossil-leaning; in recent years has aligned more with energy-transition framing.</dd>
+  <dt>Value</dt><dd>Most comprehensive global energy dataset; scenarios standard in industry + policy debates.</dd>
+  <dt>Limitations</dt><dd>Paywall on detailed datasets; free tier sufficient for HS use. Historical underestimate of renewables growth is well-documented critique.</dd>
+</dl>
+
+<h4 id="climate-action-tracker" class="library-entry"><a href="https://climateactiontracker.org" target="_blank" rel="noopener">Climate Action Tracker</a></h4>
+<p>Country-by-country tracking of climate pledges + actual progress vs. 1.5°C and 2°C targets.</p>
+<dl class="opvl">
+  <dt>Origin</dt><dd>Climate Analytics + NewClimate Institute (independent research orgs); foundation-funded.</dd>
+  <dt>Purpose</dt><dd>Hold governments accountable to Paris commitments. Explicitly evaluative — they rate countries 'critically insufficient' to '1.5°C compatible.'</dd>
+  <dt>Value</dt><dd>Comparable country ratings, transparent methodology, frequent updates.</dd>
+  <dt>Limitations</dt><dd>Rates pledges + actions, not all economic / social context. India is rated 'highly insufficient' — discuss why with the framing, not as endpoint.</dd>
+</dl>
+
+<h4 id="climate-reanalyzer" class="library-entry"><a href="https://climatereanalyzer.org" target="_blank" rel="noopener">Climate Reanalyzer</a></h4>
+<p>Live daily global temperature, sea surface temperature, sea ice. Used heavily by climate scientists on social media.</p>
+<dl class="opvl">
+  <dt>Origin</dt><dd>University of Maine Climate Change Institute. Uses NOAA + Copernicus data feeds.</dd>
+  <dt>Purpose</dt><dd>Public-facing visualization of ongoing climate state. Often the first place anomalies are visible.</dd>
+  <dt>Value</dt><dd>Daily-update granularity; visually clear; widely cited by climate journalists.</dd>
+  <dt>Limitations</dt><dd>Daily anomaly framing can over-read short-term weather noise as climate signal. Pair with longer-term data for honest interpretation.</dd>
+</dl>
+
+<h2 id="simulators">2. Cross-Cutting — External Simulators Worth Using</h2>
+
+<p>Use these instead of building our own where they already exist. En-ROADS in particular replaces any need for a course-built climate simulator.</p>
+
+<h4 id="en-roads-mit-climate-interactive" class="library-entry"><a href="https://en-roads.climateinteractive.org" target="_blank" rel="noopener">En-ROADS (MIT / Climate Interactive)</a></h4>
+<p>World-class climate policy simulator. Adjust 18 levers (carbon price, renewables subsidy, deforestation, etc.) and see 2100 temperature impact in real time. Used in IPCC workshops.</p>
+<dl class="opvl">
+  <dt>Origin</dt><dd>MIT Sloan + Climate Interactive (nonprofit); peer-reviewed model.</dd>
+  <dt>Purpose</dt><dd>Public education + workshop facilitation for climate policy. Designed for non-experts.</dd>
+  <dt>Value</dt><dd>The single best free climate-policy sim available. Replaces any need for us to build one. Excellent for U4 + U7.</dd>
+  <dt>Limitations</dt><dd>Aggregated to global level — does not show regional/national variation. 'Reference scenario' assumes business-as-usual which is debated.</dd>
+</dl>
+
+<h4 id="nasa-eyes-on-exoplanets" class="library-entry"><a href="https://eyes.nasa.gov/apps/exo/" target="_blank" rel="noopener">NASA Eyes on Exoplanets</a></h4>
+<p>3D interactive tour of known exoplanetary systems. Visual + good for orienting students to scale.</p>
+<dl class="opvl">
+  <dt>Origin</dt><dd>NASA Jet Propulsion Laboratory.</dd>
+  <dt>Purpose</dt><dd>Public outreach + education. Free.</dd>
+  <dt>Value</dt><dd>Visually impressive; lets students fly through real exoplanet systems with accurate orbital parameters.</dd>
+  <dt>Limitations</dt><dd>Renders are artist's impressions for surface visuals — we don't actually know what these planets look like. Worth flagging.</dd>
+</dl>
+
+<h4 id="phet-plate-tectonics" class="library-entry"><a href="https://phet.colorado.edu/en/simulations/plate-tectonics" target="_blank" rel="noopener">PhET — Plate Tectonics</a></h4>
+<p>Interactive plate boundary visualization. Build oceanic vs. continental boundaries and watch the geology emerge.</p>
+<dl class="opvl">
+  <dt>Origin</dt><dd>PhET Interactive Simulations, University of Colorado Boulder. NSF-funded, peer-reviewed for pedagogy.</dd>
+  <dt>Purpose</dt><dd>K-12 + undergraduate STEM education. Free, open license.</dd>
+  <dt>Value</dt><dd>Cleanly designed, focused on a single concept at a time, well-tested in classrooms.</dd>
+  <dt>Limitations</dt><dd>Simplified models (boundaries are smoother than reality; rates accelerated). For HS+, supplement with real-data examples.</dd>
+</dl>
+
+<h4 id="phet-the-greenhouse-effect" class="library-entry"><a href="https://phet.colorado.edu/en/simulations/greenhouse-effect" target="_blank" rel="noopener">PhET — The Greenhouse Effect</a></h4>
+<p>Visualize how atmospheric composition changes outgoing infrared radiation. Essential for U4.</p>
+<dl class="opvl">
+  <dt>Origin</dt><dd>Same as above.</dd>
+  <dt>Purpose</dt><dd>Same.</dd>
+  <dt>Value</dt><dd>Lets students manipulate atmospheric CO₂ + see immediate radiation balance shift.</dd>
+  <dt>Limitations</dt><dd>Doesn't model feedback loops (ice-albedo, water vapor) — pair with a separate explanation.</dd>
+</dl>
+
+<h4 id="global-carbon-atlas" class="library-entry"><a href="https://globalcarbonatlas.org" target="_blank" rel="noopener">Global Carbon Atlas</a></h4>
+<p>Interactive country + sector breakdowns of CO₂ emissions. Time-series mappable.</p>
+<dl class="opvl">
+  <dt>Origin</dt><dd>Global Carbon Project, scientific consortium.</dd>
+  <dt>Purpose</dt><dd>Transparency for emissions accounting. Used by IPCC and Paris-process negotiations.</dd>
+  <dt>Value</dt><dd>Granular country + per-capita + per-GDP comparisons. Excellent for U4 + U7.</dd>
+  <dt>Limitations</dt><dd>Territorial vs consumption-based accounting differ substantially — defaults to territorial which under-counts wealthy importing countries.</dd>
+</dl>
+
+<h4 id="stellarium-web" class="library-entry"><a href="https://stellarium-web.org" target="_blank" rel="noopener">Stellarium Web</a></h4>
+<p>Free browser planetarium. Pan and zoom anywhere in the night sky; jump to any date.</p>
+<dl class="opvl">
+  <dt>Origin</dt><dd>Open-source software project; data from professional astronomy catalogs.</dd>
+  <dt>Purpose</dt><dd>Astronomy education + amateur stargazing. Free.</dd>
+  <dt>Value</dt><dd>Excellent for orienting U1 to actual sky; show what stars Chennai sees, where exoplanetary systems sit.</dd>
+  <dt>Limitations</dt><dd>Web version is simpler than desktop Stellarium; for advanced features, the desktop version is free too.</dd>
+</dl>
+
+<h4 id="hhmi-biointeractive" class="library-entry"><a href="https://www.biointeractive.org" target="_blank" rel="noopener">HHMI BioInteractive</a></h4>
+<p>Free hub of short documentary films, Click-and-Learn interactives, and Data Points activities. Built for HS + intro college. Strong Earth science + evolution + ecology coverage despite the 'Bio' branding.</p>
+<dl class="opvl">
+  <dt>Origin</dt><dd>Howard Hughes Medical Institute (HHMI); science films + curriculum designed with practicing scientists.</dd>
+  <dt>Purpose</dt><dd>Free high-quality science education. Explicitly designed for classroom use, with teacher guides + assessments.</dd>
+  <dt>Value</dt><dd>Production values rival broadcast documentary; pedagogical materials are research-grounded. The short-film format (15-25 min) fits within an 80-min block with discussion time on either side. Specific clips called out in U2, U4, and U6 below.</dd>
+  <dt>Limitations</dt><dd>Despite the 'Bio' branding, coverage of physical Earth sciences (tectonics, atmosphere) is thinner than ecological coverage. Some films are US-centric in examples.</dd>
+</dl>
+
+<h2 id="reading-journalism">3. Cross-Cutting — Reading + Journalism (Global)</h2>
+
+<p>General-audience climate + environment journalism. Useful for background reading + finding op-ed exemplars (especially for U7).</p>
+
+<h4 id="yale-climate-connections" class="library-entry"><a href="https://yaleclimateconnections.org" target="_blank" rel="noopener">Yale Climate Connections</a></h4>
+<p>Climate-science journalism; clear writing for general audiences. Daily updates.</p>
+<dl class="opvl">
+  <dt>Origin</dt><dd>Yale Center for Environmental Communication; foundation + Yale funded.</dd>
+  <dt>Purpose</dt><dd>Public climate-literacy + journalism. Explicitly accepts climate science as settled; investigates implications.</dd>
+  <dt>Value</dt><dd>Accessible, fact-checked, well-sourced. Strong for entry-level climate reading.</dd>
+  <dt>Limitations</dt><dd>Position is 'climate science is settled, what do we do' — not neutral on the science question (because the science is settled). May read as partisan to skeptics.</dd>
+</dl>
+
+<h4 id="the-conversation-environment-section" class="library-entry"><a href="https://theconversation.com/environment" target="_blank" rel="noopener">The Conversation (Environment section)</a></h4>
+<p>Academic-journalism platform: working researchers write for general audiences with editorial support.</p>
+<dl class="opvl">
+  <dt>Origin</dt><dd>Non-profit; authors are academics with institutional affiliations disclosed; editors check journalistic standards.</dd>
+  <dt>Purpose</dt><dd>Translate research into accessible writing. Open-license republishing.</dd>
+  <dt>Value</dt><dd>Each article is by a real researcher with named expertise. Strong for current-research framing.</dd>
+  <dt>Limitations</dt><dd>Researcher voice means perspective matters; not balanced reporting in the traditional sense. Check author affiliations.</dd>
+</dl>
+
+<h4 id="mongabay" class="library-entry"><a href="https://news.mongabay.com" target="_blank" rel="noopener">Mongabay</a></h4>
+<p>Environmental journalism with strong tropical-forest + biodiversity coverage. Regional bureaus including India + Indonesia + Latin America.</p>
+<dl class="opvl">
+  <dt>Origin</dt><dd>Non-profit environmental news org; founded 1999. Foundation-funded.</dd>
+  <dt>Purpose</dt><dd>Investigative + advocacy journalism on environment + conservation.</dd>
+  <dt>Value</dt><dd>Deep regional reporting on stories that mainstream media skips. Excellent for U6 + U7.</dd>
+  <dt>Limitations</dt><dd>Conservation-aligned editorial perspective. Worth pairing with industry sources for full picture.</dd>
+</dl>
+
+<h4 id="inside-climate-news" class="library-entry"><a href="https://insideclimatenews.org" target="_blank" rel="noopener">Inside Climate News</a></h4>
+<p>Pulitzer-winning investigative climate journalism. Strong on fossil-fuel industry accountability.</p>
+<dl class="opvl">
+  <dt>Origin</dt><dd>Non-profit, foundation-funded; Pulitzer for 2013 exposé on Exxon's climate knowledge.</dd>
+  <dt>Purpose</dt><dd>Investigative journalism on climate, energy policy, environmental health.</dd>
+  <dt>Value</dt><dd>Long-form investigations rare elsewhere. Free to republish under Creative Commons.</dd>
+  <dt>Limitations</dt><dd>Accountability angle is strong — coverage emphasizes industry malfeasance. Pair with industry-perspective sources for balance.</dd>
+</dl>
+
+<h4 id="openstax-astronomy-2e-biology-2e-and-others" class="library-entry"><a href="https://openstax.org" target="_blank" rel="noopener">OpenStax (Astronomy 2e, Biology 2e, and others)</a></h4>
+<p>Free, peer-reviewed, openly-licensed (CC-BY) college textbooks from Rice University. Useful as foundational reading where the course needs a textbook spine. Specific chapter pointers in U1 and U6 below.</p>
+<dl class="opvl">
+  <dt>Origin</dt><dd>Rice University (founded 1999); textbook authors are practicing university faculty; content peer-reviewed before release; CC-BY 4.0 license.</dd>
+  <dt>Purpose</dt><dd>Make college textbooks free and accessible globally. Explicit social-mission framing — addresses the textbook-cost barrier that disproportionately affects students from lower-income backgrounds.</dd>
+  <dt>Value</dt><dd>High-quality, free, durable, citable secondary source. Astronomy 2e and Biology 2e are HS-accessible despite the 'college' framing. Multiple formats (PDF, web, print-on-demand). Aligned to common college course outlines.</dd>
+  <dt>Limitations</dt><dd>Limited Earth &amp; Env catalog — no standalone Earth Science textbook; coverage of U2/U3/U4/U5/U7 content is thin or absent. EXPLICIT RESTRICTION: OpenStax does not permit their content to be 'used in the training of large language models or otherwise be ingested into large language models or generative AI offerings without OpenStax's permission.' For our course: students may READ OpenStax chapters freely, but should NOT upload OpenStax PDFs into NotebookLM, Claude Projects, Gemini Gems, or similar tools as source material. Discuss this restriction explicitly in U0 — it's a teaching artifact about the unsettled state of AI-and-copyright.</dd>
+</dl>
+
+<h2 id="ai-tools">4. Cross-Cutting — AI Tools + AI Literacy</h2>
+
+<p>Practical AI tools students can use under the AI Documentation Protocol, plus literacy resources. Course-specific AI partners are on the AI Partners page.</p>
+
+<h4 id="notebooklm-google" class="library-entry"><a href="https://notebooklm.google.com" target="_blank" rel="noopener">NotebookLM (Google)</a></h4>
+<p>Upload sources (PDFs, links, docs); the AI answers questions grounded in those sources only. Generates summaries, study guides, podcasts.</p>
+<dl class="opvl">
+  <dt>Origin</dt><dd>Google product, Gemini-powered.</dd>
+  <dt>Purpose</dt><dd>Source-grounded AI research assistant. Designed to reduce hallucinations by restricting to user-provided material.</dd>
+  <dt>Value</dt><dd>Citation-by-source-paragraph means students can trace any AI claim back to which source said it. Genuine improvement over chat-only research.</dd>
+  <dt>Limitations</dt><dd>Only as good as the sources you provide; will not surface evidence outside the corpus. Free tier has session limits.</dd>
+</dl>
+
+<h4 id="perplexity" class="library-entry"><a href="https://www.perplexity.ai" target="_blank" rel="noopener">Perplexity</a></h4>
+<p>Search-grounded AI: every claim links to web sources. Free tier sufficient for student research.</p>
+<dl class="opvl">
+  <dt>Origin</dt><dd>Perplexity AI (commercial).</dd>
+  <dt>Purpose</dt><dd>Replace 'ask ChatGPT' with 'ask ChatGPT with citations'. Reduces but does not eliminate hallucinations.</dd>
+  <dt>Value</dt><dd>Citations are clickable; students can verify directly. Pro mode adds focused models.</dd>
+  <dt>Limitations</dt><dd>Citations sometimes don't fully support the synthesized claim — Verify, don't trust. Pro tier paywall for advanced features.</dd>
+</dl>
+
+<h4 id="claude-projects-anthropic" class="library-entry"><a href="https://claude.ai/projects" target="_blank" rel="noopener">Claude Projects (Anthropic)</a></h4>
+<p>Create persistent project-context chats with custom system prompts. Used to build the course's 16 AI partners.</p>
+<dl class="opvl">
+  <dt>Origin</dt><dd>Anthropic (Claude).</dd>
+  <dt>Purpose</dt><dd>Custom AI assistants with persistent instructions + reference materials.</dd>
+  <dt>Value</dt><dd>How the course's named AI partners are deployed. See AI Partners page for the 16 specific partners.</dd>
+  <dt>Limitations</dt><dd>Requires Claude account; free tier has limits. System prompt quality determines partner usefulness.</dd>
+</dl>
+
+<h4 id="gemini-gems-google" class="library-entry"><a href="https://gemini.google.com/gems" target="_blank" rel="noopener">Gemini Gems (Google)</a></h4>
+<p>Google's equivalent of Claude Projects. Custom personas + persistent context.</p>
+<dl class="opvl">
+  <dt>Origin</dt><dd>Google (Gemini).</dd>
+  <dt>Purpose</dt><dd>Same as Claude Projects.</dd>
+  <dt>Value</dt><dd>Free tier is generous; integrates with Google Workspace if your school uses it.</dd>
+  <dt>Limitations</dt><dd>Same caveats as above; quality depends on prompt design.</dd>
+</dl>
+
+<h4 id="stanford-civic-online-reasoning-curriculum" class="library-entry"><a href="https://cor.stanford.edu" target="_blank" rel="noopener">Stanford Civic Online Reasoning curriculum</a></h4>
+<p>Free curriculum for evaluating online sources, including AI-generated content. Designed by the Stanford History Education Group.</p>
+<dl class="opvl">
+  <dt>Origin</dt><dd>Stanford University, peer-reviewed pedagogical research.</dd>
+  <dt>Purpose</dt><dd>Civic education. Adapted for K-12 source-evaluation work.</dd>
+  <dt>Value</dt><dd>Research-grounded; aligns closely with the U0 OPVL throughline. Lateral-reading techniques are directly applicable.</dd>
+  <dt>Limitations</dt><dd>US-centric examples; instructors should swap in local + relevant Indian/Chennai examples for relevance.</dd>
+</dl>
+
+<h4 id="ai-hallucination-examples-live-archive-student-collected" class="library-entry">AI Hallucination examples (live archive — student-collected)</h4>
+<p>(local: see Student Hub &gt; Hallucination Wall)</p>
+<p>Class-maintained collection of hallucinations students have caught in their own work. Pattern: prompt + AI output + correction + source.</p>
+<dl class="opvl">
+  <dt>Origin</dt><dd>Student-collected, instructor-curated.</dd>
+  <dt>Purpose</dt><dd>Make hallucination concrete by collecting actual examples from THIS class's work.</dd>
+  <dt>Value</dt><dd>Most concrete possible evidence — your students' own findings.</dd>
+  <dt>Limitations</dt><dd>Quality depends on collection discipline. Aim for one example per student per semester.</dd>
+</dl>
+
+<h2 id="indian-sources">5. Indian-Specific Sources</h2>
+
+<p>India-specific data, journalism, government, and academic sources. The course is anchored in Chennai and South India — many cases (Cauvery, Pallikaranai, Western Ghats, Tamil Nadu agriculture, Greater Chennai climate planning) require Indian primary sources.</p>
+
+<h4 id="down-to-earth-cse" class="library-entry"><a href="https://www.downtoearth.org.in" target="_blank" rel="noopener">Down to Earth (CSE)</a></h4>
+<p>India's premier environmental magazine. CSE's editorial voice on climate, water, energy, biodiversity. Fortnightly print + daily online.</p>
+<dl class="opvl">
+  <dt>Origin</dt><dd>Centre for Science and Environment, Delhi-based NGO; founded 1980 by Anil Agarwal.</dd>
+  <dt>Purpose</dt><dd>Environmental journalism with development-justice framing — explicit equity focus on Global South climate burden.</dd>
+  <dt>Value</dt><dd>Most authoritative Indian environmental publication; covers stories Western press skips (Cauvery, Ganga, monsoon variability, local industrial pollution).</dd>
+  <dt>Limitations</dt><dd>CSE has policy positions (climate justice, equity-led negotiations); editorial voice reflects them. Read alongside Indian government sources for full picture.</dd>
+</dl>
+
+<h4 id="mongabay-india" class="library-entry"><a href="https://india.mongabay.com" target="_blank" rel="noopener">Mongabay India</a></h4>
+<p>India-specific bureau of Mongabay. Strong on Western Ghats, NE India biodiversity, Indigenous land rights, river systems.</p>
+<dl class="opvl">
+  <dt>Origin</dt><dd>Mongabay (see global entry); India bureau staffed by Indian journalists.</dd>
+  <dt>Purpose</dt><dd>Environmental journalism, conservation-aligned.</dd>
+  <dt>Value</dt><dd>Coverage of Indian regional stories Western press doesn't reach. Excellent for U6 Western Ghats, U5 transboundary water issues, U2 Pichavaram + mangroves.</dd>
+  <dt>Limitations</dt><dd>Conservation editorial perspective; pair with industry voices for the full debate.</dd>
+</dl>
+
+<h4 id="the-hindu-environment-science-sections" class="library-entry"><a href="https://www.thehindu.com/sci-tech/energy-and-environment/" target="_blank" rel="noopener">The Hindu (Environment + Science sections)</a></h4>
+<p>Chennai-headquartered national daily; respected environment + science desks. Free archive search.</p>
+<dl class="opvl">
+  <dt>Origin</dt><dd>The Hindu Group; established 1878. Largely independent editorial.</dd>
+  <dt>Purpose</dt><dd>General-audience daily journalism. Environment coverage is straight reporting plus occasional analysis.</dd>
+  <dt>Value</dt><dd>Geographic proximity to your students; covers Tamil Nadu + South India in depth (Cauvery disputes, Chennai climate adaptation, Marina + coastal erosion).</dd>
+  <dt>Limitations</dt><dd>General-interest depth; for technical depth, follow up with the cited primary sources. Some pages paywalled after several views.</dd>
+</dl>
+
+<h4 id="india-meteorological-department-imd-pune" class="library-entry"><a href="https://www.imdpune.gov.in" target="_blank" rel="noopener">India Meteorological Department (IMD) Pune</a></h4>
+<p>Official Indian weather + climate data. Historical records back over a century.</p>
+<dl class="opvl">
+  <dt>Origin</dt><dd>Government of India, Ministry of Earth Sciences.</dd>
+  <dt>Purpose</dt><dd>Operational meteorology + official climate records.</dd>
+  <dt>Value</dt><dd>Authoritative for Indian weather; long historical records (since ~1880s) make it the only source for India-specific climate baselines.</dd>
+  <dt>Limitations</dt><dd>Government data can lag for political-sensitive metrics. Some interfaces are dated; data access through search interface, not always API.</dd>
+</dl>
+
+<h4 id="isro-bhuvan" class="library-entry"><a href="https://bhuvan.nrsc.gov.in" target="_blank" rel="noopener">ISRO Bhuvan</a></h4>
+<p>India's official geospatial portal. Satellite imagery, land use, disaster maps, hydrology — all India-focused.</p>
+<dl class="opvl">
+  <dt>Origin</dt><dd>Indian Space Research Organisation, National Remote Sensing Centre.</dd>
+  <dt>Purpose</dt><dd>Official mapping + earth-observation portal for Indian government + researchers.</dd>
+  <dt>Value</dt><dd>India's equivalent of Google Earth but with India-specific layers (agricultural land use, watershed, urban sprawl, coastal erosion). Free.</dd>
+  <dt>Limitations</dt><dd>Interface is less polished than Google Earth; some layers India-only (which is the point but limits global comparison).</dd>
+</dl>
+
+<h4 id="cauvery-water-management-authority-cwma" class="library-entry"><a href="https://cwma.nic.in" target="_blank" rel="noopener">Cauvery Water Management Authority (CWMA)</a></h4>
+<p>Official body governing Cauvery allocation between Karnataka, Tamil Nadu, Kerala, Puducherry. Established by 2018 Supreme Court order.</p>
+<dl class="opvl">
+  <dt>Origin</dt><dd>Government of India, established by SC verdict.</dd>
+  <dt>Purpose</dt><dd>Implement Cauvery allocation + arbitrate disputes.</dd>
+  <dt>Value</dt><dd>Primary-source allocation data + meeting minutes + dispute logs. Essential for U5 Position Paper if your case is Cauvery.</dd>
+  <dt>Limitations</dt><dd>Bureaucratic interface; data downloads sometimes broken; politically-sensitive documents may be incomplete.</dd>
+</dl>
+
+<h4 id="india-energy-outlook-iea-indian-government" class="library-entry"><a href="https://www.iea.org/reports/india-energy-outlook-2021" target="_blank" rel="noopener">India Energy Outlook (IEA + Indian government)</a></h4>
+<p>Comprehensive analysis of India's energy system + 2040 projections. The reference for India energy policy debates.</p>
+<dl class="opvl">
+  <dt>Origin</dt><dd>IEA, with Government of India cooperation.</dd>
+  <dt>Purpose</dt><dd>Inform India's energy transition planning.</dd>
+  <dt>Value</dt><dd>Most rigorous India-specific energy analysis publicly available. Excellent for U7 if students choose an Indian city.</dd>
+  <dt>Limitations</dt><dd>2021 vintage — fast-moving sector; check IEA for updates.</dd>
+</dl>
+
+<h4 id="centre-for-policy-research-cpr-climate-and-environment" class="library-entry"><a href="https://cprindia.org/climate-environment" target="_blank" rel="noopener">Centre for Policy Research (CPR) — Climate and Environment</a></h4>
+<p>Delhi-based think tank with rigorous climate + environment research. Strong on Indian climate policy + finance.</p>
+<dl class="opvl">
+  <dt>Origin</dt><dd>Independent Indian think tank, multi-funder.</dd>
+  <dt>Purpose</dt><dd>Research + policy analysis for Indian government + civil society.</dd>
+  <dt>Value</dt><dd>Indian voices on Indian climate policy. Counterweight to Western-think-tank-only readings.</dd>
+  <dt>Limitations</dt><dd>Think tank not government; positions are researcher-led, sometimes critical of government policy.</dd>
+</dl>
+
+<h4 id="forest-survey-of-india-indian-state-of-forest-report-isfr" class="library-entry"><a href="https://fsi.nic.in/forest-report" target="_blank" rel="noopener">Forest Survey of India — Indian State of Forest Report (ISFR)</a></h4>
+<p>Biennial official Indian forest cover + carbon stock assessment.</p>
+<dl class="opvl">
+  <dt>Origin</dt><dd>Forest Survey of India, Ministry of Environment.</dd>
+  <dt>Purpose</dt><dd>Official Indian government forest accounting.</dd>
+  <dt>Value</dt><dd>Authoritative Indian forest data; essential for U6 if students study Indian regions.</dd>
+  <dt>Limitations</dt><dd>ISFR's 'forest cover' definition includes plantations + degraded forest, which inflates numbers vs. natural-forest definitions used elsewhere — flag this explicitly.</dd>
+</dl>
+
+<h4 id="wildlife-institute-of-india" class="library-entry"><a href="https://wii.gov.in" target="_blank" rel="noopener">Wildlife Institute of India</a></h4>
+<p>Premier Indian wildlife + biodiversity research institute.</p>
+<dl class="opvl">
+  <dt>Origin</dt><dd>Government of India autonomous research institute.</dd>
+  <dt>Purpose</dt><dd>Wildlife research + species management for India.</dd>
+  <dt>Value</dt><dd>Primary source for Indian biodiversity data, especially Western Ghats + tiger reserves + protected areas.</dd>
+  <dt>Limitations</dt><dd>Government-affiliated; some politically-sensitive research (e.g., Indigenous rights vs. protected-area expansion) may be soft-pedaled.</dd>
+</dl>
+
+<h4 id="indian-network-for-climate-change-assessment-incca" class="library-entry">Indian Network for Climate Change Assessment (INCCA)</h4>
+<p>(via Ministry of Environment, Forest and Climate Change site)</p>
+<p>India's parallel to the IPCC at national scale. Regional climate projections + sectoral impact assessments.</p>
+<dl class="opvl">
+  <dt>Origin</dt><dd>Government of India, multi-institutional network.</dd>
+  <dt>Purpose</dt><dd>Inform India's national climate policy.</dd>
+  <dt>Value</dt><dd>India-specific climate projections at regional scale — IPCC global resolution doesn't reach Tamil Nadu or Karnataka specifically.</dd>
+  <dt>Limitations</dt><dd>Government-funded; consensus document; updates slower than IPCC.</dd>
+</dl>
+
+<h4 id="bengaluru-based-chennai-based-local-civil-society-orgs" class="library-entry">Bengaluru-based / Chennai-based local civil society orgs</h4>
+<p>(varies — Citizen Matters, Citizens for Bengaluru, Arappor Iyakkam etc.)</p>
+<p>Local civil-society + investigative-journalism orgs covering city-specific environmental + governance issues.</p>
+<dl class="opvl">
+  <dt>Origin</dt><dd>Various local NGOs + citizen-journalist networks.</dd>
+  <dt>Purpose</dt><dd>Local accountability + civic education.</dd>
+  <dt>Value</dt><dd>Hyperlocal coverage of Chennai marsh encroachment, Bengaluru lake pollution, etc. — invaluable for U2 + U5.</dd>
+  <dt>Limitations</dt><dd>Quality varies dramatically by org; verify before citing. Some orgs have strong advocacy positions.</dd>
+</dl>
+
+<h2 id="student-tools">6. Cross-Cutting — Student Tools</h2>
+
+<p>Tools students will use across multiple units. Zotero in particular pairs with the OPVL throughline — the note field is the right place to record OPVL analyses for citations.</p>
+
+<h4 id="zotero" class="library-entry"><a href="https://www.zotero.org" target="_blank" rel="noopener">Zotero</a></h4>
+<p>Free citation manager. Browser extension grabs source metadata, generates citations in any format.</p>
+<dl class="opvl">
+  <dt>Origin</dt><dd>Open-source project; originally Roy Rosenzweig Center for History and New Media (George Mason).</dd>
+  <dt>Purpose</dt><dd>Make academic citation accessible to non-specialists.</dd>
+  <dt>Value</dt><dd>Free, cross-platform, browser-integrated. Pairs naturally with the U0 OPVL throughline — Zotero's note field is the right place to record OPVL analyses.</dd>
+  <dt>Limitations</dt><dd>Initial setup curve; metadata grabber occasionally mis-reads pages and needs manual correction.</dd>
+</dl>
+
+<h4 id="datawrapper" class="library-entry"><a href="https://www.datawrapper.de" target="_blank" rel="noopener">Datawrapper</a></h4>
+<p>Free web-based chart maker. Used by major newsrooms (NYT, FT, Guardian). Charts embeddable in docs + sites.</p>
+<dl class="opvl">
+  <dt>Origin</dt><dd>Berlin-based company; freemium model.</dd>
+  <dt>Purpose</dt><dd>Make publication-quality charts without design skills.</dd>
+  <dt>Value</dt><dd>Charts default to good practice (no chartjunk; honest scales). Excellent for the Climate Brief + Op-Ed.</dd>
+  <dt>Limitations</dt><dd>Free tier has Datawrapper branding on charts. Some advanced chart types require paid tier.</dd>
+</dl>
+
+<h4 id="google-earth-web-version" class="library-entry"><a href="https://earth.google.com" target="_blank" rel="noopener">Google Earth (web version)</a></h4>
+<p>Browser-based satellite view + historical imagery + 3D terrain. Free.</p>
+<dl class="opvl">
+  <dt>Origin</dt><dd>Google.</dd>
+  <dt>Purpose</dt><dd>Public mapping + exploration tool.</dd>
+  <dt>Value</dt><dd>Excellent for U2 landscape reading + U6 land-use observation. Historical imagery layer lets you see change.</dd>
+  <dt>Limitations</dt><dd>Imagery dates vary by region; commercial labels may not match local naming conventions; resolution variable.</dd>
+</dl>
+
+<h4 id="climate-mind" class="library-entry"><a href="https://climatemind.org" target="_blank" rel="noopener">Climate Mind</a></h4>
+<p>Climate connection-mapping tool: pick what you care about (health, justice, animals, etc.) and see which climate impacts touch it.</p>
+<dl class="opvl">
+  <dt>Origin</dt><dd>Non-profit, open-source.</dd>
+  <dt>Purpose</dt><dd>Help non-experts find climate entry-points relevant to them.</dd>
+  <dt>Value</dt><dd>Useful for the Op-Ed (U7) — students struggling to pick a public-audience angle can use this to find an entry-point.</dd>
+  <dt>Limitations</dt><dd>US-centric examples; less coverage of South Asian impact contexts.</dd>
+</dl>
+
+<h2 id="per-unit">Per-Unit Selected Sources (U0 — U7)</h2>
+
+<p>Each unit gets a focused list of 5-8 sources directly tied to the unit's content + assessment. Cross-cutting items are referenced briefly here ('See cross-cutting Data') and detailed in Sections 1-6.</p>
+
+<h3 id="u0-sources">U0 — Selected Sources</h3>
+
+<p>Foundations — Doing Science, Using AI, Citing Evidence</p>
+
+<h4 id="stanford-history-education-group-lateral-reading" class="library-entry"><a href="https://cor.stanford.edu/curriculum/collections/curriculum-online-civic-reasoning/" target="_blank" rel="noopener">Stanford History Education Group — Lateral Reading</a></h4>
+<p>Free curriculum on how professional fact-checkers evaluate online sources (lateral reading — leave the page, search the source).</p>
+<dl class="opvl">
+  <dt>Origin</dt><dd>Stanford University; peer-reviewed pedagogy.</dd>
+  <dt>Purpose</dt><dd>Civic-education curriculum; freely usable.</dd>
+  <dt>Value</dt><dd>Operationalizes OPVL's Origin question — how do you investigate the origin of a source you've never heard of?</dd>
+  <dt>Limitations</dt><dd>US-centric examples; swap in Chennai/India examples.</dd>
+</dl>
+
+<h4 id="allsides-media-bias-chart" class="library-entry"><a href="https://www.allsides.com/media-bias/media-bias-chart" target="_blank" rel="noopener">AllSides Media Bias Chart</a></h4>
+<p>Comparative chart of news outlets' editorial perspectives. Useful conceptual handle for Origin + Purpose evaluation.</p>
+<dl class="opvl">
+  <dt>Origin</dt><dd>AllSides Inc. (US-based, bipartisan team).</dd>
+  <dt>Purpose</dt><dd>Help readers see partisan framing.</dd>
+  <dt>Value</dt><dd>Concrete demonstration that 'news' is not uniformly objective.</dd>
+  <dt>Limitations</dt><dd>US-only outlets; need Indian + global equivalent for our context. The bias-axis framing has its critics (Adfontes alternative).</dd>
+</dl>
+
+<h4 id="anthropic-s-responsible-disclosure-documentation" class="library-entry"><a href="https://www.anthropic.com/responsible-disclosure-policy" target="_blank" rel="noopener">Anthropic's Responsible Disclosure documentation</a></h4>
+<p>Example of corporate AI-use disclosure norms. Reading material for the AI Documentation Protocol discussion.</p>
+<dl class="opvl">
+  <dt>Origin</dt><dd>Anthropic (AI company).</dd>
+  <dt>Purpose</dt><dd>Public-facing corporate transparency about AI safety.</dd>
+  <dt>Value</dt><dd>Models the disclosure language we ask students to use.</dd>
+  <dt>Limitations</dt><dd>Corporate voice; PR-shaped. Read alongside critical takes.</dd>
+</dl>
+
+<h4 id="mit-technology-review-ai-section" class="library-entry"><a href="https://www.technologyreview.com/topic/artificial-intelligence/" target="_blank" rel="noopener">MIT Technology Review — AI section</a></h4>
+<p>Rigorous tech journalism on AI capabilities, limits, harms.</p>
+<dl class="opvl">
+  <dt>Origin</dt><dd>MIT-affiliated publication.</dd>
+  <dt>Purpose</dt><dd>Tech journalism for educated general audience.</dd>
+  <dt>Value</dt><dd>Better than mainstream press on AI technical claims; less hype than industry pubs.</dd>
+  <dt>Limitations</dt><dd>Some content paywalled; consistent skeptical-but-not-doomer editorial position.</dd>
+</dl>
+
+<h4 id="opvl-framework-ib-history-resource" class="library-entry">OPVL framework — IB History resource</h4>
+<p>(IB History Internal Assessment guide; available via your IB coordinator)</p>
+<p>The original OPVL framework from IB History. Used as our model.</p>
+<dl class="opvl">
+  <dt>Origin</dt><dd>International Baccalaureate Organization.</dd>
+  <dt>Purpose</dt><dd>Source-evaluation pedagogy for IB History students.</dd>
+  <dt>Value</dt><dd>Our course's OPVL throughline is adapted from this. Worth citing the source.</dd>
+  <dt>Limitations</dt><dd>IB-internal; not publicly free; consult IB History colleagues at AISC.</dd>
+</dl>
+
+<h4 id="openstax-worked-opvl-example-textbook-as-a-source" class="library-entry"><a href="https://openstax.org" target="_blank" rel="noopener">OpenStax — worked OPVL example (textbook as a source)</a></h4>
+<p>Use OpenStax as the in-class worked example of OPVL applied to a textbook. A free, peer-reviewed, CC-BY licensed textbook WITH explicit AI-use restrictions is a teaching artifact about the unsettled state of AI-and-copyright. Students apply OPVL and discover the L row matters more than they expected.</p>
+<dl class="opvl">
+  <dt>Origin</dt><dd>Rice University; founded 1999; peer-reviewed by practicing faculty; CC-BY 4.0 licensed; authors named on every book.</dd>
+  <dt>Purpose</dt><dd>Make college textbooks free and accessible globally. Explicit social-mission framing addresses the textbook-cost barrier.</dd>
+  <dt>Value</dt><dd>Authoritative, free, durable, citable. Excellent specimen for showing students what a GOOD secondary source looks like — clear authorship, peer review, transparent licensing, version history.</dd>
+  <dt>Limitations</dt><dd>Explicit no-AI-training language in the license restricts how students can use it with tools — they may read but not upload to LLMs. Limited Earth &amp; Env catalog; examples skew U.S. The L row in this OPVL is the teaching moment: even a high-quality, openly-licensed source has terms-of-use constraints students must read.</dd>
+</dl>
+
+<h3 id="u1-sources">U1 — Selected Sources</h3>
+
+<p>Earth and Universe — Habitability and Systems</p>
+
+<h4 id="nasa-exoplanet-archive-49" class="library-entry"><a href="https://exoplanetarchive.ipac.caltech.edu" target="_blank" rel="noopener">NASA Exoplanet Archive</a></h4>
+<p>See cross-cutting Data section. Primary source for student-chosen exoplanet research.</p>
+<dl class="opvl">
+  <dt>Origin</dt><dd>See cross-cutting.</dd>
+  <dt>Purpose</dt><dd>See cross-cutting.</dd>
+  <dt>Value</dt><dd>Required for Goldilocks Report.</dd>
+  <dt>Limitations</dt><dd>Many planet parameters have wide uncertainty bounds — students should cite uncertainties, not central values only.</dd>
+</dl>
+
+<h4 id="nasa-eyes-on-exoplanets-50" class="library-entry"><a href="https://eyes.nasa.gov/apps/exo/" target="_blank" rel="noopener">NASA Eyes on Exoplanets</a></h4>
+<p>See cross-cutting Simulators. 3D system explorer.</p>
+<dl class="opvl">
+  <dt>Origin</dt><dd>See cross-cutting.</dd>
+  <dt>Purpose</dt><dd>See cross-cutting.</dd>
+  <dt>Value</dt><dd>Excellent scale intuition for U1.</dd>
+  <dt>Limitations</dt><dd>Artist renderings of surfaces — flag with students.</dd>
+</dl>
+
+<h4 id="kepler-mission-press-releases-archive" class="library-entry"><a href="https://www.nasa.gov/mission_pages/kepler/news/index.html" target="_blank" rel="noopener">Kepler Mission press releases archive</a></h4>
+<p>Discovery announcements for Kepler exoplanets including Kepler-22b, 186f, 452b — common student picks.</p>
+<dl class="opvl">
+  <dt>Origin</dt><dd>NASA; primary source for discovery dates + characterization.</dd>
+  <dt>Purpose</dt><dd>Public outreach + scientific record.</dd>
+  <dt>Value</dt><dd>Authoritative for discovery context; cite-able in Goldilocks Reports.</dd>
+  <dt>Limitations</dt><dd>Press-release framing is celebratory; cross-reference with the underlying papers for full caveats.</dd>
+</dl>
+
+<h4 id="centauri-dreams" class="library-entry"><a href="https://www.centauri-dreams.org" target="_blank" rel="noopener">Centauri Dreams</a></h4>
+<p>Long-running serious blog on exoplanet research + interstellar exploration.</p>
+<dl class="opvl">
+  <dt>Origin</dt><dd>Paul Gilster; affiliated with the Tau Zero Foundation.</dd>
+  <dt>Purpose</dt><dd>Science writing for engaged amateurs + students.</dd>
+  <dt>Value</dt><dd>Long-form pieces dig into research papers; good for going one level deeper than press releases.</dd>
+  <dt>Limitations</dt><dd>Single-author blog; perspective rather than reporting; check claims against primary sources.</dd>
+</dl>
+
+<h4 id="habitable-worlds-observatory-nasa-upcoming-mission" class="library-entry"><a href="https://habitableworldsobservatory.org" target="_blank" rel="noopener">Habitable Worlds Observatory (NASA upcoming mission)</a></h4>
+<p>Forthcoming flagship NASA exoplanet mission — useful context for 'what's next' framing.</p>
+<dl class="opvl">
+  <dt>Origin</dt><dd>NASA.</dd>
+  <dt>Purpose</dt><dd>Mission documentation + public outreach.</dd>
+  <dt>Value</dt><dd>Lets students discuss what we'll learn in the next decade vs. what we can claim now.</dd>
+  <dt>Limitations</dt><dd>Mission is still in development; specs may shift.</dd>
+</dl>
+
+<h4 id="stellarium-web-54" class="library-entry"><a href="https://stellarium-web.org" target="_blank" rel="noopener">Stellarium Web</a></h4>
+<p>See cross-cutting Simulators.</p>
+<dl class="opvl">
+  <dt>Origin</dt><dd>See cross-cutting.</dd>
+  <dt>Purpose</dt><dd>See cross-cutting.</dd>
+  <dt>Value</dt><dd>Show students where Trappist-1, Proxima Centauri actually sit in Chennai's sky.</dd>
+  <dt>Limitations</dt><dd>Some objects below resolution.</dd>
+</dl>
+
+<h4 id="openstax-astronomy-2e-chapters-1-4-30" class="library-entry"><a href="https://openstax.org/books/astronomy-2e" target="_blank" rel="noopener">OpenStax Astronomy 2e — Chapters 1, 4, 30</a></h4>
+<p>Free textbook spine for U1. Read Chapter 1 (Science and the Universe: A Brief Tour) for scale + AU/light-year setup; Chapter 4 (Earth, Moon, Sky) for orbital mechanics basics; Chapter 30 (Life in the Universe) — ESPECIALLY Section 30.2 Astrobiology — for the habitable-zone and multi-criteria habitability treatment that directly aligns with the Goldilocks Report.</p>
+<dl class="opvl">
+  <dt>Origin</dt><dd>Rice University / OpenStax; authors Andrew Fraknoi, David Morrison, Sidney Wolff (practicing astronomers); peer-reviewed.</dd>
+  <dt>Purpose</dt><dd>Free college-level astronomy textbook.</dd>
+  <dt>Value</dt><dd>Section 30.2 covers the habitability framework in HS-readable prose with figures, including the habitable zone, atmospheric retention, biosignatures, and the limits of Earth-centric assumptions. Use as foundational reading BEFORE students draft the Goldilocks Report.</dd>
+  <dt>Limitations</dt><dd>U.S. observational examples dominate; recent JWST exoplanet atmosphere results may be underrepresented (textbook last updated 2022) — supplement with current NASA press releases. AI-training restriction applies — see cross-cutting OpenStax entry. May read; may not upload to NotebookLM/Claude.</dd>
+</dl>
+
+<h3 id="u2-sources">U2 — Selected Sources</h3>
+
+<p>Surface Processes — Reading the Landscape</p>
+
+<h4 id="isro-bhuvan-56" class="library-entry"><a href="https://bhuvan.nrsc.gov.in" target="_blank" rel="noopener">ISRO Bhuvan</a></h4>
+<p>See Indian Sources. Essential for Chennai-region satellite imagery + historical land-cover layers.</p>
+<dl class="opvl">
+  <dt>Origin</dt><dd>See Indian Sources.</dd>
+  <dt>Purpose</dt><dd>See Indian Sources.</dd>
+  <dt>Value</dt><dd>India-specific layers (Pallikaranai, Cooum, Adyar visible).</dd>
+  <dt>Limitations</dt><dd>Interface dated.</dd>
+</dl>
+
+<h4 id="google-earth-web" class="library-entry"><a href="https://earth.google.com" target="_blank" rel="noopener">Google Earth (web)</a></h4>
+<p>See cross-cutting Tools. Historical imagery slider essential for landscape biography.</p>
+<dl class="opvl">
+  <dt>Origin</dt><dd>See cross-cutting.</dd>
+  <dt>Purpose</dt><dd>See cross-cutting.</dd>
+  <dt>Value</dt><dd>Historical imagery for Chennai goes back to early 2000s; lets students see encroachment + coastal change.</dd>
+  <dt>Limitations</dt><dd>Coverage gaps in some years.</dd>
+</dl>
+
+<h4 id="care-earth-trust-chennai-marsh-wetland-conservation" class="library-entry"><a href="https://www.careearthtrust.org" target="_blank" rel="noopener">Care Earth Trust (Chennai marsh + wetland conservation)</a></h4>
+<p>Chennai-based NGO with deep documentation of Pallikaranai Marsh, Adyar Estuary, local wetland ecology.</p>
+<dl class="opvl">
+  <dt>Origin</dt><dd>Chennai-based NGO; conservation-aligned.</dd>
+  <dt>Purpose</dt><dd>Wetland conservation + advocacy.</dd>
+  <dt>Value</dt><dd>Primary documentation of Pallikaranai's history that exists almost nowhere else in English.</dd>
+  <dt>Limitations</dt><dd>Advocacy organization — strong conservation perspective on encroachment; balance with planning-authority sources for full picture.</dd>
+</dl>
+
+<h4 id="geological-survey-of-india-gsi" class="library-entry"><a href="https://www.gsi.gov.in" target="_blank" rel="noopener">Geological Survey of India (GSI)</a></h4>
+<p>Official Indian geology + minerals + earthquake data.</p>
+<dl class="opvl">
+  <dt>Origin</dt><dd>Government of India, Ministry of Mines.</dd>
+  <dt>Purpose</dt><dd>Official Indian geological data.</dd>
+  <dt>Value</dt><dd>Primary geological maps + stratigraphy for Indian regions including the Eastern Ghats and Coromandel.</dd>
+  <dt>Limitations</dt><dd>Interface dated; some datasets behind request forms.</dd>
+</dl>
+
+<h4 id="indian-institute-of-geomorphologists-papers" class="library-entry">Indian Institute of Geomorphologists papers</h4>
+<p>(search via Google Scholar; many open-access)</p>
+<p>Academic papers on Indian geomorphology — coastal change, monsoon-driven erosion, river-delta evolution.</p>
+<dl class="opvl">
+  <dt>Origin</dt><dd>Academic researchers.</dd>
+  <dt>Purpose</dt><dd>Peer-reviewed primary research.</dd>
+  <dt>Value</dt><dd>Deepest available science on Indian geomorphology.</dd>
+  <dt>Limitations</dt><dd>Technical; need scaffolding for HS readability.</dd>
+</dl>
+
+<h4 id="hhmi-biointeractive-the-day-the-mesozoic-died-short-film" class="library-entry"><a href="https://www.biointeractive.org/classroom-resources/day-mesozoic-died" target="_blank" rel="noopener">HHMI BioInteractive — The Day the Mesozoic Died (short film)</a></h4>
+<p>33-min documentary on the discovery of the K-Pg extinction evidence (iridium layer + Chicxulub crater). Excellent on how landscape + sediment records preserve catastrophic events.</p>
+<dl class="opvl">
+  <dt>Origin</dt><dd>HHMI BioInteractive; features Walter Alvarez + others on camera.</dd>
+  <dt>Purpose</dt><dd>Science education + scientist-at-work narrative.</dd>
+  <dt>Value</dt><dd>Models how field geology + chemistry + paleontology converge on a hypothesis. Useful for the U2 'reading the landscape' frame at deep-time scale.</dd>
+  <dt>Limitations</dt><dd>Length doesn't fit a single block tidily — show in two chunks across U2 or U3.</dd>
+</dl>
+
+<h3 id="u3-sources">U3 — Selected Sources</h3>
+
+<p>Plate Tectonics — Hazards and Engineering</p>
+
+<h4 id="usgs-earthquake-catalog-shakemap-62" class="library-entry"><a href="https://earthquake.usgs.gov" target="_blank" rel="noopener">USGS Earthquake Catalog + ShakeMap</a></h4>
+<p>See cross-cutting Data. Required for hazard profile work.</p>
+<dl class="opvl">
+  <dt>Origin</dt><dd>See cross-cutting.</dd>
+  <dt>Purpose</dt><dd>See cross-cutting.</dd>
+  <dt>Value</dt><dd>Live + historical; shake-map intensity essential for U3.</dd>
+  <dt>Limitations</dt><dd>Coverage variation by region.</dd>
+</dl>
+
+<h4 id="gem-foundation-global-earthquake-model" class="library-entry"><a href="https://www.globalquakemodel.org" target="_blank" rel="noopener">GEM Foundation (Global Earthquake Model)</a></h4>
+<p>International collaboration mapping global seismic hazard + risk. Open-source.</p>
+<dl class="opvl">
+  <dt>Origin</dt><dd>Non-profit foundation, Switzerland-based; UN-recognized.</dd>
+  <dt>Purpose</dt><dd>Public seismic-risk data + open modeling tools.</dd>
+  <dt>Value</dt><dd>Country + city-level risk profiles; uniform global methodology.</dd>
+  <dt>Limitations</dt><dd>Modeled risk; uncertainty bands wide for low-instrumentation regions.</dd>
+</dl>
+
+<h4 id="iris-incorporated-research-institutions-for-seismology" class="library-entry"><a href="https://www.iris.edu" target="_blank" rel="noopener">IRIS (Incorporated Research Institutions for Seismology)</a></h4>
+<p>Research consortium running global seismic data + education resources.</p>
+<dl class="opvl">
+  <dt>Origin</dt><dd>US-based NSF-funded research consortium; merged with UNAVCO into EarthScope in 2023.</dd>
+  <dt>Purpose</dt><dd>Scientific research + education.</dd>
+  <dt>Value</dt><dd>Excellent free educational materials on earthquake science. Real-time station data.</dd>
+  <dt>Limitations</dt><dd>Heavy US instrumentation focus.</dd>
+</dl>
+
+<h4 id="earthquake-engineering-research-institute-eeri-reconnaissance-reports" class="library-entry"><a href="https://www.eeri.org/projects/learning-from-earthquakes/" target="_blank" rel="noopener">Earthquake Engineering Research Institute (EERI) reconnaissance reports</a></h4>
+<p>Post-earthquake field reports — what failed, what survived, lessons for engineering.</p>
+<dl class="opvl">
+  <dt>Origin</dt><dd>Professional society of earthquake engineers.</dd>
+  <dt>Purpose</dt><dd>Professional learning + research synthesis.</dd>
+  <dt>Value</dt><dd>Concrete engineering case studies — Tohoku, Christchurch, Wenchuan, Yokohama — that directly support U3 portfolio work.</dd>
+  <dt>Limitations</dt><dd>Technical writing; requires scaffolding for HS.</dd>
+</dl>
+
+<h4 id="phet-plate-tectonics-simulation" class="library-entry"><a href="https://phet.colorado.edu/en/simulations/plate-tectonics" target="_blank" rel="noopener">PhET Plate Tectonics simulation</a></h4>
+<p>See cross-cutting Simulators.</p>
+<dl class="opvl">
+  <dt>Origin</dt><dd>See cross-cutting.</dd>
+  <dt>Purpose</dt><dd>See cross-cutting.</dd>
+  <dt>Value</dt><dd>Excellent low-friction visualization of boundary types.</dd>
+  <dt>Limitations</dt><dd>Simplified.</dd>
+</dl>
+
+<h4 id="tectonic-city-builder-course-simulator" class="library-entry">Tectonic City Builder (course simulator)</h4>
+<p>(local — see Simulators page)</p>
+<p>Our internally-built simulator for U3.</p>
+<dl class="opvl">
+  <dt>Origin</dt><dd>Course-authored; AI-assisted build.</dd>
+  <dt>Purpose</dt><dd>Pedagogical simulator for U3 engineering design.</dd>
+  <dt>Value</dt><dd>Custom-built for the course.</dd>
+  <dt>Limitations</dt><dd>Model assumptions documented in the simulator's 'Show assumptions' panel — apply OPVL.</dd>
+</dl>
+
+<h3 id="u4-sources">U4 — Selected Sources</h3>
+
+<p>Climate — Mitigation, Adaptation, and the Brief</p>
+
+<h4 id="ipcc-ar6-reports" class="library-entry"><a href="https://www.ipcc.ch/assessment-report/ar6/" target="_blank" rel="noopener">IPCC AR6 Reports</a></h4>
+<p>See cross-cutting Data. Start with WG1 SPM (the physical science) + WG2 Chapter 10 (Asia regional).</p>
+<dl class="opvl">
+  <dt>Origin</dt><dd>See cross-cutting.</dd>
+  <dt>Purpose</dt><dd>See cross-cutting.</dd>
+  <dt>Value</dt><dd>Authoritative; WG2 Ch.10 is South Asia-specific.</dd>
+  <dt>Limitations</dt><dd>SPM is negotiated; chapter text is fuller.</dd>
+</dl>
+
+<h4 id="en-roads" class="library-entry"><a href="https://en-roads.climateinteractive.org" target="_blank" rel="noopener">En-ROADS</a></h4>
+<p>See cross-cutting Simulators. THE climate-policy sim worth using.</p>
+<dl class="opvl">
+  <dt>Origin</dt><dd>See cross-cutting.</dd>
+  <dt>Purpose</dt><dd>See cross-cutting.</dd>
+  <dt>Value</dt><dd>Replaces need for a course-built climate sim.</dd>
+  <dt>Limitations</dt><dd>Global aggregation; doesn't show Chennai-specific impacts.</dd>
+</dl>
+
+<h4 id="climate-action-tracker-70" class="library-entry"><a href="https://climateactiontracker.org" target="_blank" rel="noopener">Climate Action Tracker</a></h4>
+<p>See cross-cutting Data. Use India's rating page directly with students — it's a teaching artifact in itself.</p>
+<dl class="opvl">
+  <dt>Origin</dt><dd>See cross-cutting.</dd>
+  <dt>Purpose</dt><dd>See cross-cutting.</dd>
+  <dt>Value</dt><dd>Specific country pages directly usable in Climate Brief.</dd>
+  <dt>Limitations</dt><dd>Pledges vs. actions framing has critics.</dd>
+</dl>
+
+<h4 id="india-meteorological-department-imd" class="library-entry"><a href="https://www.imdpune.gov.in" target="_blank" rel="noopener">India Meteorological Department (IMD)</a></h4>
+<p>See Indian Sources. Essential for Chennai-specific historical climate data.</p>
+<dl class="opvl">
+  <dt>Origin</dt><dd>See Indian Sources.</dd>
+  <dt>Purpose</dt><dd>See Indian Sources.</dd>
+  <dt>Value</dt><dd>Only source for India-specific long records.</dd>
+  <dt>Limitations</dt><dd>Interface dated.</dd>
+</dl>
+
+<h4 id="greater-chennai-corporation-climate-action-plan" class="library-entry">Greater Chennai Corporation — Climate Action Plan</h4>
+<p>(search 'Greater Chennai Climate Action Plan' — most recent version)</p>
+<p>Chennai's official city climate plan. Direct relevance to the Climate Brief assessment.</p>
+<dl class="opvl">
+  <dt>Origin</dt><dd>Greater Chennai Corporation (municipal government).</dd>
+  <dt>Purpose</dt><dd>Operational city climate planning + public commitment.</dd>
+  <dt>Value</dt><dd>Primary source — what Chennai's government has actually committed to. Students writing a Brief should know this exists.</dd>
+  <dt>Limitations</dt><dd>Government document; aspirational where action is incomplete.</dd>
+</dl>
+
+<h4 id="down-to-earth-climate-coverage" class="library-entry"><a href="https://www.downtoearth.org.in/climate-change" target="_blank" rel="noopener">Down to Earth — climate coverage</a></h4>
+<p>See Indian Sources. India-perspective climate journalism.</p>
+<dl class="opvl">
+  <dt>Origin</dt><dd>See Indian Sources.</dd>
+  <dt>Purpose</dt><dd>See Indian Sources.</dd>
+  <dt>Value</dt><dd>Equity + climate-justice framing valuable counterweight to global-North centered coverage.</dd>
+  <dt>Limitations</dt><dd>CSE editorial position.</dd>
+</dl>
+
+<h4 id="hhmi-biointeractive-sea-level-on-the-rise-short-film" class="library-entry"><a href="https://www.biointeractive.org/classroom-resources/sea-level-rise" target="_blank" rel="noopener">HHMI BioInteractive — Sea Level: On the Rise (short film)</a></h4>
+<p>Short documentary on the science of sea-level rise (thermal expansion + ice-sheet contribution) with field footage from Greenland + Florida.</p>
+<dl class="opvl">
+  <dt>Origin</dt><dd>HHMI BioInteractive; on-camera scientists.</dd>
+  <dt>Purpose</dt><dd>Climate-science education.</dd>
+  <dt>Value</dt><dd>Tight 10-15 min runtime fits a block opener. Visualizes both mechanisms (thermal + ice melt) in a way the IPCC text cannot.</dd>
+  <dt>Limitations</dt><dd>US East Coast framing for impacts; pair with Chennai sea-level data from IMD or the Climate Data Reference for local relevance.</dd>
+</dl>
+
+<h4 id="hhmi-biointeractive-coral-bleaching-interactive-films" class="library-entry"><a href="https://www.biointeractive.org/search?keywords=coral" target="_blank" rel="noopener">HHMI BioInteractive — Coral Bleaching (interactive + films)</a></h4>
+<p>Multiple resources on coral bleaching: short films + Click-and-Learn on the symbiosis mechanism.</p>
+<dl class="opvl">
+  <dt>Origin</dt><dd>HHMI BioInteractive.</dd>
+  <dt>Purpose</dt><dd>Same.</dd>
+  <dt>Value</dt><dd>Excellent for the Chennai climate brief — Tamil Nadu's Palk Bay + Gulf of Mannar reefs are vulnerable to bleaching. Concrete teaching of climate-biology linkage.</dd>
+  <dt>Limitations</dt><dd>Reefs shown are Caribbean/Pacific; cite Indian Ocean bleaching data alongside.</dd>
+</dl>
+
+<h3 id="u5-sources">U5 — Selected Sources</h3>
+
+<p>Hydrosphere — Water, Stakeholders, and Position</p>
+
+<h4 id="cauvery-water-management-authority" class="library-entry"><a href="https://cwma.nic.in" target="_blank" rel="noopener">Cauvery Water Management Authority</a></h4>
+<p>See Indian Sources. Primary source if Cauvery is the chosen case.</p>
+<dl class="opvl">
+  <dt>Origin</dt><dd>See Indian Sources.</dd>
+  <dt>Purpose</dt><dd>See Indian Sources.</dd>
+  <dt>Value</dt><dd>Official allocation data + minutes.</dd>
+  <dt>Limitations</dt><dd>Politically-sensitive documents may be incomplete.</dd>
+</dl>
+
+<h4 id="supreme-court-of-india-cauvery-verdicts-2007-2018" class="library-entry">Supreme Court of India — Cauvery verdicts (2007 + 2018)</h4>
+<p>(search 'Cauvery Final Order 2007' and 'State of Karnataka v. State of Tamil Nadu 2018' on Indian Kanoon)</p>
+<p>Primary legal documents establishing the current Cauvery allocation regime.</p>
+<dl class="opvl">
+  <dt>Origin</dt><dd>Supreme Court of India.</dd>
+  <dt>Purpose</dt><dd>Authoritative legal record.</dd>
+  <dt>Value</dt><dd>Required reading for any Cauvery Position Paper. The reasoning is the position-paper exemplar.</dd>
+  <dt>Limitations</dt><dd>Long; judicial prose. The Position Paper Sentence Stems doc has extracted key paragraphs.</dd>
+</dl>
+
+<h4 id="murray-darling-basin-authority" class="library-entry"><a href="https://www.mdba.gov.au" target="_blank" rel="noopener">Murray-Darling Basin Authority</a></h4>
+<p>Australian equivalent to Cauvery dispute. Worked Example uses Murray-Darling.</p>
+<dl class="opvl">
+  <dt>Origin</dt><dd>Australian government agency.</dd>
+  <dt>Purpose</dt><dd>Operational management of Australia's largest river basin.</dd>
+  <dt>Value</dt><dd>Comparator case for Cauvery; transparent data + management plans publicly available.</dd>
+  <dt>Limitations</dt><dd>Australian legal + governance context differs from Indian; comparison is structural, not direct.</dd>
+</dl>
+
+<h4 id="un-watercourses-convention-1997-2014-commentary" class="library-entry"><a href="https://legal.un.org/avl/ha/clnuiw/clnuiw.html" target="_blank" rel="noopener">UN Watercourses Convention (1997 + 2014 commentary)</a></h4>
+<p>The international legal framework for transboundary watercourses. 'Equitable utilization' principle comes from here.</p>
+<dl class="opvl">
+  <dt>Origin</dt><dd>United Nations International Law Commission + General Assembly.</dd>
+  <dt>Purpose</dt><dd>International legal framework.</dd>
+  <dt>Value</dt><dd>Authoritative for the 'equitable utilization' allocation principle. India has not ratified; relevant context.</dd>
+  <dt>Limitations</dt><dd>International law's enforcement is weak; treaty is signed but India + China are not parties.</dd>
+</dl>
+
+<h4 id="india-s-national-water-policy-latest-version" class="library-entry"><a href="https://jalshakti-dowr.gov.in/national-water-policy" target="_blank" rel="noopener">India's National Water Policy (latest version)</a></h4>
+<p>India's national-level water-allocation framework + principles.</p>
+<dl class="opvl">
+  <dt>Origin</dt><dd>Ministry of Jal Shakti, Government of India.</dd>
+  <dt>Purpose</dt><dd>National water policy framework.</dd>
+  <dt>Value</dt><dd>Frames how India officially thinks about water allocation.</dd>
+  <dt>Limitations</dt><dd>Aspirational document; implementation patchy.</dd>
+</dl>
+
+<h4 id="international-water-management-institute-iwmi" class="library-entry"><a href="https://www.iwmi.cgiar.org" target="_blank" rel="noopener">International Water Management Institute (IWMI)</a></h4>
+<p>CGIAR research institute on water management. Strong South Asia work.</p>
+<dl class="opvl">
+  <dt>Origin</dt><dd>International research institute, CGIAR consortium.</dd>
+  <dt>Purpose</dt><dd>Water-management research + policy.</dd>
+  <dt>Value</dt><dd>Rigorous research on South Asian water issues including Indus + Ganga + Cauvery basins.</dd>
+  <dt>Limitations</dt><dd>Research-oriented; not advocacy.</dd>
+</dl>
+
+<h3 id="u6-sources">U6 — Selected Sources</h3>
+
+<p>Biosphere and Land Use — Multi-Objective Planning</p>
+
+<h4 id="global-forest-watch-82" class="library-entry"><a href="https://www.globalforestwatch.org" target="_blank" rel="noopener">Global Forest Watch</a></h4>
+<p>See cross-cutting Data.</p>
+<dl class="opvl">
+  <dt>Origin</dt><dd>See cross-cutting.</dd>
+  <dt>Purpose</dt><dd>See cross-cutting.</dd>
+  <dt>Value</dt><dd>Spatial granularity for any chosen region.</dd>
+  <dt>Limitations</dt><dd>Tree cover ≠ deforestation.</dd>
+</dl>
+
+<h4 id="ipbes-global-assessment-2019" class="library-entry"><a href="https://www.ipbes.net/global-assessment" target="_blank" rel="noopener">IPBES Global Assessment (2019)</a></h4>
+<p>Equivalent of IPCC for biodiversity. THE reference for global biodiversity status.</p>
+<dl class="opvl">
+  <dt>Origin</dt><dd>Intergovernmental Science-Policy Platform on Biodiversity and Ecosystem Services.</dd>
+  <dt>Purpose</dt><dd>Inform biodiversity policy globally.</dd>
+  <dt>Value</dt><dd>Most authoritative synthesis available. Source of the '~1 million species at risk of extinction' headline.</dd>
+  <dt>Limitations</dt><dd>5-year cadence; updates lag rapid changes.</dd>
+</dl>
+
+<h4 id="forest-survey-of-india-isfr" class="library-entry"><a href="https://fsi.nic.in/forest-report" target="_blank" rel="noopener">Forest Survey of India — ISFR</a></h4>
+<p>See Indian Sources. Required for any Indian region in U6.</p>
+<dl class="opvl">
+  <dt>Origin</dt><dd>See Indian Sources.</dd>
+  <dt>Purpose</dt><dd>See Indian Sources.</dd>
+  <dt>Value</dt><dd>Authoritative India forest data.</dd>
+  <dt>Limitations</dt><dd>Forest definition controversial.</dd>
+</dl>
+
+<h4 id="mongabay-india-forests-indigenous-rights" class="library-entry"><a href="https://india.mongabay.com/topics/forests/" target="_blank" rel="noopener">Mongabay India — Forests + Indigenous Rights</a></h4>
+<p>See Indian Sources. Specific coverage of Forest Rights Act, IPLC land rights, Western Ghats.</p>
+<dl class="opvl">
+  <dt>Origin</dt><dd>See Indian Sources.</dd>
+  <dt>Purpose</dt><dd>See Indian Sources.</dd>
+  <dt>Value</dt><dd>Indigenous-rights coverage that government sources downplay.</dd>
+  <dt>Limitations</dt><dd>Editorial perspective.</dd>
+</dl>
+
+<h4 id="garnett-et-al-2018-nature-sustainability" class="library-entry"><a href="https://www.nature.com/articles/s41893-018-0100-6" target="_blank" rel="noopener">Garnett et al. 2018 — Nature Sustainability</a></h4>
+<p>The peer-reviewed paper behind the 'Indigenous lands ~25% of land, ~80% of biodiversity' finding.</p>
+<dl class="opvl">
+  <dt>Origin</dt><dd>Academic paper, peer-reviewed.</dd>
+  <dt>Purpose</dt><dd>Scientific publication.</dd>
+  <dt>Value</dt><dd>Primary source for a widely-quoted claim. Cite this, not the press release.</dd>
+  <dt>Limitations</dt><dd>One study; subsequent literature has refined the numbers. Read the abstract carefully — the methodology matters.</dd>
+</dl>
+
+<h4 id="project-drawdown-land-use-solutions" class="library-entry"><a href="https://drawdown.org/solutions" target="_blank" rel="noopener">Project Drawdown — Land Use solutions</a></h4>
+<p>Climate-solutions database; many land-use solutions (agroforestry, silvopasture, regenerative agriculture) with carbon + cost estimates.</p>
+<dl class="opvl">
+  <dt>Origin</dt><dd>Non-profit; founded by Paul Hawken.</dd>
+  <dt>Purpose</dt><dd>Catalogue climate solutions with comparable impact estimates.</dd>
+  <dt>Value</dt><dd>Useful for U6 land plans wanting to argue 'this practice scales to climate-relevant impact.'</dd>
+  <dt>Limitations</dt><dd>Estimates are modeled; uncertainty bounds wide; some solutions debated (e.g., BECCS).</dd>
+</dl>
+
+<h4 id="hhmi-biointeractive-some-animals-are-more-equal-than-others-paine-sea-stars" class="library-entry"><a href="https://www.biointeractive.org/classroom-resources/some-animals-are-more-equal-others-keystone-species-and-trophic-cascades" target="_blank" rel="noopener">HHMI BioInteractive — Some Animals are More Equal than Others (Paine + sea stars)</a></h4>
+<p>Short film on Robert Paine's keystone-species experiments + Mary Power's river food-web work. The foundational case for trophic cascades + biodiversity-as-function.</p>
+<dl class="opvl">
+  <dt>Origin</dt><dd>HHMI BioInteractive; on-camera ecologists telling their own work.</dd>
+  <dt>Purpose</dt><dd>Ecology education + scientist-as-storyteller.</dd>
+  <dt>Value</dt><dd>The clearest classroom-ready explanation of why biodiversity matters functionally (not just morally). Sets up the U6 ecosystem-services framing perfectly.</dd>
+  <dt>Limitations</dt><dd>US Pacific Northwest + California examples; pair with Indian ecosystem-services research for relevance.</dd>
+</dl>
+
+<h4 id="hhmi-biointeractive-serengeti-trophic-cascade-click-and-learn" class="library-entry"><a href="https://www.biointeractive.org/classroom-resources/serengeti-cascading-effects-life-and-death" target="_blank" rel="noopener">HHMI BioInteractive — Serengeti trophic cascade Click-and-Learn</a></h4>
+<p>Interactive exploration of how rinderpest virus eradication cascaded through the Serengeti ecosystem.</p>
+<dl class="opvl">
+  <dt>Origin</dt><dd>HHMI BioInteractive.</dd>
+  <dt>Purpose</dt><dd>Ecology education through real ecosystem case.</dd>
+  <dt>Value</dt><dd>Concrete demonstration that ecosystems are interconnected systems — supports the U6 multi-objective thesis (changing one variable propagates everywhere).</dd>
+  <dt>Limitations</dt><dd>African-context case; bridge to Indian ecosystems (Project Tiger, Western Ghats trophic structure) for transfer.</dd>
+</dl>
+
+<h4 id="openstax-biology-2e-unit-8-ecology-chapter-47" class="library-entry"><a href="https://openstax.org/books/biology-2e" target="_blank" rel="noopener">OpenStax Biology 2e — Unit 8 (Ecology) + Chapter 47</a></h4>
+<p>Free textbook spine for U6. Unit 8 (Chapters 44-47) covers population, community, and ecosystem ecology. Chapter 47 (Conservation Biology and Biodiversity) is directly relevant to the multi-objective land use thesis and the Sustainable Land Plan assessment.</p>
+<dl class="opvl">
+  <dt>Origin</dt><dd>Rice University / OpenStax; biology faculty authors; peer-reviewed.</dd>
+  <dt>Purpose</dt><dd>Free college-level biology textbook.</dd>
+  <dt>Value</dt><dd>Chapter 47 explicitly treats biodiversity loss, conservation strategies, ecosystem services, and the human-impact context. The framing aligns with how U6 asks students to balance objectives in their land plan.</dd>
+  <dt>Limitations</dt><dd>Light on Indigenous-managed land use and Traditional Ecological Knowledge — supplement with Garnett et al. 2018 + Mongabay India (already in U6 list) for that lens. Western-conservation framing dominates. AI-training restriction applies — students may read but not upload to LLMs.</dd>
+</dl>
+
+<h3 id="u7-sources">U7 — Selected Sources</h3>
+
+<p>Energy and Sustainability — Mix Design and the Op-Ed</p>
+
+<h4 id="our-world-in-data-energy" class="library-entry"><a href="https://ourworldindata.org/energy" target="_blank" rel="noopener">Our World in Data — Energy</a></h4>
+<p>Best public energy-data portal. Country profiles, source breakdowns, time-series — all chartable + downloadable.</p>
+<dl class="opvl">
+  <dt>Origin</dt><dd>See cross-cutting.</dd>
+  <dt>Purpose</dt><dd>See cross-cutting.</dd>
+  <dt>Value</dt><dd>Excellent for choosing a city + getting baseline data.</dd>
+  <dt>Limitations</dt><dd>Country-level; sub-national requires other sources.</dd>
+</dl>
+
+<h4 id="lazard-levelized-cost-of-energy-analysis" class="library-entry"><a href="https://www.lazard.com/research-insights/levelized-cost-of-energy-plus/" target="_blank" rel="noopener">Lazard Levelized Cost of Energy Analysis</a></h4>
+<p>Annual report; industry-standard LCOE comparisons across all sources. Free PDF.</p>
+<dl class="opvl">
+  <dt>Origin</dt><dd>Lazard (investment bank).</dd>
+  <dt>Purpose</dt><dd>Industry analysis for investors + policymakers.</dd>
+  <dt>Value</dt><dd>Authoritative LCOE numbers; updated annually; transparent methodology.</dd>
+  <dt>Limitations</dt><dd>US-context defaults; international LCOEs vary substantially. Industry source — read alongside academic LCOE.</dd>
+</dl>
+
+<h4 id="iea-world-energy-outlook" class="library-entry"><a href="https://www.iea.org/reports/world-energy-outlook-2024" target="_blank" rel="noopener">IEA World Energy Outlook</a></h4>
+<p>See cross-cutting Data. Annual flagship report; scenario-based projections to 2050.</p>
+<dl class="opvl">
+  <dt>Origin</dt><dd>See cross-cutting.</dd>
+  <dt>Purpose</dt><dd>See cross-cutting.</dd>
+  <dt>Value</dt><dd>Scenarios are reference for industry + policy debate.</dd>
+  <dt>Limitations</dt><dd>Has historically underestimated renewables growth.</dd>
+</dl>
+
+<h4 id="india-energy-outlook-iea" class="library-entry"><a href="https://www.iea.org/reports/india-energy-outlook-2021" target="_blank" rel="noopener">India Energy Outlook (IEA)</a></h4>
+<p>See Indian Sources. Essential if students choose New Delhi, Pune, or other Indian city.</p>
+<dl class="opvl">
+  <dt>Origin</dt><dd>See Indian Sources.</dd>
+  <dt>Purpose</dt><dd>See Indian Sources.</dd>
+  <dt>Value</dt><dd>India-specific scenarios.</dd>
+  <dt>Limitations</dt><dd>2021 vintage; check for updates.</dd>
+</dl>
+
+<h4 id="climate-action-tracker-country-pages" class="library-entry"><a href="https://climateactiontracker.org/countries/" target="_blank" rel="noopener">Climate Action Tracker — country pages</a></h4>
+<p>Each country's climate + energy pledges + actual progress. Use the page for your student's chosen country.</p>
+<dl class="opvl">
+  <dt>Origin</dt><dd>See cross-cutting.</dd>
+  <dt>Purpose</dt><dd>See cross-cutting.</dd>
+  <dt>Value</dt><dd>Useful framing for whether a city's transition is on track or behind.</dd>
+  <dt>Limitations</dt><dd>Pledge-vs-action framing has critics.</dd>
+</dl>
+
+<h4 id="vox-climate-energy-section" class="library-entry"><a href="https://www.vox.com/energy-and-environment" target="_blank" rel="noopener">Vox Climate + Energy section</a></h4>
+<p>Explanatory journalism on energy + climate. Strong on the political-economy side that pure-science sources miss.</p>
+<dl class="opvl">
+  <dt>Origin</dt><dd>Vox (US-based explanatory journalism).</dd>
+  <dt>Purpose</dt><dd>Public-audience explanation of complex topics.</dd>
+  <dt>Value</dt><dd>Excellent op-ed exemplars — David Roberts (now at Volts), Umair Irfan, etc. The voice the U7 Op-Ed asks students to emulate.</dd>
+  <dt>Limitations</dt><dd>US-context heavy; explicit liberal-progressive editorial perspective.</dd>
+</dl>
+
+<h4 id="op-ed-exemplars-nyt-climate-guardian-climate" class="library-entry">Op-Ed exemplars — NYT Climate, Guardian Climate</h4>
+<p>(search NYT Climate + Guardian Climate for recent op-eds)</p>
+<p>Concrete examples of climate op-eds for a public audience. Read 3-5 before drafting.</p>
+<dl class="opvl">
+  <dt>Origin</dt><dd>Various; journalist + expert authors.</dd>
+  <dt>Purpose</dt><dd>Public opinion journalism.</dd>
+  <dt>Value</dt><dd>Show students what 'public audience' actually means in voice + structure.</dd>
+  <dt>Limitations</dt><dd>NYT + Guardian editorial perspectives; read for craft, not for consensus.</dd>
+</dl>
+
+</div>

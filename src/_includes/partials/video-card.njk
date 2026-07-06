@@ -1,17 +1,20 @@
 {# Video entry card that plays in a lightbox overlay. Set a `video` object before including:
-   {% set video = { id: "...", title: "...", cardTitle: "Watch (6 min)", blurb: "...", meta: "Plays here · ~6 min · YouTube" } %}
+   {% set video = { id: "...", title: "...", cardTitle: "Watch (6 min)", blurb: "...", meta: "...",
+                    preferText: "optional link text", preferHref: "/optional/reading/" } %}
    {% include "partials/video-card.njk" %}
-   No JS → plain link to YouTube. Click → large <dialog> lightbox with nocookie player.
+   No JS → the thumbnail links to YouTube. Click anywhere else on the card → large <dialog>
+   lightbox with nocookie player. Inner links (prefer-text) navigate normally.
    Closing the lightbox removes the iframe (stops playback). #}
-<a class="entry-card video-card" href="https://youtu.be/{{ video.id }}" target="_blank" rel="noopener" data-video-id="{{ video.id }}" data-video-title="{{ video.title }}">
-  <span class="video-thumb">
+<div class="entry-card video-card" data-video-id="{{ video.id }}" data-video-title="{{ video.title }}">
+  <a class="video-thumb" href="https://youtu.be/{{ video.id }}" target="_blank" rel="noopener" aria-label="Play video: {{ video.title }}">
     <img src="https://i.ytimg.com/vi/{{ video.id }}/hqdefault.jpg" alt="Video preview: {{ video.title }}" loading="lazy">
     <span class="video-play" aria-hidden="true">▶</span>
-  </span>
+  </a>
   <div class="entry-title">{{ video.cardTitle }}</div>
   <div>{{ video.blurb | safe }}</div>
+  {% if video.preferText %}<div class="prefer-text">Prefer text? <a href="{{ video.preferHref }}">{{ video.preferText }}</a></div>{% endif %}
   <div class="entry-meta">{{ video.meta }}</div>
-</a>
+</div>
 <script>
 if (!window.__videoCardInit) {
   window.__videoCardInit = true;
@@ -38,6 +41,8 @@ if (!window.__videoCardInit) {
   document.addEventListener('click', function (e) {
     var card = e.target.closest('.video-card');
     if (card) {
+      var inner = e.target.closest('a');
+      if (inner && !inner.classList.contains('video-thumb')) return;
       e.preventDefault();
       var frame = document.createElement('iframe');
       frame.src = 'https://www.youtube-nocookie.com/embed/' + card.dataset.videoId + '?autoplay=1';
