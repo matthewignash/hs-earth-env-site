@@ -2,11 +2,33 @@
 
 > **Purpose:** Living status doc. Tells you (and future Claude Code sessions) what's built, what's stubbed, what to build next, and in what order. The charter is in `CLAUDE.md` — do NOT modify that. Update this file at the end of each build session.
 
-**Last updated:** 2026-06-11 (U1 content pass — 9 tasks: planet images, Planet Hunter sequencing, success criteria, EAL links, handout cards, lookback-time, dual-platform launch buttons, Classroom link scaffold. U0–U6 complete; U7 is next.)
+**Last updated:** 2026-07-07 (session handoff — see below. U0–U6 complete; U7 is next.)
 
 ---
 
-## TL;DR — pick up here
+## SESSION HANDOFF — 2026-07-07 (read this first)
+
+Repo state: **clean, fully pushed and deployed.** `git status` shows only an untracked `.deltest` (ignore/harmless). `main` and `origin/main` are in sync (0/0 ahead-behind). Live site is current with `main` at every point below — each commit was pushed and spot-checked live on Vercel (`https://hs-earth-env-site.vercel.app`) before moving to the next task.
+
+**What shipped since the 2026-06-11 entry (still below, kept for history), newest first:**
+
+1. **Units page cleanup** (`226b73a`, `c3b2d40`) — removed the developer-facing "Build status" callout and matching leftover language from Unit 1's card; renamed the "Current Unit" nav item (top nav, footer, home card, 404 card, How-to-use-this-site page) to **"Course Units"** since it links to `/units/` which lists all eight units, not just the current one. Reason: this page is shared with students/parents/teachers and shouldn't carry internal build metadata or a misleading label.
+2. **Platform accuracy + system-prompt removal** (`b3663da`) — `foundations/for-parents.njk`'s AI paragraph now describes the real model (one school-approved platform per section: 2× Flint, 1× BoodleBox; named partners are characters inside that single platform). Seven partner pages (climate-modeler, policy-aide, stakeholder-voice, the-hydrologist, urban-planner, equity-resilience-partner, field-geologist) had their internal "System prompt (copy-paste-ready)" sections **removed from the site** and **extracted verbatim to `../partner-system-prompts-extracted.md`** (course folder, NOT in src/ — teacher-side only, source of truth until merged into spec docx files). Pages restructured to match the U1 partner-page pattern (see `ai-partners/planet-hunter.njk` as reference: intro → dual launch buttons → How to use this partner → Opening message → Example exchange table → Watch out for → documentation blockquote). The Resources Library (`reference/library.njk`) is the ONE place still allowed to name NotebookLM/Gemini Gems/"System prompt" — it's a reviewed OPVL-tagged catalog, not a platform claim; it has one clarifying sentence pointing students back to their section's actual platform.
+3. **EAL tap-to-define key terms** (`c67ef4e`) — new site-wide component: bolded key terms on the U1 readings are tappable, opening an in-place panel (definition + sentence stem + link to the exact term in the 5-language vocabulary reference) instead of sending the reader away. Data lives in `src/_data/ealTerms.js`; partial is `partials/key-terms.njk`; 113 anchor ids were added across `foundations/eal/vocabulary.njk` (all units) to support the deep-linking. **This is now the site convention for vocabulary — apply the same pattern when other units/pages get key terms.**
+4. **U1 Readings + Resources Library** (`949415f`) — four full reading pages (`reading-how-far-is-far`, `reading-four-spheres`, `reading-mars-lost-air`, `reading-watching-shadows`) giving the Watch/Read choice real content parity in U1 Blocks 1–5, plus `reference/library.njk`, a 97-entry OPVL-tagged curated source/tool library converted from the docx `Resources Library (Earth & Env, with OPVL tags).docx`. Cross-linked from the readings' Sources sections.
+5. **U0/U1 exemplar pages + U0 defense kit** (`aefe935`, `f9eb4ee`, `fa82b69`) — `units/unit-0/exemplar-source-dossier.njk` (annotated worked example) and `units/unit-1/exemplar-goldilocks.njk` (Goldilocks Report exemplar), plus the 5-move answer pattern + strong/weak pair added to `foundations/defending-your-work.njk` from the U0 defense kit docx.
+
+**Open loose ends for the next session:**
+- **U7 (Energy & Sustainability)** is still not built — no folder yet, landing card says "Coming soon." This is the next big build when picked back up (see "Next" line further down for the sourced docx set).
+- **`partner-system-prompts-extracted.md`** (course folder, sibling to `hs-earth-env-site/`) holds the 7 extracted system prompts — these still need to be merged into the permanent partner spec docx files at some point; right now they only live in that one extraction file + Matthew's memory of the original docs.
+- Four **U1 Watch-card slots (Blocks 6–9)** are still pending teacher-recorded video (placeholders remain, on purpose).
+- The **U0 defense model-exchange video** (script lives in the defense kit docx) hasn't been filmed/linked yet — B6/B7 Watch cards are waiting on that recording.
+- If asked to touch AI-partner pages again, use the **planet-hunter.njk / systems-diagrammer.njk pattern** (dual launch buttons via `partials/partner-launch.njk`, no system prompts on the page, no emojis — site convention).
+- **Site conventions established this era, apply going forward:** no emojis anywhere (typographic labels only — see the de-emoji BUILD_PROGRESS entry below for the full rationale); one AI platform per class section (Flint ×2, BoodleBox ×1) — never describe multiple named AI *products* as available to a single class; EAL key-terms component for any new key vocabulary; dual Flint/BoodleBox launch buttons on any new/edited partner page.
+
+---
+
+## TL;DR — pick up here (previous entry, 2026-06-11)
 
 **SITE CONVENTION (2026-06-11): no emojis anywhere in student-facing pages.** The site uses typographic labels instead — uppercase small-caps kickers (section tags, submission/AI labels), left-border callouts whose titles carry meaning in words, entry cards led by their bold title. Emojis read as AI-generated and screen readers announce them ("pushpin", "warning sign"). Do NOT reintroduce them in new blocks/units. Typographic symbols are fine: → ← ✕ · ≠ − ×. Exception (tracked follow-up): the three simulator apps under `src/assets/simulators/` still use in-game emoji icons — they're standalone artifacts synced from the simulator projects; de-emoji them at the source project if desired.
 
