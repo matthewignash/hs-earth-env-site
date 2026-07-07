@@ -124,6 +124,14 @@ If both are confirmed, the U4 deep build can integrate them as complementary Wat
 
 *(Entries move here when a clip is verified, embedded, and the implementation phase has shipped.)*
 
+### AP — AI data centers environmental footprint (U0 B1 launch article)
+- URL: https://apnews.com/article/ai-data-centers-environment-climate-footprint-a792f184a9f2833b5388dbae8b41ca95
+- Verified: 2026-07-06 from saved PDF (course folder). Seth Borenstein, AP science writer; updated June 3, 2026. Reports a UN University (UNU-INWEH) report; co-authors Kaveh Madani, Miriam Aczel quoted.
+- Key figures (verified): 448 TWh data-center electricity last year (more than all but 10 countries); ~208M tons CO2 (~Argentina); 1.2 trillion gallons water; 2030 projection 935 TWh (~3% of world electricity, would rank 6th as a country); AI share of data-center energy 20% now → 40% by 2030; ~90% of AI power from operational queries; 30% fewer words per prompt → ~25% less energy.
+- Placement: U0 B1 Do choice 1 — first whole-class OPVL. Also seeds Engage 5 (pilot competence, AI's own footprint) two months before its U4 checkpoint; U4 Block opener can call back to this article.
+- OPVL teaching veins: (1) AP's printed funding disclosure at article bottom (foundation-funded climate desk) — "read to the bottom" on day one; (2) article-vs-report layering — AP is the messenger for a UNU Origin; (3) five voice types quoted incl. two industry rebuttals — the contest is inside the source; (4) the article names its own Limitation: the water figure excludes cooling water; (5) "extra 'please'" quote — report finding vs. scientist's vivid gloss.
+- Cautions: ~1,000 words — use the ~400-word excerpt in class (opening figures ¶1–4 + both industry quotes + funding disclosure line), full article as the linked/printed reference. Frame as "how do we know what we know about this number?", not "is AI bad?" — agency mode, day one of an AI-required course. Do not host AP text/PDF on the site.
+
 ### U1 media slate — verified by Matthew, placed 2026-06-11
 
 All URLs re-verified (title + channel via YouTube oembed; NASA pages HTTP 200) on 2026-06-11.
