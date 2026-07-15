@@ -8,6 +8,8 @@
 
 ## SESSION HANDOFF — 2026-07-07 (read this first)
 
+**Addendum (2026-07-07, later):** **UNU report key-points page shipped** — `units/unit-0/unu-report-key-points.njk` ("The UN Report Behind the Headline"): supplied-final selected key points from the UNU-INWEH report behind the U0 B1 AP launch article, with the report's own AI-image disclosure highlighted in a callout (sets up Block 3), three bring-to-class OPVL questions, full citation + free-PDF link, reproduced under the report's educational redistribution terms (verified PDF p. 4). Wired: B1 Do choice 2 (was the "textbook page" placeholder — now the real primary-source card; choices 1 and 3 untouched, choice 3 still awaiting Matthew's social-post selection); Resources Library entry `#unu-inweh-environmental-cost-of-ai` (section 1, full OPVL block — 98 entries now); MEDIA_REVIEW note under the AP entry.
+
 Repo state: **clean, fully pushed and deployed.** `git status` shows only an untracked `.deltest` (ignore/harmless). `main` and `origin/main` are in sync (0/0 ahead-behind). Live site is current with `main` at every point below — each commit was pushed and spot-checked live on Vercel (`https://hs-earth-env-site.vercel.app`) before moving to the next task.
 
 **What shipped since the 2026-06-11 entry (still below, kept for history), newest first:**
