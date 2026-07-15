@@ -354,6 +354,11 @@ a.key-term[aria-expanded="true"] { background: var(--accent-light); }
 .key-term-panel p { margin: 0 0 6px; }
 .key-term-panel-links { font-size: 13px; margin-bottom: 0 !important; }
 
+/* ====== Content figures (shared) ====== */
+.content-figure { margin: 20px auto; max-width: 720px; }
+.content-figure img { display: block; max-width: 100%; height: auto; margin: 0 auto; }
+.content-figure figcaption { font-size: 13px; color: var(--muted); margin-top: 6px; }
+
 /* ====== Reading pages ====== */
 .prose figure { margin: 20px 0; }
 .prose figure img { max-width: 100%; height: auto; border: 1px solid var(--border); border-radius: 8px; }

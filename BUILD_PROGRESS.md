@@ -2,11 +2,13 @@
 
 > **Purpose:** Living status doc. Tells you (and future Claude Code sessions) what's built, what's stubbed, what to build next, and in what order. The charter is in `CLAUDE.md` — do NOT modify that. Update this file at the end of each build session.
 
-**Last updated:** 2026-07-07 (session handoff — see below. U0–U6 complete; U7 is next.)
+**Last updated:** 2026-07-15 (Addendum 3 below. U0–U6 complete; U7 is next.)
 
 ---
 
 ## SESSION HANDOFF — 2026-07-07 (read this first)
+
+**Addendum 3 (2026-07-15): U0 instructional graphics + `.content-figure` — SITE CONVENTION for content images.** Five SVGs (from `../Unit 0_ Foundations/site-images/`, SVGs only — the sibling PNGs stay out of the repo) copied to `src/assets/img/u0/` and placed at 11 spots with `<figure class="content-figure">` + final alt text: **u0-opvl-quadrant** (the signature graphic — opvl-framework top w/ caption, U0 B1 Do between choice-intro and board, exemplar-source-dossier after the how-to-read callout), **u0-energy-chart** (U0 B1 Do after the choice board + unu-report-key-points between the two lists, both captioned "check every part against the source"), **u0-disequilibrium** (U0 B2 Story after the Lovelock intro w/ caption; U1 B5 Story end, uncaptioned — the Thompson callback), **u0-dossier-pipeline** (assessment-source-dossier after "Why you're doing this" + U0 B4 Do top, both captioned "find where you are today"), **u0-five-moves** (defending-your-work at the `#five-moves` anchor above the text version; U0 B6 Story w/ caption). New shared CSS in styles.css: `.content-figure` (max-width 720px, centered, small muted figcaption) — **use this class for any future content image on any page type**; the older `.prose figure` rules still add the border on prose pages. Verified at 375px (figures scale, no horizontal scroll, placeholder cards untouched — B1's choice-3 placeholder intact).
 
 **Addendum 2 (2026-07-07): lesson-return links — SITE CONVENTION for supporting pages.** Supporting pages (readings, exemplars, gallery, report excerpts) were one-way doors out of the lesson. Now any page can declare its lesson home(s) in frontmatter — `returnTo: [{ url, label }, ...]` — and `layouts/base.njk` renders a slim "← Back to …" line above the content and a "Done here? Back to the lesson:" chip box below it. CSS: `.lesson-return` / `.lesson-return-bottom` in styles.css. Applied to all 8 current supporting pages: unu-report-key-points (→U0 B1), the four U1 readings (→ their blocks; how-far-is-far → B1+B4), both exemplars (→ their blocks + assessment), planet-gallery (→U1 B1, frontmatter-only — body untouched). **Give every future supporting page a `returnTo`.**
 

@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="494.28pt" height="360.7375pt" viewBox="0 0 494.28 360.7375" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:date>2026-07-15T12:08:39.147115</dc:date>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.10.9, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 360.7375 
+L 494.28 360.7375 
+L 494.28 0 
+L 0 0 
+z
+" style="fill: #ffffff"/>
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 21.5964 178.8091 
+L 239.9418 178.8091 
+Q 244.26072 178.8091 244.26072 174.5125 
+L 244.26072 36.0665 
+Q 244.26072 31.7699 239.9418 31.7699 
+L 21.5964 31.7699 
+Q 17.27748 31.7699 17.27748 36.0665 
+L 17.27748 174.5125 
+Q 17.27748 178.8091 21.5964 178.8091 
+z
+" clip-path="url(#pdc18c0f736)" style="fill: #e8e2f5; stroke: #2e5395; stroke-width: 1.6; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_3">
+    <path d="M 254.3382 178.8091 
+L 472.6836 178.8091 
+Q 477.00252 178.8091 477.00252 174.5125 
+L 477.00252 36.0665 
+Q 477.00252 31.7699 472.6836 31.7699 
+L 254.3382 31.7699 
+Q 250.01928 31.7699 250.01928 36.0665 
+L 250.01928 174.5125 
+Q 250.01928 178.8091 254.3382 178.8091 
+z
+" clip-path="url(#pdc18c0f736)" style="fill: #d9e7f3; stroke: #2e5395; stroke-width: 1.6; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_4">
+    <path d="M 21.5964 341.1251 
+L 239.9418 341.1251 
+Q 244.26072 341.1251 244.26072 336.8285 
+L 244.26072 198.3825 
+Q 244.26072 194.0859 239.9418 194.0859 
+L 21.5964 194.0859 
+Q 17.27748 194.0859 17.27748 198.3825 
+L 17.27748 336.8285 
+Q 17.27748 341.1251 21.5964 341.1251 
+z
+" clip-path="url(#pdc18c0f736)" style="fill: #e2efda; stroke: #2e5395; stroke-width: 1.6; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_5">
+    <path d="M 254.3382 341.1251 
+L 472.6836 341.1251 
+Q 477.00252 341.1251 477.00252 336.8285 
+L 477.00252 198.3825 
+Q 477.00252 194.0859 472.6836 194.0859 
+L 254.3382 194.0859 
+Q 250.01928 194.0859 250.01928 198.3825 
+L 250.01928 336.8285 
+Q 250.01928 341.1251 254.3382 341.1251 
+z
+" clip-path="url(#pdc18c0f736)" style="fill: #f5e6d9; stroke: #2e5395; stroke-width: 1.6; stroke-linejoin: miter"/>
+   </g>
+   <g id="text_1">
+    <text style="font-weight: 700; font-size: 44px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #1f3864" x="43.191" y="77.80655" transform="rotate(-0 43.191 77.80655)">O</text>
+   </g>
+   <g id="text_2">
+    <text style="font-weight: 700; font-size: 16px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #1a1a2e" x="91.179" y="70.0803" transform="rotate(-0 91.179 70.0803)">ORIGIN</text>
+   </g>
+   <g id="text_3">
+    <text style="font-size: 12.5px; font-family: 'DejaVu Sans'; fill: #4f4f4f" transform="translate(43.191 120.836086)">Who made this, when —</text>
+    <text style="font-size: 12.5px; font-family: 'DejaVu Sans'; fill: #4f4f4f" transform="translate(43.191 134.833352)">and what kind of thing is it?</text>
+   </g>
+   <g id="text_4">
+    <text style="font-weight: 700; font-size: 44px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #1f3864" x="275.9328" y="77.80655" transform="rotate(-0 275.9328 77.80655)">P</text>
+   </g>
+   <g id="text_5">
+    <text style="font-weight: 700; font-size: 16px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #1a1a2e" x="323.9208" y="70.0803" transform="rotate(-0 323.9208 70.0803)">PURPOSE</text>
+   </g>
+   <g id="text_6">
+    <text style="font-size: 12.5px; font-family: 'DejaVu Sans'; fill: #4f4f4f" transform="translate(275.9328 120.836086)">Why does it exist,</text>
+    <text style="font-size: 12.5px; font-family: 'DejaVu Sans'; fill: #4f4f4f" transform="translate(275.9328 134.833352)">and for whom?</text>
+   </g>
+   <g id="text_7">
+    <text style="font-weight: 700; font-size: 44px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #1f3864" x="43.191" y="240.12255" transform="rotate(-0 43.191 240.12255)">V</text>
+   </g>
+   <g id="text_8">
+    <text style="font-weight: 700; font-size: 16px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #1a1a2e" x="91.179" y="232.3963" transform="rotate(-0 91.179 232.3963)">VALUE</text>
+   </g>
+   <g id="text_9">
+    <text style="font-size: 12.5px; font-family: 'DejaVu Sans'; fill: #4f4f4f" transform="translate(43.191 283.152086)">What is it genuinely</text>
+    <text style="font-size: 12.5px; font-family: 'DejaVu Sans'; fill: #4f4f4f" transform="translate(43.191 297.149352)">good for answering?</text>
+   </g>
+   <g id="text_10">
+    <text style="font-weight: 700; font-size: 44px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #1f3864" x="275.9328" y="240.12255" transform="rotate(-0 275.9328 240.12255)">L</text>
+   </g>
+   <g id="text_11">
+    <text style="font-weight: 700; font-size: 16px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #1a1a2e" x="323.9208" y="232.3963" transform="rotate(-0 323.9208 232.3963)">LIMITATIONS</text>
+   </g>
+   <g id="text_12">
+    <text style="font-size: 12.5px; font-family: 'DejaVu Sans'; fill: #4f4f4f" transform="translate(275.9328 283.152086)">What can it not</text>
+    <text style="font-size: 12.5px; font-family: 'DejaVu Sans'; fill: #4f4f4f" transform="translate(275.9328 297.149352)">tell you?</text>
+   </g>
+   <g id="text_13">
+    <text style="font-weight: 700; font-size: 16px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #1a1a2e" x="247.14" y="19.3575" transform="rotate(-0 247.14 19.3575)">OPVL — the four questions we ask every source</text>
+   </g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="pdc18c0f736">
+   <rect x="7.2" y="9.8095" width="479.88" height="343.728"/>
+  </clipPath>
+ </defs>
+</svg>

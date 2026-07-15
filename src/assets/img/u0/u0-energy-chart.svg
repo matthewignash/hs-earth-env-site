@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="643.468743pt" height="324.249703pt" viewBox="0 0 643.468743 324.249703" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:date>2026-07-15T12:08:39.247231</dc:date>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.10.9, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 324.249703 
+L 643.468743 324.249703 
+L 643.468743 0 
+L 0 0 
+z
+" style="fill: #ffffff"/>
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 118.744922 285.241734 
+L 620.944922 285.241734 
+L 620.944922 30.217734 
+L 118.744922 30.217734 
+z
+" style="fill: #ffffff"/>
+   </g>
+   <g id="patch_3">
+    <path d="M 118.744922 142.206534 
+L 330.995488 142.206534 
+L 330.995488 73.460934 
+L 118.744922 73.460934 
+z
+" clip-path="url(#pe69881229b)" style="fill: #d9e2f3; stroke: #2e5395; stroke-width: 1.2; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_4">
+    <path d="M 118.744922 258.630534 
+L 566.46096 258.630534 
+L 566.46096 189.884934 
+L 118.744922 189.884934 
+z
+" clip-path="url(#pe69881229b)" style="fill: #d9e2f3; stroke: #2e5395; stroke-width: 1.2; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_5">
+    <path d="M 118.744922 142.206534 
+L 161.195035 142.206534 
+L 161.195035 73.460934 
+L 118.744922 73.460934 
+z
+" clip-path="url(#pe69881229b)" style="fill: #2e5395; stroke: #1f3864; stroke-width: 1.2; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_6">
+    <path d="M 118.744922 258.630534 
+L 297.831337 258.630534 
+L 297.831337 189.884934 
+L 118.744922 189.884934 
+z
+" clip-path="url(#pe69881229b)" style="fill: #2e5395; stroke: #1f3864; stroke-width: 1.2; stroke-linejoin: miter"/>
+   </g>
+   <g id="matplotlib.axis_1">
+    <g id="xtick_1">
+     <g id="line2d_1">
+      <defs>
+       <path id="mf2c6d5deab" d="M 0 0 
+L 0 3.5 
+" style="stroke: #000000; stroke-width: 0.8"/>
+      </defs>
+      <g>
+       <use xlink:href="#mf2c6d5deab" x="118.744922" y="285.241734" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_1">
+      <text style="font-size: 10px; font-family: 'DejaVu Sans'; text-anchor: middle" x="118.744922" y="299.840172" transform="rotate(-0 118.744922 299.840172)">0</text>
+     </g>
+    </g>
+    <g id="xtick_2">
+     <g id="line2d_2">
+      <g>
+       <use xlink:href="#mf2c6d5deab" x="213.499639" y="285.241734" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_2">
+      <text style="font-size: 10px; font-family: 'DejaVu Sans'; text-anchor: middle" x="213.499639" y="299.840172" transform="rotate(-0 213.499639 299.840172)">200</text>
+     </g>
+    </g>
+    <g id="xtick_3">
+     <g id="line2d_3">
+      <g>
+       <use xlink:href="#mf2c6d5deab" x="308.254356" y="285.241734" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_3">
+      <text style="font-size: 10px; font-family: 'DejaVu Sans'; text-anchor: middle" x="308.254356" y="299.840172" transform="rotate(-0 308.254356 299.840172)">400</text>
+     </g>
+    </g>
+    <g id="xtick_4">
+     <g id="line2d_4">
+      <g>
+       <use xlink:href="#mf2c6d5deab" x="403.009073" y="285.241734" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_4">
+      <text style="font-size: 10px; font-family: 'DejaVu Sans'; text-anchor: middle" x="403.009073" y="299.840172" transform="rotate(-0 403.009073 299.840172)">600</text>
+     </g>
+    </g>
+    <g id="xtick_5">
+     <g id="line2d_5">
+      <g>
+       <use xlink:href="#mf2c6d5deab" x="497.76379" y="285.241734" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_5">
+      <text style="font-size: 10px; font-family: 'DejaVu Sans'; text-anchor: middle" x="497.76379" y="299.840172" transform="rotate(-0 497.76379 299.840172)">800</text>
+     </g>
+    </g>
+    <g id="xtick_6">
+     <g id="line2d_6">
+      <g>
+       <use xlink:href="#mf2c6d5deab" x="592.518507" y="285.241734" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_6">
+      <text style="font-size: 10px; font-family: 'DejaVu Sans'; text-anchor: middle" x="592.518507" y="299.840172" transform="rotate(-0 592.518507 299.840172)">1000</text>
+     </g>
+    </g>
+    <g id="text_7">
+     <text style="font-size: 11.5px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #4f4f4f" x="369.844922" y="314.658062" transform="rotate(-0 369.844922 314.658062)">Electricity per year (terawatt-hours)</text>
+    </g>
+   </g>
+   <g id="matplotlib.axis_2">
+    <g id="ytick_1">
+     <g id="text_8">
+      <text style="font-size: 12.5px; font-family: 'DejaVu Sans'; fill: #1a1a2e" transform="translate(31.198047 106.53393)">Data centers</text>
+      <text style="font-size: 12.5px; font-family: 'DejaVu Sans'; fill: #1a1a2e" transform="translate(79.932422 120.531195)">2025</text>
+     </g>
+    </g>
+    <g id="ytick_2">
+     <g id="text_9">
+      <text style="font-size: 12.5px; font-family: 'DejaVu Sans'; fill: #1a1a2e" transform="translate(31.198047 222.95793)">Data centers</text>
+      <text style="font-size: 12.5px; font-family: 'DejaVu Sans'; fill: #1a1a2e" transform="translate(7.2 236.955195)">2030 (projected)</text>
+     </g>
+    </g>
+   </g>
+   <g id="line2d_7">
+    <path d="M 200.379755 285.241734 
+L 200.379755 30.217734 
+" clip-path="url(#pe69881229b)" style="fill: none; stroke-dasharray: 8.14,3.52; stroke-dashoffset: 0; stroke: #f5a623; stroke-width: 2.2"/>
+   </g>
+   <g id="patch_7">
+    <path d="M 118.744922 285.241734 
+L 620.944922 285.241734 
+" style="fill: none; stroke: #000000; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square"/>
+   </g>
+   <g id="text_10">
+    <text style="font-weight: 700; font-size: 13px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #1a1a2e" x="336.680771" y="111.420922" transform="rotate(-0 336.680771 111.420922)">448 TWh</text>
+   </g>
+   <g id="text_11">
+    <text style="font-weight: 700; font-size: 10.5px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #1f3864" x="165.932771" y="110.731078" transform="rotate(-0 165.932771 110.731078)">AI's share: 20%</text>
+   </g>
+   <g id="text_12">
+    <text style="font-weight: 700; font-size: 13px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #1a1a2e" x="572.146243" y="227.844922" transform="rotate(-0 572.146243 227.844922)">945 TWh</text>
+   </g>
+   <g id="text_13">
+    <text style="font-weight: 700; font-size: 10.5px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #1f3864" x="302.569073" y="227.155078" transform="rotate(-0 302.569073 227.155078)">AI's share: 40%</text>
+   </g>
+   <g id="text_14">
+    <text style="font-size: 9.5px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #4f4f4f" x="200.379755" y="42.656431" transform="rotate(-0 200.379755 42.656431)">annual residential electricity, ALL of Sub-Saharan Africa (1.3 billion people)</text>
+   </g>
+   <g id="text_15">
+    <text style="font-style: italic; font-size: 9px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #4f4f4f" x="118.744922" y="281.915334" transform="rotate(-0 118.744922 281.915334)">Every number from: UNU-INWEH (2026), Environmental Cost of AI's Energy Use, pp. 8–10. Check them yourself.</text>
+   </g>
+   <g id="text_16">
+    <text style="font-weight: 700; font-size: 14.5px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #1a1a2e" x="369.844922" y="18.217734" transform="rotate(-0 369.844922 18.217734)">What the world's data centers use — and where it's heading</text>
+   </g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="pe69881229b">
+   <rect x="118.744922" y="30.217734" width="502.2" height="255.024"/>
+  </clipPath>
+ </defs>
+</svg>

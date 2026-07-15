@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="600.3pt" height="181.650926pt" viewBox="0 0 600.3 181.650926" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:date>2026-07-15T12:08:39.509766</dc:date>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.10.9, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 181.650926 
+L 600.3 181.650926 
+L 600.3 0 
+L 0 0 
+z
+" style="fill: #ffffff"/>
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 15.012 150.807397 
+L 108.756 150.807397 
+L 122.427 94.062926 
+L 108.756 37.318455 
+L 15.012 37.318455 
+L 15.012 94.062926 
+z
+" clip-path="url(#p9ebb7a1e41)" style="fill: #e8e2f5; stroke: #2e5395; stroke-width: 1.4; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_3">
+    <path d="M 133.3638 150.807397 
+L 227.1078 150.807397 
+L 240.7788 94.062926 
+L 227.1078 37.318455 
+L 133.3638 37.318455 
+L 147.0348 94.062926 
+z
+" clip-path="url(#p9ebb7a1e41)" style="fill: #d9e7f3; stroke: #2e5395; stroke-width: 1.4; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_4">
+    <path d="M 251.7156 150.807397 
+L 345.4596 150.807397 
+L 359.1306 94.062926 
+L 345.4596 37.318455 
+L 251.7156 37.318455 
+L 265.3866 94.062926 
+z
+" clip-path="url(#p9ebb7a1e41)" style="fill: #fff4d9; stroke: #2e5395; stroke-width: 1.4; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_5">
+    <path d="M 370.0674 150.807397 
+L 463.8114 150.807397 
+L 477.4824 94.062926 
+L 463.8114 37.318455 
+L 370.0674 37.318455 
+L 383.7384 94.062926 
+z
+" clip-path="url(#p9ebb7a1e41)" style="fill: #e2efda; stroke: #2e5395; stroke-width: 1.4; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_6">
+    <path d="M 488.4192 150.807397 
+L 582.1632 150.807397 
+L 595.8342 94.062926 
+L 582.1632 37.318455 
+L 488.4192 37.318455 
+L 502.0902 94.062926 
+z
+" clip-path="url(#p9ebb7a1e41)" style="fill: #f5e6d9; stroke: #2e5395; stroke-width: 1.4; stroke-linejoin: miter"/>
+   </g>
+   <g id="text_1">
+    <text style="font-weight: 700; font-size: 11px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #1a1a2e" x="72.6255" y="64.744949" transform="rotate(-0 72.6255 64.744949)">1 ACKNOWLEDGE</text>
+   </g>
+   <g id="text_2">
+    <text style="font-size: 9px; font-family: 'DejaVu Sans'; fill: #4f4f4f" transform="translate(33.2055 102.899718)">take the question</text>
+    <text style="font-size: 9px; font-family: 'DejaVu Sans'; fill: #4f4f4f" transform="translate(52.549172 112.977749)">seriously</text>
+   </g>
+   <g id="text_3">
+    <text style="font-weight: 700; font-size: 11px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #1a1a2e" x="190.9773" y="64.744949" transform="rotate(-0 190.9773 64.744949)">2 RESTATE</text>
+   </g>
+   <g id="text_4">
+    <text style="font-size: 9px; font-family: 'DejaVu Sans'; fill: #4f4f4f" transform="translate(161.110659 102.899718)">say it back in</text>
+    <text style="font-size: 9px; font-family: 'DejaVu Sans'; fill: #4f4f4f" transform="translate(155.307066 112.977749)">your own words</text>
+   </g>
+   <g id="text_5">
+    <text style="font-weight: 700; font-size: 11px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #1a1a2e" x="309.3291" y="64.744949" transform="rotate(-0 309.3291 64.744949)">3 ANSWER</text>
+   </g>
+   <g id="text_6">
+    <text style="font-size: 9px; font-family: 'DejaVu Sans'; fill: #4f4f4f" transform="translate(285.979022 102.899718)">one claim,</text>
+    <text style="font-size: 9px; font-family: 'DejaVu Sans'; fill: #4f4f4f" transform="translate(280.276678 112.977749)">not a speech</text>
+   </g>
+   <g id="text_7">
+    <text style="font-weight: 700; font-size: 11px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #1a1a2e" x="427.6809" y="64.744949" transform="rotate(-0 427.6809 64.744949)">4 CITE</text>
+   </g>
+   <g id="text_8">
+    <text style="font-size: 9px; font-family: 'DejaVu Sans'; fill: #4f4f4f" transform="translate(384.270666 102.899718)">name the evidence</text>
+    <text style="font-size: 9px; font-family: 'DejaVu Sans'; fill: #4f4f4f" transform="translate(401.282072 112.977749)">it stands on</text>
+   </g>
+   <g id="text_9">
+    <text style="font-weight: 700; font-size: 11px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #1a1a2e" x="546.0327" y="64.744949" transform="rotate(-0 546.0327 64.744949)">5 CHECK</text>
+   </g>
+   <g id="text_10">
+    <text style="font-size: 9px; font-family: 'DejaVu Sans'; fill: #4f4f4f" transform="translate(522.409809 102.899718)">“does that</text>
+    <text style="font-size: 9px; font-family: 'DejaVu Sans'; fill: #4f4f4f" transform="translate(520.615434 112.977749)">answer it?”</text>
+   </g>
+   <g id="text_11">
+    <text style="font-weight: 700; font-size: 13.5px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #1a1a2e" x="300.15" y="17.457891" transform="rotate(-0 300.15 17.457891)">Answering a question under pressure — the five moves</text>
+   </g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="p9ebb7a1e41">
+   <rect x="7.2" y="13.674926" width="585.9" height="160.776"/>
+  </clipPath>
+ </defs>
+</svg>
