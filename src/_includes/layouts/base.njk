@@ -54,7 +54,16 @@
 {% endif %}
 
 <main id="main" class="container">
+  {% if returnTo %}
+  <p class="lesson-return">← Back to {% for r in returnTo %}{% if not loop.first %} · {% endif %}<a href="{{ r.url }}">{{ r.label }}</a>{% endfor %}</p>
+  {% endif %}
   {{ content | safe }}
+  {% if returnTo %}
+  <div class="lesson-return-bottom">
+    <span>Done here? Back to the lesson:</span>
+    {% for r in returnTo %}<a href="{{ r.url }}">← {{ r.label }}</a>{% endfor %}
+  </div>
+  {% endif %}
 </main>
 {% endif %}
 
