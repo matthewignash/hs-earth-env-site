@@ -400,6 +400,7 @@ dialog.video-lightbox::backdrop {
 .bell-ringer-meta { font-size: 12px; color: var(--muted); margin: 2px 0 6px; }
 .bell-ringer p { margin: 0 0 6px; }
 .bell-ringer .bell-ringer-journal { font-size: 12px; color: var(--muted); font-style: italic; margin-bottom: 0; }
+.bell-ringer .bell-ringer-figure { margin: 10px 0 8px; max-width: 640px; }
 
 /* ====== Standards footer ====== */
 .standards-footer { font-size: 12px; color: var(--muted); margin-top: 24px; }

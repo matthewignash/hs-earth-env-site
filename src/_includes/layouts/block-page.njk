@@ -33,6 +33,12 @@ extraStylesheets:
     <div class="bell-ringer-head">Bell ringer — start here (while attendance happens)</div>
     <div class="bell-ringer-meta">{{ bellRinger.tag }} · {{ bellRinger.minutes }} min</div>
     <p>{{ bellRinger.text | safe }}</p>
+    {% if bellRinger.image %}
+    <figure class="content-figure bell-ringer-figure">
+      <img src="{{ bellRinger.image }}" alt="{{ bellRinger.imageAlt }}">
+      {% if bellRinger.imageCredit %}<figcaption>{{ bellRinger.imageCredit | safe }}</figcaption>{% endif %}
+    </figure>
+    {% endif %}
     <p class="bell-ringer-journal">Answer in your Reflection Journal — dated.</p>
   </div>
   {% endif %}

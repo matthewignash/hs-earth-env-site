@@ -124,6 +124,12 @@ If both are confirmed, the U4 deep build can integrate them as complementary Wat
 
 *(Entries move here when a clip is verified, embedded, and the implementation phase has shipped.)*
 
+### Pallikaranai Marsh 1988 vs. 2018 — Google Earth Timelapse comparison (U2 B1 bell ringer)
+- Source: supplied by Matthew 2026-07-17 (`../Pallikaranai Marsh.jpg`, original 3264×2431 kept in the course folder). Composite by **Raj Bhagat Palanichamy** (watermark preserved in-image) from Google Earth Timelapse; underlying imagery Google Earth / Landsat, Copernicus.
+- Placement: `units/unit-2/block-1.njk` — inside the bell-ringer box via the new optional `bellRinger.image/imageAlt/imageCredit` frontmatter fields. Site copy downscaled to 1400px / ~340KB at `src/assets/img/u2/u2-pallikaranai-1988-2018.jpg`.
+- Attribution: caption credits creator + Google Earth / Landsat, Copernicus (Google's educational-use attribution pattern); creator watermark visible. If Matthew wants belt-and-suspenders, a courtesy note to Raj Bhagat (he shares these publicly on X) closes the loop.
+- ⚠ Text mismatch for review: the verbatim bell-ringer text says "a 1965 aerial photo"; this image is 1988 vs. 2018 ("the last 30 years"). Options: update the block-plans wording (source of truth) to "an earlier satellite view," or find the actual 1965 aerial. Text left untouched per the verbatim rule.
+
 ### AP — AI data centers environmental footprint (U0 B1 launch article)
 - URL: https://apnews.com/article/ai-data-centers-environment-climate-footprint-a792f184a9f2833b5388dbae8b41ca95
 - Verified: 2026-07-06 from saved PDF (course folder). Seth Borenstein, AP science writer; updated June 3, 2026. Reports a UN University (UNU-INWEH) report; co-authors Kaveh Madani, Miriam Aczel quoted.
