@@ -28,6 +28,15 @@ extraStylesheets:
 
 <main class="container">
 
+  {% if bellRinger %}
+  <div class="bell-ringer">
+    <div class="bell-ringer-head">Bell ringer — start here (while attendance happens)</div>
+    <div class="bell-ringer-meta">{{ bellRinger.tag }} · {{ bellRinger.minutes }} min</div>
+    <p>{{ bellRinger.text | safe }}</p>
+    <p class="bell-ringer-journal">Answer in your Reflection Journal — dated.</p>
+  </div>
+  {% endif %}
+
   {% if aiPartners %}
   <div class="ai-callout">
     <div class="ai-label">AI Partners available for today's work</div>
@@ -59,6 +68,10 @@ extraStylesheets:
       <span></span>
     {% endif %}
   </nav>
+  {% endif %}
+
+  {% if standards %}
+  <p class="standards-footer">This block builds — {% if standards.ngss and standards.ngss.length %}NGSS: {{ standards.ngss | join(" · ") }}{% endif %}{% if standards.ngss and standards.ngss.length and standards.ailit and standards.ailit.length %} | {% endif %}{% if standards.ailit and standards.ailit.length %}AI Literacy (OECD AILit): {{ standards.ailit | join(" · ") }}{% endif %} · <a href="/foundations/standards-map/">full course map</a></p>
   {% endif %}
 
 </main>

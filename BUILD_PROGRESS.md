@@ -2,11 +2,17 @@
 
 > **Purpose:** Living status doc. Tells you (and future Claude Code sessions) what's built, what's stubbed, what to build next, and in what order. The charter is in `CLAUDE.md` — do NOT modify that. Update this file at the end of each build session.
 
-**Last updated:** 2026-07-17 (Addenda 3–8 below. U0–U6 complete; U7 is next.)
+**Last updated:** 2026-07-17 (Addenda 3–9 below. U0–U6 complete; U7 is next.)
 
 ---
 
 ## SESSION HANDOFF — 2026-07-07 (read this first)
+
+**Addendum 9 (2026-07-17): Bell ringers + standards layer, U0–U2 (TWO NEW SITE FEATURES) + the Standards Map page.**
+
+*Feature 1 — bell ringers.* `layouts/block-page.njk` now renders a compact `bellRinger` frontmatter box (`{tag, minutes, text}`) as the first content element, above the AI callout and Story — DO-pastel tint, uppercase "Bell ringer — start here (while attendance happens)" head, muted tag·minutes meta, fixed closing line "Answer in your Reflection Journal — dated." CSS in `block-page.css`. All 26 U0–U2 blocks populated from `../bellringers-extracted-u0-u2.json` in block order, **text verbatim** (machine-verified: all 26 rendered texts match the JSON exactly; only `<br>` joins + bold "Task:" added). **Duplication notes for Matthew (rule c — nothing deleted):** U1 B1's bell ringer (four unlabeled planets) IS the Four Planets No Labels gallery activity already in B1's Interact card + Do step 1 · U1 B5's (30-day light curve, three dips) is the same object as choice A's printed Light-Curve Decode handout · U1 B10's (JWST spectrum) duplicates the existing "Watch (bell ringer)" spectrum card (the known case) · U0 B5's (two AI Doc templates side-by-side) is a near-duplicate of B5's new Interact S/V mark-up warm-up. U0 B1's poll was checked — different activity, no conflict. **Also flagged:** U0 B7's text ends "(Migrated from the original Block 5 — fits the defense day directly.)" — a planning note kept verbatim per instruction; trim candidate. U2 B3/B4 bell ringers carry the Addendum 8 docx-arc looseness (rock-layer cross-section under Rivers; "from last block…rock layers" under Coasts) — kept verbatim; review alongside the SC decision.
+
+*Feature 2 — standards layer (MAPPING IS v1 — Matthew reviews against the UbD docs).* Block pages render a muted one-line `standards` footer ("This block builds — NGSS: … | AI Literacy (OECD AILit): … · full course map") linking the new **`/foundations/standards-map/`** page (NGSS-by-unit + AILit-by-unit tables, both frameworks cited, no pilot/platform/research mention — curriculum only). All 26 U0–U2 blocks tagged per the supplied v1 mapping; empty halves render nothing (e.g., U1 B9/B10 show AILit only). **U3's map row was pulled from the U3 UbD docx** (primary HS-ESS2-1, HS-ESS3-1, HS-ETS1-3, HS-ETS1-4; secondary HS-ESS1-5, HS-ETS1-1/2, HS-ESS3-3) because — contrary to the instruction's assumption — U3's assessment pages carry no Standards row at all (open cleanup: add one, U4/U5/U6 all have it). U7 marked "in development." Standards Map card added to the Foundations index (Core frameworks) and the Reference index.
 
 **Addendum 8 (2026-07-17): U2 structural pass (audit pass 1) — done, with one big finding and two decisions applied for Matthew's review.**
 
