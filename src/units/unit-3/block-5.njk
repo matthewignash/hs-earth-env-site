@@ -11,8 +11,6 @@ day: A
 strands:
   active: ["T/T Thinking"]
   preview: ["C Communication"]
-aiPartners:
-  - { slug: the-source-evaluator, label: "The Source Evaluator" }
 breadcrumbs:
   - { url: /, label: Home }
   - { url: /units/unit-3/, label: "Unit 3 — Plate Tectonics & Natural Hazards" }
@@ -20,6 +18,19 @@ breadcrumbs:
 prev: { url: /units/unit-3/block-4/, label: "Block 4 — Whole-Class Sim + First Independent Attempt" }
 next: { url: /units/unit-3/block-6/, label: "Block 6 — Scenario Choice + Iteration #1" }
 unitMapUrl: /units/unit-3/
+aiPartners:
+  - { slug: the-source-evaluator, label: "The Source Evaluator" }
+  - { slug: plate-tectonics-tutor, label: "The Plate Tectonics Tutor" }
+bellRinger:
+  tag: "Retrieval"
+  minutes: 5
+  text: |
+    From memory — Tōhoku 2011: boundary type, main hazards, and one engineering lesson.<br><strong>Task:</strong> Three quick lines. Stem: "Tōhoku shows that ___."
+standards:
+  ngss: ["HS-ESS3-1", "SEP-6"]
+  ailit: []
+learningIntention: "I can use a historical case study as evidence to defend or revise an engineering claim — naming the specific evidence and the specific claim."
+successCriteria: ["I can name the specific engineering claim my case study supports.", "I can cite the specific evidence behind that claim.", "I can say when a claim needs revising instead of defending."]
 ---
 
 <section class="block-section story">
@@ -46,12 +57,17 @@ unitMapUrl: /units/unit-3/
       <div>OPVL Framework refresher — the same four letters you used in Unit 0 apply to every case study source you'll meet today.</div>
       <div class="entry-meta">Real link · Foundations</div>
     </a>
-    <div class="entry-card placeholder">
-      <span class="placeholder-tag">Placeholder</span>
+    <div class="entry-card live-activity">
+      <span class="live-activity-tag">Live in class</span>
       <div class="entry-title">Interact</div>
-      <div>TBD: jigsaw protocol walkthrough — how the small-group → expert-group → reporting structure works, with one example trade-off (10 min reporting per case study).</div>
+      <div>Jigsaw protocol walkthrough — how the small-group → expert-group → reporting structure works, with one example trade-off (10 min reporting per case study).</div>
       <div class="entry-meta">Whole-class projected before groups split.</div>
     </div>
+    <a class="entry-card" href="/foundations/eal/u3/" style="text-decoration: none; color: inherit;">
+      <div class="entry-title">Vocabulary support</div>
+      <div>The U3 pre-teach — key terms with definitions and sentence stems. Megathrust, lahar, and run-up height are all in there.</div>
+      <div class="entry-meta">Real link · Foundations · EAL</div>
+    </a>
   </div>
 </section>
 
@@ -60,7 +76,7 @@ unitMapUrl: /units/unit-3/
   <h2>Today's work — choose one path</h2>
   <p class="sub">Case-study jigsaw. Each group dives into one event and reports the engineering claim their case study best supports. Pick your group based on which case study you're most curious about.</p>
   <div class="choice-intro">
-    <strong>Learning Intention:</strong> I can use a historical case study as evidence to defend or revise an engineering claim — naming the specific evidence and the specific claim.
+    <strong>Learning Intention:</strong> {{ learningIntention | safe }}
   </div>
   <div class="choice-board">
     <div class="choice">
@@ -97,7 +113,7 @@ unitMapUrl: /units/unit-3/
   <div class="submission-callout">
     <div class="label">City Hazard Profile (DUE — summative)</div>
     <p>≤500 words OR 60–90 second captioned video. Required elements: city + boundary identification, dominant hazards, one historical analog, ≥2 reputable sources. See the <a href="/units/unit-3/assessment-hazard-profile/">full assignment</a>.</p>
-    <a href="#" class="rubric-link">Submit via Google Classroom →</a>
+    {% set submit = { id: "u3-hazard-profile", text: "Submit via Google Classroom" } %}{% include "partials/submit-link.njk" %}
   </div>
   <div class="submission-callout">
     <div class="label">Case-study engineering claim (formative)</div>

@@ -17,13 +17,25 @@ breadcrumbs:
   - { label: "Block 1 — Inside Earth + Boundary Types" }
 next: { url: /units/unit-3/block-2/, label: "Block 2 — Subduction & Transform Deep Dive" }
 unitMapUrl: /units/unit-3/
+aiPartners:
+  - { slug: plate-tectonics-tutor, label: "The Plate Tectonics Tutor" }
+bellRinger:
+  tag: "Phenomenon hook"
+  minutes: 5
+  text: |
+    A world map of one year of earthquake epicenters shows the quakes forming sharp lines and arcs — not scattered randomly. Whole regions have none at all.<br><strong>Task:</strong> Why lines? What could make earthquakes queue up like that? Stem: "Earthquakes cluster where ___."
+standards:
+  ngss: ["HS-ESS2-1", "HS-ESS1-5"]
+  ailit: []
+learningIntention: "I can identify the four plate boundary types (convergent, divergent, transform, hotspot) and name the dominant hazards each produces."
+successCriteria: ["I can name the four plate boundary types.", "I can match each boundary type to its dominant hazards.", "I can locate major boundaries on a world map and identify their type."]
 ---
 
 <section class="block-section story">
   <span class="section-tag">Story</span>
   <h2>Why this block matters</h2>
   <p class="sub">The unit's anchor question: <em>How do you build for a planet that occasionally tries to destroy what you've built?</em></p>
-  <p>Earth's surface tells a story 4.5 billion years in the making — and most of it is written in the language of moving plates. Before you can engineer a city against tectonic hazards, you have to know what's actually moving and why. Today we set the foundation: Earth's interior, what drives plate motion, and the four boundary types that produce every major hazard family you'll meet in this unit.</p>
+  <p>Earth's surface tells a story 4.5 billion years in the making — and most of it is written in the language of moving plates. Before you can engineer a city against tectonic hazards, you have to know what's actually moving and why. Today we set the foundation: Earth's interior, what drives plate motion, and the four boundary types that produce every major hazard family you'll meet in this unit. You'll also meet your first Unit 3 AI partner — <strong>The Plate Tectonics Tutor</strong>, a coach for boundary mechanics that asks questions before it hands you answers.</p>
   <p>By the end of class you should be able to look at a world map and explain why earthquakes cluster where they do — and why some coasts get tsunamis while others don't.</p>
 </section>
 
@@ -49,6 +61,16 @@ unitMapUrl: /units/unit-3/
       <div>TBD: interactive cross-section diagram — click any layer of Earth's interior to see what's there and how it moves.</div>
       <div class="entry-meta">Whole-class projected or solo.</div>
     </div>
+    <a class="entry-card" href="/ai-partners/plate-tectonics-tutor/" style="text-decoration: none; color: inherit;">
+      <div class="entry-title">Meet your new partner</div>
+      <div>The Plate Tectonics Tutor — Socratic coach for boundary types, interior mechanics, and hazard connections. Read the opening message and example exchange before you use it.</div>
+      <div class="entry-meta">Real link · AI Partner</div>
+    </a>
+    <a class="entry-card" href="/foundations/eal/u3/" style="text-decoration: none; color: inherit;">
+      <div class="entry-title">Vocabulary support</div>
+      <div>The U3 pre-teach — key terms with definitions and sentence stems. Several of them are in today's block.</div>
+      <div class="entry-meta">Real link · Foundations · EAL</div>
+    </a>
   </div>
 </section>
 
@@ -57,14 +79,14 @@ unitMapUrl: /units/unit-3/
   <h2>Today's work — choose one path</h2>
   <p class="sub">Paired plotting activity. All four paths end the same way — a world map with the major boundaries marked and identified.</p>
   <div class="choice-intro">
-    <strong>Learning Intention:</strong> I can identify the four plate boundary types (convergent, divergent, transform, hotspot) and name the dominant hazards each produces.
+    <strong>Learning Intention:</strong> {{ learningIntention | safe }}
   </div>
   <div class="choice-board">
-    <div class="choice placeholder">
-      <span class="placeholder-tag">Placeholder</span>
+    <div class="choice live-activity">
+      <span class="live-activity-tag">Live in class</span>
       <div class="choice-letter">A</div>
       <div class="choice-title">Plot on a printed world map</div>
-      <div class="choice-detail">TBD: printed world map handout. Paired work — mark the Pacific Ring of Fire, the Mid-Atlantic Ridge, the San Andreas, the Anatolian, and at least one hotspot. Label each by boundary type.</div>
+      <div class="choice-detail">Printed world map handout, provided in class. Paired work — mark the Pacific Ring of Fire, the Mid-Atlantic Ridge, the San Andreas, the Anatolian, and at least one hotspot. Label each by boundary type.</div>
       <span class="udl-tag">Visual · Pair</span>
     </div>
     <div class="choice placeholder">
@@ -96,7 +118,7 @@ unitMapUrl: /units/unit-3/
   <div class="submission-callout">
     <div class="label">Annotated map or boundary-type list (submit by end of class)</div>
     <p>At least 5 boundaries correctly identified and labeled by type. If you went with Choice D, your hazard-to-boundary list with 5 examples.</p>
-    <a href="#" class="rubric-link">Submit via Google Classroom →</a>
+    {% set submit = { id: "u3-b1", text: "Submit via Google Classroom" } %}{% include "partials/submit-link.njk" %}
   </div>
   <p class="rubric-meta">
     <strong>Rubric link:</strong> Today builds <strong>K/U</strong> on boundary types — the vocabulary that anchors the rest of the unit. See the <a href="/foundations/the-rubric/">full rubric</a> for what K/U bands look like on assessments.

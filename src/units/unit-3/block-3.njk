@@ -11,8 +11,6 @@ day: A
 strands:
   active: ["K/U Knowledge"]
   preview: ["T/T Thinking"]
-aiPartners:
-  - { slug: plate-tectonics-tutor, label: "Plate Tectonics Tutor" }
 breadcrumbs:
   - { url: /, label: Home }
   - { url: /units/unit-3/, label: "Unit 3 — Plate Tectonics & Natural Hazards" }
@@ -20,6 +18,19 @@ breadcrumbs:
 prev: { url: /units/unit-3/block-2/, label: "Block 2 — Subduction & Transform Deep Dive" }
 next: { url: /units/unit-3/block-4/, label: "Block 4 — Whole-Class Sim + First Independent Attempt" }
 unitMapUrl: /units/unit-3/
+aiPartners:
+  - { slug: plate-tectonics-tutor, label: "The Plate Tectonics Tutor" }
+  - { slug: engineering-coach, label: "The Engineering Coach" }
+bellRinger:
+  tag: "Retrieval"
+  minutes: 5
+  text: |
+    Sixty-second brain dump, no notes: the four plate boundary types, and the dominant hazard each one produces.<br><strong>Task:</strong> Write all four, then circle the one you're least sure about.
+standards:
+  ngss: ["HS-ESS3-1", "HS-ETS1-1"]
+  ailit: []
+learningIntention: "I can match every engineering technology in the simulator to the hazard(s) it protects against, AND name at least one scenario where each technology is useless."
+successCriteria: ["I can match each simulator technology to the hazards it protects against.", "I can name a scenario where each technology is useless.", "I can explain why no technology protects against everything."]
 ---
 
 <section class="block-section story">
@@ -28,6 +39,7 @@ unitMapUrl: /units/unit-3/
   <p class="sub">The other major hazard family — and the move that surprises everyone.</p>
   <p>So far we've talked about earthquakes and tsunamis — hazards we can engineer against. Today we add volcanism, and we introduce the engineering toolkit you'll use in the Tectonic City Builder. But here's the twist: <strong>some hazards have no engineering defense.</strong> You can't build a wall against a pyroclastic flow. Only distance and early warning save lives.</p>
   <p>Naming what each technology does — and what it can't do — is the foundation for every decision you'll make in the simulator across Blocks 4–10. Get this wrong now, and you'll spend your budget on tech that doesn't protect against the hazard your city actually faces.</p>
+  <p>Today you also meet the unit's second AI partner — <strong>The Engineering Coach</strong>. Where the Plate Tectonics Tutor helps you understand the planet, the Coach helps you interrogate your design decisions: it will ask what your budget choices assume before it ever suggests a fix.</p>
 </section>
 
 <section class="block-section concepts">
@@ -52,6 +64,16 @@ unitMapUrl: /units/unit-3/
       <div>TBD: interactive tech-card overview. Hover any engineering technology to see what it protects against and where it's useless.</div>
       <div class="entry-meta">Whole-class projected or solo.</div>
     </div>
+    <a class="entry-card" href="/ai-partners/engineering-coach/" style="text-decoration: none; color: inherit;">
+      <div class="entry-title">Meet your new partner</div>
+      <div>The Engineering Coach — Socratic coach for design decisions, budget trade-offs, and iteration reasoning. Read the opening message and example exchange before your first sim attempt.</div>
+      <div class="entry-meta">Real link · AI Partner</div>
+    </a>
+    <a class="entry-card" href="/foundations/eal/u3/" style="text-decoration: none; color: inherit;">
+      <div class="entry-title">Vocabulary support</div>
+      <div>The U3 pre-teach — key terms with definitions and sentence stems. Pyroclastic, lahar, and base isolation are all in there.</div>
+      <div class="entry-meta">Real link · Foundations · EAL</div>
+    </a>
   </div>
 </section>
 
@@ -60,14 +82,14 @@ unitMapUrl: /units/unit-3/
   <h2>Today's work — choose one path</h2>
   <p class="sub">Tech-card matching activity. Same goal — match every technology to its hazard and identify at least one scenario where it offers no protection.</p>
   <div class="choice-intro">
-    <strong>Learning Intention:</strong> I can match every engineering technology in the simulator to the hazard(s) it protects against, AND name at least one scenario where each technology is useless.
+    <strong>Learning Intention:</strong> {{ learningIntention | safe }}
   </div>
   <div class="choice-board">
-    <div class="choice placeholder">
-      <span class="placeholder-tag">Placeholder</span>
+    <div class="choice live-activity">
+      <span class="live-activity-tag">Live in class</span>
       <div class="choice-letter">A</div>
       <div class="choice-title">Printed card sort</div>
-      <div class="choice-detail">TBD: physical card deck — one card per technology (base isolation, shear walls, tsunami walls, deep foundations, lava berms, ash roofs, lahar diversion channels, pyroclastic shelters, early warning). Sort by hazard.</div>
+      <div class="choice-detail">Physical card deck, provided in class — one card per technology (base isolation, shear walls, tsunami walls, deep foundations, lava berms, ash roofs, lahar diversion channels, pyroclastic shelters, early warning). Sort by hazard.</div>
       <span class="udl-tag">Visual · Pair</span>
     </div>
     <div class="choice placeholder">
@@ -99,7 +121,7 @@ unitMapUrl: /units/unit-3/
   <div class="submission-callout">
     <div class="label">Map quiz (formative) + tech-card output</div>
     <p>Map quiz: identify boundary + dominant hazard for 8 unfamiliar coastal cities. Tech-card output: completed card sort OR your 4-sentence tech defense (Choice C) OR your paired discussion bullets (Choice D).</p>
-    <a href="#" class="rubric-link">Submit via Google Classroom →</a>
+    {% set submit = { id: "u3-b3", text: "Submit via Google Classroom" } %}{% include "partials/submit-link.njk" %}
   </div>
   <p class="rubric-meta">
     <strong>Rubric link:</strong> Today's <strong>K/U</strong> map quiz checks boundary-type fluency; the tech-card output is what your <strong>T/T</strong> Engineering Portfolio decisions will reference. See <a href="/foundations/the-rubric/">the rubric</a> for what each band looks like.

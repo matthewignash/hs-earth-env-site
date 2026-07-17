@@ -6,8 +6,14 @@
     "assessedAt": "Goldilocks Report — framework criteria involving the host star (K/U strand, Component 1 locks U1 Block 7)",
     "onTrack": "Your habitability framework treats the host star as an energy source with numbers attached (luminosity, HZ range), not just 'the planet needs sunlight.'",
     "help": [
-      { "label": "Reading: How Far Is Far", "url": "/units/unit-1/reading-how-far-is-far/" },
-      { "label": "Habitability Zone Calculator", "url": "/units/unit-1/habitability-zone-calculator/" }
+      {
+        "label": "Reading: How Far Is Far",
+        "url": "/units/unit-1/reading-how-far-is-far/"
+      },
+      {
+        "label": "Habitability Zone Calculator",
+        "url": "/units/unit-1/habitability-zone-calculator/"
+      }
     ]
   },
   "HS-ESS1-2": {
@@ -17,7 +23,10 @@
     "assessedAt": "Previewed in U1 Block 4 (lookback time); formally assessed in a later unit",
     "onTrack": "You can explain why looking far away means looking back in time, and what that has to do with evidence for the universe's history.",
     "help": [
-      { "label": "Reading: How Far Is Far", "url": "/units/unit-1/reading-how-far-is-far/" }
+      {
+        "label": "Reading: How Far Is Far",
+        "url": "/units/unit-1/reading-how-far-is-far/"
+      }
     ]
   },
   "HS-ESS1-4": {
@@ -27,8 +36,14 @@
     "assessedAt": "Goldilocks Report — transit/orbit reasoning in your exoplanet analysis (T/T strand, Component 4 locks U1 Block 9)",
     "onTrack": "You can read a light curve: dip spacing → orbital period, and you know what that math can and can't tell you.",
     "help": [
-      { "label": "Reading: Watching for Shadows", "url": "/units/unit-1/reading-watching-shadows/" },
-      { "label": "Light-Curve Decode handout (in Google Classroom)", "url": null }
+      {
+        "label": "Reading: Watching for Shadows",
+        "url": "/units/unit-1/reading-watching-shadows/"
+      },
+      {
+        "label": "Light-Curve Decode handout (in Google Classroom)",
+        "url": null
+      }
     ]
   },
   "HS-ESS2-1": {
@@ -38,8 +53,14 @@
     "assessedAt": "Landscape Reading — biography past + current processes (K/U strand, Components 1–2 lock U2 Block 6)",
     "onTrack": "Your location's biography names specific processes at specific timescales — 'monsoon pulses move the beach yearly; the harbour changed it in decades' — not just 'erosion happened.'",
     "help": [
-      { "label": "The Field Geologist", "url": "/ai-partners/field-geologist/" },
-      { "label": "Pallikaranai worked example (in Google Classroom)", "url": null }
+      {
+        "label": "The Field Geologist",
+        "url": "/ai-partners/field-geologist/"
+      },
+      {
+        "label": "Pallikaranai worked example (in Google Classroom)",
+        "url": null
+      }
     ]
   },
   "HS-ESS2-2": {
@@ -49,9 +70,18 @@
     "assessedAt": "Goldilocks Report — framework criteria with feedback reasoning, esp. field 5 'where it can fail' (K/U, Component 1 locks U1 Block 7)",
     "onTrack": "You can run the perturbation test on a loop and say whether it amplifies or stabilizes — and your framework uses that move on real criteria.",
     "help": [
-      { "label": "Feedback Loops handout (in Google Classroom)", "url": null },
-      { "label": "The Systems Diagrammer", "url": "/ai-partners/systems-diagrammer/" },
-      { "label": "Reading: Four Spheres, One System", "url": "/units/unit-1/reading-four-spheres/" }
+      {
+        "label": "Feedback Loops handout (in Google Classroom)",
+        "url": null
+      },
+      {
+        "label": "The Systems Diagrammer",
+        "url": "/ai-partners/systems-diagrammer/"
+      },
+      {
+        "label": "Reading: Four Spheres, One System",
+        "url": "/units/unit-1/reading-four-spheres/"
+      }
     ]
   },
   "HS-ESS2-5": {
@@ -61,7 +91,10 @@
     "assessedAt": "Landscape Reading — river/coast process analysis for water-shaped locations (K/U + T/T, Components 1–4)",
     "onTrack": "You can point at a Chennai landform and name the specific water process responsible, with evidence from imagery or data.",
     "help": [
-      { "label": "The Field Geologist", "url": "/ai-partners/field-geologist/" }
+      {
+        "label": "The Field Geologist",
+        "url": "/ai-partners/field-geologist/"
+      }
     ]
   },
   "HS-ESS3-1": {
@@ -71,7 +104,88 @@
     "assessedAt": "Landscape Reading — projections + recommendations (T/T strand, Components 4–5 lock U2 Block 8)",
     "onTrack": "Your 50-year projections connect physical processes to human decisions — and your recommendation names who would act and why.",
     "help": [
-      { "label": "The Skeptic", "url": "/ai-partners/the-skeptic/" }
+      {
+        "label": "The Skeptic",
+        "url": "/ai-partners/the-skeptic/"
+      }
+    ]
+  },
+  "HS-ESS1-5": {
+    "type": "ngss-pe",
+    "official": "Evaluate evidence of the past and current movements of continental and oceanic crust and the theory of plate tectonics to explain the ages of crustal rocks.",
+    "plain": "I can use evidence — seafloor ages, GPS motion, fossil matches — to explain how plates move.",
+    "assessedAt": "City Hazard Profile (K/U)",
+    "onTrack": "Your hazard profile explains WHY your city's boundary behaves as it does, with evidence.",
+    "help": [
+      {
+        "label": "The Plate Tectonics Tutor",
+        "url": "/ai-partners/plate-tectonics-tutor/"
+      }
+    ]
+  },
+  "HS-ETS1-1": {
+    "type": "ngss-pe",
+    "official": "Analyze a major global challenge to specify qualitative and quantitative criteria and constraints for solutions that account for societal needs and wants.",
+    "plain": "I can pin down what a solution must do — and what limits it — before I design.",
+    "assessedAt": "City Hazard Profile → Engineering Portfolio scenario setup",
+    "onTrack": "Your Hazard Profile names the criteria and constraints your design must satisfy.",
+    "help": [
+      {
+        "label": "The Engineering Coach",
+        "url": "/ai-partners/engineering-coach/"
+      }
+    ]
+  },
+  "HS-ETS1-2": {
+    "type": "ngss-pe",
+    "official": "Design a solution to a complex real-world problem by breaking it down into smaller, more manageable problems that can be solved through engineering.",
+    "plain": "I can break a big engineering problem into pieces I can actually solve.",
+    "assessedAt": "Engineering Design Portfolio — iterations 1–3 (T/T)",
+    "onTrack": "Each iteration attacks a named sub-problem, and your Division-of-Labour Plan shows the breakdown.",
+    "help": [
+      {
+        "label": "The Engineering Coach",
+        "url": "/ai-partners/engineering-coach/"
+      }
+    ]
+  },
+  "HS-ETS1-3": {
+    "type": "ngss-pe",
+    "official": "Evaluate a solution to a complex real-world problem based on prioritized criteria and trade-offs that account for a range of constraints, including cost, safety, reliability, and aesthetics, as well as possible social, cultural, and environmental impacts.",
+    "plain": "I can judge a design by weighing its trade-offs — cost, safety, who it protects, who it leaves out.",
+    "assessedAt": "Final Defense (C + T/T)",
+    "onTrack": "Your defense names what your design sacrifices, not just what it achieves.",
+    "help": [
+      {
+        "label": "Defending Your Work",
+        "url": "/foundations/defending-your-work/"
+      }
+    ]
+  },
+  "HS-ETS1-4": {
+    "type": "ngss-pe",
+    "official": "Use a computer simulation to model the impact of proposed solutions to a complex real-world problem with numerous criteria and constraints on interactions within and between systems relevant to the problem.",
+    "plain": "I can use a simulation to test how my design choices play out before committing to them.",
+    "assessedAt": "Engineering Design Portfolio — logged sim iterations (T/T)",
+    "onTrack": "Each iteration is tested in the simulator and its outputs cited as evidence — changed, run, compared.",
+    "help": [
+      {
+        "label": "Tectonic City Builder",
+        "url": "/units/unit-3/tectonic-city-builder/"
+      }
+    ]
+  },
+  "HS-ESS3-3": {
+    "type": "ngss-pe",
+    "official": "Create a computational simulation to illustrate the relationships among management of natural resources, the sustainability of human populations, and biodiversity.",
+    "plain": "I can use a computational model to explore how resource choices affect people and places.",
+    "assessedAt": "Tectonic City Builder budget trade-offs (formative)",
+    "onTrack": "Your sim budget decisions connect spending to who gets protected — and who doesn't.",
+    "help": [
+      {
+        "label": "Tectonic City Builder",
+        "url": "/units/unit-3/tectonic-city-builder/"
+      }
     ]
   },
   "SEP-4": {
@@ -81,7 +195,10 @@
     "assessedAt": "Runs through every unit; graded wherever data feeds a claim",
     "onTrack": "You cite the data behind your claims and name what the data can't tell you.",
     "help": [
-      { "label": "OPVL Framework", "url": "/foundations/opvl-framework/" }
+      {
+        "label": "OPVL Framework",
+        "url": "/foundations/opvl-framework/"
+      }
     ]
   },
   "SEP-6": {
@@ -91,8 +208,14 @@
     "assessedAt": "Every summative's analysis sections (K/U + T/T strands)",
     "onTrack": "Your explanations name mechanisms ('because the core cooled…'), not just outcomes ('it's cold').",
     "help": [
-      { "label": "Exemplar: Source Dossier", "url": "/units/unit-0/exemplar-source-dossier/" },
-      { "label": "Exemplar: Goldilocks Report", "url": "/units/unit-1/exemplar-goldilocks/" }
+      {
+        "label": "Exemplar: Source Dossier",
+        "url": "/units/unit-0/exemplar-source-dossier/"
+      },
+      {
+        "label": "Exemplar: Goldilocks Report",
+        "url": "/units/unit-1/exemplar-goldilocks/"
+      }
     ]
   },
   "SEP-7": {
@@ -102,7 +225,10 @@
     "assessedAt": "Every defense (C strand): U0 Block 7 onward",
     "onTrack": "In Q&A you use the five moves — and 'I don't know, here's what would settle it' when true.",
     "help": [
-      { "label": "Defending Your Work", "url": "/foundations/defending-your-work/" }
+      {
+        "label": "Defending Your Work",
+        "url": "/foundations/defending-your-work/"
+      }
     ]
   },
   "SEP-8": {
@@ -112,8 +238,40 @@
     "assessedAt": "Source Dossier (all strands) + every OPVL component after it",
     "onTrack": "Your Limitations are specific to the source in front of you — never 'it might be biased.'",
     "help": [
-      { "label": "OPVL Framework", "url": "/foundations/opvl-framework/" },
-      { "label": "Resources Library", "url": "/reference/library/" }
+      {
+        "label": "OPVL Framework",
+        "url": "/foundations/opvl-framework/"
+      },
+      {
+        "label": "Resources Library",
+        "url": "/reference/library/"
+      }
+    ]
+  },
+  "SEP-2": {
+    "type": "ngss-sep",
+    "official": "Developing and Using Models",
+    "plain": "I can build and use models — diagrams, simulations, cross-sections — to explain how something works.",
+    "assessedAt": "Across units; in U3, the sim iterations and boundary cross-sections",
+    "onTrack": "Your model shows the mechanism, not just the label — arrows mean something.",
+    "help": [
+      {
+        "label": "Tectonic City Builder",
+        "url": "/units/unit-3/tectonic-city-builder/"
+      }
+    ]
+  },
+  "SEP-5": {
+    "type": "ngss-sep",
+    "official": "Using Mathematics and Computational Thinking",
+    "plain": "I can use numbers, budgets, and computational tools to reason about a problem.",
+    "assessedAt": "U3 sim iterations — score and budget reasoning in the engineering journal",
+    "onTrack": "Your journal cites the numbers — scores, budget lines — and reasons from them.",
+    "help": [
+      {
+        "label": "Tectonic City Builder",
+        "url": "/units/unit-3/tectonic-city-builder/"
+      }
     ]
   },
   "Engage 3": {
@@ -123,7 +281,10 @@
     "assessedAt": "Every AI Documentation Template — the 'one thing the AI got wrong' field (K/U gate)",
     "onTrack": "You catch specific errors ('it said 2024; the report says 2023') — and you've stopped writing 'AI can hallucinate.'",
     "help": [
-      { "label": "AI Documentation Protocol", "url": "/foundations/ai-documentation-protocol/" }
+      {
+        "label": "AI Documentation Protocol",
+        "url": "/foundations/ai-documentation-protocol/"
+      }
     ]
   },
   "Engage 5": {
@@ -133,7 +294,10 @@
     "assessedAt": "U4 — the Footprint Decision task",
     "onTrack": "You can put rough numbers on an AI choice and name one limitation of your own estimate.",
     "help": [
-      { "label": "The UN report key points", "url": "/units/unit-0/unu-report-key-points/" }
+      {
+        "label": "The UN report key points",
+        "url": "/units/unit-0/unu-report-key-points/"
+      }
     ]
   },
   "Create 3": {
@@ -143,7 +307,10 @@
     "assessedAt": "Revision Trail — practiced U1/U2 Block 8, assessed with the U5 Position Paper",
     "onTrack": "Your trail has modified and rejected rows, not just accepted ones — the judgment stays yours.",
     "help": [
-      { "label": "AI Documentation Protocol", "url": "/foundations/ai-documentation-protocol/" }
+      {
+        "label": "AI Documentation Protocol",
+        "url": "/foundations/ai-documentation-protocol/"
+      }
     ]
   },
   "Manage 1": {
@@ -153,7 +320,10 @@
     "assessedAt": "AI-use log across the year; the defended not-using-AI reflection",
     "onTrack": "You can name a step where you chose NOT to use AI, and your reason survives a 'why?'",
     "help": [
-      { "label": "AI Documentation Protocol", "url": "/foundations/ai-documentation-protocol/" }
+      {
+        "label": "AI Documentation Protocol",
+        "url": "/foundations/ai-documentation-protocol/"
+      }
     ]
   }
 }

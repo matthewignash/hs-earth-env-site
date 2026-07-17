@@ -12,9 +12,6 @@ strands:
   active: ["K/U Knowledge"]
   preview: ["T/T Thinking"]
   faded: ["C Communication"]
-aiPartners:
-  - { slug: plate-tectonics-tutor, label: "Plate Tectonics Tutor" }
-  - { slug: the-source-evaluator, label: "Source Evaluator" }
 breadcrumbs:
   - { url: /, label: Home }
   - { url: /units/unit-3/, label: "Unit 3 — Plate Tectonics & Natural Hazards" }
@@ -22,6 +19,19 @@ breadcrumbs:
 prev: { url: /units/unit-3/block-1/, label: "Block 1 — Inside Earth + Boundary Types" }
 next: { url: /units/unit-3/block-3/, label: "Block 3 — Volcanism + Engineering Technologies" }
 unitMapUrl: /units/unit-3/
+aiPartners:
+  - { slug: plate-tectonics-tutor, label: "The Plate Tectonics Tutor" }
+  - { slug: the-source-evaluator, label: "The Source Evaluator" }
+bellRinger:
+  tag: "Prediction check"
+  minutes: 5
+  text: |
+    Tōhoku 2011 was a magnitude 9.1 quake offshore of Japan. San Andreas quakes happen on land, along a strike-slip fault.<br><strong>Task:</strong> Predict: which one produces a tsunami — and what does the answer depend on?
+standards:
+  ngss: ["HS-ESS2-1", "HS-ESS3-1"]
+  ailit: []
+learningIntention: "I can identify the dominant hazards of subduction and transform boundary types, and explain why those hazards differ."
+successCriteria: ["I can explain why subduction zones produce megathrust quakes and tsunamis.", "I can explain why transform faults shake but don't flood.", "I can predict a coastline's dominant hazards from its boundary type."]
 ---
 
 <section class="block-section story">
@@ -52,6 +62,11 @@ unitMapUrl: /units/unit-3/
       <div>Live cross-sections + <a href="/units/unit-3/tectonic-city-builder/">Tectonic City Builder</a> demo (teacher-led)</div>
       <div class="entry-meta">Whole-class projected · participate via Mentimeter</div>
     </div>
+    <a class="entry-card" href="/foundations/eal/u3/" style="text-decoration: none; color: inherit;">
+      <div class="entry-title">Vocabulary support</div>
+      <div>The U3 pre-teach — key terms with definitions and sentence stems. Subduction, megathrust, and strike-slip are all in there.</div>
+      <div class="entry-meta">Real link · Foundations · EAL</div>
+    </a>
   </div>
 </section>
 
@@ -60,7 +75,7 @@ unitMapUrl: /units/unit-3/
   <h2>Today's work — choose one path</h2>
   <p class="sub">All four options build toward the same Learning Intention. Different modalities so you can find the one that works for how you learn.</p>
   <div class="choice-intro">
-    <strong>Learning Intention:</strong> I can identify the dominant hazards of subduction and transform boundary types, and explain why those hazards differ.
+    <strong>Learning Intention:</strong> {{ learningIntention | safe }}
   </div>
   <div class="choice-board">
     <div class="choice">
@@ -97,7 +112,7 @@ unitMapUrl: /units/unit-3/
   <div class="submission-callout">
     <div class="label">Exit ticket (submit by end of class)</div>
     <p>Three sentences naming the dominant hazard of each boundary type (subduction, transform) and the geologic mechanism for each.</p>
-    <a href="#" class="rubric-link">Submit via Google Classroom →</a>
+    {% set submit = { id: "u3-b2", text: "Submit via Google Classroom" } %}{% include "partials/submit-link.njk" %}
   </div>
   <p class="rubric-meta">
     <strong>Rubric link:</strong> Today's exit ticket is scored on <strong>K/U</strong>. See the <a href="/foundations/the-rubric/">full Unit 3 rubric</a> for what each band looks like.
