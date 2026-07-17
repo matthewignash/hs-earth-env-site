@@ -151,7 +151,7 @@ Every block page across Units 0-7 follows the same five-section template:
 <!-- CONCEPTS (blue) -->
 <section class="block-section concepts">
   <span class="tag">💡 Concepts</span>
-  <h2>Three ways in</h2>
+  <h2>Ways in</h2>
   <div class="entry-grid">
     <div class="entry-card">🎥 Watch (6 min)...</div>
     <div class="entry-card">📄 Read (12 min)...</div>
