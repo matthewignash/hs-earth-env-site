@@ -2,11 +2,13 @@
 
 > **Purpose:** Living status doc. Tells you (and future Claude Code sessions) what's built, what's stubbed, what to build next, and in what order. The charter is in `CLAUDE.md` — do NOT modify that. Update this file at the end of each build session.
 
-**Last updated:** 2026-07-15 (Addenda 3–4 below. U0–U6 complete; U7 is next.)
+**Last updated:** 2026-07-15 (Addenda 3–5 below. U0–U6 complete; U7 is next.)
 
 ---
 
 ## SESSION HANDOFF — 2026-07-07 (read this first)
+
+**Addendum 5 (2026-07-15): Concepts header stops counting — "Ways in" site-wide.** Card counts vary by block, so the header no longer counts them. 60 h2s across all unit block pages (U0–U6) renamed: 53× "Three ways in" + 6× "Two ways in" → "Ways in"; U3 B2's variant → "Ways in — pick the one that works for you". 38 Concepts sub-lines de-counted ("Three entry points…" → "Entry points…", each sub-line's remaining per-block text preserved exactly). Also updated the matching site-structure description in `foundations/how-to-use-this-site.njk` ("Concepts. Ways in — watch, read, interact."). U5 B3's aquifer paragraph ("recharged only through specific entry points") deliberately untouched — different meaning. Grep-verified: no numbered "ways in" and no "Three/Two entry points" anywhere in src/ or the built site. **Convention going forward (incl. U7): new block pages use `<h2>Ways in</h2>` and count-free sub-lines.**
 
 **Addendum 4 (2026-07-15): U0 student-read voice pass (Part A) applied to blocks 1–7.** All B1–B7 rewrites from `../Unit 0_ Foundations/U0 Student-Read Pass — Findings + Rewrites (2026-07-06).md` applied verbatim (20 replacements: B2 got the heavy 7-item rewrite; B1/B3–B7 the light ones — "fail fast," "hand-wave," "operationalizes," "converge on the same artifact," "goes through the same gate," "reviewed asynchronously," "Conferencing with," "built to detect" all gone from U0), plus **F2**: B1's Story now names the two course questions as two levels — the year's (*How do you live well on a changing Earth?*) and this unit's (*How do scientists know what they know — and how should we know what we know?*), one sentence each; OPVL paragraph kept. Internal links preserved inside rewritten passages (B2's Tomorrow→B3, Unit 1→U1 B1). **NOT done (deliberate):** the F1 platform-language fixes (Gemini/Claude references in B3/B5 Do boards + assessment Step 2) — those are the findings doc's PART B, blocked on the Flint "Research Assistant" activity existing; the doc has the final Part B prompt ready. Two out-of-scope "built to detect" instances remain (`unit-3/assessment-engineering-portfolio.njk:78`, `student-hub/ai-documentation-template.njk:55`) — candidates for the same voice treatment when those pages get a pass. Grep-verified clean across `src/units/unit-0/`; build clean.
 
