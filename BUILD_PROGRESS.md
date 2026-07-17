@@ -2,11 +2,18 @@
 
 > **Purpose:** Living status doc. Tells you (and future Claude Code sessions) what's built, what's stubbed, what to build next, and in what order. The charter is in `CLAUDE.md` — do NOT modify that. Update this file at the end of each build session.
 
-**Last updated:** 2026-07-17 (Addenda 3–11 below. U0–U6 complete; U7 is next.)
+**Last updated:** 2026-07-17 (Addenda 3–12 below. U0–U6 complete; U7 is next.)
 
 ---
 
 ## SESSION HANDOFF — 2026-07-07 (read this first)
+
+**Addendum 12 (2026-07-17): U2 SC gap closed + bell-ringer reconciliation — the Addendum 8/9/11 flags are all resolved.**
+- **U2 SC filled (supplied-final wording, drafted from each block's LI — NOT from the Block Plans docx, which remains the stale arc):** B1, B3–B8 each got three SC; with B2+B9 (transcribed earlier) all nine U2 blocks now have full checklists. The Addendum 8 "pending Matthew's call" is closed via this route. Block-8 caveat check: its LI's closing requirement IS the peer-feedback note, so SC #2 matches as supplied — no adjustment needed (nuance: LI says one suggestion *per strand*, SC says "at least one strand"; supplied wording kept).
+- **U0 B1 SC recomposed** (supplied-final): the three-item composite covering both of the block's jobs (course launch: four threads · first OPVL: the four letters · journal setup + one expectation) replaces the docx trio — closes the Addendum 11 emphasis note.
+- **U0 B7 bell ringer**: the "(Migrated from the original Block 5…)" planning note trimmed from the rendered frontmatter; `bellringers-extracted-u0-u2.json` deliberately unchanged as the archival record.
+- **U2 B3/B4 bell ringers REPLACED — these two are NOT from the Block Plans docx** (the docx versions belonged to the old arc's rock-layers blocks): B3 is now the Cooum two-headlines phenomenon hook, B4 the Marina/1881-harbour prediction check (Claude-drafted, Matthew-approved wording; update the docx if it ever gets re-synced to the site arc).
+- **U1 bell-ringer duplications reconciled**: B1's ringer now links the Four Planets gallery ("that page IS this bell ringer"; Interact card + Do step untouched — they run the full activity); B5's ringer names the printed Light-Curve Decode handout as itself; **B10's redundant "Bell ringer — two JWST spectra" Concepts card removed**, its two NASA spectrum links folded into the ringer text (the Do choice 1 reference to "the JWST spectrum prompt on screen" still reads correctly). U0 B5 ruled NOT a duplicate (ringer = solo first-look at two templates; warm-up = paired S/V marking of the printed entry) — resolved, nothing changed.
 
 **Addendum 11 (2026-07-17): The Learning Panel + sticky reference bar (NEW SITE FEATURE) — LI/SC move to frontmatter, U0–U2.**
 
