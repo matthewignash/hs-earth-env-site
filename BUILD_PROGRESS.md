@@ -2,11 +2,21 @@
 
 > **Purpose:** Living status doc. Tells you (and future Claude Code sessions) what's built, what's stubbed, what to build next, and in what order. The charter is in `CLAUDE.md` — do NOT modify that. Update this file at the end of each build session.
 
-**Last updated:** 2026-07-17 (Addenda 3–9 below. U0–U6 complete; U7 is next.)
+**Last updated:** 2026-07-17 (Addenda 3–11 below. U0–U6 complete; U7 is next.)
 
 ---
 
 ## SESSION HANDOFF — 2026-07-07 (read this first)
+
+**Addendum 11 (2026-07-17): The Learning Panel + sticky reference bar (NEW SITE FEATURE) — LI/SC move to frontmatter, U0–U2.**
+
+*Data migration (single source of truth).* All 26 U0–U2 block pages now carry `learningIntention: "…"` and `successCriteria: […]` in frontmatter (script-migrated, text verbatim). Sources: U1/U2 pages' own choice-intro markup; **U0's SC extracted from the U0 Block Plans docx** (all 7 blocks present, green band, verbatim minus the checkbox glyph — no gaps to flag; note U0 B1's docx SC lean "course launch / 4 threads / scholar expectations" while the site B1 LI is OPVL-focused — same class day, different emphasis, review if wanted). **U2 B1 + B3–B8 have empty `successCriteria` arrays** — that's the Addendum 8 docx-arc gap, still pending Matthew's decision; the panel skips the checklist on those pages. The Do section's choice-intro is now one data-driven line ("Learning Intention: {{ learningIntention }}"); all hardcoded LI text and `ul.success-criteria` lists removed (SC render in the panel only).
+
+*The Learning Panel* (`layouts/block-page.njk`, between bell ringer and the AI callout/Story): "Today we are learning" tag + the LI large; "I can — tick as you go (for you, not for marks)" checklist — real accessible checkboxes, state in localStorage keyed `sc:<path>` + index, small reset button; standards chips at the foot (NGSS pills accent-light, AILit pills low-saturation orange) + "full course map →". **The chips supersede Addendum 9's standards footer, which is removed.**
+
+*The sticky reference bar*: when the panel scrolls out of view, a slim fixed bar appears below the (sticky) top nav — LI ellipsis-truncated + live "n/m ✓" counter + chevron dropdown containing the same checklist (same stored state, both sets synced). IntersectionObserver-driven, JS inline in the layout (~60 lines), no transitions (trivially reduced-motion-safe), narrow screens show "Today's target ▾" + counter only. Browser-verified: ticks persist across reload, reset clears, counter matches panel state, bar hides when the panel is in view.
+
+*Consistency sweep*: the five SC self-rating Reflect prompts (U0 B6, U1 B2/B4/B7, U2 B2) now end their rating sentence with "— check your ticks at the top of the page." No other prompt wording touched (U1 B9's reflect is partner-review, not SC-rating — left alone).
 
 **Addendum 10 (2026-07-17): Pallikaranai 1988/2018 image lands in the U2 B1 bell ringer.** The bell-ringer box gained optional `image`/`imageAlt`/`imageCredit` frontmatter fields (rendered as a compact `content-figure` between text and journal line, max-width 640px). First use: Raj Bhagat Palanichamy's Google Earth Timelapse comparison of Pallikaranai Marsh (1988 vs. 2018), supplied by Matthew, downscaled to `src/assets/img/u2/u2-pallikaranai-1988-2018.jpg` with creator + Google Earth/Landsat attribution in the caption (details + the "1965 aerial photo" text-mismatch flag in `MEDIA_REVIEW.md`).
 

@@ -402,9 +402,91 @@ dialog.video-lightbox::backdrop {
 .bell-ringer .bell-ringer-journal { font-size: 12px; color: var(--muted); font-style: italic; margin-bottom: 0; }
 .bell-ringer .bell-ringer-figure { margin: 10px 0 8px; max-width: 640px; }
 
-/* ====== Standards footer ====== */
-.standards-footer { font-size: 12px; color: var(--muted); margin-top: 24px; }
-.standards-footer a { color: var(--muted); }
+/* ====== Learning panel ====== */
+.learning-panel {
+  background: white;
+  border: 1px solid var(--accent);
+  border-left: 4px solid var(--accent);
+  border-radius: 8px;
+  padding: 16px 20px;
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+.lp-tag {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+.lp-intention { font-size: 19px; margin: 6px 0 12px; color: var(--ink); }
+.lp-sc-head {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  color: var(--muted);
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 12px;
+}
+.lp-reset {
+  border: none;
+  background: none;
+  color: var(--muted);
+  font: inherit;
+  font-size: 11px;
+  text-transform: none;
+  letter-spacing: 0;
+  text-decoration: underline;
+  cursor: pointer;
+  padding: 0;
+}
+.lp-sc-list { list-style: none; margin: 6px 0 0; padding: 0; }
+.lp-sc-list li { margin: 6px 0; }
+.lp-sc-list label { display: flex; gap: 10px; align-items: flex-start; cursor: pointer; }
+.lp-check { accent-color: var(--accent); width: 16px; height: 16px; margin-top: 4px; flex: none; }
+.lp-standards { margin-top: 14px; display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
+.std-chip { font-size: 11px; font-weight: 600; padding: 2px 8px; border-radius: 999px; white-space: nowrap; }
+.std-chip.ngss { background: var(--accent-light); color: var(--accent-dark); }
+.std-chip.ailit { background: #fdf0dc; color: #8a5a12; }
+.lp-map-link { font-size: 11px; color: var(--muted); margin-left: 4px; white-space: nowrap; }
+@media (max-width: 640px) {
+  .learning-panel { padding: 12px 14px; }
+  .lp-intention { font-size: 16px; }
+}
+
+/* ====== Sticky reference bar ====== */
+.li-sticky {
+  position: fixed;
+  left: 0;
+  right: 0;
+  z-index: 90;
+  background: white;
+  border-bottom: 1px solid var(--border);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+  padding: 6px 0;
+  font-size: 13px;
+}
+.li-sticky-row { display: flex; align-items: center; gap: 10px; }
+.li-sticky-text { flex: 1; min-width: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.li-sticky-target { display: none; font-weight: 600; }
+.li-sticky-count { flex: none; font-weight: 700; color: var(--accent); }
+.li-sticky-toggle {
+  flex: none;
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-size: 14px;
+  color: var(--accent);
+  padding: 2px 8px;
+}
+.li-sticky-list { padding-bottom: 8px; }
+@media (max-width: 640px) {
+  .li-sticky-text { display: none; }
+  .li-sticky-target { display: inline; flex: 1; }
+}
 
 /* ====== Live-activity variants (live class activity, not a missing asset) ====== */
 .entry-card.live-activity,

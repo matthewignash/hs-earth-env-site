@@ -43,6 +43,28 @@ extraStylesheets:
   </div>
   {% endif %}
 
+  {% if learningIntention %}
+  <section class="learning-panel" id="learning-panel" aria-label="Today's learning target">
+    <div class="lp-tag">Today we are learning</div>
+    <p class="lp-intention">{{ learningIntention | safe }}</p>
+    {% if successCriteria and successCriteria.length %}
+    <div class="lp-sc-head"><span>I can — tick as you go (for you, not for marks)</span> <button type="button" class="lp-reset">reset</button></div>
+    <ul class="lp-sc-list">
+      {%- for sc in successCriteria %}
+      <li><label><input type="checkbox" class="lp-check" data-sc-index="{{ loop.index0 }}"><span>{{ sc }}</span></label></li>
+      {%- endfor %}
+    </ul>
+    {% endif %}
+    {% if standards and (standards.ngss.length or standards.ailit.length) %}
+    <div class="lp-standards">
+      {%- for s in standards.ngss %}<span class="std-chip ngss">NGSS {{ s }}</span>{% endfor %}
+      {%- for s in standards.ailit %}<span class="std-chip ailit">AILit {{ s }}</span>{% endfor %}
+      <a class="lp-map-link" href="/foundations/standards-map/">full course map →</a>
+    </div>
+    {% endif %}
+  </section>
+  {% endif %}
+
   {% if aiPartners %}
   <div class="ai-callout">
     <div class="ai-label">AI Partners available for today's work</div>
@@ -76,8 +98,76 @@ extraStylesheets:
   </nav>
   {% endif %}
 
-  {% if standards %}
-  <p class="standards-footer">This block builds — {% if standards.ngss and standards.ngss.length %}NGSS: {{ standards.ngss | join(" · ") }}{% endif %}{% if standards.ngss and standards.ngss.length and standards.ailit and standards.ailit.length %} | {% endif %}{% if standards.ailit and standards.ailit.length %}AI Literacy (OECD AILit): {{ standards.ailit | join(" · ") }}{% endif %} · <a href="/foundations/standards-map/">full course map</a></p>
-  {% endif %}
-
 </main>
+
+{% if learningIntention %}
+<div class="li-sticky" id="li-sticky" hidden>
+  <div class="li-sticky-row container">
+    <span class="li-sticky-text">{{ learningIntention | safe }}</span>
+    <span class="li-sticky-target">Today's target</span>
+    {% if successCriteria and successCriteria.length %}
+    <span class="li-sticky-count" aria-live="polite"></span>
+    <button type="button" class="li-sticky-toggle" aria-expanded="false" aria-label="Show the success criteria checklist">▾</button>
+    {% endif %}
+  </div>
+  {% if successCriteria and successCriteria.length %}
+  <ul class="lp-sc-list li-sticky-list container" hidden>
+    {%- for sc in successCriteria %}
+    <li><label><input type="checkbox" class="lp-check" data-sc-index="{{ loop.index0 }}"><span>{{ sc }}</span></label></li>
+    {%- endfor %}
+  </ul>
+  {% endif %}
+</div>
+<script>
+(function () {
+  var panel = document.getElementById('learning-panel');
+  if (!panel) return;
+  var bar = document.getElementById('li-sticky');
+  var key = 'sc:' + location.pathname;
+  var checks = Array.prototype.slice.call(document.querySelectorAll('.lp-check'));
+  var total = panel.querySelectorAll('.lp-check').length;
+  function load() { try { return JSON.parse(localStorage.getItem(key)) || []; } catch (e) { return []; } }
+  function save(st) { try { localStorage.setItem(key, JSON.stringify(st)); } catch (e) {} }
+  function apply() {
+    var st = load(), n = 0, i;
+    checks.forEach(function (c) { c.checked = !!st[c.dataset.scIndex]; });
+    for (i = 0; i < total; i++) if (st[i]) n++;
+    var count = bar && bar.querySelector('.li-sticky-count');
+    if (count) count.textContent = n + '/' + total + ' ✓';
+  }
+  checks.forEach(function (c) {
+    c.addEventListener('change', function () {
+      var st = load(); st[c.dataset.scIndex] = c.checked; save(st); apply();
+    });
+  });
+  Array.prototype.forEach.call(document.querySelectorAll('.lp-reset'), function (b) {
+    b.addEventListener('click', function () { save([]); apply(); });
+  });
+  apply();
+  if (!bar) return;
+  var nav = document.querySelector('.topnav');
+  function setTop() { bar.style.top = (nav ? nav.offsetHeight : 0) + 'px'; }
+  setTop();
+  window.addEventListener('resize', setTop);
+  var toggle = bar.querySelector('.li-sticky-toggle');
+  var list = bar.querySelector('.li-sticky-list');
+  if (toggle && list) {
+    toggle.addEventListener('click', function () {
+      var opening = list.hidden;
+      list.hidden = !opening;
+      toggle.setAttribute('aria-expanded', opening ? 'true' : 'false');
+      toggle.textContent = opening ? '▴' : '▾';
+    });
+  }
+  if ('IntersectionObserver' in window) {
+    new IntersectionObserver(function (entries) {
+      var e = entries[0];
+      var pastTop = e.boundingClientRect.bottom < (nav ? nav.offsetHeight : 0) + 4;
+      var show = !e.isIntersecting && pastTop;
+      bar.hidden = !show;
+      if (!show && list) { list.hidden = true; if (toggle) { toggle.setAttribute('aria-expanded', 'false'); toggle.textContent = '▾'; } }
+    }, { rootMargin: '-60px 0px 0px 0px' }).observe(panel);
+  }
+})();
+</script>
+{% endif %}
