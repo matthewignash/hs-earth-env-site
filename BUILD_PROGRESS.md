@@ -2,11 +2,16 @@
 
 > **Purpose:** Living status doc. Tells you (and future Claude Code sessions) what's built, what's stubbed, what to build next, and in what order. The charter is in `CLAUDE.md` — do NOT modify that. Update this file at the end of each build session.
 
-**Last updated:** 2026-07-17 (Addenda 3–12 below. U0–U6 complete; U7 is next.)
+**Last updated:** 2026-07-17 (Addenda 3–13 below. U0–U6 complete; U7 is next.)
 
 ---
 
 ## SESSION HANDOFF — 2026-07-07 (read this first)
+
+**Addendum 13 (2026-07-17): The standards catalog + tap-to-expand chips + map-page deep sections (NEW SITE FEATURE).**
+- **`src/_data/standardsCatalog.json` (v1 — ⚠ PE texts await Matthew's verification against nextgenscience.org):** 15 entries (7 NGSS PEs verbatim-as-supplied, 4 SEPs, 4 AILit paraphrases) each with `type / official / plain / assessedAt / onTrack / help[]`. Classroom-only helps (Light-Curve Decode, Pallikaranai example, Feedback Loops handout) carry `url: null` and render unlinked.
+- **Chips are now tap-to-expand** (`.eleventy.js` gained a `standardsBlocks` collection + `standardsTrail`/`baseStandardId` filters; macros in `layouts/block-page.njk`): tap → in-place panel with plain (bold) → official (quoted, muted, "In brief:" prefix on AILit) → **"Where this runs:" auto-generated from frontmatter** (every tagged block, course order, current page marked "← you are here") → Assessed → On track → help links. One panel at a time, tap-again/Esc closes, button semantics + aria-expanded — all browser-verified on U1 B7 (HS-ESS2-2's trail = U1 B2·B3·B7, matching a frontmatter grep exactly; the trail regenerates from frontmatter at build). `HS-ESS1-2 (prev.)` normalizes to its catalog entry (suffix stripped for lookup, shown on the chip). Catalog-missing ids fall back to a plain chip linking the map page.
+- **`/foundations/standards-map/` deep sections:** per-standard anchored sections (same catalog fields + the appearance trail), unit-table codes now link to their sections (catalog-backed codes only — U3–U7 codes and secondary codes without entries stay plain text), NGSS Lead States 2013 attribution + AILit framework citation once at the page foot.
 
 **Addendum 12 (2026-07-17): U2 SC gap closed + bell-ringer reconciliation — the Addendum 8/9/11 flags are all resolved.**
 - **U2 SC filled (supplied-final wording, drafted from each block's LI — NOT from the Block Plans docx, which remains the stale arc):** B1, B3–B8 each got three SC; with B2+B9 (transcribed earlier) all nine U2 blocks now have full checklists. The Addendum 8 "pending Matthew's call" is closed via this route. Block-8 caveat check: its LI's closing requirement IS the peer-feedback note, so SC #2 matches as supplied — no adjustment needed (nuance: LI says one suggestion *per strand*, SC says "at least one strand"; supplied wording kept).

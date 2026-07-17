@@ -448,9 +448,37 @@ dialog.video-lightbox::backdrop {
 .lp-sc-list label { display: flex; gap: 10px; align-items: flex-start; cursor: pointer; }
 .lp-check { accent-color: var(--accent); width: 16px; height: 16px; margin-top: 4px; flex: none; }
 .lp-standards { margin-top: 14px; display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
-.std-chip { font-size: 11px; font-weight: 600; padding: 2px 8px; border-radius: 999px; white-space: nowrap; }
+.std-chip { font-size: 11px; font-weight: 600; padding: 2px 8px; border-radius: 999px; white-space: nowrap; text-decoration: none; }
 .std-chip.ngss { background: var(--accent-light); color: var(--accent-dark); }
 .std-chip.ailit { background: #fdf0dc; color: #8a5a12; }
+button.std-chip { border: none; cursor: pointer; font-family: inherit; }
+button.std-chip[aria-expanded="true"] { outline: 2px solid var(--accent); outline-offset: 1px; }
+
+/* ====== Standards tap-to-expand panel ====== */
+.std-panel {
+  background: white;
+  border: 1px solid var(--accent-light);
+  border-left: 3px solid var(--accent);
+  border-radius: 6px;
+  padding: 10px 14px;
+  margin-top: 10px;
+  font-size: 13px;
+  line-height: 1.55;
+}
+.std-panel p { margin: 0 0 6px; }
+.std-official { color: var(--muted); font-style: italic; }
+.std-label {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-top: 8px;
+}
+.std-trail { margin: 2px 0 6px; padding-left: 18px; }
+.std-trail li { margin: 2px 0; }
+.std-here { font-weight: 600; }
+.std-help { font-size: 12px; }
 .lp-map-link { font-size: 11px; color: var(--muted); margin-left: 4px; white-space: nowrap; }
 @media (max-width: 640px) {
   .learning-panel { padding: 12px 14px; }

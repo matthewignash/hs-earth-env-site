@@ -1,0 +1,159 @@
+{
+  "HS-ESS1-1": {
+    "type": "ngss-pe",
+    "official": "Develop a model based on evidence to illustrate the life span of the sun and the role of nuclear fusion in the sun's core to release energy that eventually reaches Earth in the form of radiation.",
+    "plain": "I can explain how the Sun makes its energy and how that energy reaches and warms Earth.",
+    "assessedAt": "Goldilocks Report — framework criteria involving the host star (K/U strand, Component 1 locks U1 Block 7)",
+    "onTrack": "Your habitability framework treats the host star as an energy source with numbers attached (luminosity, HZ range), not just 'the planet needs sunlight.'",
+    "help": [
+      { "label": "Reading: How Far Is Far", "url": "/units/unit-1/reading-how-far-is-far/" },
+      { "label": "Habitability Zone Calculator", "url": "/units/unit-1/habitability-zone-calculator/" }
+    ]
+  },
+  "HS-ESS1-2": {
+    "type": "ngss-pe",
+    "official": "Construct an explanation of the Big Bang theory based on astronomical evidence of light spectra, motion of distant galaxies, and composition of matter in the universe.",
+    "plain": "I can explain what the evidence — starlight, moving galaxies, the makeup of the universe — tells us about how the universe began.",
+    "assessedAt": "Previewed in U1 Block 4 (lookback time); formally assessed in a later unit",
+    "onTrack": "You can explain why looking far away means looking back in time, and what that has to do with evidence for the universe's history.",
+    "help": [
+      { "label": "Reading: How Far Is Far", "url": "/units/unit-1/reading-how-far-is-far/" }
+    ]
+  },
+  "HS-ESS1-4": {
+    "type": "ngss-pe",
+    "official": "Use mathematical or computational representations to predict the motion of orbiting objects in the solar system.",
+    "plain": "I can use math and models to predict how planets and other objects orbit.",
+    "assessedAt": "Goldilocks Report — transit/orbit reasoning in your exoplanet analysis (T/T strand, Component 4 locks U1 Block 9)",
+    "onTrack": "You can read a light curve: dip spacing → orbital period, and you know what that math can and can't tell you.",
+    "help": [
+      { "label": "Reading: Watching for Shadows", "url": "/units/unit-1/reading-watching-shadows/" },
+      { "label": "Light-Curve Decode handout (in Google Classroom)", "url": null }
+    ]
+  },
+  "HS-ESS2-1": {
+    "type": "ngss-pe",
+    "official": "Develop a model to illustrate how Earth's internal and surface processes operate at different spatial and temporal scales to form continental and ocean-floor features.",
+    "plain": "I can explain how Earth's surface features are built and reshaped by processes working at very different speeds and sizes.",
+    "assessedAt": "Landscape Reading — biography past + current processes (K/U strand, Components 1–2 lock U2 Block 6)",
+    "onTrack": "Your location's biography names specific processes at specific timescales — 'monsoon pulses move the beach yearly; the harbour changed it in decades' — not just 'erosion happened.'",
+    "help": [
+      { "label": "The Field Geologist", "url": "/ai-partners/field-geologist/" },
+      { "label": "Pallikaranai worked example (in Google Classroom)", "url": null }
+    ]
+  },
+  "HS-ESS2-2": {
+    "type": "ngss-pe",
+    "official": "Analyze geoscience data to make the claim that one change to Earth's surface can create feedbacks that cause changes to other Earth systems.",
+    "plain": "I can show how one change on Earth sets off feedback loops that change other Earth systems.",
+    "assessedAt": "Goldilocks Report — framework criteria with feedback reasoning, esp. field 5 'where it can fail' (K/U, Component 1 locks U1 Block 7)",
+    "onTrack": "You can run the perturbation test on a loop and say whether it amplifies or stabilizes — and your framework uses that move on real criteria.",
+    "help": [
+      { "label": "Feedback Loops handout (in Google Classroom)", "url": null },
+      { "label": "The Systems Diagrammer", "url": "/ai-partners/systems-diagrammer/" },
+      { "label": "Reading: Four Spheres, One System", "url": "/units/unit-1/reading-four-spheres/" }
+    ]
+  },
+  "HS-ESS2-5": {
+    "type": "ngss-pe",
+    "official": "Plan and conduct an investigation of the properties of water and its effects on Earth materials and surface processes.",
+    "plain": "I can investigate how water shapes rock, sediment, and land.",
+    "assessedAt": "Landscape Reading — river/coast process analysis for water-shaped locations (K/U + T/T, Components 1–4)",
+    "onTrack": "You can point at a Chennai landform and name the specific water process responsible, with evidence from imagery or data.",
+    "help": [
+      { "label": "The Field Geologist", "url": "/ai-partners/field-geologist/" }
+    ]
+  },
+  "HS-ESS3-1": {
+    "type": "ngss-pe",
+    "official": "Construct an explanation based on evidence for how the availability of natural resources, occurrence of natural hazards, and changes in climate have influenced human activity.",
+    "plain": "I can explain, with evidence, how resources, hazards, and climate have shaped where and how people live.",
+    "assessedAt": "Landscape Reading — projections + recommendations (T/T strand, Components 4–5 lock U2 Block 8)",
+    "onTrack": "Your 50-year projections connect physical processes to human decisions — and your recommendation names who would act and why.",
+    "help": [
+      { "label": "The Skeptic", "url": "/ai-partners/the-skeptic/" }
+    ]
+  },
+  "SEP-4": {
+    "type": "ngss-sep",
+    "official": "Analyzing and Interpreting Data",
+    "plain": "I can read real data — charts, imagery, light curves — and say what it does and doesn't show.",
+    "assessedAt": "Runs through every unit; graded wherever data feeds a claim",
+    "onTrack": "You cite the data behind your claims and name what the data can't tell you.",
+    "help": [
+      { "label": "OPVL Framework", "url": "/foundations/opvl-framework/" }
+    ]
+  },
+  "SEP-6": {
+    "type": "ngss-sep",
+    "official": "Constructing Explanations and Designing Solutions",
+    "plain": "I can build an explanation from evidence — not just state an answer.",
+    "assessedAt": "Every summative's analysis sections (K/U + T/T strands)",
+    "onTrack": "Your explanations name mechanisms ('because the core cooled…'), not just outcomes ('it's cold').",
+    "help": [
+      { "label": "Exemplar: Source Dossier", "url": "/units/unit-0/exemplar-source-dossier/" },
+      { "label": "Exemplar: Goldilocks Report", "url": "/units/unit-1/exemplar-goldilocks/" }
+    ]
+  },
+  "SEP-7": {
+    "type": "ngss-sep",
+    "official": "Engaging in Argument from Evidence",
+    "plain": "I can defend a claim under questioning, cite my evidence, and revise when someone shows me better reasoning.",
+    "assessedAt": "Every defense (C strand): U0 Block 7 onward",
+    "onTrack": "In Q&A you use the five moves — and 'I don't know, here's what would settle it' when true.",
+    "help": [
+      { "label": "Defending Your Work", "url": "/foundations/defending-your-work/" }
+    ]
+  },
+  "SEP-8": {
+    "type": "ngss-sep",
+    "official": "Obtaining, Evaluating, and Communicating Information",
+    "plain": "I can find sources, judge them with OPVL, and communicate what I learned honestly.",
+    "assessedAt": "Source Dossier (all strands) + every OPVL component after it",
+    "onTrack": "Your Limitations are specific to the source in front of you — never 'it might be biased.'",
+    "help": [
+      { "label": "OPVL Framework", "url": "/foundations/opvl-framework/" },
+      { "label": "Resources Library", "url": "/reference/library/" }
+    ]
+  },
+  "Engage 3": {
+    "type": "ailit",
+    "official": "Evaluate whether an AI output should be accepted, revised, or rejected (paraphrased — full framework at ailiteracyframework.org)",
+    "plain": "I can check an AI's answer against real sources and decide: use it, fix it, or bin it.",
+    "assessedAt": "Every AI Documentation Template — the 'one thing the AI got wrong' field (K/U gate)",
+    "onTrack": "You catch specific errors ('it said 2024; the report says 2023') — and you've stopped writing 'AI can hallucinate.'",
+    "help": [
+      { "label": "AI Documentation Protocol", "url": "/foundations/ai-documentation-protocol/" }
+    ]
+  },
+  "Engage 5": {
+    "type": "ailit",
+    "official": "Understand how AI systems consume energy and natural resources (paraphrased)",
+    "plain": "I can estimate what my AI use costs in electricity and water, and decide when it's worth it.",
+    "assessedAt": "U4 — the Footprint Decision task",
+    "onTrack": "You can put rough numbers on an AI choice and name one limitation of your own estimate.",
+    "help": [
+      { "label": "The UN report key points", "url": "/units/unit-0/unu-report-key-points/" }
+    ]
+  },
+  "Create 3": {
+    "type": "ailit",
+    "official": "Direct generative AI to elicit feedback, refine work, and support reflection (paraphrased)",
+    "plain": "I can use AI to make MY work better — and show exactly who changed what.",
+    "assessedAt": "Revision Trail — practiced U1/U2 Block 8, assessed with the U5 Position Paper",
+    "onTrack": "Your trail has modified and rejected rows, not just accepted ones — the judgment stays yours.",
+    "help": [
+      { "label": "AI Documentation Protocol", "url": "/foundations/ai-documentation-protocol/" }
+    ]
+  },
+  "Manage 1": {
+    "type": "ailit",
+    "official": "Decide whether AI is the right tool for a task before using it (paraphrased)",
+    "plain": "I choose when to use AI and when to think it through myself — and I can defend either choice.",
+    "assessedAt": "AI-use log across the year; the defended not-using-AI reflection",
+    "onTrack": "You can name a step where you chose NOT to use AI, and your reason survives a 'why?'",
+    "help": [
+      { "label": "AI Documentation Protocol", "url": "/foundations/ai-documentation-protocol/" }
+    ]
+  }
+}

@@ -5,6 +5,41 @@ extraStylesheets:
   - /assets/block-page.css
 ---
 
+{% macro stdChip(s, cls) %}
+  {%- set sid = s | baseStandardId -%}
+  {%- set entry = standardsCatalog[sid] -%}
+  {%- if entry -%}
+  <button type="button" class="std-chip {{ cls }}" data-panel="std-panel-{{ sid | slugify }}" aria-expanded="false" aria-controls="std-panel-{{ sid | slugify }}">{{ 'NGSS' if cls == 'ngss' else 'AILit' }} {{ s }}</button>
+  {%- else -%}
+  <a class="std-chip {{ cls }}" href="/foundations/standards-map/">{{ 'NGSS' if cls == 'ngss' else 'AILit' }} {{ s }}</a>
+  {%- endif -%}
+{% endmacro %}
+{% macro stdPanel(s, cls) %}
+  {%- set sid = s | baseStandardId -%}
+  {%- set entry = standardsCatalog[sid] -%}
+  {%- if entry -%}
+  <div class="std-panel" id="std-panel-{{ sid | slugify }}" hidden>
+    <p class="std-plain"><strong>{{ entry.plain }}</strong></p>
+    <p class="std-official">{% if entry.type == 'ailit' %}In brief: {% endif %}"{{ entry.official }}"</p>
+    {%- set trail = collections.standardsBlocks | standardsTrail(sid) -%}
+    {%- if trail.length %}
+    <p class="std-label">Where this runs:</p>
+    <ul class="std-trail">
+      {%- for t in trail %}
+      <li>{% if t.url == page.url %}<span class="std-here">U{{ t.unit }} B{{ t.block }} — {{ t.title }} ← you are here</span>{% else %}<a href="{{ t.url }}">U{{ t.unit }} B{{ t.block }} — {{ t.title }}</a>{% endif %}</li>
+      {%- endfor %}
+    </ul>
+    {%- endif %}
+    <p class="std-label">Assessed:</p>
+    <p>{{ entry.assessedAt }}</p>
+    <p class="std-label">On track looks like:</p>
+    <p>{{ entry.onTrack }}</p>
+    {%- if entry.help.length %}
+    <p class="std-help">{% for h in entry.help %}{% if h.url %}<a href="{{ h.url }}">{{ h.label }}</a>{% else %}<span>{{ h.label }}</span>{% endif %}{% if not loop.last %} · {% endif %}{% endfor %}</p>
+    {%- endif %}
+  </div>
+  {%- endif -%}
+{% endmacro %}
 {% include "partials/breadcrumbs.njk" %}
 
 <header class="page-header">
@@ -57,10 +92,12 @@ extraStylesheets:
     {% endif %}
     {% if standards and (standards.ngss.length or standards.ailit.length) %}
     <div class="lp-standards">
-      {%- for s in standards.ngss %}<span class="std-chip ngss">NGSS {{ s }}</span>{% endfor %}
-      {%- for s in standards.ailit %}<span class="std-chip ailit">AILit {{ s }}</span>{% endfor %}
+      {%- for s in standards.ngss %}{{ stdChip(s, 'ngss') }}{% endfor %}
+      {%- for s in standards.ailit %}{{ stdChip(s, 'ailit') }}{% endfor %}
       <a class="lp-map-link" href="/foundations/standards-map/">full course map →</a>
     </div>
+    {%- for s in standards.ngss %}{{ stdPanel(s, 'ngss') }}{% endfor %}
+    {%- for s in standards.ailit %}{{ stdPanel(s, 'ailit') }}{% endfor %}
     {% endif %}
   </section>
   {% endif %}
@@ -168,6 +205,27 @@ extraStylesheets:
       if (!show && list) { list.hidden = true; if (toggle) { toggle.setAttribute('aria-expanded', 'false'); toggle.textContent = '▾'; } }
     }, { rootMargin: '-60px 0px 0px 0px' }).observe(panel);
   }
+})();
+(function () {
+  var chips = Array.prototype.slice.call(document.querySelectorAll('.std-chip[data-panel]'));
+  if (!chips.length) return;
+  function close(chip) {
+    var p = document.getElementById(chip.dataset.panel);
+    if (p) p.hidden = true;
+    chip.setAttribute('aria-expanded', 'false');
+  }
+  chips.forEach(function (chip) {
+    chip.addEventListener('click', function () {
+      var p = document.getElementById(chip.dataset.panel);
+      if (!p) return;
+      var opening = p.hidden;
+      chips.forEach(close);
+      if (opening) { p.hidden = false; chip.setAttribute('aria-expanded', 'true'); }
+    });
+  });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') chips.forEach(close);
+  });
 })();
 </script>
 {% endif %}

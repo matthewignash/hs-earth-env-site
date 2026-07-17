@@ -2,6 +2,8 @@
 layout: layouts/base.njk
 title: Standards Map
 tagline: What this course teaches, unit by unit — the science standards and the AI-literacy competences behind every block.
+extraStylesheets:
+  - /assets/block-page.css
 breadcrumbs:
   - { url: /, label: Home }
   - { url: /foundations/, label: Foundations }
@@ -23,15 +25,15 @@ breadcrumbs:
   <tbody>
     <tr>
       <td><strong>U0 — Scientific Practices &amp; Class Foundations</strong></td>
-      <td>Practices-focused: SEP-6 (constructing explanations), SEP-7 (argument from evidence), SEP-8 (obtaining, evaluating, and communicating information)</td>
+      <td>Practices-focused: <a href="#sep-6">SEP-6</a> (constructing explanations), <a href="#sep-7">SEP-7</a> (argument from evidence), <a href="#sep-8">SEP-8</a> (obtaining, evaluating, and communicating information)</td>
     </tr>
     <tr>
       <td><strong>U1 — Earth and Universe</strong></td>
-      <td>HS-ESS1-1, HS-ESS1-2, HS-ESS1-4, HS-ESS2-2 (secondary: HS-ESS1-3, HS-ESS2-4)</td>
+      <td><a href="#hs-ess1-1">HS-ESS1-1</a>, <a href="#hs-ess1-2">HS-ESS1-2</a>, <a href="#hs-ess1-4">HS-ESS1-4</a>, <a href="#hs-ess2-2">HS-ESS2-2</a> (secondary: HS-ESS1-3, HS-ESS2-4)</td>
     </tr>
     <tr>
       <td><strong>U2 — Surface Processes</strong></td>
-      <td>HS-ESS2-1, HS-ESS2-5, HS-ESS3-1</td>
+      <td><a href="#hs-ess2-1">HS-ESS2-1</a>, <a href="#hs-ess2-5">HS-ESS2-5</a>, <a href="#hs-ess3-1">HS-ESS3-1</a></td>
     </tr>
     <tr>
       <td><strong>U3 — Plate Tectonics &amp; Natural Hazards</strong></td>
@@ -63,16 +65,41 @@ breadcrumbs:
     <tr><th>Unit</th><th>Competences</th></tr>
   </thead>
   <tbody>
-    <tr><td><strong>U0</strong></td><td>Engage 3, Engage 5 (introduced), Manage 1</td></tr>
-    <tr><td><strong>U1</strong></td><td>Engage 3, Create 3, Manage 1</td></tr>
-    <tr><td><strong>U2</strong></td><td>Engage 3, Create 3, Manage 1</td></tr>
+    <tr><td><strong>U0</strong></td><td><a href="#engage-3">Engage 3</a>, <a href="#engage-5">Engage 5</a> (introduced), <a href="#manage-1">Manage 1</a></td></tr>
+    <tr><td><strong>U1</strong></td><td><a href="#engage-3">Engage 3</a>, <a href="#create-3">Create 3</a>, <a href="#manage-1">Manage 1</a></td></tr>
+    <tr><td><strong>U2</strong></td><td><a href="#engage-3">Engage 3</a>, <a href="#create-3">Create 3</a>, <a href="#manage-1">Manage 1</a></td></tr>
     <tr><td><strong>U3</strong></td><td>+ Manage 3 (planned)</td></tr>
-    <tr><td><strong>U4</strong></td><td>+ Engage 5 (checkpoint)</td></tr>
+    <tr><td><strong>U4</strong></td><td>+ <a href="#engage-5">Engage 5</a> (checkpoint)</td></tr>
     <tr><td><strong>U5</strong></td><td>+ Shape 2, Manage 3</td></tr>
     <tr><td><strong>U6–U7</strong></td><td>Applied practice</td></tr>
   </tbody>
 </table>
 
 <p>Six of the nineteen competences are formally assessed this year; the rest are practiced throughout.</p>
+
+<h2>The standards, one by one</h2>
+
+<p>Every entry below matches what the tap-to-expand chips show on block pages — the plain-language version first, then the official wording, then where it runs, where it's assessed, and what being on track looks like.</p>
+
+{% for sid, e in standardsCatalog %}
+<section class="standard-entry" id="{{ sid | slugify }}">
+  <h3>{{ sid }}{% if e.type == 'ngss-sep' %} — {{ e.official }}{% endif %}</h3>
+  <p><strong>{{ e.plain }}</strong></p>
+  {% if e.type != 'ngss-sep' %}<p class="std-official">{% if e.type == 'ailit' %}In brief: {% endif %}"{{ e.official }}"</p>{% endif %}
+  {%- set trail = collections.standardsBlocks | standardsTrail(sid) %}
+  {%- if trail.length %}
+  <p><strong>Where this runs:</strong> {% for t in trail %}<a href="{{ t.url }}">U{{ t.unit }} B{{ t.block }}</a>{% if not loop.last %} · {% endif %}{% endfor %}</p>
+  {%- endif %}
+  <p><strong>Assessed:</strong> {{ e.assessedAt }}</p>
+  <p><strong>On track looks like:</strong> {{ e.onTrack }}</p>
+  {%- if e.help.length %}
+  <p><strong>Help:</strong> {% for h in e.help %}{% if h.url %}<a href="{{ h.url }}">{{ h.label }}</a>{% else %}{{ h.label }}{% endif %}{% if not loop.last %} · {% endif %}{% endfor %}</p>
+  {%- endif %}
+</section>
+{% endfor %}
+
+<hr>
+
+<p class="std-official">Performance expectation text: NGSS Lead States, 2013. <em>Next Generation Science Standards: For States, By States</em> — <a href="https://www.nextgenscience.org" target="_blank" rel="noopener">nextgenscience.org</a>. AI-literacy competences paraphrased from the OECD/European Commission <em>AILit Framework</em> (2026) — <a href="https://ailiteracyframework.org" target="_blank" rel="noopener">ailiteracyframework.org</a>.</p>
 
 </div>
