@@ -21,6 +21,16 @@ breadcrumbs:
 prev: { url: /units/unit-4/block-6/, label: "Block 6 — Climate Models" }
 next: { url: /units/unit-4/block-8/, label: "Block 8 — Tipping Points + Feedbacks" }
 unitMapUrl: /units/unit-4/
+bellRinger:
+  tag: "Vocabulary recall"
+  minutes: 5
+  text: |
+    Define: vulnerability, equity, adaptation, mitigation. Use the pre-teach handout.<br><strong>Task:</strong> 60 seconds.
+standards:
+  ngss: ["HS-ESS3-5"]
+  ailit: []
+learningIntention: "I have my adaptation challenge locked AND 2 sources gathered with one-line OPVL on each — at least one from IPCC AR6 or the GCC Climate Action Plan."
+successCriteria: ["I have read all 8 cards.", "I have selected my challenge with reasoning.", "I can identify the most vulnerable group within my challenge."]
 ---
 
 <section class="block-section story">
@@ -48,10 +58,10 @@ unitMapUrl: /units/unit-4/
       <div>TBD: Greater Chennai Corporation Climate Action Plan executive summary excerpt. Chennai's official adaptation document — its stated priorities, named adaptation interventions, baseline climate projections. Cross-reference for every Brief.</div>
       <div class="entry-meta">Reference for the lock-challenge work.</div>
     </div>
-    <div class="entry-card placeholder">
-      <span class="placeholder-tag">Placeholder</span>
+    <div class="entry-card live-activity">
+      <span class="live-activity-tag">Live in class</span>
       <div class="entry-title">Interact (~10 min)</div>
-      <div>TBD: Chennai-specific IPCC projection figures (sea-level, monsoon, urban heat) — projected for whole-class OPVL practice. Same OPVL move from Block 5, applied to the figures relevant to YOUR challenge.</div>
+      <div>Chennai-specific IPCC projection figures (sea-level, monsoon, urban heat) — projected for whole-class OPVL practice. Same OPVL move from Block 5, applied to the figures relevant to YOUR challenge.</div>
       <div class="entry-meta">Whole-class.</div>
     </div>
   </div>
@@ -62,7 +72,7 @@ unitMapUrl: /units/unit-4/
   <h2>Today's work — choose one path</h2>
   <p class="sub">All four paths end with: challenge locked + 2 sources + one-line OPVL on each. The path you pick is about where you currently are with your challenge.</p>
   <div class="choice-intro">
-    <strong>Learning Intention:</strong> I have my adaptation challenge locked AND 2 sources gathered with one-line OPVL on each — at least one from IPCC AR6 or the GCC Climate Action Plan.
+    <strong>Learning Intention:</strong> {{ learningIntention | safe }}
   </div>
   <div class="choice-board">
     <div class="choice">
@@ -99,7 +109,7 @@ unitMapUrl: /units/unit-4/
   <div class="submission-callout">
     <div class="label">Challenge lock + 2-source OPVL set</div>
     <p>Three things in your dossier folder: (1) Your locked adaptation challenge in one line. (2) Two sources cited (at least one IPCC AR6 or GCC). (3) One-line OPVL on each — Origin, Purpose, Value, Limitation, with the Limitation specific to your challenge.</p>
-    <a href="#" class="rubric-link">Submit via Google Classroom →</a>
+    {% set submit = { id: "u4-b7", text: "Submit via Google Classroom" } %}{% include "partials/submit-link.njk" %}
   </div>
   <p class="rubric-meta">
     <strong>Rubric link:</strong> Today's 2-source OPVL set isn't strand-marked — it's setup for Component 5 (full OPVL on 3 sources, locks Block 11). The first graded component of the <a href="/units/unit-4/assessment-chennai-climate-brief/">rolling summative</a> locks tomorrow-block (Block 8, feedback diagram, K/U). T/T 7-8 requires "OPVL rigorously applied with specific Limitations identified" — start that practice now. See the <a href="/foundations/the-rubric/">rubric</a>.

@@ -20,6 +20,16 @@ breadcrumbs:
 prev: { url: /units/unit-4/block-2/, label: "Block 2 — Energy Balance Math" }
 next: { url: /units/unit-4/block-4/, label: "Block 4 — Human Acceleration + Warming Signal" }
 unitMapUrl: /units/unit-4/
+bellRinger:
+  tag: "Prior-knowledge probe"
+  minutes: 5
+  text: |
+    From last block: Earth's energy balance sets the temperature. But what sets the CO₂?<br><strong>Task:</strong> List every place you think carbon is stored on Earth — 60 seconds, go for count. Today we organize your list into a cycle.
+standards:
+  ngss: ["HS-ESS2-6"]
+  ailit: []
+learningIntention: "I can name the four major carbon reservoirs, distinguish fast (photosynthesis / respiration / ocean exchange) from slow (weathering / sedimentation / volcanism) pathways, and explain why timescale matters for climate adaptation reasoning."
+successCriteria: ["I can name the four major carbon reservoirs.", "I can sort the carbon pathways into fast and slow — and say what makes them different.", "I can explain why carbon timescales matter for climate adaptation decisions."]
 ---
 
 <section class="block-section story">
@@ -47,12 +57,17 @@ unitMapUrl: /units/unit-4/
       <div>TBD: reservoir-size + flux quantification handout. Numbers from IPCC AR6 + NASA Global Carbon Project. Sizes in gigatons of carbon (GtC); fluxes in GtC/year.</div>
       <div class="entry-meta">Reference for the modeling activity.</div>
     </div>
-    <div class="entry-card placeholder">
-      <span class="placeholder-tag">Placeholder</span>
+    <div class="entry-card live-activity">
+      <span class="live-activity-tag">Live in class</span>
       <div class="entry-title">Interact (~30 min)</div>
-      <div>TBD: carbon-cycle flow-diagram modeling activity. Students build their own diagram — four boxes for the major reservoirs (atmosphere, ocean, biosphere, geosphere), arrows for the major fluxes, numbers from the Read handout.</div>
+      <div>Carbon-cycle flow-diagram modeling activity. Students build their own diagram — four boxes for the major reservoirs (atmosphere, ocean, biosphere, geosphere), arrows for the major fluxes, numbers from the Read handout.</div>
       <div class="entry-meta">Solo or pairs · the day's anchor activity.</div>
     </div>
+    <a class="entry-card" href="/foundations/eal/u4/" style="text-decoration: none; color: inherit;">
+      <div class="entry-title">Vocabulary support</div>
+      <div>The U4 pre-teach — 15 terms with definitions and sentence stems. Several are in today's block.</div>
+      <div class="entry-meta">Real link · Foundations · EAL</div>
+    </a>
   </div>
 </section>
 
@@ -61,7 +76,7 @@ unitMapUrl: /units/unit-4/
   <h2>Today's work — choose one path</h2>
   <p class="sub">All four paths end with a carbon-cycle flow diagram + an exit ticket about storage timescales.</p>
   <div class="choice-intro">
-    <strong>Learning Intention:</strong> I can name the four major carbon reservoirs, distinguish fast (photosynthesis / respiration / ocean exchange) from slow (weathering / sedimentation / volcanism) pathways, and explain why timescale matters for climate adaptation reasoning.
+    <strong>Learning Intention:</strong> {{ learningIntention | safe }}
   </div>
   <div class="choice-board">
     <div class="choice">
@@ -98,7 +113,7 @@ unitMapUrl: /units/unit-4/
   <div class="submission-callout">
     <div class="label">Carbon storage timescale exit ticket</div>
     <p>Name <strong>three places carbon is stored on Earth</strong> and the <strong>timescale of release</strong> for each. Format: bullet list. Examples — "Atmosphere (gas, CO₂): seasonal to decadal." "Deep ocean: centennial to millennial." "Limestone (sedimentary rock): million-year." Carry this answer forward to Block 4 when we add humans to the picture.</p>
-    <a href="#" class="rubric-link">Submit via Google Classroom →</a>
+    {% set submit = { id: "u4-b3", text: "Submit via Google Classroom" } %}{% include "partials/submit-link.njk" %}
   </div>
   <p class="rubric-meta">
     <strong>Rubric link:</strong> Naming reservoirs + timescales accurately is K/U bedrock for the <a href="/units/unit-4/assessment-chennai-climate-brief/">Chennai Climate Brief's Background section</a>. Adaptation reasoning (T/T) depends on you knowing which carbon flows are addressable on a 30-year horizon and which aren't. See the <a href="/foundations/the-rubric/">rubric</a>.

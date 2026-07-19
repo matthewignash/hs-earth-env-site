@@ -21,6 +21,16 @@ breadcrumbs:
 prev: { url: /units/unit-4/block-4/, label: "Block 4 — Human Acceleration + Warming Signal" }
 next: { url: /units/unit-4/block-6/, label: "Block 6 — Climate Models" }
 unitMapUrl: /units/unit-4/
+bellRinger:
+  tag: "Data interpretation"
+  minutes: 5
+  text: |
+    IPCC projection chart showing 5 SSP scenarios for global temperature 2020-2100, ranging from ~1.5°C to ~5°C warming.<br><strong>Task:</strong> Which scenario do you think we're on now? What would have to change for us to follow a lower scenario?
+standards:
+  ngss: ["HS-ESS3-5"]
+  ailit: ["Engage 3"]
+learningIntention: "I can explain what the IPCC is, distinguish projection from prediction, read an SSP scenario chart, AND identify three Chennai-area adaptation challenges I'm considering for my Climate Brief."
+successCriteria: ["I can explain what the IPCC is and how it differs from a research paper.", "I can distinguish projection from prediction.", "I can read an SSP scenario chart and explain what each scenario assumes."]
 ---
 
 <section class="block-section story">
@@ -30,6 +40,7 @@ unitMapUrl: /units/unit-4/
   <p>The IPCC (Intergovernmental Panel on Climate Change) is not a research paper. It's a <strong>synthesis</strong> — every 6-8 years, hundreds of scientists summarize thousands of papers into a report that policymakers can act on. Today: how the IPCC works, what its working groups do, what "SSP scenarios" mean (SSP1-1.9 through SSP5-8.5), and what the confidence-level language ("likely" / "very likely" / "virtually certain") actually means in probability terms.</p>
   <p>The <strong>OPVL move on AR6 figures</strong> is different from OPVL on a single news article. AR6 figures synthesize hundreds of model runs across multiple scenarios. The Origin is "IPCC AR6 WG1"; the Purpose is "inform policymakers"; the Value is "current scientific consensus on uncertainty ranges"; the Limitation is "models can't predict specific local events, only project ensemble behavior under specific assumptions." Today's the day to internalize that move.</p>
   <p>Today is also the day the <a href="/units/unit-4/assessment-chennai-climate-brief/">Chennai Climate Brief</a> is assigned. The 8 adaptation challenges are released. Policy Panel format previewed. From this block forward, every U4 activity feeds the Brief.</p>
+  <p>Today also introduces <strong>the Policy Aide</strong> — a coach for writing to a policy audience. It won't write your brief; it will push your recommendations to be specific, costed, and honest about trade-offs.</p>
 </section>
 
 <section class="block-section concepts">
@@ -48,12 +59,17 @@ unitMapUrl: /units/unit-4/
       <div>The Chennai Climate Brief assignment handout — 5-section brief structure, 8 adaptation challenges, Policy Panel format. Read it today; you'll reference it for the rest of the unit.</div>
       <div class="entry-meta">Real link · today's assignment.</div>
     </a>
-    <div class="entry-card placeholder">
-      <span class="placeholder-tag">Placeholder</span>
+    <div class="entry-card live-activity">
+      <span class="live-activity-tag">Live in class</span>
       <div class="entry-title">Interact (~25 min)</div>
-      <div>TBD: whole-class OPVL on one shared AR6 Summary for Policymakers figure — projected on the board. Class works through Origin, Purpose, Value, Limitation together. The Limitation chips for IPCC figures are different from news/textbook OPVL — practice the distinction.</div>
+      <div>Whole-class OPVL on one shared AR6 Summary for Policymakers figure — projected on the board. Class works through Origin, Purpose, Value, Limitation together. The Limitation chips for IPCC figures are different from news/textbook OPVL — practice the distinction.</div>
       <div class="entry-meta">Whole-class. Anchors the day.</div>
     </div>
+    <a class="entry-card" href="/ai-partners/policy-aide/" style="text-decoration: none; color: inherit;">
+      <div class="entry-title">Meet your new partner</div>
+      <div>The Policy Aide — a coach for the policy-brief voice. Read the opening message and example exchange before you bring it your recommendations.</div>
+      <div class="entry-meta">Real link · AI Partner · introduced this unit</div>
+    </a>
   </div>
 </section>
 
@@ -62,13 +78,13 @@ unitMapUrl: /units/unit-4/
   <h2>Today's work — choose one path</h2>
   <p class="sub">Today is challenge-consideration day. All four paths end with you having a top-3 list. The path you pick is about how you want to consider the options.</p>
   <div class="choice-intro">
-    <strong>Learning Intention:</strong> I can explain what the IPCC is, distinguish projection from prediction, read an SSP scenario chart, AND identify three Chennai-area adaptation challenges I'm considering for my Climate Brief.
+    <strong>Learning Intention:</strong> {{ learningIntention | safe }}
   </div>
   <div class="choice-board">
     <div class="choice">
       <div class="choice-letter">A</div>
       <div class="choice-title">Walk the 8 challenge cards (default)</div>
-      <div class="choice-detail">Read all 8 adaptation challenge cards in the <a href="/units/unit-4/assessment-chennai-climate-brief/">assessment handout</a>. For each, write one sentence on why it's interesting to YOU specifically. Then pick a top 3.</div>
+      <div class="choice-detail">Read all 8 cards in the Adaptation Challenge Cards deck (printed + in Classroom; summarized in the <a href="/units/unit-4/assessment-chennai-climate-brief/">assessment handout</a>). For each, write one sentence on why it's interesting to YOU specifically. Then pick a top 3.</div>
       <span class="udl-tag">Solo · Default</span>
     </div>
     <div class="choice">
@@ -99,7 +115,7 @@ unitMapUrl: /units/unit-4/
   <div class="submission-callout">
     <div class="label">Top-3 adaptation-challenge candidates + reasoning</div>
     <p>Three challenges, ranked. For each: two sentences. Sentence one — <em>why this challenge interests you specifically</em>. Sentence two — <em>what scientific concept (greenhouse effect, carbon cycle, IPCC scenario, model uncertainty, regional projection) it most depends on</em>. Format: 3 short bullets.</p>
-    <a href="#" class="rubric-link">Submit via Google Classroom →</a>
+    {% set submit = { id: "u4-b5", text: "Submit via Google Classroom" } %}{% include "partials/submit-link.njk" %}
   </div>
   <p class="rubric-meta">
     <strong>Rubric link:</strong> Today's top-3 list isn't strand-marked — it's setup. The Climate Brief is a <a href="/units/unit-4/assessment-chennai-climate-brief/">rolling summative</a>: the first graded component locks at Block 8 (climate feedback diagram, K/U). Strong T/T 7-8 work starts with a challenge you actually care about and have specific scientific anchoring for. See the <a href="/foundations/the-rubric/">rubric</a> — T/T 7-8 requires recommendations to be "evidence-anchored, specific, actionable."

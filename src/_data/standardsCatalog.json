@@ -110,6 +110,62 @@
       }
     ]
   },
+  "HS-ESS2-4": {
+    "type": "ngss-pe",
+    "official": "Use a model to describe how variations in the flow of energy into and out of Earth's systems result in changes in climate.",
+    "plain": "I can use a model to show how energy in vs. energy out sets Earth's climate.",
+    "assessedAt": "Chennai Climate Brief — the science sections (K/U components)",
+    "onTrack": "Your brief's physics section traces an energy flow, not just names 'greenhouse effect.'",
+    "help": [
+      {
+        "label": "The Climate Modeler",
+        "url": "/ai-partners/climate-modeler/"
+      }
+    ]
+  },
+  "HS-ESS2-6": {
+    "type": "ngss-pe",
+    "official": "Develop a quantitative model to describe the cycling of carbon among the hydrosphere, atmosphere, geosphere, and biosphere.",
+    "plain": "I can follow carbon through Earth's four spheres — with numbers.",
+    "assessedAt": "Chennai Climate Brief science sections (K/U)",
+    "onTrack": "You can say where the ~10 GtC/year of human carbon goes, and why the one-way flux matters.",
+    "help": [
+      {
+        "label": "Reading: Four Spheres, One System",
+        "url": "/units/unit-1/reading-four-spheres/"
+      },
+      {
+        "label": "The Climate Modeler",
+        "url": "/ai-partners/climate-modeler/"
+      }
+    ]
+  },
+  "HS-ESS3-5": {
+    "type": "ngss-pe",
+    "official": "Analyze geoscience data and the results from global climate models to make an evidence-based forecast of the current rate of global or regional climate change and associated future impacts to Earth systems.",
+    "plain": "I can use real data and model results to forecast climate change where I live — and say how confident to be.",
+    "assessedAt": "Chennai Climate Brief — the regional-projection components (T/T)",
+    "onTrack": "Your Chennai projections cite data AND name the model's uncertainty — forecast, not prophecy.",
+    "help": [
+      {
+        "label": "The Climate Modeler",
+        "url": "/ai-partners/climate-modeler/"
+      }
+    ]
+  },
+  "HS-ESS3-6": {
+    "type": "ngss-pe",
+    "official": "Use a computational representation to illustrate the relationships among Earth systems and how those relationships are being modified due to human activity.",
+    "plain": "I can use models and data tools to show how human activity is changing the links between Earth's systems.",
+    "assessedAt": "Chennai Climate Brief — adaptation analysis (T/T) + Policy Panel (C)",
+    "onTrack": "Your recommendation connects a human decision to a system response, with a tool or dataset behind it.",
+    "help": [
+      {
+        "label": "The Policy Aide",
+        "url": "/ai-partners/policy-aide/"
+      }
+    ]
+  },
   "HS-ESS1-5": {
     "type": "ngss-pe",
     "official": "Evaluate evidence of the past and current movements of continental and oceanic crust and the theory of plate tectonics to explain the ages of crustal rocks.",

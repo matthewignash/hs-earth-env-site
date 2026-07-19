@@ -20,6 +20,16 @@ breadcrumbs:
 prev: { url: /units/unit-4/block-3/, label: "Block 3 — The Carbon Cycle" }
 next: { url: /units/unit-4/block-5/, label: "Block 5 — IPCC + Brief Assigned" }
 unitMapUrl: /units/unit-4/
+bellRinger:
+  tag: "Data interpretation"
+  minutes: 5
+  text: |
+    The Keeling curve rises every year — but it also wiggles down every northern summer.<br><strong>Task:</strong> Why would atmospheric CO₂ drop a little every June–September? (Hint: think about what half the planet's land plants are doing.) One sentence.
+standards:
+  ngss: ["HS-ESS2-4", "HS-ESS2-6"]
+  ailit: ["Engage 5"]
+learningIntention: "I can describe the major anthropogenic carbon sources and rank them by scale, interpret the Keeling curve and 1850-present temperature record, and explain why attribution to greenhouse forcing rules out solar and volcanic explanations."
+successCriteria: ["I can name the major human carbon sources and rank them by scale.", "I can read the Keeling curve and the 1850–present temperature record.", "I can explain why the warming signal can't be explained by solar or volcanic forcing."]
 ---
 
 <section class="block-section story">
@@ -49,10 +59,10 @@ unitMapUrl: /units/unit-4/
       <div>TBD: IPCC AR6 attribution chapter excerpt. The specific evidence that rules out solar variation, volcanic forcing, internal climate variability, and orbital cycles as alternative explanations for the post-1850 warming.</div>
       <div class="entry-meta">Reference for the exit ticket.</div>
     </div>
-    <div class="entry-card placeholder">
-      <span class="placeholder-tag">Placeholder</span>
+    <div class="entry-card live-activity">
+      <span class="live-activity-tag">Live in class</span>
       <div class="entry-title">Interact (~25 min)</div>
-      <div>TBD: student work adding anthropogenic perturbations to their Block 3 carbon-cycle model. Quantify fossil combustion (~10 GtC/yr), deforestation (~1-2 GtC/yr), cement (~0.4 GtC/yr), agriculture (~1-2 GtC/yr equivalent). Mark which natural fluxes can compensate (most can't, on human timescales).</div>
+      <div>Student work adding anthropogenic perturbations to their Block 3 carbon-cycle model. Quantify fossil combustion (~10 GtC/yr), deforestation (~1-2 GtC/yr), cement (~0.4 GtC/yr), agriculture (~1-2 GtC/yr equivalent). Mark which natural fluxes can compensate (most can't, on human timescales).</div>
       <div class="entry-meta">Solo. Extends Block 3's model.</div>
     </div>
     <a class="entry-card" href="/units/unit-0/unu-report-key-points/" style="text-decoration: none; color: inherit;">
@@ -68,7 +78,7 @@ unitMapUrl: /units/unit-4/
   <h2>Today's work — choose one path</h2>
   <p class="sub">All four paths end with an extended carbon-cycle model + a 3-sentence attribution claim.</p>
   <div class="choice-intro">
-    <strong>Learning Intention:</strong> I can describe the major anthropogenic carbon sources and rank them by scale, interpret the Keeling curve and 1850-present temperature record, and explain why attribution to greenhouse forcing rules out solar and volcanic explanations.
+    <strong>Learning Intention:</strong> {{ learningIntention | safe }}
   </div>
   <div class="choice-board">
     <div class="choice">
@@ -105,7 +115,7 @@ unitMapUrl: /units/unit-4/
   <div class="submission-callout">
     <div class="label">Warming-signal attribution claim</div>
     <p>Three sentences. <strong>Why can the post-1850 warming signal not be explained by natural forcing alone?</strong> Sentence one: name the observed pattern (e.g., warming + Arctic amplification + stratospheric cooling). Sentence two: name a specific natural-forcing alternative (solar / volcanic / orbital / internal variability) and the specific evidence ruling it out. Sentence three: cite the IPCC AR6 attribution finding's confidence level ("virtually certain" / "very likely").</p>
-    <a href="#" class="rubric-link">Submit via Google Classroom →</a>
+    {% set submit = { id: "u4-b4", text: "Submit via Google Classroom" } %}{% include "partials/submit-link.njk" %}
   </div>
   <div class="submission-callout">
     <div class="label">The Footprint Decision (assigned today, due Block 5)</div>

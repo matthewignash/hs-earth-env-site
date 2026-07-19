@@ -20,6 +20,16 @@ breadcrumbs:
   - { label: "Block 12 — Policy Panel + Unit Close" }
 prev: { url: /units/unit-4/block-11/, label: "Block 11 — Final Drafting + Panel Rehearsal" }
 unitMapUrl: /units/unit-4/
+bellRinger:
+  tag: "Vocabulary recall"
+  minutes: 5
+  text: |
+    Define co-benefit and use it in a sentence about your recommendation.<br><strong>Task:</strong> 60 seconds.
+standards:
+  ngss: ["HS-ESS3-6", "SEP-7"]
+  ailit: []
+learningIntention: "I can deliver my 4-minute Policy Panel pitch, answer at least three panelist questions across the cost/feasibility/equity/science categories, and reflect on what climate engagement looks like beyond this unit."
+successCriteria: ["I can defend my brief's central claim under questioning.", "I can revise a recommendation when given better evidence.", "I can explain trade-offs in my recommendation without losing my position."]
 ---
 
 <section class="block-section story">
@@ -28,6 +38,7 @@ unitMapUrl: /units/unit-4/
   <p class="sub">Third defense of the year. Higher stakes than U1 or U2.</p>
   <p>Unit 4's defense day. <a href="/units/unit-4/assessment-chennai-climate-brief/">Briefs</a> are submitted in the first 10 minutes; the next 60 is the Policy Panel itself — 4-min pitch + 3-min Q&amp;A per student, with peers playing Greater Chennai Corporation officials asking <strong>cost</strong>, <strong>feasibility</strong>, <strong>equity</strong>, and <strong>science-credibility</strong> questions. Higher-stakes format than U1's NASA Committee Defense (3+2) or U2's planning-audience share-out (3+2) — longer pitch, longer Q&amp;A, and the question categories are sharper.</p>
   <p>The block closes with a unit-close reflection on <em>climate engagement beyond this unit</em>, then a connect-forward to <a href="/units/unit-5/">Unit 5</a> — water is the climate system's central currency; U5 looks at it directly.</p>
+  <p>Not on the live roster until later in the block? The <a href="/ai-partners/defense-practice-partner/">Defense Practice Partner</a> is open for a last rehearsal — run your 4-minute pitch and the four question categories once more before you're up.</p>
 </section>
 
 <section class="block-section concepts">
@@ -54,7 +65,7 @@ unitMapUrl: /units/unit-4/
   <h2>Today's work — the Policy Panel itself</h2>
   <p class="sub">No choice board today. The block runs on a roster: ~10-12 students deliver live; the rest sit on panels for at least one defense.</p>
   <div class="choice-intro">
-    <strong>Learning Intention:</strong> I can deliver my 4-minute Policy Panel pitch, answer at least three panelist questions across the cost/feasibility/equity/science categories, and reflect on what climate engagement looks like beyond this unit.
+    <strong>Learning Intention:</strong> {{ learningIntention | safe }}
   </div>
   <div class="choice-board">
     <div class="choice">
@@ -85,7 +96,7 @@ unitMapUrl: /units/unit-4/
   <div class="submission-callout">
     <div class="label">Components 7–9 — final Brief + Policy Panel pitch + Q&amp;A responses (+ final AI Doc reflection)</div>
     <p>Three C-strand components lock today: <strong>Component 7 — the final assembled Brief</strong> (due at the start of class; Executive Summary stands alone). <strong>Component 8 — the Policy Panel pitch</strong> (4 min, live, captured by Mr. Ignash; or video alt-format). <strong>Component 9 — your Q&amp;A responses</strong> (3 min, across the four question categories). The <strong>final AI Doc reflection</strong> — one paragraph: <em>"what would I do differently next time I use AI on a Brief-scale task?"</em> — gets appended to your Brief. The unit-close reflection (Component 10, formative) is the Reflect prompt below.</p>
-    <a href="#" class="rubric-link">Submit via Google Classroom →</a>
+    {% set submit = { id: "u4-b12", text: "Submit via Google Classroom" } %}{% include "partials/submit-link.njk" %}
   </div>
   <p class="rubric-meta">
     <strong>Rubric link:</strong> Components 7–9 are the C-strand locks of the <a href="/units/unit-4/assessment-chennai-climate-brief/">rolling summative</a> — clarity + policy voice + responsiveness under panel questioning across the four question categories. Academic-paper voice caps these components at 5-6; your K/U and T/T component bands locked in Blocks 8–11 and don't change today. See the <a href="/foundations/the-rubric/">rubric</a>.

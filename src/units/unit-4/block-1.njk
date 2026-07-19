@@ -19,6 +19,16 @@ breadcrumbs:
   - { label: "Block 1 — The Greenhouse Effect" }
 next: { url: /units/unit-4/block-2/, label: "Block 2 — Energy Balance Math" }
 unitMapUrl: /units/unit-4/
+bellRinger:
+  tag: "Phenomenon hook"
+  minutes: 5
+  text: |
+    Two side-by-side images: 2015 Chennai floods (waist-high water in the streets) and 2019 Chennai 'Day Zero' (dry reservoirs).<br><strong>Task:</strong> What is happening in this city? How can both floods and drought be increasing? What does this tell us about climate change?
+standards:
+  ngss: ["HS-ESS2-4"]
+  ailit: []
+learningIntention: "I can describe two observable climate trends affecting Chennai today, pose at least 3 questions about Chennai's climate future, and identify which Chennai residents are likely most affected."
+successCriteria: ["I can describe two observable climate trends affecting Chennai today.", "I can pose at least 3 questions about Chennai's climate future.", "I can identify which Chennai residents are likely most affected."]
 ---
 
 <section class="block-section story">
@@ -27,6 +37,7 @@ unitMapUrl: /units/unit-4/
   <p class="sub">Unit launch. Posture: agency, not doom. Anchor: Chennai.</p>
   <p>Climate is heavy content. This unit's posture, from minute one, is <strong>"this is a challenge we engage with"</strong>. The bell ringer puts two images side-by-side: 2015 Chennai floods (waist-high water in the streets) and 2019 Chennai "Day Zero" (dry reservoirs). Both happen because the same warming amplifies extremes in both directions. The greenhouse effect is the physical mechanism behind both — and today's job is to build that mechanism in detail.</p>
   <p>The natural greenhouse effect makes life on Earth possible. Without it, Earth's average surface temperature would be ~-18°C, like a frozen planet. The <em>enhanced</em> greenhouse effect — extra CO₂ and methane added since the industrial revolution — is what we're talking about when we say "climate change." Today builds the difference. By the exit ticket, you can explain in two sentences why a "global average +1°C" matters more for Chennai than for, say, Reykjavík.</p>
+  <p>This unit introduces <strong>the Climate Modeler</strong> — an AI partner grounded in climate data and models. It will show you how a claim was computed, and it is trained to tell you what its models can't know. Read its opening message before your first conversation.</p>
 </section>
 
 <section class="block-section concepts">
@@ -46,12 +57,22 @@ unitMapUrl: /units/unit-4/
       <div>TBD: greenhouse-effect vocabulary handout. Distinguish "greenhouse gas" (a molecule type) from "greenhouse effect" (a mechanism). Include the major GHGs + their relative contributions to the natural and enhanced effect.</div>
       <div class="entry-meta">Reference for the diagram activity.</div>
     </div>
-    <div class="entry-card placeholder">
-      <span class="placeholder-tag">Placeholder</span>
+    <div class="entry-card live-activity">
+      <span class="live-activity-tag">Live in class</span>
       <div class="entry-title">Interact (25 min)</div>
-      <div>TBD: paired student-built energy-balance diagram activity. Each pair draws solar input + atmospheric absorption + planetary re-emission + greenhouse trapping. Class consolidates the strongest diagram on the board.</div>
+      <div>Paired student-built energy-balance diagram activity. Each pair draws solar input + atmospheric absorption + planetary re-emission + greenhouse trapping. Class consolidates the strongest diagram on the board.</div>
       <div class="entry-meta">Pairs · the day's anchor activity.</div>
     </div>
+    <a class="entry-card" href="/ai-partners/climate-modeler/" style="text-decoration: none; color: inherit;">
+      <div class="entry-title">Meet your new partner</div>
+      <div>The Climate Modeler — data-grounded coaching on climate claims. Read the opening message and example exchange before your first conversation.</div>
+      <div class="entry-meta">Real link · AI Partner · introduced this unit</div>
+    </a>
+    <a class="entry-card" href="/foundations/eal/u4/" style="text-decoration: none; color: inherit;">
+      <div class="entry-title">Vocabulary support</div>
+      <div>The U4 pre-teach — 15 terms with definitions and sentence stems. Several are in today's block.</div>
+      <div class="entry-meta">Real link · Foundations · EAL</div>
+    </a>
   </div>
 </section>
 
@@ -60,7 +81,7 @@ unitMapUrl: /units/unit-4/
   <h2>Today's work — choose one path</h2>
   <p class="sub">All four paths end with a labeled energy-balance diagram + a written 2-sentence claim about why Chennai amplification matters. The path you pick is about how you build the diagram.</p>
   <div class="choice-intro">
-    <strong>Learning Intention:</strong> I can describe two observable climate trends affecting Chennai today, pose at least 3 questions about Chennai's climate future, and identify which Chennai residents are likely most affected.
+    <strong>Learning Intention:</strong> {{ learningIntention | safe }}
   </div>
   <div class="choice-board">
     <div class="choice">
@@ -97,7 +118,7 @@ unitMapUrl: /units/unit-4/
   <div class="submission-callout">
     <div class="label">Exit ticket — Chennai amplification claim</div>
     <p>Two sentences. <strong>Why does a 1°C global average change matter more in Chennai than in temperate cities?</strong> Sentence one names the mechanism (monsoon dependence, sea-level proximity, urban heat island, heat-mortality vulnerability of outdoor workers — pick one). Sentence two names a specific Chennai resident-group most affected. "Climate change is bad" is not the move. "Outdoor construction workers face wet-bulb-temperature risk on days above 38°C, and Chennai's days above 38°C have roughly tripled since 1980" is the move.</p>
-    <a href="#" class="rubric-link">Submit via Google Classroom →</a>
+    {% set submit = { id: "u4-b1", text: "Submit via Google Classroom" } %}{% include "partials/submit-link.njk" %}
   </div>
   <p class="rubric-meta">
     <strong>Rubric link:</strong> Specific, mechanism-anchored claims about Chennai are K/U bedrock for the <a href="/units/unit-4/assessment-chennai-climate-brief/">Chennai Climate Brief</a>. See the <a href="/foundations/the-rubric/">rubric</a> — K/U 7-8 requires "Chennai context accurately described."

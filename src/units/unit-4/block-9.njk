@@ -21,6 +21,16 @@ breadcrumbs:
 prev: { url: /units/unit-4/block-8/, label: "Block 8 — Tipping Points + Feedbacks" }
 next: { url: /units/unit-4/block-10/, label: "Block 10 — Brief Work Day + Worked Example" }
 unitMapUrl: /units/unit-4/
+bellRinger:
+  tag: "Phenomenon hook"
+  minutes: 5
+  text: |
+    Two billboards in Chennai: one says 'Plant a tree, save the planet.' The other says 'New AC subsidies for low-income households during heat waves.'<br><strong>Task:</strong> Which billboard is about mitigation, which about adaptation? Are they competing or complementary?
+standards:
+  ngss: ["HS-ESS3-6", "HS-ETS1-3"]
+  ailit: []
+learningIntention: "I can define and distinguish mitigation and adaptation with one Chennai example each, identify which lever applies to my challenge, and draft 3-5 specific, actionable, evidence-anchored Recommendations."
+successCriteria: ["I can define and distinguish mitigation and adaptation.", "I can identify which lever applies to my challenge (or both).", "I can defend a position on which is more urgent for my challenge."]
 ---
 
 <section class="block-section story">
@@ -48,10 +58,10 @@ unitMapUrl: /units/unit-4/
       <div>TBD: adaptation-vs-mitigation glossary + GCC's stated adaptation priorities. The official Chennai list — what they've already named, what's in the planning pipeline, what they've explicitly ruled out (or under-funded).</div>
       <div class="entry-meta">Reference for the choice board.</div>
     </div>
-    <div class="entry-card placeholder">
-      <span class="placeholder-tag">Placeholder</span>
+    <div class="entry-card live-activity">
+      <span class="live-activity-tag">Live in class</span>
       <div class="entry-title">Interact (~15 min)</div>
-      <div>TBD: whole-class billboard sort. 8 example interventions projected one at a time (drawn from challenges students didn't pick). For each: mitigation, adaptation, or both? 30 seconds vote + 60 seconds discuss.</div>
+      <div>Whole-class billboard sort. 8 example interventions projected one at a time (drawn from challenges students didn't pick). For each: mitigation, adaptation, or both? 30 seconds vote + 60 seconds discuss.</div>
       <div class="entry-meta">Whole-class.</div>
     </div>
   </div>
@@ -62,7 +72,7 @@ unitMapUrl: /units/unit-4/
   <h2>Today's work — choose one path</h2>
   <p class="sub">All four paths end with a first draft of the Recommendations section (3-5 items, specific + evidence-anchored + actionable). No "raise awareness" recommendations.</p>
   <div class="choice-intro">
-    <strong>Learning Intention:</strong> I can define and distinguish mitigation and adaptation with one Chennai example each, identify which lever applies to my challenge, and draft 3-5 specific, actionable, evidence-anchored Recommendations.
+    <strong>Learning Intention:</strong> {{ learningIntention | safe }}
   </div>
   <div class="choice-board">
     <div class="choice">
@@ -99,7 +109,7 @@ unitMapUrl: /units/unit-4/
   <div class="submission-callout">
     <div class="label">Component 2 — Recommendations section</div>
     <p>3-5 items. Each item: <strong>specific action</strong> + <strong>evidence anchor</strong> + <strong>label as adaptation / mitigation / both</strong>. Format: bulleted list. Example of a strong recommendation: "Install monitoring stations at 12 high-vulnerability coastal points along the Cooum estuary; cost ~₹40 lakh; data goes to GCC adaptation desk monthly." Example of a weak one: "Raise awareness about climate change." Don't submit the second kind. This is <strong>a T/T component and it locks today</strong> — the band becomes part of your overall T/T mark.</p>
-    <a href="#" class="rubric-link">Submit via Google Classroom →</a>
+    {% set submit = { id: "u4-b9", text: "Submit via Google Classroom" } %}{% include "partials/submit-link.njk" %}
   </div>
   <p class="rubric-meta">
     <strong>Rubric link:</strong> Component 2 is the T/T-primary core of the <a href="/units/unit-4/assessment-chennai-climate-brief/">Brief</a> and the second lock in the rolling-summative sequence. The specificity cap is explicit: vague or unsupported recommendations hold this component's band at 3-4 — and that band carries into your overall T/T mark with no end-of-unit re-mark. See the <a href="/foundations/the-rubric/">rubric</a>.

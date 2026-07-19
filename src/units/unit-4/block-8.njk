@@ -21,6 +21,16 @@ breadcrumbs:
 prev: { url: /units/unit-4/block-7/, label: "Block 7 — Regional Climate + Lock Challenge" }
 next: { url: /units/unit-4/block-9/, label: "Block 9 — Adaptation vs. Mitigation" }
 unitMapUrl: /units/unit-4/
+bellRinger:
+  tag: "Phenomenon hook"
+  minutes: 5
+  text: |
+    Push a coffee cup slowly toward the edge of the table. For a while, nothing happens. Then, all at once, something irreversible does.<br><strong>Task:</strong> Name one Earth system you suspect works the same way — slow push, sudden shift. Keep it; today gives you the vocabulary.
+standards:
+  ngss: ["HS-ESS2-4"]
+  ailit: []
+learningIntention: "I can define tipping point, apply sign-and-direction reasoning to a climate feedback loop, and defend a position on whether tipping-point uncertainty should change my Brief's Recommendations."
+successCriteria: ["I can define tipping point and give one climate example.", "I can run sign-and-direction reasoning on a climate feedback loop.", "I can defend a position on how tipping-point uncertainty should affect my Brief's Recommendations."]
 ---
 
 <section class="block-section story">
@@ -48,10 +58,10 @@ unitMapUrl: /units/unit-4/
       <div>The Systems Diagrammer page — re-read the sign-and-direction feedback-loop notation from Unit 1. Today applies it to climate-specific feedbacks.</div>
       <div class="entry-meta">Real link · Unit 1 cross-reference.</div>
     </a>
-    <div class="entry-card placeholder">
-      <span class="placeholder-tag">Placeholder</span>
+    <div class="entry-card live-activity">
+      <span class="live-activity-tag">Live in class</span>
       <div class="entry-title">Interact (~15 min)</div>
-      <div>TBD: ice-albedo feedback diagrammed on the board. Whole-class sign-and-direction work — what reinforces, what dampens, where the threshold sits. Becomes the model for the choice-board work.</div>
+      <div>Ice-albedo feedback diagrammed on the board. Whole-class sign-and-direction work — what reinforces, what dampens, where the threshold sits. Becomes the model for the choice-board work.</div>
       <div class="entry-meta">Whole-class.</div>
     </div>
   </div>
@@ -62,7 +72,7 @@ unitMapUrl: /units/unit-4/
   <h2>Today's work — choose one path</h2>
   <p class="sub">All four paths end with at least one sign-and-direction-labeled climate feedback diagram applied to YOUR Brief's challenge.</p>
   <div class="choice-intro">
-    <strong>Learning Intention:</strong> I can define tipping point, apply sign-and-direction reasoning to a climate feedback loop, and defend a position on whether tipping-point uncertainty should change my Brief's Recommendations.
+    <strong>Learning Intention:</strong> {{ learningIntention | safe }}
   </div>
   <div class="choice-board">
     <div class="choice">
@@ -99,7 +109,7 @@ unitMapUrl: /units/unit-4/
   <div class="submission-callout">
     <div class="label">Component 1 — climate feedback diagram + Recommendations implication</div>
     <p>One sign-and-direction-labeled feedback diagram applied to your Brief's challenge. Then two sentences: does this feedback make me <em>more cautious</em> (don't risk crossing thresholds) or <em>more aggressive</em> (act now while gradual mitigation works) in my Brief's Recommendations? Defend it. This is <strong>a K/U component and it locks today</strong> — you get a strand band that becomes part of your overall K/U mark.</p>
-    <a href="#" class="rubric-link">Submit via Google Classroom →</a>
+    {% set submit = { id: "u4-b8", text: "Submit via Google Classroom" } %}{% include "partials/submit-link.njk" %}
   </div>
   <p class="rubric-meta">
     <strong>Rubric link:</strong> Component 1 is K/U — correct feedback mechanisms, signs, and directions, applied to your specific challenge. It's the first lock in the <a href="/units/unit-4/assessment-chennai-climate-brief/">rolling-summative</a> sequence; the band you get today doesn't re-mark at the end. T/T 7-8 requires "projected impacts reasoned, not just cited" — that's what today's diagram-with-defense rehearses for the Block 10 Evidence + Impacts lock. See the <a href="/foundations/the-rubric/">rubric</a>.

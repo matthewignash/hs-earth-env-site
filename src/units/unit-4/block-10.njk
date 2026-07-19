@@ -21,13 +21,23 @@ breadcrumbs:
 prev: { url: /units/unit-4/block-9/, label: "Block 9 — Adaptation vs. Mitigation" }
 next: { url: /units/unit-4/block-11/, label: "Block 11 — Final Drafting + Panel Rehearsal" }
 unitMapUrl: /units/unit-4/
+bellRinger:
+  tag: "Data interpretation"
+  minutes: 5
+  text: |
+    Bar chart: number of days per year in Chennai above 38°C, decade by decade, 1980-2020. The bars approximately triple.<br><strong>Task:</strong> How would you explain this trend to someone with no science background? What policy action does this trend point toward?
+standards:
+  ngss: ["HS-ESS3-6", "SEP-6"]
+  ailit: ["Create 3", "Manage 1"]
+learningIntention: "I have a complete first draft of the Climate Brief across all 5 sections (Executive Summary, Background, Evidence + Projected Impacts, Recommendations, Sources) AND a peer feedback note flagging one specific improvement per rubric strand."
+successCriteria: ["I have a complete first draft of the 4-page brief.", "I have included data from the Climate Data Reference with citations.", "I have a clear policy recommendation with reasoning."]
 ---
 
 <section class="block-section story">
   <span class="section-tag">Story</span>
   <h2>Why this block matters</h2>
   <p class="sub">The highest-leverage teacher move of the unit. Watch a complete Brief built live.</p>
-  <p>Mr. Ignash demos a complete <a href="/units/unit-4/assessment-chennai-climate-brief/">Chennai Climate Brief</a> on a familiar challenge — outdoor workers and heat mortality (the <strong>Heat Mortality worked example</strong>). The point: make the policy-brief voice visible. Image-led opening (a specific worker's death, not a generic statistic). Physics embedded in human context (wet-bulb temperature explained as the physiological limit, not as abstract climate science). Three scenarios <em>differentiated</em> (status quo vs. increased monsoon variability vs. sea-level rise — each with distinct consequences for outdoor workers). Equity-aware recommendations (who acts, what it costs, who benefits, who bears burden). Honest AI Doc (the AI made up a death-count figure; the student verified against TN Public Health Department data and cited the discrepancy).</p>
+  <p>Mr. Ignash demos a complete <a href="/units/unit-4/assessment-chennai-climate-brief/">Chennai Climate Brief</a> on a familiar challenge — outdoor workers and heat mortality (the <strong>Heat Mortality worked example</strong>, printed + in Classroom). The point: make the policy-brief voice visible. Image-led opening (a specific worker's death, not a generic statistic). Physics embedded in human context (wet-bulb temperature explained as the physiological limit, not as abstract climate science). Three scenarios <em>differentiated</em> (status quo vs. increased monsoon variability vs. sea-level rise — each with distinct consequences for outdoor workers). Equity-aware recommendations (who acts, what it costs, who benefits, who bears burden). Honest AI Doc (the AI made up a death-count figure; the student verified against TN Public Health Department data and cited the discrepancy).</p>
   <p>Then 30 minutes of work time on YOUR Brief, with the <a href="/ai-partners/policy-aide/">Policy Aide</a> available for voice-coaching. Then 20 minutes of structured peer feedback in pairs, focused on the three rubric gates: <strong>policy voice</strong> (not academic-essay), <strong>audience awareness</strong> (Greater Chennai Corporation officials, not students), <strong>recommendation concreteness</strong> (no "raise awareness").</p>
 </section>
 
@@ -47,10 +57,10 @@ unitMapUrl: /units/unit-4/
       <div>The Chennai Climate Brief rubric — K/U / T/T / C across 4 bands. Re-read with YOUR current draft in mind. Where are you band-by-band right now? Where could you move up?</div>
       <div class="entry-meta">Real link · assessment rubric section.</div>
     </a>
-    <div class="entry-card placeholder">
-      <span class="placeholder-tag">Placeholder</span>
+    <div class="entry-card live-activity">
+      <span class="live-activity-tag">Live in class</span>
       <div class="entry-title">Interact (20 min)</div>
-      <div>TBD: peer feedback protocol sheet — what to look for in each rubric strand. Specifically the 3 gates (Recommendations specificity T/T gate, policy voice C gate, AI Doc K/U gate). One specific suggestion per strand from your partner.</div>
+      <div>Peer feedback protocol sheet — what to look for in each rubric strand. Specifically the 3 gates (Recommendations specificity T/T gate, policy voice C gate, AI Doc K/U gate). One specific suggestion per strand from your partner.</div>
       <div class="entry-meta">Pairs · structured peer review.</div>
     </div>
   </div>
@@ -61,7 +71,7 @@ unitMapUrl: /units/unit-4/
   <h2>Today's work — choose one path</h2>
   <p class="sub">All four paths end the same: first full draft of Brief + peer feedback note. The path is about how you spend the 30 minutes of work time before the peer feedback round.</p>
   <div class="choice-intro">
-    <strong>Learning Intention:</strong> I have a complete first draft of the Climate Brief across all 5 sections (Executive Summary, Background, Evidence + Projected Impacts, Recommendations, Sources) AND a peer feedback note flagging one specific improvement per rubric strand.
+    <strong>Learning Intention:</strong> {{ learningIntention | safe }}
   </div>
   <div class="choice-board">
     <div class="choice">
@@ -98,7 +108,7 @@ unitMapUrl: /units/unit-4/
   <div class="submission-callout">
     <div class="label">First full draft (Components 3 + 4 lock) + peer feedback note</div>
     <p>(1) Drafted Climate Brief with all 5 sections present (Executive Summary, Background, Evidence + Projected Impacts, Recommendations, Sources). Two sections lock today: <strong>Component 3 — Background</strong> (the climate science, pitched for the GCC audience; K/U) and <strong>Component 4 — Evidence + Projected Impacts</strong> (now / 20 years / 50 years, uncertainties named; T/T). The Executive Summary and overall voice stay open — they lock with the final Brief in Block 12. (2) Peer feedback note from your partner: one specific suggestion per rubric strand (K/U / T/T / C), citing the rubric language. Audit the remaining caps: is your voice <strong>policy-brief</strong> (not academic-essay)? Is your <strong>AI Documentation specific</strong> (not "I used AI for help")?</p>
-    <a href="#" class="rubric-link">Submit via Google Classroom →</a>
+    {% set submit = { id: "u4-b10", text: "Submit via Google Classroom" } %}{% include "partials/submit-link.njk" %}
   </div>
   <p class="rubric-meta">
     <strong>Rubric link:</strong> Components 3 and 4 are the third and fourth locks in the <a href="/units/unit-4/assessment-chennai-climate-brief/">rolling-summative</a> sequence — the bands you get today don't re-mark at the end. The still-open caps — policy voice (C, locks Block 12) and AI Doc specificity (K/U, locks Block 11) — are all addressable today. See the <a href="/foundations/the-rubric/">rubric</a>.
