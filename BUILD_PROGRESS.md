@@ -2,11 +2,13 @@
 
 > **Purpose:** Living status doc. Tells you (and future Claude Code sessions) what's built, what's stubbed, what to build next, and in what order. The charter is in `CLAUDE.md` — do NOT modify that. Update this file at the end of each build session.
 
-**Last updated:** 2026-07-17 (Addenda 3–17 below. U0–U6 complete; U7 is next.)
+**Last updated:** 2026-07-17 (Addenda 3–18 below. U0–U6 complete; U7 is next.)
 
 ---
 
 ## SESSION HANDOFF — 2026-07-07 (read this first)
+
+**Addendum 18 (2026-07-17): Factstorming — third routine lands, with the AI-comparison signature.** The registry page gained its first "Routine in depth" mini-section (`#factstorming`, supplied-final wording — including the Brainstorming-sibling pointer to U3/U6) plus the table row after Sketch-to-Stretch (linked to the anchor; U1 B10 marked "informal first run" since the named routine is taught properly at U2 B2). **Placements** (new `.callout.factstorm`, CONCEPTS pastel + accent border): U2 B2 Do-top (four-agents harvest) · U3 B5 Do-top (earthquake/eruption roster before the jigsaw) · U1 B10 above the phase list as pre-defense warm-up (submission phase verified undisplaced) · **U2 B3 the signature three-round AI-comparison version** (room storms → class AI platform storms → three comparisons incl. "what was the AI actually FOR here?") — platform-neutral language throughout, consistent with the F1 rules. Grep-verified no block carries both a Sketch-first and a Factstorm callout. All four positions machine-verified in the built output.
 
 **Addendum 17 (2026-07-17): Sketch-to-Stretch — the second pencil move lands.** New §6 on `foundations/notetaking.njk` (anchor `#sketch-to-stretch`, supplied-final wording; §§6–10 renumbered 7–11; single source line for both tools added at the page foot — Sparks 1982 + Thoughtful Education Press 2001). "Sketch vs. diagram" one-liner added to the U0 EAL page (standalone line, same pattern as Power Notes — the 15-term table stays 15). **Placements** (new `.callout.sketch-first` variant, STORY pastel + purple accent): U1 B2 Do-top (before the convention teaches the diagram; + one Story sentence "you'll draw twice today") · U2 B1 Do-top (weathering-vs-erosion) · U3 B1 Do-top (why plates move) · **U4 B1 draw-twice** (Sketch #1 at Do-top sealed in the journal; Sketch #2 appended to the Reflect prompt with the side-by-side move). **U5 deliberately untouched** — its groundwater placement ("draw where rain goes after it lands") lives only in the registry row as "planned · wired during the U5 pass." Registry: Sketch-to-Stretch row added after Power Notes, linked to its anchor. All five placements position-verified in the built output; unit-5 diff confirmed empty.
 
