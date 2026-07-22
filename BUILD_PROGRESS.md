@@ -2,11 +2,27 @@
 
 > **Purpose:** Living status doc. Tells you (and future Claude Code sessions) what's built, what's stubbed, what to build next, and in what order. The charter is in `CLAUDE.md` — do NOT modify that. Update this file at the end of each build session.
 
-**Last updated:** 2026-07-17 (Addenda 3–18 below. U0–U6 complete; U7 is next.)
+**Last updated:** 2026-07-17 (Addenda 3–19 below. U0–U6 complete; U7 is next.)
 
 ---
 
 ## SESSION HANDOFF — 2026-07-07 (read this first)
+
+**Addendum 19 (2026-07-17): FourThought + hook-rotation convention + the U5 parking file.**
+- **FourThought** joins the registry: "Routine in depth" section (`#fourthought`, supplied-final) after Factstorming + table row (first taught U4 B9; U5 Position Paper planned). Placed: **U4 B9** end-of-Do assigned-task callout (bring to Block 10; submit via new `classroomLinks` key `u4-b9-fourthought`) + **U4 B10** Story line ("four quadrants become four sections"). Note: the FourThought template itself is Classroom-only — not yet written; add to the U4 materials build queue.
+- **Bell-ringer hook-rotation convention** added to the conventions list in this file's session-handoff section (CLAUDE.md stays charter-only per its own header). **Tag-distribution audit (U0–U4, 50 bell ringers) — Matthew's retrofit-review data:**
+
+| Tag | Count | Four-style mapping |
+|---|---|---|
+| Phenomenon hook | 13 | mixed |
+| Data interpretation | 11 | Understanding |
+| Vocabulary recall | 7 | Mastery |
+| Prior-knowledge probe | 7 | Mastery |
+| Retrieval (U3's tag) | 6 | Mastery |
+| Prediction check | 6 | mixed |
+
+Reading: Mastery ≈ 20, Understanding ≈ 11, mixed 19, **explicit Self-Expressive 0, explicit Interpersonal 0** — the skew the convention exists to correct. U5–U7 authoring (and any retrofit) should land ≥1 of each per unit.
+- **`../Unit 5_ Hydrosphere/U5 Pass Planning Notes.md` created** (course folder, not src/): consolidates every U5-parked decision — structural pass pending (pilot trial unit, protect review bandwidth), NO Power-Note seeds (fade completes), Sketch-to-Stretch groundwater placement, the Associations stakeholder variant for Roundtable prep, Revision Trail + Division-of-Labour Plan both MEASURED here, Shape 2 bot-evaluation protocol still to build, hook-rotation requirement, and the skipped-tools decision log (K-W-L, Context Connections, Think of a Time).
 
 **Addendum 18 (2026-07-17): Factstorming — third routine lands, with the AI-comparison signature.** The registry page gained its first "Routine in depth" mini-section (`#factstorming`, supplied-final wording — including the Brainstorming-sibling pointer to U3/U6) plus the table row after Sketch-to-Stretch (linked to the anchor; U1 B10 marked "informal first run" since the named routine is taught properly at U2 B2). **Placements** (new `.callout.factstorm`, CONCEPTS pastel + accent border): U2 B2 Do-top (four-agents harvest) · U3 B5 Do-top (earthquake/eruption roster before the jigsaw) · U1 B10 above the phase list as pre-defense warm-up (submission phase verified undisplaced) · **U2 B3 the signature three-round AI-comparison version** (room storms → class AI platform storms → three comparisons incl. "what was the AI actually FOR here?") — platform-neutral language throughout, consistent with the F1 rules. Grep-verified no block carries both a Sketch-first and a Factstorm callout. All four positions machine-verified in the built output.
 
@@ -107,7 +123,7 @@ Repo state: **clean, fully pushed and deployed.** `git status` shows only an unt
 - Four **U1 Watch-card slots (Blocks 6–9)** are still pending teacher-recorded video (placeholders remain, on purpose).
 - The **U0 defense model-exchange video** (script lives in the defense kit docx) hasn't been filmed/linked yet — B6/B7 Watch cards are waiting on that recording.
 - If asked to touch AI-partner pages again, use the **planet-hunter.njk / systems-diagrammer.njk pattern** (dual launch buttons via `partials/partner-launch.njk`, no system prompts on the page, no emojis — site convention).
-- **Site conventions established this era, apply going forward:** no emojis anywhere (typographic labels only — see the de-emoji BUILD_PROGRESS entry below for the full rationale); one AI platform per class section (Flint ×2, BoodleBox ×1) — never describe multiple named AI *products* as available to a single class; EAL key-terms component for any new key vocabulary; dual Flint/BoodleBox launch buttons on any new/edited partner page.
+- **Site conventions established this era, apply going forward:** no emojis anywhere (typographic labels only — see the de-emoji BUILD_PROGRESS entry below for the full rationale); one AI platform per class section (Flint ×2, BoodleBox ×1) — never describe multiple named AI *products* as available to a single class; EAL key-terms component for any new key vocabulary; dual Flint/BoodleBox launch buttons on any new/edited partner page. **Bell-ringer authoring convention (added 2026-07):** rotate hook styles across a unit's bell ringers using the four-style taxonomy — Mastery (recall what you know), Understanding (examine data, extract principles), Self-Expressive (metaphor, "what if"), Interpersonal (feelings, lived experience). Existing tags map roughly: Retrieval→Mastery, Data interpretation→Understanding, Phenomenon hook/Prediction check→mixed. The current set skews Mastery/Understanding; when drafting bell ringers for U5–U7 (or revising earlier ones), include at least one Self-Expressive and one Interpersonal hook per unit. Source: Thoughtful Education Press (2001), Hooks & Bridges.
 
 ---
 
