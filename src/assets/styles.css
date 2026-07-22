@@ -298,6 +298,7 @@ img { max-width: 100%; height: auto; display: block; }
 .callout.warn  { border-left-color: #b58832; background: #fff4d9; }
 .callout.good  { border-left-color: #6b8e3d; background: var(--good); }
 .callout.exemplar-note { border-left-color: #6b8e3d; background: var(--show); }
+.callout.sketch-first { border-left-color: #7c6bb0; background: var(--story); }
 
 /* ====== Lesson-return links (supporting pages) ====== */
 .lesson-return {

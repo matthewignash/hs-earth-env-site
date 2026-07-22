@@ -2,11 +2,13 @@
 
 > **Purpose:** Living status doc. Tells you (and future Claude Code sessions) what's built, what's stubbed, what to build next, and in what order. The charter is in `CLAUDE.md` — do NOT modify that. Update this file at the end of each build session.
 
-**Last updated:** 2026-07-17 (Addenda 3–16 below. U0–U6 complete; U7 is next.)
+**Last updated:** 2026-07-17 (Addenda 3–17 below. U0–U6 complete; U7 is next.)
 
 ---
 
 ## SESSION HANDOFF — 2026-07-07 (read this first)
+
+**Addendum 17 (2026-07-17): Sketch-to-Stretch — the second pencil move lands.** New §6 on `foundations/notetaking.njk` (anchor `#sketch-to-stretch`, supplied-final wording; §§6–10 renumbered 7–11; single source line for both tools added at the page foot — Sparks 1982 + Thoughtful Education Press 2001). "Sketch vs. diagram" one-liner added to the U0 EAL page (standalone line, same pattern as Power Notes — the 15-term table stays 15). **Placements** (new `.callout.sketch-first` variant, STORY pastel + purple accent): U1 B2 Do-top (before the convention teaches the diagram; + one Story sentence "you'll draw twice today") · U2 B1 Do-top (weathering-vs-erosion) · U3 B1 Do-top (why plates move) · **U4 B1 draw-twice** (Sketch #1 at Do-top sealed in the journal; Sketch #2 appended to the Reflect prompt with the side-by-side move). **U5 deliberately untouched** — its groundwater placement ("draw where rain goes after it lands") lives only in the registry row as "planned · wired during the U5 pass." Registry: Sketch-to-Stretch row added after Power Notes, linked to its anchor. All five placements position-verified in the built output; unit-5 diff confirmed empty.
 
 **Addendum 16 (2026-07-17): Power Notes layer + Course Routines registry (TWO NEW STUDENT-FACING SYSTEMS).**
 - **Power Notes section** (supplied-final wording) inserted as §5 of `foundations/notetaking.njk` (anchor `#power-notes`; old §5–9 renumbered 6–10). The worked example (Mars reading, powers 1–4) renders as an indented `.power-example` block — browser-verified indents at 22/44/66px. "Power Notes" one-liner added to the U0 EAL page **after** the 15-term table (as a standalone line, deliberately NOT a 16th row — every EAL card site-wide says "15 terms"). ⚠ Two flags: (1) §9 ("we do not ask you to produce notes that follow any particular format") now sits in tension with §5's "this class uses one capture format" — supplied wording kept both places, Matthew to reconcile; (2) **the Notetaking & Notemaking docx in the course folder is now BEHIND the site page** — back-sync needed, same situation as the U2 Block Plans docx.
