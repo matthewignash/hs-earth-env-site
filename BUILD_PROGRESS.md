@@ -2,11 +2,16 @@
 
 > **Purpose:** Living status doc. Tells you (and future Claude Code sessions) what's built, what's stubbed, what to build next, and in what order. The charter is in `CLAUDE.md` — do NOT modify that. Update this file at the end of each build session.
 
-**Last updated:** 2026-07-17 (Addenda 3–15 below. U0–U6 complete; U7 is next.)
+**Last updated:** 2026-07-17 (Addenda 3–16 below. U0–U6 complete; U7 is next.)
 
 ---
 
 ## SESSION HANDOFF — 2026-07-07 (read this first)
+
+**Addendum 16 (2026-07-17): Power Notes layer + Course Routines registry (TWO NEW STUDENT-FACING SYSTEMS).**
+- **Power Notes section** (supplied-final wording) inserted as §5 of `foundations/notetaking.njk` (anchor `#power-notes`; old §5–9 renumbered 6–10). The worked example (Mars reading, powers 1–4) renders as an indented `.power-example` block — browser-verified indents at 22/44/66px. "Power Notes" one-liner added to the U0 EAL page **after** the 15-term table (as a standalone line, deliberately NOT a 16th row — every EAL card site-wide says "15 terms"). ⚠ Two flags: (1) §9 ("we do not ask you to produce notes that follow any particular format") now sits in tension with §5's "this class uses one capture format" — supplied wording kept both places, Matthew to reconcile; (2) **the Notetaking & Notemaking docx in the course folder is now BEHIND the site page** — back-sync needed, same situation as the U2 Block Plans docx.
+- **Seeded strips**: new `partials/power-seeds.njk` — a collapsible `<details>` strip (DO-pastel, one line collapsed) rendered from `powerSeeds` frontmatter, placed under the "Ways in" sub-line on 14 blocks (U0 B1–B3, U1 B1–B7, U2 B1–B4 with the deliberate partial fade) and under the Reading-time line on the four U1 readings. Blocks not listed have no strip (workshop/defense omissions deliberate; U3+ unseeded by design). **Convention note: the spec's 📝 emoji was dropped per the site-wide no-emoji rule.** Launch wiring: U0 B1's journal callout names Power Notes as the journal's second kind of writing (first set = orientation video); U0 B2's Story notes the pre-read scaffold follows the Power Notes shape [that sentence house-drafted]. Placement machine-verified on all 18 pages (an initial greedy-regex insertion put some strips in the wrong section — caught in browser QA, repaired, re-verified).
+- **`/foundations/how-this-class-works/`** — the Course Routines registry: 14 routines × (what it is · first taught · where it runs · what you produce), names linked to home pages/anchors where they exist. Cards added to the Foundations index (Start here) and the U0 index resources grid; one routine line added to U0 B1's Story. All linked targets verified present in the build.
 
 **Addendum 15 (2026-07-17): U4 structural pass — learning layer, standards, partner intros, scaffold, media guard.**
 

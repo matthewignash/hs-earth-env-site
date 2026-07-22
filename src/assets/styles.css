@@ -354,6 +354,31 @@ a.key-term[aria-expanded="true"] { background: var(--accent-light); }
 .key-term-panel p { margin: 0 0 6px; }
 .key-term-panel-links { font-size: 13px; margin-bottom: 0 !important; }
 
+/* ====== Power Notes (worked example + seed strips) ====== */
+.power-example {
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 14px 18px;
+  margin: 16px 0;
+  font-size: 14px;
+  line-height: 1.8;
+}
+.power-example .pe-topic { font-weight: 700; margin-bottom: 6px; }
+.power-example .p2 { margin-left: 22px; }
+.power-example .p3 { margin-left: 44px; }
+.power-example .p4 { margin-left: 66px; }
+.power-seeds {
+  background: var(--do);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 4px 10px;
+  margin: 0 0 14px;
+  font-size: 13px;
+}
+.power-seeds summary { cursor: pointer; font-weight: 600; color: var(--muted); }
+.power-seeds-body { padding: 6px 2px 4px; }
+
 /* ====== Content figures (shared) ====== */
 .content-figure { margin: 20px auto; max-width: 720px; }
 .content-figure img { display: block; max-width: 100%; height: auto; margin: 0 auto; }

@@ -1,0 +1,6 @@
+{% if powerSeeds and powerSeeds.length %}
+<details class="power-seeds">
+  <summary>Taking notes? Power 1 seeds for today</summary>
+  <div class="power-seeds-body">{{ powerSeeds | join(" · ") }} — <a href="/foundations/notetaking/#power-notes">the format</a></div>
+</details>
+{% endif %}
