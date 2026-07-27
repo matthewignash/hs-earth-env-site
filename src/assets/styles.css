@@ -12,8 +12,24 @@
   --do: #fff4d9;
   --show: #e2efda;
   --reflect: #f5e6d9;
+  --good: #e2efda;
   --ai-orange: #f5a623;
   --ai-orange-hover: #ffb947;
+  /* Saturated spines + deep heading text per rhythm family.
+     --spine-do is deliberately duller than --ai-orange: the brightness
+     gap keeps AI chips unmistakable. Do not brighten it. */
+  --spine-story: #7a5fc0;
+  --deep-story: #3d2e66;
+  --spine-concepts: #3f72b8;
+  --deep-concepts: #173a63;
+  --spine-do: #b58310; /* darkened from spec's #c99212 to pass 3:1 on white (2.76 → 3.38) */
+  --deep-do: #5c4508;
+  --spine-show: #6da144;
+  --deep-show: #2f4a1c;
+  --spine-reflect: #c0763a;
+  --deep-reflect: #6e3a14;
+  --panel-bg: #eef2fa;
+  --divider: #e3e1da;
 }
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -33,7 +49,7 @@
 }
 .skip-link:focus {
   left: 8px;
-  outline: 2px solid var(--ai-orange);
+  outline: 2px solid var(--spine-do);
   outline-offset: 2px;
 }
 
@@ -103,7 +119,7 @@ img { max-width: 100%; height: auto; display: block; }
 /* ====== Home hero ====== */
 .home-hero {
   background:
-    radial-gradient(ellipse at 20% 30%, rgba(245, 166, 35, 0.18), transparent 55%),
+    radial-gradient(ellipse at 20% 30%, rgba(201, 146, 18, 0.18), transparent 55%),
     linear-gradient(135deg, var(--ink) 0%, var(--accent-dark) 60%, var(--accent) 100%);
   color: white;
   padding: 56px 24px 48px;
@@ -136,21 +152,22 @@ img { max-width: 100%; height: auto; display: block; }
 }
 
 /* ====== Page header ====== */
+/* The one saturated block at the top of every page. */
 .page-header {
-  background: white;
+  background: var(--accent-dark);
   padding: 32px 24px 24px;
   border-bottom: 2px solid var(--accent-light);
 }
 .page-header .container { padding: 0; }
 .page-header h1 {
   font-size: 32px;
-  color: var(--accent);
+  color: white;
   margin-bottom: 8px;
   line-height: 1.2;
 }
 .page-header .tagline {
   font-size: 16px;
-  color: var(--muted);
+  color: rgba(255, 255, 255, 0.85);
   max-width: 720px;
 }
 

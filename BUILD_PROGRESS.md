@@ -2,11 +2,52 @@
 
 > **Purpose:** Living status doc. Tells you (and future Claude Code sessions) what's built, what's stubbed, what to build next, and in what order. The charter is in `CLAUDE.md` — do NOT modify that. Update this file at the end of each build session.
 
-**Last updated:** 2026-07-17 (Addenda 3–19 below. U0–U6 complete; U7 is next.)
+**Last updated:** 2026-07-28 (Addenda 3–20 below. U0–U6 complete; U7 is next.)
 
 ---
 
 ## SESSION HANDOFF — 2026-07-07 (read this first)
+
+**Addendum 20 (2026-07-28): Site-wide visual sharpening pass — spines, eyebrows, panel border, dark header band.** CSS-only (`styles.css` + `block-page.css`; zero content/template edits — eyebrows are generated with `::before` from the section family class, and the old `.section-tag` pills are retired via `display: none`). What changed:
+- **Tokens added** to `:root`: `--spine-*` + `--deep-*` per rhythm family, `--panel-bg: #eef2fa`, `--divider: #e3e1da`. Also fixed a pre-existing bug: `--good` was referenced by `.submission-callout` and `.callout.good` but never defined; now `--good: #e2efda`.
+- **Rhythm sections**: 4px saturated left spine, square corners on the spined edge, `h2` in the family's `--deep-*` color, eyebrow label above the heading (STORY / WAYS IN / DO / SHOW / REFLECT — rendered via `text-transform: uppercase`). The old 1px full card border is retired on rhythm sections and the bell ringer so the learning panel is the page's only full-bordered element (interpretation note: the AI callout keeps its amber full border — it belongs to the AI system, not the rhythm system — and nested cards/nav chrome are unchanged). Bell ringer styled as the **do** family (spine + deep head text): it's a task, not a story.
+- **Learning panel**: `1.5px solid var(--accent)` full border on `--panel-bg`, left-spine removed; sticky reference bar's bottom border now `1.5px solid var(--accent)` so the two read as one system.
+- **Dividers**: 1px `--divider` line centered in 2.5rem between rhythm sections (margin-collapse gives exactly 2.5rem).
+- **Header band**: `.page-header` now `--accent-dark` (#1f3864) with white h1/tagline; meta and strand-chip label lightened for the dark bg.
+
+**Orange-exclusivity audit (Addendum 20).** Every orange/amber occurrence in CSS + templates (simulators excluded — separate apps):
+
+| Location | Value | Verdict |
+|---|---|---|
+| `.topnav .ai-btn` (+ hover) | `--ai-orange` / `--ai-orange-hover` | AI touchpoint — allowed |
+| `.partner-launch` (+ hover) | `--ai-orange` / `--ai-orange-hover` | AI touchpoint — allowed |
+| `.ai-callout` family (border `#e0b870`, text `#8b6914`, pill border `#d4a460`, hover `#b58832`) | darker ambers | AI touchpoint — allowed |
+| `.std-chip.ailit` (`#fdf0dc` / `#8a5a12`) | pale amber | AILit standards chips = AI-literacy UI — allowed |
+| `.skip-link:focus` outline | was `--ai-orange` | **CHANGED** → `--spine-do` (non-AI element; no rhythm family, so the sanctioned ochre token) |
+| `.home-hero` radial glow | was `rgba(245,166,35,.18)` | **CHANGED** → `rgba(201,146,18,.18)` (spine-do ochre; decorative, non-AI) |
+| `.callout.warn` (`#b58832` on `#fff4d9`) | muted amber | not ai-orange; generic warning callout — left as is |
+| `.block-section.do .section-tag` (`#8b6914`) | — | rule deleted (pills retired) |
+
+**Contrast check (Addendum 20).** Computed WCAG ratios; body-size threshold 4.5:1, eyebrow threshold 3:1 (per spec):
+
+| Pairing | Ratio | Result |
+|---|---|---|
+| deep-story `#3d2e66` on white / story pastel | 11.79 / 9.34 | pass |
+| deep-concepts `#173a63` on white / concepts pastel | 11.53 / 9.15 | pass |
+| deep-do `#5c4508` on white / do pastel | 9.09 / 8.31 | pass |
+| deep-show `#2f4a1c` on white / show pastel | 9.92 / 8.31 | pass |
+| deep-reflect `#6e3a14` on white / reflect pastel | 9.22 / 7.55 | pass |
+| white on accent-dark `#1f3864` (header) | 11.62 | pass |
+| meta text (80% white) on accent-dark | 7.49 | pass |
+| ink on `--panel-bg` (learning panel) | 15.20 | pass |
+| accent on `--panel-bg` (lp-tag) | 6.71 | pass |
+| spine-story eyebrow on white | 4.97 | pass |
+| spine-concepts eyebrow on white | 4.87 | pass |
+| **spine-do eyebrow on white** | spec value `#c99212` = 2.76 → **darkened to `#b58310` = 3.38** | pass after fix |
+| spine-show eyebrow on white | 3.07 | pass |
+| spine-reflect eyebrow on white | 3.56 | pass |
+
+The darkened `--spine-do` stays far duller than `--ai-orange #f5a623` — the brightness gap that keeps AI chips unmistakable is preserved (do not brighten it). Verified live on U0 B1 (computed styles: spines, eyebrows, deep headings, panel border, sticky border, dark header, divider) and statically on U1 B5 / U2 B3 / U3 B1 / U4 B1 (all five family sections + learning panel + bell ringer + shared stylesheet present). Build clean: 150 pages.
 
 **Addendum 19 (2026-07-17): FourThought + hook-rotation convention + the U5 parking file.**
 - **FourThought** joins the registry: "Routine in depth" section (`#fourthought`, supplied-final) after Factstorming + table row (first taught U4 B9; U5 Position Paper planned). Placed: **U4 B9** end-of-Do assigned-task callout (bring to Block 10; submit via new `classroomLinks` key `u4-b9-fourthought`) + **U4 B10** Story line ("four quadrants become four sections"). Note: the FourThought template itself is Classroom-only — not yet written; add to the U4 materials build queue.

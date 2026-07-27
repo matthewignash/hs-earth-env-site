@@ -4,7 +4,7 @@
   gap: 16px;
   flex-wrap: wrap;
   font-size: 14px;
-  color: var(--muted);
+  color: rgba(255, 255, 255, 0.8);
   margin-bottom: 12px;
 }
 .strand-chips {
@@ -14,7 +14,7 @@
   flex-wrap: wrap;
   font-size: 13px;
 }
-.strand-chips .label { color: var(--muted); }
+.strand-chips .label { color: rgba(255, 255, 255, 0.75); }
 .chip {
   padding: 4px 10px;
   border-radius: 16px;
@@ -95,25 +95,64 @@
   margin-bottom: 20px;
   border: 1px solid var(--border);
 }
-.block-section .section-tag {
-  display: inline-block;
-  padding: 4px 12px;
-  border-radius: 16px;
-  font-size: 12px;
-  font-weight: 700;
-  margin-bottom: 8px;
-  letter-spacing: 0.5px;
+/* Eyebrow labels are generated from the section family; the old
+   .section-tag pills are retired in favor of the ::before eyebrow. */
+.block-section .section-tag { display: none; }
+.block-section.story::before,
+.block-section.concepts::before,
+.block-section.do::before,
+.block-section.show::before,
+.block-section.reflect::before {
+  display: block;
   text-transform: uppercase;
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+  font-weight: 600;
+  margin-bottom: 6px;
 }
-.block-section.story .section-tag    { background: var(--story);    color: #6b46c1; }
-.block-section.concepts .section-tag { background: var(--concepts); color: #1e4d8c; }
-.block-section.do .section-tag       { background: var(--do);       color: #8b6914; }
-.block-section.show .section-tag     { background: var(--show);     color: #2d5016; }
-.block-section.reflect .section-tag  { background: var(--reflect);  color: #8b4513; }
+.block-section.story::before    { content: "Story";    color: var(--spine-story); }
+.block-section.concepts::before { content: "Ways in";  color: var(--spine-concepts); }
+.block-section.do::before       { content: "Do";       color: var(--spine-do); }
+.block-section.show::before     { content: "Show";     color: var(--spine-show); }
+.block-section.reflect::before  { content: "Reflect";  color: var(--spine-reflect); }
+/* Saturated spine on the left edge; no rounded corners on the spined side.
+   Full card border retired so the learning panel is the page's only
+   full-bordered element; the section dividers take over separation. */
+.block-section.story,
+.block-section.concepts,
+.block-section.do,
+.block-section.show,
+.block-section.reflect {
+  border: none;
+  border-radius: 0 12px 12px 0;
+}
+.block-section.story    { border-left: 4px solid var(--spine-story); }
+.block-section.concepts { border-left: 4px solid var(--spine-concepts); }
+.block-section.do       { border-left: 4px solid var(--spine-do); }
+.block-section.show     { border-left: 4px solid var(--spine-show); }
+.block-section.reflect  { border-left: 4px solid var(--spine-reflect); }
 .block-section h2 {
   font-size: 22px;
   margin-bottom: 6px;
   color: var(--ink);
+}
+.block-section.story h2    { color: var(--deep-story); }
+.block-section.concepts h2 { color: var(--deep-concepts); }
+.block-section.do h2       { color: var(--deep-do); }
+.block-section.show h2     { color: var(--deep-show); }
+.block-section.reflect h2  { color: var(--deep-reflect); }
+/* Divider between rhythm sections: 1px line centered in 2.5rem of space. */
+.block-section + .block-section {
+  margin-top: 2.5rem;
+  position: relative;
+}
+.block-section + .block-section::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: -1.25rem;
+  border-top: 1px solid var(--divider);
 }
 .block-section .sub {
   color: var(--muted);
@@ -382,10 +421,12 @@ dialog.video-lightbox::backdrop {
 }
 
 /* ====== Bell ringer (5-min opener routine) ====== */
+/* A task, not a story: styled as the do family. */
 .bell-ringer {
   background: var(--do);
-  border: 1px solid var(--border);
-  border-radius: 8px;
+  border: none;
+  border-left: 4px solid var(--spine-do);
+  border-radius: 0 8px 8px 0;
   padding: 10px 14px;
   margin-bottom: 20px;
   font-size: 14px;
@@ -395,7 +436,7 @@ dialog.video-lightbox::backdrop {
   font-weight: 700;
   letter-spacing: 0.5px;
   text-transform: uppercase;
-  color: var(--muted);
+  color: var(--deep-do);
 }
 .bell-ringer-meta { font-size: 12px; color: var(--muted); margin: 2px 0 6px; }
 .bell-ringer p { margin: 0 0 6px; }
@@ -403,10 +444,10 @@ dialog.video-lightbox::backdrop {
 .bell-ringer .bell-ringer-figure { margin: 10px 0 8px; max-width: 640px; }
 
 /* ====== Learning panel ====== */
+/* The ONLY full-bordered element on a block page. */
 .learning-panel {
-  background: white;
-  border: 1px solid var(--accent);
-  border-left: 4px solid var(--accent);
+  background: var(--panel-bg);
+  border: 1.5px solid var(--accent);
   border-radius: 8px;
   padding: 16px 20px;
   margin-bottom: 20px;
@@ -492,7 +533,7 @@ button.std-chip[aria-expanded="true"] { outline: 2px solid var(--accent); outlin
   right: 0;
   z-index: 90;
   background: white;
-  border-bottom: 1px solid var(--border);
+  border-bottom: 1.5px solid var(--accent);
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
   padding: 6px 0;
   font-size: 13px;
