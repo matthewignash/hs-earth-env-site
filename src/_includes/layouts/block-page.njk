@@ -26,7 +26,7 @@ extraStylesheets:
     <p class="std-label">Where this runs:</p>
     <ul class="std-trail">
       {%- for t in trail %}
-      <li>{% if t.url == page.url %}<span class="std-here">U{{ t.unit }} B{{ t.block }} — {{ t.title }} ← you are here</span>{% else %}<a href="{{ t.url }}">U{{ t.unit }} B{{ t.block }} — {{ t.title }}</a>{% endif %}</li>
+      <li>{% if t.url == page.url %}<span class="std-here">U{{ t.unit }} B{{ t.block }}: {{ t.title }} ← you are here</span>{% else %}<a href="{{ t.url }}">U{{ t.unit }} B{{ t.block }}: {{ t.title }}</a>{% endif %}</li>
       {%- endfor %}
     </ul>
     {%- endif %}
@@ -44,7 +44,7 @@ extraStylesheets:
 
 <header class="page-header">
   <div class="container">
-    <h1>Block {{ block }} — {{ title }}</h1>
+    <h1>Block {{ block }}: {{ title }}</h1>
     <div class="meta">
       <span>Unit {{ unit }} · Block {{ block }} of {{ blocksTotal }}</span>
       {% if minutes %}<span>⏰ {{ minutes }} minutes</span>{% endif %}
@@ -65,7 +65,7 @@ extraStylesheets:
 
   {% if bellRinger %}
   <div class="bell-ringer">
-    <div class="bell-ringer-head">Bell ringer — start here (while attendance happens)</div>
+    <div class="bell-ringer-head">Bell ringer: start here (while attendance happens)</div>
     <div class="bell-ringer-meta">{{ bellRinger.tag }} · {{ bellRinger.minutes }} min</div>
     <p>{{ bellRinger.text | safe }}</p>
     {% if bellRinger.image %}
@@ -74,7 +74,7 @@ extraStylesheets:
       {% if bellRinger.imageCredit %}<figcaption>{{ bellRinger.imageCredit | safe }}</figcaption>{% endif %}
     </figure>
     {% endif %}
-    <p class="bell-ringer-journal">Answer in your Reflection Journal — dated.</p>
+    <p class="bell-ringer-journal">Answer in your Reflection Journal, dated.</p>
   </div>
   {% endif %}
 
@@ -83,7 +83,7 @@ extraStylesheets:
     <div class="lp-tag">Today we are learning</div>
     <p class="lp-intention">{{ learningIntention | safe }}</p>
     {% if successCriteria and successCriteria.length %}
-    <div class="lp-sc-head"><span>I can — tick as you go (for you, not for marks)</span> <button type="button" class="lp-reset">reset</button></div>
+    <div class="lp-sc-head"><span>I can: tick as you go (for you, not for marks)</span> <button type="button" class="lp-reset">reset</button></div>
     <ul class="lp-sc-list">
       {%- for sc in successCriteria %}
       <li><label><input type="checkbox" class="lp-check" data-sc-index="{{ loop.index0 }}"><span>{{ sc }}</span></label></li>

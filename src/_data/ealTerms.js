@@ -136,14 +136,14 @@ module.exports = {
   },
   "positive-feedback": {
     term: "Positive feedback",
-    def: "A loop that amplifies a change — the change feeds itself, like melting ice exposing dark ocean that absorbs more heat. Positive means amplifying, not good.",
+    def: "A loop that amplifies a change: the change feeds itself, like melting ice exposing dark ocean that absorbs more heat. Positive means amplifying, not good.",
     stem: "This is a positive feedback loop because ___.",
     vocabAnchor: "feedback-loop",
     eal: "/foundations/eal/u1/"
   },
   "negative-feedback": {
     term: "Negative feedback",
-    def: "A loop that opposes a change — something pushes the system back toward stability, like the carbon-silicate thermostat. Negative means dampening, not bad.",
+    def: "A loop that opposes a change: something pushes the system back toward stability, like the carbon-silicate thermostat. Negative means dampening, not bad.",
     stem: "This is a negative feedback loop because ___.",
     vocabAnchor: "feedback-loop",
     eal: "/foundations/eal/u1/"
