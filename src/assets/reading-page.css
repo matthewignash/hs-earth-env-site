@@ -75,6 +75,94 @@
 }
 .toggle input { accent-color: var(--accent); width: 16px; height: 16px; }
 
+/* ====== Split view: the paper, and its supports beside it ====== */
+.split {
+  display: grid;
+  grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr);
+  gap: 20px;
+  align-items: start;
+  margin-bottom: 24px;
+}
+@media (max-width: 900px) {
+  .split { grid-template-columns: minmax(0, 1fr); }
+}
+.split-paper { position: sticky; top: 12px; min-width: 0; }
+@media (max-width: 900px) { .split-paper { position: static; } }
+.paper-frame {
+  width: 100%;
+  height: calc(100vh - 120px);
+  min-height: 460px;
+  border: 1.5px solid var(--accent);
+  border-radius: 8px;
+  background: white;
+  display: block;
+}
+.paper-frame-note { font-size: 12px; color: var(--muted); margin: 6px 0 0; }
+/* Always visible: Google's sign-in page cannot be framed, so a signed-out
+   reader sees an empty frame with no prompt of its own. */
+.reader-open {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  margin: 0 0 8px;
+}
+.reader-open-btn {
+  display: inline-block;
+  background: var(--accent);
+  color: white;
+  font-weight: 700;
+  font-size: 14px;
+  padding: 8px 16px;
+  border-radius: 7px;
+  text-decoration: none;
+}
+.reader-open-btn:hover { background: var(--accent-dark); color: white; }
+.reader-open-note { font-size: 12px; color: var(--muted); flex: 1 1 14rem; }
+.placeholder-frame {
+  height: auto;
+  border-style: dashed;
+  border-color: var(--muted);
+  padding: 18px 20px;
+  font-size: 14px;
+}
+.placeholder-frame p:last-child { margin-bottom: 0; }
+.placeholder-frame code {
+  background: var(--soft);
+  padding: 1px 5px;
+  border-radius: 4px;
+  font-size: 13px;
+}
+
+.split-rail { min-width: 0; max-height: calc(100vh - 120px); overflow-y: auto; }
+@media (max-width: 900px) { .split-rail { max-height: none; overflow: visible; } }
+.rail-block { margin-bottom: 22px; }
+.rail-block h2 { font-size: 17px; color: var(--deep-concepts); margin-bottom: 2px; }
+.rail-sub { font-size: 13px; color: var(--muted); margin-bottom: 10px; }
+.rail-path { list-style: none; margin: 0; padding: 0; counter-reset: rail; }
+.rail-step {
+  counter-increment: rail;
+  background: white;
+  border-left: 3px solid var(--spine-concepts);
+  border-radius: 0 6px 6px 0;
+  padding: 8px 12px;
+  margin-bottom: 8px;
+}
+.rail-locator { font-size: 13px; margin: 0; }
+.rail-locator::before {
+  content: counter(rail);
+  font-size: 11px;
+  font-weight: 700;
+  color: white;
+  background: var(--spine-concepts);
+  border-radius: 4px;
+  padding: 1px 5px;
+  margin-right: 6px;
+}
+.rail-locator q { font-style: italic; }
+.rail-origin { margin: 0 0 10px 18px; font-size: 13px; }
+.rail-origin li { margin-bottom: 3px; }
+
 .reading-section { margin-bottom: 28px; }
 .reading-section h2 {
   font-size: 20px;
@@ -308,6 +396,11 @@ body.path-on .off-path { opacity: 0.55; }
   .reading-controls,
   .verify-banner,
   .term-cards { display: none; }
+  /* The paper prints from Drive, not through this frame. */
+  .split { display: block; }
+  .split-paper { display: none; }
+  .split-rail { max-height: none; overflow: visible; }
+  .rail-step { break-inside: avoid; border-left: 2pt solid #999; }
   /* Glosses print, expanded. */
   .gloss { border-left: 3px solid #999; background: none; }
   .gloss[open] p, .gloss p { display: block; }
