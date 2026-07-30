@@ -111,7 +111,7 @@
   margin-bottom: 6px;
 }
 .block-section.story::before    { content: "Story";    color: var(--spine-story); }
-.block-section.concepts::before { content: "Ways in";  color: var(--spine-concepts); }
+.block-section.concepts::before { content: "Concepts"; color: var(--spine-concepts); }
 .block-section.do::before       { content: "Do";       color: var(--spine-do); }
 .block-section.show::before     { content: "Show";     color: var(--spine-show); }
 .block-section.reflect::before  { content: "Reflect";  color: var(--spine-reflect); }
@@ -184,6 +184,29 @@
 .entry-card .entry-title { font-weight: 700; margin-bottom: 4px; }
 .entry-card .entry-meta { font-size: 12px; color: var(--muted); margin-top: 8px; }
 .prefer-text { font-size: 12px; color: var(--muted); margin-top: 6px; }
+
+/* ====== "Everyone does this": cards that are never part of the choice ======
+   Deliberately unlike .placeholder (dashed = asset missing) and .live-activity
+   (accent fill = whole-class event), so it cannot be misread as either. The
+   instruction line above the grid never describes these. */
+.entry-required { margin-top: 18px; }
+.entry-required-label {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 8px;
+}
+.entry-required-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 12px;
+}
+.entry-required .entry-card {
+  background: white;
+  border-color: var(--divider);
+}
 
 /* Click-to-play video cards (partials/video-card.njk) */
 .video-card { text-decoration: none; color: inherit; }

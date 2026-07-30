@@ -2,7 +2,36 @@
 
 > **Purpose:** Living status doc. Tells you (and future Claude Code sessions) what's built, what's stubbed, what to build next, and in what order. The charter is in `CLAUDE.md` — do NOT modify that. Update this file at the end of each build session.
 
-**Last updated:** 2026-07-30 (Addenda 3–24 below. U0–U6 complete; U7 is next.)
+**Last updated:** 2026-07-30 (Addenda 3–25 below. U0–U6 complete; U7 is next.)
+
+---
+
+**Addendum 25 (2026-07-30): the Concepts section now says what students should do. SUPERSEDES Addendum 5.**
+
+Addendum 5's `<h2>Ways in</h2>` convention is **retired**. The heading on all 62 Concepts sections (61 blocks plus `unit-0/orientation.njk`) is now **`<h2>Before you start the work</h2>`**, and the eyebrow was changed from `"Ways in"` to `"Concepts"` in `block-page.css`, restoring the family parallel with STORY / DO / SHOW / REFLECT. Addendum 5's **count-free rule still stands**.
+
+**The four openings.** Every instruction line now begins with exactly one of these, so the mode is readable at a glance, then one clause naming what the material is:
+
+| Opening | Means |
+|---|---|
+| `Pick one` | the grid cards are interchangeable routes to the same material |
+| `Start with the {Watch\|Read\|Interact\|Make}` | that card is the day's anchor and everyone does it |
+| `Use all of these` | nothing here substitutes for anything else |
+| `Keep these open` (or `Keep this open`) | a reference shelf, not a menu |
+
+Distribution after the pass: **Start with 45, Keep open 11, Pick one 4, Use all 2.** Worth knowing: the site had been describing itself as a menu, but only 4 of 62 blocks are genuinely a free choice. Most days have an anchor, and previously the page did not say so.
+
+**"Everyone does this."** Cards that are never part of the choice now sit in a separate `.entry-required` group **below** the grid (22 cards across 18 files). The test: *a card is required if it points at a durable Foundations, Reference, or AI-partner page and asks you to consult it; it is a way in if it asks you to do a specific thing today.* That moved every `Vocabulary support` and `Meet your new partner` card, plus U3's OPVL/rubric "Read" cards. **Live-activity cards deliberately stay in the grid** and become the named anchor instead, because in blocks like U2 B7 the live demo *is* the day and burying it below the choices would hide it. This split is what makes the instruction line checkable: the line describes only what is left in the grid.
+
+**The build now refuses copy that contradicts its cards.** `scripts/check-concepts.mjs`, wired into `npm run build` (and `npm run check:concepts`). It parses each Concepts section, splits grid from required group, and enforces: one instruction line opening with a known stem; no live-activity card inside a `Pick one` grid; `Start with the X` resolves to a real grid card; no anchoring on a placeholder that has no logistics in its meta; no always-required card left in the grid; count-free; no em dashes; and none of the Do section's vocabulary ("paths", "end the same"), which keeps the two similar-looking grids distinct. Verified to exit non-zero on a broken line and on a `Pick one` that lies about a live card.
+
+**Factual fixes made en route.** U4 B10's Watch was marked `.placeholder` though its meta reads "Whole-class, projected. The day's anchor"; it is a scheduled live demo, now marked `.live-activity` to match the identical card in U2 B7. U1 B6's line pointed at data the student had not reached; it now says the candidate table is *below*. U3's "All three cover the same content" was false in all four blocks (4 to 5 cards, non-substitutable); those now describe what is actually in the grid.
+
+**Two judgement calls worth knowing.** (1) A `.placeholder` anchor is allowed when its meta describes logistics ("Pairs · the day's anchor activity"), because the tag means the handout is unbuilt, not that the lesson is imaginary; the checker only rejects anchors whose meta is empty or still says "to be recorded". This is a softening of the rule first drafted in the plan, made after reading the metas. (2) The Power Notes output is named only on the 14 blocks that already carry seeds, matching the deliberate design that seeds fade after U2.
+
+**Convention for U7 and any new block:** heading `Before you start the work`; instruction line opens with one of the four stems and is true of the grid only; anything always-required goes in the "Everyone does this" group. `npm run build` will enforce it.
+
+---
 
 ---
 
