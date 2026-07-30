@@ -45,10 +45,12 @@ extraStylesheets:
 <header class="page-header">
   <div class="container">
     <h1>Block {{ block }}: {{ title }}</h1>
+    {%- set courseDayNumber = collections.teachingBlocks | courseDay(unit, block) -%}
+    {%- set rotation = rotationDates.days | rotationDay(courseDayNumber) -%}
     <div class="meta">
       <span>Unit {{ unit }} · Block {{ block }} of {{ blocksTotal }}</span>
       {% if minutes %}<span>⏰ {{ minutes }} minutes</span>{% endif %}
-      {% if week and day %}<span>Week {{ week }}, Day {{ day }}</span>{% endif %}
+      <span class="block-dates">A: {{ rotation.aLabel or "date TBC" }} · B: {{ rotation.bLabel or "date TBC" }}</span>
     </div>
     {% if strands %}
     <div class="strand-chips">

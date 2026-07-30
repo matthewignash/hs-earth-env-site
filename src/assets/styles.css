@@ -170,6 +170,12 @@ img { max-width: 100%; height: auto; display: block; }
   color: rgba(255, 255, 255, 0.85);
   max-width: 720px;
 }
+/* Unit landing pages: real calendar span under the unit title. */
+.page-header .unit-span {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 8px;
+}
 
 /* ====== Layout ====== */
 .container {

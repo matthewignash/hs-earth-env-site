@@ -2,11 +2,33 @@
 
 > **Purpose:** Living status doc. Tells you (and future Claude Code sessions) what's built, what's stubbed, what to build next, and in what order. The charter is in `CLAUDE.md` — do NOT modify that. Update this file at the end of each build session.
 
-**Last updated:** 2026-07-28 (Addenda 3–20 below. U0–U6 complete; U7 is next.)
+**Last updated:** 2026-07-30 (Addenda 3–21 below. U0–U6 complete; U7 is next.)
 
 ---
 
 ## SESSION HANDOFF — 2026-07-07 (read this first)
+
+**Addendum 21 (2026-07-30): Real calendar dates on block pages — computed course-day index.** Block pages now show their actual A/B rotation dates instead of the synthetic week·day label.
+- **Data**: `src/_data/rotationDates.json` (copied from `../rotation-block-dates-2026-27.json`). 82 course meetings; `n` = meeting number, `a`/`b` = ISO dates and `aLabel`/`bLabel` = display strings for the A- and B-rotation sections. **Entry 82 has no `b`** — the year has one more A day than B days.
+- **Index (`.eleventy.js`)**: new `teachingBlocks` collection = pages with `layout: layouts/block-page.njk` plus `unit` and `block` (so unit landings, assessment pages, exemplars, readings, and foundations pages are excluded). Sorted unit-ascending then block-ascending; **a page's position in that collection IS its course meeting number**. Nothing is hand-written into frontmatter, so adding or deleting a block file reshuffles every downstream date on the next build (verified: a temporary U0 B8 pushed U1 B1 from Fri Aug 28 → Tue Sep 1 and U6 B10 from Wed Apr 21 → Fri Apr 23; test file removed).
+- **Filters added**: `courseDay(unit, block)` → meeting number (0 if absent) · `rotationDay(n)` → the data entry or `{}` · `unitLandingNumber(url)` → unit number only for `/units/unit-N/` · `unitSpan(unit, days)` → the "first aLabel – last bLabel" string (falls back to `aLabel` when the last meeting has no `b`, i.e. day 82).
+- **Header line** (`_includes/layouts/block-page.njk`): the `Week X, Day Y` span is replaced by `A: <aLabel> · B: <bLabel>`, same muted `.meta` styling, minutes suffix kept. Missing values render **`date TBC`** rather than breaking the build (verified for day 82's absent `b`, an index past the data, and an unfound block).
+- **Unit spans** (`_includes/layouts/base.njk` + `.unit-span` style): one line under the unit title on landing pages only — `Runs <first> – <last>`. Added in the shared layout rather than duplicated across seven index files; scoping verified (absent from `/units/`, block pages, assessment pages, foundations, home).
+- **Week/day frontmatter left in place** on all 69 blocks per instruction (other tooling references it); this was a display change only. Only one template ever rendered it.
+
+**Unit → course-day ranges** (69 teaching blocks; 82 meetings in the data, so **13 days of headroom** for U7):
+
+| Unit | Blocks | Course days | Calendar span | ISO |
+|---|---|---|---|---|
+| U0 | 7 | 1–7 | Thu Aug 6 – Thu Aug 27 | 2026-08-06 → 2026-08-27 |
+| U1 | 10 | 8–17 | Fri Aug 28 – Mon Oct 12 | 2026-08-28 → 2026-10-12 |
+| U2 | 9 | 18–26 | Fri Oct 9 – Wed Nov 11 | 2026-10-09 → 2026-11-11 |
+| U3 | 12 | 27–38 | Tue Nov 10 – Mon Jan 11 | 2026-11-10 → 2027-01-11 |
+| U4 | 12 | 39–50 | Fri Jan 8 – Fri Feb 19 | 2027-01-08 → 2027-02-19 |
+| U5 | 9 | 51–59 | Thu Feb 18 – Wed Mar 24 | 2027-02-18 → 2027-03-24 |
+| U6 | 10 | 60–69 | Tue Mar 23 – Mon Apr 26 | 2027-03-23 → 2027-04-26 |
+
+**Note on overlapping spans:** consecutive unit spans overlap by a day or two (U1 ends Mon Oct 12 but U2 starts Fri Oct 9). That is a real property of a waterfall A/B rotation, not a bug — the B section reaches a unit's last block *after* the A section has already started the next unit. Don't "fix" it by clamping the ranges.
 
 **Addendum 20 (2026-07-28): Site-wide visual sharpening pass — spines, eyebrows, panel border, dark header band.** CSS-only (`styles.css` + `block-page.css`; zero content/template edits — eyebrows are generated with `::before` from the section family class, and the old `.section-tag` pills are retired via `display: none`). What changed:
 - **Tokens added** to `:root`: `--spine-*` + `--deep-*` per rhythm family, `--panel-bg: #eef2fa`, `--divider: #e3e1da`. Also fixed a pre-existing bug: `--good` was referenced by `.submission-callout` and `.callout.good` but never defined; now `--good: #e2efda`.

@@ -48,6 +48,11 @@
 <header class="page-header">
   <div class="container">
     <h1>{{ title }}</h1>
+    {%- set landingUnit = page.url | unitLandingNumber -%}
+    {%- if landingUnit != null -%}
+      {%- set span = collections.teachingBlocks | unitSpan(landingUnit, rotationDates.days) -%}
+      {% if span %}<p class="unit-span">Runs {{ span }}</p>{% endif %}
+    {%- endif %}
     {% if tagline %}<p class="tagline">{{ tagline }}</p>{% endif %}
   </div>
 </header>
