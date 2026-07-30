@@ -1,0 +1,33 @@
+{#- Per-unit schedule. Rows come from the unitSchedule collection, so dates are
+    always derived from the rotation data and never hand-maintained. When the
+    formative/summative dates are locked, give a row an `assessment` field and it
+    picks up the .is-assessment styling plus a task link. -#}
+{%- set rows = collections.unitSchedule | forUnit(scheduleUnit) -%}
+{%- if rows.length %}
+<details class="unit-schedule" open>
+  <summary>Unit {{ scheduleUnit }} calendar: when each block runs</summary>
+  <div class="unit-schedule-scroll">
+    <table>
+      <caption class="sr-only">Meeting dates for each block in Unit {{ scheduleUnit }}, by rotation</caption>
+      <thead>
+        <tr>
+          <th scope="col">Block</th>
+          <th scope="col">A rotation</th>
+          <th scope="col">B rotation</th>
+        </tr>
+      </thead>
+      <tbody>
+        {%- for row in rows %}
+        {%- set day = rotationDates.days | rotationDay(row.meeting) %}
+        <tr{% if row.assessment %} class="is-assessment"{% endif %}>
+          <th scope="row"><a href="{{ row.url }}">{{ row.label }}</a>{% if row.assessment %} <span class="schedule-tag">{{ row.assessment }}</span>{% endif %}</th>
+          <td>{{ day.aLabel or "date TBC" }}</td>
+          <td>{{ day.bLabel or "date TBC" }}</td>
+        </tr>
+        {%- endfor %}
+      </tbody>
+    </table>
+  </div>
+  <p class="unit-schedule-note">Your section follows one rotation, A or B. Check which one you are in and read that column.</p>
+</details>
+{%- endif %}

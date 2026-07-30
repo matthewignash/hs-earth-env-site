@@ -19,35 +19,47 @@ breadcrumbs:
 </div>
 
 <section aria-label="Unit 0 blocks" style="margin-top: 24px;">
-  <h2 style="font-size: 22px; color: var(--ink); margin-bottom: 12px;">The seven blocks</h2>
+  <h2 style="font-size: 22px; color: var(--ink); margin-bottom: 12px;">The first day, then the seven blocks</h2>
   <div class="section-grid">
+    <a class="section-card" href="/units/unit-0/orientation/">
+      <div class="card-title">Orientation, Syllabus, and Getting to Know Each Other</div>
+      <div class="card-desc">The first day: introductions, how the course runs, and practical set-up. No content and nothing to submit.</div>
+      <div class="card-dates">{{ rotationDates.days | meetingDateLabel(1) }}</div>
+    </a>
     <a class="section-card" href="/units/unit-0/block-1/">
       <div class="card-title">Block 1: Welcome + How We Work</div>
       <div class="card-desc">The course's central question; the rubric introduced; first group OPVL on three sources.</div>
+      <div class="card-dates">{{ collections.teachingBlocks | blockDateLabel(0, 1, rotationDates.days) }}</div>
     </a>
     <a class="section-card" href="/units/unit-0/block-2/">
       <div class="card-title">Block 2: OPVL Across Source Types</div>
       <div class="card-desc">OPVL extended to a peer-reviewed paper: Lovelock 1965 on detecting life by atmospheric chemistry. Observation vs. inference; specific-Limitation practice.</div>
+      <div class="card-dates">{{ collections.teachingBlocks | blockDateLabel(0, 2, rotationDates.days) }}</div>
     </a>
     <a class="section-card" href="/units/unit-0/block-3/">
       <div class="card-title">Block 3: AI as a Source + Documentation Protocol</div>
       <div class="card-desc">Why AI is just another source. First full pass at the AI Documentation Template.</div>
+      <div class="card-dates">{{ collections.teachingBlocks | blockDateLabel(0, 3, rotationDates.days) }}</div>
     </a>
     <a class="section-card" href="/units/unit-0/block-4/">
       <div class="card-title">Block 4: Dossier Work Day 1</div>
       <div class="card-desc">Topic lock + first OPVL on a traditional source. Work-block format with Mr. Matt/Ms. Jayanthi modeling, then student work time. Closes with paired peer-check.</div>
+      <div class="card-dates">{{ collections.teachingBlocks | blockDateLabel(0, 4, rotationDates.days) }}</div>
     </a>
     <a class="section-card" href="/units/unit-0/block-5/">
       <div class="card-title">Block 5: Dossier Work Day 2</div>
       <div class="card-desc">AI source OPVL'd + first AI Documentation Template entry completed. Cross-source synthesis drafted.</div>
+      <div class="card-dates">{{ collections.teachingBlocks | blockDateLabel(0, 5, rotationDates.days) }}</div>
     </a>
     <a class="section-card" href="/units/unit-0/block-6/">
       <div class="card-title">Block 6: Dossier Due + Rehearsal</div>
       <div class="card-desc">Source Dossier due. Paired defense rehearsal with peer feedback before the Block 7 defenses.</div>
+      <div class="card-dates">{{ collections.teachingBlocks | blockDateLabel(0, 6, rotationDates.days) }}</div>
     </a>
     <a class="section-card" href="/units/unit-0/block-7/">
       <div class="card-title">Block 7: Defenses + Unit Close</div>
       <div class="card-desc">Final defenses (5-min talks or alt formats) + unit reflection + preview of Unit 1.</div>
+      <div class="card-dates">{{ collections.teachingBlocks | blockDateLabel(0, 7, rotationDates.days) }}</div>
     </a>
   </div>
 </section>

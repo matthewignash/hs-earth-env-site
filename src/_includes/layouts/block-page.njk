@@ -44,13 +44,12 @@ extraStylesheets:
 
 <header class="page-header">
   <div class="container">
-    <h1>Block {{ block }}: {{ title }}</h1>
-    {%- set courseDayNumber = collections.teachingBlocks | courseDay(unit, block) -%}
-    {%- set rotation = rotationDates.days | rotationDay(courseDayNumber) -%}
+    <h1>{% if block %}Block {{ block }}: {% endif %}{{ title }}</h1>
+    {%- set courseDayNumber = courseMeeting or (collections.teachingBlocks | courseDay(unit, block)) -%}
     <div class="meta">
-      <span>Unit {{ unit }} · Block {{ block }} of {{ blocksTotal }}</span>
+      <span>Unit {{ unit }}{% if block %} · Block {{ block }} of {{ blocksTotal }}{% else %} · {{ scheduleLabel or "Orientation" }}{% endif %}</span>
       {% if minutes %}<span>⏰ {{ minutes }} minutes</span>{% endif %}
-      <span class="block-dates">A: {{ rotation.aLabel or "date TBC" }} · B: {{ rotation.bLabel or "date TBC" }}</span>
+      <span class="block-dates">{{ rotationDates.days | meetingDateLabel(courseDayNumber) }}</span>
     </div>
     {% if strands %}
     <div class="strand-chips">

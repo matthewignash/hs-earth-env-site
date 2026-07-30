@@ -2,11 +2,34 @@
 
 > **Purpose:** Living status doc. Tells you (and future Claude Code sessions) what's built, what's stubbed, what to build next, and in what order. The charter is in `CLAUDE.md` — do NOT modify that. Update this file at the end of each build session.
 
-**Last updated:** 2026-07-30 (Addenda 3–21 below. U0–U6 complete; U7 is next.)
+**Last updated:** 2026-07-30 (Addenda 3–22 below. U0–U6 complete; U7 is next.)
 
 ---
 
 ## SESSION HANDOFF — 2026-07-07 (read this first)
+
+**Addendum 22 (2026-07-30): Orientation day, per-unit calendars, dates on block cards; course shifted one meeting.**
+- **Course shifted down one meeting.** Rotation meeting 1 (Thu Aug 6 / Fri Aug 7) is orientation, syllabus, and icebreakers, so **U0 Block 1 is now meeting 2** (Mon Aug 10 / Tue Aug 11). Controlled by a single constant, `FIRST_BLOCK_MEETING = 2` in `.eleventy.js` — change that one number to shift the whole year; the block headers, the card dates, the unit calendars, and the unit spans all read it. Blocks now occupy meetings 2–70 of 82.
+- **Orientation page**: `src/units/unit-0/orientation.njk` → `/units/unit-0/orientation/`. Uses the normal block-page layout but declares `courseMeeting: 1` and `scheduleLabel: Orientation` **instead of a `block` number**, which deliberately keeps it out of the `teachingBlocks` collection so it cannot consume a block slot or shift dates. The layout now handles a numberless day: `<h1>` drops the "Block N:" prefix and the meta reads "Unit 0 · Orientation". Wired both ways (U0 B1 gained a `prev` link; orientation's `next` is B1) and given a card on the U0 landing. **Content is deliberately partial**: the icebreaker and the practical set-up (Classroom join code, Drive folder, AI platform sign-in) are `.placeholder` cards per the Hybrid convention — Matthew swaps in the real specifics before the first day. The syllabus-walkthrough card and the four Foundations links are real.
+- **Per-unit calendar** (`_includes/partials/unit-schedule.njk`, injected by `base.njk` on unit landings only): a compact `<details open>` table, one row per meeting — Block | A rotation | B rotation — with each label linking to its page. Generated from the new `unitSchedule` collection, so it is never hand-maintained. Orientation appears as U0's first row. Scoped by URL, so it does not appear on `/units/`, block pages, or Foundations.
+- **Dates on block cards**: each unit landing's block card now carries a generated `A: … · B: …` line (`blockDateLabel` filter). The one-line call was inserted per card, so titles and hand-written descriptions were untouched. Cross-reference cards that point at another unit's block (U1's Lovelock/Thompson resource card → U0 B2) deliberately carry **no** date line — a date there would read as a Unit 1 meeting.
+- **Shared formatter**: `meetingDateLabel` is the single source for the "A: … · B: …" string used by headers, cards, and the calendar; `unitSpan` now reads the same `unitSchedule` rows the table renders, so the header span can never contradict the table (U0 now spans Thu Aug 6 – Mon Aug 31, orientation included).
+
+**Ready to wire, not yet wired — formative/summative highlighting.** The calendar supports it already: give a `unitSchedule` row an `assessment` field and it picks up `.is-assessment` (SHOW-family green) plus a `.schedule-tag` chip, both styled in `styles.css`. What is missing is the data — the assessment dates are not locked. When they are, the cheapest path is a per-block frontmatter key (e.g. `assessment: "Dossier due"`) surfaced in the `unitSchedule` collection mapper, plus a task link. Do not invent these dates; they change the calendar students plan around.
+
+**New unit → course-day ranges** (69 blocks at meetings 2–70; 12 meetings of headroom left for U7):
+
+| Unit | Blocks | Course meetings | Calendar span |
+|---|---|---|---|
+| U0 | Orientation + 7 | 1–8 | Thu Aug 6 – Mon Aug 31 |
+| U1 | 10 | 9–18 | Tue Sep 1 – Wed Oct 14 |
+| U2 | 9 | 19–27 | Tue Oct 13 – Fri Nov 13 |
+| U3 | 12 | 28–39 | Thu Nov 12 – Wed Jan 13 |
+| U4 | 12 | 40–51 | Tue Jan 12 – Tue Feb 23 |
+| U5 | 9 | 52–60 | Mon Feb 22 – Mon Mar 29 |
+| U6 | 10 | 61–70 | Thu Mar 25 – Wed Apr 28 |
+
+Unit spans still overlap by a meeting or two — that remains correct for a waterfall rotation (see Addendum 21). Note also that the calendar's accent border does **not** violate Addendum 20's "learning panel is the only full-bordered element" rule: that rule is scoped to block pages, and the calendar lives on unit landings, which have no learning panel.
 
 **Addendum 21 (2026-07-30): Real calendar dates on block pages — computed course-day index.** Block pages now show their actual A/B rotation dates instead of the synthetic week·day label.
 - **Data**: `src/_data/rotationDates.json` (copied from `../rotation-block-dates-2026-27.json`). 82 course meetings; `n` = meeting number, `a`/`b` = ISO dates and `aLabel`/`bLabel` = display strings for the A- and B-rotation sections. **Entry 82 has no `b`** — the year has one more A day than B days.
