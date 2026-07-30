@@ -1,0 +1,54 @@
+{
+  "u0": {
+    "summative": {
+      "title": "Source Dossier + Defense",
+      "strands": "KU · TT · C",
+      "components": ["3 sources + OPVLs", "AI Documentation", "Synthesis", "Defense"]
+    },
+    "blocks": [
+      {
+        "block": 1,
+        "produces": "OPVL introduced on a live source set; Reflection Journal opened",
+        "feeds": "The OPVL skill every source runs through",
+        "event": "Consent letters go home"
+      },
+      {
+        "block": 2,
+        "produces": "Full OPVL on Lovelock (1965)",
+        "feeds": "OPVL to standard: the skill the dossier is built from",
+        "event": "Graded formative: KU + TT bands returned before Block 4",
+        "highlight": true
+      },
+      {
+        "block": 3,
+        "produces": "First documented AI use + complete AI Documentation Template",
+        "feeds": "AI Documentation component",
+        "event": "Feedback only; platforms live today"
+      },
+      {
+        "block": 4,
+        "produces": "Topic locked; Sources 1–2 OPVL'd and peer-checked",
+        "feeds": "Sources 1 and 2 of the dossier",
+        "event": "Topic conferences run in class"
+      },
+      {
+        "block": 5,
+        "produces": "AI source OPVL + full AI Documentation; synthesis started",
+        "feeds": "Source 3 + AI Documentation component",
+        "event": ""
+      },
+      {
+        "block": 6,
+        "produces": "Dossier submitted; defense rehearsed twice with structured feedback",
+        "feeds": "The full dossier, collected today",
+        "event": "Submission day"
+      },
+      {
+        "block": 7,
+        "produces": "Defense delivered + AI-use reflection",
+        "feeds": "Defense component (Communication strand)",
+        "event": "Summative feedback + strand scores follow"
+      }
+    ]
+  }
+}

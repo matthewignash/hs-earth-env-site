@@ -63,6 +63,14 @@ module.exports = function (eleventyConfig) {
 
   eleventyConfig.addFilter("meetingDateLabel", meetingLabel);
 
+  // The block page for a unit/block pair, so the unit map can read its real
+  // frontmatter (learning intention, title, url) instead of duplicating it.
+  eleventyConfig.addFilter("blockByNumber", function (teachingBlocks, unit, block) {
+    return teachingBlocks.find(function (p) {
+      return p.data.unit === unit && p.data.block === block;
+    }) || null;
+  });
+
   eleventyConfig.addFilter("blockDateLabel", function (teachingBlocks, unit, block, days) {
     const page = teachingBlocks.find(function (p) {
       return p.data.unit === unit && p.data.block === block;

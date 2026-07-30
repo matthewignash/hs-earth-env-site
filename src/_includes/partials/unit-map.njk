@@ -1,0 +1,48 @@
+{#- Reusable unit map dashboard. A unit's stub page sets `mapUnit` (number) and
+    `mapUnitName`, then includes this file. Everything else is derived: the spine
+    comes from unitSpine["u" ~ mapUnit], the dates from rotationDates, and each
+    block's learning intention from that block page's own frontmatter. To add a
+    later unit, add a spine entry and a stub page; nothing here changes. -#}
+{%- set spine = unitSpine["u" ~ mapUnit] -%}
+{%- if spine -%}
+{%- set span = collections.unitSchedule | unitSpan(mapUnit, rotationDates.days) -%}
+
+<header class="page-header">
+  <div class="container">
+    <h1>Unit {{ mapUnit }}: {{ mapUnitName }} · The Map</h1>
+    {% if span %}<p class="unit-span">Runs {{ span }}</p>{% endif %}
+  </div>
+</header>
+
+<main id="main" class="container">
+  <section class="map-summative" aria-label="What this unit builds toward">
+    <div class="map-summative-tag">The summative this unit builds toward</div>
+    <h2>{{ spine.summative.title }}</h2>
+    <p class="map-strands">{{ spine.summative.strands }}</p>
+    <ul class="map-components">
+      {%- for component in spine.summative.components %}
+      <li class="map-chip">{{ component }}</li>
+      {%- endfor %}
+    </ul>
+    <p class="map-summative-note">Everything below exists to feed this. If you can't say which piece of the summative a day's work serves, ask. That's a fair question, and the answer should be on this page.</p>
+  </section>
+
+  <ol class="map-rows">
+    {%- for row in spine.blocks %}
+    {%- set blockPage = collections.teachingBlocks | blockByNumber(mapUnit, row.block) %}
+    <li class="map-row{% if row.highlight %} is-highlight{% endif %}">
+      <div class="map-row-head">
+        {% if blockPage %}<a class="map-block" href="{{ blockPage.url }}">Block {{ row.block }}</a>{% else %}<span class="map-block">Block {{ row.block }}</span>{% endif %}
+        <span class="map-dates">{{ collections.teachingBlocks | blockDateLabel(mapUnit, row.block, rotationDates.days) }}</span>
+      </div>
+      {% if blockPage and blockPage.data.learningIntention %}<p class="map-li">{{ blockPage.data.learningIntention }}</p>{% endif %}
+      <p class="map-produces">{{ row.produces }}</p>
+      <p class="map-feeds">→ {{ row.feeds }}</p>
+      {% if row.event %}<p class="map-event">{{ row.event }}</p>{% endif %}
+    </li>
+    {%- endfor %}
+  </ol>
+
+  <p class="map-foot">This map is shared between your teachers and you. The lesson detail lives on each block page; the marking lives with us.</p>
+</main>
+{%- endif %}

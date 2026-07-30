@@ -225,6 +225,147 @@ img { max-width: 100%; height: auto; display: block; }
   margin-top: 8px;
 }
 
+/* ====== Unit map dashboard ====== */
+/* Summative panel: same treatment as a block page's learning panel. */
+.map-summative {
+  background: var(--panel-bg);
+  border: 1.5px solid var(--accent);
+  border-radius: 8px;
+  padding: 16px 20px;
+  margin-bottom: 24px;
+}
+.map-summative-tag {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+.map-summative h2 {
+  font-size: 22px;
+  color: var(--ink);
+  margin: 6px 0 2px;
+}
+.map-strands {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--accent-dark);
+  margin-bottom: 10px;
+}
+.map-components {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 0;
+  padding: 0;
+}
+.map-chip {
+  font-size: 12px;
+  font-weight: 600;
+  background: var(--accent-light);
+  color: var(--accent-dark);
+  padding: 3px 10px;
+  border-radius: 999px;
+}
+.map-summative-note {
+  font-size: 13px;
+  color: var(--muted);
+  margin: 12px 0 0;
+}
+
+.map-rows {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.map-row {
+  background: white;
+  border-left: 4px solid var(--accent);
+  border-radius: 0 8px 8px 0;
+  padding: 14px 18px;
+  margin-bottom: 12px;
+}
+.map-row.is-highlight {
+  background: var(--do);
+  border-left-color: var(--spine-do);
+}
+.map-row-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 10px;
+  margin-bottom: 6px;
+}
+.map-block {
+  font-weight: 700;
+  font-size: 16px;
+  color: var(--accent);
+  text-decoration: none;
+}
+a.map-block:hover { text-decoration: underline; }
+.map-dates {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--accent-dark);
+}
+.map-li {
+  font-size: 14px;
+  font-style: italic;
+  color: var(--ink);
+  margin: 0 0 6px;
+}
+.map-produces {
+  font-size: 14px;
+  margin: 0 0 4px;
+}
+.map-feeds {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--deep-concepts);
+  margin: 0;
+}
+.map-event {
+  font-size: 13px;
+  color: var(--muted);
+  margin: 6px 0 0;
+}
+.map-row.is-highlight .map-event {
+  font-weight: 700;
+  color: var(--deep-do);
+}
+.map-foot {
+  font-size: 13px;
+  color: var(--muted);
+  border-top: 1px solid var(--divider);
+  padding-top: 12px;
+  margin-top: 20px;
+}
+
+/* Prominent entry link to a unit map. */
+.map-link-card {
+  display: block;
+  background: var(--accent-light);
+  border: 1.5px solid var(--accent);
+  border-radius: 10px;
+  padding: 14px 18px;
+  margin-bottom: 20px;
+  text-decoration: none;
+  color: var(--accent-dark);
+  font-weight: 700;
+}
+.map-link-card:hover {
+  background: white;
+  color: var(--accent-dark);
+}
+.map-link-card .map-link-sub {
+  display: block;
+  font-weight: 400;
+  font-size: 13px;
+  color: var(--muted);
+  margin-top: 2px;
+}
+
 /* ====== Unit schedule ("when each block runs") ====== */
 .unit-schedule {
   background: white;

@@ -2,11 +2,18 @@
 
 > **Purpose:** Living status doc. Tells you (and future Claude Code sessions) what's built, what's stubbed, what to build next, and in what order. The charter is in `CLAUDE.md` — do NOT modify that. Update this file at the end of each build session.
 
-**Last updated:** 2026-07-30 (Addenda 3–22 below. U0–U6 complete; U7 is next.)
+**Last updated:** 2026-07-30 (Addenda 3–23 below. U0–U6 complete; U7 is next.)
 
 ---
 
 ## SESSION HANDOFF — 2026-07-07 (read this first)
+
+**Addendum 23 (2026-07-30): Unit map dashboard — U0 built, pattern reusable.** A single page that answers "what is today's work for?" by putting the summative at the top and every block underneath it with the piece it feeds.
+- **Spine data**: `src/_data/unitSpine.json`, keyed `u0`, `u1`, … Each unit entry holds a `summative` block (title, strands, component list) and one row per block with `produces`, `feeds`, `event`, and optional `highlight: true`. **U0 is the only entry — do not scaffold empty entries for other units.** Crucially the spine does **not** duplicate learning intentions, dates, titles, or URLs; those are joined live from each block page's frontmatter and from `rotationDates.json`, so the map cannot drift from the block pages. Verified by temporarily editing U0 B3's `learningIntention` and confirming the map changed on rebuild (then reverted; `git diff` on that file is empty).
+- **Reusable include**: `_includes/partials/unit-map.njk`. A stub page sets only `mapUnit` (number) and `mapUnitName`, then includes it; the include derives the spine (`unitSpine["u" ~ mapUnit]`), the date span (same `unitSpan` computation the unit landings use), each block's page URL and learning intention (new `blockByNumber` filter), and each block's dates (`blockDateLabel`). It no-ops safely if a unit has no spine entry. **To add U1's map later: add a `u1` spine entry plus a 15-line stub page. Nothing in the include changes.**
+- **Page**: `src/units/unit-0/map.njk` → `/units/unit-0/map/`. Accent-dark header band reading "Unit 0: Foundations · The Map" plus the real span (Thu Aug 6 – Mon Aug 31), the summative panel in the learning-panel treatment (1.5px accent border on `--panel-bg`) with the component list as chips, then seven block rows: linked block number · A/B dates · learning intention (italic, from frontmatter) · produces · `→ feeds` · muted event line. **Block 2's row carries the DO-family pastel with its event line bold**, machine-verified (`#fff4d9` background, `--spine-do` spine, font-weight 700 vs 400 on the others). Block 5 has an empty `event`, so no event line renders.
+- **Entry links** (`.map-link-card`): near the top of the U0 landing ("The Map: every block, and what it feeds") and at the top of the Source Dossier assessment page ("See how each block feeds this assessment → The Map").
+- **Em dashes**: the supplied spine strings, page titles, and link text arrived with em dashes. Per the site-wide rule (Addendum 20 and confirmed again this session) every word was kept verbatim and only the punctuation was changed to colons, semicolons, commas, or a period. The two verbatim sentences (the summative note and the foot line) are otherwise unaltered.
 
 **Addendum 22 (2026-07-30): Orientation day, per-unit calendars, dates on block cards; course shifted one meeting.**
 - **Course shifted down one meeting.** Rotation meeting 1 (Thu Aug 6 / Fri Aug 7) is orientation, syllabus, and icebreakers, so **U0 Block 1 is now meeting 2** (Mon Aug 10 / Tue Aug 11). Controlled by a single constant, `FIRST_BLOCK_MEETING = 2` in `.eleventy.js` — change that one number to shift the whole year; the block headers, the card dates, the unit calendars, and the unit spans all read it. Blocks now occupy meetings 2–70 of 82.
