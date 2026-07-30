@@ -75,56 +75,43 @@
 }
 .toggle input { accent-color: var(--accent); width: 16px; height: 16px; }
 
-/* ====== Split view: the paper, and its supports beside it ====== */
-.split {
-  display: grid;
-  grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr);
-  gap: 20px;
-  align-items: start;
+/* ====== Launch card + supports ======
+   The reader is an Apps Script web app restricted to the school domain. It
+   cannot be framed (Google's sign-in refuses framing outright), so it opens in
+   its own window and this page carries the supports behind it. */
+.reader-launch {
+  background: var(--panel-bg);
+  border: 1.5px solid var(--accent);
+  border-radius: 10px;
+  padding: 18px 22px;
   margin-bottom: 24px;
 }
-@media (max-width: 900px) {
-  .split { grid-template-columns: minmax(0, 1fr); }
+.reader-launch h2 {
+  font-size: 20px;
+  color: var(--deep-concepts);
+  margin-bottom: 4px;
 }
-.split-paper { position: sticky; top: 12px; min-width: 0; }
-@media (max-width: 900px) { .split-paper { position: static; } }
-.paper-frame {
-  width: 100%;
-  height: calc(100vh - 120px);
-  min-height: 460px;
-  border: 1.5px solid var(--accent);
-  border-radius: 8px;
-  background: white;
-  display: block;
-}
-.paper-frame-note { font-size: 12px; color: var(--muted); margin: 6px 0 0; }
-/* Always visible: Google's sign-in page cannot be framed, so a signed-out
-   reader sees an empty frame with no prompt of its own. */
-.reader-open {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 10px;
-  margin: 0 0 8px;
-}
+.reader-launch p { font-size: 14px; margin-bottom: 12px; }
 .reader-open-btn {
   display: inline-block;
   background: var(--accent);
   color: white;
   font-weight: 700;
-  font-size: 14px;
-  padding: 8px 16px;
+  font-size: 15px;
+  padding: 10px 20px;
   border-radius: 7px;
   text-decoration: none;
 }
 .reader-open-btn:hover { background: var(--accent-dark); color: white; }
-.reader-open-note { font-size: 12px; color: var(--muted); flex: 1 1 14rem; }
+.reader-launch-note {
+  font-size: 13px;
+  color: var(--muted);
+  margin: 10px 0 0 !important;
+}
 .placeholder-frame {
-  height: auto;
+  background: var(--paper);
   border-style: dashed;
   border-color: var(--muted);
-  padding: 18px 20px;
-  font-size: 14px;
 }
 .placeholder-frame p:last-child { margin-bottom: 0; }
 .placeholder-frame code {
@@ -134,8 +121,8 @@
   font-size: 13px;
 }
 
-.split-rail { min-width: 0; max-height: calc(100vh - 120px); overflow-y: auto; }
-@media (max-width: 900px) { .split-rail { max-height: none; overflow: visible; } }
+/* Supports read as one column at a comfortable measure. */
+.support-body { max-width: 46rem; }
 .rail-block { margin-bottom: 22px; }
 .rail-block h2 { font-size: 17px; color: var(--deep-concepts); margin-bottom: 2px; }
 .rail-sub { font-size: 13px; color: var(--muted); margin-bottom: 10px; }
@@ -396,10 +383,9 @@ body.path-on .off-path { opacity: 0.55; }
   .reading-controls,
   .verify-banner,
   .term-cards { display: none; }
-  /* The paper prints from Drive, not through this frame. */
-  .split { display: block; }
-  .split-paper { display: none; }
-  .split-rail { max-height: none; overflow: visible; }
+  /* The paper prints from the reader itself, not from this page. */
+  .reader-launch { display: none; }
+  .support-body { max-width: none; }
   .rail-step { break-inside: avoid; border-left: 2pt solid #999; }
   /* Glosses print, expanded. */
   .gloss { border-left: 3px solid #999; background: none; }
