@@ -132,6 +132,37 @@ module.exports = function (eleventyConfig) {
     return first.aLabel + " – " + end;
   });
 
+  // Marks the first occurrence of each glossary term in a block of text, so the
+  // dotted-underline term buttons exist in the built HTML (they work in print and
+  // without JS). Longest terms first, so "thermodynamic equilibrium" wins over
+  // "equilibrium"; each term is marked at most once per block.
+  eleventyConfig.addFilter("markGlossaryTerms", function (text, terms) {
+    const slug = (t) => t.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
+    const byLength = terms.slice().sort(function (a, b) {
+      return b.term.length - a.term.length;
+    });
+    let out = String(text);
+    byLength.forEach(function (entry) {
+      const escaped = entry.term.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+      const pattern = new RegExp("(^|[^\\w-])(" + escaped + ")(?![\\w-])", "i");
+      // Skip if this text already carries a mark for the term.
+      if (out.indexOf('data-term="' + slug(entry.term) + '"') !== -1) return;
+      out = out.replace(pattern, function (match, before, hit) {
+        return before + '<button type="button" class="term" data-term="' +
+          slug(entry.term) + '" aria-expanded="false">' + hit + "</button>";
+      });
+    });
+    return out;
+  });
+
+  eleventyConfig.addFilter("termSlug", function (t) {
+    return String(t).toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
+  });
+
+  eleventyConfig.addFilter("pathTerms", function (terms) {
+    return terms.filter(function (t) { return t.path; });
+  });
+
   const baseStandardId = (s) => s.replace(/\s*\([^)]*\)\s*$/, "");
 
   eleventyConfig.addFilter("baseStandardId", baseStandardId);

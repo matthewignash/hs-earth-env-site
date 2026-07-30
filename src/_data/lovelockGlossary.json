@@ -1,0 +1,137 @@
+{
+ "source": "Lovelock, J.E. (1965) 'A physical basis for life detection experiments', Nature 207(4997), 568-570.",
+ "generated": "2026-07-30",
+ "translationStatus": "ALL translations below are AI-generated and UNVERIFIED. Students who speak each language verify and correct them as a Unit 0 task; verified entries gain verifiedBy + verifiedDate and the site stops showing the warning flag.",
+ "languages": {"ko": "한국어", "ja": "日本語", "zh": "中文", "fr": "Français", "es": "Español", "de": "Deutsch"},
+ "terms": [
+  {"term": "unequivocal", "path": true, "pos": "adjective",
+   "plain": "Having only one possible meaning. An unequivocal result cannot be argued about.",
+   "note": "Lovelock wants a test whose answer nobody can dispute.",
+   "t": {"ko": "명확한", "ja": "明確な", "zh": "明确的", "fr": "sans équivoque", "es": "inequívoco", "de": "eindeutig"}},
+
+  {"term": "extra-terrestrial", "path": true, "pos": "adjective",
+   "plain": "From beyond Earth.",
+   "t": {"ko": "지구 밖의", "ja": "地球外の", "zh": "地外的", "fr": "extraterrestre", "es": "extraterrestre", "de": "außerirdisch"}},
+
+  {"term": "geocentric", "path": true, "pos": "adjective",
+   "plain": "Taking Earth as the centre or the standard. A geocentric question assumes other places work like Earth.",
+   "note": "Lovelock uses this as a criticism. Watch how he turns it into a limitation of other people's experiments.",
+   "t": {"ko": "지구 중심적", "ja": "地球中心的", "zh": "以地球为中心的", "fr": "géocentrique", "es": "geocéntrico", "de": "geozentrisch"}},
+
+  {"term": "phenomenological", "path": true, "pos": "adjective",
+   "plain": "Describing what you can observe, without claiming to explain the deeper reason why.",
+   "note": "Lovelock calls his own method this. He is being honest about a limit, not apologising.",
+   "flag": "Translator warning: this is the PHYSICS sense (describing observations), not the philosophy sense. Machine translators usually pick the philosophy word. Check carefully.",
+   "t": {"ko": "현상론적", "ja": "現象論的", "zh": "唯象的", "fr": "phénoménologique", "es": "fenomenológico", "de": "phänomenologisch"}},
+
+  {"term": "biochemistry", "path": true, "pos": "noun",
+   "plain": "The chemistry of living things.",
+   "t": {"ko": "생화학", "ja": "生化学", "zh": "生物化学", "fr": "biochimie", "es": "bioquímica", "de": "Biochemie"}},
+
+  {"term": "inorganic", "path": true, "pos": "adjective",
+   "plain": "Not made by living things. Rocks and gases are inorganic.",
+   "t": {"ko": "무기의", "ja": "無機の", "zh": "无机的", "fr": "inorganique", "es": "inorgánico", "de": "anorganisch"}},
+
+  {"term": "entropy", "path": true, "pos": "noun",
+   "plain": "How spread-out and mixed-up things are. Left alone, everything becomes more mixed up. Life pushes the other way.",
+   "note": "The most important word in the paper. Lovelock's definition of life turns on it.",
+   "t": {"ko": "엔트로피", "ja": "エントロピー", "zh": "熵", "fr": "entropie", "es": "entropía", "de": "Entropie"}},
+
+  {"term": "vortex", "path": true, "pos": "noun (plural: vortices)",
+   "plain": "A spinning whirlpool of water or air.",
+   "note": "Lovelock's counter-example: a vortex is orderly too, but it disappears quickly. Life does not.",
+   "t": {"ko": "소용돌이", "ja": "渦", "zh": "涡旋", "fr": "tourbillon", "es": "vórtice", "de": "Wirbel"}},
+
+  {"term": "thermodynamic equilibrium", "path": true, "pos": "noun phrase",
+   "plain": "A settled state. Every reaction that could happen has already happened, and nothing is left to react.",
+   "note": "A dead planet's atmosphere settles. Earth's has not.",
+   "t": {"ko": "열역학적 평형", "ja": "熱力学的平衡", "zh": "热力学平衡", "fr": "équilibre thermodynamique", "es": "equilibrio termodinámico", "de": "thermodynamisches Gleichgewicht"}},
+
+  {"term": "chemical potential", "path": true, "pos": "noun phrase",
+   "plain": "How much a substance still 'wants' to react with what is around it.",
+   "t": {"ko": "화학 퍼텐셜", "ja": "化学ポテンシャル", "zh": "化学势", "fr": "potentiel chimique", "es": "potencial químico", "de": "chemisches Potential"}},
+
+  {"term": "steady state", "path": true, "pos": "noun phrase",
+   "plain": "A situation that stays the same overall, even though things keep moving through it.",
+   "note": "Not the same as equilibrium. A river can be in steady state while water keeps flowing.",
+   "t": {"ko": "정상 상태", "ja": "定常状態", "zh": "稳态", "fr": "état stationnaire", "es": "estado estacionario", "de": "stationärer Zustand"}},
+
+  {"term": "disequilibrium", "path": true, "pos": "noun",
+   "plain": "The opposite of equilibrium. Things that should have reacted together are still sitting side by side.",
+   "note": "Oxygen and methane in Earth's air. This is Lovelock's biosignature.",
+   "t": {"ko": "비평형", "ja": "非平衡", "zh": "非平衡", "fr": "déséquilibre", "es": "desequilibrio", "de": "Ungleichgewicht"}},
+
+  {"term": "omnipresence", "path": true, "pos": "noun",
+   "plain": "Being everywhere at once.",
+   "t": {"ko": "편재", "ja": "遍在", "zh": "无处不在", "fr": "omniprésence", "es": "omnipresencia", "de": "Allgegenwart"}},
+
+  {"term": "sterile", "path": true, "pos": "adjective",
+   "plain": "Having no life at all.",
+   "flag": "Translator warning: here it means 'lifeless planet', NOT 'medically clean' and NOT 'unable to have children'. Machine translators often pick the wrong one.",
+   "t": {"ko": "생명이 없는", "ja": "生命のない", "zh": "无生命的", "fr": "stérile", "es": "estéril", "de": "lebensfrei"}},
+
+  {"term": "primeval", "path": true, "pos": "adjective",
+   "plain": "From the earliest times, before anything else.",
+   "t": {"ko": "원시의", "ja": "原始の", "zh": "原始的", "fr": "primordial", "es": "primigenio", "de": "urzeitlich"}},
+
+  {"term": "flux", "path": true, "pos": "noun",
+   "plain": "How much of something flows onto a surface each second. Solar flux is how much sunlight arrives.",
+   "t": {"ko": "플럭스", "ja": "フラックス", "zh": "通量", "fr": "flux", "es": "flujo", "de": "Strahlungsfluss"}},
+
+  {"term": "appreciable", "path": true, "pos": "adjective",
+   "plain": "Big enough to notice or measure.",
+   "t": {"ko": "상당한", "ja": "かなりの", "zh": "相当大的", "fr": "appréciable", "es": "apreciable", "de": "beträchtlich"}},
+
+  {"term": "spontaneous generation", "path": true, "pos": "noun phrase",
+   "plain": "Life starting by itself from non-living matter.",
+   "t": {"ko": "자연발생", "ja": "自然発生", "zh": "自然发生", "fr": "génération spontanée", "es": "generación espontánea", "de": "Urzeugung"}},
+
+  {"term": "gas chromatograph", "path": false, "pos": "noun",
+   "plain": "A machine that separates a mixture of gases so each one can be identified.",
+   "t": {"ko": "기체 크로마토그래프", "ja": "ガスクロマトグラフ", "zh": "气相色谱仪", "fr": "chromatographe en phase gazeuse", "es": "cromatógrafo de gases", "de": "Gaschromatograph"}},
+
+  {"term": "mass spectrometer", "path": false, "pos": "noun",
+   "plain": "A machine that weighs molecules to work out what they are.",
+   "t": {"ko": "질량 분석기", "ja": "質量分析計", "zh": "质谱仪", "fr": "spectromètre de masse", "es": "espectrómetro de masas", "de": "Massenspektrometer"}},
+
+  {"term": "polymer", "path": false, "pos": "noun",
+   "plain": "A long molecule built from many identical small units joined in a chain.",
+   "t": {"ko": "고분자", "ja": "高分子", "zh": "聚合物", "fr": "polymère", "es": "polímero", "de": "Polymer"}},
+
+  {"term": "molecular weight", "path": false, "pos": "noun phrase",
+   "plain": "How heavy one molecule is.",
+   "t": {"ko": "분자량", "ja": "分子量", "zh": "分子量", "fr": "masse moléculaire", "es": "peso molecular", "de": "Molekulargewicht"}},
+
+  {"term": "exotherm", "path": false, "pos": "noun",
+   "plain": "A burst of heat given out by a reaction.",
+   "t": {"ko": "발열 반응 신호", "ja": "発熱ピーク", "zh": "放热峰", "fr": "pic exothermique", "es": "pico exotérmico", "de": "exothermer Peak"}},
+
+  {"term": "differential thermal analysis (DTA)", "path": false, "pos": "noun phrase",
+   "plain": "Heating two samples side by side and comparing them, to see if one reacts.",
+   "t": {"ko": "시차 열분석", "ja": "示差熱分析", "zh": "差热分析", "fr": "analyse thermique différentielle", "es": "análisis térmico diferencial", "de": "Differenzthermoanalyse"}},
+
+  {"term": "pyrolysis", "path": false, "pos": "noun",
+   "plain": "Breaking a substance apart using heat, without burning it in oxygen.",
+   "t": {"ko": "열분해", "ja": "熱分解", "zh": "热解", "fr": "pyrolyse", "es": "pirólisis", "de": "Pyrolyse"}},
+
+  {"term": "hydrocarbon", "path": false, "pos": "noun",
+   "plain": "A molecule made only of hydrogen and carbon. Petrol and methane are hydrocarbons.",
+   "t": {"ko": "탄화수소", "ja": "炭化水素", "zh": "碳氢化合物", "fr": "hydrocarbure", "es": "hidrocarburo", "de": "Kohlenwasserstoff"}},
+
+  {"term": "alkane", "path": false, "pos": "noun",
+   "plain": "A simple type of hydrocarbon with only single bonds.",
+   "t": {"ko": "알케인", "ja": "アルカン", "zh": "烷烃", "fr": "alcane", "es": "alcano", "de": "Alkan"}},
+
+  {"term": "abiotic", "path": false, "pos": "adjective",
+   "plain": "Made without any living thing involved.",
+   "t": {"ko": "비생물적", "ja": "非生物的", "zh": "非生物的", "fr": "abiotique", "es": "abiótico", "de": "abiotisch"}},
+
+  {"term": "metastable", "path": false, "pos": "adjective",
+   "plain": "Balanced for now, but one push away from changing.",
+   "t": {"ko": "준안정", "ja": "準安定", "zh": "亚稳的", "fr": "métastable", "es": "metaestable", "de": "metastabil"}},
+
+  {"term": "Poisson distribution", "path": false, "pos": "noun phrase",
+   "plain": "A standard pattern showing how often random events happen. Real data that does NOT fit this pattern is a sign something non-random is at work.",
+   "t": {"ko": "푸아송 분포", "ja": "ポアソン分布", "zh": "泊松分布", "fr": "loi de Poisson", "es": "distribución de Poisson", "de": "Poisson-Verteilung"}}
+ ]
+}

@@ -35,7 +35,9 @@
         {% if blockPage %}<a class="map-block" href="{{ blockPage.url }}">Block {{ row.block }}</a>{% else %}<span class="map-block">Block {{ row.block }}</span>{% endif %}
         <span class="map-dates">{{ collections.teachingBlocks | blockDateLabel(mapUnit, row.block, rotationDates.days) }}</span>
       </div>
-      {% if blockPage and blockPage.data.learningIntention %}<p class="map-li">{{ blockPage.data.learningIntention }}</p>{% endif %}
+      {#- `| safe` matches how the block page renders this field: some learning
+          intentions carry inline emphasis markup in frontmatter. -#}
+      {% if blockPage and blockPage.data.learningIntention %}<p class="map-li">{{ blockPage.data.learningIntention | safe }}</p>{% endif %}
       <p class="map-produces">{{ row.produces }}</p>
       <p class="map-feeds">→ {{ row.feeds }}</p>
       {% if row.event %}<p class="map-event">{{ row.event }}</p>{% endif %}

@@ -1,0 +1,21 @@
+---
+layout: layouts/base.njk
+title: "Word bank: Lovelock (1965)"
+tagline: The 30 words you meet in the Unit 0 Block 2 paper, with plain-English definitions and translations in six languages.
+extraStylesheets:
+  - /assets/reading-page.css
+breadcrumbs:
+  - { url: /, label: Home }
+  - { url: /reference/, label: Reference }
+  - { url: /reference/glossary/, label: Glossary }
+  - { label: "Word bank: Lovelock (1965)" }
+returnTo:
+  - { url: /units/unit-0/readings/lovelock-1965/, label: "Lovelock (1965) reading companion" }
+  - { url: /units/unit-0/block-2/, label: "Block 2: OPVL Across Source Types" }
+---
+
+{%- set bank = lovelockGlossary -%}
+{%- set bankUnit = 0 -%}
+{%- set bankBlock = 2 -%}
+{%- set bankReadingUrl = "/units/unit-0/readings/lovelock-1965/" -%}
+{% include "partials/word-bank.njk" %}

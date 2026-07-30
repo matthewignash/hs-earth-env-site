@@ -315,6 +315,11 @@ a.map-block:hover { text-decoration: underline; }
   color: var(--ink);
   margin: 0 0 6px;
 }
+/* The line is already italic, so nested emphasis flips upright to stay visible. */
+.map-li em {
+  font-style: normal;
+  font-weight: 600;
+}
 .map-produces {
   font-size: 14px;
   margin: 0 0 4px;

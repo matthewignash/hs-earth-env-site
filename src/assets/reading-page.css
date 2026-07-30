@@ -1,0 +1,325 @@
+/* ====== Reading companion page (U0 Block 2, Lovelock) ====== */
+
+.source-callout .reading-citation {
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+.source-callout .companion-note {
+  font-size: 13px;
+  color: var(--muted);
+  margin-bottom: 0;
+}
+
+/* Unverified-translation notice. Warning tint, never dismissible. */
+.verify-banner {
+  background: var(--do);
+  border-left: 4px solid var(--spine-do);
+  border-radius: 0 8px 8px 0;
+  padding: 14px 18px;
+  margin: 20px 0;
+}
+.verify-banner p {
+  font-size: 14px;
+  color: var(--deep-do);
+  margin: 0;
+}
+
+.reading-controls {
+  background: var(--panel-bg);
+  border: 1.5px solid var(--accent);
+  border-radius: 8px;
+  padding: 14px 18px;
+  margin-bottom: 24px;
+}
+.lang-select {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 10px;
+}
+.lang-select label {
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--accent);
+}
+.lang-select select {
+  font: inherit;
+  font-size: 14px;
+  padding: 4px 8px;
+  border: 1px solid var(--accent);
+  border-radius: 6px;
+  background: white;
+  color: var(--ink);
+}
+.reading-lede {
+  font-size: 14px;
+  color: var(--ink);
+  margin: 0 0 10px;
+}
+.toggle-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+.toggle {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--accent-dark);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+}
+.toggle input { accent-color: var(--accent); width: 16px; height: 16px; }
+
+.reading-section { margin-bottom: 28px; }
+.reading-section h2 {
+  font-size: 20px;
+  color: var(--deep-concepts);
+  margin-bottom: 4px;
+}
+.reading-sub {
+  font-size: 14px;
+  color: var(--muted);
+  margin-bottom: 14px;
+}
+
+/* Origin/Purpose list: not the argument, but where the paper came from. */
+.origin-list { list-style: decimal; margin: 0 0 12px 22px; }
+.origin-list li { margin-bottom: 8px; font-size: 14px; }
+.origin-what { font-weight: 700; display: block; }
+.origin-why { color: var(--muted); }
+.sic-note {
+  font-size: 13px;
+  color: var(--muted);
+  background: white;
+  border-left: 4px solid var(--spine-story);
+  border-radius: 0 6px 6px 0;
+  padding: 10px 14px;
+}
+
+/* The ten path paragraphs. Concepts-family spine marks the path. */
+.path-list { list-style: none; margin: 0; padding: 0; counter-reset: path; }
+.path-item {
+  background: white;
+  border-left: 4px solid var(--spine-concepts);
+  border-radius: 0 8px 8px 0;
+  padding: 12px 16px;
+  margin-bottom: 12px;
+  counter-increment: path;
+}
+.path-locator {
+  font-size: 14px;
+  margin: 0;
+}
+.path-locator::before {
+  content: counter(path) ". ";
+  font-weight: 700;
+  color: var(--deep-concepts);
+}
+.path-locator q { font-style: italic; }
+.path-extra { color: var(--muted); font-size: 13px; }
+
+/* Gloss: teacher's plain English, explicitly not Lovelock's words. */
+.gloss {
+  background: var(--concepts);
+  border-left: 4px solid var(--spine-concepts);
+  border-radius: 0 6px 6px 0;
+  padding: 8px 12px;
+  margin-top: 10px;
+}
+.gloss summary { cursor: pointer; list-style: none; }
+.gloss summary::-webkit-details-marker { display: none; }
+.gloss-eyebrow {
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--deep-concepts);
+}
+.gloss p {
+  font-size: 14px;
+  margin: 6px 0 0;
+}
+
+/* Glossary term marks. */
+button.term {
+  font: inherit;
+  border: none;
+  padding: 0 1px;
+  background: rgba(46, 83, 149, 0.08);
+  border-bottom: 2px dotted var(--accent);
+  color: inherit;
+  cursor: pointer;
+}
+button.term:hover { background: var(--accent-light); }
+button.term[aria-expanded="true"] { background: var(--accent-light); }
+
+.term-list {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 14px;
+  margin: 0;
+  padding: 0;
+}
+.term-row { font-size: 14px; }
+.term-pos { color: var(--muted); font-size: 12px; }
+
+/* Definition card, injected next to the tapped term. */
+.term-card {
+  background: white;
+  border: 1.5px solid var(--accent);
+  border-radius: 8px;
+  padding: 12px 14px;
+  margin: 10px 0;
+  font-size: 14px;
+  max-width: 520px;
+}
+.tc-head { margin: 0 0 4px; }
+.tc-pos { font-weight: 400; color: var(--muted); font-size: 12px; }
+.tc-plain { margin: 0 0 6px; }
+.tc-note { margin: 0 0 6px; color: var(--muted); font-style: italic; }
+.tc-translation {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 8px;
+  background: var(--do);
+  border-radius: 6px;
+  padding: 6px 10px;
+  margin: 0 0 6px;
+}
+.tc-translation.is-verified { background: var(--show); }
+.tc-lang {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--muted);
+}
+.tc-term { font-weight: 700; font-size: 16px; }
+.tc-unverified {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  background: var(--spine-do);
+  color: white;
+  padding: 1px 6px;
+  border-radius: 4px;
+}
+.tc-verified {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--deep-show);
+}
+.tc-flag {
+  font-size: 13px;
+  background: var(--warn);
+  border-left: 3px solid var(--spine-reflect);
+  padding: 6px 10px;
+  margin: 0 0 6px;
+  color: var(--deep-reflect);
+}
+.tc-links { margin: 0; font-size: 13px; }
+
+/* ====== Word bank (glossary section) ====== */
+.wb-source { font-size: 14px; font-style: italic; margin-bottom: 6px; }
+.wb-verify {
+  background: var(--do);
+  border-left: 4px solid var(--spine-do);
+  border-radius: 0 8px 8px 0;
+  padding: 12px 16px;
+  margin: 20px 0 24px;
+}
+.wb-verify p { font-size: 14px; color: var(--deep-do); margin: 0; }
+
+.wb-list { list-style: none; margin: 0; padding: 0; }
+.wb-entry {
+  background: white;
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--border);
+  border-radius: 0 8px 8px 0;
+  padding: 14px 18px;
+  margin-bottom: 14px;
+  scroll-margin-top: 80px;
+}
+/* Path words carry the concepts spine, matching the reading companion. */
+.wb-entry.is-path { border-left-color: var(--spine-concepts); }
+.wb-entry:target { box-shadow: 0 0 0 3px var(--accent-light); }
+.wb-term { font-size: 19px; color: var(--deep-concepts); margin: 0 0 4px; }
+.wb-pos { font-size: 13px; font-weight: 400; color: var(--muted); }
+.wb-meta { display: flex; flex-wrap: wrap; gap: 6px; margin: 0 0 8px; }
+.wb-tag {
+  font-size: 11px;
+  font-weight: 600;
+  background: var(--soft);
+  color: var(--muted);
+  padding: 2px 8px;
+  border-radius: 999px;
+}
+.wb-tag.is-path-tag { background: var(--accent-light); color: var(--accent-dark); }
+.wb-plain { font-size: 14px; margin: 0 0 6px; }
+.wb-note { font-size: 13px; color: var(--muted); font-style: italic; margin: 0 0 6px; }
+.wb-flag {
+  font-size: 13px;
+  background: var(--warn);
+  border-left: 3px solid var(--spine-reflect);
+  color: var(--deep-reflect);
+  padding: 6px 10px;
+  margin: 0 0 8px;
+}
+.wb-translations { width: auto; margin: 0 0 8px; border-collapse: collapse; font-size: 13px; }
+.wb-translations th, .wb-translations td {
+  text-align: left;
+  padding: 3px 12px 3px 0;
+  border: none;
+  vertical-align: baseline;
+}
+.wb-translations th { font-weight: 600; color: var(--muted); font-size: 12px; }
+.wb-translation { font-weight: 700; font-size: 15px; }
+.wb-status { font-size: 11px; color: var(--deep-show); }
+.wb-unverified {
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  background: var(--spine-do);
+  color: white;
+  padding: 1px 6px;
+  border-radius: 4px;
+}
+.wb-back { font-size: 13px; margin: 0; }
+
+/* Close-reading path toggle: dim everything off the path. */
+body.path-on .off-path { opacity: 0.55; }
+
+.print-appendix { display: none; }
+
+@media (max-width: 640px) {
+  .term-card { max-width: 100%; }
+}
+
+/* ====== Print ====== */
+@media print {
+  /* Dimming is a screen affordance; never print faded text. */
+  body.path-on .off-path { opacity: 1; }
+  .reading-controls,
+  .verify-banner,
+  .term-cards { display: none; }
+  /* Glosses print, expanded. */
+  .gloss { border-left: 3px solid #999; background: none; }
+  .gloss[open] p, .gloss p { display: block; }
+  details.gloss > summary { list-style: none; }
+  button.term {
+    background: none;
+    border-bottom: 1px dotted #333;
+    color: inherit;
+  }
+  /* Definitions print once, as an appendix. Translations omitted. */
+  .print-appendix { display: block; page-break-before: always; }
+  .print-appendix ul { margin-left: 18px; }
+  .print-appendix li { margin-bottom: 6px; font-size: 12pt; }
+  .path-item { break-inside: avoid; }
+}
