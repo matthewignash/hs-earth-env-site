@@ -40,7 +40,7 @@
 
 **Documents named as Classroom carries them (Task 5).** B4's "4-point checklist" is now the **OPVL Peer-Check Card**; B6's rehearsal guide is the **Defense Observation Guide** (placeholder styling removed, since the document exists); B6's submission adds the **Dossier Assembly Checklist** as the cover sheet.
 
-**Teacher names (Task 6).** Site standardised on **Mr. Ignash / Ms. Jayanthi**: 122 occurrences of "Mr. Matt" across 65 files.
+**Teacher names (Task 6, then revised same day).** The pass first standardised on "Mr. Ignash"; on review the site now reads **"Ms. Jayanthi/Mr. Matt"**, Ms. Jayanthi named first. 122 occurrences across 65 files: 121 inline pairings joined with a slash, plus the parent-letter signature in `foundations/for-parents.njk`, which keeps its "and" ("Ms. Jayanthi and Mr. Matt"). Note this now differs from the course documents, which use "Mr. Ignash"; the site is the intentional exception.
 
 **Defense throughput (Task 7).** B7 said "~10-12 students perform live"; the lesson plan says 8–10, which is what fits the block. Now "8–10 students defend live; the rest use an alternative format."
 
