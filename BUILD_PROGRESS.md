@@ -2,7 +2,50 @@
 
 > **Purpose:** Living status doc. Tells you (and future Claude Code sessions) what's built, what's stubbed, what to build next, and in what order. The charter is in `CLAUDE.md` — do NOT modify that. Update this file at the end of each build session.
 
-**Last updated:** 2026-07-30 (Addenda 3–26 below. U0–U6 complete; U7 is next.)
+**Last updated:** 2026-07-31 (Addenda 3–27 below. U0–U6 complete; U7 is next.)
+
+---
+
+**Addendum 27 (2026-07-31): Foundations alignment pass.**
+
+**Platform names (Task 1).** `opvl-framework.njk`: the AI-source heading and the general-vs-specific question no longer name products. `ai-documentation-protocol.njk`: the template's examples are now "Source Evaluator (Flint)" / "Skeptic (BoodleBox)" / "Plate Tectonics Tutor (BoodleBox)" with the instruction to name the partner and the platform; the strong example runs on the Skeptic and the Tutor; the weak example says "the class platform".
+
+*Task 1 report, named tools still in `src/foundations/`* (reported, not changed, per the task):
+
+| File | Line | Tool | What it is |
+|---|---|---|---|
+| `how-to-use-ai-partners.njk` | 35 | Gemini, Claude, ChatGPT | Routing table row: when to use a course partner vs. a general AI |
+| `how-to-use-ai-partners.njk` | 43 | Gemini | "…or general Gemini for two hours, you fill out the template" |
+| `eal/vocabulary.njk` | 166 | Gemini, Claude | Sentence-stem example for talking about your AI Documentation |
+| `eal/teacher-guide.njk` | 45, 195 | ChatGPT, Claude | Teacher-facing worked scenarios, not student instructions |
+
+The first three are student-facing and are the ones worth doing next. Note the pass instruction said to report these while the verify line asked for zero site-wide; reporting was the explicit instruction, so they stand.
+
+**Banned phrase (Task 2).** "low stakes" / "low-stakes" removed from `ai-documentation-protocol.njk` and both places in `defending-your-work.njk`. A fourth instance in `student-hub/ai-documentation-template.njk` was outside the listed three and was also cleared, since the phrase is a course-language rule rather than a per-page one. **Zero remain in `src/`.**
+
+**The AI Documentation rule (Task 3) — scope was larger than two pages.** The rule is now: undocumented work is returned as incomplete and is not scored until the documentation arrives; **no strand is capped**. `the-rubric.njk` §5 is retitled, the K/U cap is replaced, the T/T gate and its heading are deleted, and the deck and §9 wording follow. `foundations/index.njk` card updated.
+
+The old gate language also lived on **14 further pages**, so leaving them would have had the site contradict itself about a grading rule. All AI-Documentation gate statements were therefore brought into line: `foundations/for-parents.njk` (the parent-facing statement of the same rule), `student-hub/rubric-quick-reference.njk`, `student-hub/ai-documentation-template.njk`, `student-hub/index.njk`, `student-hub/how-to-submit.njk`, `units/unit-0/{assessment-source-dossier, index, block-3, block-5, exemplar-source-dossier}`, `units/unit-1/{block-8, habitability-zone-calculator}`, `units/unit-5/{block-3, index, assessment-water-stakeholders}`, `units/unit-6/{index, assessment-sustainable-neighborhood-plan}`, and `_data/standardsCatalog.json`.
+
+**Deliberately NOT changed: the other gates.** These are separate assessment-design decisions that Task 3 did not cover, and removing them would change U5 and U6 pedagogy:
+
+| Gate | Where | Still says |
+|---|---|---|
+| Trade-off naming (T/T) | `unit-6/assessment-sustainable-neighborhood-plan.njk:81`, `unit-6/block-5.njk` | hiding trade-offs caps T/T at 3–4 |
+| Voice-match (T/T) | `unit-5/assessment-water-stakeholders.njk:121`, `unit-5/index.njk:119` | caps T/T |
+| Stakeholder specificity (K/U) | `unit-5/assessment-water-stakeholders.njk:122`, `unit-5/block-6.njk:90` | caps K/U |
+| U4's three gates | `unit-4/block-10.njk:64` | recommendations specificity, policy voice, AI doc |
+| U2 band-capped watch-outs | `unit-2/block-8.njk:115` | unchanged |
+
+This is why a literal `grep "caps at"` still returns hits. **Decision needed:** does the no-cap decision apply only to AI Documentation, or to every gate in the course? If the latter, U4, U5 and U6 assessment handouts need the same pass.
+
+**The two "five moves" (Task 4).** The response taxonomy keeps the name ("5. The five moves we teach"). The ACKNOWLEDGE / RESTATE / ANSWER / CITE / CHECK sequence is now **the answer pattern**: section retitled, its callout retitled, its anchor changed `#five-moves` → `#answer-pattern`, and both inbound links updated (`how-this-class-works.njk` registry row, `unit-0/block-6.njk`). *Task 4 report, remaining matches:* `standardsCatalog.json:282` ("In Q&A you use the five moves") refers to the response taxonomy, which keeps the name; the asset filename `assets/img/u0/u0-five-moves.svg` is unchanged because it is not user-visible, and its alt text reads "Five-step strip", not "five moves". **No visible text calls the answer pattern the five moves.**
+
+**Teacher names (Task 5).** `welcome.njk` signs off "Mr. Ignash and Ms. Jayanthi". 121 further occurrences of "Mr. Matt" across 64 files became "Mr. Ignash", leaving the inline pairing as "Ms. Jayanthi/Mr. Ignash". Note the ordering now differs between the welcome signature (Ignash first, as instructed) and the inline pairings (Jayanthi first, from the previous pass).
+
+**Task 6 decision: repointed, did not move content.** The claim that the three topics are missing from Class Expectations does not hold: they are all there, just spread across three sections with no anchors, which is why the pointer felt broken. §1 "AI is required, not optional" covers what is expected; §2.3 covers the disclosure principle ("It does not punish AI use; it makes AI use legitimate"); §4 "…you suspect you used AI in a way that crossed the line" covers what to do at the boundary. Anchors were added (`#ai-encouraged`, `#ai-disclosure`, `#ai-over-the-line`) and the closing sentence now links to each directly. Moving the content would have duplicated a policy statement onto two pages, which is exactly the drift this session has spent its time removing.
+
+---
 
 ---
 

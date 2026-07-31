@@ -334,7 +334,7 @@
     "type": "ailit",
     "official": "Evaluate whether an AI output should be accepted, revised, or rejected (paraphrased; full framework at ailiteracyframework.org)",
     "plain": "I can check an AI's answer against real sources and decide: use it, fix it, or bin it.",
-    "assessedAt": "Every AI Documentation Template: the 'one thing the AI got wrong' field (K/U gate)",
+    "assessedAt": "Every AI Documentation Template: the 'one thing the AI got wrong' field",
     "onTrack": "You catch specific errors ('it said 2024; the report says 2023'), and you've stopped writing 'AI can hallucinate.'",
     "help": [
       {
