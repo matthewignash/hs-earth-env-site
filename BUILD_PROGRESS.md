@@ -2,7 +2,51 @@
 
 > **Purpose:** Living status doc. Tells you (and future Claude Code sessions) what's built, what's stubbed, what to build next, and in what order. The charter is in `CLAUDE.md` — do NOT modify that. Update this file at the end of each build session.
 
-**Last updated:** 2026-07-30 (Addenda 3–25 below. U0–U6 complete; U7 is next.)
+**Last updated:** 2026-07-30 (Addenda 3–26 below. U0–U6 complete; U7 is next.)
+
+---
+
+**Addendum 26 (2026-07-30): Unit 0 consistency pass.** Site reconciled against the course documents.
+
+**Platform language (Task 1).** The course runs **one AI platform per class**: Flint for two sections, BoodleBox for one. Students never use Gemini, ChatGPT or NotebookLM. Every instruction in Unit 0 that named a tool now says "the class AI platform" (or "your class AI platform"). Changed: B3's live demo prompt, B3 Path A, B3 Path B, B5 Path A title and body, B5 Path B, and the assessment page's Step 2 AI-source bullet. Both "compare two AIs" paths became **two separate conversations on the class platform**, which is what a single-platform class can actually do. Also neutralised B5's bell-ringer weak-example quote, which named a tool students do not have; the example stays vague, which was its whole point.
+
+**Two Unit 0 hits deliberately left** on `units/unit-0/unu-report-key-points.njk`, because they are source fidelity rather than instruction:
+- **line 36** paraphrases a UNU-INWEH finding cited to p. 9 (energy cost of a chatbot-style query). Rewording a cited claim would misstate the source.
+- **line 45** is a **direct quotation of the UN report's own AI disclosure**, naming the tool it used. The callout's entire teaching point is that the UN named its tool and stated the cost, and that is the disclosure behaviour students are asked to copy in Block 3. Neutralising it would make the quoted disclosure vaguer than the behaviour being praised.
+
+`units/unit-0/exemplar-source-dossier.njk` also still names a model, correctly: the AI Documentation Protocol **requires** naming tool and version, and the exemplar already says "via the class platform". Neutralising it would model the exact vagueness the K/U gate penalises.
+
+**Task 1d: named-tool hits outside Unit 0 (reported, not changed).** 35 total across `src/`; the 27 outside Unit 0:
+
+| File | Lines | Tools | Nature |
+|---|---|---|---|
+| `foundations/ai-documentation-protocol.njk` | 36, 52, 54, 56, 60 | Gemini, Claude, ChatGPT | Worked examples of filled templates. Naming tool + version is the protocol's own requirement, so these need rewriting *as examples*, not find-and-replace. |
+| `foundations/opvl-framework.njk` | 95, 98 | Gemini, Claude, ChatGPT | The "AI source" OPVL reference section and a general-vs-domain-specific contrast. |
+| `foundations/how-to-use-ai-partners.njk` | 35, 43 | Gemini, Claude, ChatGPT | Routing table: when to use a course partner vs. a general AI. |
+| `foundations/eal/vocabulary.njk` | 166 | Gemini, Claude | Sentence-stem example for talking about AI Documentation. |
+| `foundations/eal/teacher-guide.njk` | 45, 195 | ChatGPT, Claude | Teacher-facing, not student-facing. Lower priority. |
+| `student-hub/ai-documentation-template.njk` | 27, 66 | Gemini, Claude | The template's own worked examples of the "tool + version" field. |
+| `ai-partners/the-source-evaluator.njk` | 27 | Gemini | Sample student prompt. |
+| `reference/library.njk` | 219–257, 562 | all four | A **tool catalogue** with OPVL entries per tool. Naming tools is the page's purpose; treat separately. |
+| `units/unit-1/exemplar-goldilocks.njk` | 99 | Claude | Exemplar's own AI Documentation, same rationale as U0's exemplar. |
+
+**Recommended order when this is picked up:** `student-hub/ai-documentation-template.njk` and `foundations/ai-documentation-protocol.njk` first (students copy those examples directly), then `how-to-use-ai-partners.njk` and `opvl-framework.njk`, then EAL. `reference/library.njk` is a catalogue and may be correct as-is.
+
+**Block 2 is graded (Task 2).** The page said it was not part of the dossier grade "yet"; every course document says it is the unit's one **graded formative**. The documents are right. The Show line and the rubric line now say so, and the map already read "Graded formative: KU + TT bands returned before Block 4", so it was left alone. Site and map now agree.
+
+**Task 3: no-op, recorded so the next audit does not re-flag it.** Block 2's success criteria differ between the site and the lesson-plan documents. **The site wording is the better one and stays**; the documents will be regenerated to match. Nothing was changed.
+
+**Block 4 no longer contradicts itself (Task 4).** It claimed "No formal submission… (no Classroom submission)" while printing a Classroom submit link underneath. There is a Classroom assignment, feedback only. The Show line now says what to submit and that it carries no bands; the submit link stays.
+
+**Documents named as Classroom carries them (Task 5).** B4's "4-point checklist" is now the **OPVL Peer-Check Card**; B6's rehearsal guide is the **Defense Observation Guide** (placeholder styling removed, since the document exists); B6's submission adds the **Dossier Assembly Checklist** as the cover sheet.
+
+**Teacher names (Task 6).** Site standardised on **Mr. Ignash / Ms. Jayanthi**: 122 occurrences of "Mr. Matt" across 65 files.
+
+**Defense throughput (Task 7).** B7 said "~10-12 students perform live"; the lesson plan says 8–10, which is what fits the block. Now "8–10 students defend live; the rest use an alternative format."
+
+**First-year honesty (Task 8).** B7 offered a placeholder sample defense "from a prior cohort". This is the course's first year, so it can never be filled. Replaced with a line saying there is no previous class and that this year's recordings become next year's example. Placeholder styling removed.
+
+---
 
 ---
 
