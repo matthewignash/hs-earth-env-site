@@ -372,18 +372,20 @@ dialog.video-lightbox::backdrop {
 .rubric-meta { font-size: 13px; color: var(--muted); margin-top: 10px; }
 .rubric-meta a { color: var(--accent); font-weight: 600; }
 
-/* ====== Reflect input ====== */
-.reflect-input {
-  background: var(--paper);
-  border: 1px dashed var(--border);
-  border-radius: 8px;
-  padding: 16px;
-  margin-top: 10px;
+/* ====== Reflect handoff callout ====== */
+.reflect-callout {
+  background: var(--reflect);
+  border-left: 4px solid var(--spine-reflect);
+  padding: 14px;
+  border-radius: 6px;
+  margin: 14px 0;
+}
+.reflect-callout p { margin-bottom: 6px; }
+.reflect-note {
   font-size: 13px;
   color: var(--muted);
+  margin-top: 10px;
 }
-.reflect-input strong { color: var(--ink); }
-.reflect-input a { color: var(--accent); }
 
 /* ====== Bottom block-nav ====== */
 .block-nav {

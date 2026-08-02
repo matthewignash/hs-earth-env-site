@@ -2,7 +2,43 @@
 
 > **Purpose:** Living status doc. Tells you (and future Claude Code sessions) what's built, what's stubbed, what to build next, and in what order. The charter is in `CLAUDE.md` — do NOT modify that. Update this file at the end of each build session.
 
-**Last updated:** 2026-07-31 (Addenda 3–27 below. U0–U6 complete; U7 is next.)
+**Last updated:** 2026-08-02 (Addenda 3–28 below. U0–U6 complete; U7 is next.)
+
+---
+
+**Addendum 28 (2026-08-02): Reflect section hands off to Google Classroom (C28).**
+
+The Reflection Tool is a separate, domain-restricted Google Apps Script deployment. Decision of 2026-08-01: **the site does not carry that tool's URL.** Block pages point students at one persistent Google Classroom Material named "Reflection Journal", which carries the link. The tool's URL therefore lives in exactly one place and can be redeployed without touching this repo.
+
+**The prompt for this task assumed the reflect section rendered in `layouts/block-page.njk`. It does not.** There is no phase loop anywhere in this repo; the layout drops the page body in wholesale with `{{ content | safe }}`. Every Reflect section was hand-authored HTML in its own block file, 63 of them. The work became: one new partial, then a sweep.
+
+**What was built.**
+
+- `src/_data/classroomLinks.json` — new key `"reflection-journal": ""`, first in the file. It is a persistent Material, not a per-block assignment. Still empty; fill it in August with the rest.
+- `src/_includes/partials/reflect.njk` — **new**, modeled on `submit-link.njk`. Renders the callout, then either an "Open Reflection Journal" button (`target="_blank" rel="noopener"`) or, when the key is empty, the muted `Link posted in August` pill. A separate partial rather than reuse, because `submit-link.njk` hardcodes its own fallback text and ignores `submit.text` in the unset branch.
+- `src/assets/block-page.css` — `.reflect-input` removed, `.reflect-callout` + `.reflect-note` added. The callout claims `--reflect` (#f5e6d9), which had been defined in `styles.css` since the start and consumed nowhere, plus the `--spine-reflect` left edge. Shape mirrors `.submission-callout`.
+- **61 block files swept**, U0 through U6. Fixed lede on every one: *"Three to five minutes. Your answer is saved to your reflection journal, where you can read back everything you have written this year."* Closing note verbatim on every one: *"Sign in with your school account. Your teacher can see what you write here."*
+- `src/foundations/how-this-class-works.njk` — the routines row is now **Reflect**, not "Reflection Journal": *one question before you leave, answered in the Reflection Journal tool via Google Classroom · U0 B1 · Every block · Your saved reflection, and your own archive of the year*.
+
+**The prompt text is gone from the site, on purpose.** Every `<strong>Prompt:</strong>` line and its `___` stems were deleted. The prompt lives in the tool's Sheet, where it is edited; a second copy here would drift the first time one is reworded. Matthew confirmed this trade on 2026-08-02. **The lesson-plan documents still carry the prompts** — nothing was lost from planning materials, but you will no longer see them when planning from the site.
+
+Block-specific framing lines survived where they carried a callback, a forward reference, a unit-close signal, or the stance the answer should take ("Bookends the Block 1 reflection", "No grade", "The disagreement is the point"). Pure-timing lines the new lede already covers ("Two sentences. Three minutes.") were dropped. 51 blocks kept a second line; 10 render lede-only, which is the intended minimal result.
+
+**Excluded from the sweep, deliberately:** `units/unit-0/orientation.njk` (its Reflect is verbal, before anything is set up; it keeps its spoken prompt and was moved off the deleted `.reflect-input` onto `.reflect-callout`) and `units/unit-3/block-12.njk` (a Phase 6 stub that borrows the `reflect` class).
+
+**Collateral rename: the Google Doc is now the Class Notebook.** The tool owns the name "Reflection Journal", so U0 B1 could no longer tell students to write reflections into a Doc that never receives any. The Doc is now `Class Notebook - [your name] - E&ES` and holds bell ringers, Power Notes, and sketches; its first entry is the orientation-video Power Notes, not the Reflect prompt. Touched: `unit-0/block-1.njk` (success criterion + the setup callout), `layouts/block-page.njk` (the bell-ringer line, site-wide), `_data/unitSpine.json` (U0 `produces`), the registry (Bell ringer / Power Notes / Sketch-to-Stretch "produces" cells, plus a new Class Notebook row), `foundations/notetaking.njk`, and 18 block files that said "your journal" for the student's own notes. **U3's "engineering journal" is a separate named artifact and was left alone**, as were all journalism references.
+
+**Do not build any of this** (listed so it is not added later by accident):
+
+- no tool URL anywhere in the repo;
+- no iframe of the tool;
+- no student name, email, or section in any URL;
+- no completion state ("8 of 10 reflections done") — needs authenticated cross-origin reads, and duplicates the archive the tool already gives the student;
+- no proxy of the tool through a Vercel function — it would run as one identity and attribute every response to the proxy owner.
+
+**Open item, carried from the C28 review: catch-up has no route.** One persistent Classroom link always lands a student on whatever block is currently open. A student who missed U1 B7 has no way to reach that prompt: the tool's archive shows what they *have* written, not what they haven't, and the deep-link form (`?unit=1&block=7`) was going to be the site's job. **The fix is tool-side, not site-side** — a "blocks you have not answered yet" list on the student's Today view, which is useful however students arrive. That is a change in the Reflection-Tool project. Until it exists, catching up means sending a deep link by hand: fine for an occasional absence, bad if it becomes routine.
+
+**Verified.** Build clean, 154 files. `grep "macros/s/"` returns nothing. `grep "script.google.com"` returns **only** the two pre-existing Lovelock reader lines in `unit-0/readings/lovelock-1965.njk` (open item 5 in HANDOFF; the C28 verify line as written would have flagged these, which is why the check is scoped to "no second one"). No `reflect-input` anywhere. 61 pages render the callout, the closing note, and `Link posted in August`; zero empty `href`. Temporarily setting the key to a dummy URL flipped all 61 to the button with `target="_blank" rel="noopener"` and zero pending pills; reverted before commit. At 375px the callout fits with no horizontal overflow, and the pending pill renders muted (#eeeeee on #4f4f4f), matching every other unset Classroom link on the site.
 
 ---
 

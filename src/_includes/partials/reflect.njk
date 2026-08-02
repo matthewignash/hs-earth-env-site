@@ -1,0 +1,14 @@
+{# Reflect handoff. The reflection prompt itself lives in the tool's Sheet, never
+   here: two copies drift the first time one is reworded. The tool's URL never
+   appears in this repo; it lives on the Classroom Material only.
+   Fill "reflection-journal" in src/_data/classroomLinks.json (August) and the
+   button goes live on every block page at once. #}
+<div class="reflect-callout">
+  <p>Today's reflection is in Google Classroom, under Reflection Journal.</p>
+  {% if classroomLinks["reflection-journal"] %}
+  <a href="{{ classroomLinks['reflection-journal'] }}" class="rubric-link" target="_blank" rel="noopener">Open Reflection Journal</a>
+  {% else %}
+  <span class="rubric-link-pending">Link posted in August</span>
+  {% endif %}
+</div>
+<p class="reflect-note">Sign in with your school account. Your teacher can see what you write here.</p>

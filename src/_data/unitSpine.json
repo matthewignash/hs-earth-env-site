@@ -8,7 +8,7 @@
     "blocks": [
       {
         "block": 1,
-        "produces": "OPVL introduced on a live source set; Reflection Journal opened",
+        "produces": "OPVL introduced on a live source set; Class Notebook opened",
         "feeds": "The OPVL skill every source runs through",
         "event": "Consent letters go home"
       },
