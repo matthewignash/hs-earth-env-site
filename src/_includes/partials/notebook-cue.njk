@@ -1,0 +1,13 @@
+{# Today's notebook entry header. The date comes from rotationDates via the page's
+   position in teachingBlocks, never from a lesson file: block number is canonical,
+   dates are derived. The entry title is the block title unless the page sets
+   `notebookEntry`, which exists for titles that read badly as an index line.
+   A and B rotations meet on different days, so both render and the student takes
+   their own. Meeting 82 is A-only, hence the guard on b. #}
+{% set meeting = collections.teachingBlocks | courseDay(unit, block) %}
+{% set dates = rotationDates.days | entryDates(meeting) %}
+{% set entry = notebookEntry or title %}
+<div class="notebook-cue">
+  <p>Open your Class Notebook and type today's entry header as Heading 2:</p>
+  <p class="entry-header"><span>A: {{ dates.a }} | U{{ unit }} B{{ block }} | {{ entry }}</span>{% if dates.b %}<span>B: {{ dates.b }} | U{{ unit }} B{{ block }} | {{ entry }}</span>{% endif %}</p>
+</div>

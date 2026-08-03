@@ -2,7 +2,67 @@
 
 > **Purpose:** Living status doc. Tells you (and future Claude Code sessions) what's built, what's stubbed, what to build next, and in what order. The charter is in `CLAUDE.md` — do NOT modify that. Update this file at the end of each build session.
 
-**Last updated:** 2026-08-03 (Addenda 3–29 below. U0–U6 complete; U7 is next.)
+**Last updated:** 2026-08-03 (Addenda 3–30 below. U0–U6 complete; U7 is next.)
+
+---
+
+**Addendum 30 (2026-08-03): Notebook standard ported from G9 Biology (C30).**
+
+Source: `CLAUDE-CODE-NOTEBOOK-PORT.md`, in the G9 Bio Unit 1 folder. The point of the port is that a student who has Matthew for two courses meets the same skeleton and does not relearn it. Four rules, same substance across courses, different medium and different voice:
+
+1. One notebook for the whole course, all year.
+2. Every entry opens with the same header line: date, block, entry title.
+3. **The site supplies the entry title. Students never invent one.** This is the load-bearing rule.
+4. There is a running index and it stays current.
+
+**G9 is paper; E&E is a Google Doc.** Page numbering, ruled TOC columns, and "bottom outer corner" were deliberately not ported. Digital equivalents: header line styled Heading 2, Insert → Table of contents (linked, self-updating), View → Show outline.
+
+**The live G9 pages could not be fetched** (network egress blocked in the build environment: `SSL_ERROR_SYSCALL` to vercel, `Socket is closed` on WebFetch). Read the source instead at `NGSS Science Standards/g9-bio-site`, working tree clean and HEAD `fa7c94e` == `origin/main`, so source equals deployed. G9 is a hand-rolled Python generator, not Eleventy; only the format and the discipline transfer.
+
+**The entry header format**, and two deliberate deviations from G9:
+
+```
+A: Jan 28 | U4 B5 | IPCC AR6 Deep Dive
+B: Feb 2 | U4 B5 | IPCC AR6 Deep Dive
+```
+
+- **`U4 B5`, not `B5`.** Block numbers restart every unit here, so there are seven Block 3s. `U0 B3` was already this site's convention.
+- **Two labelled lines.** G9 pins one date per student with a four-section picker. E&E has none, and every date on this site already renders as an A/B pair because the rotations meet on different days.
+
+Date format matches G9 exactly: abbreviated month, space, unpadded day.
+
+**What was built.**
+
+- `.eleventy.js` — new `entryDates` filter. Strips the weekday off the existing `aLabel`/`bLabel` rather than re-parsing the ISO field, so entry headers and page headers read the same string and cannot drift. **No date is typed into any lesson file**; block number stays canonical and dates stay derived.
+- `src/_includes/partials/notebook-cue.njk` — **new**. Re-derives its own meeting number via `collections.teachingBlocks | courseDay(unit, block)`, because the layout's `courseDayNumber` is not in scope inside `{{ content | safe }}`.
+- `src/assets/block-page.css` — `.notebook-cue` + `.entry-header`, on the Do-family pastel and spine.
+- **66 block files swept**, cue appended to the end of the Do section.
+- `src/foundations/class-notebook.njk` — **new** setup page, plus `src/assets/notebook-print.css` and `.entry-header-demo` in `styles.css`.
+- Wired in: card under "Skills for this class" in `foundations/index.njk`; the Class Notebook row in the routines registry now links to it (it was the only routine row with no link) and its description carries the entry-title rule.
+
+**Entry titles: 46 use the page `title` unchanged, 20 are overridden** via a new `notebookEntry:` front-matter field. Rule applied: drop scheduling suffixes (Assigned / Due / Submitted), drop structural prefixes (`Phenomenon Launch:`, `Work Day N:`), drop question marks, trim enumerations past roughly 45 characters. **These 20 are the ones worth reviewing**, since they are wording choices rather than mechanism: U0 B4, U0 B5, U1 B1, U1 B3, U1 B4, U1 B9, U2 B5, U3 B5, U3 B8, U4 B5, U4 B6, U4 B7, U4 B9, U4 B10, U5 B5, U5 B9, U6 B1, U6 B2, U6 B7, U6 B8. Examples: "IPCC AR6 Deep Dive + Chennai Climate Brief Assigned" → "IPCC AR6 Deep Dive"; "Stakeholders Map + Position Paper Submitted + Stakeholder Roundtable + Unit Close" → "Stakeholder Roundtable and Unit Close".
+
+**Coverage is 66 of 69 block pages, by design.** `unit-3/block-{10,11,12}.njk` have **no Do section at all** — they are thin defense-day and Phase 6 stubs carrying only a Show section. Adding a Do section purely to host a cue would restructure the template, which the port doc forbids. They get the cue when they are built out. `unit-0/orientation.njk` is also excluded: the notebook does not exist until Block 1 creates it.
+
+**Conflicts resolved** (the port doc asked for these to be surfaced rather than silently absorbed):
+
+| Conflict | Resolution |
+|---|---|
+| `notetaking.njk` argued the opposite: §10 "we do not ask you to produce notes that follow any particular format", §11 "resist the temptation to build a complicated system", §8 "we will not collect your notebook for grading" | Reconciled in place. §10 and §11 keep their argument, now explicitly aimed at tagging schemes and note apps, with a paragraph drawing the line: the notebook is a container, not a format for your thinking, and Docs maintains the index so there is nothing to keep up. §8 becomes checked-not-collected, which is also G9's phrasing. |
+| U0 B1 named two different first entries (success criterion said "one expectation for my year", the callout said "today's Power Notes on the orientation video") | Success criterion is now "written my first entry in it". The callout stops restating setup and points at the Foundations page. |
+| Two audio conventions: `Notebook audio` raw-audio subfolder vs "voice memo with auto-transcription" (U3, student-hub) | Distinguished, not merged. The Class Notebook path is a typed Heading 2 header with the recording linked underneath. **U3's engineering journal is a separate named artifact and was left alone.** |
+| `block-page.njk:78` told students to date a bell-ringer entry separately | Now "Answer in your Class Notebook, under today's entry header." One entry per block, one index row per block. |
+| No print infrastructure existed outside `reading-page.css`, which Foundations pages do not load | Built `notebook-print.css`, scoped to the setup page. |
+
+**The voice path is integrated rather than footnoted**, which was an explicit requirement: the header line is always typed as Heading 2, the body underneath may be a linked recording. That is what keeps an audio note-taker in the index like everyone else, which is the entire point of the standard.
+
+**Verified.** Build clean, 155 files. Zero dates in any lesson file. All 66 cues render inside a `block-section do`. Entry-header dates match each page's own `.block-dates` span exactly, checked on three pages spanning the year: U0 B3 (meeting 4) `Aug 14` / `Aug 17`, U4 B5 (meeting 44) `Jan 28` / `Feb 2`, U6 B2 (meeting 62) `Mar 30` / `Apr 5`. No unresolved `{{ }}` and no `undefined` in any built page.
+
+**The A-only guard is real and will fire.** Meeting 82 has no `bLabel`, and 69 blocks occupy meetings 2 through 70, so U7's twelve blocks land on 71 through 82: **U7's last block is meeting 82 and will render an A line only.** Confirmed by running the filter directly against `rotationDates.json` for meetings 4, 44, 62, 82, and 999.
+
+**Print took three passes and is worth recording.** Single column ran to 406mm against 267mm of printable A4, a page and a half. Two columns plus a 12mm page margin and tighter leading brings it to 263mm of 273mm: one side, all seven sections, about 10mm of headroom. Measured by lifting the rules out of `@media print`, constraining the body to the printable width, and reading `scrollHeight` — not by reading the CSS and hoping. The headroom is around 4%, so a substituted font on another machine could still push it over; re-measure if the page gains content.
+
+No horizontal scroll at 375px on either the setup page or a block page carrying the cue. No console errors.
 
 ---
 

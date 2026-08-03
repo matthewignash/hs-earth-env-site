@@ -538,6 +538,18 @@ a.map-block:hover { text-decoration: underline; }
   background: var(--accent-light);
   font-size: 14px;
 }
+/* Worked example of a notebook entry header. Monospace so students can see the
+   pipes and spacing they are copying. */
+.entry-header-demo {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 13px;
+  background: var(--do);
+  border-left: 4px solid var(--spine-do);
+  padding: 12px 14px;
+  border-radius: 0 6px 6px 0;
+  margin: 12px 0;
+  overflow-x: auto;
+}
 .callout.warn  { border-left-color: #b58832; background: #fff4d9; }
 .callout.good  { border-left-color: #6b8e3d; background: var(--good); }
 .callout.exemplar-note { border-left-color: #6b8e3d; background: var(--show); }

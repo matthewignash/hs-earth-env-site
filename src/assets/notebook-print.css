@@ -1,0 +1,39 @@
+/* Print rules for the Class Notebook setup page. Students asked for this one in
+   front of them while they set the doc up, so it has to come off the printer on
+   one side of A4. Screen chrome goes; the rules and the worked example stay. */
+@page {
+  size: A4;
+  margin: 12mm;
+}
+
+@media print {
+  .topnav,
+  .breadcrumbs,
+  .site-footer,
+  .skip-link,
+  .print-hide { display: none; }
+
+  body { background: white; }
+  .page-header { padding: 0 0 5pt; margin-bottom: 0; }
+  .page-header h1 { font-size: 15pt; margin-bottom: 1pt; }
+  .page-header .tagline { font-size: 8pt; margin-bottom: 0; }
+  /* Single column runs to a page and a half. Two columns fit it on one side,
+     which is the point: this is meant to sit next to the laptop during setup. */
+  .prose {
+    max-width: none;
+    font-size: 8.5pt;
+    column-count: 2;
+    column-gap: 7mm;
+  }
+  .prose h2 { font-size: 10pt; margin: 5pt 0 2pt; break-after: avoid; }
+  .prose h2:first-of-type { margin-top: 0; }
+  .prose p, .prose li { margin-bottom: 2pt; line-height: 1.25; }
+  .prose ol, .prose ul { margin-bottom: 4pt; padding-left: 12pt; }
+
+  /* A rule split across a page break is a rule someone half-reads. */
+  .callout, .entry-header-demo { break-inside: avoid; }
+  .callout { padding: 5pt 7pt; margin-bottom: 5pt; }
+  .callout ol { margin-bottom: 0; }
+  /* Small enough to sit in one column without wrapping the example line. */
+  .entry-header-demo { font-size: 7.5pt; padding: 4pt 6pt; margin: 5pt 0; }
+}

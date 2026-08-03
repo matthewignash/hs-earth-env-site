@@ -372,6 +372,23 @@ dialog.video-lightbox::backdrop {
 .rubric-meta { font-size: 13px; color: var(--muted); margin-top: 10px; }
 .rubric-meta a { color: var(--accent); font-weight: 600; }
 
+/* ====== Notebook entry cue ====== */
+.notebook-cue {
+  background: var(--do);
+  border-left: 4px solid var(--spine-do);
+  padding: 14px;
+  border-radius: 6px;
+  margin: 14px 0;
+}
+.notebook-cue p { margin-bottom: 6px; }
+.entry-header {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 13px;
+  margin-bottom: 0;
+}
+/* Both rotations render, so each needs its own line. */
+.entry-header span { display: block; }
+
 /* ====== Reflect handoff callout ====== */
 .reflect-callout {
   background: var(--reflect);

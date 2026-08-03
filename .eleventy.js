@@ -63,6 +63,16 @@ module.exports = function (eleventyConfig) {
 
   eleventyConfig.addFilter("meetingDateLabel", meetingLabel);
 
+  // Short dates for notebook entry headers: "Fri Aug 14" -> "Aug 14". Strips the
+  // weekday off the label rather than re-parsing the ISO field, so entry headers
+  // and page headers cannot drift and there is no timezone surface. The last
+  // meeting of the year is A-only, so b comes back empty and the cue drops it.
+  eleventyConfig.addFilter("entryDates", function (days, meeting) {
+    const d = days.find(function (x) { return x.n === meeting; }) || {};
+    const strip = (label) => (label || "").split(" ").slice(1).join(" ");
+    return { a: strip(d.aLabel), b: strip(d.bLabel) };
+  });
+
   // The block page for a unit/block pair, so the unit map can read its real
   // frontmatter (learning intention, title, url) instead of duplicating it.
   eleventyConfig.addFilter("blockByNumber", function (teachingBlocks, unit, block) {
