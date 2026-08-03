@@ -4,7 +4,9 @@
    {% include "partials/video-card.njk" %}
    No JS → the thumbnail links to YouTube. Click anywhere else on the card → large <dialog>
    lightbox with nocookie player. Inner links (prefer-text) navigate normally.
-   Closing the lightbox removes the iframe (stops playback). #}
+   Closing removes the iframe, which is what stops playback. That teardown must not hang off
+   the dialog's `close` event: WebKit never fires it, so Safari and iPad kept the audio
+   running after the overlay went away. Every close path calls closeLightbox() directly. #}
 <div class="entry-card video-card" data-video-id="{{ video.id }}" data-video-title="{{ video.title }}">
   <a class="video-thumb" href="https://youtu.be/{{ video.id }}" target="_blank" rel="noopener" aria-label="Play video: {{ video.title }}">
     <img src="https://i.ytimg.com/vi/{{ video.id }}/hqdefault.jpg" alt="Video preview: {{ video.title }}" loading="lazy">
@@ -38,6 +40,11 @@ if (!window.__videoCardInit) {
   lightbox.append(frameBox, bar);
   document.body.appendChild(lightbox);
 
+  function closeLightbox() {
+    frameBox.replaceChildren();
+    lightbox.close();
+  }
+
   document.addEventListener('click', function (e) {
     var card = e.target.closest('.video-card');
     if (card) {
@@ -53,11 +60,11 @@ if (!window.__videoCardInit) {
       lightbox.showModal();
       return;
     }
-    if (e.target === closeBtn || e.target === lightbox) lightbox.close();
+    if (e.target === closeBtn || e.target === lightbox) closeLightbox();
   });
 
-  lightbox.addEventListener('close', function () {
-    frameBox.replaceChildren();
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && lightbox.open) closeLightbox();
   });
 }
 </script>

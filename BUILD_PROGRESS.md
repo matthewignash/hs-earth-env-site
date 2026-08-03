@@ -2,7 +2,31 @@
 
 > **Purpose:** Living status doc. Tells you (and future Claude Code sessions) what's built, what's stubbed, what to build next, and in what order. The charter is in `CLAUDE.md` — do NOT modify that. Update this file at the end of each build session.
 
-**Last updated:** 2026-08-02 (Addenda 3–28 below. U0–U6 complete; U7 is next.)
+**Last updated:** 2026-08-03 (Addenda 3–29 below. U0–U6 complete; U7 is next.)
+
+---
+
+**Addendum 29 (2026-08-03): Orientation gets a video card (C29).**
+
+`units/unit-0/orientation.njk`, Concepts section: a scale-of-the-universe video is now the first card in the existing entry-grid, with a framing line above the grid. The card uses `partials/video-card.njk` via the standard `{% set video = {...} %}` + include, exactly as `unit-1/block-1.njk` does. **No new embed code was written** — the partial already handles the lightbox, the nocookie player, and the no-JS fallback.
+
+- `id: BOIMytFxVrU`, `cardTitle: "Watch (3:33)"`. Duration confirmed from the video itself (`lengthSeconds: 213`), not guessed.
+- `meta: "Wisdom Land · YouTube"` — **channel name only, deliberately.** Other video cards carry provenance claims ("Real link · AMNH 2009 · data-driven rendering"). This one has not earned one: it is an anonymous aggregator video with no stated sources for its numbers. Do not add a credibility descriptor to it later.
+- Framing line above the grid: *"No notes needed for this one. Watch it the way you would watch anything: we will talk about what it made you feel, not what it made you learn."*
+
+**The Block 4 callback was skipped.** The C29 prompt offered an optional Task 3: a do-family callout in `unit-0/block-4.njk` asking students to run a two-minute mental OPVL on this video as "the first source you ever saw in this class". Matthew declined it on 2026-08-03. `block-4.njk` is untouched.
+
+Because that callout was the only thing that brought the video back, two clauses in the supplied wording were trimmed rather than shipped as dangling promises: the blurb's *"We will come back to this video later in the unit and look at it a second way"* and the framing line's *"It comes back later."* Everything else is verbatim. **If a callback is ever added, those two clauses should come back with it.**
+
+**Bug found and fixed: the video lightbox was not stopping playback on close.** Found while verifying the new card; it was pre-existing and affected every video card on the site.
+
+The partial's teardown hung off `lightbox.addEventListener('close', ...)`. **WebKit never fires the dialog `close` event** — verified by attaching a listener to a freshly created, otherwise untouched `<dialog>` and calling `showModal()` then `close()`: `dialog.open` flips to false, no event is dispatched. So `frameBox.replaceChildren()` never ran, the iframe survived inside the hidden dialog, and audio kept playing after a student closed the overlay. Reproduced on `unit-1/block-1`, which predates this change, so it was the partial and not the new card. This mattered most on Safari and iPad, which is a real share of student devices.
+
+Fix: a `closeLightbox()` that clears `frameBox` and then closes, called directly from every close path (close button, backdrop click, and a `keydown` Escape handler). **No dialog event is relied on anywhere.** Verified on both video cards: after each of the three close paths the dialog is closed and the iframe count is zero, reopening still works, and the "Prefer text?" inner link still navigates instead of opening the lightbox.
+
+If a third video card is ever added, nothing extra is needed; the script is guarded by `window.__videoCardInit` and binds once per page.
+
+**Verified.** Build clean, 154 files. `grep "youtube-nocookie"` returns only `partials/video-card.njk:48`. Thumbnail loads (480×360 from `i.ytimg.com`). Lightbox opens with `https://www.youtube-nocookie.com/embed/BOIMytFxVrU?autoplay=1`. No-JS fallback is the thumbnail anchor to `https://youtu.be/BOIMytFxVrU` with `target="_blank" rel="noopener"`. At 375px the card is 303px wide with no horizontal overflow.
 
 ---
 
