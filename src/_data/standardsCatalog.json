@@ -381,5 +381,31 @@
         "url": "/foundations/ai-documentation-protocol/"
       }
     ]
+  },
+  "Manage 3": {
+    "type": "ailit",
+    "official": "Decompose a problem to determine when and how AI systems should be used to automate or augment tasks (paraphrased; full framework at ailiteracyframework.org)",
+    "plain": "I can break a task into steps and say which ones I will do, which AI will do, and why.",
+    "assessedAt": "U3 Block 6 rehearsal; U4 Climate Brief plan; assessed with the U5 Position Paper division-of-labour plan plus a post-hoc check against what actually happened",
+    "onTrack": "Your plan names a step you kept for yourself and says why AI was the wrong tool for it, not just which steps you handed over.",
+    "help": [
+      {
+        "label": "AI Documentation Protocol",
+        "url": "/foundations/ai-documentation-protocol/"
+      }
+    ]
+  },
+  "Shape 2": {
+    "type": "ailit",
+    "official": "Evaluate AI systems using defined criteria, expected outcomes, test cases, and user feedback (paraphrased; full framework at ailiteracyframework.org)",
+    "plain": "I can set criteria for what a good AI tool does, then test it and say where it falls short.",
+    "assessedAt": "U3 rehearsal on a teacher-built partner; assessed at U5 on the Stakeholder Voice bot-evaluation protocol and roundtable",
+    "onTrack": "Your test cases include one the bot should fail, and you can say what its failure tells you about who it does not represent.",
+    "help": [
+      {
+        "label": "AI Documentation Protocol",
+        "url": "/foundations/ai-documentation-protocol/"
+      }
+    ]
   }
 }
