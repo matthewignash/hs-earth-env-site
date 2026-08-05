@@ -2,7 +2,22 @@
 
 > **Purpose:** Living status doc. Tells you (and future Claude Code sessions) what's built, what's stubbed, what to build next, and in what order. The charter is in `CLAUDE.md` — do NOT modify that. Update this file at the end of each build session.
 
-**Last updated:** 2026-08-04 (Addenda 3–31 below. U0–U6 complete; U7 is next.)
+**Last updated:** 2026-08-04 (Addenda 3–32 below. U0–U6 complete; U7 is next.)
+
+---
+
+**Addendum 32 (2026-08-04): Orientation gets the day-one conversation, and the join code comes off the public site.**
+
+**The join code is deliberately not on this site.** `units/unit-0/orientation.njk` card 3 was a placeholder reading "TBD: Google Classroom join code, class Drive folder, and AI platform sign-in steps." It is now real content and says the code is **on the board, not on the page**, with the reason given in student-facing terms: the site is public, so anything only for our class stays in the room. A line for absent students points them at the next class, since otherwise they have no route to the code. **Do not add a join code or a QR code to this repo later.** The same reasoning that keeps the Reflection Tool URL off the site (Addendum 28) applies here.
+
+**The orientation video now has a payoff.** Addendum 29 added a scale-of-the-universe video to the Concepts section with the framing line "we will talk about what it made you feel, not what it made you learn." The discussion that line promised now exists: a whole-class activity at the end of the Do section, "Where we live, and what we owe it", four questions in order, feeling first, ending with the class writing its own commitment for the year.
+
+Two judgement calls in that block, both easy to reverse:
+
+- **The commitment is given callback points**: end of Unit 4 with the climate science, and Unit 6 with the Chennai redesign. Those were not specified and are a suggestion.
+- **Where the written commitment physically lives is deliberately unspecified.** The Class Notebook does not exist until Block 1, so inventing a home for it on day zero would have been wrong.
+
+Consequential edits: the Story section said "Today is for three things" and now says four; the Do heading widened to "set-up, introductions, and one conversation". One placeholder remains on the page, card 1, the icebreaker.
 
 ---
 
