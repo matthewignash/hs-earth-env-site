@@ -2,7 +2,44 @@
 
 > **Purpose:** Living status doc. Tells you (and future Claude Code sessions) what's built, what's stubbed, what to build next, and in what order. The charter is in `CLAUDE.md` — do NOT modify that. Update this file at the end of each build session.
 
-**Last updated:** 2026-08-03 (Addenda 3–30 below. U0–U6 complete; U7 is next.)
+**Last updated:** 2026-08-04 (Addenda 3–31 below. U0–U6 complete; U7 is next.)
+
+---
+
+**Addendum 31 (2026-08-04): AILit coverage pass, five tasks (C31).**
+
+Standing constraint on this pass: **no learning intention and no success criterion was changed.** Verified against the diff, zero touched lines.
+
+**AILit block coverage, before and after.** Counted from the `ailit:` front-matter array across all block pages, `HEAD` versus working tree:
+
+| Competence | Before | After | Change |
+|---|---|---|---|
+| Engage 3 | 15 | 15 | unchanged |
+| Engage 5 | 2 | 2 | unchanged |
+| Create 3 | 5 | 5 | unchanged |
+| Manage 1 | 8 | 8 | unchanged |
+| Manage 3 | 1 | 2 | +1 (U3 B6, now also U4 B10) |
+| Shape 2 | **0** | **1** | +1 (U3 B9) |
+
+**Shape 2 had zero block coverage before this pass.** That was the real gap. Engage 5's count is unchanged because Task 2 lands on two Foundations/Student Hub pages rather than a block page; the competence is now taught, but no block page claims it, which is worth knowing if block-level tags are ever used as the coverage measure.
+
+**All six competences have complete `standardsCatalog.json` entries** (`type`, `official`, `plain`, `assessedAt`, `onTrack`, `help`). **Nothing is missing**, so no catalog work was needed.
+
+**What changed.**
+
+- **Task 1, Manage 3.** The "What YOU contributed" field on both `student-hub/ai-documentation-template.njk` and `foundations/ai-documentation-protocol.njk` now ends with "Then name one part you deliberately kept for yourself, and say why that part." The existing field does more work; no field was added for it.
+- **Task 2, Engage 5.** New seventh row, "Was it worth it?", on the **full** template on both pages. The mini version stays at three fields, which is what makes it the mini version.
+- **Task 3.** `foundations/defending-your-work.njk` gains an "About how you worked" category with the two standing questions and the guaranteed-question note.
+- **Task 4, Shape 2.** `units/unit-3/block-9.njk` is retagged from `ailit: []` to `["Shape 2"]` and gains the "Judging the partner, not the answer" activity (about 25 minutes) in the Do section.
+- **Task 5, Manage 3.** `units/unit-4/block-10.njk` gains `"Manage 3"` and the "Ten minutes before you draft" callout at the **start** of the Do section. `units/unit-4/block-11.njk` gains one framing line pointing back at that plan. The reflection prompt itself was not touched; it lives in the tool.
+- New reusable `.callout.activity` variant in `styles.css` (do-family pastel plus the do spine), following the existing `.callout.sketch-first` / `.callout.factstorm` pattern. Tasks 4 and 5a both needed it; `.callout.warn` carries the right colour but the wrong meaning.
+
+**Two places where the brief did not match the repo.**
+
+1. **There is no six-category question bank in `defending-your-work.njk`.** That page has *five question types* (Comprehension check, Evidence challenge, Position challenge, Hostile or trap, Clarification request). The six-category bank is a **Unit 1 Goldilocks artifact**, described in `units/unit-1/block-9.njk:41`, `units/unit-1/block-10.njk:82`, and Step 4 of the Goldilocks handout. Because the note says the question is asked at *every* defense this year, the course-wide page is the right home and is also the file the brief named, so it went there. **Section 2 now shows six subsections, not seven**, and the new one is deliberately not numbered as a "Type", because it is about process rather than content. If the Unit 1 bank should also carry it as a literal seventh category, that is three more files and has not been done.
+2. **`units/unit-3/block-9.njk` has no teacher-notes area**, and no block template in this repo does. Per the brief's own instruction the teacher-facing note was omitted from the page. Recording it here so it is not lost: *"All three sections evaluate the same teacher-built partner here, on purpose. It is the common baseline the Unit 5 comparison is read against."* Note also that block-9 is still a Phase 6 stub; the new activity sits inside the stub's Do section and should be folded in properly when Unit 3 is built out.
+
+**Verified.** Build clean, 155 files. Both AI-doc pages render seven fields; the mini renders three. `unit-3/block-9` tags Shape 2 and renders the activity. `unit-4/block-10` tags all three competences and renders the callout at the top of Do. `unit-4/block-11` renders the framing line. Zero learning intentions or success criteria changed.
 
 ---
 
