@@ -10,14 +10,15 @@
 
 **The join code is deliberately not on this site.** `units/unit-0/orientation.njk` card 3 was a placeholder reading "TBD: Google Classroom join code, class Drive folder, and AI platform sign-in steps." It is now real content and says the code is **on the board, not on the page**, with the reason given in student-facing terms: the site is public, so anything only for our class stays in the room. A line for absent students points them at the next class, since otherwise they have no route to the code. **Do not add a join code or a QR code to this repo later.** The same reasoning that keeps the Reflection Tool URL off the site (Addendum 28) applies here.
 
-**The orientation video now has a payoff.** Addendum 29 added a scale-of-the-universe video to the Concepts section with the framing line "we will talk about what it made you feel, not what it made you learn." The discussion that line promised now exists: a whole-class activity at the end of the Do section, "Where we live, and what we owe it", four questions in order, feeling first, ending with the class writing its own commitment for the year.
+**The orientation video now has a payoff, and it is what opens the course.** Addendum 29 added a scale-of-the-universe video to the Concepts section with the framing line "we will talk about what it made you feel, not what it made you learn." The discussion that line promised is now the **first** thing in the Do section: "Where we live, and what we owe it", four questions in order, feeling first.
 
-Two judgement calls in that block, both easy to reverse:
+**It produces two artefacts, built together on chart paper**: the class **creed** (what this class commits to, for the course and for the environment) and the class **norms** (how we agree to work with each other so the creed is possible). The chart goes on the wall for the year and can be added to.
 
-- **The commitment is given callback points**: end of Unit 4 with the climate science, and Unit 6 with the Chennai redesign. Those were not specified and are a suggestion.
-- **Where the written commitment physically lives is deliberately unspecified.** The Class Notebook does not exist until Block 1, so inventing a home for it on day zero would have been wrong.
+The old "Introductions and icebreaker" placeholder card was **removed rather than filled**. The video and this discussion are the opener, so the Do section now runs conversation, then syllabus, then Classroom. **No placeholders remain on this page.**
 
-Consequential edits: the Story section said "Today is for three things" and now says four; the Do heading widened to "set-up, introductions, and one conversation". One placeholder remains on the page, card 1, the icebreaker.
+**Practical set-up is Google Classroom only.** The class AI platform is introduced the following week and the page says so, so students are not left wondering. The Drive folder came off this card too: Classroom creates it, and Block 1 is where students actually need it.
+
+One connection made that was not requested: the creed and norms are linked to `foundations/class-expectations.njk`, framed as the half the class writes against the working agreement the teachers bring. Without it the site would carry two sets of behavioural agreements with no stated relationship. The Unit 4 and Unit 6 callback points for the creed are likewise a suggestion, not a specification.
 
 ---
 
