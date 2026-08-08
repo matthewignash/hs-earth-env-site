@@ -13,7 +13,7 @@ Eleventy static site for HS Earth & Environmental Science at AISC Chennai, AY 20
 - **No em dashes** in student-facing content. Use colon, comma, semicolon, period, parentheses. Preserve en dashes in numeric ranges.
 - **No "low stakes" / "low-stakes"** anywhere. Zero remain.
 - **One AI platform per class** (Flint or BoodleBox). Never instruct students to use Gemini, ChatGPT, NotebookLM, or Claude by name. Say "the class AI platform".
-- **Teacher names:** inline pairings read "Ms. Jayanthi/Mr. Ignash"; the `welcome.njk` signature reads "Mr. Ignash and Ms. Jayanthi". Ordering is deliberately inconsistent between those two.
+- **Teacher names:** inline pairings read "Ms. Jayanthi/Mr. Matt"; the `welcome.njk` signature reads "Mr. Matt and Ms. Jayanthi". Ordering is deliberately inconsistent between those two. **"Mr. Ignash" was renamed to "Mr. Matt" site-wide on 2026-08-07; do not reintroduce it.** Both teachers are always named together: a student has one or the other, so a bare "Mr. Matt" reads as though Ms. Jayanthi's sections do not exist.
 - **Block scheduling:** classes meet every other day. Never "tomorrow"/"yesterday"/"tonight" — use "next class", "last class", or name the block.
 - **Concepts sections** are headed "Before you start the work" and their instruction line must open with one of four stems: `Pick one` / `Start with the X` / `Use all of these` / `Keep these open`. **`npm run build` runs `scripts/check-concepts.mjs` first and fails the build if a line contradicts its cards.** That gate is the main safety net in this repo.
 - **No strand caps anywhere.** Undocumented AI work is "returned as incomplete, not scored until the documentation arrives"; everything else is phrased as what a strand "reads for" / what a band "describes".

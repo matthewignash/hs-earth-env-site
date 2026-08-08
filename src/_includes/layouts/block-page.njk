@@ -75,7 +75,9 @@ extraStylesheets:
       {% if bellRinger.imageCredit %}<figcaption>{{ bellRinger.imageCredit | safe }}</figcaption>{% endif %}
     </figure>
     {% endif %}
-    <p class="bell-ringer-journal">Answer in your Class Notebook, under today's entry header.</p>
+    {# Bell ringers run before laptops are open, so they live on paper. Blocks whose
+       bell ringer is answered on a printed handout instead set notebook: false. #}
+    {% if bellRinger.notebook !== false %}<p class="bell-ringer-journal">Answer in your Field Notebook, dated.</p>{% endif %}
   </div>
   {% endif %}
 

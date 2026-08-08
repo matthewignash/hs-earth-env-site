@@ -51,7 +51,7 @@ Deep builds (spine → systems chunk → public-path close-out, mirroring U5's P
 - **Cards** are `<a class="section-card">` with `card-icon` / `card-title` / `card-desc`, inside a `.section-grid`.
 - **Placeholders** use `entry-card placeholder` + `<span class="placeholder-tag">Placeholder</span>` and `TBD:` prose. Keep them — a skeleton is honest about being a skeleton.
 - **EAL already exists:** `src/foundations/eal/u6.njk` and `/foundations/eal/u6/`. Link it from the landing Resources section like U5 does.
-- **Teacher voice:** "Mr. Ignash." No em dashes in student-facing copy (house style).
+- **Teacher voice:** "Ms. Jayanthi/Mr. Matt", always both. No em dashes in student-facing copy (house style).
 - Icons: U6 currently uses ⚡ on the units index; switch to a city/neighbourhood glyph (🏙️ is taken by U7; use 🏘️ or 🗺️ for U6).
 
 ### Block-page frontmatter template (copy U5's shape)

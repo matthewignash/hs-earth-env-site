@@ -2,7 +2,81 @@
 
 > **Purpose:** Living status doc. Tells you (and future Claude Code sessions) what's built, what's stubbed, what to build next, and in what order. The charter is in `CLAUDE.md` — do NOT modify that. Update this file at the end of each build session.
 
-**Last updated:** 2026-08-04 (Addenda 3–32 below. U0–U6 complete; U7 is next.)
+**Last updated:** 2026-08-07 (Addenda 3–35 below. U0–U6 complete; U7 is next.)
+
+---
+
+**Addendum 35 (2026-08-07): "Mr. Ignash" renamed to "Mr. Matt" site-wide, and both teachers are always named together.**
+
+Two standing rules changed at once. **Do not reintroduce "Mr. Ignash", and do not leave "Mr. Matt" standing alone.**
+
+**The rename.** 122 occurrences across 65 files, one single form (`Mr. Ignash`), so it was a clean sweep with no variants to reconcile. There was no `Matthew Ignash`, no bare `Ignash`, and nothing in `_data/`. The `welcome.njk` signature keeps its deliberately different word order, now "Mr. Matt and Ms. Jayanthi", while inline pairings stay "Ms. Jayanthi/Mr. Matt". `HANDOFF.md` and `U6_BUILD_PLAN.md` both stated the old convention as an instruction to future sessions and have been corrected.
+
+**Always both names.** Matthew's rule: a student has one teacher or the other, so a bare "Mr. Matt" reads as though Ms. Jayanthi's two sections do not exist. Of the 122 original occurrences, 119 were already paired. **One was not**, and it was a line written during C30: "Share it with Mr. Ignash, edit access, once", on the notebook setup page. Now "Ms. Jayanthi/Mr. Matt".
+
+**Two first-person slips fixed on the same page**, same root cause. `class-notebook.njk` said "you never lose access to it while **I** look at it. It also means **I** can see it at any time." Written as though one person teaches the course. Now "while it is being read" and "your teacher can see it at any time". **Worth watching for: first-person voice is the version of this bug that a name grep will not catch.**
+
+Block 1's notebook setup callout now says who hands the Field Notebook out, which is what prompted all of this.
+
+**Verified.** Build clean, 155 files. Zero "Mr. Ignash" in `src/`. 123 "Mr. Matt", the extra one being the new Block 1 line. **Zero unpaired**, checked by scanning a 45-character window either side of every occurrence for "Ms. Jayanthi".
+
+**Left alone deliberately:** `MEDIA_REVIEW.md` and `REVIEW.md` are historical review documents rather than active conventions, and earlier BUILD_PROGRESS addenda are a log of what happened at the time. Rewriting either would be falsifying a record.
+
+**Outside the repo, still needs doing.** Four student-facing documents in `_Upload to Drive — Unit 0 (student-facing)/` still say Ignash, six occurrences: the **Syllabus 2026-27**, **Welcome to the Year**, the **U0 Unit Roadmap (for Google Classroom)**, and the **U0 Source Dossier Annotated Exemplar Set**. These are `.docx` files that go to students and families, so the site and the paperwork currently disagree.
+
+---
+
+**Addendum 34 (2026-08-07): Two notebooks, not one. Paper Field Notebook plus the Class Notebook Doc.**
+
+Matthew: "We will hand out notebooks at the start of the class." That turned out to mean **physical notebooks in addition to the Google Doc**, which the C30 port had not accounted for. C30 deliberately ported G9's paper standard to digital and said so; this adds paper back alongside it, for different work.
+
+**The split, and why.**
+
+| Field Notebook (paper) | Class Notebook (Google Doc) |
+|---|---|
+| Handed out at the start of class, on the desk before laptops are open | Made once in Block 1, lasts all year |
+| Bell ringers, Sketch-to-Stretch sketches | Power Notes, and the entry header that indexes the year |
+
+The split is speed and pencils. A bell ringer runs during attendance, before machines are open. A sketch cannot be typed. Everything else is better typed because typed work is searchable.
+
+**The C30 standard survives intact, because it already had the right shape.** Its audio rule was "the header line is always typed as Heading 2, the body underneath may be a recording." Paper slots into that same position as a third body format. **Every block still gets a typed entry header in the Doc**, with a line noting which Field Notebook pages belong to it. The index therefore still covers the whole year, including the blocks whose work was on paper. Section 5 of the setup page is now "Three ways to hold the body of an entry": typed, on paper, recorded.
+
+**Naming.** "Field Notebook" for the paper one. It carries disciplinary weight in an Earth and Environmental course that does landscape reading and field photo analysis, and it avoids renaming "Class Notebook", which appears across roughly 70 files. The setup page is retitled **Your Two Notebooks**.
+
+**What changed.** `foundations/class-notebook.njk` gains the which-one-when table, the paper setup line, the typed-header-covers-paper rule, and the three body formats; retitled. `foundations/index.njk` card and `foundations/how-this-class-works.njk` updated, the registry gaining a **Field Notebook** row and correcting the Bell ringer and Sketch-to-Stretch "what you produce" cells. `block-page.njk` bell-ringer line becomes **"Answer in your Field Notebook, dated."** on all 49 pages that render it. Five capture lines repointed to paper in `unit-1/block-2`, `unit-2/block-1`, `unit-3/block-1`, `unit-3/block-11`, `unit-4/block-1`, plus the Sketch-to-Stretch line in `notetaking.njk`. **The 13 "Notes go in your Class Notebook as a Power outline" lines are correct as they stand and were left alone**, because Power Notes are typed.
+
+**Block 1 is the one place both appear together**, so its setup callout now names both and says which takes what, and its Concepts line sends today's notes to the Field Notebook to be moved into the Doc once it exists.
+
+**The A4 print target changed from one side to two, and this was predicted.** Addendum 30 said "re-measure if the page gains content", and it gained a table and a section. Measured: the full page went to **351mm against 273mm** of printable height. Even at 7.5pt it was 305mm. Dropping sections 6 and 7 gave 309mm, still over; only cutting back to section 3 fit, at 234mm. **Matthew chose two sides with nothing hidden**, on the grounds that a student reading the paper copy should see what a student reading the screen sees. That removed the squeeze, so the print type relaxed from 8.5pt to 9pt, leading from 1.25 to 1.35, and the page margin from 12mm back to 15mm. Now **402mm across two 267mm pages, 1.51 pages, all eight sections and the table printed, 132mm spare.**
+
+**Verified.** Build clean, 155 files. 49 pages say "Answer in your Field Notebook, dated"; zero still say "Answer in your Class Notebook". 13 Power Notes lines still point at the Doc; 4 sketch lines point at paper. No em dashes added to any copy. No horizontal overflow at 375px.
+
+---
+
+**Addendum 33 (2026-08-07): Block 1 bell ringer becomes the two-texts AI disclosure activity (C32).**
+
+Source: `_Upload to Drive — Unit 0 (student-facing)/3 Assignment attachments/AI Disclosure — Two Texts (student handout).docx`. The old bell ringer was a thought experiment about two students handing in essays. The handout does the same teaching job with real texts and a real reveal, so the hypothetical is gone.
+
+**The handout, briefly.** Two roughly 200-word texts on why a growing city floods more, both Chennai-anchored. One carries an AI-use statement, one does not. Part 1 is four silent minutes: which was AI-written, what specific feature made you think so, how sure are you. Then partners compare and build a list of reliable signs a human wrote something. Part 2 is gated behind a teacher cue and turns the list over.
+
+**The constraint that shaped the whole change: the reveal is not on the site.** The handout says "Do not turn to the back until your teacher says so." This site is public and students are told to read block pages. **A block page that states the answer destroys the activity for anyone who reads ahead.** So the page describes the shape and never the answer, and Text A and Text B are not reproduced here either. Same principle as Addendum 28, where reflection prompts stayed in the tool, but with a sharper reason: there a second copy was a second source of truth, here it is a spoiler. **Do not "helpfully" add the reveal later.**
+
+**Staging.** Bell ringer covers reading both texts plus Part 1, `minutes` 5 to 10, `tag` "Phenomenon hook" to "Source evaluation". The partner discussion, the cue, and Part 2 became a `.callout.activity` block in Do, placed **before** the OPVL walkthrough because it is the hook that motivates why source evaluation matters.
+
+**Two ordering bugs found and fixed, both pre-existing.**
+
+1. **Block 1 told students to write in a notebook that does not exist yet.** The bell ringer said "In your Class Notebook, write two or three sentences", but the Class Notebook is created in the 10-minute setup callout later in the same block. The layout's site-wide line, "Answer in your Class Notebook, under today's entry header", made it worse by repeating the instruction underneath. `block-page.njk` now renders that line only when a block does not opt out: `{% if bellRinger.notebook !== false %}`. **U0 B1 is the only page setting `notebook: false`**, verified as 50 pages with a bell ringer, 49 rendering the line, 1 opting out. Every other block is untouched.
+2. **The Concepts section had the same problem**, ending "Notes go in your Class Notebook as a Power outline" while sitting above the setup callout. Reworded for Block 1 only: notes go on paper today and move in once the notebook exists, straight in from Block 2.
+
+**The Do walkthrough trimmed from three sources to one.** Kept the AP News article, which is the Engage 5 pilot seed and must stay. Dropped the UNU report as a separate walkthrough step, keeping an inline link to `/units/unit-0/unu-report-key-points/` so Block 1 still points at it; that page also has three other inbound links so it was never at risk of orphaning. Dropped the TBD social-media placeholder.
+
+**This is better sequencing, not just time.** Block 2 is titled "OPVL Across Source Types" and its entire job is comparing OPVL across a paper, a news article, and an AI output. Block 1 walking three source types was doing Block 2's work a block early. The page now says so explicitly: one source today, comparison in Block 2. The Do sub already read "Teacher-led whole-class activity. No choice board today" while using three-item choice-board markup, so the trim also makes the markup match the words. The single remaining source uses a bare `.choice` card, which is self-contained; no new CSS.
+
+**Timing.** Bell ringer 10, activity about 15, one-source OPVL, notebook setup 10, exit ticket, reflect 3 to 5. Fits 80 minutes, which the three-source version did not once the handout was added.
+
+**Out of scope, still needs doing before 10/11 August:** `_Upload to Drive — Unit 0 (student-facing)/POSTING CHECKLIST.md` lists Block 1 as `u0-b1` with **no attachment from folder 3**, even though this handout is the newest file in that folder. That checklist is outside this repo. **Without it the activity has no printed copy and the block does not work.**
+
+**Verified.** Build clean, 155 files. No spoiler text on the page, checked by regex against the rendered body for "both texts", "neither was", "text A/B was AI", "actually AI", "AI-written", and "the answer is": zero hits. The handout's own wording is not reproduced. Bell ringer renders at 10 minutes with the notebook line correctly suppressed. The activity renders in the do pastel with the do spine, before the source card. One source card, titled "The source we OPVL together". No em dashes, no placeholders added. No horizontal overflow at 375px.
 
 ---
 
@@ -112,6 +186,8 @@ Date format matches G9 exactly: abbreviated month, space, unpadded day.
 **Verified.** Build clean, 155 files. Zero dates in any lesson file. All 66 cues render inside a `block-section do`. Entry-header dates match each page's own `.block-dates` span exactly, checked on three pages spanning the year: U0 B3 (meeting 4) `Aug 14` / `Aug 17`, U4 B5 (meeting 44) `Jan 28` / `Feb 2`, U6 B2 (meeting 62) `Mar 30` / `Apr 5`. No unresolved `{{ }}` and no `undefined` in any built page.
 
 **The A-only guard is real and will fire.** Meeting 82 has no `bLabel`, and 69 blocks occupy meetings 2 through 70, so U7's twelve blocks land on 71 through 82: **U7's last block is meeting 82 and will render an A line only.** Confirmed by running the filter directly against `rotationDates.json` for meetings 4, 44, 62, 82, and 999.
+
+**Superseded by Addendum 34: the page is now two sides of A4, not one.** The prediction below turned out to be the right one. Left in place because the measuring method is still the method.
 
 **Print took three passes and is worth recording.** Single column ran to 406mm against 267mm of printable A4, a page and a half. Two columns plus a 12mm page margin and tighter leading brings it to 263mm of 273mm: one side, all seven sections, about 10mm of headroom. Measured by lifting the rules out of `@media print`, constraining the body to the printable width, and reading `scrollHeight` — not by reading the CSS and hoping. The headroom is around 4%, so a substituted font on another machine could still push it over; re-measure if the page gains content.
 
