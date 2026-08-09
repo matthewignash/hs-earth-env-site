@@ -2,7 +2,41 @@
 
 > **Purpose:** Living status doc. Tells you (and future Claude Code sessions) what's built, what's stubbed, what to build next, and in what order. The charter is in `CLAUDE.md` — do NOT modify that. Update this file at the end of each build session.
 
-**Last updated:** 2026-08-09 (Addenda 3–40 below. U0–U6 complete; U7 is next.)
+**Last updated:** 2026-08-09 (Addenda 3–42 below. U0–U6 complete; U7 is next.)
+
+---
+
+**Addendum 42 (2026-08-09): every student-facing page loses its em dashes. 852 across 54 files.**
+
+The course style rule is no em dashes in student-facing content, and HANDOFF had carried "Foundations, AI Partners, Reference, Student Hub were never swept" as an open item since the units were finished. Swept, and **the open item is closed.**
+
+**Not one blunt substitution.** Colons where the dash introduced an explanation or a list, commas for parentheticals and continuations, full stops with capitalisation where both sides were independent clauses ("The failure is not the stumble. It is the script."), numeric ranges to "to", "see" pointers to commas, and dashes after terminal punctuation dropped entirely. Mix: 1,032 colons, 374 commas, 59 full stops across site and documents.
+
+**Three defects were caught mid-pass and all three would have shipped.** Four `</strong> — <a href>` link patterns turned into an ellipsis because the interrupted-speech rule misfired; exactly one real interruption exists, in the stakeholder dialogue, and it keeps its ellipsis. **55 colons landed in sentences that already had one**, found by diffing the introduced colons against HEAD rather than by reading, then demoted to commas. And the Lovelock card's scissors rule, built from repeated dashes, came out as `: : : , , ,`; it is a hyphen rule now, as in the two generators.
+
+**What was deliberately left.** 228 en dashes are numeric ranges, where an en dash is correct typography and `pp. 8-10` would be wrong rendered as "8 to 10". Seven en dashes doing separator or compound work were fixed. The three simulator pages under `assets/simulators/` are **synced from sibling repos** by `npm run sync-simulator`, so editing them here is undone on the next sync, and some of their dashes are legitimate null markers in data tables.
+
+**Documents too, 631 across 26 files**, covering the `_Upload to Drive — Unit 0 (student-facing)` folder and its true mirrors in `Unit 0_ Foundations`. Teacher-facing material was excluded on purpose: the UbD, block plans, lesson plans and the 2021 archive are not covered by the rule and are written in Matthew's own voice. `make_se_card.js` was fixed at the generator, since its 30 dashes were all one scissors line.
+
+**Formatting survived and this was verified, not assumed.** Replacements splice inside the individual run holding each dash rather than rewriting paragraphs. Checked against the git copy of a tracked document: paragraph, table, run, bold, italic, size and colour counts all identical.
+
+**Found while sweeping, and it outlives this change. Four Foundations documents are stale against their Drive counterparts.** `OPVL + AI Documentation Protocol` differs by 30 lines and `The Rubric Explained` by 22. **The Foundations copies still name Gemini, Claude and ChatGPT directly, and still say "AI Documentation gate" where the Drive version says "requirement".** The Drive folder is what gets posted, so students get the right version, but anyone working from the Foundations folder is reading superseded wording. This predates the sweep and was not fixed here.
+
+**Verified.** Build clean, 156 files. Zero em dashes in scope, zero double colons or stray punctuation outside JS ternaries, no horizontal overflow at 375, pages spot-checked in the browser.
+
+---
+
+**Addendum 41 (2026-08-09): Block 1 vocabulary becomes an activity on the page.**
+
+Block 1 pointed at the 15-term EAL pre-teach and stopped there. **Six words now sit on the page, each with the moment in the block where it is actually used:** source, primary source, secondary source, OPVL, bias, disclosure (AI).
+
+**The six come from what the block's work demands, not from the top of the fifteen.** `disclosure (AI)` earns its place because the bell ringer is now a disclosure activity. `bias` earns its place because the two-texts teacher key already flags "it might be biased" as a worthless Limitation, so the entry carries that warning inline and the payoff lands within the hour.
+
+**Three steps, and only the first costs new time.** Guess the meanings in the Field Notebook, tick or star each word as it turns up, then write the six as Power Notes once the Class Notebook exists. **That last step fills a slot that already existed and was empty:** the Notebook setup asked for "today's first entry" without ever saying what belonged in it.
+
+**The format maps exactly, which is the reason to do it here rather than anywhere else.** The word is a Power 1, the meaning in your own words is a Power 2 (a Power 2 *is* a definition), where you met it is a Power 3. Students rehearse Power Notes on six words they already know before Block 2 asks them to use it on a research paper. One rule on the page: the Power 2 must be in their own words, because the Power 3 line is what shows they were actually there.
+
+Reuses `.callout.task` and `.power-example`, so no new CSS. **Block 1 is now at roughly 92 minutes against 80**, and where the overrun comes from is still Matthew's call, as recorded in Addendum 40.
 
 ---
 
