@@ -2,7 +2,29 @@
 
 > **Purpose:** Living status doc. Tells you (and future Claude Code sessions) what's built, what's stubbed, what to build next, and in what order. The charter is in `CLAUDE.md` — do NOT modify that. Update this file at the end of each build session.
 
-**Last updated:** 2026-08-07 (Addenda 3–36 below. U0–U6 complete; U7 is next.)
+**Last updated:** 2026-08-07 (Addenda 3–37 below. U0–U6 complete; U7 is next.)
+
+---
+
+**Addendum 37 (2026-08-07): "Two texts, one topic" goes on the site (C32).**
+
+New page at `/units/unit-0/readings/two-texts/` carrying both AI-disclosure texts in full. **Both texts are ours**, written for this activity, so unlike the Lovelock page there is no copyright constraint and the whole text ships.
+
+**The page must never say that both texts were written with AI.** It says only that one carries an AI-use statement and one does not, which is true. The reveal happens in class, and the Reflection Journal prompt is what delivers it. **No spoiler in the copy, no teacher note, and no HTML comment carrying the answer**, because students read source when they are curious and one of them will. The page's single Nunjucks comment explains the styling rule and contains no answer; Nunjucks strips `{# #}` at build, so nothing reaches the browser either way. **Verified: zero HTML comments in the built page.**
+
+**The two cards share one CSS class on purpose.** Any difference in border, width, type size or spacing between them would teach students to detect AI by spotting a CSS artefact. **This was measured, not read off the stylesheet:** 18 computed properties compared between the two cards plus their headings and body paragraphs, **zero differences**, identical rendered widths. The AI-use note on Text B is the only distinction. **Do not add a Text A or Text B variant.**
+
+**Placement: the brief and the site disagreed, and Block 1 won.** The brief put the reading and the reveal at Block 3, with the reflection prompt reading "Both texts you read **today**". But Block 1 already runs this activity end to end from the printed handout: bell ringer for Part 1, then a Do activity carrying the partner discussion and the Part 2 reveal. Shipping both would have run the reveal twice, and the second one is not a reveal. **Matthew's call: Block 1 stays as it is; Block 3 becomes a re-read reference.** So the Block 3 card is reworded away from the brief's "Read both before class", which would be false for students who met the texts two blocks earlier. `block-1.njk` is untouched, confirmed by an empty diff.
+
+**Both cards that link here are also spoiler-checked**, because a student browsing can reach Block 3 before Block 1.
+
+**No reflect route on this page**, deliberately: no reflect callout, no submit button, no Classroom link. The reflection is delivered through the Reflection Journal like every other block reflection, and a second route would give students two places to answer.
+
+**The brief's unit-index premise did not hold.** It said to add the page "alongside the other readings", but the Unit 0 index lists no readings at all; **the Lovelock reading companion is not on it either.** The two-texts card went into "Resources for this unit" as asked. Adding Lovelock is a one-line change that has not been assumed.
+
+**Verified.** Build clean, 156 files, one new page. Spoiler greps over source and built output return only sanctioned hits: "Read **both** [texts]" in the specified lede, and "weather **reveals**" inside Text A's own specified wording. Text A has 4 paragraphs, Text B has 5 plus the AI-use note. Zero reflect, submit-link or Classroom references. No em dashes. No console errors. No horizontal overflow at 375px.
+
+**Outside this repo, and it will be wrong on the day.** `Reflection Tool seed — AI disclosure prompt.xlsx` has `ees-u0-b3-2` reading "Both texts you read **today** were written with AI." With the activity at Block 1, students read them two blocks earlier and already have the reveal by Block 3. **Either the body needs rewording away from "today" and away from revealing something already revealed, or the prompt belongs at Block 1 as `ees-u0-b1-2`.** Note the seed file's own warning that Block 3's existing prompt is a callback anchor for `ees-u0-b7` and must not be retired.
 
 ---
 
