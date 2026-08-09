@@ -2,7 +2,57 @@
 
 > **Purpose:** Living status doc. Tells you (and future Claude Code sessions) what's built, what's stubbed, what to build next, and in what order. The charter is in `CLAUDE.md` — do NOT modify that. Update this file at the end of each build session.
 
-**Last updated:** 2026-08-07 (Addenda 3–38 below. U0–U6 complete; U7 is next.)
+**Last updated:** 2026-08-09 (Addenda 3–40 below. U0–U6 complete; U7 is next.)
+
+---
+
+**Addendum 40 (2026-08-09): the two-texts activity is restaged so the lesson its key claims is the lesson it actually teaches.**
+
+**This closes the "Not fixed, and it is the deeper problem" paragraph in Addendum 39 by name.** Addendum 39 made the Part 1 question answerable; it could not make the activity teach what it says it teaches. Two defects remained, and neither could be fixed by wording. Text B's disclosure was printed under Text B, so B's status was settled before any judgment happened. And Text A read machine-like, so students pegged it as AI on style and were **right**, which disproves nothing. The only students the reveal surprised were the ones who had not read the fine print.
+
+**Two changes, and they only work together.**
+
+**1. The disclosure is staged.** The handout goes from two parts to four pages, printed as **two sheets**, sheet 2 handed out at the cue. Page 1 is both texts, clean, no statement on either. Page 2 is the judgment, now with a confidence line per text because both rows are open. Page 3 is new: **"What the authors said"**, showing Text A's silence as a visible object next to Text B's disclosure, captioned *"This is not a printing error. There was nothing to print."* Page 4 is the reveal. The gate is physical rather than a rule students have to honour on day one of the year.
+
+**Page 3 question 3 is the hinge and the whole point:** *Text A's author said nothing. Does that tell you anything about whether AI was used?* Absence of disclosure is not evidence of absence of AI use, and a student who says so out loud has the lesson before page 4 gives it to them. The teacher key instructs running that round as talk and **refusing to answer it**; that instruction is load-bearing, not colour.
+
+**2. Text A was rewritten to split the room**, 163 words to 209, deliberately ambiguous rather than obviously human. Removed: the "not X but Y" reframe opener, the clean tricolon, the "First… Second…" enumeration, and the summary bow. Added: Chennai's real **31.39 mm/hr** drain design intensity from the 1999 CPHEEO manual, "roughly 68 to 72" with the units dropped, and an unexplained 2015 aside. Deliberately **left** balanced: "Capacity is one half of it. The catchment is the other." That sentence is the AI-side handhold and it stays. Target split is about 60/40 toward AI, so a majority holds a position that is about to be destroyed and a substantial minority defends "person" on specificity and is destroyed too. **Do not tune this by adding typos or first person** — that swings it to obviously-human and kills the argument in the pair work. The single dial is the final sentence, and the generator carries a comment saying so.
+
+**The 30-minute budget did not grow.** The extra stage is paid for by moving the last two written questions (`lost`, `line`) into the Reflection Journal, **where they already existed as fields**, so students had been answering them twice. The seed row moved from `ees-u0-b3-2` to `ees-u0-b1-2`, and `signal` was dropped from it because page 4 now asks that question on paper. `ees-u0-b3` is untouched and still anchors the Block 7 callback. This also resolves the "Both texts you read **today**" staleness Addendum 37 flagged.
+
+**Site.** Neither text card carries a statement now, so the two cards differ in **nothing at all**, which strengthens the anti-tell measure rather than weakening it: nine computed properties compared, zero differences, identical 1052px rendered width at 1280 and no horizontal overflow at 375. The two statements sit in a closed `<details>` reusing the existing `power-seeds` pattern, no JS and no new CSS. Block 1's Do callout goes to 20 minutes, which corrects an existing understatement rather than spending new time: the old key already budgeted 21 minutes of post-bell-ringer work behind a label saying 15.
+
+**The generator now emits four documents from one source of truth** and builds each page as a function, because handing the same `Paragraph` and `Table` instances to three `Document` constructors is not documented as supported by `docx`. New helper `pairBox` renders page 3 as three columns, two bordered cells with a border-free spacer, since two adjacent bordered cells draw a doubled hairline in Word. **The full packet keeps the original filename** so existing references stay valid.
+
+**Verified.** Build clean, 156 files. Zero em dashes or en dashes in all four generated documents. Text A is 209 words. Page 1 of the printed packet carries no AI-use line; `pairBox` confirmed as 3 cells with the middle unbordered. Estimated vertical fill on the four student pages is 76 / 78 / 78 / 52 percent, so no page overflows, **though that is an analytical estimate and not a render**: open the packet in Word before printing. Spoiler grep on the built page returns one sanctioned hit; "weather reveals" is gone from Text A, so the old benign hit disappeared with it. Zero HTML comments. `ees-u0-b1-2` written to both the CSV and the workbook, both copies of each.
+
+**Two hazards fixed outside the site.** `bellringers-extracted-u0-u2.json` still held the retired "two students hand in essays" hypothetical at `u0[0]`, and the bell-ringer prompt doc names that JSON as the authoritative VERBATIM source feeding site frontmatter, so **any future regeneration would have silently reverted Block 1's bell ringer to an activity that no longer runs.** Entry replaced and the prompt doc now carries a do-not-re-extract warning. And `U0 Lesson Plans (Co-Teacher Edition).docx` still called the bell ringer the "Two-essays AI hook", gave it 5 minutes, had no slot at all for the 20-minute segment, and omitted the handout from Materials. Rewritten, both copies.
+
+**Outstanding, and it needs Matthew, not a build.** The Block 1 breakdown now **adds to 90, not 80.** Two rows were reclaimed to get that far: the 13-minute "UNU key-points + reel contrast, three source types" is gone because the site already says comparing source types is Block 2 and Block 1 does one source properly, and Watch went 7 to 5 to match the 4-minute video. The remaining **10 minutes have to come out of Do 2 (20 to 12) or Show (move the Mentimeter poll to Block 2)**. The document carries the note in bold at the top of the block; the decision was not made for him.
+
+---
+
+**Addendum 39 (2026-08-09): the two-texts Part 1 question was answerable without reading. Fixed.**
+
+**"Which text do you think was written with AI?" had a free correct answer.** Text B carries `AI use: this text was drafted with an AI language model…` directly beneath it, so a student could answer "B, because it says so" without reading either text. The evidence line collapsed with it, since the statement is unarguable evidence, and so did the confidence line, since "certain" was the honest rating. The question also presupposed exactly one AI text, which is false.
+
+**Part 1 Q1 is now a per-text grid**, not a pick-one:
+
+```
+For each text, decide: was this written by a person, or with AI?
+    Text A:   person / AI / not sure
+    Text B:   person / AI / not sure
+```
+
+Text B's row stays settled by its statement, which is correct and honest. **Text A becomes the only open judgment on the handout**, and it can only be made on the prose. Q2 is "What made you decide", Q3 is "How sure are you about Text A", and the partner question is "Did you mark Text A the same way".
+
+**Changed in four places plus the teacher key**, so paper and screen ask the same question on the day: `block-1.njk` bell ringer, the two-texts page callout, `make_ai_disclosure_handout.js` (regenerated both docx), and the C32 prompt record. The teacher key's show-of-hands step now counts person and AI separately on each text rather than tallying A / B / both.
+
+**The reveal can now deflate, and the teacher key says so.** A class that marks both texts AI has had nothing revealed. The key's fallback: go to Text B and ask what their ear said *before* they read the statement underneath.
+
+**Not fixed, and it is the deeper problem.** The stated lesson is that style tells are unreliable, but the mechanism does not produce it. Text A reads machine-like and is AI, so students judge it right on style. The only students the reveal surprises are the ones who did not read Text B's disclosure. Making the lesson land would mean sequencing the ear judgment *before* the label is visible, which is a redesign of the handout, not a wording fix.
+
+**Verified.** Build clean, 156 files. Both rendered pages carry the new wording; the two `.text-card` elements still compute to identical border, width, font-size and padding; zero HTML comments on the two-texts page; the only spoiler-grep hit is "weather **reveals**" inside Text A's own text. Student handout regenerated to all three copies (Unit 0 Foundations, Drive upload folder 3) and the teacher key to the teacher folder.
 
 ---
 
