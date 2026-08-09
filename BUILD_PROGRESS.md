@@ -2,7 +2,31 @@
 
 > **Purpose:** Living status doc. Tells you (and future Claude Code sessions) what's built, what's stubbed, what to build next, and in what order. The charter is in `CLAUDE.md` — do NOT modify that. Update this file at the end of each build session.
 
-**Last updated:** 2026-08-07 (Addenda 3–37 below. U0–U6 complete; U7 is next.)
+**Last updated:** 2026-08-07 (Addenda 3–38 below. U0–U6 complete; U7 is next.)
+
+---
+
+**Addendum 38 (2026-08-07): Blocks 2 and 3 stop pretending to be choice boards (C33).**
+
+Both blocks presented their work as choice boards. **They were not choice boards.** Every route ended at the same artifact, so what looked like three or four choices was one task wearing several hats. In week one that costs attention and returns nothing, and some students take the stretch route because it sounds better and then drown.
+
+Both Do sections are now **one task, an extension, and a support**, stacked as three callouts: "Everyone does this", "If you finish early", "If you are stuck". Headings become "Today's work". The A/B/C/D letters and the Default/Stretch/Practice tags are gone.
+
+**Naming the routes honestly is the point, not just the tidying.** "If you are stuck: come to the help table" is a sentence a struggling student can act on. "Path C, Pairs, Practice" is not. Block 1 already said "No choice board today" and was left alone.
+
+**New callout variants** in `styles.css`: `.callout.task` (concepts), `.callout.extend` (show), `.callout.support` (do). `.support` repeats `.activity`'s colours deliberately; `activity` marks a one-off task block, `support` marks the stuck route in this trio, and keeping the three names parallel matters more than avoiding two rules with the same values.
+
+**Two Block 3 paths deleted outright.** *The Skeptic* fragmented the table share on the day students first meet the documentation habit, and it returns at Block 5 anyway. *Your own topic* was the only genuinely free choice on either block and also the one that broke the lesson: the block's value is every student evaluating an AI summary of **the same paper they read last block**, and a student on their own topic cannot make that comparison.
+
+**Consequence handled, and it was the point of the change: `the-skeptic` is out of Block 3's front matter.** Leaving it would have kept the AI callout advertising a partner no task on the block uses, and would have kept implying the Skeptic must be live by 14 August, which is exactly the build pressure this removes. **`grep -rl the-skeptic src/units/unit-0/` now returns `block-5.njk` only**, and the rendered Block 3 page lists just the Source Evaluator.
+
+**Two things preserved that the supplied wording would have dropped.** Block 2 keeps "Your own dossier sources get their OPVL in Block 4, not today", which was added in C32 when the student-found-article path was removed and answers the exact question that path existed to answer. And Block 3's "finish early" route keeps the C31 shape: **a second run of the identical prompt, not a comparison of two different models**, which is what makes it work on Flint as well as BoodleBox and keeps the block platform-symmetric for Engage 3 and Manage 1. Do not "improve" it back into a model comparison.
+
+**Reading directions added to Block 2**, above the reading links, as a `callout task` headed "How to read Lovelock". **The supplied copy was written for a different page:** "Start on this page", "the nine steps above" and "three places, one order" are only true on the reading companion, where the nine-step carousel lives. Block 2 has no steps on it. Item 1 and the closing line were reworded to be true from Block 2; items 2 to 5 are verbatim. The language list was checked against `lovelockGlossary.json`: `ko ja zh fr es de` is exactly Korean, Japanese, Chinese, French, Spanish, German.
+
+**Verified.** Build clean, 156 files. Zero occurrences of `choose one path`, `choice-board`, `choice-letter`, `udl-tag`, `Default` or `Stretch` in either block; the four `Practice` hits are the unit title "Scientific Practices" and were checked individually. Both headings read "Today's work". Three callouts each, in order, computing to the exact `--concepts` / `--show` / `--do` backgrounds with their matching spines, confirmed in the browser. Block 2 still carries its Learning Intention, the Block 4 pointer, the pre-teach vocabulary callout and the notebook cue; the directions render above the entry grid with five steps. `git diff --name-only src/units/` lists only these two blocks. No console errors, no horizontal overflow at 375px.
+
+**Outstanding.** The two lesson-plan documents still describe Blocks 2 and 3 as choice boards in their timed breakdowns. They are teacher-facing so nothing breaks, but they now read as stale beside the site. Regenerating them is a separate job, offered and not assumed.
 
 ---
 

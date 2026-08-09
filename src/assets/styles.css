@@ -569,6 +569,15 @@ a.map-block:hover { text-decoration: underline; }
 .text-card-note { font-size: 13px; color: var(--muted); }
 .two-texts-lede { font-size: 16px; margin-bottom: 18px; }
 
+/* One task, an extension, a support. Used where a block has a single required
+   task rather than a real choice board, so the routes are named for what they
+   are: a stuck student can act on "If you are stuck" in a way they cannot act
+   on "Path C, Pairs, Practice". `.support` repeats `.activity`'s colours on
+   purpose; keeping the trio's names parallel matters more than avoiding it. */
+.callout.task    { border-left-color: var(--spine-concepts); background: var(--concepts); }
+.callout.extend  { border-left-color: var(--spine-show);     background: var(--show); }
+.callout.support { border-left-color: var(--spine-do);       background: var(--do); }
+
 .callout.activity { border-left-color: var(--spine-do); background: var(--do); }
 .callout.sketch-first { border-left-color: #7c6bb0; background: var(--story); }
 .callout.factstorm { border-left-color: var(--accent); background: var(--concepts); }
