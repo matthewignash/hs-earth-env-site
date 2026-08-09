@@ -2,7 +2,39 @@
 
 > **Purpose:** Living status doc. Tells you (and future Claude Code sessions) what's built, what's stubbed, what to build next, and in what order. The charter is in `CLAUDE.md` — do NOT modify that. Update this file at the end of each build session.
 
-**Last updated:** 2026-08-07 (Addenda 3–35 below. U0–U6 complete; U7 is next.)
+**Last updated:** 2026-08-07 (Addenda 3–36 below. U0–U6 complete; U7 is next.)
+
+---
+
+**Addendum 36 (2026-08-07): Lovelock argument carousel (C31). Nine slides replace the close-reading path.**
+
+`/units/unit-0/readings/lovelock-1965/` now walks the paper's argument in nine steps, one idea per screen with its vocabulary attached, for students reading well below the paper's level (roughly grade 14).
+
+**It replaces the close-reading path rather than joining it.** Two accounts of the same argument on one page drift the moment either is edited. The ten-paragraph `glosses` array that lived inline in the template is gone with it.
+
+**Copyright constraint held.** The page is public and carries none of Lovelock's text. Every slide is ours. The "Find it in the paper" lines quote at most eight opening words as wayfinding, which is what the close-reading path already did. Those lines are load-bearing: without them a summary quietly becomes a substitute and a student arrives at Block 2 having read about Lovelock without opening him.
+
+**One source of truth for vocabulary.** `src/_data/lovelockSlides.json` holds the nine slides; each `terms` value matches a `term` in `lovelockGlossary.json` character for character, so definitions resolve from one place and cannot drift. **All ten verified against the glossary before the file was written.** The chips reuse the page's existing `button.term` + injected-card mechanism, so no new definition code was needed.
+
+**The requirement that gets built wrong, and how it was checked.** Every slide ships in the DOM; JavaScript adds the `hidden` attribute to all but one. The lazy build renders one slide and swaps its contents in JS, which looks identical and fails completely when a script does not load on a school network. **Verified against the served HTML, which is exactly what a scriptless browser receives: 9 slides, 0 carrying `hidden`, while `slide-nav` and `slide-showall-row` do carry it** so no-JS shows the linear list with no broken controls. Do not swap this for a CSS-only `.is-active` rule.
+
+Also confirmed by test rather than by reading the code: no timers anywhere; Previous disabled on slide 1 and Next on slide 9 with no wraparound; arrow keys move slides only when focus is inside the carousel, and an ArrowRight dispatched on `document.body` does nothing; the live region reads exactly "Step 3 of 9, His move"; focus lands on the new slide's heading, not the button; "Show all steps" stacks all nine in order from the same data and hides the nav.
+
+**Print was tested in the state that matters, with the carousel collapsed.** Eight slides carry the `hidden` attribute and all nine still print, in order, because `.slides .slide[hidden] { display: block }` overrides it. Navigation and the toggle do not print. The word list prints after them on its own page, and since it now carries all 30 terms, every slide word prints with its definition by construction rather than by a filter that had to be checked.
+
+**Slide 9 changes family on purpose**, do-family pastel and spine against the concepts treatment of slides 1 to 8, so the pivot from summary to task is visible rather than merely stated.
+
+**Word lists collapsed from two to one, and the survivor is visible.** The first pass kept the 18-term list, which lived inside `.print-appendix` and was therefore print-only, leaving no browsable list on screen. Matthew asked for a visible one.
+
+The list now carries **all 30 terms with definitions, on screen and in print**, with the **10 words the steps use tagged "in the steps"** and given the concepts spine. The 18-term filter was dropped because it selected on the `path` flag, which marked the close-reading path: **that section no longer exists, so the subset had become arbitrary and unexplainable to a student.** All 30 is also the only version that helps someone reading the actual PDF, where words the steps skip still turn up. The language selector and the AI-translation verification notice are untouched.
+
+**`path` is now a data-only flag.** It still means "sits in the paragraphs that carry the argument", which is true and useful, but no page calls it a path any more. `word-bank.njk` had told students that N of the M terms "are on the close-reading path" and linked to the deleted section, and its per-term chip read "close-reading path"; both now say the argument-carrying wording, as does the glossary index card. **Zero occurrences of "close-reading path" remain in `src/` or the built site.**
+
+**Consequential cleanup, not in the brief.** Both checkboxes in the controls bar, "Close-reading path" and "Plain-English gloss", existed only to control the deleted section and would have become dead controls on a page whose whole audience is students who find reading hard. Removed, along with their JS handlers and the stale lede line describing marked paragraphs. That orphaned a block of CSS: `.toggle-row`, `.toggle`, `.rail-path`, `.rail-step`, `.rail-locator`, `.gloss`, `.term-list`, `.term-row`, and `body.path-on .off-path`. **Confirmed zero usages across both pages that load `reading-page.css`** before deleting; the file went 487 to 419 lines.
+
+**Not built, deliberately:** no audio or auto-read (device text-to-speech is better than anything here), no new images beyond the existing disequilibrium figure on slide 6, and nine slides rather than twelve.
+
+**Verified.** Build clean, 155 files. `open or continuous reaction systems`, `salmon swimming upstream` and `Fischer-Tropsch` all absent from the built page. Nine slides, one `<h2>Word list</h2>`, no `toggle-path` or `toggle-gloss`. No console errors. No horizontal overflow at 375px; both nav buttons carry visible text labels and clear 40px tall.
 
 ---
 

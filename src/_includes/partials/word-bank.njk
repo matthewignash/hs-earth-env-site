@@ -7,7 +7,7 @@
 <div class="callout">
   <div class="callout-title">Where these words come from</div>
   <p class="wb-source">{{ bank.source }}</p>
-  <p>Read in <strong>{{ provenance }}</strong>. Every word below is one you meet in that paper. {{ bank.terms | pathTerms | length }} of the {{ bank.terms | length }} are on the <a href="{{ bankReadingUrl }}">close-reading path</a>, meaning they sit in the paragraphs that carry the argument; the rest appear elsewhere in the paper.</p>
+  <p>Read in <strong>{{ provenance }}</strong>. Every word below is one you meet in that paper. {{ bank.terms | pathTerms | length }} of the {{ bank.terms | length }} sit in the paragraphs that carry the argument, the ones the <a href="{{ bankReadingUrl }}">reading companion</a> walks through step by step; the rest appear elsewhere in the paper.</p>
 </div>
 
 <div class="wb-verify">
@@ -20,7 +20,7 @@
     <h2 class="wb-term">{{ entry.term }} <span class="wb-pos">{{ entry.pos }}</span></h2>
     <p class="wb-meta">
       <span class="wb-tag">{{ provenance }}</span>
-      {%- if entry.path %}<span class="wb-tag is-path-tag">close-reading path</span>{% endif %}
+      {%- if entry.path %}<span class="wb-tag is-path-tag">carries the argument</span>{% endif %}
     </p>
     <p class="wb-plain">{{ entry.plain }}</p>
     {%- if entry.note %}<p class="wb-note">{{ entry.note }}</p>{% endif %}

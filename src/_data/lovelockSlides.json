@@ -1,0 +1,33 @@
+{
+ "slides": [
+  { "n": 1, "title": "The question",
+    "body": "It is 1965. NASA is planning to send spacecraft to other planets. Lovelock asks a simple question: if you land on Mars, how would you know whether anything there is alive?",
+    "find": "", "terms": [] },
+  { "n": 2, "title": "The usual plan",
+    "body": "Most scientists said: look for life like ours. Land a probe, scoop up soil, test it for the chemistry Earth life uses. Lovelock thought this was weak. It can only find life that happens to be built the way we are.",
+    "find": "It is not surprising, in view of the vast expense", "terms": ["geocentric", "extra-terrestrial"] },
+  { "n": 3, "title": "His move",
+    "body": "Do not look for the life itself. Look at what life does to the whole planet. That changes what you need to send, and what you need to know before you go.",
+    "find": "It is the object of this article to show", "terms": ["phenomenological"] },
+  { "n": 4, "title": "What life does",
+    "body": "Living things take in energy. They use it to build order inside themselves. Then they push the waste back out. They keep doing this, everywhere, for a very long time.",
+    "find": "Life is one member of the class", "terms": ["entropy"] },
+  { "n": 5, "title": "A dead planet settles",
+    "body": "On a planet with no life, the gases in the air react with each other until there is nothing left to react. Then the mix stops changing. That settled state is called equilibrium.",
+    "find": "The omnipresence of intense orderliness", "terms": ["thermodynamic equilibrium", "sterile"] },
+  { "n": 6, "title": "A living planet does not",
+    "body": "On Earth, oxygen and methane are both in the air. Those two react with each other. They should not both still be there. They are, because living things keep making more of them.",
+    "find": "Extreme departures from an inorganic", "terms": ["disequilibrium", "chemical potential"],
+    "image": "/assets/img/u0/u0-disequilibrium.svg",
+    "imageAlt": "Two atmospheres compared: a settled one where gases have finished reacting, and Earth's, where oxygen and methane coexist because life keeps replacing them." },
+  { "n": 7, "title": "So here is the test",
+    "body": "You do not need to land at all. Measure the gases in a planet's atmosphere from far away. If they look settled, the planet is probably dead. If they look strangely unsettled, something is holding them that way.",
+    "find": "Atmospheric analysis. Search for the presence", "terms": [] },
+  { "n": 8, "title": "Then he tries it on Mars",
+    "body": "In the last part of the paper he turns to Mars. It is dry. The air is thin, with almost no oxygen. As far as anyone knew in 1965, Mars looks settled. So he argues that looking for Earth-like life there is the wrong plan.",
+    "find": "Ordinarily one does not look for fish in a desert", "terms": ["primeval", "appreciable"] },
+  { "n": 9, "title": "Now the part that is yours",
+    "body": "You now know what the paper argues. That is the easier half. The work of this block is the other half: who wrote this, when, why, what it is good for, and what it cannot tell you. Start with the journal line, the acknowledgements, and the sentence about who paid for the work.",
+    "find": "This work was supported by a grant", "terms": [], "isTask": true }
+ ]
+}

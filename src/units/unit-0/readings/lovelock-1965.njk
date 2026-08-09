@@ -21,18 +21,12 @@ returnTo:
 
 {%- set glossary = lovelockGlossary -%}
 {%- set terms = glossary.terms -%}
-{%- set glosses = [
-  {locator: "The design of an efficient and unequivocal experiment", gloss: "Lovelock says a good life-detection test needs two things first: a definition of life you can actually test for, and knowledge of what the planet is like now and was like in the past."},
-  {locator: "It is the object of this article to show", gloss: "His claim: you do not have to guess what alien life is made of. You can look for what life DOES instead of what life IS."},
-  {locator: "It is a relatively simple matter to distinguish", gloss: "On Earth, chemistry tests tell living from non-living easily. The weakness: they assume all life everywhere shares our chemistry."},
-  {locator: "It is also possible to distinguish living from inorganic matter", gloss: "Physics can tell the difference too. A salmon swimming upstream looks purposeful in a way a rock never does. This test is less exact, but it works anywhere."},
-  {locator: "Life is one member of the class", gloss: "Scientists agree life belongs to a group of things that take in energy, use it to become more ordered inside, and push the waste back out."},
-  {locator: "This classification is broad and includes also phenomena such as flames", gloss: "Flames and whirlpools do this too. Life is different in three ways: it is rare, it lasts, and it changes its surroundings enormously."},
-  {locator: "The omnipresence of intense orderliness", gloss: "So a living planet shows two signs: order everywhere that random chemistry could not produce, and chemicals sitting together that should have reacted long ago."},
-  {locator: "Ordinarily one does not look for fish in a desert", gloss: "You would not look for fish in a desert. So should we look for Earth-type life on Mars, or ask the general question instead? It depends on Mars's history."},
-  {locator: "The following is the only sure information so far available on Mars", gloss: "What we actually know about Mars: dry, thin air, almost no oxygen, harsh ultraviolet light, sometimes above freezing. Maybe nitrogen oxides."},
-  {locator: "If these conditions are representative of Mars", gloss: "If Mars has always been like this, its life (if any) would not resemble ours. So the general physical tests are the safer bet for an early mission."}
-] -%}
+{%- set total = lovelockSlides.slides | length -%}
+{#- Terms the nine steps actually use, so the word list can mark them. -#}
+{%- set slideTerms = [] -%}
+{%- for s in lovelockSlides.slides -%}{%- for t in s.terms -%}
+{%- set slideTerms = (slideTerms.push(t), slideTerms) -%}
+{%- endfor -%}{%- endfor -%}
 
 {%- if readerUrl %}
 <section class="reader-launch">
@@ -63,11 +57,7 @@ returnTo:
       {%- endfor %}
     </select>
   </div>
-  <p class="reading-lede">The marked paragraphs carry the argument. The unmarked ones are still the paper; skim them, and notice what kind of writing they are.</p>
-  <div class="toggle-row">
-    <label class="toggle"><input type="checkbox" id="toggle-path"> Close-reading path</label>
-    <label class="toggle"><input type="checkbox" id="toggle-gloss" checked> Plain-English gloss</label>
-  </div>
+  <p class="reading-lede">Definitions open where the word is used. Pick a language above and they appear alongside the English.</p>
 </div>
 
 <div class="reading-support">
@@ -75,19 +65,48 @@ returnTo:
   <div class="support-body">
 
     <section class="rail-block">
-      <h2>The close-reading path</h2>
-      <p class="rail-sub">Ten paragraphs, in order. Find each one by its opening words, then read the gloss.</p>
-      <ol class="rail-path">
-        {%- for item in glosses %}
-        <li class="rail-step">
-          <p class="rail-locator"><q>{{ item.locator }}</q></p>
-          <details class="gloss" open>
-            <summary><span class="gloss-eyebrow">Gloss: not the paper</span></summary>
-            <p>{{ item.gloss }}</p>
-          </details>
-        </li>
-        {%- endfor %}
-      </ol>
+      <h2>The argument, one step at a time</h2>
+      <p class="rail-sub">Nine short steps through what the paper says. Read these first if the paper is hard going, then go back to it knowing what you are looking for. This is not the paper, and your OPVL is on the paper.</p>
+
+      {#- Every slide ships in the DOM. JavaScript adds the `hidden` attribute to
+          all but one; with JavaScript off nothing is hidden, the nav never
+          unhides, and the section reads as a plain numbered list. #}
+      <div class="slides" id="lovelock-slides" aria-roledescription="carousel" aria-label="The argument, one step at a time">
+        <p class="sr-only slides-live" aria-live="polite"></p>
+        <div class="slide-list">
+          {%- for s in lovelockSlides.slides %}
+          <div class="slide{% if s.isTask %} is-task{% endif %}" aria-roledescription="slide" aria-label="Step {{ s.n }} of {{ total }}">
+            <p class="slide-count">Step {{ s.n }} of {{ total }}</p>
+            <h3 class="slide-title" tabindex="-1">{{ s.title }}</h3>
+            <p class="slide-body">{{ s.body }}</p>
+            {%- if s.image %}
+            <figure class="slide-figure">
+              <img src="{{ s.image }}" alt="{{ s.imageAlt }}">
+            </figure>
+            {%- endif %}
+            {%- if s.terms.length %}
+            <p class="slide-terms">
+              <span class="slide-terms-label">Key words:</span>
+              {%- for t in s.terms %}
+              <button type="button" class="term" data-term="{{ t | termSlug }}" aria-expanded="false">{{ t }}</button>
+              {%- endfor %}
+            </p>
+            {%- endif %}
+            {%- if s.find %}
+            <p class="slide-find">Find it in the paper: <q>{{ s.find }}</q></p>
+            {%- endif %}
+          </div>
+          {%- endfor %}
+        </div>
+        <div class="slide-nav" hidden>
+          <button type="button" class="slide-btn slide-prev">Previous</button>
+          <span class="slide-pos" aria-hidden="true">Step 1 of {{ total }}</span>
+          <button type="button" class="slide-btn slide-next">Next</button>
+        </div>
+        <p class="slide-showall-row" hidden>
+          <button type="button" class="slide-showall" aria-pressed="false">Show all steps</button>
+        </p>
+      </div>
     </section>
 
     <section class="rail-block">
@@ -102,13 +121,19 @@ returnTo:
       <p class="sic-note">The scanned PDF contains a couple of obvious errors where the scanner misread a letter, words that are clearly not what Lovelock wrote. The class reading tool corrects them back to the 1965 printed text. They are worth noticing anyway: you are reading a machine's copy of a printed page, not the page, and that belongs in your Origin.</p>
     </section>
 
-    <section class="rail-block">
+    <section class="rail-block word-list" aria-label="Word list">
       <h2>Word list</h2>
-      <p class="rail-sub">{{ terms | pathTerms | length }} of these {{ terms | length }} words are on the path. Tap any word. Turn on <strong>Close-reading path</strong> to dim the rest.</p>
-      <ul class="term-list">
+      <p class="rail-sub">All {{ terms | length }} words from the paper, in the order Lovelock uses them. The {{ slideTerms | length }} tagged <span class="wl-tag">in the steps</span> are the ones the nine steps above explain; the rest turn up elsewhere in the paper, so they are here for when you are reading it yourself.</p>
+      <ul class="wl-list">
         {%- for entry in terms %}
-        <li class="term-row{% if not entry.path %} off-path{% endif %}">
-          <button type="button" class="term" data-term="{{ entry.term | termSlug }}" aria-expanded="false">{{ entry.term }}</button>
+        <li class="wl-entry{% if entry.term in slideTerms %} is-slide{% endif %}" id="wl-{{ entry.term | termSlug }}">
+          <p class="wl-head">
+            <strong>{{ entry.term }}</strong>
+            <span class="wl-pos">{{ entry.pos }}</span>
+            {%- if entry.term in slideTerms %} <span class="wl-tag">in the steps</span>{% endif %}
+          </p>
+          <p class="wl-plain">{{ entry.plain }}</p>
+          {%- if entry.note %}<p class="wl-note">{{ entry.note }}</p>{% endif %}
         </li>
         {%- endfor %}
       </ul>
@@ -144,22 +169,12 @@ returnTo:
   {%- endfor %}
 </div>
 
-<section class="print-appendix" aria-label="Printed word list">
-  <h2>Word list: close-reading path</h2>
-  <ul>
-    {%- for entry in terms | pathTerms %}
-    <li><strong>{{ entry.term }}</strong> <em>({{ entry.pos }})</em> {{ entry.plain }}{% if entry.note %} {{ entry.note }}{% endif %}</li>
-    {%- endfor %}
-  </ul>
-</section>
 
 <script>
 (function () {
   var LANG_KEY = "ees-reading-lang";
   var cards = document.querySelector(".term-cards");
   var langSelect = document.getElementById("lang");
-  var pathToggle = document.getElementById("toggle-path");
-  var glossToggle = document.getElementById("toggle-gloss");
 
   function applyLanguage(code) {
     document.querySelectorAll(".tc-translation").forEach(function (row) {
@@ -208,14 +223,81 @@ returnTo:
     if (event.key === "Escape") { closeCard(); }
   });
 
-  pathToggle.addEventListener("change", function () {
-    document.body.classList.toggle("path-on", pathToggle.checked);
+})();
+
+/* The argument carousel. Nothing here runs on a timer and nothing auto-advances:
+   this component is for students who already find reading hard, and a slide that
+   moves on its own is worse than no slides at all. */
+(function () {
+  var root = document.getElementById("lovelock-slides");
+  if (!root) { return; }
+  var slides = Array.prototype.slice.call(root.querySelectorAll(".slide"));
+  if (slides.length < 2) { return; }
+
+  var nav = root.querySelector(".slide-nav");
+  var prevBtn = root.querySelector(".slide-prev");
+  var nextBtn = root.querySelector(".slide-next");
+  var position = root.querySelector(".slide-pos");
+  var live = root.querySelector(".slides-live");
+  var showAllRow = root.querySelector(".slide-showall-row");
+  var showAll = root.querySelector(".slide-showall");
+  var index = 0;
+  var expanded = false;
+
+  function render(moveFocus) {
+    slides.forEach(function (slide, i) {
+      slide.hidden = !expanded && i !== index;
+    });
+    nav.hidden = expanded;
+    prevBtn.disabled = index === 0;
+    nextBtn.disabled = index === slides.length - 1;
+    position.textContent = "Step " + (index + 1) + " of " + slides.length;
+    if (expanded) { return; }
+    var title = slides[index].querySelector(".slide-title");
+    live.textContent = "Step " + (index + 1) + " of " + slides.length + ", " + title.textContent;
+    if (moveFocus) { title.focus(); }
+  }
+
+  function go(to, moveFocus) {
+    if (to < 0 || to >= slides.length || expanded) { return; }
+    index = to;
+    render(moveFocus);
+  }
+
+  prevBtn.addEventListener("click", function () { go(index - 1, true); });
+  nextBtn.addEventListener("click", function () { go(index + 1, true); });
+
+  showAll.addEventListener("click", function () {
+    expanded = !expanded;
+    showAll.setAttribute("aria-pressed", String(expanded));
+    showAll.textContent = expanded ? "Show one step at a time" : "Show all steps";
+    render(false);
+    live.textContent = expanded
+      ? "Showing all " + slides.length + " steps."
+      : "Showing one step at a time. Step " + (index + 1) + " of " + slides.length + ".";
   });
 
-  glossToggle.addEventListener("change", function () {
-    document.querySelectorAll("details.gloss").forEach(function (gloss) {
-      gloss.open = glossToggle.checked;
-    });
+  /* Scoped to the carousel, so arrow keys are only captured when focus is inside it. */
+  root.addEventListener("keydown", function (event) {
+    if (expanded) { return; }
+    if (event.key === "ArrowLeft") { event.preventDefault(); go(index - 1, true); }
+    else if (event.key === "ArrowRight") { event.preventDefault(); go(index + 1, true); }
   });
+
+  /* Swipe is a bonus on top of the buttons, not a replacement for them. */
+  var touchX = null;
+  root.addEventListener("touchstart", function (e) {
+    touchX = e.changedTouches[0].clientX;
+  }, { passive: true });
+  root.addEventListener("touchend", function (e) {
+    if (touchX === null) { return; }
+    var dx = e.changedTouches[0].clientX - touchX;
+    touchX = null;
+    if (Math.abs(dx) < 45) { return; }
+    go(dx < 0 ? index + 1 : index - 1, false);
+  }, { passive: true });
+
+  showAllRow.hidden = false;
+  render(false);
 })();
 </script>
