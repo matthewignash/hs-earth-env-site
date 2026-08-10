@@ -2,7 +2,21 @@
 
 > **Purpose:** Living status doc. Tells you (and future Claude Code sessions) what's built, what's stubbed, what to build next, and in what order. The charter is in `CLAUDE.md` — do NOT modify that. Update this file at the end of each build session.
 
-**Last updated:** 2026-08-09 (Addenda 3–42 below. U0–U6 complete; U7 is next.)
+**Last updated:** 2026-08-09 (Addenda 3–43 below. U0–U6 complete; U7 is next.)
+
+---
+
+**Addendum 43 (2026-08-09): Block 1's orientation video is real, and it is linked rather than embedded.**
+
+`units/unit-0/block-1.njk` Concepts: the "Watch (4 min)" placeholder is replaced with the actual recording, a Google Drive file. **Linked in a new tab, not embedded**, and that decision is the part worth recording.
+
+**Why not an iframe.** Matthew confirmed the file is **restricted to AISC accounts**. This site is public and parents read it. A Drive `/preview` iframe on a public page renders a Google sign-in wall rather than a video for every parent and every signed-out visitor, which reads as a broken site rather than a protected file. Same reasoning that keeps the Lovelock reader linked rather than framed. The card carries "sign in with your school account" for the same reason that page does: without it, a student who hits the permission screen concludes the site is broken.
+
+**The duration came off the card.** The placeholder guessed "4 min" and the real length is unknown, so the card reads just "Watch". A wrong duration is worse than none, because students use it to judge whether they have time before the bell. **If the length is confirmed later, put it back**, since every other Concepts card on the site shows one.
+
+`partials/video-card.njk` was **not** used and **not** extended. It is hard-wired to YouTube in four places: the `i.ytimg.com` thumbnail, the `youtu.be` no-JS link, the `youtube-nocookie.com` embed, and the lightbox's watch-on-YouTube link. Teaching it a second provider for a single card was not worth it. If Drive videos become common, add a `provider` switch then rather than now.
+
+**Verified.** Build clean, 156 files, Concepts gate passed. The card renders first in the grid with `target="_blank" rel="noopener"`, no longer carries the placeholder class, and adds **zero iframes** to the page. No em dashes, so Addendum 42's sweep stays clean. No horizontal overflow at 375px. The one placeholder left on Block 1 is the Mentimeter poll, which is still genuinely unbuilt.
 
 ---
 
