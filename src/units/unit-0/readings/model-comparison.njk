@@ -1,0 +1,100 @@
+---
+layout: layouts/base.njk
+title: "Two models, one paper"
+tagline: The same paper and the same prompt, run through two different AI models. Read both closely.
+breadcrumbs:
+  - { url: /, label: Home }
+  - { url: /units/unit-0/, label: "Unit 0: Scientific Practices & Class Foundations" }
+  - { label: "Two models, one paper" }
+returnTo:
+  - { url: /units/unit-0/block-3/, label: "Block 3: AI as a Source + Documentation Protocol" }
+---
+
+<div class="prose">
+
+<p class="two-texts-lede">One paper. One prompt, word for word the same. Two different models. These are the raw outputs, exactly as they came back, so you can search them and check them against the paper itself.</p>
+
+<div class="callout">
+  <div class="callout-title">The prompt that produced both</div>
+  <p><em>"Summarise this paper. Then write an OPVL analysis of it: Origin, Purpose, Value, Limitation."</em></p>
+  <p>The paper was uploaded as a PDF: <a href="/units/unit-0/readings/lovelock-1965/">Lovelock (1965), "A physical basis for life detection experiments"</a>. Use this same prompt when you run your third model, or your output will not be comparable to these.</p>
+</div>
+
+{#- These are verbatim model outputs, reproduced exactly as returned, including their
+    own punctuation and em dashes. Do NOT copy-edit them to house style. Students are
+    analysing them as primary evidence, and altering the text would corrupt the thing
+    they are checking. The one specific factual error in Response B is deliberately
+    left unmarked: finding it is the task. Do not annotate it here. -#}
+<section class="text-card" aria-label="Response A, ChatGPT 4.1">
+  <h2>Response A: ChatGPT 4.1</h2>
+
+  <h3>Summary</h3>
+  <p>James Lovelock’s article explores the fundamental principles behind designing experiments to detect life on other planets, with a focus on Mars. He argues that life, wherever it exists, will create detectable chemical and physical disequilibria in its environment—most notably, through ordered molecular sequences and persistent chemical imbalances. Lovelock discusses several experimental approaches, such as searching for non-random molecular patterns and using differential thermal analysis (DTA) to detect exothermic reactions when planetary soil is heated in the presence of atmospheric gases. These methods aim to identify the presence of life by detecting orderliness and chemical activity that cannot be explained by random processes or equilibrium chemistry.</p>
+  <p>Lovelock emphasizes the importance of designing life-detection experiments that do not rely on Earth-centric biochemistry, given the unknown conditions of extraterrestrial environments. He advocates for simple, robust physicochemical tests—like DTA—that can reveal the presence of life through general principles rather than specific biological markers. The article concludes that such experiments are more universally applicable and less likely to miss alien life forms that differ from terrestrial organisms.</p>
+
+  <h3>OPVL analysis</h3>
+  <dl>
+    <dt>Origin</dt>
+    <dd>The article is authored by James Lovelock, a renowned scientist known for his work on atmospheric chemistry and the Gaia hypothesis. It was written in the context of early planetary exploration, particularly NASA’s interest in Mars life-detection missions during the 1960s.</dd>
+    <dt>Purpose</dt>
+    <dd>The purpose is to propose a scientific framework and practical methods for detecting life on other planets, moving beyond Earth-specific assumptions. Lovelock aims to guide the design of early space probe experiments by focusing on universal signs of life, such as chemical disequilibrium and molecular order.</dd>
+    <dt>Value</dt>
+    <dd>This article is valuable for its pioneering approach to astrobiology and life-detection methodology. It introduces the concept that life can be inferred from planetary-scale chemical imbalances, a principle that has influenced subsequent space missions and the search for biosignatures. The emphasis on general physicochemical tests makes the approach broadly applicable to unknown planetary environments.</dd>
+    <dt>Limitation</dt>
+    <dd>The article’s proposals are theoretical and based on the scientific understanding and technological capabilities of the 1960s. While Lovelock’s methods are innovative, they may not detect all forms of life, especially those that do not produce strong chemical disequilibria or ordered molecular patterns. Additionally, the article does not provide empirical results from actual planetary missions, as it predates most direct exploration of Mars.</dd>
+  </dl>
+</section>
+
+<section class="text-card" aria-label="Response B, Claude 4.8">
+  <h2>Response B: Claude 4.8</h2>
+
+  <h3>Summary</h3>
+  <p>In this article, James Lovelock tackles a foundational problem in astrobiology: how do you design an experiment to detect life on another planet when you have no reliable knowledge of that planet's environment or the biochemistry any life there might use? His central argument is that life should be recognized not by Earth-specific markers, but by its universal physical signatures—namely, orderliness beyond the bounds of random assembly and chemical disequilibrium. Life, by its nature, produces ordered sequences (in molecules, and even in sound or visual patterns) and sustains chemical imbalances that would not persist in a lifeless system at equilibrium.</p>
+  <p>Lovelock outlines several experimental approaches grouped into two categories: the search for order (Experiment A—detecting non-random molecular sequences, such as the two-carbon ordered sequence in fatty acids) and the search for non-equilibrium (Experiments B1 and B2). His key practical proposal is a differential thermal analysis (DTA) experiment: two samples of planetary soil are heated, one in the planet's own atmosphere and one in an inert gas like argon. An exotherm in the differential signal reveals a reaction between the surface and atmosphere—a chemical disequilibrium strongly indicative of life. He notes this method is powerful enough to even detect reoxidizing life on a planet with a reducing atmosphere, and reports that a few milligrams of Earth soil heated in air indeed produces a large exotherm compared to the argon reference.</p>
+  <p>Lovelock concludes that these physicochemical tests (A1, B1, B2) are best suited for early probe experiments precisely because they require no prior knowledge of the planetary environment and are not constrained by Earth biochemistry—unlike growth or biochemical experiments, which depend heavily on knowing the correct medium and incubation conditions. The work was supported by NASA and reflects the practical constraints of designing instruments for early Mars missions.</p>
+
+  <h3>OPVL analysis</h3>
+  <dl>
+    <dt>Origin</dt>
+    <dd>Written by James E. Lovelock—the atmospheric scientist and chemist later known for the Gaia hypothesis—and published in Nature in the mid-1960s. The document's references (dated through 1964) and its NASA grant support (NSG 199-62) place it squarely within the early era of American planetary exploration. It acknowledges collaborators at the University of Houston and NASA's Jet Propulsion Laboratory, indicating it emerged from active, funded mission-planning work rather than pure speculation.</dd>
+    <dt>Purpose</dt>
+    <dd>The article aims to propose a general framework and specific practical experiments for detecting extraterrestrial life, particularly on Mars, without depending on assumptions about that life's chemistry. Lovelock is arguing—to a scientific and effectively a NASA policy audience—that early probes should prioritize simple, universal physicochemical tests over complex Earth-biased biological assays.</dd>
+    <dt>Value</dt>
+    <dd>Its value lies in its conceptual originality: reframing "life detection" around thermodynamic and information-theoretic universals (order and disequilibrium) rather than specific biomolecules. This anticipates modern biosignature science and the atmospheric-disequilibrium reasoning still used today in exoplanet research. For a Nature of Science lens, it beautifully illustrates how scientists reason under deep uncertainty, design experiments from first principles, and connect abstract theory (Schrödinger, thermodynamics of steady states) to concrete instrumentation like DTA.</dd>
+    <dt>Limitation</dt>
+    <dd>The proposals are shaped by 1960s technology and understanding—Lovelock himself notes that a visual search, while ideal, was "too complex" for the time. The paper presents Earth-soil DTA results as a proof of concept but offers no actual extraterrestrial data, as it predates the Mars landings. Furthermore, the method assumes life necessarily produces detectable disequilibrium or order; life that is dormant, sparse, or in near-equilibrium with its surroundings could evade these tests, and non-biological chemistry could in principle mimic an exotherm—a false-positive risk the brief text does not fully explore.</dd>
+  </dl>
+</section>
+
+<div class="callout activity">
+  <div class="callout-title">Before you decide which one is better</div>
+  <p>These do not contradict each other the way the two Cauvery answers did this morning. Nothing here says "2007" against "2018". What separates them is <strong>how specific each one is willing to be</strong>.</p>
+  <p>So work through it in this order:</p>
+  <ol>
+    <li>Pull <strong>three specific claims</strong> from each response. The same claim in different words is not a difference.</li>
+    <li>Mark what one response says that the other <strong>leaves out entirely</strong>.</li>
+    <li>Of everything you have marked, find the claims that are <strong>specific enough to check</strong>: a date, a journal, a name, a number, a chemical, a quoted phrase.</li>
+    <li>Check one against the paper. Do not take either response's word for it.</li>
+  </ol>
+  <p>The question you are answering is not which response reads more impressively. It is <strong>which response said enough that you could catch it being wrong</strong>.</p>
+</div>
+
+<details class="power-seeds">
+  <summary>If you cannot find anything to check. Open this only after you have really tried.</summary>
+  <div class="power-seeds-body">
+    <p><strong>Check against the PDF from Google Classroom, not the interactive reader.</strong> The reader is a shortened version made for reading support, so plenty of things that are genuinely in the paper are not in it. If you search the reader and find nothing, that tells you about the reader, not about Lovelock. Getting this backwards is the easiest way to accuse a response of inventing something it got right.</p>
+    <p>Some places worth looking, in rough order of how easy they are to verify:</p>
+    <ul>
+      <li>Where a response names a <strong>specific chemical, compound, or class of molecule</strong>. Search the PDF for that exact word. If it returns nothing, ask why a response would name something the paper never does.</li>
+      <li>Where a response <strong>quotes the paper directly</strong>. Search for the quoted words and see whether they appear in that order.</li>
+      <li>Where a response names a <strong>journal, a volume, or a date</strong>. The paper states its own publication details on the first page.</li>
+      <li>Where a response names <strong>people or institutions</strong>. The paper has an acknowledgements section near the end.</li>
+      <li>Where a response names a <strong>grant or funding number</strong>. Same section.</li>
+    </ul>
+    <p>Use your browser's find function on the PDF. A claim that survives a search is not automatically true, but a claim that fails one is worth writing down. And be precise about what failed: "the paper never uses this word" is a finding, while "I could not find it" may just mean you searched the wrong document.</p>
+  </div>
+</details>
+
+<p class="text-card-note">Both responses are reproduced exactly as the models returned them, including their own punctuation and any errors. Nothing has been cleaned up. Your <a href="/student-hub/ai-documentation-template/">AI Documentation Template</a> for this block covers these two plus the model you run yourself.</p>
+
+</div>

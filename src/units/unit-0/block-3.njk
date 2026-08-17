@@ -18,18 +18,18 @@ breadcrumbs:
   - { url: /units/unit-0/, label: "Unit 0: Scientific Practices & Class Foundations" }
   - { label: "Block 3: AI as a Source + Documentation Protocol" }
 prev: { url: /units/unit-0/block-2/, label: "Block 2: OPVL Across Source Types" }
-next: { url: /units/unit-0/block-4/, label: "Block 4: Dossier Work Day 1" }
+next: { url: /units/unit-0/block-4/, label: "Block 4: Source Dossier Launch" }
 unitMapUrl: /units/unit-0/
 bellRinger:
   tag: "Data interpretation"
   minutes: 5
   text: |
-    Image: two AI responses to the same prompt 'When was the Cauvery dispute resolved?' One says '2018 by Supreme Court verdict.' One says '2007 by the Cauvery Water Disputes Tribunal.' Both are confidently stated.<br><strong>Task:</strong> Which is accurate? How could you find out without trusting either response? What does this tell you about AI as a source?
+    <strong>Context:</strong> The Cauvery river rises in Karnataka and flows into Tamil Nadu before reaching the sea. Karnataka is upstream, Tamil Nadu is downstream, and Kerala and Puducherry hold smaller shares. Who gets how much water has been argued over for more than a hundred years, through colonial agreements, a national tribunal, the Supreme Court, and a standing water authority. The argument returns in every dry monsoon year. You do not need to know that history to answer today's question.<br><br>Image: two AI responses to the same prompt 'When was the Cauvery dispute resolved?' One says '2018 by Supreme Court verdict.' One says '2007 by the Cauvery Water Disputes Tribunal.' Both are confidently stated.<br><strong>Task:</strong> Which is accurate? How could you find out without trusting either response? Which entry in the <a href="/reference/library/">Resources Library</a> would you check first? What does this tell you about AI as a source?
 standards:
   ngss: ["SEP-8"]
   ailit: ["Engage 3", "Manage 1"]
-learningIntention: "I can use an AI on a practice question and produce a complete, specific AI Documentation Template, including at least one specific thing the AI got wrong."
-successCriteria: ["I can apply OPVL to an AI tool used as a source.", "I can explain what 'hallucination' means and why it matters for the Value column.", "I can identify one specific limitation of an AI tool I have used."]
+learningIntention: "I can compare three AI responses to the same paper, check a specific claim against the paper itself, and produce a complete AI Documentation Template naming at least one specific thing an AI got wrong."
+successCriteria: ["I can apply OPVL to an AI tool used as a source.", "I can explain what 'hallucination' means and why it matters for the Value column.", "I can identify one specific limitation of an AI tool I have used.", "I can explain why a vaguer AI response is not a more reliable one."]
 powerSeeds: ["AI as a source", "the Documentation Template"]
 ---
 
@@ -37,7 +37,8 @@ powerSeeds: ["AI as a source", "the Documentation Template"]
   <span class="section-tag">Story</span>
   <h2>What today is about</h2>
   <p class="sub">The move that makes this class different from most.</p>
-  <p>AI outputs are sources. Same OPVL framework, same critical eye. Today we make that move explicit by running OPVL on an <strong>AI summary of the same paper you OPVL'd last class</strong>: <a href="/units/unit-0/block-2/">Lovelock (1965)</a>. Same content, different source type. The Origin / Purpose / Value / Limitation outputs will diverge. The differences between those two OPVLs are the lesson. Then we introduce the habit you'll carry for the rest of the year: <strong>every time you use AI in your work, you fill out the AI Documentation Template</strong>.</p>
+  <p><strong>We open with what happened on your screens.</strong> Last night you logged into the class AI platform for the first time and ran the OPVL tool on <a href="/units/unit-0/block-2/">Lovelock (1965)</a>. Bring out your output, what was helpful, and where it was difficult. If you could not get in at all, that is the finding we want first, not something to be embarrassed about.</p>
+  <p>Then we go further. AI outputs are sources, and they get the same OPVL framework and the same critical eye. By the end of today you will be holding <strong>four</strong> responses to one paper you have actually read: yours from last night, two that Ms. Jayanthi/Mr. Matt ran on different models, and one more you run yourself. Same content, different source types, and they will not say the same things. The question you leave with is not which one is nicest to read. It is <strong>which one said anything specific enough that you could catch it being wrong</strong>. Then we introduce the habit you'll carry for the rest of the year: <strong>every time you use AI in your work, you fill out the AI Documentation Template</strong>.</p>
   <p>The documentation isn't there to police you. It's there to make you notice what the AI did versus what you did. Students who can articulate that distinction learn more from AI than students who can't. Honest disclosure = no penalty. Hidden AI use = academic integrity violation. That's the whole protocol. Want to see the protocol working on a real document? The <a href="/units/unit-0/exemplar-source-dossier/#ai-doc">exemplar dossier's own AI Documentation page</a> is a live example: the exemplar was built with AI and documents itself the same way you will.</p>
   <p>One more thing, said plainly: on our class AI platform, Ms. Jayanthi/Mr. Matt can see student conversations. That's not surveillance of your thinking; it's the same principle as the Documentation Template. In this class, AI use is visible by design. Work as if your process will be read, because it will be.</p>
 </section>
@@ -45,18 +46,23 @@ powerSeeds: ["AI as a source", "the Documentation Template"]
 <section class="block-section concepts">
   <span class="section-tag">Concepts</span>
   <h2>Before you start the work</h2>
-  <p class="sub">Start with the Watch: a live OPVL of an AI summary, projected for everyone. The comparison that follows also runs with the class, and the Read is the protocol reference. Notes go in your Class Notebook as a Power outline.</p>
+  <p class="sub">Start with the Watch: the upload walkthrough and the model outputs it produced, projected for everyone. The comparison that follows also runs with the class, and the Reads are your references. Notes go in your Class Notebook as a Power outline.</p>
   {% include "partials/power-seeds.njk" %}
   <div class="entry-grid">    <div class="entry-card live-activity">
       <span class="live-activity-tag">Live in class</span>
       <div class="entry-title">Watch (live demo)</div>
-      <div>Live OPVL on an <strong>AI summary of Lovelock (1965)</strong>. Ms. Jayanthi/Mr. Matt projects a prompt to the class AI platform, "summarize this paper" or "what's the main argument of Lovelock's life-detection paper?", and OPVLs the AI response live, comparing to your Block 2 OPVL on the paper itself.</div>
+      <div>Ms. Jayanthi/Mr. Matt walks through <strong>uploading Lovelock (1965) and running the prompt</strong>, then projects the two responses it produced: <strong>ChatGPT 4.1</strong> and <strong>Claude 4.8</strong>, each with a summary and an OPVL. Watch the upload and prompt steps closely. You are repeating them with a third model in the Do section, and your output only compares cleanly if the prompt matches.</div>
       <div class="entry-meta">Whole-class, projected. Recorded for absent students.</div>
     </div>
     <a class="entry-card" href="/foundations/ai-documentation-protocol/" style="text-decoration: none; color: inherit;">
       <div class="entry-title">Read</div>
       <div>AI Documentation Protocol: failure modes, the template, three worked examples (strong / weak / the violation).</div>
       <div class="entry-meta">Real link · Foundations</div>
+    </a>
+    <a class="entry-card" href="/units/unit-0/readings/model-comparison/" style="text-decoration: none; color: inherit;">
+      <div class="entry-title">Two models, one paper</div>
+      <div>The ChatGPT 4.1 and Claude 4.8 responses in full, exactly as they came back, with the prompt that produced them. Searchable, which matters: you will need to look words up in the paper.</div>
+      <div class="entry-meta">Real link · Unit 0 reading</div>
     </a>
     <a class="entry-card" href="/units/unit-0/readings/two-texts/" style="text-decoration: none; color: inherit;">
       <div class="entry-title">Two texts, one topic</div>
@@ -66,13 +72,18 @@ powerSeeds: ["AI as a source", "the Documentation Template"]
     <div class="entry-card live-activity">
       <span class="live-activity-tag">Live in class</span>
       <div class="entry-title">Interact</div>
-      <div>Whole-class side-by-side comparison. Your Block 2 OPVL on Lovelock vs. today's OPVL on the AI summary of it. What's different in Origin? In Purpose? In Value? In Limitations? Same content, different source type; the divergence is the lesson.</div>
+      <div>Whole-class side-by-side. First the two projected responses against each other: where does one name a journal, a grant number, and an exact chemical, while the other says "the 1960s" and "several experimental approaches"? Then both against your own Block 2 OPVL of the paper itself. What's different in Origin? In Value? In Limitations? Same content, different source type, and different willingness to be specific. The divergence is the lesson.</div>
       <div class="entry-meta">Whole-class. The move this block is built around.</div>
     </div>
   </div>
   <div class="entry-required">
     <p class="entry-required-label">Everyone does this</p>
     <div class="entry-required-grid">
+    <a class="entry-card" href="/student-hub/ai-documentation-template/" style="text-decoration: none; color: inherit;">
+      <div class="entry-title">The template itself</div>
+      <div>The seven fields, with a guiding question for each. This is the tool you submit today and on every piece of work for the rest of the year. The fillable copy is on Google Classroom.</div>
+      <div class="entry-meta">Real link · Student Hub</div>
+    </a>
     <a class="entry-card" href="/foundations/eal/u0/" style="text-decoration: none; color: inherit;">
       <div class="entry-title">Vocabulary support</div>
       <div>The U0 pre-teach: 15 terms with definitions and sentence stems. Several are in today's block.</div>
@@ -91,11 +102,35 @@ powerSeeds: ["AI as a source", "the Documentation Template"]
   </div>
   <div class="callout task">
     <div class="callout-title">Everyone does this</div>
-    <p>Ask the class AI platform to summarise <strong>Lovelock (1965)</strong>. Save the conversation. Then OPVL the AI's response, and fill in the full AI Documentation Template. Last, put it beside your own OPVL from Block 2: what specifically is different in the Limitation line? That difference is today's lesson.</p>
+    <p>Ms. Jayanthi/Mr. Matt has already uploaded <strong>Lovelock (1965)</strong>, the paper you OPVL'd last class, and run the same prompt through two models: <strong>ChatGPT 4.1</strong> and <strong>Claude 4.8</strong>. You will add a third, and you already have a fourth from last night. Then they get checked against the paper. This is this morning's bell ringer again, except this time you are holding the primary source.</p>
+    <ol>
+      <li><strong>Get set up properly.</strong> See the box below for your section's platform. If you got in last night, you are done with this step in thirty seconds. If you did not, this is the fifteen minutes to fix it, and Ms. Jayanthi/Mr. Matt will come to you.</li>
+      <li><strong>Read the two you were given.</strong> The ChatGPT 4.1 and Claude 4.8 responses are on the <a href="/units/unit-0/readings/model-comparison/">Two models, one paper</a> page, in full. Do not skim them. You are looking for where they differ, and the page is searchable for a reason.</li>
+      <li><strong>Add a third.</strong> Download the Lovelock PDF from Google Classroom, upload it to a new conversation, and pick a <strong>model nobody demonstrated</strong>. Run this prompt, word for word, so your output is comparable to the other two:<br>
+        <em>"Summarise this paper. Then write an OPVL analysis of it: Origin, Purpose, Value, Limitation."</em></li>
+      <li><strong>Compare at the claim level.</strong> Pull three specific claims from each response, including the one you ran at home last night. The same claim in different words is not a disagreement. Mark only where they genuinely differ, and mark what one says that the others leave out entirely.</li>
+      <li><strong>Find something checkable and check it.</strong> Pick a claim specific enough to be verified: a date, a journal, a name, a chemical, a quoted phrase. <strong>Check it in the PDF</strong>, not the <a href="/units/unit-0/readings/lovelock-1965/">interactive reader</a>. The reader is shortened for reading support, so something missing from it may still be in the paper. Does the paper actually say that?</li>
+      <li><strong>Document it.</strong> Full OPVL on your third response, the Limitation line on the others, and one <a href="/student-hub/ai-documentation-template/">AI Documentation Template</a> covering all of it.</li>
+    </ol>
+  </div>
+  <div class="callout">
+    <div class="callout-title">Steps 1 and 3, on your section's platform</div>
+    <p>Check Google Classroom for which platform your section uses. Sign in with your school account. This is the tool you will use for the rest of the year, so it is worth getting properly set up today rather than half-working.</p>
+    <p><strong>On BoodleBox:</strong> open a new chat and upload the PDF there. For step 3, choose any model other than ChatGPT 4.1 or Claude 4.8 and run the prompt on that same uploaded paper. You are changing the tool and holding everything else constant.</p>
+    <p><strong>On Flint:</strong> you cannot pick the model, so for step 3 run the prompt in a <strong>genuinely new conversation</strong> and upload the paper again. Do not type "do it again" in the same thread, because it will read its own first answer and agree with itself. You are changing nothing at all and seeing what happens anyway. If your run comes back nearly identical to itself, that is your result, and step 5 still applies.</p>
+  </div>
+  <div class="callout">
+    <div class="callout-title">The thing to notice in step 4</div>
+    <p>These responses do not contradict each other the way the two Cauvery answers did. Nothing here says "2007" against "2018". They differ in <strong>how specific they are willing to be</strong>. One names the journal, the volume, the grant number, and the exact chemicals. One says "the 1960s" and "several experimental approaches."</p>
+    <p>So the question is not just "which one disagrees." It is: <strong>which one said enough to be caught being wrong?</strong> A response too vague to be checked is not a safer response. It is an unfalsifiable one, and that belongs in your Limitation line.</p>
+  </div>
+  <div class="callout warn">
+    <div class="callout-title">What if all three basically agree?</div>
+    <p>That is a real result, not a failed task. Write it down, then do step 5 anyway, because three responses agreeing tells you nothing about whether any of them is right. If they agree and they are all wrong about the same thing, you have found the most important idea in this block: <strong>consistency is not accuracy.</strong></p>
   </div>
   <div class="callout extend">
     <div class="callout-title">If you finish early</div>
-    <p>Open a second, fresh conversation and give it the identical prompt. Put the two answers side by side. Are they the same? Where they differ, does the difference change what you would trust? Two runs of one prompt disagreeing is itself a Limitation, and it is worth naming in your template.</p>
+    <p>Put today's OPVL beside your own OPVL of the paper from <a href="/units/unit-0/block-2/">Block 2</a>. What specifically is different in the Limitation line? Reading a paper and reading a summary of a paper are different acts, and the Limitation line is where that difference shows up.</p>
   </div>
   <div class="callout support">
     <div class="callout-title">If you are stuck</div>
@@ -110,7 +145,7 @@ powerSeeds: ["AI as a source", "the Documentation Template"]
   <p class="sub">This is the practice run. The Source Dossier (due Block 6) will require this same template, with the same specificity. Today's the time to get the habit right.</p>
   <div class="submission-callout">
     <div class="label">AI Documentation Template (submit by end of class)</div>
-    <p>Full template, all seven fields, on the AI summary of <strong>Lovelock (1965)</strong> (or your own topic if you took Path D). The <strong>"one thing the AI got wrong"</strong> field must be specific. If you couldn't find anything, that's a sign you weren't checking carefully enough. Lovelock returns in <a href="/units/unit-1/block-1/">Unit 1 Block 1</a>; your OPVL + AI Doc work today is the bridge.</p>
+    <p>Full template, all seven fields, covering the three responses you worked with on <strong>Lovelock (1965)</strong>: the two projected and the one you ran yourself. The <strong>"one thing the AI got wrong"</strong> field must be specific, and today you have the paper itself in front of you, so "I couldn't find anything" is not available. Open the <a href="/student-hub/ai-documentation-template/">template and its guiding questions</a> if you need the field-by-field prompts. Lovelock returns in <a href="/units/unit-1/block-1/">Unit 1 Block 1</a>; your OPVL + AI Doc work today is the bridge.</p>
     {% set submit = { id: "u0-b3", text: "Submit via Google Classroom" } %}{% include "partials/submit-link.njk" %}
   </div>
   <p class="rubric-meta">
