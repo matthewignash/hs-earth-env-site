@@ -2,7 +2,29 @@
 
 > **Purpose:** Living status doc. Tells you (and future Claude Code sessions) what's built, what's stubbed, what to build next, and in what order. The charter is in `CLAUDE.md` — do NOT modify that. Update this file at the end of each build session.
 
-**Last updated:** 2026-08-09 (Addenda 3–43 below. U0–U6 complete; U7 is next.)
+**Last updated:** 2026-08-19 (Addenda 3–44 below. U0–U6 complete; U7 is next.)
+
+---
+
+**Addendum 44 (2026-08-19): C35 — topic list rebuilt and grouped, two topics retired, Source Evaluator pacing announced, teacher name standardised.**
+
+**Topic table (assessment page).** The 8-row table under "Step 1" is replaced by three grouped tables under h3 headings: Chennai and Tamil Nadu (5 rows, with a muted intro line about untranslated local sources), India (4), Global (6). **15 rows, not 14** — the C35 prompt's header says 14 but its own tables list 15, and the tables are what was implemented. Lead sentence keeps its wording but now says "your teacher" rather than naming anyone.
+
+**Retired, do not reinstate without re-reading why:**
+- *Climate change attribution* — settled, invites the wrong argument. Replaced by the 2015 Chennai floods row, which is the contested version of the same science.
+- *Vaccine safety (MMR/autism)* — settled science plus a disinformation campaign. A student picking it had to go find antivax content to satisfy the "potentially weaker source" requirement. **Reframed**, not deleted: the row now asks why the claim survived retraction, which keeps the source-evaluation work and drops the false balance. The weaker source becomes an artifact of spread rather than a competing scientific claim.
+- *AI risk (existential)* — replaced by the AI data-centres row: same skill, checkable ground.
+- *Evolution as accepted scientific theory* — removed. The contestation is religious, not scientific, and in an international school it asks students to OPVL sources classmates may hold as faith for very little science payoff.
+
+**Guardrail section.** New h2 "What contested means here, and what it does not" sits directly above Step 1, with the warming-versus-flood-attribution contrast and a concepts-pastel "A good test" callout (can you name two people who both know the field and still disagree?). This exists because the first live run produced students treating settled science as a debate.
+
+**Source Evaluator pacing.** A do-pastel callout, "It will move you along on purpose", now appears on `/ai-partners/the-source-evaluator/` and on U0 blocks 2, 3, 4 and 5 — every U0 block whose front matter links the partner. It explains the `[O 1/4]` … `[L 4/4]` markers and that the bot advances after ~3 exchanges on purpose. Evidence from the first run: every conversation spent the period on Origin and never reached Limitations, the letter the rubric weighs hardest. Without this note the markers read as a bug. Followed by a plain line: Drive links will not open for it, paste text or use the reading tool. **Placement note:** on blocks 3–5 it sits at the end of the Do section; on block 2 it sits in "Before next class", because that is where students actually open the tool for the first time.
+
+**Teacher name.** "Mr. Matt" → "Mr. Ignash" across `src/`: **124 occurrences in 65 files**, not the one straggler C35 expected. C25 Task 6 asked for the same rename and evidently did not run. No "Mr. Matthew" variants existed, so the replace was safe; verified zero mangled names and zero remaining in the built site.
+
+**Known duplication, needs a decision.** `units/unit-0/contested-topics.njk` (added the previous session, linked from B4 Concepts and choices C and D) now carries the same 15 topics as the assessment page, plus per-topic "Start here" research pointers the tables do not have. Both were synced this session so they do not contradict, but two student-facing copies of one list will drift. Consolidate before the list changes again.
+
+**Unchanged by design:** no BoodleBox or Flint URL anywhere (students reach the platform via Classroom, and the same page serves both trial arms); `/foundations/the-rubric/` untouched, since the rubric was transcribed verbatim into a Classroom-importable spreadsheet and editing one side starts the drift.
 
 ---
 
