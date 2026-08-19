@@ -22,7 +22,9 @@
 
 **Teacher name.** "Mr. Matt" → "Mr. Ignash" across `src/`: **124 occurrences in 65 files**, not the one straggler C35 expected. C25 Task 6 asked for the same rename and evidently did not run. No "Mr. Matthew" variants existed, so the replace was safe; verified zero mangled names and zero remaining in the built site.
 
-**Known duplication, needs a decision.** `units/unit-0/contested-topics.njk` (added the previous session, linked from B4 Concepts and choices C and D) now carries the same 15 topics as the assessment page, plus per-topic "Start here" research pointers the tables do not have. Both were synced this session so they do not contradict, but two student-facing copies of one list will drift. Consolidate before the list changes again.
+**Duplication resolved: the assessment page is canonical.** `units/unit-0/contested-topics.njk` (added the previous session) briefly carried a second copy of the same 15 topics. It is **deleted**. Step 1 on the assessment page now has `id="topics"`, and all three Block 4 links (the Concepts card and choices C and D) point at `/units/unit-0/assessment-source-dossier/#topics`. One list, one place, nothing to keep in sync.
+
+What that page had and the brief does not: a per-topic "Start here" research pointer (which archive, which agency, which pair of sources to set against each other). Those still exist in the `U0 Source Dossier — Choosing Your Contested Topic.docx` handout that goes to Classroom, so students have them; they are just not on the site. If they are wanted on the site later, add them as a third column in the three tables rather than as a second page.
 
 **Unchanged by design:** no BoodleBox or Flint URL anywhere (students reach the platform via Classroom, and the same page serves both trial arms); `/foundations/the-rubric/` untouched, since the rubric was transcribed verbatim into a Classroom-importable spreadsheet and editing one side starts the drift.
 
