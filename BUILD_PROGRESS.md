@@ -2,7 +2,26 @@
 
 > **Purpose:** Living status doc. Tells you (and future Claude Code sessions) what's built, what's stubbed, what to build next, and in what order. The charter is in `CLAUDE.md` — do NOT modify that. Update this file at the end of each build session.
 
-**Last updated:** 2026-08-19 (Addenda 3–44 below. U0–U6 complete; U7 is next.)
+**Last updated:** 2026-08-21 (Addenda 3–45 below. U0–U6 complete; U7 is next.)
+
+---
+
+**Addendum 45 (2026-08-21): Wed 26 Aug closure pushes the A rotation back one slot for the rest of the year; no teacher recordings claimed anywhere.**
+
+**Rotation.** School is closed Wed 26 Aug 2026, which was the A slot for course meeting 7. `rotationDates.json` is amended: **the A column shifts one slot later from meeting 7 onward, and the B column is untouched.** So meeting 7 is now A Fri 28 Aug / B Thu 27 Aug, and meeting 8 is A Tue 1 Sep / B Mon 31 Aug.
+
+Two consequences worth knowing before reading any date on the site:
+
+1. **A and B have swapped order.** A used to meet one school day *before* B for the same meeting number. A now meets one school day *after* B. Every "A: … · B: …" label on the site reads later-then-earlier from meeting 7 on. That is correct, not a bug.
+2. **The year drops from 82 meetings to 81.** The old file ended with an A-only slot (Fri 28 May 2027); the shift absorbs it, and meeting 81 now carries both columns. The course schedules roughly 70 meetings, so the lost slot was unused buffer.
+
+The file carries an `amendments` array recording all of this. **Regenerating from `2026-2027 AB Waterfall Master.xlsx` will silently revert the shift** unless the master is updated too. The root copy at `../rotation-block-dates-2026-27.json` was amended identically and the two are byte-identical.
+
+Everything downstream is derived, so nothing else needed editing: block-page headers, unit-landing cards, the unit schedule table and the notebook entry cues all recompute. Verified U0 Block 6 header and notebook cue both read Fri Aug 28 for A.
+
+**Deadline still holds.** The Classroom assignment "S - Unit 0 Source Dossier" closes Fri 28 Aug. B hands in at Block 6 on Thu 27 Aug, a day early; A hands in at Block 6 on Fri 28 Aug, the close date itself. A's defenses (Block 7) move to Tue 1 Sep, after the close, which is fine because the dossier is submitted at Block 6 either way.
+
+**Recordings.** Three U0 cards claimed a recording of Ms. Jayanthi/Mr. Ignash existed: block 2 "Recorded for replay", block 4 "Recorded for absent students", block 6 "Recorded for replay during rehearsal", plus block 2's Concepts line saying the Watch is "projected and recorded". **There are no such recordings.** All four claims are removed; the Watch cards themselves stay, now reading "Live only, so ask a classmate if you miss it." Two uses of the word survive on purpose: the dossier-pipeline SVG alt text ("recording what the AI did", meaning writing down) and block 7's "live recording", which is the student's own defense artifact rather than a teacher video.
 
 ---
 

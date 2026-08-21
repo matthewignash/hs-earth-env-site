@@ -1,5 +1,5 @@
 {
- "generated": "2026-07-30",
+ "generated": "2026-08-21",
  "source": "2026-2027 AB Waterfall Master.xlsx",
  "note": "n = course meeting number; a/b = calendar date of that meeting for A-rotation and B-rotation sections",
  "days": [
@@ -47,533 +47,531 @@
   },
   {
    "n": 7,
-   "a": "2026-08-26",
-   "aLabel": "Wed Aug 26",
+   "a": "2026-08-28",
+   "aLabel": "Fri Aug 28",
    "b": "2026-08-27",
    "bLabel": "Thu Aug 27"
   },
   {
    "n": 8,
-   "a": "2026-08-28",
-   "aLabel": "Fri Aug 28",
+   "a": "2026-09-01",
+   "aLabel": "Tue Sep 1",
    "b": "2026-08-31",
    "bLabel": "Mon Aug 31"
   },
   {
    "n": 9,
-   "a": "2026-09-01",
-   "aLabel": "Tue Sep 1",
+   "a": "2026-09-03",
+   "aLabel": "Thu Sep 3",
    "b": "2026-09-02",
    "bLabel": "Wed Sep 2"
   },
   {
    "n": 10,
-   "a": "2026-09-03",
-   "aLabel": "Thu Sep 3",
+   "a": "2026-09-07",
+   "aLabel": "Mon Sep 7",
    "b": "2026-09-04",
    "bLabel": "Fri Sep 4"
   },
   {
    "n": 11,
-   "a": "2026-09-07",
-   "aLabel": "Mon Sep 7",
+   "a": "2026-09-09",
+   "aLabel": "Wed Sep 9",
    "b": "2026-09-08",
    "bLabel": "Tue Sep 8"
   },
   {
    "n": 12,
-   "a": "2026-09-09",
-   "aLabel": "Wed Sep 9",
+   "a": "2026-09-11",
+   "aLabel": "Fri Sep 11",
    "b": "2026-09-10",
    "bLabel": "Thu Sep 10"
   },
   {
    "n": 13,
-   "a": "2026-09-11",
-   "aLabel": "Fri Sep 11",
+   "a": "2026-09-16",
+   "aLabel": "Wed Sep 16",
    "b": "2026-09-15",
    "bLabel": "Tue Sep 15"
   },
   {
    "n": 14,
-   "a": "2026-09-16",
-   "aLabel": "Wed Sep 16",
+   "a": "2026-09-18",
+   "aLabel": "Fri Sep 18",
    "b": "2026-09-17",
    "bLabel": "Thu Sep 17"
   },
   {
    "n": 15,
-   "a": "2026-09-18",
-   "aLabel": "Fri Sep 18",
+   "a": "2026-10-05",
+   "aLabel": "Mon Oct 5",
    "b": "2026-10-06",
    "bLabel": "Tue Oct 6"
   },
   {
    "n": 16,
-   "a": "2026-10-05",
-   "aLabel": "Mon Oct 5",
+   "a": "2026-10-07",
+   "aLabel": "Wed Oct 7",
    "b": "2026-10-08",
    "bLabel": "Thu Oct 8"
   },
   {
    "n": 17,
-   "a": "2026-10-07",
-   "aLabel": "Wed Oct 7",
+   "a": "2026-10-09",
+   "aLabel": "Fri Oct 9",
    "b": "2026-10-12",
    "bLabel": "Mon Oct 12"
   },
   {
    "n": 18,
-   "a": "2026-10-09",
-   "aLabel": "Fri Oct 9",
+   "a": "2026-10-13",
+   "aLabel": "Tue Oct 13",
    "b": "2026-10-14",
    "bLabel": "Wed Oct 14"
   },
   {
    "n": 19,
-   "a": "2026-10-13",
-   "aLabel": "Tue Oct 13",
+   "a": "2026-10-15",
+   "aLabel": "Thu Oct 15",
    "b": "2026-10-16",
    "bLabel": "Fri Oct 16"
   },
   {
    "n": 20,
-   "a": "2026-10-15",
-   "aLabel": "Thu Oct 15",
+   "a": "2026-10-21",
+   "aLabel": "Wed Oct 21",
    "b": "2026-10-23",
    "bLabel": "Fri Oct 23"
   },
   {
    "n": 21,
-   "a": "2026-10-21",
-   "aLabel": "Wed Oct 21",
+   "a": "2026-10-26",
+   "aLabel": "Mon Oct 26",
    "b": "2026-10-27",
    "bLabel": "Tue Oct 27"
   },
   {
    "n": 22,
-   "a": "2026-10-26",
-   "aLabel": "Mon Oct 26",
+   "a": "2026-10-28",
+   "aLabel": "Wed Oct 28",
    "b": "2026-10-29",
    "bLabel": "Thu Oct 29"
   },
   {
    "n": 23,
-   "a": "2026-10-28",
-   "aLabel": "Wed Oct 28",
+   "a": "2026-10-30",
+   "aLabel": "Fri Oct 30",
    "b": "2026-11-02",
    "bLabel": "Mon Nov 2"
   },
   {
    "n": 24,
-   "a": "2026-10-30",
-   "aLabel": "Fri Oct 30",
+   "a": "2026-11-03",
+   "aLabel": "Tue Nov 3",
    "b": "2026-11-04",
    "bLabel": "Wed Nov 4"
   },
   {
    "n": 25,
-   "a": "2026-11-03",
-   "aLabel": "Tue Nov 3",
+   "a": "2026-11-05",
+   "aLabel": "Thu Nov 5",
    "b": "2026-11-06",
    "bLabel": "Fri Nov 6"
   },
   {
    "n": 26,
-   "a": "2026-11-05",
-   "aLabel": "Thu Nov 5",
+   "a": "2026-11-10",
+   "aLabel": "Tue Nov 10",
    "b": "2026-11-11",
    "bLabel": "Wed Nov 11"
   },
   {
    "n": 27,
-   "a": "2026-11-10",
-   "aLabel": "Tue Nov 10",
+   "a": "2026-11-12",
+   "aLabel": "Thu Nov 12",
    "b": "2026-11-13",
    "bLabel": "Fri Nov 13"
   },
   {
    "n": 28,
-   "a": "2026-11-12",
-   "aLabel": "Thu Nov 12",
+   "a": "2026-11-16",
+   "aLabel": "Mon Nov 16",
    "b": "2026-11-17",
    "bLabel": "Tue Nov 17"
   },
   {
    "n": 29,
-   "a": "2026-11-16",
-   "aLabel": "Mon Nov 16",
+   "a": "2026-11-18",
+   "aLabel": "Wed Nov 18",
    "b": "2026-11-19",
    "bLabel": "Thu Nov 19"
   },
   {
    "n": 30,
-   "a": "2026-11-18",
-   "aLabel": "Wed Nov 18",
+   "a": "2026-11-20",
+   "aLabel": "Fri Nov 20",
    "b": "2026-11-23",
    "bLabel": "Mon Nov 23"
   },
   {
    "n": 31,
-   "a": "2026-11-20",
-   "aLabel": "Fri Nov 20",
+   "a": "2026-11-24",
+   "aLabel": "Tue Nov 24",
    "b": "2026-11-25",
    "bLabel": "Wed Nov 25"
   },
   {
    "n": 32,
-   "a": "2026-11-24",
-   "aLabel": "Tue Nov 24",
+   "a": "2026-11-30",
+   "aLabel": "Mon Nov 30",
    "b": "2026-12-01",
    "bLabel": "Tue Dec 1"
   },
   {
    "n": 33,
-   "a": "2026-11-30",
-   "aLabel": "Mon Nov 30",
+   "a": "2026-12-02",
+   "aLabel": "Wed Dec 2",
    "b": "2026-12-03",
    "bLabel": "Thu Dec 3"
   },
   {
    "n": 34,
-   "a": "2026-12-02",
-   "aLabel": "Wed Dec 2",
+   "a": "2026-12-04",
+   "aLabel": "Fri Dec 4",
    "b": "2026-12-07",
    "bLabel": "Mon Dec 7"
   },
   {
    "n": 35,
-   "a": "2026-12-04",
-   "aLabel": "Fri Dec 4",
+   "a": "2026-12-08",
+   "aLabel": "Tue Dec 8",
    "b": "2026-12-09",
    "bLabel": "Wed Dec 9"
   },
   {
    "n": 36,
-   "a": "2026-12-08",
-   "aLabel": "Tue Dec 8",
+   "a": "2026-12-10",
+   "aLabel": "Thu Dec 10",
    "b": "2026-12-11",
    "bLabel": "Fri Dec 11"
   },
   {
    "n": 37,
-   "a": "2026-12-10",
-   "aLabel": "Thu Dec 10",
+   "a": "2027-01-06",
+   "aLabel": "Wed Jan 6",
    "b": "2027-01-07",
    "bLabel": "Thu Jan 7"
   },
   {
    "n": 38,
-   "a": "2027-01-06",
-   "aLabel": "Wed Jan 6",
+   "a": "2027-01-08",
+   "aLabel": "Fri Jan 8",
    "b": "2027-01-11",
    "bLabel": "Mon Jan 11"
   },
   {
    "n": 39,
-   "a": "2027-01-08",
-   "aLabel": "Fri Jan 8",
+   "a": "2027-01-12",
+   "aLabel": "Tue Jan 12",
    "b": "2027-01-13",
    "bLabel": "Wed Jan 13"
   },
   {
    "n": 40,
-   "a": "2027-01-12",
-   "aLabel": "Tue Jan 12",
+   "a": "2027-01-14",
+   "aLabel": "Thu Jan 14",
    "b": "2027-01-19",
    "bLabel": "Tue Jan 19"
   },
   {
    "n": 41,
-   "a": "2027-01-14",
-   "aLabel": "Thu Jan 14",
+   "a": "2027-01-20",
+   "aLabel": "Wed Jan 20",
    "b": "2027-01-21",
    "bLabel": "Thu Jan 21"
   },
   {
    "n": 42,
-   "a": "2027-01-20",
-   "aLabel": "Wed Jan 20",
+   "a": "2027-01-25",
+   "aLabel": "Mon Jan 25",
    "b": "2027-01-27",
    "bLabel": "Wed Jan 27"
   },
   {
    "n": 43,
-   "a": "2027-01-25",
-   "aLabel": "Mon Jan 25",
+   "a": "2027-01-28",
+   "aLabel": "Thu Jan 28",
    "b": "2027-01-29",
    "bLabel": "Fri Jan 29"
   },
   {
    "n": 44,
-   "a": "2027-01-28",
-   "aLabel": "Thu Jan 28",
+   "a": "2027-02-01",
+   "aLabel": "Mon Feb 1",
    "b": "2027-02-02",
    "bLabel": "Tue Feb 2"
   },
   {
    "n": 45,
-   "a": "2027-02-01",
-   "aLabel": "Mon Feb 1",
+   "a": "2027-02-03",
+   "aLabel": "Wed Feb 3",
    "b": "2027-02-04",
    "bLabel": "Thu Feb 4"
   },
   {
    "n": 46,
-   "a": "2027-02-03",
-   "aLabel": "Wed Feb 3",
+   "a": "2027-02-05",
+   "aLabel": "Fri Feb 5",
    "b": "2027-02-08",
    "bLabel": "Mon Feb 8"
   },
   {
    "n": 47,
-   "a": "2027-02-05",
-   "aLabel": "Fri Feb 5",
+   "a": "2027-02-09",
+   "aLabel": "Tue Feb 9",
    "b": "2027-02-10",
    "bLabel": "Wed Feb 10"
   },
   {
    "n": 48,
-   "a": "2027-02-09",
-   "aLabel": "Tue Feb 9",
+   "a": "2027-02-11",
+   "aLabel": "Thu Feb 11",
    "b": "2027-02-12",
    "bLabel": "Fri Feb 12"
   },
   {
    "n": 49,
-   "a": "2027-02-11",
-   "aLabel": "Thu Feb 11",
+   "a": "2027-02-16",
+   "aLabel": "Tue Feb 16",
    "b": "2027-02-17",
    "bLabel": "Wed Feb 17"
   },
   {
    "n": 50,
-   "a": "2027-02-16",
-   "aLabel": "Tue Feb 16",
+   "a": "2027-02-18",
+   "aLabel": "Thu Feb 18",
    "b": "2027-02-19",
    "bLabel": "Fri Feb 19"
   },
   {
    "n": 51,
-   "a": "2027-02-18",
-   "aLabel": "Thu Feb 18",
+   "a": "2027-02-22",
+   "aLabel": "Mon Feb 22",
    "b": "2027-02-23",
    "bLabel": "Tue Feb 23"
   },
   {
    "n": 52,
-   "a": "2027-02-22",
-   "aLabel": "Mon Feb 22",
+   "a": "2027-02-24",
+   "aLabel": "Wed Feb 24",
    "b": "2027-02-25",
    "bLabel": "Thu Feb 25"
   },
   {
    "n": 53,
-   "a": "2027-02-24",
-   "aLabel": "Wed Feb 24",
+   "a": "2027-02-26",
+   "aLabel": "Fri Feb 26",
    "b": "2027-03-01",
    "bLabel": "Mon Mar 1"
   },
   {
    "n": 54,
-   "a": "2027-02-26",
-   "aLabel": "Fri Feb 26",
+   "a": "2027-03-02",
+   "aLabel": "Tue Mar 2",
    "b": "2027-03-03",
    "bLabel": "Wed Mar 3"
   },
   {
    "n": 55,
-   "a": "2027-03-02",
-   "aLabel": "Tue Mar 2",
+   "a": "2027-03-04",
+   "aLabel": "Thu Mar 4",
    "b": "2027-03-05",
    "bLabel": "Fri Mar 5"
   },
   {
    "n": 56,
-   "a": "2027-03-04",
-   "aLabel": "Thu Mar 4",
+   "a": "2027-03-15",
+   "aLabel": "Mon Mar 15",
    "b": "2027-03-16",
    "bLabel": "Tue Mar 16"
   },
   {
    "n": 57,
-   "a": "2027-03-15",
-   "aLabel": "Mon Mar 15",
+   "a": "2027-03-17",
+   "aLabel": "Wed Mar 17",
    "b": "2027-03-18",
    "bLabel": "Thu Mar 18"
   },
   {
    "n": 58,
-   "a": "2027-03-17",
-   "aLabel": "Wed Mar 17",
+   "a": "2027-03-19",
+   "aLabel": "Fri Mar 19",
    "b": "2027-03-22",
    "bLabel": "Mon Mar 22"
   },
   {
    "n": 59,
-   "a": "2027-03-19",
-   "aLabel": "Fri Mar 19",
+   "a": "2027-03-23",
+   "aLabel": "Tue Mar 23",
    "b": "2027-03-24",
    "bLabel": "Wed Mar 24"
   },
   {
    "n": 60,
-   "a": "2027-03-23",
-   "aLabel": "Tue Mar 23",
+   "a": "2027-03-25",
+   "aLabel": "Thu Mar 25",
    "b": "2027-03-29",
    "bLabel": "Mon Mar 29"
   },
   {
    "n": 61,
-   "a": "2027-03-25",
-   "aLabel": "Thu Mar 25",
+   "a": "2027-03-30",
+   "aLabel": "Tue Mar 30",
    "b": "2027-03-31",
    "bLabel": "Wed Mar 31"
   },
   {
    "n": 62,
-   "a": "2027-03-30",
-   "aLabel": "Tue Mar 30",
+   "a": "2027-04-02",
+   "aLabel": "Fri Apr 2",
    "b": "2027-04-05",
    "bLabel": "Mon Apr 5"
   },
   {
    "n": 63,
-   "a": "2027-04-02",
-   "aLabel": "Fri Apr 2",
+   "a": "2027-04-06",
+   "aLabel": "Tue Apr 6",
    "b": "2027-04-07",
    "bLabel": "Wed Apr 7"
   },
   {
    "n": 64,
-   "a": "2027-04-06",
-   "aLabel": "Tue Apr 6",
+   "a": "2027-04-08",
+   "aLabel": "Thu Apr 8",
    "b": "2027-04-09",
    "bLabel": "Fri Apr 9"
   },
   {
    "n": 65,
-   "a": "2027-04-08",
-   "aLabel": "Thu Apr 8",
+   "a": "2027-04-12",
+   "aLabel": "Mon Apr 12",
    "b": "2027-04-13",
    "bLabel": "Tue Apr 13"
   },
   {
    "n": 66,
-   "a": "2027-04-12",
-   "aLabel": "Mon Apr 12",
+   "a": "2027-04-15",
+   "aLabel": "Thu Apr 15",
    "b": "2027-04-16",
    "bLabel": "Fri Apr 16"
   },
   {
    "n": 67,
-   "a": "2027-04-15",
-   "aLabel": "Thu Apr 15",
+   "a": "2027-04-19",
+   "aLabel": "Mon Apr 19",
    "b": "2027-04-20",
    "bLabel": "Tue Apr 20"
   },
   {
    "n": 68,
-   "a": "2027-04-19",
-   "aLabel": "Mon Apr 19",
+   "a": "2027-04-21",
+   "aLabel": "Wed Apr 21",
    "b": "2027-04-22",
    "bLabel": "Thu Apr 22"
   },
   {
    "n": 69,
-   "a": "2027-04-21",
-   "aLabel": "Wed Apr 21",
+   "a": "2027-04-23",
+   "aLabel": "Fri Apr 23",
    "b": "2027-04-26",
    "bLabel": "Mon Apr 26"
   },
   {
    "n": 70,
-   "a": "2027-04-23",
-   "aLabel": "Fri Apr 23",
+   "a": "2027-04-27",
+   "aLabel": "Tue Apr 27",
    "b": "2027-04-28",
    "bLabel": "Wed Apr 28"
   },
   {
    "n": 71,
-   "a": "2027-04-27",
-   "aLabel": "Tue Apr 27",
+   "a": "2027-04-29",
+   "aLabel": "Thu Apr 29",
    "b": "2027-04-30",
    "bLabel": "Fri Apr 30"
   },
   {
    "n": 72,
-   "a": "2027-04-29",
-   "aLabel": "Thu Apr 29",
+   "a": "2027-05-03",
+   "aLabel": "Mon May 3",
    "b": "2027-05-04",
    "bLabel": "Tue May 4"
   },
   {
    "n": 73,
-   "a": "2027-05-03",
-   "aLabel": "Mon May 3",
+   "a": "2027-05-05",
+   "aLabel": "Wed May 5",
    "b": "2027-05-06",
    "bLabel": "Thu May 6"
   },
   {
    "n": 74,
-   "a": "2027-05-05",
-   "aLabel": "Wed May 5",
+   "a": "2027-05-07",
+   "aLabel": "Fri May 7",
    "b": "2027-05-10",
    "bLabel": "Mon May 10"
   },
   {
    "n": 75,
-   "a": "2027-05-07",
-   "aLabel": "Fri May 7",
+   "a": "2027-05-11",
+   "aLabel": "Tue May 11",
    "b": "2027-05-12",
    "bLabel": "Wed May 12"
   },
   {
    "n": 76,
-   "a": "2027-05-11",
-   "aLabel": "Tue May 11",
+   "a": "2027-05-13",
+   "aLabel": "Thu May 13",
    "b": "2027-05-14",
    "bLabel": "Fri May 14"
   },
   {
    "n": 77,
-   "a": "2027-05-13",
-   "aLabel": "Thu May 13",
+   "a": "2027-05-18",
+   "aLabel": "Tue May 18",
    "b": "2027-05-19",
    "bLabel": "Wed May 19"
   },
   {
    "n": 78,
-   "a": "2027-05-18",
-   "aLabel": "Tue May 18",
+   "a": "2027-05-20",
+   "aLabel": "Thu May 20",
    "b": "2027-05-21",
    "bLabel": "Fri May 21"
   },
   {
    "n": 79,
-   "a": "2027-05-20",
-   "aLabel": "Thu May 20",
+   "a": "2027-05-24",
+   "aLabel": "Mon May 24",
    "b": "2027-05-25",
    "bLabel": "Tue May 25"
   },
   {
    "n": 80,
-   "a": "2027-05-24",
-   "aLabel": "Mon May 24",
+   "a": "2027-05-26",
+   "aLabel": "Wed May 26",
    "b": "2027-05-27",
    "bLabel": "Thu May 27"
   },
   {
    "n": 81,
-   "a": "2027-05-26",
-   "aLabel": "Wed May 26",
+   "a": "2027-05-28",
+   "aLabel": "Fri May 28",
    "b": "2027-05-31",
    "bLabel": "Mon May 31"
-  },
-  {
-   "n": 82,
-   "a": "2027-05-28",
-   "aLabel": "Fri May 28"
   }
+ ],
+ "amendments": [
+  "2026-08-21: school closed Wed 26 Aug 2026, which was the A-rotation slot for course meeting 7. The A column is shifted one slot later from meeting 7 onward; the B column is unchanged, so Thu 27 Aug remains the B section's meeting 7. The A rotation therefore runs one calendar slot behind its original master-file dates for the rest of the year. The final A-only slot (Fri 28 May 2027) is absorbed by the shift, taking the year from 82 meetings to 81; the course only schedules about 70, so nothing is lost. Regenerating this file from 2026-2027 AB Waterfall Master.xlsx will revert the shift unless the master is updated too."
  ]
 }
