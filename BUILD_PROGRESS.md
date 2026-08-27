@@ -2,7 +2,45 @@
 
 > **Purpose:** Living status doc. Tells you (and future Claude Code sessions) what's built, what's stubbed, what to build next, and in what order. The charter is in `CLAUDE.md` — do NOT modify that. Update this file at the end of each build session.
 
-**Last updated:** 2026-08-21 (Addenda 3–45 below. U0–U6 complete; U7 is next.)
+**Last updated:** 2026-08-27 (Addenda 3–46 below. U0–U6 complete; U7 is next.)
+
+---
+
+**Addendum 46 (2026-08-27): C37: the Source Dossier is due at the START of Block 7, not at Block 6. Block 6 becomes a full work block. No calendar date moves.**
+
+**The change.** Students get one more work block. The Unit 0 Source Dossier now comes in at the start of Block 7, in the same block as the defenses. Block 6 is a full work block plus the paired defense rehearsal. Unit 0 still ends at Block 7. **`rotationDates.json` is untouched**, and only what happens inside those two blocks moved.
+
+**This supersedes Addendum 45's "Deadline still holds" paragraph**, which said the dossier is submitted at Block 6 either way and that a Fri 28 Aug Classroom close was therefore safe. It is not safe any more. Post-C37 the close date must sit on or after **Tue 1 Sep**, because:
+
+| | Block 6 | Block 7 |
+|---|---|---|
+| A section | Fri 28 Aug | **Tue 1 Sep** |
+| B section | Thu 27 Aug | **Mon 31 Aug** |
+
+The C37 prompt assumed Block 7 was "28 or 31 August". It is not. **28 August is the A section's Block 6.** That is the post-Addendum-45 shift, and it is easy to get wrong twice. The site's hardcoded close date is now **Tuesday 1 September**, the later of the two Block 7 dates, so it covers both rotations. Anything set to 31 Aug locks the A section out on their own defense morning.
+
+**Ten edit sites.** The C37 prompt named five. Four more turned up on the grep sweep, and one of the five (the map page) turned out to live in data rather than in the page.
+
+1. `unit-0/assessment-source-dossier.njk`: key-dates callout rewritten. Also carries the Tue 1 Sep close date.
+2. `unit-0/block-6.njk`: see below.
+3. `unit-0/block-7.njk`: submission added at the top.
+4. `_data/unitSpine.json`: **this is the map page.** `map.njk` is a two-line stub that includes `partials/unit-map.njk`; the Block 6 "Submission day" event lived in the spine data. Block 6's event is now "Last class time on the dossier" and no longer terminates in a submission; Block 7's carries the start-of-block due.
+5. `unit-0/index.njk`: B6 card title and desc, B7 card desc, assessment card.
+6. `unit-0/block-3.njk:133` **(extra)**: "(due Block 6)" in the AI Doc practice-run line.
+7. `unit-0/block-4.njk:40` **(extra)**: the assessment introduction.
+8. `unit-0/block-5.njk:23, :119` **(extra)**: next-link label, and "the dossier you'll submit in Block 6".
+9. `student-hub/how-to-submit.njk:37` **(extra)**: the by-assessment-type table row.
+10. `unit-0/block-7.njk:19`: prev-link label.
+
+**Block 6 is retitled `Dossier Work Day 3 + Defense Rehearsal`** (short label "Block 6: Dossier Work Day 3 + Rehearsal"), continuing the Block 4 / Block 5 "Work Day" naming run. The notebook entry header picks this up on its own via `partials/notebook-cue.njk`; there was no second place to edit. Other Block 6 changes: first success criterion swapped from "I have submitted my Source Dossier" to a work-half criterion naming Limitations and synthesis; **T/T Thinking promoted from `preview` to `active`** alongside C, because half the block is now synthesis and Limitations work; Do-section timing retimed to 35 work / 30 rehearsal / 15 share, with the A-D choice board still governing the rehearsal half; new do-pastel `callout activity` at the top of the Do section, "Use this block on the thing you are avoiding", because the observed failure mode in a work block is polishing the section you already like.
+
+**What Block 6 still collects.** It does not end in nothing. The Show section now takes the rehearsal peer-feedback note **plus a progress check**: one line naming which dossier section is still unfinished going into Block 7. That line exists to surface who needs finding before the defenses. The `u0-b6` Classroom slot is kept for it.
+
+**Classroom slots.** Block 7's new top-of-block submission uses **`u0-dossier`**, which was already defined in `classroomLinks.json` and never wired to anything. It is the dossier assignment, distinct from `u0-b7` (the defense + AI Doc reflection). Block 6's old Show section had `u0-b6` doing double duty for both the dossier and the peer note; that is now clean.
+
+**Left alone on purpose, do not "fix" these:** `block-4.njk:79` and `:137` say a thin topic "will not survive the synthesis in Block 6", and synthesis still happens at Block 6, both still true. The `u0-dossier-pipeline.svg` timeline reads "Blocks 6-7" as a range, still correct. Block 6's bell-ringer (the C36 hallucinated-citation card) carries no due date. The rubric page and every strand description are untouched.
+
+**Outside the site.** The Google Classroom due date and the BoodleBox workspace deadline both need moving to **Tue 1 Sep** by hand. BoodleBox in particular: if it expires before a section's Block 7, students lose access to the AI conversations they are about to be questioned on.
 
 ---
 

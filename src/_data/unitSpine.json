@@ -39,15 +39,15 @@
       },
       {
         "block": 6,
-        "produces": "Dossier submitted; defense rehearsed twice with structured feedback",
-        "feeds": "The full dossier, collected today",
-        "event": "Submission day"
+        "produces": "Dossier finished in class; defense rehearsed twice with structured feedback",
+        "feeds": "The full dossier, handed in at the start of next block",
+        "event": "Last class time on the dossier"
       },
       {
         "block": 7,
-        "produces": "Defense delivered + AI-use reflection",
+        "produces": "Dossier handed in; defense delivered + AI-use reflection",
         "feeds": "Defense component (Communication strand)",
-        "event": "Summative feedback + strand scores follow"
+        "event": "Dossier due at the start of the block; summative feedback + strand scores follow"
       }
     ]
   }
