@@ -407,5 +407,39 @@
         "url": "/foundations/ai-documentation-protocol/"
       }
     ]
+  },
+  "HS-ESS2-3": {
+    "type": "ngss-pe",
+    "official": "Develop a model based on evidence of Earth's interior to describe the cycling of matter by thermal convection.",
+    "plain": "I can model what is inside Earth, and explain how heat moving through it drives what happens on the surface.",
+    "assessedAt": "Goldilocks Report: the geosphere and magnetic-field criteria (K/U, Component 1 locks U1 Block 7)",
+    "onTrack": "You can say what each layer is, how we know it is there without anyone having been down, and why a liquid moving core is what produces a magnetic field.",
+    "help": [
+      {
+        "label": "Earth as a Planet: deck 1",
+        "url": "/units/unit-1/reading-earth-as-a-planet/#interior"
+      },
+      {
+        "label": "The Systems Diagrammer",
+        "url": "/ai-partners/systems-diagrammer/"
+      }
+    ]
+  },
+  "HS-ESS2-7": {
+    "type": "ngss-pe",
+    "official": "Construct an argument based on evidence about the simultaneous coevolution of Earth's systems and life on Earth.",
+    "plain": "I can argue, with evidence, that life and the rest of Earth's systems changed each other.",
+    "assessedAt": "Goldilocks Report: the atmosphere criterion and the cause-versus-consequence question (T/T, locks U1 Block 7)",
+    "onTrack": "You can name at least one feature of Earth that exists because life is here, not the other way round, and cite what makes you think so.",
+    "help": [
+      {
+        "label": "Earth as a Planet: deck 2",
+        "url": "/units/unit-1/reading-earth-as-a-planet/#atmosphere"
+      },
+      {
+        "label": "Lovelock (1965) reading support",
+        "url": "/units/unit-0/readings/lovelock-1965/"
+      }
+    ]
   }
 }

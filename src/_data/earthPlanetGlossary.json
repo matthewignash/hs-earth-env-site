@@ -1,0 +1,212 @@
+{
+  "source": "Terms used in the three Earth-as-a-planet decks (U1). Adapted from OpenStax Astronomy 2e sections 8.1, 8.3, 8.4 and 8.5, CC BY-NC-SA 4.0.",
+  "generated": "2026-08-11",
+  "translationStatus": "English only for now. Translations follow in a separate pass once the cohort languages are confirmed; the language selector stays off this page until then.",
+  "languages": {},
+  "terms": [
+    {
+      "term": "density",
+      "pos": "noun",
+      "plain": "How much mass is packed into a given amount of space. Two rocks the same size can have very different densities.",
+      "note": "The whole argument for Earth having a metal core starts here: the planet as a whole is denser than the rock on its surface."
+    },
+    {
+      "term": "seismic wave",
+      "pos": "noun",
+      "plain": "A wave of energy that travels through the Earth, usually made by an earthquake.",
+      "note": "Seismic waves are the only tool we have for looking inside the planet. Everything in deck 1 rests on them."
+    },
+    {
+      "term": "shadow zone",
+      "pos": "noun",
+      "plain": "A region of Earth's surface where a particular kind of seismic wave never arrives after an earthquake.",
+      "note": "A place where nothing arrives is evidence. The shadow zone is how the liquid outer core was found."
+    },
+    {
+      "term": "crust",
+      "pos": "noun",
+      "plain": "The thin outer rock layer of a planet. On Earth it is a few kilometers thick under the oceans and much thicker under the continents.",
+      "note": "Only 0.3 percent of Earth's mass, and the only part anyone has ever sampled directly."
+    },
+    {
+      "term": "mantle",
+      "pos": "noun",
+      "plain": "The thick rock layer between a planet's crust and its core. On Earth it reaches down about 2,900 km.",
+      "note": "Solid, but it can deform slowly under pressure, which is what lets it move over long periods."
+    },
+    {
+      "term": "core",
+      "pos": "noun",
+      "plain": "The dense metal center of a planet. Earth's has a liquid outer part and a solid inner part.",
+      "note": "Mostly iron and nickel. The liquid outer part is what generates the magnetic field."
+    },
+    {
+      "term": "basalt",
+      "pos": "noun",
+      "plain": "A dark, dense volcanic rock. It makes up most of the ocean floor.",
+      "note": ""
+    },
+    {
+      "term": "granite",
+      "pos": "noun",
+      "plain": "A lighter-colored, less dense rock. It makes up most of the continents.",
+      "note": "Continents float higher than ocean floor because granite is less dense than basalt."
+    },
+    {
+      "term": "differentiation",
+      "pos": "noun",
+      "plain": "The sorting of a planet's material by density while the planet is molten: heavy material sinks to the middle, light material rises to the top.",
+      "note": "A planet has to be hot enough to be liquid for this to happen. A planet that never melted would be the same all the way through."
+    },
+    {
+      "term": "dynamo",
+      "pos": "noun",
+      "plain": "A process that generates a magnetic field from moving, electrically conducting fluid. In a planet, that fluid is liquid metal in the core.",
+      "note": "Say \"process\", not \"thing\". A dynamo needs the motion to continue; if the core stops circulating, the field goes away."
+    },
+    {
+      "term": "magnetic field",
+      "pos": "noun",
+      "plain": "The region of magnetic influence around a magnet or a planet, and the strength and direction of that influence at each point.",
+      "note": ""
+    },
+    {
+      "term": "magnetosphere",
+      "pos": "noun",
+      "plain": "The region around a planet where the planet's own magnetic field is stronger than the magnetic field carried by the solar wind.",
+      "note": "Earth's reaches about 60,000 km on the day side and is stretched into a long tail on the night side."
+    },
+    {
+      "term": "solar wind",
+      "pos": "noun",
+      "plain": "The constant stream of charged particles blowing outward from the Sun in all directions.",
+      "note": "This is what stripped Mars. It is the thing a magnetosphere protects you from."
+    },
+    {
+      "term": "Van Allen belts",
+      "pos": "noun",
+      "plain": "Two zones of high-energy charged particles trapped inside Earth's magnetic field.",
+      "note": "Found by Explorer 1 in 1958, the first American satellite. Named for the scientist whose instrument detected them."
+    },
+    {
+      "term": "primary atmosphere",
+      "pos": "noun",
+      "plain": "The first atmosphere a planet has, made of the light gases it captured from the cloud it formed in: mostly hydrogen and helium.",
+      "note": "Earth lost its primary atmosphere. Jupiter kept its own, because it is far more massive and far colder."
+    },
+    {
+      "term": "secondary atmosphere",
+      "pos": "noun",
+      "plain": "The replacement atmosphere a planet builds from gas released out of its own interior.",
+      "note": "Earth's second atmosphere came out of volcanoes. Our current one is arguably a third, because life rebuilt it."
+    },
+    {
+      "term": "outgassing",
+      "pos": "noun",
+      "plain": "The release of gas that was trapped inside a planet's rock out to its surface, mostly through volcanoes.",
+      "note": ""
+    },
+    {
+      "term": "bar",
+      "pos": "noun",
+      "plain": "A unit of pressure, defined as exactly 100 kilopascals. It was chosen because it is close to the pressure of Earth's atmosphere at sea level.",
+      "note": "Close to, not equal to. Earth's actual sea-level pressure is about 101 kPa, so about 1.01 bar. Astronomers round it to 1 bar and use that as the planetary yardstick."
+    },
+    {
+      "term": "kilopascal",
+      "pos": "noun",
+      "plain": "A metric unit of pressure, written kPa. Earth's sea-level air pressure is about 101 kPa.",
+      "note": "1 bar = 100 kPa exactly. Pick one unit for your framework column and stay in it; do not convert halfway down the table."
+    },
+    {
+      "term": "carbonate",
+      "pos": "noun",
+      "plain": "A mineral that contains carbon and oxygen bonded together, formed when dissolved carbon dioxide reacts with rock. Limestone is made of it.",
+      "note": "Most of the carbon dioxide Earth's volcanoes released is now locked in carbonate rock, not in the air."
+    },
+    {
+      "term": "stromatolite",
+      "pos": "noun",
+      "plain": "A layered mound built up in shallow water by mats of microbes trapping sediment.",
+      "note": "Among the oldest fossil evidence of life on Earth, and the oldest you can look at in a photograph. The well-accepted ones are about 3.5 billion years old."
+    },
+    {
+      "term": "microbe",
+      "pos": "noun",
+      "plain": "A living thing too small to see without a microscope, such as a bacterium.",
+      "note": "For most of Earth's history, microbes were the only life there was."
+    },
+    {
+      "term": "photosynthesis",
+      "pos": "noun",
+      "plain": "The process by which some living things use sunlight to build sugar out of carbon dioxide and water, releasing oxygen as waste.",
+      "note": "The oxygen in the air you are breathing is a waste product. That framing is worth sitting with."
+    },
+    {
+      "term": "cyanobacteria",
+      "pos": "noun",
+      "plain": "A group of bacteria that can photosynthesize. Older texts call them blue-green algae, but they are not algae.",
+      "note": "OpenStax uses the older name. The organism is the same."
+    },
+    {
+      "term": "ozone",
+      "pos": "noun",
+      "plain": "A molecule made of three oxygen atoms, written O3. It forms high in the atmosphere and absorbs ultraviolet light.",
+      "note": "Ordinary oxygen is O2. Ozone is a different molecule with different behavior."
+    },
+    {
+      "term": "ultraviolet",
+      "pos": "noun",
+      "plain": "Light with more energy than the violet end of the visible range. You cannot see it, and it damages living tissue.",
+      "note": "Often shortened to UV."
+    },
+    {
+      "term": "disequilibrium",
+      "pos": "noun",
+      "plain": "A state that has not settled down: gases that should have finished reacting with each other are still both present.",
+      "note": "Lovelock's whole 1965 argument, from Unit 0 Block 2. Disequilibrium needs something to keep maintaining it."
+    },
+    {
+      "term": "biosignature",
+      "pos": "noun",
+      "plain": "Something you can measure about a planet that would be hard to explain unless something living were there.",
+      "note": "The oxygen-and-methane pair is the standard example. It is Hitchcock and Lovelock's, from 1967, two years after the paper you read in Unit 0. A biosignature is a strong hint, never a proof."
+    },
+    {
+      "term": "impact crater",
+      "pos": "noun",
+      "plain": "A bowl-shaped hollow left where an object from space struck a planet or moon.",
+      "note": ""
+    },
+    {
+      "term": "erosion",
+      "pos": "noun",
+      "plain": "The wearing away and carrying off of rock and soil by water, ice, wind, or gravity.",
+      "note": "Unit 2 is built on this. Here it matters because it is one of the reasons Earth has so few visible craters."
+    },
+    {
+      "term": "plate tectonics",
+      "pos": "noun",
+      "plain": "The slow movement of the large sections that Earth's crust is broken into, driven by motion in the mantle below.",
+      "note": "Unit 3 covers this properly. Here you only need one consequence: crust gets recycled, so old surfaces do not survive."
+    },
+    {
+      "term": "iridium",
+      "pos": "noun",
+      "plain": "A dense metal that is rare in Earth's crust but common in asteroids.",
+      "note": "Finding a lot of it in a thin worldwide clay layer is what made scientists predict a large impact before the crater was found."
+    },
+    {
+      "term": "mass extinction",
+      "pos": "noun",
+      "plain": "An event in which a large share of the species alive on Earth die out in a short period of geological time.",
+      "note": ""
+    },
+    {
+      "term": "near-Earth object",
+      "pos": "noun",
+      "plain": "An asteroid or comet whose orbit brings it close to Earth's orbit.",
+      "note": "Often shortened to NEO. Surveys track them; the DART mission tested whether one could be pushed off course."
+    }
+  ]
+}

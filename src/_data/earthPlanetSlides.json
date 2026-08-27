@@ -1,0 +1,236 @@
+{
+  "source": {
+    "title": "Astronomy 2e",
+    "publisher": "OpenStax, Rice University",
+    "sections": "8.1 The Global Perspective; 8.3 Earth's Atmosphere; 8.4 Life, Chemical Evolution, and Climate Change; 8.5 Cosmic Influences on the Evolution of Earth",
+    "license": "CC BY-NC-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-nc-sa/4.0/",
+    "accessUrl": "https://openstax.org/books/astronomy-2e/pages/1-introduction",
+    "note": "Slide text is our own adaptation of OpenStax material and carries the same CC BY-NC-SA 4.0 license. Figures keep their original OpenStax credit lines. Where a number has moved on since the textbook was written, the slide says so rather than quietly following it."
+  },
+  "decks": {
+    "interior": {
+      "id": "interior",
+      "label": "Earth from the inside out",
+      "intro": "Nine steps down through the planet you are about to use as a baseline. Read these before Block 3, because the Mars story runs on them.",
+      "slides": [
+        {
+          "n": 1,
+          "title": "Why start underground?",
+          "body": "This unit asks you to compare Earth with Mars and with a planet nobody will ever visit. Before you can say what Earth has, you need to know what Earth is. Almost everything that keeps this planet livable is generated below your feet, by machinery you cannot see.",
+          "cite": "OpenStax Astronomy 2e, 8.1",
+          "terms": [],
+          "image": "/assets/img/u1/openstax-8-2-blue-marble.webp",
+          "imageAlt": "The full disk of Earth photographed by the Apollo 17 crew: Africa, the Arabian Peninsula and the Antarctic ice sheet visible against black space.",
+          "imageCredit": "OpenStax Astronomy 2e, Figure 8.2 — credit: modification of work by NASA"
+        },
+        {
+          "n": 2,
+          "title": "A planet you cannot open",
+          "body": "Earth's radius is about 6,371 kilometers. The deepest hole anyone has ever drilled reaches about 12 kilometers. That is one five-hundredth of the way. Every claim you are about to read about the inside of this planet is indirect. Nobody has seen any of it.",
+          "cite": "OpenStax Astronomy 2e, 8.1",
+          "terms": []
+        },
+        {
+          "n": 3,
+          "title": "The clue is the weight",
+          "body": "Weigh the whole planet, divide by its volume, and Earth averages about 5.5 grams per cubic centimeter. Now pick up a rock. Surface rock is about 3. The planet is roughly twice as dense as the material it is wrapped in. Something much heavier has to be down there.",
+          "cite": "OpenStax Astronomy 2e, 8.1",
+          "terms": ["density"]
+        },
+        {
+          "n": 4,
+          "title": "How we look inside",
+          "body": "Earthquakes send waves through the whole planet. The waves speed up, slow down and bend as they cross from one material into another, and some of them stop dead at a liquid. Detectors all over the world record when each wave arrives. From the pattern of arrivals — including the places where nothing arrives at all — the layers can be mapped. It is the same idea as an ultrasound scan.",
+          "cite": "OpenStax Astronomy 2e, 8.1",
+          "terms": ["seismic wave", "shadow zone"]
+        },
+        {
+          "n": 5,
+          "title": "What the waves found",
+          "body": "Four layers. The crust is the thin skin: about 6 km of basalt under the oceans, 20 to 70 km of granite under the continents, and only 0.3 percent of the planet's mass. The mantle is the huge solid middle, reaching down 2,900 km. Below that the outer core is liquid metal, and at the center sits a solid inner core about 2,400 km across. Take the metal core as a whole and it is about 7,000 km wide — substantially larger than the entire planet Mercury.",
+          "cite": "OpenStax Astronomy 2e, 8.1",
+          "terms": ["crust", "mantle", "core", "basalt", "granite"],
+          "image": "/assets/img/u1/openstax-8-3-earth-interior.webp",
+          "imageAlt": "Cut-away diagram of Earth showing the thin crust, the thick mantle, the liquid outer core and the solid inner core, with depths marked.",
+          "imageCredit": "OpenStax Astronomy 2e, Figure 8.3"
+        },
+        {
+          "n": 6,
+          "title": "How it got sorted",
+          "body": "Early Earth was hot enough to be largely molten. In a molten planet, heavy material sinks and light material floats, exactly the way oil separates from water. Iron and nickel went to the center. Lighter rock rose to the top and became the crust. Scientists call this sorting differentiation, and it is why Earth has a metal core at all.",
+          "cite": "OpenStax Astronomy 2e, 8.1",
+          "terms": ["differentiation"]
+        },
+        {
+          "n": 7,
+          "title": "The machine in the middle",
+          "body": "The outer core is liquid metal, and it is moving. Heat escaping from the core out into the mantle keeps it circulating, helped along by light material squeezed out as the inner core slowly freezes. Moving metal means moving electric charge, and moving electric charge generates a magnetic field. Earth's field is not a bar magnet buried in the middle. It is a process, and processes can stop.",
+          "cite": "OpenStax Astronomy 2e, 8.1",
+          "terms": ["dynamo", "magnetic field"]
+        },
+        {
+          "n": 8,
+          "title": "What the field buys you",
+          "body": "The Sun blows a constant stream of charged particles past us at hundreds of kilometers per second. Earth's magnetic field carves out a protected bubble in that stream, called the magnetosphere. It reaches roughly 60,000 km toward the Sun and is dragged out into a long tail on the night side. Particles that do get caught are held in the Van Allen belts, found by Explorer 1 in 1958 — the first discovery of the space age.",
+          "cite": "OpenStax Astronomy 2e, 8.1",
+          "terms": ["magnetosphere", "solar wind", "Van Allen belts"],
+          "image": "/assets/img/u1/openstax-8-5-magnetosphere.webp",
+          "imageAlt": "Cross-section of Earth's magnetosphere: field lines compressed on the side facing the solar wind and stretched into a long tail on the far side.",
+          "imageCredit": "OpenStax Astronomy 2e, Figure 8.5"
+        },
+        {
+          "n": 9,
+          "title": "Now read Block 3 again",
+          "body": "Block 3 tells you Mars is smaller, so its core cooled faster, so its magnetic field collapsed, so the solar wind stripped its air away. Until now that was a chain you had to take on trust. You now know what each link is made of. Your job: write the chain out in your own words, and mark the one link you would still want more evidence for.",
+          "cite": "Links to Unit 1, Block 3",
+          "terms": [],
+          "isTask": true
+        }
+      ]
+    },
+    "atmosphere": {
+      "id": "atmosphere",
+      "label": "The air Earth kept",
+      "intro": "Nine steps from a planet with no breathable air to one whose atmosphere is visible evidence that something is alive on it. This is the Lovelock idea from Unit 0, told forwards.",
+      "slides": [
+        {
+          "n": 1,
+          "title": "Not original equipment",
+          "body": "The air you are breathing is not the air this planet started with. A small, warm planet cannot hold on to hydrogen or helium, so whatever Earth captured from the cloud it formed in leaked away early. What replaced it is less settled than you might expect. OpenStax lists three candidate sources — gas trapped as Earth built itself, gas released from the interior, and material delivered by comets and asteroids — and says the evidence currently favors the last two.",
+          "cite": "OpenStax Astronomy 2e, 8.3",
+          "terms": ["primary atmosphere"]
+        },
+        {
+          "n": 2,
+          "title": "What it is now",
+          "body": "Take the water out of a sample of air and it is 78 percent nitrogen, 21 percent oxygen and about 1 percent argon. Carbon dioxide is a trace, about 0.04 percent, and it matters far more than that number suggests. Water vapor is separate again, swinging from almost nothing to around 4 percent depending on where and when you measure. At sea level all of it together presses down at about 101 kilopascals. Astronomers write that as 1 bar.",
+          "cite": "OpenStax Astronomy 2e, 8.3",
+          "terms": ["bar", "kilopascal"]
+        },
+        {
+          "n": 3,
+          "title": "Where the second air came from",
+          "body": "Volcanoes. A hot young planet vents gas trapped inside it out through its crust, a process called outgassing. What came out was mostly carbon dioxide, nitrogen and water vapor. There was essentially no free oxygen in it. Nothing you know could have breathed it.",
+          "cite": "OpenStax Astronomy 2e, 8.3",
+          "terms": ["outgassing", "secondary atmosphere"]
+        },
+        {
+          "n": 4,
+          "title": "Where most of the carbon went",
+          "body": "The water vapor cooled and rained out, and the oceans are what is left of that rain. Carbon dioxide dissolves in water, and dissolved carbon dioxide reacts with rock to make carbonate, which settles as sediment. So Earth's early carbon dioxide is not gone: most of it is in the limestone. Venus, with no oceans, kept its carbon dioxide in the air — and runs at about 460 degrees Celsius.",
+          "cite": "OpenStax Astronomy 2e, 8.3 and 8.4; Venus surface temperature from NASA",
+          "terms": ["carbonate"]
+        },
+        {
+          "n": 5,
+          "title": "Something starts living in it",
+          "body": "Life got going early, though exactly how early is contested. OpenStax puts life on Earth by about 3.9 billion years ago; that evidence is chemical rather than fossil, and other scientists have argued the same signals could be produced without life. The oldest evidence most people accept, and the oldest you can look at in a photograph, is stromatolites: layered mounds built by mats of microbes in shallow water, about 3.5 billion years old, and still forming in a few places today.",
+          "cite": "OpenStax Astronomy 2e, 8.4",
+          "terms": ["stromatolite", "microbe"],
+          "image": "/assets/img/u1/openstax-8-15-stromatolites.webp",
+          "imageAlt": "Polished cross-section through a fossil stromatolite showing stacked dome-shaped layers of trapped sediment.",
+          "imageCredit": "OpenStax Astronomy 2e, Figure 8.15 — credit: James St. John"
+        },
+        {
+          "n": 6,
+          "title": "The waste product that changed the planet",
+          "body": "Some of those microbes could photosynthesize: use sunlight to build sugar from carbon dioxide and water. Oxygen is what that reaction throws away. For a long time the oxygen was mopped up by rock and dissolved iron as fast as it was made. Then the sinks filled and free oxygen started building up in the air. OpenStax dates that to about 2 billion years ago; current geochemistry puts the start nearer 2.4 billion. Either way, the largest change in the history of Earth's atmosphere was pollution released by something living.",
+          "cite": "OpenStax Astronomy 2e, 8.4, with the more recent date noted",
+          "terms": ["photosynthesis", "cyanobacteria"]
+        },
+        {
+          "n": 7,
+          "title": "Oxygen builds a roof",
+          "body": "High in the atmosphere, ultraviolet light splits oxygen molecules and the fragments re-form as ozone, a molecule of three oxygen atoms. Ozone absorbs the ultraviolet that would otherwise reach the ground and wreck the chemistry of anything living there. Only once that layer existed could life leave the water and move onto land. The shield is made out of the waste.",
+          "cite": "OpenStax Astronomy 2e, 8.3 and 8.4",
+          "terms": ["ozone", "ultraviolet"],
+          "image": "/assets/img/u1/openstax-8-12-atmosphere-structure.webp",
+          "imageAlt": "Diagram of the atmosphere's layers from troposphere to ionosphere. Height increases up the left-hand side, temperature runs along the bottom, and the ozone layer sits in the stratosphere.",
+          "imageCredit": "OpenStax Astronomy 2e, Figure 8.12"
+        },
+        {
+          "n": 8,
+          "title": "So the air is the evidence",
+          "body": "Earth's atmosphere holds 21 percent oxygen and a steady trace of methane at the same time. Those two react with each other. On a dead planet they would have finished reacting long ago and the mixture would have settled. They have not settled here, because living things keep making more of both. That is Lovelock's argument from Unit 0, arrived at from the other direction. The modern version is narrower and worth knowing precisely: Thompson and colleagues calculated that methane together with carbon dioxide, and very little carbon monoxide, would be the detectable sign of life on a TRAPPIST-1e resembling early Earth, and that the JWST could test for it in roughly 5 to 10 transits. Oxygen itself is the harder target, and they say so.",
+          "cite": "OpenStax Astronomy 2e, 8.4; Lovelock 1965; Thompson et al. 2022",
+          "terms": ["disequilibrium", "biosignature"]
+        },
+        {
+          "n": 9,
+          "title": "Now the part that is yours",
+          "body": "Two questions to take into Block 7. First: which entries in Earth's column of your framework are causes of life, and which are consequences of it? Second: if you applied your framework to Earth as it was 3 billion years ago — no oxygen, no ozone, life definitely present — how many criteria would Earth fail? If the answer is any, your framework has a problem worth writing about.",
+          "cite": "Links to Unit 1, Block 7",
+          "terms": [],
+          "isTask": true
+        }
+      ]
+    },
+    "impacts": {
+      "id": "impacts",
+      "label": "The factor nobody lists",
+      "intro": "Seven steps on the habitability factor that almost never makes it onto the Block 1 board. Extension: not required, but it ends with a Limitation you can use.",
+      "slides": [
+        {
+          "n": 1,
+          "title": "Check your Block 1 list",
+          "body": "Distance from the star. Liquid water. An atmosphere. A magnetic field. The right size. Every class produces roughly that list. Almost nobody writes down \"does not get hit very often\", and yet the history of life on this planet has been rewritten by objects arriving from space.",
+          "cite": "OpenStax Astronomy 2e, 8.5",
+          "terms": []
+        },
+        {
+          "n": 2,
+          "title": "So where are our craters?",
+          "body": "The Moon is saturated with impact craters. Earth, a bigger target in the same neighborhood, shows almost none. Earth is not being missed. Earth erases. Crust is recycled at plate boundaries, rain and rivers grind the surface down, and oceans and vegetation cover what is left. The Moon has none of those, so it keeps its receipts.",
+          "cite": "OpenStax Astronomy 2e, 8.2 and 8.5",
+          "terms": ["impact crater", "erosion", "plate tectonics"]
+        },
+        {
+          "n": 3,
+          "title": "One that survived",
+          "body": "Meteor Crater in Arizona is about 1.2 km across and about 50,000 years old. The object that made it was a lump of iron roughly 40 meters wide. It is well preserved for one reason: it sits in a desert, where there is little water to wear it away.",
+          "cite": "OpenStax Astronomy 2e, 8.5",
+          "terms": [],
+          "image": "/assets/img/u1/openstax-8-21-meteor-crater.webp",
+          "imageAlt": "Aerial photograph of Meteor Crater, Arizona: a circular bowl with a raised rim standing in flat desert.",
+          "imageCredit": "OpenStax Astronomy 2e, Figure 8.21 — modification of work by D. Roddy/USGS"
+        },
+        {
+          "n": 4,
+          "title": "One that never landed",
+          "body": "In 1908 an object came in over Tunguska in Siberia and exploded in the air. It flattened forest across more than 2,000 square kilometers and left no crater, because it never reached the ground. How big and how energetic is still argued over: OpenStax says about 10 megatons, later modeling of the air-burst gets down to 3 to 5, and the estimated size of the object moves with the model, somewhere between about 30 and 60 meters. An atmosphere is a shield as well as a blanket.",
+          "cite": "OpenStax Astronomy 2e, 8.5, with the range from later modeling",
+          "terms": [],
+          "image": "/assets/img/u1/openstax-8-20-tunguska.webp",
+          "imageAlt": "Photograph taken 19 years after the Tunguska explosion showing a forest of trees snapped off and lying flattened in one direction.",
+          "imageCredit": "OpenStax Astronomy 2e, Figure 8.20 — modification of work by Leonid Kulik"
+        },
+        {
+          "n": 5,
+          "title": "The one that changed everything",
+          "body": "About 66 million years ago an object roughly 10 km across struck what is now the Yucatán peninsula in Mexico. The impact threw enough material into the atmosphere to darken the sky, started fires, and acidified the rain. Around three quarters of species on Earth died, including every dinosaur that was not a bird. The crater is still there, buried under about a kilometer of younger sediment.",
+          "cite": "OpenStax Astronomy 2e, 8.5, with the current date and species estimate",
+          "terms": ["mass extinction"],
+          "image": "/assets/img/u1/openstax-8-22-chicxulub.webp",
+          "imageAlt": "Map of the Yucatán peninsula in Mexico with the buried Chicxulub crater outlined off the northern coast.",
+          "imageCredit": "OpenStax Astronomy 2e, Figure 8.22 — modification of work by \"Carport\"/Wikimedia"
+        },
+        {
+          "n": 6,
+          "title": "How that was worked out",
+          "body": "Nobody went looking for a crater. In 1980 a team reported that a thin clay layer laid down at exactly the extinction boundary — measured at sites in Italy, Denmark and New Zealand — was unusually rich in iridium, a metal rare in Earth's crust and common in asteroids. From that they predicted a large impact. Here is the part worth sitting with: a buried circular structure under the Yucatán had already been mapped by oil-company geophysicists in 1978, and nobody had read it as a crater. It was recognized as one in 1991, in the place and of the age the prediction required. The evidence was on the shelf before anyone knew what question it answered.",
+          "cite": "OpenStax Astronomy 2e, 8.5, with the discovery history",
+          "terms": ["iridium"]
+        },
+        {
+          "n": 7,
+          "title": "Now the part that is yours",
+          "body": "Impacts are a real habitability variable, and here is the uncomfortable part: for your exoplanet you can barely measure it. You have no impact history at all. And the tidy idea that a big outer planet acts as a shield turns out to be contested — some modeling finds a giant planet can raise the impact rate on an inner world rather than lower it. Write that into the Limitations section of your Goldilocks Report, in your own words, and say what you would need to observe to do better than a guess.",
+          "cite": "Links to the Goldilocks Report",
+          "terms": ["near-Earth object"],
+          "isTask": true
+        }
+      ]
+    }
+  }
+}

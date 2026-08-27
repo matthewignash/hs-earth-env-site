@@ -2,8 +2,47 @@
 
 > **Purpose:** Living status doc. Tells you (and future Claude Code sessions) what's built, what's stubbed, what to build next, and in what order. The charter is in `CLAUDE.md` — do NOT modify that. Update this file at the end of each build session.
 
-**Last updated:** 2026-08-27 (Addenda 3–47 below. U0–U6 complete; U7 is next.)
+**Last updated:** 2026-08-27 (Addenda 3–48 below. U0–U6 complete; U7 is next.)
 
+
+
+---
+
+**Addendum 48 (2026-08-27): C34, finally shipped. Earth as a Planet exists, and the Lovelock carousel is now a reusable component instead of a one-page fixture.**
+
+**C34 had never been run.** Its two data files had been sitting in the parent folder since 11 August and `/units/unit-1/reading-earth-as-a-planet/` did not exist, which is why C38 opens by telling you to run C34 first. Both files were copied in byte for byte (md5-checked against the originals), not retyped.
+
+**THE REFACTOR.** The carousel used to live inline in `unit-0/readings/lovelock-1965.njk`, hard-wired to `getElementById("lovelock-slides")`. That caps a page at exactly one deck, and the new page needs three. Three new files:
+
+- `_includes/partials/slide-carousel.njk` renders one deck.
+- `_includes/partials/term-cards.njk` renders the hidden definition stack for whichever glossary is passed.
+- `assets/slide-carousel.js` carries the behaviour and **binds to every `[data-carousel]` independently**.
+
+`lovelock-1965.njk` went from 303 lines to 112 and is a pure refactor. **Verified by diffing the rendered HTML before and after**: the only changes are the added `data-carousel="lovelock"` attribute and the inline `<script>` becoming `<script src>`. Every other byte of markup is identical, including `id="lovelock-slides"`, which the partial reproduces from `carousel.id`.
+
+**Things that had to be preserved and nearly were not:**
+
+1. **Swipe.** The old carousel had touchstart/touchend handling with a 45px threshold. C34's spec for the extracted JS does not mention it. It is carried over and was tested by dispatching synthetic TouchEvents (Step 2 to Step 3 on a left swipe).
+2. **The independent-index requirement.** C34 names the lazy failure explicitly, and it is real: one module-level `index` means Next on deck 2 advances deck 3. Each carousel gets its own closure. Tested: two Next clicks on `atmosphere` moved atmosphere from Step 1 to Step 3 and left `interior` and `impacts` on Step 1, each announcing its own deck in its own live region.
+3. **The language selector must not render on the new page.** `earthPlanetGlossary.languages` is `{}`, so the partial's translation loop never runs, and the `<select>` markup stays on the Lovelock page rather than moving into a partial. Verified: 0 translation rows, no `#lang`, and the JS language handler no-ops when there is no select.
+4. **The "Also in: course glossary" link is Lovelock-specific.** There is no U1 glossary page, so `term-cards.njk` renders it only when passed a `glossaryUrl`. Lovelock keeps its 30 links; the new page has none.
+
+**CSS: five new rules, not the two C34 anticipated.** `.slide-cite` and `.slide-credit` are the two the prompt authorises. Three more were unavoidable, and no existing rule was touched:
+
+- **`.udl-tag` could not be reused as written.** It is scoped `.choice .udl-tag` in `block-page.css`, so it does not reach a reading page at all, whatever stylesheets load. `.deck-extension-note .udl-tag` repeats its look where the Extension tag actually sits.
+- `.table-caption` and `.license-box` had no existing equivalent. `.license-box` is the bordered box C34 asks for.
+
+**Print behaviour, worth knowing before someone "fixes" it.** C34's verify line says print shows definitions expanded. The print stylesheet hides `.term-cards` entirely, so definitions reach print through the **word list**, which prints on its own page carrying all 34. That is pre-existing behaviour shared with Lovelock, and changing it would alter Lovelock's print output, which had to stay identical. Left alone deliberately.
+
+**THE IMAGES.** All eight OpenStax figures downloaded successfully (HTTP 200, valid webp) into `assets/img/u1/`, with `CREDITS.md` beside them. The URLs carry a June 2026 archive version pin and will eventually rot, which is exactly why the files are in the repo rather than hot-linked. The credit line a student sees comes from the `imageCredit` field in the data file, so attribution travels with the slide; CREDITS.md exists so it cannot get separated from the files.
+
+**STANDARDS.** C34 ends with a decision to confirm, and the answer was yes: **HS-ESS2-3 and HS-ESS2-7 both added** to `standardsCatalog.json`, with `block-2` and `block-3` retagged `["HS-ESS2-2", "HS-ESS2-3"]` and `block-7` `["HS-ESS1-1", "HS-ESS2-2", "HS-ESS2-7"]`. HS-ESS2-7 was absent from the entire course before this. **HS-ESS1-6 is deliberately unclaimed**: deck 3 is optional, and a standards map that counts optional extensions as coverage is a standards map that lies to you in March.
+
+**SCOPE GUARDS, which are how this job goes wrong.** No plate tectonics (deck 3's one sentence on crustal recycling stays one sentence; Unit 3 owns it). No greenhouse or climate mechanism beyond the three-numbers callout; Unit 4 owns it. No weather-versus-climate. Nothing in Unit 0 touched beyond the mechanical refactor. Verified: `23 °C` appears exactly once site-wide, inside the three-numbers callout.
+
+**Verified:** three carousels of 9, 9 and 7; Prev disabled at step 1 and Next disabled at step 9 with no wrapping after 20 clicks; Show all on one deck expands only that deck; arrow keys move only the focused carousel and do nothing from `document.body`; all 34 chips open a non-empty card; all 8 images load with alt text and a visible credit line; no console errors; no horizontal overflow. **JS-off degradation checked in the raw HTML on both pages: zero slides ship with `hidden`, every `slide-nav` does.** Lovelock re-tested feature by feature: 9 slides, nav, live region, Show all, word list of 30, 30 term cards with glossary links, 180 translation rows, and ja/zh/fr each switching 30 rows on.
+
+**Note on screenshots:** the browser pane in this session would not repaint for screenshots, so every visual check was done through the DOM and computed styles instead (element dimensions, backgrounds, font sizes, overflow). Worth a human eye on the page.
 
 ---
 

@@ -1,0 +1,41 @@
+{#- The hidden definition cards a term chip opens. They live outside the reading
+    column so the script can move one next to whichever word was tapped.
+
+    Usage:
+      {% set termCards = { glossary: earthPlanetGlossary } %}
+      {% include "partials/term-cards.njk" %}
+
+    Translation rows and the verified-by spans only render for a glossary that
+    declares `languages`. earthPlanetGlossary ships with an empty languages
+    object, so that page gets term, part of speech, plain definition and note.
+
+    glossaryUrl is optional: the "Also in: course glossary" link only renders for
+    a glossary that has a course-glossary page to point at. -#}
+{%- set glossary = termCards.glossary -%}
+<div class="term-cards">
+  {%- for entry in glossary.terms %}
+  <div class="term-card" id="term-{{ entry.term | termSlug }}" hidden>
+    <p class="tc-head"><strong>{{ entry.term }}</strong> <span class="tc-pos">{{ entry.pos }}</span></p>
+    <p class="tc-plain">{{ entry.plain }}</p>
+    {%- if entry.note %}<p class="tc-note">{{ entry.note }}</p>{% endif %}
+    {%- for code, label in glossary.languages %}
+    {%- set translation = entry.t[code] %}
+    {%- if translation %}
+    <p class="tc-translation{% if entry.verifiedBy and entry.verifiedBy[code] %} is-verified{% endif %}" data-lang="{{ code }}" hidden>
+      <span class="tc-lang">{{ label }}</span>
+      <span class="tc-term">{{ translation }}</span>
+      {%- if entry.verifiedBy and entry.verifiedBy[code] %}
+      <span class="tc-verified">verified by {{ entry.verifiedBy[code] }}{% if entry.verifiedDate and entry.verifiedDate[code] %}, {{ entry.verifiedDate[code] }}{% endif %}</span>
+      {%- else %}
+      <span class="tc-unverified">unverified</span>
+      {%- endif %}
+    </p>
+    {%- endif %}
+    {%- endfor %}
+    {%- if entry.flag %}<p class="tc-flag">{{ entry.flag }}</p>{% endif %}
+    {%- if termCards.glossaryUrl %}
+    <p class="tc-links"><a href="{{ termCards.glossaryUrl }}#term-{{ entry.term | termSlug }}">Also in: course glossary</a></p>
+    {%- endif %}
+  </div>
+  {%- endfor %}
+</div>

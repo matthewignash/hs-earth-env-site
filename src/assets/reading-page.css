@@ -440,3 +440,49 @@ button.term[aria-expanded="true"] { background: var(--accent-light); }
   .wl-entry { break-inside: avoid; border-left: 2pt solid #999; }
   .path-item { break-inside: avoid; }
 }
+
+/* ====== Earth as a Planet (U1) ====== */
+/* Slide provenance. Same muted family as .slide-find: present when you look for
+   it, never competing with the slide body. .slide-cite carries the section a
+   slide is adapted from; .slide-credit carries a figure's original OpenStax
+   credit line and sits inside the figure so attribution cannot drift from the
+   image it belongs to. */
+.slide-cite {
+  font-size: 12px;
+  color: var(--muted);
+  margin-bottom: 0;
+}
+.slide-credit {
+  font-size: 12px;
+  color: var(--muted);
+  margin-top: 6px;
+}
+.table-caption {
+  font-size: 13px;
+  color: var(--muted);
+}
+/* The deck-3 Extension marker. It cannot reuse the choice board's tag: that rule
+   is scoped `.choice .udl-tag`, so it does not reach a reading page. Same look,
+   reachable here. */
+.deck-extension-note {
+  font-size: 13px;
+  color: var(--muted);
+}
+.deck-extension-note .udl-tag {
+  display: inline-block;
+  font-size: 11px;
+  background: var(--soft);
+  padding: 2px 6px;
+  border-radius: 4px;
+  margin-right: 6px;
+  color: var(--muted);
+}
+.license-box {
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 16px 20px;
+  margin: 24px 0;
+  font-size: 13px;
+  color: var(--muted);
+}
+.license-box p:last-child { margin-bottom: 0; }

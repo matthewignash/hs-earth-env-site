@@ -1,0 +1,127 @@
+---
+layout: layouts/base.njk
+title: "Earth as a Planet"
+tagline: The shared baseline for Unit 1 · links from Blocks 2, 3 and 7 · adapted from OpenStax Astronomy 2e
+extraStylesheets:
+  - /assets/reading-page.css
+breadcrumbs:
+  - { url: /, label: Home }
+  - { url: /units/, label: Units }
+  - { url: /units/unit-1/, label: "Unit 1: Earth and Universe" }
+  - { label: "Earth as a Planet" }
+returnTo:
+  - { url: /units/unit-1/block-2/, label: "Unit 1 · Block 2" }
+  - { url: /units/unit-1/block-3/, label: "Unit 1 · Block 3" }
+powerSeeds: ["what is inside Earth and how we know", "where the air came from", "why the field matters"]
+---
+
+{%- set glossary = earthPlanetGlossary -%}
+{%- set terms = glossary.terms -%}
+{#- Terms the three decks actually use, so the word list can mark them. -#}
+{%- set slideTerms = [] -%}
+{%- for deckKey, deck in earthPlanetSlides.decks -%}{%- for s in deck.slides -%}{%- for t in s.terms -%}
+{%- set slideTerms = (slideTerms.push(t), slideTerms) -%}
+{%- endfor -%}{%- endfor -%}{%- endfor -%}
+
+<div class="prose">
+
+{% include "partials/power-seeds.njk" %}
+
+<p>Unit 1 asks you to compare Earth against Mars and against a planet nobody will ever visit. That comparison only works if everyone in the room is holding the same Earth. This page is that shared Earth: what the planet is made of, where its air came from, and how we know either of those things without ever having been inside it. Two decks are for everybody. The third is an extension for anyone who wants the habitability factor almost nobody thinks to list.</p>
+
+</div>
+
+<div class="reading-support">
+  <div class="support-body">
+
+    <div id="interior"></div>
+    {%- set carousel = { deck: earthPlanetSlides.decks.interior, id: "interior", heading: "Earth from the inside out" } %}
+    {% include "partials/slide-carousel.njk" %}
+
+    <section class="rail-block" id="earth-numbers">
+      <h2>Earth's numbers</h2>
+      <p class="rail-sub">These are the Earth column of your Habitability Framework. Copy them; do not re-derive them. They come from one source, so your whole class is calibrated to the same baseline.</p>
+      <table>
+        <thead>
+          <tr><th>Property</th><th>Measurement</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Distance from the Sun (semimajor axis)</td><td>1.00 AU</td></tr>
+          <tr><td>Orbital period</td><td>1.00 year</td></tr>
+          <tr><td>Mass</td><td>5.98 × 10<sup>24</sup> kg</td></tr>
+          <tr><td>Diameter</td><td>12,756 km</td></tr>
+          <tr><td>Radius</td><td>6,378 km</td></tr>
+          <tr><td>Escape velocity</td><td>11.2 km/s</td></tr>
+          <tr><td>Rotation period</td><td>23 h 56 m 4 s</td></tr>
+          <tr><td>Surface area</td><td>5.1 × 10<sup>8</sup> km<sup>2</sup></td></tr>
+          <tr><td>Density</td><td>5.514 g/cm<sup>3</sup></td></tr>
+          <tr><td>Atmospheric pressure at the surface</td><td>1.00 bar (sea-level pressure is about 101 kPa)</td></tr>
+        </tbody>
+      </table>
+      <p class="table-caption">OpenStax, Astronomy 2e, Table 8.1. The kilopascal figure is ours. One bar is exactly 100 kPa; Earth's actual sea-level pressure is about 101 kPa, which is the number the Block 3 comparison table uses. Astronomers round it to 1 bar and treat that as the planetary yardstick.</p>
+    </section>
+
+    <div id="atmosphere"></div>
+    {%- set carousel = { deck: earthPlanetSlides.decks.atmosphere, id: "atmosphere", heading: "The air Earth kept" } %}
+    {% include "partials/slide-carousel.njk" %}
+
+    <section class="rail-block" id="three-numbers">
+      <div class="callout warn">
+        <div class="callout-title">Three places where we do not follow the textbook</div>
+        <p><strong>The greenhouse effect.</strong> OpenStax says it raises Earth's surface temperature by about 23 °C. Most other sources put it near 33 °C, comparing a calculated &minus;18 °C with the observed +15 °C. Both are honest numbers from different baselines. This course uses the &minus;18 °C to +15 °C comparison, because that is what the Block 3 table and Unit 4 are built on, and mixing the two leaves you defending a figure you cannot source. The mechanism itself is Unit 4's job, not this page's.</p>
+        <p><strong>The Chicxulub impact.</strong> OpenStax dates it to 65 million years ago and says more than half of species died. The current figures are about 66 million years and roughly three quarters of species. The deck uses the current ones.</p>
+        <p><strong>The rise of oxygen.</strong> OpenStax puts the build-up of free oxygen at about 2 billion years ago. Current geochemistry, working from sulfur isotopes, puts the start closer to 2.4 billion. Deck 2 gives you both.</p>
+        <p>None of this makes OpenStax a bad source. It makes it a source, which is the whole point of OPVL: a textbook is written once and the science keeps moving. You cite what you used, you notice where it disagrees with something else, and you say which one you went with and why. If you can do that on this page, you can do it on your exoplanet.</p>
+      </div>
+    </section>
+
+    <div id="impacts"></div>
+    <p class="deck-extension-note"><span class="udl-tag">Extension</span> Not required. Worth it: it ends with a Limitation you can put straight into your report.</p>
+    {%- set carousel = { deck: earthPlanetSlides.decks.impacts, id: "impacts", heading: "The factor nobody lists" } %}
+    {% include "partials/slide-carousel.njk" %}
+
+    <section class="rail-block word-list" aria-label="Word list">
+      <h2>Word list</h2>
+      <p class="rail-sub">All {{ terms | length }} words from the three decks, in the order they come up. Every one of them is also defined in place inside the slides; this list is for revising.</p>
+      <ul class="wl-list">
+        {%- for entry in terms %}
+        <li class="wl-entry{% if entry.term in slideTerms %} is-slide{% endif %}" id="wl-{{ entry.term | termSlug }}">
+          <p class="wl-head">
+            <strong>{{ entry.term }}</strong>
+            <span class="wl-pos">{{ entry.pos }}</span>
+          </p>
+          <p class="wl-plain">{{ entry.plain }}</p>
+          {%- if entry.note %}<p class="wl-note">{{ entry.note }}</p>{% endif %}
+        </li>
+        {%- endfor %}
+      </ul>
+    </section>
+
+  </div>
+</div>
+
+<div class="prose">
+
+<h2>Sources</h2>
+
+<ul>
+  <li>Earth's interior, differentiation and the magnetosphere: OpenStax, <em>Astronomy 2e</em>, §8.1 "The Global Perspective" <span class="source-type">[open-license university textbook]</span></li>
+  <li>Atmospheric structure, composition and origin: OpenStax, <em>Astronomy 2e</em>, §8.3 "Earth's Atmosphere" <span class="source-type">[open-license university textbook]</span></li>
+  <li>Origin of life and the evolution of the atmosphere: OpenStax, <em>Astronomy 2e</em>, §8.4 "Life, Chemical Evolution, and Climate Change" <span class="source-type">[open-license university textbook]</span></li>
+  <li>Impacts, Chicxulub and near-Earth objects: OpenStax, <em>Astronomy 2e</em>, §8.5 "Cosmic Influences on the Evolution of Earth" <span class="source-type">[open-license university textbook]</span></li>
+  <li>The disequilibrium argument this page lands on: <a href="/units/unit-0/readings/lovelock-1965/">Lovelock (1965), first read in Unit 0 Block 2</a> <span class="source-type">[primary research paper]</span></li>
+</ul>
+
+<p><a href="/reference/library/">Full course source library →</a></p>
+
+<div class="license-box">
+  <p>This page adapts material from OpenStax, <em>Astronomy 2e</em> (sections 8.1, 8.3, 8.4 and 8.5), © OpenStax, Rice University, used under a <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International license</a>. Access the book for free at <a href="https://openstax.org/books/astronomy-2e/pages/1-introduction" target="_blank" rel="noopener">https://openstax.org/books/astronomy-2e/pages/1-introduction</a>.</p>
+  <p>The slide text on this page is our own adaptation of that material and is released under the same CC BY-NC-SA 4.0 license. The figures are reproduced from OpenStax and keep their original credit lines. This notice covers this page; the rest of the site is not affected.</p>
+</div>
+
+</div>
+
+{% set termCards = { glossary: glossary } %}
+{% include "partials/term-cards.njk" %}
+
+<script src="/assets/slide-carousel.js" defer></script>

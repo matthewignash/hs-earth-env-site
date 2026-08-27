@@ -1,0 +1,69 @@
+{#- One carousel deck. Extracted from lovelock-1965.njk so a page can hold more
+    than one: the old version looked itself up by a hard-wired id, which caps a
+    page at exactly one deck. Behaviour lives in /assets/slide-carousel.js and
+    binds to every [data-carousel] on the page independently.
+
+    Usage:
+      {% set carousel = { deck: earthPlanetSlides.decks.interior, id: "interior",
+                          heading: "Earth from the inside out" } %}
+      {% include "partials/slide-carousel.njk" %}
+
+    deck: { slides: [...], intro }, or { slides: [...] } with `sub` passed in.
+    `sub` wins over deck.intro, which is how the Lovelock page keeps its own
+    wording while the new decks carry theirs in the data file. -#}
+{%- set slides = carousel.deck.slides -%}
+{%- set total = slides | length -%}
+
+<section class="rail-block">
+  <h2>{{ carousel.heading }}</h2>
+  {%- set sub = carousel.sub or carousel.deck.intro %}
+  {%- if sub %}
+  <p class="rail-sub">{{ sub }}</p>
+  {%- endif %}
+
+  {#- Every slide ships in the DOM. JavaScript adds the `hidden` attribute to
+      all but one; with JavaScript off nothing is hidden, the nav never
+      unhides, and the section reads as a plain numbered list. #}
+  <div class="slides" id="{{ carousel.id }}-slides" data-carousel="{{ carousel.id }}" aria-roledescription="carousel" aria-label="{{ carousel.heading }}">
+    <p class="sr-only slides-live" aria-live="polite"></p>
+    <div class="slide-list">
+      {%- for s in slides %}
+      <div class="slide{% if s.isTask %} is-task{% endif %}" aria-roledescription="slide" aria-label="Step {{ s.n }} of {{ total }}">
+        <p class="slide-count">Step {{ s.n }} of {{ total }}</p>
+        <h3 class="slide-title" tabindex="-1">{{ s.title }}</h3>
+        <p class="slide-body">{{ s.body }}</p>
+        {%- if s.image %}
+        <figure class="slide-figure">
+          <img src="{{ s.image }}" alt="{{ s.imageAlt }}">
+          {%- if s.imageCredit %}
+          <figcaption class="slide-credit">{{ s.imageCredit }}</figcaption>
+          {%- endif %}
+        </figure>
+        {%- endif %}
+        {%- if s.terms.length %}
+        <p class="slide-terms">
+          <span class="slide-terms-label">Key words:</span>
+          {%- for t in s.terms %}
+          <button type="button" class="term" data-term="{{ t | termSlug }}" aria-expanded="false">{{ t }}</button>
+          {%- endfor %}
+        </p>
+        {%- endif %}
+        {%- if s.cite %}
+        <p class="slide-cite">Source: {{ s.cite }}</p>
+        {%- endif %}
+        {%- if s.find %}
+        <p class="slide-find">Find it in the paper: <q>{{ s.find }}</q></p>
+        {%- endif %}
+      </div>
+      {%- endfor %}
+    </div>
+    <div class="slide-nav" hidden>
+      <button type="button" class="slide-btn slide-prev">Previous</button>
+      <span class="slide-pos" aria-hidden="true">Step 1 of {{ total }}</span>
+      <button type="button" class="slide-btn slide-next">Next</button>
+    </div>
+    <p class="slide-showall-row" hidden>
+      <button type="button" class="slide-showall" aria-pressed="false">Show all steps</button>
+    </p>
+  </div>
+</section>
