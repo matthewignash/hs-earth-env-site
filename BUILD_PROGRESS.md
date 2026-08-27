@@ -2,7 +2,63 @@
 
 > **Purpose:** Living status doc. Tells you (and future Claude Code sessions) what's built, what's stubbed, what to build next, and in what order. The charter is in `CLAUDE.md` — do NOT modify that. Update this file at the end of each build session.
 
-**Last updated:** 2026-08-27 (Addenda 3–46 below. U0–U6 complete; U7 is next.)
+**Last updated:** 2026-08-27 (Addenda 3–47 below. U0–U6 complete; U7 is next.)
+
+
+---
+
+**Addendum 47 (2026-08-27): C39. Communication is not a score for a student's English, and Unit 1 gets two feedback-only checkpoints before the first component locks. Grade weightings removed from all five units.**
+
+**ORDER.** C39 landed before C38. C38 has not run in this repo. Nothing in C39 depended on it: the "Component due-date table" heading C39 anchors to already existed. If C38 touches the Goldilocks assessment page or the Unit 1 blocks, re-read them before editing rather than assuming the shape described here.
+
+**THE COMMUNICATION CORRECTION.** The rubric page described C with the word "fluency" and reassured multilingual students that their English would not "drag down" the other strands. Read together those two say English is scored somewhere, and that the somewhere is C. It is not. C asks whether scientific reasoning reaches a reader: organization, precise scientific vocabulary, an argument someone outside the writer's head can follow. Not grammatical accuracy, not range of English vocabulary, not accent. An error that does not obscure meaning does not lower the band. The Drive pack was corrected first; this closes the site.
+
+Three files, because the same framing had spread past the rubric page:
+
+- `foundations/the-rubric.njk` - "oral defense fluency" becomes "whether an oral defense holds its audience", which is what the Strong C bullet under it already said. The EAL sentence is replaced by two paragraphs stating what C measures and what it does not, and why the strands are reported separately. **Spelling note: this file is American** (`summarizes`, `organization`, `defense`), so the supplied `organised` was set as `organized`. Do not "correct" it back.
+- `foundations/for-parents.njk` - the same words, in the parent-facing strand table.
+- `foundations/eal/index.njk` - the "drag down" sentence, on the page aimed at the students the framing most affects.
+
+The FAQ "Does the lowest strand drag down the others?" is deliberately untouched. It answers a different question (strand independence) and it is correct.
+
+**THE WORKED EXAMPLE, WHICH WAS THE WORST INSTANCE.** Section 1 of `the-rubric.njk` carries the two-student example that teaches what the strands mean, and it mapped English quality straight onto a C band: Student A had "very strong scientific content but **rough English**" and scored **C 4**; Student B had "**elegant English** but confused scientific content" and scored **C 7**. A multilingual student reading section 1 learned that rough English costs you a C band, three sections before the paragraph that now says it does not. Both sides are rewritten so neither student's C is about their English:
+
+- **Student A** now has "very strong scientific content, but the argument arrives out of order and the reader has to reconstruct it", and needs "feedback on structuring an argument for a reader". C 4 is glossed **developing organization**.
+- **Student B** now writes a paper "that is easy to follow from start to finish, but the scientific content is confused". C 7 is glossed **strong organization**.
+
+The contrast the example exists to make, that one number cannot separate content from communication, is unchanged. Only the thing standing in for communication changed, from English quality to whether the reasoning reaches a reader.
+
+**The band glosses went with it.** Five of the six rows in the profile-reading table below it, plus the equivalent line in `for-parents.njk`, glossed the C strand as "writing" ("developing writing", "strong writing", "decent writing"). To a student still building academic English, "writing" reads as English. All of them now say **communication**, which is what the strand is called and what it measures. Two sentences that leaned the same way were reworded with them: "Your writing is doing more work than your understanding right now" became "Your communication is doing more work", "your **prose** is letting through" became "your **structure** is letting through", and "The writing is masking that the underlying engagement is not there" became "The clear presentation is masking that".
+
+**TWO PRE-LOCK CHECKPOINTS (U1).** The Goldilocks Report is ten components and the earliest locks at Block 7, so Blocks 1 to 6, half the unit, generated no assessed feedback. A new "Before anything is banded" section sits directly above the component due-date table with a two-row table (When / What you hand in / What comes back). Both checkpoints are **feedback only, no band**, so the component model is undisturbed.
+
+`.callout.good` is the callout class used on the block pages: show-family pastel (`#e2efda` on a `#6b8e3d` border), and it was **unused anywhere on the site**, so it carries no prior meaning. `.callout.extend` was rejected on purpose: `styles.css` documents it as one of a named trio where it means "If you finish early".
+
+**The exit tickets were reconciled, not just decorated.** Both blocks already collected what is materially the same artifact, and adding the callout alone would have left each page arguing with itself:
+
+- **Block 2** asked for "at least one interaction arrow with a verb" where the checkpoint asks for three. The exit ticket and choice-board Path A both go to three, and the exit ticket gains the sentence on what puts buried matter back into circulation. Its `rubric-meta` already said "formative T/T practice: no scored band yet", which agrees with the checkpoint.
+- **Block 5** collected a 3-sentence transit explanation and one Limitation, not an OPVL. The OPVL on one exoplanet source is folded into the same exit ticket so the page names one hand-in rather than appearing to want two.
+
+**Block 7** gets the first-lock line on its existing Component 1 submission callout. It replaced the callout's old tail, "gives feedback + assigns a K/U band on this component before Block 8", which said the same thing less precisely. **Checked: "within 48 hours" and "before Block 8" are the same window.** Block 7 to Block 8 is two calendar days in both rotations (A Mon 5 Oct to Wed 7 Oct; B Tue 6 Oct to Thu 8 Oct).
+
+**GRADE WEIGHTINGS: GONE FROM ALL FIVE UNITS.** C39 asked for these to be reported rather than propagated, and they were still live in six places. They contradict the syllabus line that AISC reads a body of evidence and does not average.
+
+| File | What it said | What happened |
+|---|---|---|
+| `unit-1/assessment-goldilocks-report.njk` | Report 70 / Q&A 15 / formative 15 | Clause deleted; rubric-link sentence kept |
+| `unit-1/block-10.njk` | "feeds the formative 15% bucket" | Now "is formative" |
+| `unit-2/assessment-landscape-reading.njk` | 70 / 15 / 15 | Line deleted |
+| `unit-4/assessment-chennai-climate-brief.njk` | 70 / 15 / 15 | Line deleted |
+| `unit-5/assessment-water-stakeholders.njk` | 65 / 20 / 15 | **Replaced**, see below |
+| `unit-6/assessment-sustainable-neighborhood-plan.njk` | 70 / 15 / 15 | **Replaced**, see below |
+
+The split matters: **U1, U2 and U4 have a "Rolling-summative reminder" paragraph and a component due-date table**, so deleting the weighting line leaves the scoring model already stated. **U5 and U6 have neither.** A bare deletion there would have left the page silent on how it is scored, so both got a one-line replacement: "Each strand mark is read holistically from the whole body of evidence this assessment produces. There is no weighted average of parts." **U5 and U6 are the two units still lacking a component model on their assessment pages** and are the natural next candidates for the treatment U1, U2 and U4 already have.
+
+Untouched, and not to be swept up by a future percentage grep: `foundations/eal/vocabulary.njk` and `unit-0/unu-report-key-points.njk` carry real-world statistics about electricity and data centres, and `unit-1/planet-gallery.njk` has a CSS `width: min(180px, 70%)`.
+
+**NOT ADDED, ON PURPOSE.** "Has a mechanism to put matter back into circulation" is still absent from the student-facing criteria list in Step 2 of the Goldilocks assessment page, so a student who brings the cycling criterion at Block 7 is doing original work. Step 2 lists only the generic tests (specific, detectable, justified) and enumerates no suggested criteria. The Block 2 checkpoint asks for the cycling sentence deliberately; that is the seed, not the answer key.
+
+**OPEN, FROM THE C39 BRIEF.** The nebular hypothesis is uncovered and was removed from the UbD knowledge list rather than left as an unmet claim; it needs Astronomy 2e chapter 14 to come back. Radial velocity is named on U1 Block 5 as the thing transits cannot do and is explained nowhere on the site.
 
 ---
 
