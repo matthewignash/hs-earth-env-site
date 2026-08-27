@@ -169,5 +169,47 @@ module.exports = {
     term: "Transmission spectroscopy",
     def: "During a transit, a sliver of starlight passes through the planet's atmosphere on its way to us. Different gases absorb different wavelengths, so the starlight arrives with chemical fingerprints.",
     eal: "/foundations/eal/u1/"
+  },
+  "biogeochemical-cycle": {
+    term: "Biogeochemical cycle",
+    def: "The route an element takes as it moves between living things, water, air and rock, and back again.",
+    stem: "In the ___ cycle, this element moves from ___ to ___.",
+    eal: "/foundations/eal/u1/"
+  },
+  "reservoir": {
+    term: "Reservoir",
+    def: "Anywhere an element collects and sits for a while: the ocean, the atmosphere, a forest, a layer of rock.",
+    stem: "The largest reservoir for ___ is ___.",
+    eal: "/foundations/eal/u1/"
+  },
+  "nutrient": {
+    term: "Nutrient",
+    def: "An element or compound a living thing needs to build itself and stay alive.",
+    stem: "___ is a nutrient that living things need in order to ___.",
+    eal: "/foundations/eal/u1/"
+  },
+  "molecular-cloud": {
+    term: "Molecular cloud",
+    def: "A cold, dark region of gas and dust in space where gravity can pull material together into new stars.",
+    stem: "Stars form inside molecular clouds because ___.",
+    eal: "/foundations/eal/u1/"
+  },
+  "supernova": {
+    term: "Supernova",
+    def: "The explosion of a massive star when its core collapses, scattering the elements it built into space.",
+    stem: "A supernova matters for habitability because ___.",
+    eal: "/foundations/eal/u1/"
+  },
+  "redshift": {
+    term: "Redshift",
+    def: "The stretching of light toward longer, redder wavelengths as space expands between the source and us.",
+    stem: "This galaxy shows a large redshift, which tells us ___.",
+    eal: "/foundations/eal/u1/"
+  },
+  "cosmic-microwave-background": {
+    term: "Cosmic microwave background",
+    def: "Faint microwave radiation reaching us from every direction, left over from when the universe was hot and dense.",
+    stem: "The cosmic microwave background is evidence for ___ because ___.",
+    eal: "/foundations/eal/u1/"
   }
 };

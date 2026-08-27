@@ -2,9 +2,53 @@
 
 > **Purpose:** Living status doc. Tells you (and future Claude Code sessions) what's built, what's stubbed, what to build next, and in what order. The charter is in `CLAUDE.md` — do NOT modify that. Update this file at the end of each build session.
 
-**Last updated:** 2026-08-27 (Addenda 3–48 below. U0–U6 complete; U7 is next.)
+**Last updated:** 2026-08-27 (Addenda 3–49 below. U0–U6 complete; U7 is next.)
 
 
+
+
+---
+
+**Addendum 49 (2026-08-27): C38. Three background readings as homework, seven new key terms, three broken links repaired, and an OpenStax licence claim that was legally wrong in four places.**
+
+Run directly after C34, which it depends on. Note the running order for the record: **C37, then C39, then C34, then C38.** C39 was run before C38 because C38 had a prerequisite nobody had noticed.
+
+**THE READINGS.** Three UbD knowledge items had no delivering page: the Big Bang and its evidence, stellar nucleosynthesis, and the geologic-time frame. Two NGSS performance expectations were tagged on blocks that did not teach them. The three supplied `.njk` files close that as **homework**, not class time, because ten blocks are already full:
+
+- `reading-where-your-atoms-came-from.njk` for Block 1
+- `reading-matter-must-move.njk` for Block 2
+- `reading-how-we-know-how-old.njk` for Block 4
+
+**Copied in byte for byte and md5-checked, not retyped or tidied.** They are adaptations of CC BY-NC-SA material and their attribution blocks are legally load-bearing. Each also ends by telling students that OpenStax asks their books not be uploaded into AI tools, that the request is not part of the licence, that it would be hard to enforce, and that we honor it anyway. **That paragraph is doing real work in an AI-literacy course and should not be trimmed.** It is also the best OPVL target the unit has: origin, purpose, value and limitation of a usage restriction, ending on why we comply when nobody would know.
+
+The design also solves the practical problem: students never need the source PDFs, because these pages are our adaptation and ours to license. They can point an AI partner at them freely.
+
+**THE SEVEN TERMS**, added to `_data/ealTerms.js` and to the U1 EAL page: biogeochemical-cycle, reservoir, nutrient, molecular-cloud, supernova, redshift, cosmic-microwave-background. **No `vocabAnchor` on any of them**, because none has a heading on the master vocabulary page yet and a pointer to a missing anchor is worse than no pointer. `transmission-spectroscopy` already sets that precedent. The file's order is reading order, not alphabetical, so they are appended grouped by the reading they come from.
+
+**All seven chips were clicked, not grepped.** A `data-term` missing from `ealTerms.js` fails silently, rendering a chip that opens nothing. All seven open a populated panel.
+
+**THE THREE BROKEN LINKS.** `reading-four-spheres`, `reading-how-far-is-far` and `reading-watching-shadows` each claim in their own tagline to link from a block, and no block linked them. Now they do, from Blocks 2, 4 and 5. Their own content is untouched.
+
+**THE LICENCE.** `reference/library.njk` claimed plain CC-BY in four places. OpenStax *Astronomy 2e*, *Biology 2e* and *Concepts of Biology* are all **CC BY-NC-SA 4.0**, and ShareAlike binds our adaptations, which is why it matters rather than being a pedantic correction. All four fixed; zero `CC-BY` hits remain on any OpenStax entry. **The AI-training restriction quote is left exactly as it is**: it is quoted verbatim from OpenStax and is correct.
+
+**NGSS ON BLOCK 1: C38'S INSTRUCTION WAS NOT FOLLOWED, DELIBERATELY.** Task 6 says to remove HS-ESS1-2 from block-1 "since Block 1's reading is about stellar nucleosynthesis (HS-ESS1-1, already tagged)". Both halves of that are wrong:
+
+1. **HS-ESS1-1 was not tagged on block-1.** Block 1's only tag was `HS-ESS1-2 (prev.)`. Following Task 6 literally would have left block-1 with an empty `ngss` array.
+2. **HS-ESS1-1 is the wrong standard anyway.** It is the Sun's life span and fusion in the Sun's core releasing energy. It is not stars building heavy elements.
+
+The standard that actually matches "Where Your Atoms Came From" is **HS-ESS1-3**, "Communicate scientific ideas about the way stars, over their life cycle, produce elements", which was **absent from the catalog entirely**. It is now added and block-1 carries it. Block 4 keeps HS-ESS1-2, which its new homework reading genuinely delivers, exactly as Task 6 intended.
+
+**THE SCOPE LINE, which matters and is easy to erode.** Unit 1 argues that life in a closed system requires matter to cycle, and that cycling requires a geologically live planet. **It names the five cycles and stops.** Unit 4 Block 3 does carbon with numbered reservoirs and fast and slow pathways; Unit 5 Block 1 does water with residence times. **Unit 1 makes the argument; those units do the accounting.** If a future edit puts a quantity into the Unit 1 cycles reading, it has almost certainly wandered into Unit 4. Checked: no residence times, gigatonnes or petagrams anywhere in the U1 readings.
+
+Jayanthi asked for biogeochemical cycles in Unit 1 and was right to. Cycling is the mechanism behind the subsystem interactions Block 2 already teaches, and it hands students a habitability criterion **the assessment package deliberately does not suggest**: does this planet have a way to put matter back into circulation? A student who brings that criterion unprompted is doing exactly what the T/T 7-8 band rewards, which is why it stays off the Step 2 list.
+
+**Unit index.** The three readings got their **own card** rather than joining the existing "Readings" card, because that card promises "text alternatives to the four Watch videos" and these are homework background, not alternatives.
+
+**Still open, carried forward from the C38 brief:**
+
+- **The UbD and the site are different units.** The UbD's Stage 3 pacing has Big Bang and solar-system formation as Blocks 2 and 3; the site has Earth-as-baseline and Mars. These readings cover the cosmology, but the UbD's pacing table still describes a unit that is not being taught. Document edit, not a site edit.
+- **The nebular hypothesis** is still uncovered. UbD knowledge item 4; needs Astronomy 2e chapter 14.
+- **Radial velocity** is named on Block 5 as the thing transits cannot do and is explained nowhere.
 
 ---
 

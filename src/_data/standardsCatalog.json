@@ -441,5 +441,18 @@
         "url": "/units/unit-0/readings/lovelock-1965/"
       }
     ]
+  },
+  "HS-ESS1-3": {
+    "type": "ngss-pe",
+    "official": "Communicate scientific ideas about the way stars, over their life cycle, produce elements.",
+    "plain": "I can explain where the elements you are made of were built, and which kind of star built them.",
+    "assessedAt": "Goldilocks Report: the criteria that depend on a planet having heavy elements at all (K/U, Component 1 locks U1 Block 7)",
+    "onTrack": "You can say why the early universe had only hydrogen and helium, what fusion built afterwards, and why iron is where fusion stops paying.",
+    "help": [
+      {
+        "label": "Reading: Where Your Atoms Came From",
+        "url": "/units/unit-1/reading-where-your-atoms-came-from/"
+      }
+    ]
   }
 }
