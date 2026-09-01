@@ -170,7 +170,7 @@ Minimal by design. No unit title, task, or assessment was altered. No assessment
 
 **B. One conceptual question in each defense.** Added to the defense section of each U0-U4 assessment page. Students already defend; they now have one question in front of them that cannot be answered by reciting the unit's content.
 
-**C. A new Foundations page, "The Conceptual Architecture."** Names the macro-concepts, states the course-level question and understanding, lists the conceptual understandings for U0-U4 in one place, and says plainly that U5 to U7 are not yet covered.
+**C. A new Foundations page, "How the Year Fits Together."** Names the macro-concepts, states the course-level question and understanding, lists the conceptual understandings for U0-U4 in one place, and says plainly that U5 to U7 are not yet covered.
 
 **D. The Thread collision fixed, against the naming that already existed.** Unit 4's "Thread 4: Climate Action" now reads Thread 4: Science, policy, and the public, since climate action is that thread's Unit 4 instance rather than a fifth thread. All four unit-page citations now use the Welcome page's wording verbatim. **Thread 3 needed no new name: it is engineering design**, third in the Welcome page's list, matching the existing numbering.
 

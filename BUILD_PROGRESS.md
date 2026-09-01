@@ -26,7 +26,7 @@ Full audit at `docs/CBTL-AUDIT.md`, which is the source of record. Also publishe
 
 1. `units/unit-{0,1,2,3,4}/index.njk` - a second callout beside the existing Anchor question, carrying the unit's conceptual understanding and three questions labeled Factual / Conceptual / Debatable. The Anchor question is untouched.
 2. `units/unit-{0,1,2,3,4}/assessment-*.njk` - one conceptual question in each defense section. **U4's Climate Brief has no defense heading**, so its question sits in the Policy Panel paragraph.
-3. `foundations/conceptual-architecture.njk` - new page, linked from the Foundations "Start here" grid. Names the four threads, the course-level question and understanding, and the 15 understandings, with a warn callout stating that U5-U7 are not covered yet.
+3. `foundations/how-the-year-fits-together.njk` - new page, linked from the Foundations "Start here" grid. **Named for students, not for the framework**: the audit is not on the site and students do not need the phrase "conceptual architecture" to use the page. Names the four threads, the course-level question and understanding, and the 15 understandings, with a warn callout stating that U5-U7 are not covered yet.
 4. `assets/styles.css` - four new rules (`.cu-statement`, `.gq-label`, `.guiding-questions`, `.gq-type`). No existing rule touched.
 
 **THINGS FOUND THAT ARE WORTH KNOWING.**
