@@ -2,10 +2,44 @@
 
 > **Purpose:** Living status doc. Tells you (and future Claude Code sessions) what's built, what's stubbed, what to build next, and in what order. The charter is in `CLAUDE.md` — do NOT modify that. Update this file at the end of each build session.
 
-**Last updated:** 2026-08-27 (Addenda 3–49 below. U0–U6 complete; U7 is next.)
+**Last updated:** 2026-08-27 (Addenda 3–50 below. U0–U6 complete; U7 is next.)
 
 
 
+
+
+---
+
+**Addendum 50 (2026-08-27): Concept-Based audit (Erickson, Lanning & French 2017). The course was concept-based in function and said so nowhere. Apparatus added for U0-U4 only.**
+
+Full audit at `docs/CBTL-AUDIT.md`, which is the source of record. Also published as a private artifact for sharing.
+
+**THE FINDING.** The course transfers by design: a habitability framework built from taught cases and applied to an untaught one, one analytical lens (OPVL) running U0 to U4 across six kinds of source at rising difficulty, GRASPS framing on every summative, every unit landing in a place-based Chennai task with an audience role. That is synergistic thinking and transfer in Erickson's sense. **What was missing was the apparatus, not the thinking.** Not one conceptual understanding was stated anywhere on the site; no guiding question was typed.
+
+**SCOPE STOPS AT UNIT 4, and the reason is structural.** U0-U4 carry a learning intention, success criteria, a standards tag and a bell ringer on **every** block. **U5 and U6 carry none of those on any of their 19 blocks.** Auditing a unit's conceptual spine means reading what the unit states about its own purpose; those blocks state nothing. **U7 has no directory at all** while the home page advertises "All eight units". No conceptual understandings were drafted for U5-U7, and the audit says so rather than papering over it.
+
+**THE THREAD SYSTEM WAS TWO HALVES THAT HAD NEVER MET.** Threads were cited by number four times site-wide, Thread 3 never, and Thread 4 under two different names (`unit-2` "Science-Policy-Public", `unit-4` "Climate Action"). **Then `foundations/welcome.njk` turned out to name all four in prose, without numbers**, and the order matches the numbering exactly, so **Thread 3 is engineering design** and always was.
+
+**This corrected the plan mid-build.** Before finding the Welcome page, the approved plan proposed naming Thread 3 "Defense and Evidence-Based Argument". That was wrong. The eight defenses are the structure the threads are tested in, not a fifth thread, and the Welcome page does not make that mistake. All four unit-page citations now use Welcome's wording verbatim. **Do not renumber the threads:** the numbering and the Welcome order already agree.
+
+**WHAT CHANGED, and it is deliberately small.** No unit title, task or assessment altered. No assessment added. **No block page touched at all.**
+
+1. `units/unit-{0,1,2,3,4}/index.njk` - a second callout beside the existing Anchor question, carrying the unit's conceptual understanding and three questions labeled Factual / Conceptual / Debatable. The Anchor question is untouched.
+2. `units/unit-{0,1,2,3,4}/assessment-*.njk` - one conceptual question in each defense section. **U4's Climate Brief has no defense heading**, so its question sits in the Policy Panel paragraph.
+3. `foundations/conceptual-architecture.njk` - new page, linked from the Foundations "Start here" grid. Names the four threads, the course-level question and understanding, and the 15 understandings, with a warn callout stating that U5-U7 are not covered yet.
+4. `assets/styles.css` - four new rules (`.cu-statement`, `.gq-label`, `.guiding-questions`, `.gq-type`). No existing rule touched.
+
+**THINGS FOUND THAT ARE WORTH KNOWING.**
+
+- **The course-level question already existed and appears exactly once**, in `unit-0/block-1.njk`'s Story section: *"How do you live well on a changing Earth?"* It is now on the Foundations page too.
+- **A generalization was already written and buried.** `unit-6/block-10.njk`: *"real design has no win-everything answer, and honest work names what it gave up."* Erickson form almost exactly, functioning as a passing remark in a debrief.
+- **The defense question banks are not in this repo.** The site references 6-category banks; they live in Classroom handouts. Adding a conceptual category to those banks is a separate job and a good one.
+- **"Transfer" appears in 27 files but almost entirely as the T/T strand name.** No task on the site is described as a transfer task.
+- **The Map dashboard covers U0 only.** `unitSpine.json` has one entry. Extending it is the highest-value remaining move for making the conceptual build visible.
+
+**NOT DONE, ON PURPOSE.** No conceptual understandings for U5, U6 or U7. No restructuring. No renaming of any unit, task or assessment. The generalizations are drafts for teacher review, not settled curriculum.
+
+**Browser-pane note for future sessions:** screenshots came back blank all session until `resize_window` set an explicit viewport. The pane was reporting `clientWidth` of 0, so every capture was of a zero-width page and every overflow check was meaningless. If screenshots look blank, set the viewport first.
 
 ---
 

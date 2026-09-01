@@ -699,6 +699,44 @@ a.key-term[aria-expanded="true"] { background: var(--accent-light); }
   color: var(--ink);
 }
 
+/* ====== Conceptual layer on unit pages ====== */
+/* The conceptual understanding is the sentence a student should be able to say
+   at the end of the unit, so it is set slightly larger than the questions that
+   lead to it. The type labels are what make a guiding question usable: a set of
+   three untyped questions reads as three prompts rather than as a route from
+   fact to concept to argument. */
+.cu-statement {
+  font-size: 16px;
+  margin-bottom: 12px;
+}
+.gq-label {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--muted);
+  margin-bottom: 6px;
+}
+.guiding-questions {
+  margin: 0;
+  padding-left: 0;
+  list-style: none;
+}
+.guiding-questions li {
+  margin-bottom: 6px;
+  font-size: 14px;
+}
+.guiding-questions li:last-child { margin-bottom: 0; }
+.gq-type {
+  display: inline-block;
+  min-width: 78px;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  color: var(--accent);
+  margin-right: 4px;
+}
+
 /* ====== AI Partner launch button ====== */
 .partner-launch {
   display: inline-flex;
