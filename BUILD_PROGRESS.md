@@ -2,11 +2,47 @@
 
 > **Purpose:** Living status doc. Tells you (and future Claude Code sessions) what's built, what's stubbed, what to build next, and in what order. The charter is in `CLAUDE.md` — do NOT modify that. Update this file at the end of each build session.
 
-**Last updated:** 2026-08-27 (Addenda 3–50 below. U0–U6 complete; U7 is next.)
+**Last updated:** 2026-09-02 (Addenda 3–51 below. U0–U6 complete; U7 is next.)
 
 
 
 
+
+
+---
+
+**Addendum 51 (2026-09-02): C42. The B rotation shifts one meeting later from meeting 8 on, because the B sections were given an extra Dossier work day on Mon 31 Aug. The A column is untouched.**
+
+**GATE ASKED BEFORE RUNNING, because the prompt said to.** `rotationDates.json` has a **single B column shared by every B section**, and the site describes **three sections** across two rotations (see `ai-partners/stakeholder-voice.njk`: one section builds its own stakeholder bot, one uses pre-built tutors, one uses the paper pack). So at least one rotation carries more than one section, and if a co-taught B section had not taken the extra work day the shared column would have put wrong dates in front of those students. **Matthew confirmed every B section took it.** If that ever turns out to be false, the fix is not editing this file: it is per-section handling, which is a different data shape.
+
+**THE CHANGE.** `src/_data/rotationDates.json` replaced wholesale with the supplied corrected file, md5-checked, not retyped. Verified rather than trusted before copying:
+
+- Meetings 1 to 7 byte-identical.
+- Meeting 8 onward: each meeting's `b`/`bLabel` takes the value that belonged to the meeting after it.
+- Meeting 81 loses `b`/`bLabel`. B goes from 81 meetings to 80; the course schedules about 70.
+- **A column byte-identical throughout**, checked programmatically across all 81 meetings.
+- A second `amendments` entry now records this alongside the Addendum 45 A-shift. **Regenerating from `2026-2027 AB Waterfall Master.xlsx` reverts both silently unless the master is updated too.**
+
+Target dates confirmed on the built site: U0 B7 now A Tue Sep 1 / B Wed Sep 2; U0 B6 unchanged at A Fri Aug 28 / B Thu Aug 27; U1 B1 A Thu Sep 3 / B Fri Sep 4; U1 B10 A Tue Oct 13 / B Fri Oct 16.
+
+**THE TEACHING CONSEQUENCE, which the dates alone do not fix.** Discover India Week now lands at a different point in Unit 1 for each rotation, and the built calendar confirms it:
+
+| | Last block before the break | First block after |
+|---|---|---|
+| A | Block 6, Fri 18 Sep | Block 7, Mon 5 Oct |
+| B | Block 5, Thu 17 Sep | Block 6, Tue 6 Oct |
+
+**The B rotation now has the better sequence.** Choosing an exoplanet in Block 6 and then losing it to a two and a half week gap was the weakest joint in the unit. B now runs Block 5 light curves, gap, then Blocks 6 and 7 back to back, arriving at the framework build with the choice fresh. The extra work day removed the problem by accident for one rotation.
+
+**TASK 3'S PREMISE DID NOT HOLD, and nothing was invented to satisfy it.** C42 asked for a grep of the Unit 1 pages for "Discover India", "before the break", "two and a half weeks" and "write it down", and a rewrite of each occurrence to drop the block number. **There are no occurrences. The site has never mentioned the break anywhere**, in those words or any others (checked also for DIW, holiday, gap, "when we return"). The break is visible only as a date gap in the calendar. Block 6's Show section says "Locked choice + profile" and names no deadline relative to a break.
+
+So there was nothing to make rotation-neutral. What was added is the one thing C42 asked for that was genuinely warranted: **a single line on the Unit 1 index** telling students the two rotations meet the break at different points and to check the calendar. It names no block, which is what the task wanted from the rewrites.
+
+**ONE HARDCODED DATE FOUND, LEFT ALONE DELIBERATELY.** `foundations/class-notebook.njk:71` carries a static example of a notebook entry header: `A: Aug 14 | U0 B3 | AI as a Source + Documentation Protocol`. It uses no filter. **It is currently correct** (U0 B3 is meeting 4, A Fri Aug 14) and it is an A-rotation example, so this change does not touch it. It is flagged because it is the only place on the site outside the data file that holds a date, and it would rot silently if the A column ever moved again. Making it derive from `entryDates` is a small, separate job.
+
+**Verified:** build clean; zero hits for "Aug 31" anywhere outside the data file; every other date string in the built site traces to `meetingDateLabel`, `entryDates`, `unitSpan` or `blockDateLabel`; the unit calendar renders for U0 through U6 with the right number of date cells; no Unit 1 page names a block for the break. No date was hand-edited, no block content changed, no task or assessment touched.
+
+**Still describing the A shape, not fixed here:** the Unit 1 roadmap, the UbD pacing note and the slide deck all say the break falls between Blocks 6 and 7 and that Block 6 ends with students recording their choice. That is now half right. The roadmap is the one families read.
 
 ---
 
