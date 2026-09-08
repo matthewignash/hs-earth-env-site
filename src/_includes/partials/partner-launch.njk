@@ -1,12 +1,18 @@
 {# Dual-platform launch buttons. Partner pages set flintUrl / boodleboxUrl in
    frontmatter (both "" until platforms deploy). One AI platform per class:
-   two sections use Flint, one uses BoodleBox. #}
+   two sections use Flint, one uses BoodleBox. A partner whose links live only
+   on Google Classroom sets classroomActive: true instead of URLs. #}
 {% if flintUrl or boodleboxUrl %}
 <div class="partner-launch-row">
   {% if flintUrl %}<a class="partner-launch" href="{{ flintUrl }}" target="_blank" rel="noopener">Launch on Flint →</a>{% endif %}
   {% if boodleboxUrl %}<a class="partner-launch" href="{{ boodleboxUrl }}" target="_blank" rel="noopener">Launch on BoodleBox →</a>{% endif %}
 </div>
 <p class="partner-launch-note">Your class uses one platform; use your class's button.</p>
+{% elif classroomActive %}
+<div class="partner-launch-row">
+  <span class="partner-launch">Active now: open it from Google Classroom</span>
+</div>
+<p class="partner-launch-note">Two links are posted there, one for Flint and one for BoodleBox. Your class uses one platform; use your class's link.</p>
 {% else %}
 <span class="partner-launch placeholder">Launch {{ title }}: links coming soon. Ask Ms. Jayanthi/Mr. Ignash for access.</span>
 {% endif %}

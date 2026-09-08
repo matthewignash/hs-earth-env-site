@@ -320,6 +320,8 @@ dialog.video-lightbox::backdrop {
 }
 .choice .choice-title { font-weight: 600; margin-bottom: 6px; }
 .choice .choice-detail { font-size: 13px; color: var(--muted); }
+.choice .choice-detail ol { margin: 0; padding-left: 18px; }
+.choice .choice-detail li { margin: 0 0 6px; }
 .choice .udl-tag {
   display: inline-block;
   font-size: 11px;
