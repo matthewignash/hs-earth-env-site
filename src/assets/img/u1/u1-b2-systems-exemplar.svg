@@ -1,0 +1,95 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 640" width="880" height="640" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" role="img" aria-labelledby="t d">
+  <title id="t">Exemplar: a complete Block 2 systems diagram</title>
+  <desc id="d">Four labeled circles (atmosphere, hydrosphere, geosphere, biosphere) joined by six arrows with verbs, one negative feedback loop marked with a minus sign, and two written sentences: one justifying the sign, one on what puts buried matter back into circulation.</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#2e5395"/>
+    </marker>
+    <marker id="loop-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#b34a2e"/>
+    </marker>
+  </defs>
+  <rect width="880" height="640" fill="#ffffff"/>
+
+  <text x="24" y="34" font-size="18" font-weight="700" fill="#1a1a2e">Exemplar: a complete Block 2 systems diagram</text>
+  <text x="24" y="54" font-size="12" fill="#4f4f4f">Drawn to model, not to copy. Your verbs and your loop should be your own.</text>
+
+  <g id="arrows" fill="none" stroke="#2e5395" stroke-width="2.5" marker-end="url(#arrow)">
+    <path d="M545 125 Q400 60 255 125"/>
+    <path d="M255 175 Q400 240 545 175"/>
+    <path d="M175 208 Q110 280 175 352"/>
+    <path d="M225 352 Q290 280 225 208"/>
+    <path d="M260 430 Q400 490 540 430"/>
+    <path d="M620 210 Q680 280 620 350"/>
+  </g>
+  <g id="loop" fill="none" stroke="#b34a2e" stroke-width="2.5" stroke-dasharray="6 5" marker-end="url(#loop-arrow)">
+    <path d="M140 355 Q20 280 140 205"/>
+  </g>
+  <circle cx="80" cy="280" r="14" fill="#ffffff" stroke="#b34a2e" stroke-width="2.5"/>
+  <text x="80" y="286" font-size="18" font-weight="700" fill="#b34a2e" text-anchor="middle">−</text>
+
+  <g id="verbs" font-size="13" fill="#1a1a2e" text-anchor="middle" paint-order="stroke" stroke="#ffffff" stroke-width="5" stroke-linejoin="round">
+    <text x="400" y="97">evaporates into</text>
+    <text x="400" y="212">rains onto</text>
+    <text x="143" y="284">weathers rock</text>
+    <text x="257" y="284">outgasses CO₂</text>
+    <text x="400" y="464">supplies weathered minerals to</text>
+    <text x="650" y="284">supplies water to</text>
+  </g>
+
+  <g id="spheres" stroke="#1a1a2e" stroke-width="2">
+    <circle cx="200" cy="150" r="60" fill="#d9e7f3"/>
+    <circle cx="600" cy="150" r="60" fill="#d9e2f3"/>
+    <circle cx="200" cy="410" r="60" fill="#fce4d6"/>
+    <circle cx="600" cy="410" r="60" fill="#e2efda"/>
+  </g>
+  <g id="sphere-labels" text-anchor="middle" fill="#1a1a2e">
+    <text x="200" y="147" font-size="17" font-weight="700">Atmosphere</text>
+    <text x="200" y="166" font-size="12" fill="#4f4f4f">air</text>
+    <text x="600" y="147" font-size="17" font-weight="700">Hydrosphere</text>
+    <text x="600" y="166" font-size="12" fill="#4f4f4f">water</text>
+    <text x="200" y="407" font-size="17" font-weight="700">Geosphere</text>
+    <text x="200" y="426" font-size="12" fill="#4f4f4f">rock + interior</text>
+    <text x="600" y="407" font-size="17" font-weight="700">Biosphere</text>
+    <text x="600" y="426" font-size="12" fill="#4f4f4f">life</text>
+  </g>
+
+  <g id="checklist">
+    <rect x="736" y="90" width="124" height="330" rx="10" fill="#fafaf7" stroke="#cccccc" stroke-width="1.5"/>
+    <text x="748" y="114" font-size="11" font-weight="700" fill="#2e5395" letter-spacing="0.5">EXIT TICKET</text>
+    <g font-size="12" fill="#1a1a2e">
+      <text x="748" y="142" font-weight="700">✓ 4 subsystems</text>
+      <text x="748" y="158">all labeled</text>
+      <text x="748" y="190" font-weight="700">✓ 3+ arrows</text>
+      <text x="748" y="206">each with a verb</text>
+      <text x="748" y="222">(this one has 6)</text>
+      <text x="748" y="254" font-weight="700">✓ 1 loop</text>
+      <text x="748" y="270">labeled + or −</text>
+      <text x="748" y="286">with a reason</text>
+      <text x="748" y="318" font-weight="700">✓ 1 sentence</text>
+      <text x="748" y="334">on buried matter</text>
+      <text x="748" y="350">returning</text>
+      <text x="748" y="382" font-weight="700">✓ morning sketch</text>
+      <text x="748" y="398">in the photo too</text>
+    </g>
+  </g>
+
+  <g id="notes">
+    <rect x="24" y="500" width="410" height="116" rx="10" fill="#fff4d9" stroke="#cccccc" stroke-width="1.5"/>
+    <text x="40" y="524" font-size="12" font-weight="700" fill="#b34a2e">LOOP SIGN: NEGATIVE (−)</text>
+    <g font-size="13" fill="#1a1a2e">
+      <text x="40" y="546">Warmer air → faster weathering → CO₂ pulled out of</text>
+      <text x="40" y="564">the air → air cools back down. A push in one</text>
+      <text x="40" y="582">direction gets pushed back, so the change is</text>
+      <text x="40" y="600">damped, not amplified. That makes it negative.</text>
+    </g>
+    <rect x="450" y="500" width="410" height="116" rx="10" fill="#e2efda" stroke="#cccccc" stroke-width="1.5"/>
+    <text x="466" y="524" font-size="12" font-weight="700" fill="#2e5395">BURIED MATTER BACK INTO CIRCULATION</text>
+    <g font-size="13" fill="#1a1a2e">
+      <text x="466" y="546">Weathering locks carbon into rock and buries it.</text>
+      <text x="466" y="564">Plate motion carries that rock down, and volcanoes</text>
+      <text x="466" y="582">outgas the carbon as CO₂, so the geosphere hands</text>
+      <text x="466" y="600">it back to the atmosphere instead of keeping it.</text>
+    </g>
+  </g>
+</svg>
