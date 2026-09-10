@@ -5,7 +5,10 @@
       "id": "monsoon-bay",
       "title": "The monsoon and the Bay",
       "where": "Chennai",
-      "spheres": ["Hydrosphere", "Atmosphere"],
+      "spheres": [
+        "Hydrosphere",
+        "Atmosphere"
+      ],
       "firstArrow": "Hydrosphere (the Bay of Bengal) evaporates into atmosphere.",
       "returnArrowHint": "What does the air send back to the Bay, and to Chennai's streets, when the northeast monsoon arrives in November?",
       "signHint": "A warmer bay evaporates more; ask what more water vapor in the air does to the heat the bay feels next.",
@@ -25,15 +28,18 @@
       "noteFrame": [
         "Hydrosphere evaporates into atmosphere.",
         "Atmosphere ______ hydrosphere.",
-        "I pushed ______ up, and it came back ______ because ______. Sign: __",
-        "Next sphere: geosphere joins by ______."
+        "I pushed ______ up, and it came back bigger / smaller, because ______. Sign: + / −",
+        "Geosphere joins by ______."
       ]
     },
     {
       "id": "reservoirs-2019",
       "title": "Reservoirs at zero, June 2019",
       "where": "Chennai",
-      "spheres": ["Hydrosphere", "Geosphere"],
+      "spheres": [
+        "Hydrosphere",
+        "Geosphere"
+      ],
       "firstArrow": "Hydrosphere (Puzhal reservoir) seeps into geosphere (as groundwater).",
       "returnArrowHint": "When the reservoir is empty and every borewell is pumping, what does the ground send back to the city's water supply, and what happens when it cannot?",
       "signHint": "Pump more groundwater in a dry year and ask whether the emptier ground refills faster, or dries the land further.",
@@ -48,15 +54,18 @@
       "noteFrame": [
         "Hydrosphere seeps into geosphere.",
         "Geosphere ______ hydrosphere.",
-        "I pushed ______ up, and it came back ______ because ______. Sign: __",
-        "Next sphere: atmosphere joins by ______."
+        "I pushed ______ up, and it came back bigger / smaller, because ______. Sign: + / −",
+        "Atmosphere joins by ______."
       ]
     },
     {
       "id": "pallikaranai-sponge",
       "title": "Pallikaranai marsh as a sponge",
       "where": "Chennai",
-      "spheres": ["Biosphere", "Hydrosphere"],
+      "spheres": [
+        "Biosphere",
+        "Hydrosphere"
+      ],
       "firstArrow": "Biosphere (marsh plants and their soil) soaks up hydrosphere (floodwater).",
       "returnArrowHint": "What does the stored water send back to the marsh's plants and birds in the dry months?",
       "signHint": "Fill in more of the marsh with buildings and ask whether the next flood is absorbed more, or less.",
@@ -76,15 +85,18 @@
       "noteFrame": [
         "Biosphere soaks up hydrosphere.",
         "Hydrosphere ______ biosphere.",
-        "I pushed ______ up, and it came back ______ because ______. Sign: __",
-        "Next sphere: geosphere joins by ______."
+        "I pushed ______ up, and it came back bigger / smaller, because ______. Sign: + / −",
+        "Geosphere joins by ______."
       ]
     },
     {
       "id": "coral-bleaching",
       "title": "Coral bleaching, Gulf of Mannar",
       "where": "Chennai",
-      "spheres": ["Hydrosphere", "Biosphere"],
+      "spheres": [
+        "Hydrosphere",
+        "Biosphere"
+      ],
       "firstArrow": "Hydrosphere (warm sea water) warms biosphere (the coral).",
       "returnArrowHint": "What does a living reef send back to the water around it, and what stops when the coral bleaches?",
       "signHint": "Push the sea temperature up for a few weeks and ask whether the reef pushes back against that heat, or simply loses the algae that feed it.",
@@ -99,15 +111,18 @@
       "noteFrame": [
         "Hydrosphere warms biosphere.",
         "Biosphere ______ hydrosphere.",
-        "I pushed ______ up, and it came back ______ because ______. Sign: __",
-        "Next sphere: atmosphere joins by ______."
+        "I pushed ______ up, and it came back bigger / smaller, because ______. Sign: + / −",
+        "Atmosphere joins by ______."
       ]
     },
     {
       "id": "pichavaram-mangroves",
       "title": "Pichavaram mangroves and the shore",
       "where": "Chennai",
-      "spheres": ["Biosphere", "Geosphere"],
+      "spheres": [
+        "Biosphere",
+        "Geosphere"
+      ],
       "firstArrow": "Biosphere (mangrove roots) traps geosphere (sediment).",
       "returnArrowHint": "What does the built-up mud send back to the mangroves that lets them spread?",
       "signHint": "More roots trap more mud; ask whether more mud grows more mangroves.",
@@ -122,15 +137,18 @@
       "noteFrame": [
         "Biosphere traps geosphere.",
         "Geosphere ______ biosphere.",
-        "I pushed ______ up, and it came back ______ because ______. Sign: __",
-        "Next sphere: hydrosphere joins by ______."
+        "I pushed ______ up, and it came back bigger / smaller, because ______. Sign: + / −",
+        "Hydrosphere joins by ______."
       ]
     },
     {
       "id": "chennai-heat-island",
       "title": "Chennai heat island",
       "where": "Chennai",
-      "spheres": ["Geosphere", "Atmosphere"],
+      "spheres": [
+        "Geosphere",
+        "Atmosphere"
+      ],
       "firstArrow": "Geosphere (built surfaces: roads, roofs, concrete) absorbs and re-radiates heat into atmosphere.",
       "returnArrowHint": "What does hotter air over the city send back down to the concrete at night?",
       "signHint": "Add more concrete and ask whether the air over the city gets hotter, and whether hotter air cools the concrete or keeps it warm.",
@@ -145,15 +163,18 @@
       "noteFrame": [
         "Geosphere absorbs and re-radiates heat into atmosphere.",
         "Atmosphere ______ geosphere.",
-        "I pushed ______ up, and it came back ______ because ______. Sign: __",
-        "Next sphere: biosphere joins by ______."
+        "I pushed ______ up, and it came back bigger / smaller, because ______. Sign: + / −",
+        "Biosphere joins by ______."
       ]
     },
     {
       "id": "arctic-ice-sunlight",
       "title": "Arctic ice and sunlight",
       "where": "Global",
-      "spheres": ["Hydrosphere", "Atmosphere"],
+      "spheres": [
+        "Hydrosphere",
+        "Atmosphere"
+      ],
       "firstArrow": "Hydrosphere (sea ice) reflects sunlight back into atmosphere.",
       "returnArrowHint": "What does a warmer atmosphere send back to the ice?",
       "signHint": "Melt a little ice and ask what the dark open water does with the sunlight the ice used to reflect.",
@@ -168,15 +189,18 @@
       "noteFrame": [
         "Hydrosphere reflects sunlight back into atmosphere.",
         "Atmosphere ______ hydrosphere.",
-        "I pushed ______ up, and it came back ______ because ______. Sign: __",
-        "Next sphere: biosphere joins by ______."
+        "I pushed ______ up, and it came back bigger / smaller, because ______. Sign: + / −",
+        "Biosphere joins by ______."
       ]
     },
     {
       "id": "amazon-flying-rivers",
       "title": "The Amazon's flying rivers",
       "where": "Global",
-      "spheres": ["Biosphere", "Atmosphere"],
+      "spheres": [
+        "Biosphere",
+        "Atmosphere"
+      ],
       "firstArrow": "Biosphere (the forest) breathes out water vapor into atmosphere.",
       "returnArrowHint": "What does the atmosphere send back down onto the forest?",
       "signHint": "Cut some forest and ask whether the rain that fed the rest of it still arrives.",
@@ -191,15 +215,18 @@
       "noteFrame": [
         "Biosphere breathes out water vapor into atmosphere.",
         "Atmosphere ______ biosphere.",
-        "I pushed ______ up, and it came back ______ because ______. Sign: __",
-        "Next sphere: hydrosphere joins by ______."
+        "I pushed ______ up, and it came back bigger / smaller, because ______. Sign: + / −",
+        "Hydrosphere joins by ______."
       ]
     },
     {
       "id": "permafrost-thaw",
       "title": "Permafrost thaw",
       "where": "Global",
-      "spheres": ["Geosphere", "Atmosphere"],
+      "spheres": [
+        "Geosphere",
+        "Atmosphere"
+      ],
       "firstArrow": "Geosphere (thawing frozen soil) releases carbon dioxide and methane into atmosphere.",
       "returnArrowHint": "What does an atmosphere holding more greenhouse gas send back to the frozen ground?",
       "signHint": "Thaw a little more ground and ask whether the gas it releases makes the next thaw slower, or faster.",
@@ -214,15 +241,18 @@
       "noteFrame": [
         "Geosphere releases carbon dioxide and methane into atmosphere.",
         "Atmosphere ______ geosphere.",
-        "I pushed ______ up, and it came back ______ because ______. Sign: __",
-        "Next sphere: biosphere joins by ______."
+        "I pushed ______ up, and it came back bigger / smaller, because ______. Sign: + / −",
+        "Biosphere joins by ______."
       ]
     },
     {
       "id": "ocean-acidification",
       "title": "Ocean acidification",
       "where": "Global",
-      "spheres": ["Atmosphere", "Hydrosphere"],
+      "spheres": [
+        "Atmosphere",
+        "Hydrosphere"
+      ],
       "firstArrow": "Atmosphere (carbon dioxide) dissolves into hydrosphere.",
       "returnArrowHint": "What does the sea send back to the air, and does holding more carbon change how much more it can keep taking?",
       "signHint": "Add more carbon dioxide to the air and ask whether a more acidic ocean absorbs the next tonne more easily, or less.",
@@ -237,15 +267,18 @@
       "noteFrame": [
         "Atmosphere dissolves into hydrosphere.",
         "Hydrosphere ______ atmosphere.",
-        "I pushed ______ up, and it came back ______ because ______. Sign: __",
-        "Next sphere: biosphere joins by ______."
+        "I pushed ______ up, and it came back bigger / smaller, because ______. Sign: + / −",
+        "Biosphere joins by ______."
       ]
     },
     {
       "id": "volcanoes-slow-carbon",
       "title": "Volcanoes and the slow carbon cycle",
       "where": "Global",
-      "spheres": ["Geosphere", "Atmosphere"],
+      "spheres": [
+        "Geosphere",
+        "Atmosphere"
+      ],
       "firstArrow": "Geosphere (volcanoes) outgasses carbon dioxide into atmosphere.",
       "returnArrowHint": "What does a warmer, wetter atmosphere send back onto the rock over thousands of years?",
       "signHint": "Warm the air and ask whether more rain and weathering pulls carbon dioxide out of the air faster, and what that does to the warmth.",
@@ -260,15 +293,18 @@
       "noteFrame": [
         "Geosphere outgasses carbon dioxide into atmosphere.",
         "Atmosphere ______ geosphere.",
-        "I pushed ______ up, and it came back ______ because ______. Sign: __",
-        "Next sphere: hydrosphere joins by ______."
+        "I pushed ______ up, and it came back bigger / smaller, because ______. Sign: + / −",
+        "Hydrosphere joins by ______."
       ]
     },
     {
       "id": "water-vapor-amplifier",
       "title": "Water vapor, the loop that amplifies",
       "where": "Global",
-      "spheres": ["Hydrosphere", "Atmosphere"],
+      "spheres": [
+        "Hydrosphere",
+        "Atmosphere"
+      ],
       "firstArrow": "Hydrosphere evaporates into atmosphere.",
       "returnArrowHint": "What does the air send back to the sea, and what does the extra vapor in the air do to the heat the sea receives?",
       "signHint": "You signed this loop in Step 6 of the tutorial; the source tells you how much it multiplies the warming.",
@@ -283,8 +319,8 @@
       "noteFrame": [
         "Hydrosphere evaporates into atmosphere.",
         "Atmosphere ______ hydrosphere.",
-        "I pushed ______ up, and it came back ______ because ______. Sign: __",
-        "Next sphere: geosphere joins by ______."
+        "I pushed ______ up, and it came back bigger / smaller, because ______. Sign: + / −",
+        "Geosphere joins by ______."
       ]
     }
   ]
