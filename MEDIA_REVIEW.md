@@ -158,6 +158,29 @@ All URLs re-verified (title + channel via YouTube oembed; NASA pages HTTP 200) o
 
 Also placed 2026-06-11 (internal, not external media): the Four Planets, No Labels gallery (`/units/unit-1/planet-gallery/`) is now linked from B1's Interact card and B1 Do step 1.
 
+### Confirmed — Systems Gallery (placed 2026-09-10)
+
+All twelve cards live in `src/_data/systemsGallery.json`, rendered by `src/units/unit-1/systems-gallery.njk` (`/units/unit-1/systems-gallery/`). Every URL below was fetched on 2026-09-10 and confirmed HTTP 200 with the page about what its card says. Earth Observatory pages now redirect to science.nasa.gov; the data file stores the final URL, not the old earthobservatory.nasa.gov one. Two hosts (rsis.ramsar.org, usgs.gov) answer curl with a bot challenge (418 / 202) but load normally in a real browser; both were confirmed in the browser pane. Allowed-domain rule held: nasa.gov, noaa.gov, usgs.gov, epa.gov, scied.ucar.edu, nsidc.org, ramsar.org, tn.gov.in only.
+
+| Card | Source | URL | Notes |
+|---|---|---|---|
+| 1 The monsoon and the Bay | NASA Earth Observatory, *Historic Rainfall Floods Southeast India* (9 Dec 2015) | `https://science.nasa.gov/earth/earth-observatory/historic-rainfall-floods-southeast-india-87131/` | Chennai's record 24-hour rainfall; northeast monsoon winds evaporating moisture off the warm Bay of Bengal. The generic "Indian monsoon" EO feature the brief named does not exist as a page; this Chennai-specific one replaces it |
+| 1 The monsoon and the Bay | UCAR SciEd, *What Are Monsoons and Why Do They Happen?* | `https://scied.ucar.edu/learning-zone/storms/monsoons` | Ocean-to-land moisture mechanism, ITCZ framing |
+| 2 Reservoirs at zero | NASA Earth Observatory, *Water Shortages in India* (28 Jun 2019) | `https://science.nasa.gov/earth/earth-observatory/water-shortages-in-india-145242/` | Landsat before/after of Puzhal Lake, May 2018 vs June 2019. Confirmed as the page the brief asked for |
+| 3 Pallikaranai marsh | Ramsar Sites Information Service, site 2481 | `https://rsis.ramsar.org/ris/2481` | Designated 8 Apr 2022; "soaking up water during wet periods and releasing it during dry spells". Site number is 2481, not the 2487 first guessed |
+| 3 Pallikaranai marsh | Tamil Nadu State Wetlands Authority, *Pallikaranai Marsh Reserve Forest* | `https://tnswa.tn.gov.in/ramsar-site-information.php?token=Pallikaranai-Marsh-Reserve-Forest` | gov.in domain; "acts as a sponge absorbing excess storm water", recharges groundwater. Replaces the Forest Department page, which 404s |
+| 4 Coral bleaching, Gulf of Mannar | NOAA Coral Reef Watch, *Bleaching Threshold* tutorial | `https://coralreefwatch.noaa.gov/product/5km/tutorial/crw08a_bleaching_threshold.php` | Heat stress above the bleaching threshold; the explainer, not a Gulf of Mannar page |
+| 5 Pichavaram mangroves | NOAA National Ocean Service, *What is a mangrove forest?* | `https://oceanservice.noaa.gov/facts/mangroves.html` | Roots slow tidal water, sediment settles, coastline stabilised |
+| 6 Chennai heat island | US EPA, *What Are Heat Islands?* | `https://www.epa.gov/heatislands/what-are-heat-islands` | Final URL after redirect from /learn-about-heat-islands; "absorb and re-emit the sun's heat" |
+| 7 Arctic ice and sunlight | NSIDC, *Science of Sea Ice* | `https://nsidc.org/learn/parts-cryosphere/sea-ice/science-sea-ice` | Albedo numbers: ocean ~0.06, bare sea ice 0.5 to 0.7 |
+| 8 The Amazon's flying rivers | NASA Earth Observatory, *The Amazon Makes its Own Wet Season* (31 Oct 2017) | `https://science.nasa.gov/earth/earth-observatory/the-amazon-makes-its-own-wet-season-91161/` | Transpiration moisture triggers the wet season; the older "makes its own rain" EO URL now redirects to the EO home page and is not used |
+| 9 Permafrost thaw | NOAA Arctic Report Card 2019, *Permafrost and the Global Carbon Cycle* (T. Schuur) | `https://arctic.noaa.gov/report-card/report-card-2019/permafrost-and-the-global-carbon-cycle/` | "Microbial conversion of permafrost carbon into ... carbon dioxide and methane" |
+| 10 Ocean acidification | NOAA PMEL, *Ocean Acidification: The Other Carbon Dioxide Problem* | `https://www.pmel.noaa.gov/co2/story/Ocean+Acidification` | Ocean absorbs about a quarter of emitted CO2; programme overview rather than a shell-chemistry explainer, adequate for the first arrow |
+| 11 Volcanoes and the slow carbon cycle | USGS Volcano Hazards Program, *Volcanoes Can Affect Climate* | `https://www.usgs.gov/programs/VHP/volcanoes-can-affect-climate` | Volcanic CO2 named as a greenhouse gas. The brief's second source, OpenStax Astronomy 2e §8.4, was fetched and searched: it has no carbonate / weathering thermostat text, so it is dropped from this card rather than cited for something it does not say |
+| 12 Water vapor amplifier | NASA, *Steamy Relationships: How Atmospheric Water Vapor Amplifies Earth's Greenhouse Effect* (8 Feb 2022) | `https://science.nasa.gov/earth/climate-change/steamy-relationships-how-atmospheric-water-vapor-amplifies-earths-greenhouse-effect/` | Names the positive feedback loop explicitly |
+
+Not used: NOAA Education ocean acidification collection (403 to the fetcher, PMEL covers the card); NASA Climate Arctic sea-ice indicator (NSIDC covers the card).
+
 ---
 
 ## Pending — librarian collaboration

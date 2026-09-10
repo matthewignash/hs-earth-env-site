@@ -1,0 +1,291 @@
+{
+  "note": "Twelve sphere interactions for students who have one loop and need somewhere to go next. Every source URL was fetched and confirmed on 2026-09-10 (see MEDIA_REVIEW.md, Confirmed: Systems Gallery). Field order is fixed so every card reads the same way.",
+  "cards": [
+    {
+      "id": "monsoon-bay",
+      "title": "The monsoon and the Bay",
+      "where": "Chennai",
+      "spheres": ["Hydrosphere", "Atmosphere"],
+      "firstArrow": "Hydrosphere (the Bay of Bengal) evaporates into atmosphere.",
+      "returnArrowHint": "What does the air send back to the Bay, and to Chennai's streets, when the northeast monsoon arrives in November?",
+      "signHint": "A warmer bay evaporates more; ask what more water vapor in the air does to the heat the bay feels next.",
+      "growTo": "Geosphere joins first: rain soaks into the ground, or runs off the built surface into the Adyar.",
+      "sources": [
+        {
+          "label": "NASA Earth Observatory, Historic Rainfall Floods Southeast India (2015)",
+          "url": "https://science.nasa.gov/earth/earth-observatory/historic-rainfall-floods-southeast-india-87131/",
+          "origin": "NASA Earth Observatory, a US government science agency, published this in December 2015 to explain satellite rainfall data from the Chennai floods to the public."
+        },
+        {
+          "label": "UCAR Center for Science Education, What Are Monsoons and Why Do They Happen?",
+          "url": "https://scied.ucar.edu/learning-zone/storms/monsoons",
+          "origin": "The UCAR Center for Science Education, the teaching arm of a US university research consortium, publishes this page to teach students what monsoons are and why they happen."
+        }
+      ],
+      "noteFrame": [
+        "Hydrosphere evaporates into atmosphere.",
+        "Atmosphere ______ hydrosphere.",
+        "I pushed ______ up, and it came back ______ because ______. Sign: __",
+        "Next sphere: geosphere joins by ______."
+      ]
+    },
+    {
+      "id": "reservoirs-2019",
+      "title": "Reservoirs at zero, June 2019",
+      "where": "Chennai",
+      "spheres": ["Hydrosphere", "Geosphere"],
+      "firstArrow": "Hydrosphere (Puzhal reservoir) seeps into geosphere (as groundwater).",
+      "returnArrowHint": "When the reservoir is empty and every borewell is pumping, what does the ground send back to the city's water supply, and what happens when it cannot?",
+      "signHint": "Pump more groundwater in a dry year and ask whether the emptier ground refills faster, or dries the land further.",
+      "growTo": "Atmosphere joins first: a failed northeast monsoon rains less onto the reservoir.",
+      "sources": [
+        {
+          "label": "NASA Earth Observatory, Water Shortages in India (June 2019)",
+          "url": "https://science.nasa.gov/earth/earth-observatory/water-shortages-in-india-145242/",
+          "origin": "NASA Earth Observatory, a US government science agency, published this in June 2019 to show Landsat satellite images of Puzhal Lake near Chennai before and after the reservoirs ran dry."
+        }
+      ],
+      "noteFrame": [
+        "Hydrosphere seeps into geosphere.",
+        "Geosphere ______ hydrosphere.",
+        "I pushed ______ up, and it came back ______ because ______. Sign: __",
+        "Next sphere: atmosphere joins by ______."
+      ]
+    },
+    {
+      "id": "pallikaranai-sponge",
+      "title": "Pallikaranai marsh as a sponge",
+      "where": "Chennai",
+      "spheres": ["Biosphere", "Hydrosphere"],
+      "firstArrow": "Biosphere (marsh plants and their soil) soaks up hydrosphere (floodwater).",
+      "returnArrowHint": "What does the stored water send back to the marsh's plants and birds in the dry months?",
+      "signHint": "Fill in more of the marsh with buildings and ask whether the next flood is absorbed more, or less.",
+      "growTo": "Geosphere joins first: the marsh recharges groundwater in the rock below it.",
+      "sources": [
+        {
+          "label": "Ramsar Sites Information Service, Pallikaranai Marsh Reserve Forest (site 2481)",
+          "url": "https://rsis.ramsar.org/ris/2481",
+          "origin": "The Ramsar Convention Secretariat, an intergovernmental treaty body, publishes this information sheet because India designated Pallikaranai a Wetland of International Importance in April 2022."
+        },
+        {
+          "label": "Tamil Nadu State Wetlands Authority, Pallikaranai Marsh Reserve Forest",
+          "url": "https://tnswa.tn.gov.in/ramsar-site-information.php?token=Pallikaranai-Marsh-Reserve-Forest",
+          "origin": "The Tamil Nadu State Wetlands Authority, a state government body, publishes this page to record the marsh's features and its protected status."
+        }
+      ],
+      "noteFrame": [
+        "Biosphere soaks up hydrosphere.",
+        "Hydrosphere ______ biosphere.",
+        "I pushed ______ up, and it came back ______ because ______. Sign: __",
+        "Next sphere: geosphere joins by ______."
+      ]
+    },
+    {
+      "id": "coral-bleaching",
+      "title": "Coral bleaching, Gulf of Mannar",
+      "where": "Chennai",
+      "spheres": ["Hydrosphere", "Biosphere"],
+      "firstArrow": "Hydrosphere (warm sea water) warms biosphere (the coral).",
+      "returnArrowHint": "What does a living reef send back to the water around it, and what stops when the coral bleaches?",
+      "signHint": "Push the sea temperature up for a few weeks and ask whether the reef pushes back against that heat, or simply loses the algae that feed it.",
+      "growTo": "Atmosphere joins first: a warmer atmosphere heats the sea surface.",
+      "sources": [
+        {
+          "label": "NOAA Coral Reef Watch, Bleaching Threshold",
+          "url": "https://coralreefwatch.noaa.gov/product/5km/tutorial/crw08a_bleaching_threshold.php",
+          "origin": "NOAA Coral Reef Watch, a program of a US government ocean agency, publishes this tutorial to explain how its satellite temperature products predict bleaching."
+        }
+      ],
+      "noteFrame": [
+        "Hydrosphere warms biosphere.",
+        "Biosphere ______ hydrosphere.",
+        "I pushed ______ up, and it came back ______ because ______. Sign: __",
+        "Next sphere: atmosphere joins by ______."
+      ]
+    },
+    {
+      "id": "pichavaram-mangroves",
+      "title": "Pichavaram mangroves and the shore",
+      "where": "Chennai",
+      "spheres": ["Biosphere", "Geosphere"],
+      "firstArrow": "Biosphere (mangrove roots) traps geosphere (sediment).",
+      "returnArrowHint": "What does the built-up mud send back to the mangroves that lets them spread?",
+      "signHint": "More roots trap more mud; ask whether more mud grows more mangroves.",
+      "growTo": "Hydrosphere joins first: the roots slow the tidal water that carries the sediment in.",
+      "sources": [
+        {
+          "label": "NOAA National Ocean Service, What is a mangrove forest?",
+          "url": "https://oceanservice.noaa.gov/facts/mangroves.html",
+          "origin": "NOAA's National Ocean Service, a US government agency, publishes this Ocean Facts page to answer a public question about what a mangrove forest is and does."
+        }
+      ],
+      "noteFrame": [
+        "Biosphere traps geosphere.",
+        "Geosphere ______ biosphere.",
+        "I pushed ______ up, and it came back ______ because ______. Sign: __",
+        "Next sphere: hydrosphere joins by ______."
+      ]
+    },
+    {
+      "id": "chennai-heat-island",
+      "title": "Chennai heat island",
+      "where": "Chennai",
+      "spheres": ["Geosphere", "Atmosphere"],
+      "firstArrow": "Geosphere (built surfaces: roads, roofs, concrete) absorbs and re-radiates heat into atmosphere.",
+      "returnArrowHint": "What does hotter air over the city send back down to the concrete at night?",
+      "signHint": "Add more concrete and ask whether the air over the city gets hotter, and whether hotter air cools the concrete or keeps it warm.",
+      "growTo": "Biosphere joins first: trees shade the surfaces and breathe out water vapor that cools the air.",
+      "sources": [
+        {
+          "label": "US EPA, What Are Heat Islands?",
+          "url": "https://www.epa.gov/heatislands/what-are-heat-islands",
+          "origin": "The US Environmental Protection Agency, a government regulator, publishes this page to explain heat islands to communities planning how to cool their cities."
+        }
+      ],
+      "noteFrame": [
+        "Geosphere absorbs and re-radiates heat into atmosphere.",
+        "Atmosphere ______ geosphere.",
+        "I pushed ______ up, and it came back ______ because ______. Sign: __",
+        "Next sphere: biosphere joins by ______."
+      ]
+    },
+    {
+      "id": "arctic-ice-sunlight",
+      "title": "Arctic ice and sunlight",
+      "where": "Global",
+      "spheres": ["Hydrosphere", "Atmosphere"],
+      "firstArrow": "Hydrosphere (sea ice) reflects sunlight back into atmosphere.",
+      "returnArrowHint": "What does a warmer atmosphere send back to the ice?",
+      "signHint": "Melt a little ice and ask what the dark open water does with the sunlight the ice used to reflect.",
+      "growTo": "Biosphere joins first: less ice changes where plankton and seals can live.",
+      "sources": [
+        {
+          "label": "NSIDC, Science of Sea Ice",
+          "url": "https://nsidc.org/learn/parts-cryosphere/sea-ice/science-sea-ice",
+          "origin": "The National Snow and Ice Data Center, a US university research center funded by NASA and NOAA, publishes this page to explain the science of sea ice, including albedo, to the public."
+        }
+      ],
+      "noteFrame": [
+        "Hydrosphere reflects sunlight back into atmosphere.",
+        "Atmosphere ______ hydrosphere.",
+        "I pushed ______ up, and it came back ______ because ______. Sign: __",
+        "Next sphere: biosphere joins by ______."
+      ]
+    },
+    {
+      "id": "amazon-flying-rivers",
+      "title": "The Amazon's flying rivers",
+      "where": "Global",
+      "spheres": ["Biosphere", "Atmosphere"],
+      "firstArrow": "Biosphere (the forest) breathes out water vapor into atmosphere.",
+      "returnArrowHint": "What does the atmosphere send back down onto the forest?",
+      "signHint": "Cut some forest and ask whether the rain that fed the rest of it still arrives.",
+      "growTo": "Hydrosphere joins first: the rain feeds the rivers the forest drinks from.",
+      "sources": [
+        {
+          "label": "NASA Earth Observatory, The Amazon Makes its Own Wet Season (2017)",
+          "url": "https://science.nasa.gov/earth/earth-observatory/the-amazon-makes-its-own-wet-season-91161/",
+          "origin": "NASA Earth Observatory, a US government science agency, published this in October 2017 to report a NASA-funded satellite study of how Amazon trees start their own rainy season."
+        }
+      ],
+      "noteFrame": [
+        "Biosphere breathes out water vapor into atmosphere.",
+        "Atmosphere ______ biosphere.",
+        "I pushed ______ up, and it came back ______ because ______. Sign: __",
+        "Next sphere: hydrosphere joins by ______."
+      ]
+    },
+    {
+      "id": "permafrost-thaw",
+      "title": "Permafrost thaw",
+      "where": "Global",
+      "spheres": ["Geosphere", "Atmosphere"],
+      "firstArrow": "Geosphere (thawing frozen soil) releases carbon dioxide and methane into atmosphere.",
+      "returnArrowHint": "What does an atmosphere holding more greenhouse gas send back to the frozen ground?",
+      "signHint": "Thaw a little more ground and ask whether the gas it releases makes the next thaw slower, or faster.",
+      "growTo": "Biosphere joins first: microbes in the thawed soil are what turn the old carbon into gas.",
+      "sources": [
+        {
+          "label": "NOAA Arctic Report Card 2019, Permafrost and the Global Carbon Cycle",
+          "url": "https://arctic.noaa.gov/report-card/report-card-2019/permafrost-and-the-global-carbon-cycle/",
+          "origin": "NOAA's Arctic Report Card, a peer-reviewed annual from a US government agency, published this 2019 essay by permafrost scientist Ted Schuur to summarise what is known about permafrost carbon."
+        }
+      ],
+      "noteFrame": [
+        "Geosphere releases carbon dioxide and methane into atmosphere.",
+        "Atmosphere ______ geosphere.",
+        "I pushed ______ up, and it came back ______ because ______. Sign: __",
+        "Next sphere: biosphere joins by ______."
+      ]
+    },
+    {
+      "id": "ocean-acidification",
+      "title": "Ocean acidification",
+      "where": "Global",
+      "spheres": ["Atmosphere", "Hydrosphere"],
+      "firstArrow": "Atmosphere (carbon dioxide) dissolves into hydrosphere.",
+      "returnArrowHint": "What does the sea send back to the air, and does holding more carbon change how much more it can keep taking?",
+      "signHint": "Add more carbon dioxide to the air and ask whether a more acidic ocean absorbs the next tonne more easily, or less.",
+      "growTo": "Biosphere joins first: shell-building animals struggle to build in the more acidic water.",
+      "sources": [
+        {
+          "label": "NOAA PMEL, Ocean Acidification: The Other Carbon Dioxide Problem",
+          "url": "https://www.pmel.noaa.gov/co2/story/Ocean+Acidification",
+          "origin": "NOAA's Pacific Marine Environmental Laboratory, a US government research lab, publishes this page to explain the ocean acidification research it runs."
+        }
+      ],
+      "noteFrame": [
+        "Atmosphere dissolves into hydrosphere.",
+        "Hydrosphere ______ atmosphere.",
+        "I pushed ______ up, and it came back ______ because ______. Sign: __",
+        "Next sphere: biosphere joins by ______."
+      ]
+    },
+    {
+      "id": "volcanoes-slow-carbon",
+      "title": "Volcanoes and the slow carbon cycle",
+      "where": "Global",
+      "spheres": ["Geosphere", "Atmosphere"],
+      "firstArrow": "Geosphere (volcanoes) outgasses carbon dioxide into atmosphere.",
+      "returnArrowHint": "What does a warmer, wetter atmosphere send back onto the rock over thousands of years?",
+      "signHint": "Warm the air and ask whether more rain and weathering pulls carbon dioxide out of the air faster, and what that does to the warmth.",
+      "growTo": "Hydrosphere joins first: rain carries the weathered carbon to the sea, where it is buried as limestone.",
+      "sources": [
+        {
+          "label": "USGS Volcano Hazards Program, Volcanoes Can Affect Climate",
+          "url": "https://www.usgs.gov/programs/VHP/volcanoes-can-affect-climate",
+          "origin": "The US Geological Survey Volcano Hazards Program, a government science agency, publishes this page to explain how volcanic gases cool or warm the climate."
+        }
+      ],
+      "noteFrame": [
+        "Geosphere outgasses carbon dioxide into atmosphere.",
+        "Atmosphere ______ geosphere.",
+        "I pushed ______ up, and it came back ______ because ______. Sign: __",
+        "Next sphere: hydrosphere joins by ______."
+      ]
+    },
+    {
+      "id": "water-vapor-amplifier",
+      "title": "Water vapor, the loop that amplifies",
+      "where": "Global",
+      "spheres": ["Hydrosphere", "Atmosphere"],
+      "firstArrow": "Hydrosphere evaporates into atmosphere.",
+      "returnArrowHint": "What does the air send back to the sea, and what does the extra vapor in the air do to the heat the sea receives?",
+      "signHint": "You signed this loop in Step 6 of the tutorial; the source tells you how much it multiplies the warming.",
+      "growTo": "Geosphere joins first: rain soaks into groundwater, exactly as in the tutorial.",
+      "sources": [
+        {
+          "label": "NASA, Steamy Relationships: How Atmospheric Water Vapor Amplifies Earth's Greenhouse Effect",
+          "url": "https://science.nasa.gov/earth/climate-change/steamy-relationships-how-atmospheric-water-vapor-amplifies-earths-greenhouse-effect/",
+          "origin": "NASA, the US space agency, published this explainer in February 2022 to describe how water vapor amplifies the greenhouse effect."
+        }
+      ],
+      "noteFrame": [
+        "Hydrosphere evaporates into atmosphere.",
+        "Atmosphere ______ hydrosphere.",
+        "I pushed ______ up, and it came back ______ because ______. Sign: __",
+        "Next sphere: geosphere joins by ______."
+      ]
+    }
+  ]
+}
