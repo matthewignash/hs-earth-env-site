@@ -44,10 +44,10 @@ extraStylesheets:
 
 <header class="page-header">
   <div class="container">
-    <h1>{% if block %}Block {{ block }}: {% endif %}{{ title }}</h1>
+    <h1>{% if block %}Block {{ blockLabel or block }}: {% endif %}{{ title }}</h1>
     {%- set courseDayNumber = courseMeeting or (collections.teachingBlocks | courseDay(unit, block)) -%}
     <div class="meta">
-      <span>Unit {{ unit }}{% if block %} · Block {{ block }} of {{ blocksTotal }}{% else %} · {{ scheduleLabel or "Orientation" }}{% endif %}</span>
+      <span>Unit {{ unit }}{% if block %} · Block {{ blockLabel or block }} of {{ blocksTotal }}{% else %} · {{ scheduleLabel or "Orientation" }}{% endif %}</span>
       {% if minutes %}<span>⏰ {{ minutes }} minutes</span>{% endif %}
       <span class="block-dates">{{ rotationDates.days | meetingDateLabel(courseDayNumber) }}</span>
     </div>

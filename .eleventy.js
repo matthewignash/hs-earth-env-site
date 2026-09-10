@@ -100,7 +100,7 @@ module.exports = function (eleventyConfig) {
       return {
         unit: p.data.unit,
         meeting: meetingNumber(ordered, p),
-        label: "Block " + p.data.block,
+        label: "Block " + (p.data.blockLabel || p.data.block),
         title: p.data.title,
         url: p.url
       };
