@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 420" width="640" height="420" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" role="img" aria-labelledby="t d">
+  <title id="t">Step 7: all four spheres</title>
+  <desc id="d">Four labeled circles. Hydrosphere and Atmosphere at the top keep their signed loop: evaporates into, rains onto, a dashed plus marker. Geosphere sits below Atmosphere, joined by an arrow from atmosphere labeled soaks into. Biosphere sits below Hydrosphere, with an arrow up to atmosphere labeled breathe out. Four circles, four arrows, every arrow has a verb.</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#2e5395"/>
+    </marker>
+    <marker id="loop-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#b34a2e"/>
+    </marker>
+  </defs>
+  <rect width="640" height="420" fill="#ffffff"/>
+  <g fill="none" stroke="#2e5395" stroke-width="2.5" marker-end="url(#arrow)">
+    <path d="M206 92 Q320 40 434 92"/>
+    <path d="M434 128 Q320 180 206 128"/>
+    <path d="M490 168 L490 262"/>
+    <path d="M195 283 L445 150"/>
+  </g>
+  <g fill="none" stroke="#b34a2e" stroke-width="2.5" stroke-dasharray="6 5" marker-end="url(#loop-arrow)">
+    <path d="M304 96 A18 18 0 1 1 304 124"/>
+  </g>
+  <text x="320" y="116" font-size="18" font-weight="700" fill="#b34a2e" text-anchor="middle">+</text>
+  <g font-size="14" fill="#1a1a2e" text-anchor="middle" paint-order="stroke" stroke="#ffffff" stroke-width="5" stroke-linejoin="round">
+    <text x="320" y="58">evaporates into</text>
+    <text x="320" y="186">rains onto</text>
+    <text x="540" y="220">soaks into</text>
+    <text x="262" y="252">breathe out</text>
+  </g>
+  <g stroke="#1a1a2e" stroke-width="2">
+    <circle cx="150" cy="110" r="56" fill="#d9e2f3"/>
+    <circle cx="490" cy="110" r="56" fill="#d9e7f3"/>
+    <circle cx="490" cy="320" r="56" fill="#fce4d6"/>
+    <circle cx="150" cy="320" r="56" fill="#e2efda"/>
+  </g>
+  <g text-anchor="middle" fill="#1a1a2e">
+    <text x="150" y="107" font-size="16" font-weight="700">Hydrosphere</text>
+    <text x="150" y="126" font-size="12" fill="#4f4f4f">water</text>
+    <text x="490" y="107" font-size="16" font-weight="700">Atmosphere</text>
+    <text x="490" y="126" font-size="12" fill="#4f4f4f">air</text>
+    <text x="490" y="317" font-size="16" font-weight="700">Geosphere</text>
+    <text x="490" y="336" font-size="12" fill="#4f4f4f">rock + soil</text>
+    <text x="150" y="317" font-size="16" font-weight="700">Biosphere</text>
+    <text x="150" y="336" font-size="12" fill="#4f4f4f">life</text>
+  </g>
+  <text x="320" y="404" font-size="12" fill="#4f4f4f" text-anchor="middle">Four circles, four arrows, every arrow has a verb.</text>
+</svg>

@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 300" width="640" height="300" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" role="img" aria-labelledby="t d">
+  <title id="t">Step 6: the loop gets a sign</title>
+  <desc id="d">The two-circle loop between Hydrosphere and Atmosphere, with a dashed circular loop marker between the arrows carrying a plus sign. Under the diagram, one sentence: I pushed evaporation up, and it came back bigger, because more water vapor in the air traps more heat, a warmer sea evaporates even more, so the loop is +.</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#2e5395"/>
+    </marker>
+    <marker id="loop-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#b34a2e"/>
+    </marker>
+  </defs>
+  <rect width="640" height="300" fill="#ffffff"/>
+  <g fill="none" stroke="#2e5395" stroke-width="2.5" marker-end="url(#arrow)">
+    <path d="M206 92 Q320 40 434 92"/>
+    <path d="M434 128 Q320 180 206 128"/>
+  </g>
+  <g fill="none" stroke="#b34a2e" stroke-width="2.5" stroke-dasharray="6 5" marker-end="url(#loop-arrow)">
+    <path d="M304 96 A18 18 0 1 1 304 124"/>
+  </g>
+  <text x="320" y="116" font-size="18" font-weight="700" fill="#b34a2e" text-anchor="middle">+</text>
+  <g font-size="14" fill="#1a1a2e" text-anchor="middle" paint-order="stroke" stroke="#ffffff" stroke-width="5" stroke-linejoin="round">
+    <text x="320" y="58">evaporates into</text>
+    <text x="320" y="176">rains onto</text>
+  </g>
+  <g stroke="#1a1a2e" stroke-width="2">
+    <circle cx="150" cy="110" r="56" fill="#d9e2f3"/>
+    <circle cx="490" cy="110" r="56" fill="#d9e7f3"/>
+  </g>
+  <g text-anchor="middle" fill="#1a1a2e">
+    <text x="150" y="107" font-size="16" font-weight="700">Hydrosphere</text>
+    <text x="150" y="126" font-size="12" fill="#4f4f4f">water</text>
+    <text x="490" y="107" font-size="16" font-weight="700">Atmosphere</text>
+    <text x="490" y="126" font-size="12" fill="#4f4f4f">air</text>
+  </g>
+  <rect x="40" y="200" width="560" height="84" rx="10" fill="#fff4d9" stroke="#cccccc" stroke-width="1.5"/>
+  <text x="56" y="222" font-size="11" font-weight="700" fill="#b34a2e" letter-spacing="0.5">LOOP SIGN: POSITIVE (+)</text>
+  <g font-size="13" fill="#1a1a2e">
+    <text x="56" y="244">"I pushed evaporation up, and it came back bigger, because more water</text>
+    <text x="56" y="262">vapor in the air traps more heat, a warmer sea evaporates even more,</text>
+    <text x="56" y="280">so the loop is +."</text>
+  </g>
+</svg>

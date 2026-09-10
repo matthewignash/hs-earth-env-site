@@ -1,0 +1,93 @@
+{
+  "source": {
+    "title": "Build Your First Systems Diagram",
+    "publisher": "AISC Earth and Environmental Science",
+    "sections": "Unit 1, Block 2b: the nine steps, drawn",
+    "license": "CC BY 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+    "accessUrl": "/units/unit-1/reading-build-a-systems-diagram/",
+    "note": "Our own material. The slide text is the nine steps of Block 2b, tightened; every 'Done when' line is copied from the Block 2b page unchanged, so the page, the printed checklist and this deck agree. The worked example is starter (a), hydrosphere evaporates into atmosphere, matching the back of the printed checklist."
+  },
+  "decks": {
+    "build": {
+      "id": "build",
+      "label": "The diagram, one step at a time",
+      "intro": "Nine frames, one per step of Block 2b. Each frame shows what your paper should look like when that step is done.",
+      "slides": [
+        {
+          "n": 1,
+          "title": "Notebook header",
+          "body": "Open your Class Notebook and type today's header. Nothing else goes in the notebook until Step 9. Done when: the header line is in your notebook. If this is the step that stalls you, skip it, and do it last.",
+          "terms": [],
+          "image": "/assets/img/u1/systems-tutorial/step-1.svg",
+          "imageAlt": "A Class Notebook page with one Heading 2 line typed at the top, date, U1 B2b, Earth Systems Second Pass, and nothing else on it."
+        },
+        {
+          "n": 2,
+          "title": "Four spheres, four rows",
+          "body": "On paper, draw a table with four rows: atmosphere, hydrosphere, geosphere, biosphere. In each row write one thing that belongs to it that you have seen this week, in your own words. Done when: four rows, four examples, in your own words.",
+          "terms": ["atmosphere", "hydrosphere", "geosphere", "biosphere"],
+          "image": "/assets/img/u1/systems-tutorial/step-2.svg",
+          "imageAlt": "A hand-drawn table with four rows labeled atmosphere, hydrosphere, geosphere and biosphere, and a second column headed Something I saw this week whose cells are still empty."
+        },
+        {
+          "n": 3,
+          "title": "One interaction, one sentence",
+          "body": "Pick one pair from the Block 2b list. This tutorial uses starter (a): the sea evaporates into the air. Write it as one sentence in the shape [sphere] [verb] [sphere]. Done when: one sentence, with a verb, naming two spheres.",
+          "terms": [],
+          "image": "/assets/img/u1/systems-tutorial/step-3.svg",
+          "imageAlt": "One handwritten sentence on ruled paper: Hydrosphere evaporates into atmosphere. Small labels under it mark the sentence's shape as sphere, verb, sphere."
+        },
+        {
+          "n": 4,
+          "title": "Draw that sentence",
+          "body": "Two circles, one arrow. Sphere names inside the circles, the verb on the arrow. That is a systems diagram: small, and correct. Done when: two labeled circles, one arrow, one verb on the arrow.",
+          "terms": ["systems diagram"],
+          "image": "/assets/img/u1/systems-tutorial/step-4.svg",
+          "imageAlt": "Two labeled circles, Hydrosphere on the left and Atmosphere on the right, joined by a single curved arrow from hydrosphere to atmosphere with the verb evaporates into written on it."
+        },
+        {
+          "n": 5,
+          "title": "The return arrow",
+          "body": "Ask what the second sphere sends back to the first. For the sea and the air, the air rains onto the sea. Draw the second arrow with its verb; you now have a loop. Done when: two arrows between the same two circles, pointing opposite ways, each with a verb.",
+          "terms": ["feedback loop"],
+          "image": "/assets/img/u1/systems-tutorial/step-5.svg",
+          "imageAlt": "The same two circles, now joined by two arrows pointing opposite ways: evaporates into along the top from hydrosphere to atmosphere, and rains onto along the bottom from atmosphere back to hydrosphere."
+        },
+        {
+          "n": 6,
+          "title": "Sign the loop",
+          "body": "Push one thing up and follow both arrows round once. Here, more evaporation means more water vapor, which traps more heat, which warms the sea, which evaporates even more: the push came back bigger, so the loop is +. Write the sign next to the loop and the 'I pushed' sentence under the diagram. Done when: a + or − on the loop, and the \"I pushed\" sentence underneath. Unsure of your sign? That is fine: write your best sign and say why. We check signs together at the end.",
+          "terms": ["positive feedback", "negative feedback"],
+          "image": "/assets/img/u1/systems-tutorial/step-6.svg",
+          "imageAlt": "The two-circle loop with a dashed circular marker between the arrows carrying a plus sign. Under the diagram, one sentence: I pushed evaporation up, and it came back bigger, because more water vapor in the air traps more heat, a warmer sea evaporates even more, so the loop is +."
+        },
+        {
+          "n": 7,
+          "title": "Add the other two spheres",
+          "body": "Draw the two spheres you have not used as two more circles and connect each one with one arrow and one verb. For the water starter: rain soaks into the geosphere as groundwater, and the biosphere's trees breathe out water vapor into the atmosphere. Done when: four circles, at least three arrows in total, every arrow has a verb.",
+          "terms": [],
+          "image": "/assets/img/u1/systems-tutorial/step-7.svg",
+          "imageAlt": "Four labeled circles. Hydrosphere and Atmosphere at the top keep their signed loop. Geosphere sits below Atmosphere, joined by an arrow from atmosphere labeled soaks into. Biosphere sits below Hydrosphere, with an arrow up to atmosphere labeled breathe out."
+        },
+        {
+          "n": 8,
+          "title": "Check against the exit ticket, then submit",
+          "body": "Before the photo, tick the four exit-ticket checks on your paper: all four spheres labeled, at least three arrows each with a verb, one loop marked + or −, the 'I pushed' sentence underneath. Take one photo and submit it in Google Classroom. Done when: Classroom says \"Turned in.\"",
+          "terms": [],
+          "image": "/assets/img/u1/systems-tutorial/step-8.svg",
+          "imageAlt": "The finished four-sphere diagram on the left. Beside it, a card headed Exit ticket check with four ticked items: all four spheres labeled; at least three arrows, each with a verb; one loop marked + or −; the I pushed sentence underneath."
+        },
+        {
+          "n": 9,
+          "title": "Reflect",
+          "body": "Open the Reflection Journal from the Reflect section of Block 2b and answer its one question in a few sentences. If you skipped Step 1, do the notebook header now. Done when: the journal entry is saved.",
+          "terms": [],
+          "image": "/assets/img/u1/systems-tutorial/step-9.svg",
+          "imageAlt": "The finished diagram faded into the background. In front of it, a small Reflection Journal card asking which step today was the one where the diagram started to make sense and what changed at that step, with a Saved line underneath.",
+          "isTask": true
+        }
+      ]
+    }
+  }
+}

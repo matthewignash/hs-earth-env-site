@@ -1,0 +1,56 @@
+{
+  "source": "Terms used in the Build Your First Systems Diagram deck (U1 Block 2b). Definitions match the U1 EAL pre-teach table and the Four Spheres reading.",
+  "generated": "2026-09-10",
+  "translationStatus": "English only. The language selector stays off this deck until the U1 vocabulary translations are verified.",
+  "languages": {},
+  "terms": [
+    {
+      "term": "atmosphere",
+      "pos": "noun",
+      "plain": "The air: the layer of gases around the planet.",
+      "note": "From AISC: the monsoon clouds, the humidity you walk into at 3 pm."
+    },
+    {
+      "term": "hydrosphere",
+      "pos": "noun",
+      "plain": "All the water on Earth, in every form: oceans, rivers, ice, groundwater, water vapor.",
+      "note": "From AISC: the Bay of Bengal, the water tanker, the Adyar river."
+    },
+    {
+      "term": "geosphere",
+      "pos": "noun",
+      "plain": "The rock: crust, mantle, core, and the soil and sand made from them.",
+      "note": "From AISC: Marina Beach sand, the red laterite soil in the garden."
+    },
+    {
+      "term": "biosphere",
+      "pos": "noun",
+      "plain": "All living things, and what they make.",
+      "note": "From AISC: the crows, the neem trees, you."
+    },
+    {
+      "term": "systems diagram",
+      "pos": "noun",
+      "plain": "A drawing of parts as labeled circles and the ways they affect each other as arrows with verbs on them.",
+      "note": "Two circles and one arrow with a verb is already a systems diagram. Everything after that is the same drawing, extended."
+    },
+    {
+      "term": "feedback loop",
+      "pos": "noun",
+      "plain": "Two or more arrows that go round and come back to where they started, so a change in one part comes back to affect that same part.",
+      "note": "A loop gets a sign, + or −. A cycle (water, carbon, oxygen) does not."
+    },
+    {
+      "term": "positive feedback",
+      "pos": "noun",
+      "plain": "A loop where a push comes back bigger, so the change grows.",
+      "note": "Positive is a direction, not a judgment. Melting ice exposing dark ocean that melts more ice is positive, and not good."
+    },
+    {
+      "term": "negative feedback",
+      "pos": "noun",
+      "plain": "A loop where a push comes back smaller, so the change is damped and the system settles.",
+      "note": "The rock thermostat is the classic example: warmer air, more weathering, less carbon dioxide, cooler air."
+    }
+  ]
+}

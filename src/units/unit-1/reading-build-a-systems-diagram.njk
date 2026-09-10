@@ -1,0 +1,55 @@
+---
+layout: layouts/base.njk
+title: "Build Your First Systems Diagram"
+tagline: Nine steps, one picture growing · links from Blocks 2, 2b and 7
+extraStylesheets:
+  - /assets/reading-page.css
+breadcrumbs:
+  - { url: /, label: Home }
+  - { url: /units/, label: Units }
+  - { url: /units/unit-1/, label: "Unit 1: Earth and Universe" }
+  - { label: "Build Your First Systems Diagram" }
+returnTo:
+  - { url: /units/unit-1/block-2/, label: "Unit 1 · Block 2" }
+  - { url: /units/unit-1/block-2b/, label: "Unit 1 · Block 2b" }
+  - { url: /units/unit-1/block-7/, label: "Unit 1 · Block 7" }
+powerSeeds: ["an arrow needs a verb", "the sign test", "one loop, then four spheres"]
+---
+
+<div class="prose">
+
+{% include "partials/power-seeds.njk" %}
+
+<p>Block 2b tells you what to do at each of its nine steps. This page shows you what your paper should look like when each step is done. One frame per step, in order, using the same starter as the back of the printed checklist: the sea evaporates into the air. Open the frame for the step you are on, check your paper against it, and move on. Every frame ends with the same "Done when" line as the block page, so you are never guessing whether you are finished.</p>
+
+</div>
+
+<div class="reading-support">
+  <div class="support-body">
+
+    <div id="build"></div>
+    {%- set carousel = { deck: systemsTutorialSlides.decks.build, id: "build", heading: "The diagram, one step at a time" } %}
+    {% include "partials/slide-carousel.njk" %}
+
+    <section class="rail-block" id="next">
+      <div class="callout good">
+        <div class="callout-title">Have one loop? Here is where to go next</div>
+        <p>The <a href="/units/unit-1/systems-gallery/">Systems Gallery</a> holds twelve real interactions between Earth's spheres, six of them in Chennai, each with its first arrow already written and a source you can cite. Pick one card and draw it the way you drew Step 4 to Step 7.</p>
+      </div>
+    </section>
+
+  </div>
+</div>
+
+<div class="prose">
+
+<div class="license-box">
+  <p>This page and its nine frames are our own material, © AISC Earth and Environmental Science, released under a <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener">Creative Commons Attribution 4.0 International license</a>. The step text follows <a href="/units/unit-1/block-2b/">Block 2b</a> and the printed step checklist; the "Done when" lines are identical in all three places on purpose.</p>
+</div>
+
+</div>
+
+{% set termCards = { glossary: systemsTutorialGlossary } %}
+{% include "partials/term-cards.njk" %}
+
+<script src="/assets/slide-carousel.js" defer></script>

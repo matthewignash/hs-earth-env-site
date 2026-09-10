@@ -7,6 +7,8 @@ blockLabel: "2b"
 blocksTotal: 10
 permalink: /units/unit-1/block-2b/
 title: "Earth Systems, Second Pass: One Step at a Time"
+extraStylesheets:
+  - /assets/reading-page.css
 notebookEntry: "Earth Systems, Second Pass"
 minutes: 80
 week: 2
@@ -53,7 +55,7 @@ powerSeeds: ["the four spheres", "feedback loops and their signs"]
 <section class="block-section concepts">
   <span class="section-tag">Concepts</span>
   <h2>The only reference you need today</h2>
-  <p class="sub">Keep this open. Everything below fits on one screen, and it is also on the printed checklist.</p>
+  <p class="sub">Keep this open. Everything below fits on a single screen, and it is also on the printed checklist.</p>
   {% include "partials/power-seeds.njk" %}
   <table style="margin-top: 12px;">
     <thead>
@@ -66,6 +68,9 @@ powerSeeds: ["the four spheres", "feedback loops and their signs"]
       <tr><td><strong>Biosphere</strong></td><td>All living things, and what they make</td><td>The crows, the neem trees, you</td></tr>
     </tbody>
   </table>
+  <div id="build" style="margin-top: 16px;"></div>
+  {%- set carousel = { deck: systemsTutorialSlides.decks.build, id: "build", heading: "Watch the diagram grow", sub: "Nine frames, one per step. Open the frame for the step you are on." } %}
+  {% include "partials/slide-carousel.njk" %}
   <div class="entry-grid" style="margin-top: 16px;">
     <div class="entry-card">
       <div class="entry-title">An arrow needs a verb</div>
@@ -81,7 +86,7 @@ powerSeeds: ["the four spheres", "feedback loops and their signs"]
     </div>
   </div>
   <h3 style="margin-top: 20px;">The water, carbon, and oxygen cycles are the same drawing, extended</h3>
-  <p class="sub">Each cycle starts as one link between two spheres (your Step 3), then grows to touch all four (your Step 7). The last column is the loop you can sign in Step 6. The back of the printed checklist has a finished example.</p>
+  <p class="rail-sub">Each cycle starts as one link between two spheres (your Step 3), then grows to touch all four (your Step 7). The last column is the loop you can sign in Step 6. The back of the printed checklist has a finished example.</p>
   <table>
     <thead>
       <tr><th>Cycle</th><th>The Step 3 link</th><th>How it grows to four spheres</th><th>A loop in it you can sign</th></tr>
@@ -213,6 +218,10 @@ powerSeeds: ["the four spheres", "feedback loops and their signs"]
   {% include "partials/reflect.njk" %}
 </section>
 
+{% set termCards = { glossary: systemsTutorialGlossary } %}
+{% include "partials/term-cards.njk" %}
+
+<script src="/assets/slide-carousel.js" defer></script>
 <script>
 (function () {
   var key = 'steps:' + location.pathname;

@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 260" width="640" height="260" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" role="img" aria-labelledby="t d">
+  <title id="t">Step 2: a four-row table on paper</title>
+  <desc id="d">A hand-drawn table with two columns, Sphere and Something I saw this week, and four rows: atmosphere, hydrosphere, geosphere, biosphere. The example cells are empty, waiting for the student's own words.</desc>
+  <rect width="640" height="260" fill="#ffffff"/>
+  <g stroke="#1a1a2e" stroke-width="2" fill="none">
+    <rect x="60" y="30" width="520" height="200"/>
+    <line x1="60" y1="70" x2="580" y2="70"/>
+    <line x1="60" y1="110" x2="580" y2="110"/>
+    <line x1="60" y1="150" x2="580" y2="150"/>
+    <line x1="60" y1="190" x2="580" y2="190"/>
+    <line x1="230" y1="30" x2="230" y2="230"/>
+  </g>
+  <g font-size="14" font-weight="700" fill="#1a1a2e">
+    <text x="74" y="55">Sphere</text>
+    <text x="244" y="55">Something I saw this week</text>
+  </g>
+  <g font-size="16" font-weight="700">
+    <text x="74" y="95" fill="#1a1a2e">Atmosphere</text>
+    <text x="74" y="135" fill="#1a1a2e">Hydrosphere</text>
+    <text x="74" y="175" fill="#1a1a2e">Geosphere</text>
+    <text x="74" y="215" fill="#1a1a2e">Biosphere</text>
+  </g>
+  <g stroke="#cccccc" stroke-width="1.5" stroke-dasharray="4 4">
+    <line x1="244" y1="100" x2="566" y2="100"/>
+    <line x1="244" y1="140" x2="566" y2="140"/>
+    <line x1="244" y1="180" x2="566" y2="180"/>
+    <line x1="244" y1="220" x2="566" y2="220"/>
+  </g>
+</svg>

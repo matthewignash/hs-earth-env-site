@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 420" width="640" height="420" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" role="img" aria-labelledby="t d">
+  <title id="t">Step 9: reflect</title>
+  <desc id="d">The finished four-sphere diagram, faded into the background because it is submitted. In front of it, a small Reflection Journal card with the question: which step today was the one where the diagram started to make sense, and what changed at that step? A line under the question reads Saved.</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#2e5395"/>
+    </marker>
+  </defs>
+  <rect width="640" height="420" fill="#ffffff"/>
+  <g opacity="0.28">
+    <g fill="none" stroke="#2e5395" stroke-width="2.5" marker-end="url(#arrow)">
+      <path d="M206 92 Q320 40 434 92"/>
+      <path d="M434 128 Q320 180 206 128"/>
+      <path d="M490 168 L490 262"/>
+      <path d="M195 283 L445 150"/>
+    </g>
+    <circle cx="320" cy="110" r="18" fill="none" stroke="#b34a2e" stroke-width="2.5" stroke-dasharray="6 5"/>
+    <g stroke="#1a1a2e" stroke-width="2">
+      <circle cx="150" cy="110" r="56" fill="#d9e2f3"/>
+      <circle cx="490" cy="110" r="56" fill="#d9e7f3"/>
+      <circle cx="490" cy="320" r="56" fill="#fce4d6"/>
+      <circle cx="150" cy="320" r="56" fill="#e2efda"/>
+    </g>
+    <g text-anchor="middle" fill="#1a1a2e" font-size="16" font-weight="700">
+      <text x="150" y="115">Hydrosphere</text>
+      <text x="490" y="115">Atmosphere</text>
+      <text x="490" y="325">Geosphere</text>
+      <text x="150" y="325">Biosphere</text>
+    </g>
+  </g>
+  <g>
+    <rect x="170" y="140" width="300" height="160" rx="12" fill="#ffffff" stroke="#2e5395" stroke-width="2"/>
+    <rect x="170" y="140" width="300" height="34" rx="12" fill="#2e5395"/>
+    <rect x="170" y="160" width="300" height="14" fill="#2e5395"/>
+    <text x="186" y="163" font-size="13" font-weight="700" fill="#ffffff">Reflection Journal</text>
+    <g font-size="13" fill="#1a1a2e">
+      <text x="186" y="200">Which step today was the one where</text>
+      <text x="186" y="218">the diagram started to make sense,</text>
+      <text x="186" y="236">and what changed at that step?</text>
+    </g>
+    <line x1="186" y1="256" x2="454" y2="256" stroke="#cccccc" stroke-width="1.5"/>
+    <text x="186" y="284" font-size="12" font-weight="700" fill="#6b8e3d">✓ Saved</text>
+  </g>
+</svg>
