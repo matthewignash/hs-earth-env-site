@@ -695,6 +695,23 @@ a.key-term[aria-expanded="true"] { background: var(--primary-wash); }
 .power-seeds summary { cursor: pointer; font-weight: 600; color: var(--ink-quiet); }
 .power-seeds-body { padding: 6px 2px 4px; }
 
+/* Disclosures (partials/disclosure.njk): the tag says what opening it means before anyone does. */
+.disclosure > summary { cursor: pointer; }
+.disclosure-tag {
+  display: inline-block;
+  margin-right: 6px;
+  padding: 1px 8px;
+  border-radius: 999px;
+  font-size: var(--fs-micro);
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  vertical-align: 1px;
+}
+.disclosure.reference .disclosure-tag { background: var(--primary-wash); color: var(--primary-deep); }
+.disclosure.help .disclosure-tag { background: var(--surface); color: var(--ink-quiet); border: 1px dashed var(--ink-quiet); }
+.disclosure.locked .disclosure-tag { background: var(--ink); color: var(--surface); }
+
 /* ====== Content figures (shared) ====== */
 .content-figure { margin: 20px auto; max-width: 720px; }
 .content-figure img { display: block; max-width: 100%; height: auto; margin: 0 auto; }

@@ -11,6 +11,7 @@ returnTo:
   - { url: /units/unit-1/block-2/, label: "Unit 1 · Block 2" }
 powerSeeds: ["closed for matter", "reservoirs and loops", "a live planet"]
 ---
+{% from "partials/disclosure.njk" import disclosure %}
 
 <div class="prose">
 
@@ -82,8 +83,7 @@ powerSeeds: ["closed for matter", "reservoirs and loops", "a live planet"]
   <p><strong>One condition that comes with this source.</strong> OpenStax asks that their books not be uploaded into AI tools as source material. That request is not part of the license; it is a separate ask, and it would be difficult for them to enforce. We are honoring it anyway. Read this page, then take your questions to your AI partner. Do not feed it the original chapter.</p>
 </div>
 
-<details class="ai-doc">
-  <summary><strong>How this page was made, and one thing the AI got wrong</strong></summary>
+{% call disclosure("help", "How this page was made, and one thing the AI got wrong", "ai-doc") %}
   <p>You are asked to document your AI use on every piece of work in this course. So is your teacher. This is the same five fields you fill in, for this page.</p>
   <table class="ai-doc-table">
     <tr><th>Which tool</th><td>Claude, an AI assistant made by Anthropic, used through a desktop app.</td></tr>
@@ -93,7 +93,7 @@ powerSeeds: ["closed for matter", "reservoirs and loops", "a live planet"]
     <tr><th>One specific thing it got wrong</th><td>The first draft stated flatly that &ldquo;a few hundred metric tons&rdquo; of dust and meteorite fall on Earth each day. Published estimates for that figure vary enormously depending on how it is measured and what gets counted. Stating one confident number implied an agreement among scientists that does not exist. Rewritten as a range, with the uncertainty said out loud.</td></tr>
   </table>
   <p class="ai-doc-note">Nothing here was published without being checked. That is the standard the AI Documentation Template asks of you, and it would be strange to ask it and not meet it.</p>
-</details>
+{% endcall %}
 
 <p><a href="/reference/library/">Full course source library →</a></p>
 

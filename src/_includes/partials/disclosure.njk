@@ -1,0 +1,14 @@
+{#- The only way to hide content on this site. Each kind makes one promise:
+      reference  open by default: information you need, like when a block runs
+      help       closed: a scaffold you can use or skip
+      locked     closed until the moment the summary names: opening early spoils the task
+    Usage:
+      {% from "partials/disclosure.njk" import disclosure %}
+      {% call disclosure("help", "Taking notes? Power 1 seeds for today", "power-seeds") %}…{% endcall %} -#}
+{% macro disclosure(kind, summary, extraClass) %}
+{%- set tags = { reference: "Reference", help: "Help if you want it", locked: "Not yet" } -%}
+<details class="disclosure {{ kind }}{% if extraClass %} {{ extraClass }}{% endif %}"{% if kind == "reference" %} open{% endif %}>
+  <summary><span class="disclosure-tag">{{ tags[kind] }}</span> {{ summary }}</summary>
+  {{ caller() }}
+</details>
+{%- endmacro %}

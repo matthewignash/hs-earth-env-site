@@ -9,6 +9,7 @@ breadcrumbs:
 returnTo:
   - { url: /units/unit-0/block-1/, label: "Block 1: Welcome + How We Work" }
 ---
+{% from "partials/disclosure.njk" import disclosure %}
 
 <div class="prose">
 
@@ -41,13 +42,12 @@ returnTo:
   <p>Four minutes, on your own. For each text, decide: was this written by a person, or with AI? What made you decide: point at a specific sentence in each one, not a general feeling. How sure are you about each: certain, fairly sure, or guessing? Write it down before you hear anyone else's answer, because you will not be able to unhear it.</p>
 </div>
 
-<details class="power-seeds">
-  <summary>What the authors said about AI use. Open this only after you have written your answer.</summary>
+{% call disclosure("locked", "What the authors said about AI use. Open this only after you have written your answer.", "power-seeds") %}
   <div class="power-seeds-body">
     <p><strong>Text A:</strong> nothing. Text A came with no statement about AI use.</p>
     <p><strong>Text B:</strong> "AI use: this text was drafted with an AI language model, then checked and edited by the author."</p>
   </div>
-</details>
+{% endcall %}
 
 <p class="text-card-note">The written reflection for this one is in the Reflection Journal, opened in class.</p>
 

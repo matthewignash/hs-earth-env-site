@@ -1,11 +1,11 @@
+{% from "partials/disclosure.njk" import disclosure %}
 {#- Per-unit schedule. Rows come from the unitSchedule collection, so dates are
     always derived from the rotation data and never hand-maintained. When the
     formative/summative dates are locked, give a row an `assessment` field and it
     picks up the .is-assessment styling plus a task link. -#}
 {%- set rows = collections.unitSchedule | forUnit(scheduleUnit) -%}
 {%- if rows.length %}
-<details class="unit-schedule" open>
-  <summary>Unit {{ scheduleUnit }} calendar: when each block runs</summary>
+{% call disclosure("reference", "Unit " ~ scheduleUnit ~ " calendar: when each block runs", "unit-schedule") %}
   <div class="unit-schedule-scroll">
     <table>
       <caption class="sr-only">Meeting dates for each block in Unit {{ scheduleUnit }}, by rotation</caption>
@@ -29,5 +29,5 @@
     </table>
   </div>
   <p class="unit-schedule-note">Your section follows one rotation, A or B. Check which one you are in and read that column.</p>
-</details>
+{% endcall %}
 {%- endif %}

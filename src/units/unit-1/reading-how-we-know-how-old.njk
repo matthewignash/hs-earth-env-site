@@ -11,6 +11,7 @@ returnTo:
   - { url: /units/unit-1/block-4/, label: "Unit 1 · Block 4" }
 powerSeeds: ["space expands", "run the film backwards", "three separate lines"]
 ---
+{% from "partials/disclosure.njk" import disclosure %}
 
 <div class="prose">
 
@@ -85,8 +86,7 @@ powerSeeds: ["space expands", "run the film backwards", "three separate lines"]
   <p><strong>One condition that comes with this source.</strong> OpenStax asks that their books not be uploaded into AI tools as source material. That request is not part of the license; it is a separate ask, and it would be difficult for them to enforce. We are honoring it anyway. Read this page, then take your questions to your AI partner. Do not feed it the original chapters.</p>
 </div>
 
-<details class="ai-doc">
-  <summary><strong>How this page was made, and one thing the AI got wrong</strong></summary>
+{% call disclosure("help", "How this page was made, and one thing the AI got wrong", "ai-doc") %}
   <p>You are asked to document your AI use on every piece of work in this course. So is your teacher. This is the same five fields you fill in, for this page.</p>
   <table class="ai-doc-table">
     <tr><th>Which tool</th><td>Claude, an AI assistant made by Anthropic, used through a desktop app.</td></tr>
@@ -96,7 +96,7 @@ powerSeeds: ["space expands", "run the film backwards", "three separate lines"]
     <tr><th>One specific thing it got wrong</th><td>The first draft opened by quoting the age of the universe as 13.8 billion years, then three paragraphs later called the same quantity &ldquo;roughly fourteen billion years.&rdquo; Two different numbers for one thing, in one reading. That is exactly the kind of internal inconsistency you are being trained to catch, and it was in a page written to teach you to catch it.</td></tr>
   </table>
   <p class="ai-doc-note">Nothing here was published without being checked. That is the standard the AI Documentation Template asks of you, and it would be strange to ask it and not meet it.</p>
-</details>
+{% endcall %}
 
 <p><a href="/reference/library/">Full course source library →</a></p>
 

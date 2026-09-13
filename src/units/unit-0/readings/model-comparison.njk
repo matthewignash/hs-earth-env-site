@@ -9,6 +9,7 @@ breadcrumbs:
 returnTo:
   - { url: /units/unit-0/block-3/, label: "Block 3: AI as a Source + Documentation Protocol" }
 ---
+{% from "partials/disclosure.njk" import disclosure %}
 
 <div class="prose">
 
@@ -79,8 +80,7 @@ returnTo:
   <p>The question you are answering is not which response reads more impressively. It is <strong>which response said enough that you could catch it being wrong</strong>.</p>
 </div>
 
-<details class="power-seeds">
-  <summary>If you cannot find anything to check. Open this only after you have really tried.</summary>
+{% call disclosure("locked", "If you cannot find anything to check. Open this only after you have really tried.", "power-seeds") %}
   <div class="power-seeds-body">
     <p><strong>Check against the PDF from Google Classroom, not the interactive reader.</strong> The reader is a shortened version made for reading support, so plenty of things that are genuinely in the paper are not in it. If you search the reader and find nothing, that tells you about the reader, not about Lovelock. Getting this backwards is the easiest way to accuse a response of inventing something it got right.</p>
     <p>Some places worth looking, in rough order of how easy they are to verify:</p>
@@ -93,7 +93,7 @@ returnTo:
     </ul>
     <p>Use your browser's find function on the PDF. A claim that survives a search is not automatically true, but a claim that fails one is worth writing down. And be precise about what failed: "the paper never uses this word" is a finding, while "I could not find it" may just mean you searched the wrong document.</p>
   </div>
-</details>
+{% endcall %}
 
 <p class="text-card-note">Both responses are reproduced exactly as the models returned them, including their own punctuation and any errors. Nothing has been cleaned up. Your <a href="/student-hub/ai-documentation-template/">AI Documentation Template</a> for this block covers these two plus the model you run yourself.</p>
 
