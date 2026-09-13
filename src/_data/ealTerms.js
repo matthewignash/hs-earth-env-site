@@ -211,5 +211,17 @@ module.exports = {
     def: "Faint microwave radiation reaching us from every direction, left over from when the universe was hot and dense.",
     stem: "The cosmic microwave background is evidence for ___ because ___.",
     eal: "/foundations/eal/u1/"
+  },
+  "strawmanning": {
+    term: "Strawmanning",
+    def: "Answering a weaker version of someone's argument instead of their real one. The weak version is easy to beat, but it is not what they said.",
+    stem: "Their real argument is ___, not ___.",
+    eal: "/foundations/eal/u5/#strawmanning"
+  },
+  "interest": {
+    term: "Interest",
+    def: "What a stakeholder needs or wants from the decision. Stakeholders choose the evidence that fits their interest, so map the interest first and the evidence second.",
+    stem: "This stakeholder's interest is ___, so they cite ___.",
+    eal: "/foundations/eal/u5/#interest"
   }
 };

@@ -288,13 +288,6 @@ dialog.video-lightbox::backdrop {
   color: var(--ink-quiet);
 }
 .success-criteria li { margin: 2px 0; }
-.choice-intro {
-  background: var(--primary-wash);
-  padding: 12px 14px;
-  border-radius: 8px;
-  margin-bottom: 14px;
-  font-size: var(--fs-small);
-}
 .choice-board {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
