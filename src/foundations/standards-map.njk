@@ -12,7 +12,7 @@ breadcrumbs:
 
 <div class="prose">
 
-<p>This course is built on two public frameworks. The science comes from the <strong>Next Generation Science Standards (NGSS)</strong>: performance expectations (what you can do with the content, coded like HS-ESS2-1) plus science and engineering practices (SEP codes, like SEP-8 Communicating Information). The full standards live at <a href="https://www.nextgenscience.org" target="_blank" rel="noopener">nextgenscience.org</a>.</p>
+<p>This course is built on two public frameworks. The science comes from the <strong>Next Generation Science Standards (NGSS)</strong>: performance expectations (what you can do with the content, coded like HS-ESS2-1) plus science and engineering practices (SEP codes, like SEP-8 Communicating Information). Each performance expectation also carries a crosscutting concept; block pages show these as <strong>lenses</strong>, the ways of looking that come back unit after unit. Block pages show every standard in student wording; the codes live on this page. The full standards live at <a href="https://www.nextgenscience.org" target="_blank" rel="noopener">nextgenscience.org</a>.</p>
 
 <p>The AI literacy comes from the <strong>OECD/European Commission AILit Framework (2026)</strong>: 19 competences across four domains: <strong>Engage with AI</strong>, <strong>Create with AI</strong>, <strong>Manage AI</strong>, and <strong>Shape AI</strong> (<a href="https://ailiteracyframework.org" target="_blank" rel="noopener">ailiteracyframework.org</a>). AI literacy is taught to all sections as curriculum: the same way OPVL or the water cycle is. Each block page's footer names the standards that block builds; this page is the whole-course view.</p>
 
@@ -58,6 +58,27 @@ breadcrumbs:
   </tbody>
 </table>
 
+<h2>Lenses across the year</h2>
+
+<p>A lens is a way of looking that the whole course reuses. Each row shows the blocks where one lens is at work, so you can see it return in unit after unit.</p>
+
+<table>
+  <thead>
+    <tr><th>Lens</th>{% for u in range(0, 8) %}<th>U{{ u }}</th>{% endfor %}</tr>
+  </thead>
+  <tbody>
+    {%- for sid, e in standardsCatalog %}{% if e.dimension == 'lens' %}
+    {%- set trail = collections.standardsBlocks | lensTrail(sid, standardsCatalog) %}
+    <tr>
+      <th scope="row"><a href="#{{ sid | slugify }}">{{ e.name }}</a></th>
+      {%- for u in range(0, 8) %}
+      <td>{% for t in trail %}{% if t.unit == u %}<a href="{{ t.url }}">B{{ t.block }}</a> {% endif %}{% endfor %}</td>
+      {%- endfor %}
+    </tr>
+    {%- endif %}{% endfor %}
+  </tbody>
+</table>
+
 <h2>AI literacy (OECD AILit) by unit</h2>
 
 <table>
@@ -83,15 +104,24 @@ breadcrumbs:
 
 {% for sid, e in standardsCatalog %}
 <section class="standard-entry" id="{{ sid | slugify }}">
-  <h3>{{ sid }}{% if e.type == 'ngss-sep' %}: {{ e.official }}{% endif %}</h3>
+  <h3>{% if e.type == 'ngss-ccc' %}Lens: {{ e.name }}{% else %}{{ sid }}{% if e.type == 'ngss-sep' %}: {{ e.official }}{% endif %}{% endif %}</h3>
   <p><strong>{{ e.plain }}</strong></p>
-  {% if e.type != 'ngss-sep' %}<p class="std-official">{% if e.type == 'ailit' %}In brief: {% endif %}"{{ e.official }}"</p>{% endif %}
+  {% if e.type != 'ngss-sep' %}<p class="std-official">{% if e.type == 'ailit' or e.type == 'ngss-ccc' %}In brief: {% endif %}"{{ e.official }}"</p>{% endif %}
+  {%- if e.lens %}
+  <p><strong>Lens:</strong> <a href="#{{ e.lens | slugify }}">{{ standardsCatalog[e.lens].name }}</a></p>
+  {%- endif %}
+  {%- if e.type == 'ngss-ccc' %}
+  {%- set trail = collections.standardsBlocks | lensTrail(sid, standardsCatalog) %}
+  {%- else %}
   {%- set trail = collections.standardsBlocks | standardsTrail(sid) %}
+  {%- endif %}
   {%- if trail.length %}
   <p><strong>Where this runs:</strong> {% for t in trail %}<a href="{{ t.url }}">U{{ t.unit }} B{{ t.block }}</a>{% if not loop.last %} · {% endif %}{% endfor %}</p>
   {%- endif %}
+  {%- if e.assessedAt %}
   <p><strong>Assessed:</strong> {{ e.assessedAt }}</p>
   <p><strong>On track looks like:</strong> {{ e.onTrack }}</p>
+  {%- endif %}
   {%- if e.help.length %}
   <p><strong>Help:</strong> {% for h in e.help %}{% if h.url %}<a href="{{ h.url }}">{{ h.label }}</a>{% else %}{{ h.label }}{% endif %}{% if not loop.last %} · {% endif %}{% endfor %}</p>
   {%- endif %}
@@ -100,6 +130,6 @@ breadcrumbs:
 
 <hr>
 
-<p class="std-official">Performance expectation text: NGSS Lead States, 2013. <em>Next Generation Science Standards: For States, By States</em>, <a href="https://www.nextgenscience.org" target="_blank" rel="noopener">nextgenscience.org</a>. AI-literacy competences paraphrased from the OECD/European Commission <em>AILit Framework</em> (2026)...<a href="https://ailiteracyframework.org" target="_blank" rel="noopener">ailiteracyframework.org</a>.</p>
+<p class="std-official">Performance expectation text: NGSS Lead States, 2013. <em>Next Generation Science Standards: For States, By States</em>, <a href="https://www.nextgenscience.org" target="_blank" rel="noopener">nextgenscience.org</a>. Crosscutting-concept descriptions paraphrased from the same source. AI-literacy competences paraphrased from the OECD/European Commission <em>AILit Framework</em> (2026)...<a href="https://ailiteracyframework.org" target="_blank" rel="noopener">ailiteracyframework.org</a>.</p>
 
 </div>

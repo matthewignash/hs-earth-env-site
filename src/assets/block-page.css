@@ -176,11 +176,15 @@
   background: var(--paper);
   transition: transform 0.1s, border-color 0.1s;
 }
-.entry-card:hover {
+a.entry-card:hover {
   border-color: var(--primary);
   transform: translateY(-2px);
-  cursor: pointer;
 }
+/* What kind of card this is, set before reading its title. The .entry-grid prefix
+   outranks the placeholder and live-activity borders further down. */
+.entry-grid .entry-card.kind-investigate { border-left: 4px solid var(--spine-concepts); }
+.entry-grid .entry-card.kind-read { border-left: 2px solid var(--spine-concepts); }
+.entry-grid .entry-card.kind-assessed { border-left: 4px solid var(--assessed); }
 .entry-card .entry-title { font-weight: 700; margin-bottom: 4px; }
 .entry-card .entry-meta { font-size: var(--fs-micro); color: var(--ink-quiet); margin-top: 8px; }
 .prefer-text { font-size: var(--fs-micro); color: var(--ink-quiet); margin-top: 6px; }
@@ -525,12 +529,16 @@ dialog.video-lightbox::backdrop {
 .lp-sc-list li { margin: 6px 0; }
 .lp-sc-list label { display: flex; gap: 10px; align-items: flex-start; cursor: pointer; }
 .lp-check { accent-color: var(--primary); width: 16px; height: 16px; margin-top: 4px; flex: none; }
-.lp-standards { margin-top: 14px; display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
-.std-chip { font-size: var(--fs-micro); font-weight: 600; padding: 2px 8px; border-radius: 999px; white-space: nowrap; text-decoration: none; }
-.std-chip.ngss { background: var(--primary-wash); color: var(--primary-deep); }
-.std-chip.ailit { background: var(--ai-wash); color: var(--ai-ink); }
-button.std-chip { border: none; cursor: pointer; font-family: inherit; }
-button.std-chip[aria-expanded="true"] { outline: 2px solid var(--primary); outline-offset: 1px; }
+/* Standards in student wording, one row per kind: practice outlined, idea filled, lens dotted. */
+.lp-standards { margin-top: 14px; display: grid; gap: 8px; }
+.std-row { display: flex; flex-wrap: wrap; gap: 6px; align-items: baseline; }
+.std-kind { flex: 0 0 7em; font-size: var(--fs-micro); font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink-quiet); }
+.std-chip { font: inherit; font-size: var(--fs-small); font-weight: 600; text-align: left; padding: 4px 12px; border-radius: 999px; border: 1.5px solid transparent; cursor: pointer; }
+.std-chip.practice { background: var(--surface); border-color: var(--primary); color: var(--primary-deep); }
+.std-chip.idea { background: var(--primary-wash); color: var(--primary-deep); }
+.std-chip.lens { background: var(--surface); border-style: dotted; border-color: var(--primary); color: var(--primary-deep); }
+.std-chip.ai-literacy { background: var(--ai-wash); color: var(--ai-ink); }
+.std-chip[aria-expanded="true"] { outline: 2px solid var(--primary); outline-offset: 1px; }
 
 /* ====== Standards tap-to-expand panel ====== */
 .std-panel {

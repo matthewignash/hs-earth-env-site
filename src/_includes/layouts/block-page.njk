@@ -5,23 +5,20 @@ extraStylesheets:
   - /assets/block-page.css
 ---
 
-{% macro stdChip(s, cls) %}
-  {%- set sid = s | baseStandardId -%}
+{% macro stdChip(sid) %}
   {%- set entry = standardsCatalog[sid] -%}
-  {%- if entry -%}
-  <button type="button" class="std-chip {{ cls }}" data-panel="std-panel-{{ sid | slugify }}" aria-expanded="false" aria-controls="std-panel-{{ sid | slugify }}">{{ 'NGSS' if cls == 'ngss' else 'AILit' }} {{ s }}</button>
-  {%- else -%}
-  <a class="std-chip {{ cls }}" href="/foundations/standards-map/">{{ 'NGSS' if cls == 'ngss' else 'AILit' }} {{ s }}</a>
-  {%- endif -%}
+  <button type="button" class="std-chip {{ entry.dimension }}" data-panel="std-panel-{{ sid | slugify }}" aria-expanded="false" aria-controls="std-panel-{{ sid | slugify }}">{{ entry.name or entry.plain }}</button>
 {% endmacro %}
-{% macro stdPanel(s, cls) %}
-  {%- set sid = s | baseStandardId -%}
+{% macro stdPanel(sid) %}
   {%- set entry = standardsCatalog[sid] -%}
-  {%- if entry -%}
   <div class="std-panel" id="std-panel-{{ sid | slugify }}" hidden>
     <p class="std-plain"><strong>{{ entry.plain }}</strong></p>
-    <p class="std-official">{% if entry.type == 'ailit' %}In brief: {% endif %}"{{ entry.official }}"</p>
+    <p class="std-official">{% if entry.type == 'ailit' or entry.type == 'ngss-ccc' %}In brief: {% endif %}"{{ entry.official }}"</p>
+    {%- if entry.type == 'ngss-ccc' %}
+    {%- set trail = collections.standardsBlocks | lensTrail(sid, standardsCatalog) -%}
+    {%- else %}
     {%- set trail = collections.standardsBlocks | standardsTrail(sid) -%}
+    {%- endif %}
     {%- if trail.length %}
     <p class="std-label">Where this runs:</p>
     <ul class="std-trail">
@@ -30,15 +27,16 @@ extraStylesheets:
       {%- endfor %}
     </ul>
     {%- endif %}
+    {%- if entry.assessedAt %}
     <p class="std-label">Assessed:</p>
     <p>{{ entry.assessedAt }}</p>
     <p class="std-label">On track looks like:</p>
     <p>{{ entry.onTrack }}</p>
+    {%- endif %}
     {%- if entry.help.length %}
     <p class="std-help">{% for h in entry.help %}{% if h.url %}<a href="{{ h.url }}">{{ h.label }}</a>{% else %}<span>{{ h.label }}</span>{% endif %}{% if not loop.last %} · {% endif %}{% endfor %}</p>
     {%- endif %}
   </div>
-  {%- endif -%}
 {% endmacro %}
 {% include "partials/breadcrumbs.njk" %}
 
@@ -94,13 +92,14 @@ extraStylesheets:
     </ul>
     {% endif %}
     {% if standards and (standards.ngss.length or standards.ailit.length) %}
+    {%- set rows = standards | standardRows(standardsCatalog) %}
     <div class="lp-standards">
-      {%- for s in standards.ngss %}{{ stdChip(s, 'ngss') }}{% endfor %}
-      {%- for s in standards.ailit %}{{ stdChip(s, 'ailit') }}{% endfor %}
+      {%- for row in rows %}
+      <div class="std-row"><span class="std-kind">{{ row.label }}</span>{% for sid in row.ids %}{{ stdChip(sid) }}{% endfor %}</div>
+      {%- endfor %}
       <a class="lp-map-link" href="/foundations/standards-map/">full course map →</a>
     </div>
-    {%- for s in standards.ngss %}{{ stdPanel(s, 'ngss') }}{% endfor %}
-    {%- for s in standards.ailit %}{{ stdPanel(s, 'ailit') }}{% endfor %}
+    {%- for row in rows %}{% for sid in row.ids %}{{ stdPanel(sid) }}{% endfor %}{% endfor %}
     {% endif %}
   </section>
   {% endif %}

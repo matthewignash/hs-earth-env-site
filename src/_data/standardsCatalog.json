@@ -1,6 +1,8 @@
 {
   "HS-ESS1-1": {
     "type": "ngss-pe",
+    "dimension": "idea",
+    "lens": "CCC-scale",
     "official": "Develop a model based on evidence to illustrate the life span of the sun and the role of nuclear fusion in the sun's core to release energy that eventually reaches Earth in the form of radiation.",
     "plain": "I can explain how the Sun makes its energy and how that energy reaches and warms Earth.",
     "assessedAt": "Goldilocks Report: framework criteria involving the host star (K/U strand, Component 1 locks U1 Block 7)",
@@ -18,6 +20,8 @@
   },
   "HS-ESS1-2": {
     "type": "ngss-pe",
+    "dimension": "idea",
+    "lens": "CCC-energy",
     "official": "Construct an explanation of the Big Bang theory based on astronomical evidence of light spectra, motion of distant galaxies, and composition of matter in the universe.",
     "plain": "I can explain what the evidence (starlight, moving galaxies, the makeup of the universe) tells us about how the universe began.",
     "assessedAt": "Previewed in U1 Block 4 (lookback time); formally assessed in a later unit",
@@ -31,6 +35,8 @@
   },
   "HS-ESS1-4": {
     "type": "ngss-pe",
+    "dimension": "idea",
+    "lens": "CCC-scale",
     "official": "Use mathematical or computational representations to predict the motion of orbiting objects in the solar system.",
     "plain": "I can use math and models to predict how planets and other objects orbit.",
     "assessedAt": "Goldilocks Report: transit/orbit reasoning in your exoplanet analysis (T/T strand, Component 4 locks U1 Block 9)",
@@ -48,6 +54,8 @@
   },
   "HS-ESS2-1": {
     "type": "ngss-pe",
+    "dimension": "idea",
+    "lens": "CCC-stability",
     "official": "Develop a model to illustrate how Earth's internal and surface processes operate at different spatial and temporal scales to form continental and ocean-floor features.",
     "plain": "I can explain how Earth's surface features are built and reshaped by processes working at very different speeds and sizes.",
     "assessedAt": "Landscape Reading: biography past + current processes (K/U strand, Components 1–2 lock U2 Block 6)",
@@ -65,6 +73,8 @@
   },
   "HS-ESS2-2": {
     "type": "ngss-pe",
+    "dimension": "idea",
+    "lens": "CCC-stability",
     "official": "Analyze geoscience data to make the claim that one change to Earth's surface can create feedbacks that cause changes to other Earth systems.",
     "plain": "I can show how one change on Earth sets off feedback loops that change other Earth systems.",
     "assessedAt": "Goldilocks Report: framework criteria with feedback reasoning, esp. field 5 'where it can fail' (K/U, Component 1 locks U1 Block 7)",
@@ -86,6 +96,8 @@
   },
   "HS-ESS2-5": {
     "type": "ngss-pe",
+    "dimension": "idea",
+    "lens": "CCC-structure",
     "official": "Plan and conduct an investigation of the properties of water and its effects on Earth materials and surface processes.",
     "plain": "I can investigate how water shapes rock, sediment, and land.",
     "assessedAt": "Landscape Reading: river/coast process analysis for water-shaped locations (K/U + T/T, Components 1–4)",
@@ -99,6 +111,8 @@
   },
   "HS-ESS3-1": {
     "type": "ngss-pe",
+    "dimension": "idea",
+    "lens": "CCC-cause",
     "official": "Construct an explanation based on evidence for how the availability of natural resources, occurrence of natural hazards, and changes in climate have influenced human activity.",
     "plain": "I can explain, with evidence, how resources, hazards, and climate have shaped where and how people live.",
     "assessedAt": "Landscape Reading: projections + recommendations (T/T strand, Components 4–5 lock U2 Block 8)",
@@ -112,6 +126,8 @@
   },
   "HS-ESS2-4": {
     "type": "ngss-pe",
+    "dimension": "idea",
+    "lens": "CCC-cause",
     "official": "Use a model to describe how variations in the flow of energy into and out of Earth's systems result in changes in climate.",
     "plain": "I can use a model to show how energy in vs. energy out sets Earth's climate.",
     "assessedAt": "Chennai Climate Brief: the science sections (K/U components)",
@@ -125,6 +141,8 @@
   },
   "HS-ESS2-6": {
     "type": "ngss-pe",
+    "dimension": "idea",
+    "lens": "CCC-energy",
     "official": "Develop a quantitative model to describe the cycling of carbon among the hydrosphere, atmosphere, geosphere, and biosphere.",
     "plain": "I can follow carbon through Earth's four spheres, with numbers.",
     "assessedAt": "Chennai Climate Brief science sections (K/U)",
@@ -142,6 +160,8 @@
   },
   "HS-ESS3-5": {
     "type": "ngss-pe",
+    "dimension": "idea",
+    "lens": "CCC-stability",
     "official": "Analyze geoscience data and the results from global climate models to make an evidence-based forecast of the current rate of global or regional climate change and associated future impacts to Earth systems.",
     "plain": "I can use real data and model results to forecast climate change where I live, and say how confident to be.",
     "assessedAt": "Chennai Climate Brief: the regional-projection components (T/T)",
@@ -155,6 +175,8 @@
   },
   "HS-ESS3-6": {
     "type": "ngss-pe",
+    "dimension": "idea",
+    "lens": "CCC-systems",
     "official": "Use a computational representation to illustrate the relationships among Earth systems and how those relationships are being modified due to human activity.",
     "plain": "I can use models and data tools to show how human activity is changing the links between Earth's systems.",
     "assessedAt": "Chennai Climate Brief: adaptation analysis (T/T) + Policy Panel (C)",
@@ -168,6 +190,8 @@
   },
   "HS-ESS1-5": {
     "type": "ngss-pe",
+    "dimension": "idea",
+    "lens": "CCC-patterns",
     "official": "Evaluate evidence of the past and current movements of continental and oceanic crust and the theory of plate tectonics to explain the ages of crustal rocks.",
     "plain": "I can use evidence (seafloor ages, GPS motion, fossil matches) to explain how plates move.",
     "assessedAt": "City Hazard Profile (K/U)",
@@ -181,6 +205,7 @@
   },
   "HS-ETS1-1": {
     "type": "ngss-pe",
+    "dimension": "idea",
     "official": "Analyze a major global challenge to specify qualitative and quantitative criteria and constraints for solutions that account for societal needs and wants.",
     "plain": "I can pin down what a solution must do (and what limits it) before I design.",
     "assessedAt": "City Hazard Profile → Engineering Portfolio scenario setup",
@@ -194,6 +219,7 @@
   },
   "HS-ETS1-2": {
     "type": "ngss-pe",
+    "dimension": "idea",
     "official": "Design a solution to a complex real-world problem by breaking it down into smaller, more manageable problems that can be solved through engineering.",
     "plain": "I can break a big engineering problem into pieces I can actually solve.",
     "assessedAt": "Engineering Design Portfolio: iterations 1–3 (T/T)",
@@ -207,6 +233,7 @@
   },
   "HS-ETS1-3": {
     "type": "ngss-pe",
+    "dimension": "idea",
     "official": "Evaluate a solution to a complex real-world problem based on prioritized criteria and trade-offs that account for a range of constraints, including cost, safety, reliability, and aesthetics, as well as possible social, cultural, and environmental impacts.",
     "plain": "I can judge a design by weighing its trade-offs: cost, safety, who it protects, who it leaves out.",
     "assessedAt": "Final Defense (C + T/T)",
@@ -220,6 +247,8 @@
   },
   "HS-ETS1-4": {
     "type": "ngss-pe",
+    "dimension": "idea",
+    "lens": "CCC-systems",
     "official": "Use a computer simulation to model the impact of proposed solutions to a complex real-world problem with numerous criteria and constraints on interactions within and between systems relevant to the problem.",
     "plain": "I can use a simulation to test how my design choices play out before committing to them.",
     "assessedAt": "Engineering Design Portfolio: logged sim iterations (T/T)",
@@ -233,6 +262,8 @@
   },
   "HS-ESS3-3": {
     "type": "ngss-pe",
+    "dimension": "idea",
+    "lens": "CCC-stability",
     "official": "Create a computational simulation to illustrate the relationships among management of natural resources, the sustainability of human populations, and biodiversity.",
     "plain": "I can use a computational model to explore how resource choices affect people and places.",
     "assessedAt": "Tectonic City Builder budget trade-offs (formative)",
@@ -246,6 +277,7 @@
   },
   "SEP-4": {
     "type": "ngss-sep",
+    "dimension": "practice",
     "official": "Analyzing and Interpreting Data",
     "plain": "I can read real data (charts, imagery, light curves) and say what it does and doesn't show.",
     "assessedAt": "Runs through every unit; graded wherever data feeds a claim",
@@ -259,6 +291,7 @@
   },
   "SEP-6": {
     "type": "ngss-sep",
+    "dimension": "practice",
     "official": "Constructing Explanations and Designing Solutions",
     "plain": "I can build an explanation from evidence, not just state an answer.",
     "assessedAt": "Every summative's analysis sections (K/U + T/T strands)",
@@ -276,6 +309,7 @@
   },
   "SEP-7": {
     "type": "ngss-sep",
+    "dimension": "practice",
     "official": "Engaging in Argument from Evidence",
     "plain": "I can defend a claim under questioning, cite my evidence, and revise when someone shows me better reasoning.",
     "assessedAt": "Every defense (C strand): U0 Block 7 onward",
@@ -289,6 +323,7 @@
   },
   "SEP-8": {
     "type": "ngss-sep",
+    "dimension": "practice",
     "official": "Obtaining, Evaluating, and Communicating Information",
     "plain": "I can find sources, judge them with OPVL, and communicate what I learned honestly.",
     "assessedAt": "Source Dossier (all strands) + every OPVL component after it",
@@ -306,6 +341,7 @@
   },
   "SEP-2": {
     "type": "ngss-sep",
+    "dimension": "practice",
     "official": "Developing and Using Models",
     "plain": "I can build and use models (diagrams, simulations, cross-sections) to explain how something works.",
     "assessedAt": "Across units; in U3, the sim iterations and boundary cross-sections",
@@ -319,6 +355,7 @@
   },
   "SEP-5": {
     "type": "ngss-sep",
+    "dimension": "practice",
     "official": "Using Mathematics and Computational Thinking",
     "plain": "I can use numbers, budgets, and computational tools to reason about a problem.",
     "assessedAt": "U3 sim iterations: score and budget reasoning in the engineering journal",
@@ -332,6 +369,7 @@
   },
   "Engage 3": {
     "type": "ailit",
+    "dimension": "ai-literacy",
     "official": "Evaluate whether an AI output should be accepted, revised, or rejected (paraphrased; full framework at ailiteracyframework.org)",
     "plain": "I can check an AI's answer against real sources and decide: use it, fix it, or bin it.",
     "assessedAt": "Every AI Documentation Template: the 'one thing the AI got wrong' field",
@@ -345,6 +383,7 @@
   },
   "Engage 5": {
     "type": "ailit",
+    "dimension": "ai-literacy",
     "official": "Understand how AI systems consume energy and natural resources (paraphrased)",
     "plain": "I can estimate what my AI use costs in electricity and water, and decide when it's worth it.",
     "assessedAt": "U4: the Footprint Decision task",
@@ -358,6 +397,7 @@
   },
   "Create 3": {
     "type": "ailit",
+    "dimension": "ai-literacy",
     "official": "Direct generative AI to elicit feedback, refine work, and support reflection (paraphrased)",
     "plain": "I can use AI to make MY work better, and show exactly who changed what.",
     "assessedAt": "Revision Trail: practiced U1/U2 Block 8, assessed with the U5 Position Paper",
@@ -371,6 +411,7 @@
   },
   "Manage 1": {
     "type": "ailit",
+    "dimension": "ai-literacy",
     "official": "Decide whether AI is the right tool for a task before using it (paraphrased)",
     "plain": "I choose when to use AI and when to think it through myself, and I can defend either choice.",
     "assessedAt": "AI-use log across the year; the defended not-using-AI reflection",
@@ -384,6 +425,7 @@
   },
   "Manage 3": {
     "type": "ailit",
+    "dimension": "ai-literacy",
     "official": "Decompose a problem to determine when and how AI systems should be used to automate or augment tasks (paraphrased; full framework at ailiteracyframework.org)",
     "plain": "I can break a task into steps and say which ones I will do, which AI will do, and why.",
     "assessedAt": "U3 Block 6 rehearsal; U4 Climate Brief plan; assessed with the U5 Position Paper division-of-labour plan plus a post-hoc check against what actually happened",
@@ -397,6 +439,7 @@
   },
   "Shape 2": {
     "type": "ailit",
+    "dimension": "ai-literacy",
     "official": "Evaluate AI systems using defined criteria, expected outcomes, test cases, and user feedback (paraphrased; full framework at ailiteracyframework.org)",
     "plain": "I can set criteria for what a good AI tool does, then test it and say where it falls short.",
     "assessedAt": "U3 rehearsal on a teacher-built partner; assessed at U5 on the Stakeholder Voice bot-evaluation protocol and roundtable",
@@ -410,6 +453,8 @@
   },
   "HS-ESS2-3": {
     "type": "ngss-pe",
+    "dimension": "idea",
+    "lens": "CCC-energy",
     "official": "Develop a model based on evidence of Earth's interior to describe the cycling of matter by thermal convection.",
     "plain": "I can model what is inside Earth, and explain how heat moving through it drives what happens on the surface.",
     "assessedAt": "Goldilocks Report: the geosphere and magnetic-field criteria (K/U, Component 1 locks U1 Block 7)",
@@ -427,6 +472,8 @@
   },
   "HS-ESS2-7": {
     "type": "ngss-pe",
+    "dimension": "idea",
+    "lens": "CCC-stability",
     "official": "Construct an argument based on evidence about the simultaneous coevolution of Earth's systems and life on Earth.",
     "plain": "I can argue, with evidence, that life and the rest of Earth's systems changed each other.",
     "assessedAt": "Goldilocks Report: the atmosphere criterion and the cause-versus-consequence question (T/T, locks U1 Block 7)",
@@ -444,6 +491,8 @@
   },
   "HS-ESS1-3": {
     "type": "ngss-pe",
+    "dimension": "idea",
+    "lens": "CCC-energy",
     "official": "Communicate scientific ideas about the way stars, over their life cycle, produce elements.",
     "plain": "I can explain where the elements you are made of were built, and which kind of star built them.",
     "assessedAt": "Goldilocks Report: the criteria that depend on a planet having heavy elements at all (K/U, Component 1 locks U1 Block 7)",
@@ -454,5 +503,54 @@
         "url": "/units/unit-1/reading-where-your-atoms-came-from/"
       }
     ]
+  },
+  "CCC-patterns": {
+    "type": "ngss-ccc",
+    "dimension": "lens",
+    "name": "Patterns",
+    "official": "Observed patterns in nature guide organization and classification and prompt questions about relationships and causes.",
+    "plain": "I look for what repeats across places and times, then ask why."
+  },
+  "CCC-cause": {
+    "type": "ngss-ccc",
+    "dimension": "lens",
+    "name": "Cause and effect",
+    "official": "Events have causes; explaining a mechanism means testing whether a cause really produces an effect.",
+    "plain": "I trace what causes a change, and check the evidence for the link."
+  },
+  "CCC-scale": {
+    "type": "ngss-ccc",
+    "dimension": "lens",
+    "name": "Scale, proportion, and quantity",
+    "official": "What matters in a system depends on scale; changes in size, time or energy change how a system behaves.",
+    "plain": "I ask how big, how fast, and how much, and whether the size changes the story."
+  },
+  "CCC-systems": {
+    "type": "ngss-ccc",
+    "dimension": "lens",
+    "name": "Systems and system models",
+    "official": "Defining a system and its boundaries, and building a model of it, is how interactions are understood and tested.",
+    "plain": "I see the parts, what flows between them, and where the edges of the system are."
+  },
+  "CCC-energy": {
+    "type": "ngss-ccc",
+    "dimension": "lens",
+    "name": "Energy and matter",
+    "official": "Tracking energy and matter into, out of and within a system shows what the system can and cannot do.",
+    "plain": "I follow where energy and matter go; neither appears from nowhere."
+  },
+  "CCC-structure": {
+    "type": "ngss-ccc",
+    "dimension": "lens",
+    "name": "Structure and function",
+    "official": "The way something is shaped and built determines many of its properties and functions.",
+    "plain": "I ask how the shape or makeup of something controls what it does."
+  },
+  "CCC-stability": {
+    "type": "ngss-ccc",
+    "dimension": "lens",
+    "name": "Stability and change",
+    "official": "Systems can be stable or change over time; feedback and rates of change determine which.",
+    "plain": "I ask what keeps a system steady, and what tips it into change."
   }
 }

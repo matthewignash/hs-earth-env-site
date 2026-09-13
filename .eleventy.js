@@ -194,6 +194,23 @@ module.exports = function (eleventyConfig) {
       });
   });
 
+  // A block's learning-panel rows: practices, ideas, the lenses those ideas carry, then AI literacy.
+  const STANDARD_KINDS = [["practice", "Practice"], ["idea", "Idea"], ["lens", "Lens"], ["ai-literacy", "AI literacy"]];
+  eleventyConfig.addFilter("standardRows", function (standards, catalog) {
+    const ngss = (standards.ngss || []).map(baseStandardId);
+    const lenses = ngss.map((id) => catalog[id].lens).filter(Boolean);
+    const ids = [...new Set([...ngss, ...lenses, ...(standards.ailit || []).map(baseStandardId)])];
+    return STANDARD_KINDS
+      .map(([kind, label]) => ({ label, ids: ids.filter((id) => catalog[id].dimension === kind) }))
+      .filter((row) => row.ids.length);
+  });
+
+  eleventyConfig.addFilter("lensTrail", function (blocks, lensId, catalog) {
+    return blocks
+      .filter((p) => ((p.data.standards || {}).ngss || []).some((s) => catalog[baseStandardId(s)].lens === lensId))
+      .map((p) => ({ url: p.url, unit: p.data.unit, block: p.data.block, title: p.data.title }));
+  });
+
   return {
     dir: {
       input: "src",
