@@ -298,6 +298,7 @@ Total: ~25-40 hours, similar to the Google Sites build but with the advantage th
 - **No analytics yet.** Plain Plausible or Google Analytics can be added later if needed; for v1, skip.
 - **No comment system.** Students submit through Google Classroom, not the Site.
 - **No login / personalisation.** The Site is the same for every viewer. Personalisation lives in Google Classroom + the gradebook.
+  - *Amended 2026-09-13 (section switcher).* One client-side exception: pages with class-specific instructions (U5 Stakeholder Voice) show a "Your class" pill row (`partials/section-switch.njk`, `src/_data/sections.json`). The choice lives in `localStorage` only, with no identity, accounts or server state, and every class's content stays reachable by switching. Without JavaScript every class's block shows, each labelled with its class. No page names a trial, arm, pilot or comparison.
 
 ---
 

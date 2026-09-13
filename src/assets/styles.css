@@ -838,3 +838,12 @@ a.key-term[aria-expanded="true"] { background: var(--accent-light); }
   }
   .prose th, .prose td, .block-section th, .block-section td { padding: 8px 10px; }
 }
+
+/* Class switcher (partials/section-switch.njk + assets/section-switch.js) */
+.section-switch { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px; margin: 12px 0; }
+.section-switch-label { font-weight: 700; }
+.section-switch-pills { display: flex; gap: 8px; }
+.section-pill { font: inherit; font-weight: 600; min-width: 44px; min-height: 44px; padding: 6px 14px; border: 2px solid var(--accent); border-radius: 999px; background: #fff; color: var(--accent); cursor: pointer; }
+.section-pill[aria-pressed="true"] { background: var(--accent); color: #fff; }
+.section-pill:focus-visible { outline: 3px solid var(--accent-dark); outline-offset: 2px; }
+.section-neutral { font-style: italic; }

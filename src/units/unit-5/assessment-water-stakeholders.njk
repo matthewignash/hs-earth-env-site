@@ -36,15 +36,12 @@ breadcrumbs:
   </tbody>
 </table>
 
-<div class="callout warn">
-  <div class="callout-title">Trial-aware: three pedagogical arms</div>
-  <p>Unit 5 is Matthew's trial unit. Three sections, three slightly different scaffolds, same skill being built:</p>
-  <ul>
-    <li><strong>Section A (BoodleBox arm)</strong>: students <em>build</em> their own Stakeholder Voice AI bot for their chosen stakeholder: the <strong>Boodle Build Assignment</strong>. The 8-section system-prompt template guides identity + beliefs + strongest argument + non-negotiable + honest admission + opponent-framing + cited evidence + constraints. Peer-tested in Block 8. AI Doc covers the build process explicitly.</li>
-    <li><strong>Section B (Flint guided-tutor arm)</strong>: students work with pre-built Flint Stakeholder Voice tutors. Ms. Jayanthi/Mr. Matt configures the stakeholder personas; students push for the strongest version of the position. Linear scaffolding, consistent voice across stakeholders.</li>
-    <li><strong>Section C (paper-based arm)</strong>: students work from paper-based Stakeholder Profile Packs (7 detailed Q&amp;A profiles per case, no AI). Same skill via close reading + interview-style preparation.</li>
-  </ul>
-  <p>Each scaffold is designed to teach the same perspective-taking skill: pedagogically distinct, not quality-ranked. Your section's tools are introduced on Day 1.</p>
+<div class="callout">
+  <div class="callout-title">Your class's Stakeholder Voice</div>
+  {% include "partials/section-switch.njk" %}
+  <p data-platform="boodlebox"><strong>{{ "boodlebox" | classesOn(sections) }}:</strong> you <em>build</em> your own Stakeholder Voice bot for your chosen stakeholder: the <strong>Boodle Build Assignment</strong>. The 8-section system-prompt template guides identity + beliefs + strongest argument + non-negotiable + honest admission + opponent-framing + cited evidence + constraints. You test it with a classmate in Block 8, and your AI Doc covers the build.</p>
+  <p data-platform="flint"><strong>{{ "flint" | classesOn(sections) }}:</strong> you work with Flint Stakeholder Voice tutors that Ms. Jayanthi/Mr. Matt has already set up for each stakeholder. Your job is to push for the strongest version of the position.</p>
+  <p>Every class builds the same perspective-taking skill and is marked on the same rubric. You meet your tools in Block 7.</p>
 </div>
 
 <h2>Three deliverable formats: same rubric</h2>
@@ -107,7 +104,7 @@ breadcrumbs:
 <ol>
   <li><strong>Stakeholders Map</strong> (visual + 1-page narrative)</li>
   <li><strong>Position Paper</strong> (2 pages written OR 4-min captioned video)</li>
-  <li><strong>AI Documentation Template</strong>: <em>required</em>, not optional. Documents your AI use (Hydrologist for case hydrology; Stakeholder Voice for perspective-taking; any other AI). Section A students document the Boodle Build process separately: what design choices, which felt right, what the bot got wrong when peer-tested.</li>
+  <li><strong>AI Documentation Template</strong>: <em>required</em>, not optional. Documents your AI use (Hydrologist for case hydrology; Stakeholder Voice for perspective-taking; any other AI). <span data-platform="boodlebox">In {{ "boodlebox" | classesOn(sections) }}, also document the Boodle Build process: what design choices, which felt right, what the bot got wrong when peer-tested.</span></li>
   <li><strong>Stakeholder Roundtable participation</strong>: 2-min opening statement + ≥3 substantive responses to competing stakeholders + at least 1 negotiation move (proposing trade, conceding a point, asking substantive clarifying question).</li>
 </ol>
 
@@ -120,7 +117,7 @@ breadcrumbs:
   <ul>
     <li><strong>Voice-match is what T/T reads for.</strong> If your Position Paper reads as your own view in slightly different words (same arguments + evidence you'd personally cite), that is what the lower T/T bands describe. The whole assessment is built around perspective-taking; if you didn't take the perspective, T/T reflects that. No strand is capped.</li>
     <li><strong>Stakeholder specificity is what K/U reads for.</strong> A Stakeholders Map naming generic groups ("farmers," "government," "environmentalists") rather than specific identifiable stakeholders is what the middle K/U bands describe.</li>
-    <li><strong>AI Documentation is required.</strong> Same as prior units. If AI was used and the Template is missing or trivial, the work is not scored until it arrives; no strand is capped. Section A's Boodle Build documentation is required.</li>
+    <li><strong>AI Documentation is required.</strong> Same as prior units. If AI was used and the Template is missing or trivial, the work is not scored until it arrives; no strand is capped. <span data-platform="boodlebox">In {{ "boodlebox" | classesOn(sections) }}, the Boodle Build documentation is required too.</span></li>
     <li><strong>The negotiation move is the C signal.</strong> A strong Paper plus mere restatement at the Roundtable, with no real negotiation move, is what the middle C bands describe. The Roundtable is negotiation, not Q&amp;A.</li>
   </ul>
 </div>
@@ -157,6 +154,6 @@ breadcrumbs:
 <p><strong>Reporting format.</strong> Each strand is reported as its own band score (e.g., "K/U 7, T/T 6, C 7"). Not summed. The triplet IS the grade.</p>
 
 <h2>AI Documentation</h2>
-<p>Required regardless of which arm you're in. If you use the <a href="/ai-partners/the-hydrologist/">Hydrologist</a>, <a href="/ai-partners/stakeholder-voice/">Stakeholder Voice</a>, <a href="/ai-partners/the-source-evaluator/">Source Evaluator</a>, <a href="/ai-partners/the-skeptic/">Skeptic</a>, or any other AI tool, the <a href="/foundations/ai-documentation-protocol/">AI Documentation Template</a> is required. <strong>Section A</strong> students additionally document the Boodle Build process: what design choices you made when constructing your stakeholder's bot, which iterations felt authentic, which the bot got wrong when peer-tested. The Boodle Build documentation is a separate AI Doc artifact submitted alongside the Position Paper.</p>
+<p>Required in every class. If you use the <a href="/ai-partners/the-hydrologist/">Hydrologist</a>, <a href="/ai-partners/stakeholder-voice/">Stakeholder Voice</a>, <a href="/ai-partners/the-source-evaluator/">Source Evaluator</a>, <a href="/ai-partners/the-skeptic/">Skeptic</a>, or any other AI tool, the <a href="/foundations/ai-documentation-protocol/">AI Documentation Template</a> is required. <span data-platform="boodlebox"><strong>{{ "boodlebox" | classesOn(sections) }}</strong> students also document the Boodle Build process: what design choices you made when constructing your stakeholder's bot, which iterations felt authentic, which the bot got wrong when peer-tested. The Boodle Build documentation is a separate AI Doc artifact submitted alongside the Position Paper.</span></p>
 
 </div>

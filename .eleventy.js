@@ -6,6 +6,12 @@ module.exports = function (eleventyConfig) {
     return typeof pageUrl === "string" && pageUrl.indexOf(match) === 0;
   });
 
+  // "flint" → "A3 and B6": names the classes on a platform, from sections.json.
+  eleventyConfig.addFilter("classesOn", function (platform, sections) {
+    const labels = sections.filter((s) => s.platform === platform).map((s) => s.label);
+    return labels.length > 1 ? labels.slice(0, -1).join(", ") + " and " + labels.at(-1) : labels[0];
+  });
+
   eleventyConfig.addCollection("standardsBlocks", function (api) {
     return api
       .getAll()

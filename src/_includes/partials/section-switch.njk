@@ -1,0 +1,12 @@
+{# Pill row that filters [data-section] / [data-platform] blocks to the student's class.
+   Include once per page, above the first class-specific block. #}
+<div class="section-switch" data-section-switch hidden>
+  <span class="section-switch-label" id="section-switch-label">Your class:</span>
+  <div class="section-switch-pills" role="group" aria-labelledby="section-switch-label">
+    {%- for s in sections %}
+    <button type="button" class="section-pill" data-pick="{{ s.id }}" data-pill-platform="{{ s.platform }}" aria-pressed="false">{{ s.label }}</button>
+    {%- endfor %}
+  </div>
+</div>
+<p class="section-neutral" hidden>Pick your class above to see today's instructions for your class.</p>
+<script src="/assets/section-switch.js" defer></script>
