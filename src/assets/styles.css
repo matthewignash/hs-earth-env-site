@@ -184,6 +184,19 @@ img { max-width: 100%; height: auto; display: block; }
   margin-bottom: 8px;
   line-height: 1.2;
 }
+/* Unit landings: the driving question is the headline; the unit's name sits above it. */
+.page-header .page-eyebrow {
+  font-size: var(--fs-small);
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 6px;
+}
+.page-header h1.anchor-question { font-size: var(--fs-h1); line-height: 1.15; max-width: 24ch; }
+@media (max-width: 640px) {
+  .page-header h1.anchor-question { font-size: var(--fs-h2); }
+}
 .page-header .tagline {
   font-size: var(--fs-body);
   color: rgba(255, 255, 255, 0.85);
