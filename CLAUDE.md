@@ -226,6 +226,8 @@ This is the durable skeleton. Every Block N HTML file has these eight elements (
 
 Keep this palette in `assets/styles.css`. Don't override per-page — the visual consistency is the point.
 
+> *Amended 2026-09-13 (colour roles).* The palette above is superseded. `:root` in `src/assets/styles.css` now holds 12 role tokens (`--ink`, `--ink-quiet`, `--paper`, `--surface`, `--line`, `--primary`, `--primary-deep`, `--ai`, `--assessed`, and the four `--spine-*`), plus washes and label colours derived from them with `color-mix`. The five pastel section fills, `--good`, `--soft`, `--warn`, `--accent-*` and the `--deep-*` set are retired: the spine and the eyebrow carry the rhythm. `--assessed` green marks graded work only; `--ai` is a fill, never text. No raw hex outside `:root`; `npm run build` fails on one.
+
 ---
 
 ## 7. Content sources (where to lift from)

@@ -67,7 +67,7 @@ returnTo:
     color: var(--paper);
   }
   .pg-back {
-    background: var(--accent-light);
+    background: var(--primary-wash);
     color: var(--ink);
     transform: rotateY(180deg);
     justify-content: center;
@@ -78,7 +78,7 @@ returnTo:
     aspect-ratio: 1 / 1;
     border-radius: 50%;
     object-fit: cover;
-    background: #000;
+    background: var(--ink);
     margin-top: 8px;
   }
   .pg-letter {
@@ -94,9 +94,9 @@ returnTo:
     padding: 4px 10px;
     border-radius: 999px;
     background: var(--paper);
-    color: var(--accent-dark);
+    color: var(--primary-deep);
   }
-  .pg-origin.artist { background: var(--ai-orange); color: var(--ink); }
+  .pg-origin.artist { background: var(--ai); color: var(--ink); }
   .pg-note { font-size: 0.85rem; line-height: 1.45; }
   .pg-credit { font-size: 0.72rem; opacity: 0.75; }
   .pg-controls { display: flex; gap: 12px; margin: 4px 0 8px; }
@@ -105,12 +105,12 @@ returnTo:
     font-size: 0.85rem;
     padding: 6px 14px;
     border-radius: 8px;
-    border: 1px solid var(--border);
+    border: 1px solid var(--line);
     background: var(--paper);
     color: var(--ink);
     cursor: pointer;
   }
-  .pg-controls button:hover { background: var(--accent-light); }
+  .pg-controls button:hover { background: var(--primary-wash); }
 </style>
 
 <div class="pg-controls">

@@ -23,7 +23,7 @@
     {%- if translation %}
     <p class="tc-translation{% if entry.verifiedBy and entry.verifiedBy[code] %} is-verified{% endif %}" data-lang="{{ code }}" hidden>
       <span class="tc-lang">{{ label }}</span>
-      <span class="tc-term">{{ translation }}</span>
+      <span class="tc-term" lang="{{ code }}">{{ translation }}</span>
       {%- if entry.verifiedBy and entry.verifiedBy[code] %}
       <span class="tc-verified">verified by {{ entry.verifiedBy[code] }}{% if entry.verifiedDate and entry.verifiedDate[code] %}, {{ entry.verifiedDate[code] }}{% endif %}</span>
       {%- else %}

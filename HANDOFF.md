@@ -28,7 +28,7 @@ Eleventy static site for HS Earth & Environmental Science at AISC Chennai, AY 20
 - **Reflect** is a handoff, not a form. Block pages carry a fixed lede, a callout pointing at one persistent Google Classroom Material, and a verbatim closing note. **The Reflection Tool's URL is not in this repo and must not be.** Fill `"reflection-journal"` in `classroomLinks.json` and all 61 pages go live at once.
 - **Reusable includes:** `partials/unit-map.njk`, `word-bank.njk`, `unit-schedule.njk`, `submit-link.njk`, `reflect.njk`, `notebook-cue.njk`, `video-card.njk`.
 - **Callout variants** in `styles.css`: `warn`, `good`, `exemplar-note`, `sketch-first`, `factstorm`, `activity` (one-off task block), and the trio `task` / `extend` / `support` (concepts / show / do) for "one task, an extension, a support".
-- **Visual system:** `--spine-*` / `--deep-*` tokens per rhythm family; `--ai-orange` is reserved for AI touchpoints only.
+- **Visual system (2026-09-13):** 12 role tokens in `:root` (see CLAUDE.md §6 amendment); washes and section-label colours are derived with `color-mix`, never hand-picked. `--ai` is reserved for AI touchpoints and is never text; `--assessed` green marks graded work only. Type is seven `--fs-*` steps; body 17px/1.6.
 
 ## Things that will be built wrong if not insisted on
 

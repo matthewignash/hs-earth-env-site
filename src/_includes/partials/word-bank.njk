@@ -32,7 +32,7 @@
         {%- if entry.t[code] %}
         <tr{% if entry.verifiedBy and entry.verifiedBy[code] %} class="is-verified"{% endif %}>
           <th scope="row">{{ label }}</th>
-          <td class="wb-translation">{{ entry.t[code] }}</td>
+          <td class="wb-translation" lang="{{ code }}">{{ entry.t[code] }}</td>
           <td class="wb-status">
             {%- if entry.verifiedBy and entry.verifiedBy[code] -%}
             verified by {{ entry.verifiedBy[code] }}{% if entry.verifiedDate and entry.verifiedDate[code] %}, {{ entry.verifiedDate[code] }}{% endif %}
