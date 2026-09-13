@@ -30,6 +30,15 @@
   --deep-reflect: #6e3a14;
   --panel-bg: #eef2fa;
   --divider: #e3e1da;
+
+  /* type: 7 steps, ratio ~1.25. The two mark sizes are the decorative hero glyph only. */
+  --fs-micro: 12px;  --fs-small: 14px;  --fs-body: 17px;
+  --fs-lead:  20px;  --fs-h3:    24px;  --fs-h2:   32px;
+  --fs-h1:    42px;
+  --fs-mark-sm: 140px; --fs-mark: 220px;
+
+  /* space: 6 steps */
+  --s1: 4px; --s2: 8px; --s3: 12px; --s4: 20px; --s5: 32px; --s6: 56px;
 }
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -57,8 +66,17 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   color: var(--ink);
   background: var(--paper);
-  line-height: 1.55;
+  font-size: var(--fs-body);
+  line-height: 1.6;
 }
+
+/* Small type roles that used to be inline styles in templates */
+.landing-h2 { font-size: var(--fs-h3); color: var(--ink); margin-bottom: var(--s3); }
+.quiet-small { font-size: var(--fs-small); color: var(--muted); }
+.quiet-micro { font-size: var(--fs-micro); color: var(--muted); }
+.quiet-regular { font-weight: 400; }
+.quiet-spaced { margin-top: 16px; }
+.text-micro { font-size: var(--fs-micro); }
 
 a { color: var(--accent); }
 a:hover { color: var(--accent-dark); }
@@ -80,14 +98,14 @@ img { max-width: 100%; height: auto; display: block; }
 }
 .topnav .brand {
   font-weight: 700;
-  font-size: 16px;
+  font-size: var(--fs-body);
   color: white;
   text-decoration: none;
 }
 .topnav a {
   color: rgba(255, 255, 255, 0.85);
   text-decoration: none;
-  font-size: 14px;
+  font-size: var(--fs-small);
   padding: 6px 10px;
   border-radius: 4px;
 }
@@ -108,7 +126,7 @@ img { max-width: 100%; height: auto; display: block; }
   background: white;
   padding: 10px 24px;
   border-bottom: 1px solid var(--border);
-  font-size: 13px;
+  font-size: var(--fs-small);
   color: var(--muted);
 }
 .breadcrumbs-inner { padding: 0; max-width: 1100px; }
@@ -128,14 +146,14 @@ img { max-width: 100%; height: auto; display: block; }
 }
 .home-hero .container { padding: 0; position: relative; z-index: 1; }
 .home-hero h1 {
-  font-size: 40px;
+  font-size: var(--fs-h1);
   line-height: 1.15;
   color: white;
   max-width: 720px;
   margin-bottom: 14px;
 }
 .home-hero .hero-tagline {
-  font-size: 17px;
+  font-size: var(--fs-body);
   color: rgba(255, 255, 255, 0.88);
   max-width: 640px;
   line-height: 1.55;
@@ -145,7 +163,7 @@ img { max-width: 100%; height: auto; display: block; }
   right: -20px;
   top: 50%;
   transform: translateY(-50%);
-  font-size: 220px;
+  font-size: var(--fs-mark);
   opacity: 0.18;
   pointer-events: none;
   line-height: 1;
@@ -160,19 +178,19 @@ img { max-width: 100%; height: auto; display: block; }
 }
 .page-header .container { padding: 0; }
 .page-header h1 {
-  font-size: 32px;
+  font-size: var(--fs-h2);
   color: white;
   margin-bottom: 8px;
   line-height: 1.2;
 }
 .page-header .tagline {
-  font-size: 16px;
+  font-size: var(--fs-body);
   color: rgba(255, 255, 255, 0.85);
   max-width: 720px;
 }
 /* Unit landing pages: real calendar span under the unit title. */
 .page-header .unit-span {
-  font-size: 14px;
+  font-size: var(--fs-small);
   color: rgba(255, 255, 255, 0.8);
   margin-bottom: 8px;
 }
@@ -209,17 +227,17 @@ img { max-width: 100%; height: auto; display: block; }
 }
 .section-card .card-title {
   font-weight: 700;
-  font-size: 18px;
+  font-size: var(--fs-lead);
   color: var(--accent);
   margin-bottom: 6px;
 }
 .section-card .card-desc {
-  font-size: 14px;
+  font-size: var(--fs-small);
   color: var(--muted);
 }
 /* Meeting dates on a unit landing page's block cards. */
 .section-card .card-dates {
-  font-size: 13px;
+  font-size: var(--fs-small);
   font-weight: 600;
   color: var(--accent-dark);
   margin-top: 8px;
@@ -235,19 +253,19 @@ img { max-width: 100%; height: auto; display: block; }
   margin-bottom: 24px;
 }
 .map-summative-tag {
-  font-size: 11px;
+  font-size: var(--fs-micro);
   font-weight: 700;
   letter-spacing: 0.5px;
   text-transform: uppercase;
   color: var(--accent);
 }
 .map-summative h2 {
-  font-size: 22px;
+  font-size: var(--fs-h3);
   color: var(--ink);
   margin: 6px 0 2px;
 }
 .map-strands {
-  font-size: 13px;
+  font-size: var(--fs-small);
   font-weight: 600;
   color: var(--accent-dark);
   margin-bottom: 10px;
@@ -261,7 +279,7 @@ img { max-width: 100%; height: auto; display: block; }
   padding: 0;
 }
 .map-chip {
-  font-size: 12px;
+  font-size: var(--fs-micro);
   font-weight: 600;
   background: var(--accent-light);
   color: var(--accent-dark);
@@ -269,7 +287,7 @@ img { max-width: 100%; height: auto; display: block; }
   border-radius: 999px;
 }
 .map-summative-note {
-  font-size: 13px;
+  font-size: var(--fs-small);
   color: var(--muted);
   margin: 12px 0 0;
 }
@@ -299,18 +317,18 @@ img { max-width: 100%; height: auto; display: block; }
 }
 .map-block {
   font-weight: 700;
-  font-size: 16px;
+  font-size: var(--fs-body);
   color: var(--accent);
   text-decoration: none;
 }
 a.map-block:hover { text-decoration: underline; }
 .map-dates {
-  font-size: 13px;
+  font-size: var(--fs-small);
   font-weight: 600;
   color: var(--accent-dark);
 }
 .map-li {
-  font-size: 14px;
+  font-size: var(--fs-small);
   font-style: italic;
   color: var(--ink);
   margin: 0 0 6px;
@@ -321,17 +339,17 @@ a.map-block:hover { text-decoration: underline; }
   font-weight: 600;
 }
 .map-produces {
-  font-size: 14px;
+  font-size: var(--fs-small);
   margin: 0 0 4px;
 }
 .map-feeds {
-  font-size: 14px;
+  font-size: var(--fs-small);
   font-weight: 600;
   color: var(--deep-concepts);
   margin: 0;
 }
 .map-event {
-  font-size: 13px;
+  font-size: var(--fs-small);
   color: var(--muted);
   margin: 6px 0 0;
 }
@@ -340,7 +358,7 @@ a.map-block:hover { text-decoration: underline; }
   color: var(--deep-do);
 }
 .map-foot {
-  font-size: 13px;
+  font-size: var(--fs-small);
   color: var(--muted);
   border-top: 1px solid var(--divider);
   padding-top: 12px;
@@ -366,7 +384,7 @@ a.map-block:hover { text-decoration: underline; }
 .map-link-card .map-link-sub {
   display: block;
   font-weight: 400;
-  font-size: 13px;
+  font-size: var(--fs-small);
   color: var(--muted);
   margin-top: 2px;
 }
@@ -381,7 +399,7 @@ a.map-block:hover { text-decoration: underline; }
 }
 .unit-schedule > summary {
   font-weight: 700;
-  font-size: 14px;
+  font-size: var(--fs-small);
   color: var(--accent-dark);
   cursor: pointer;
 }
@@ -390,7 +408,7 @@ a.map-block:hover { text-decoration: underline; }
   width: 100%;
   border-collapse: collapse;
   margin: 10px 0 0;
-  font-size: 13px;
+  font-size: var(--fs-small);
 }
 .unit-schedule th, .unit-schedule td {
   text-align: left;
@@ -399,7 +417,7 @@ a.map-block:hover { text-decoration: underline; }
   white-space: nowrap;
 }
 .unit-schedule thead th {
-  font-size: 11px;
+  font-size: var(--fs-micro);
   text-transform: uppercase;
   letter-spacing: 0.06em;
   color: var(--muted);
@@ -412,7 +430,7 @@ a.map-block:hover { text-decoration: underline; }
 .unit-schedule tr.is-assessment th { color: var(--deep-show); }
 .schedule-tag {
   display: inline-block;
-  font-size: 10px;
+  font-size: var(--fs-micro);
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.05em;
@@ -423,7 +441,7 @@ a.map-block:hover { text-decoration: underline; }
   margin-left: 6px;
 }
 .unit-schedule-note {
-  font-size: 12px;
+  font-size: var(--fs-micro);
   color: var(--muted);
   margin: 8px 0 0;
 }
@@ -454,7 +472,7 @@ a.map-block:hover { text-decoration: underline; }
 .section-card.stub .card-desc { color: var(--muted); }
 .coming-soon-tag {
   display: inline-block;
-  font-size: 10px;
+  font-size: var(--fs-micro);
   font-weight: 700;
   letter-spacing: 0.5px;
   text-transform: uppercase;
@@ -472,23 +490,24 @@ a.map-block:hover { text-decoration: underline; }
   padding: 14px 16px;
   border-radius: 6px;
   margin: 16px 0 24px;
-  font-size: 14px;
+  font-size: var(--fs-small);
   color: var(--ink);
 }
 .stub-note strong { color: var(--accent-dark); }
 
 /* ====== Prose ====== */
 .prose h2 {
-  font-size: 22px;
+  font-size: var(--fs-h3);
   color: var(--ink);
   margin: 28px 0 10px;
 }
 .prose h3 {
-  font-size: 17px;
+  font-size: var(--fs-body);
   color: var(--ink);
   margin: 22px 0 8px;
 }
 .prose p { margin-bottom: 12px; }
+.prose p, .prose li { max-width: 68ch; }
 .prose ul, .prose ol { margin: 8px 0 14px 24px; }
 .prose li { margin-bottom: 6px; }
 .prose strong { color: var(--ink); }
@@ -506,7 +525,7 @@ a.map-block:hover { text-decoration: underline; }
   width: 100%;
   border-collapse: collapse;
   margin: 16px 0 20px;
-  font-size: 14px;
+  font-size: var(--fs-small);
   background: white;
   border: 1px solid var(--border);
   border-radius: 8px;
@@ -522,7 +541,7 @@ a.map-block:hover { text-decoration: underline; }
   background: var(--accent-light);
   color: var(--accent-dark);
   font-weight: 700;
-  font-size: 13px;
+  font-size: var(--fs-small);
   text-transform: uppercase;
   letter-spacing: 0.3px;
 }
@@ -536,13 +555,13 @@ a.map-block:hover { text-decoration: underline; }
   margin: 16px 0;
   border-left: 4px solid var(--accent);
   background: var(--accent-light);
-  font-size: 14px;
+  font-size: var(--fs-small);
 }
 /* Worked example of a notebook entry header. Monospace so students can see the
    pipes and spacing they are copying. */
 .entry-header-demo {
   font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
-  font-size: 13px;
+  font-size: var(--fs-small);
   background: var(--do);
   border-left: 4px solid var(--spine-do);
   padding: 12px 14px;
@@ -563,11 +582,11 @@ a.map-block:hover { text-decoration: underline; }
   margin: 18px 0;
   background: white;
 }
-.text-card h2 { font-size: 18px; color: var(--ink); margin-bottom: 10px; }
+.text-card h2 { font-size: var(--fs-lead); color: var(--ink); margin-bottom: 10px; }
 .text-card p { margin-bottom: 10px; }
 .text-card p:last-child { margin-bottom: 0; }
-.text-card-note { font-size: 13px; color: var(--muted); }
-.two-texts-lede { font-size: 16px; margin-bottom: 18px; }
+.text-card-note { font-size: var(--fs-small); color: var(--muted); }
+.two-texts-lede { font-size: var(--fs-body); margin-bottom: 18px; }
 
 /* One task, an extension, a support. Used where a block has a single required
    task rather than a real choice board, so the routes are named for what they
@@ -584,7 +603,7 @@ a.map-block:hover { text-decoration: underline; }
 
 /* ====== Lesson-return links (supporting pages) ====== */
 .lesson-return {
-  font-size: 13px;
+  font-size: var(--fs-small);
   color: var(--muted);
   margin: 14px 0 0;
 }
@@ -598,7 +617,7 @@ a.map-block:hover { text-decoration: underline; }
   border-radius: 8px;
   padding: 12px 16px;
   margin: 24px 0;
-  font-size: 14px;
+  font-size: var(--fs-small);
 }
 .lesson-return-bottom a {
   display: inline-block;
@@ -624,18 +643,18 @@ a.key-term[aria-expanded="true"] { background: var(--accent-light); }
   border-radius: 8px;
   padding: 12px 14px;
   margin: 10px 0;
-  font-size: 14px;
+  font-size: var(--fs-small);
 }
 .key-term-panel-title {
   font-weight: 700;
-  font-size: 12px;
+  font-size: var(--fs-micro);
   letter-spacing: 0.5px;
   text-transform: uppercase;
   color: var(--accent-dark);
   margin-bottom: 4px;
 }
 .key-term-panel p { margin: 0 0 6px; }
-.key-term-panel-links { font-size: 13px; margin-bottom: 0 !important; }
+.key-term-panel-links { font-size: var(--fs-small); margin-bottom: 0 !important; }
 
 /* ====== Power Notes (worked example + seed strips) ====== */
 .power-example {
@@ -644,7 +663,7 @@ a.key-term[aria-expanded="true"] { background: var(--accent-light); }
   border-radius: 8px;
   padding: 14px 18px;
   margin: 16px 0;
-  font-size: 14px;
+  font-size: var(--fs-small);
   line-height: 1.8;
 }
 .power-example .pe-topic { font-weight: 700; margin-bottom: 6px; }
@@ -657,7 +676,7 @@ a.key-term[aria-expanded="true"] { background: var(--accent-light); }
   border-radius: 6px;
   padding: 4px 10px;
   margin: 0 0 14px;
-  font-size: 13px;
+  font-size: var(--fs-small);
 }
 .power-seeds summary { cursor: pointer; font-weight: 600; color: var(--muted); }
 .power-seeds-body { padding: 6px 2px 4px; }
@@ -665,13 +684,13 @@ a.key-term[aria-expanded="true"] { background: var(--accent-light); }
 /* ====== Content figures (shared) ====== */
 .content-figure { margin: 20px auto; max-width: 720px; }
 .content-figure img { display: block; max-width: 100%; height: auto; margin: 0 auto; }
-.content-figure figcaption { font-size: 13px; color: var(--muted); margin-top: 6px; }
+.content-figure figcaption { font-size: var(--fs-small); color: var(--muted); margin-top: 6px; }
 
 /* ====== Reading pages ====== */
 .prose figure { margin: 20px 0; }
 .prose figure img { max-width: 100%; height: auto; border: 1px solid var(--border); border-radius: 8px; }
-.prose figcaption { font-size: 13px; color: var(--muted); margin-top: 6px; }
-.source-type { font-size: 12px; color: var(--muted); }
+.prose figcaption { font-size: var(--fs-small); color: var(--muted); margin-top: 6px; }
+.source-type { font-size: var(--fs-micro); color: var(--muted); }
 
 /* ====== Resources Library ====== */
 .library-entry { margin-bottom: 4px; }
@@ -681,11 +700,11 @@ a.key-term[aria-expanded="true"] { background: var(--accent-light); }
   background: white;
   border: 1px solid var(--border);
   border-radius: 8px;
-  font-size: 14px;
+  font-size: var(--fs-small);
 }
 .opvl dt {
   font-weight: 700;
-  font-size: 12px;
+  font-size: var(--fs-micro);
   letter-spacing: 0.5px;
   text-transform: uppercase;
   color: var(--muted);
@@ -706,11 +725,11 @@ a.key-term[aria-expanded="true"] { background: var(--accent-light); }
    three untyped questions reads as three prompts rather than as a route from
    fact to concept to argument. */
 .cu-statement {
-  font-size: 16px;
+  font-size: var(--fs-body);
   margin-bottom: 12px;
 }
 .gq-label {
-  font-size: 12px;
+  font-size: var(--fs-micro);
   text-transform: uppercase;
   letter-spacing: 0.04em;
   color: var(--muted);
@@ -723,13 +742,13 @@ a.key-term[aria-expanded="true"] { background: var(--accent-light); }
 }
 .guiding-questions li {
   margin-bottom: 6px;
-  font-size: 14px;
+  font-size: var(--fs-small);
 }
 .guiding-questions li:last-child { margin-bottom: 0; }
 .gq-type {
   display: inline-block;
   min-width: 78px;
-  font-size: 11px;
+  font-size: var(--fs-micro);
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.03em;
@@ -745,7 +764,7 @@ a.key-term[aria-expanded="true"] { background: var(--accent-light); }
   background: var(--ai-orange);
   color: var(--ink);
   font-weight: 700;
-  font-size: 16px;
+  font-size: var(--fs-body);
   padding: 14px 22px;
   border-radius: 10px;
   text-decoration: none;
@@ -776,7 +795,7 @@ a.key-term[aria-expanded="true"] { background: var(--accent-light); }
   gap: 10px;
 }
 .partner-launch-note {
-  font-size: 13px;
+  font-size: var(--fs-small);
   color: var(--muted);
   margin-top: 6px;
 }
@@ -797,7 +816,7 @@ a.key-term[aria-expanded="true"] { background: var(--accent-light); }
   border-top: 1px solid var(--border);
   padding: 24px;
   margin-top: 48px;
-  font-size: 13px;
+  font-size: var(--fs-small);
   color: var(--muted);
   text-align: center;
 }
@@ -822,18 +841,18 @@ a.key-term[aria-expanded="true"] { background: var(--accent-light); }
   .topnav .spacer { display: none; }
   .container { padding: 16px; }
   .page-header { padding: 24px 16px 18px; }
-  .page-header h1 { font-size: 26px; }
+  .page-header h1 { font-size: var(--fs-h3); }
   .simulator-frame { min-height: 600px; }
   .home-hero { padding: 36px 16px 32px; }
-  .home-hero h1 { font-size: 28px; }
-  .home-hero .hero-tagline { font-size: 15px; }
-  .home-hero .hero-mark { font-size: 140px; right: -30px; opacity: 0.12; }
+  .home-hero h1 { font-size: var(--fs-h2); }
+  .home-hero .hero-tagline { font-size: var(--fs-small); }
+  .home-hero .hero-mark { font-size: var(--fs-mark-sm); right: -30px; opacity: 0.12; }
   /* Wide tables become horizontally-scrollable on small screens */
   .prose table, .block-section table {
     display: block;
     overflow-x: auto;
     max-width: 100%;
-    font-size: 13px;
+    font-size: var(--fs-small);
     -webkit-overflow-scrolling: touch;
   }
   .prose th, .prose td, .block-section th, .block-section td { padding: 8px 10px; }

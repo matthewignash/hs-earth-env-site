@@ -3,7 +3,7 @@
   display: flex;
   gap: 16px;
   flex-wrap: wrap;
-  font-size: 14px;
+  font-size: var(--fs-small);
   color: rgba(255, 255, 255, 0.8);
   margin-bottom: 12px;
 }
@@ -12,14 +12,14 @@
   gap: 8px;
   align-items: center;
   flex-wrap: wrap;
-  font-size: 13px;
+  font-size: var(--fs-small);
 }
 .strand-chips .label { color: rgba(255, 255, 255, 0.75); }
 .chip {
   padding: 4px 10px;
   border-radius: 16px;
   font-weight: 600;
-  font-size: 12px;
+  font-size: var(--fs-micro);
   border: 1.5px solid var(--border);
 }
 .chip.active {
@@ -47,7 +47,7 @@
 }
 .ai-callout .ai-label {
   font-weight: 700;
-  font-size: 12px;
+  font-size: var(--fs-micro);
   letter-spacing: 0.5px;
   text-transform: uppercase;
   color: #8b6914;
@@ -68,7 +68,7 @@
   padding: 8px 14px;
   border-radius: 20px;
   text-decoration: none;
-  font-size: 13px;
+  font-size: var(--fs-small);
   font-weight: 600;
   display: inline-flex;
   align-items: center;
@@ -81,7 +81,7 @@
 }
 .ai-callout .ai-reminder {
   margin-top: 10px;
-  font-size: 12px;
+  font-size: var(--fs-micro);
   color: #8b6914;
   font-style: italic;
 }
@@ -105,7 +105,7 @@
 .block-section.reflect::before {
   display: block;
   text-transform: uppercase;
-  font-size: 0.7rem;
+  font-size: var(--fs-micro);
   letter-spacing: 0.08em;
   font-weight: 600;
   margin-bottom: 6px;
@@ -132,7 +132,7 @@
 .block-section.show     { border-left: 4px solid var(--spine-show); }
 .block-section.reflect  { border-left: 4px solid var(--spine-reflect); }
 .block-section h2 {
-  font-size: 22px;
+  font-size: var(--fs-h3);
   margin-bottom: 6px;
   color: var(--ink);
 }
@@ -156,7 +156,7 @@
 }
 .block-section .sub {
   color: var(--muted);
-  font-size: 14px;
+  font-size: var(--fs-small);
   margin-bottom: 14px;
   font-style: italic;
 }
@@ -182,8 +182,8 @@
   cursor: pointer;
 }
 .entry-card .entry-title { font-weight: 700; margin-bottom: 4px; }
-.entry-card .entry-meta { font-size: 12px; color: var(--muted); margin-top: 8px; }
-.prefer-text { font-size: 12px; color: var(--muted); margin-top: 6px; }
+.entry-card .entry-meta { font-size: var(--fs-micro); color: var(--muted); margin-top: 8px; }
+.prefer-text { font-size: var(--fs-micro); color: var(--muted); margin-top: 6px; }
 
 /* ====== "Everyone does this": cards that are never part of the choice ======
    Deliberately unlike .placeholder (dashed = asset missing) and .live-activity
@@ -191,7 +191,7 @@
    instruction line above the grid never describes these. */
 .entry-required { margin-top: 18px; }
 .entry-required-label {
-  font-size: 12px;
+  font-size: var(--fs-micro);
   font-weight: 700;
   letter-spacing: 0.06em;
   text-transform: uppercase;
@@ -229,7 +229,7 @@
   inset: 0;
   display: grid;
   place-items: center;
-  font-size: 36px;
+  font-size: var(--fs-h1);
   color: #fff;
   background: rgba(0, 0, 0, 0.25);
   text-shadow: 0 1px 6px rgba(0, 0, 0, 0.5);
@@ -265,7 +265,7 @@ dialog.video-lightbox::backdrop {
 }
 .video-lightbox-yt {
   color: #fff;
-  font-size: 14px;
+  font-size: var(--fs-small);
 }
 .video-lightbox-close {
   background: rgba(255, 255, 255, 0.15);
@@ -273,7 +273,7 @@ dialog.video-lightbox::backdrop {
   border: 1px solid rgba(255, 255, 255, 0.4);
   border-radius: 6px;
   padding: 6px 14px;
-  font-size: 14px;
+  font-size: var(--fs-small);
   cursor: pointer;
 }
 .video-lightbox-close:hover {
@@ -284,7 +284,7 @@ dialog.video-lightbox::backdrop {
 .success-criteria {
   margin: 8px 0 0;
   padding-left: 18px;
-  font-size: 14px;
+  font-size: var(--fs-small);
   color: var(--muted);
 }
 .success-criteria li { margin: 2px 0; }
@@ -293,7 +293,7 @@ dialog.video-lightbox::backdrop {
   padding: 12px 14px;
   border-radius: 8px;
   margin-bottom: 14px;
-  font-size: 14px;
+  font-size: var(--fs-small);
 }
 .choice-board {
   display: grid;
@@ -319,12 +319,12 @@ dialog.video-lightbox::backdrop {
   margin-bottom: 8px;
 }
 .choice .choice-title { font-weight: 600; margin-bottom: 6px; }
-.choice .choice-detail { font-size: 13px; color: var(--muted); }
+.choice .choice-detail { font-size: var(--fs-small); color: var(--muted); }
 .choice .choice-detail ol { margin: 0; padding-left: 18px; }
 .choice .choice-detail li { margin: 0 0 6px; }
 .choice .udl-tag {
   display: inline-block;
-  font-size: 11px;
+  font-size: var(--fs-micro);
   background: var(--soft);
   padding: 2px 6px;
   border-radius: 4px;
@@ -342,7 +342,7 @@ dialog.video-lightbox::backdrop {
 }
 .submission-callout .label {
   font-weight: 700;
-  font-size: 12px;
+  font-size: var(--fs-micro);
   letter-spacing: 0.5px;
   text-transform: uppercase;
   color: #2d5016;
@@ -355,7 +355,7 @@ dialog.video-lightbox::backdrop {
   padding: 8px 14px;
   border-radius: 6px;
   text-decoration: none;
-  font-size: 13px;
+  font-size: var(--fs-small);
   font-weight: 600;
   margin-top: 6px;
 }
@@ -366,12 +366,12 @@ dialog.video-lightbox::backdrop {
   color: var(--muted);
   padding: 8px 14px;
   border-radius: 6px;
-  font-size: 13px;
+  font-size: var(--fs-small);
   font-weight: 600;
   margin-top: 6px;
 }
 
-.rubric-meta { font-size: 13px; color: var(--muted); margin-top: 10px; }
+.rubric-meta { font-size: var(--fs-small); color: var(--muted); margin-top: 10px; }
 .rubric-meta a { color: var(--accent); font-weight: 600; }
 
 /* ====== Notebook entry cue ====== */
@@ -385,7 +385,7 @@ dialog.video-lightbox::backdrop {
 .notebook-cue p { margin-bottom: 6px; }
 .entry-header {
   font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
-  font-size: 13px;
+  font-size: var(--fs-small);
   margin-bottom: 0;
 }
 /* Both rotations render, so each needs its own line. */
@@ -401,7 +401,7 @@ dialog.video-lightbox::backdrop {
 }
 .reflect-callout p { margin-bottom: 6px; }
 .reflect-note {
-  font-size: 13px;
+  font-size: var(--fs-small);
   color: var(--muted);
   margin-top: 10px;
 }
@@ -423,12 +423,12 @@ dialog.video-lightbox::backdrop {
   color: var(--accent);
   text-decoration: none;
   font-weight: 600;
-  font-size: 14px;
+  font-size: var(--fs-small);
 }
 .block-nav a:hover { text-decoration: underline; }
 .block-nav .map-link {
   color: var(--muted);
-  font-size: 13px;
+  font-size: var(--fs-small);
   text-transform: uppercase;
   letter-spacing: 0.5px;
 }
@@ -453,7 +453,7 @@ dialog.video-lightbox::backdrop {
 }
 .placeholder-tag {
   display: inline-block;
-  font-size: 10px;
+  font-size: var(--fs-micro);
   font-weight: 700;
   letter-spacing: 0.5px;
   text-transform: uppercase;
@@ -473,18 +473,18 @@ dialog.video-lightbox::backdrop {
   border-radius: 0 8px 8px 0;
   padding: 10px 14px;
   margin-bottom: 20px;
-  font-size: 14px;
+  font-size: var(--fs-small);
 }
 .bell-ringer-head {
-  font-size: 11px;
+  font-size: var(--fs-micro);
   font-weight: 700;
   letter-spacing: 0.5px;
   text-transform: uppercase;
   color: var(--deep-do);
 }
-.bell-ringer-meta { font-size: 12px; color: var(--muted); margin: 2px 0 6px; }
+.bell-ringer-meta { font-size: var(--fs-micro); color: var(--muted); margin: 2px 0 6px; }
 .bell-ringer p { margin: 0 0 6px; }
-.bell-ringer .bell-ringer-journal { font-size: 12px; color: var(--muted); font-style: italic; margin-bottom: 0; }
+.bell-ringer .bell-ringer-journal { font-size: var(--fs-micro); color: var(--muted); font-style: italic; margin-bottom: 0; }
 .bell-ringer .bell-ringer-figure { margin: 10px 0 8px; max-width: 640px; }
 
 /* ====== Learning panel ====== */
@@ -498,15 +498,15 @@ dialog.video-lightbox::backdrop {
   line-height: 1.6;
 }
 .lp-tag {
-  font-size: 11px;
+  font-size: var(--fs-micro);
   font-weight: 700;
   letter-spacing: 0.5px;
   text-transform: uppercase;
   color: var(--accent);
 }
-.lp-intention { font-size: 19px; margin: 6px 0 12px; color: var(--ink); }
+.lp-intention { font-size: var(--fs-lead); margin: 6px 0 12px; color: var(--ink); }
 .lp-sc-head {
-  font-size: 12px;
+  font-size: var(--fs-micro);
   font-weight: 700;
   letter-spacing: 0.5px;
   text-transform: uppercase;
@@ -521,7 +521,7 @@ dialog.video-lightbox::backdrop {
   background: none;
   color: var(--muted);
   font: inherit;
-  font-size: 11px;
+  font-size: var(--fs-micro);
   text-transform: none;
   letter-spacing: 0;
   text-decoration: underline;
@@ -533,7 +533,7 @@ dialog.video-lightbox::backdrop {
 .lp-sc-list label { display: flex; gap: 10px; align-items: flex-start; cursor: pointer; }
 .lp-check { accent-color: var(--accent); width: 16px; height: 16px; margin-top: 4px; flex: none; }
 .lp-standards { margin-top: 14px; display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
-.std-chip { font-size: 11px; font-weight: 600; padding: 2px 8px; border-radius: 999px; white-space: nowrap; text-decoration: none; }
+.std-chip { font-size: var(--fs-micro); font-weight: 600; padding: 2px 8px; border-radius: 999px; white-space: nowrap; text-decoration: none; }
 .std-chip.ngss { background: var(--accent-light); color: var(--accent-dark); }
 .std-chip.ailit { background: #fdf0dc; color: #8a5a12; }
 button.std-chip { border: none; cursor: pointer; font-family: inherit; }
@@ -547,13 +547,13 @@ button.std-chip[aria-expanded="true"] { outline: 2px solid var(--accent); outlin
   border-radius: 6px;
   padding: 10px 14px;
   margin-top: 10px;
-  font-size: 13px;
+  font-size: var(--fs-small);
   line-height: 1.55;
 }
 .std-panel p { margin: 0 0 6px; }
 .std-official { color: var(--muted); font-style: italic; }
 .std-label {
-  font-size: 10px;
+  font-size: var(--fs-micro);
   font-weight: 700;
   letter-spacing: 0.5px;
   text-transform: uppercase;
@@ -563,11 +563,11 @@ button.std-chip[aria-expanded="true"] { outline: 2px solid var(--accent); outlin
 .std-trail { margin: 2px 0 6px; padding-left: 18px; }
 .std-trail li { margin: 2px 0; }
 .std-here { font-weight: 600; }
-.std-help { font-size: 12px; }
-.lp-map-link { font-size: 11px; color: var(--muted); margin-left: 4px; white-space: nowrap; }
+.std-help { font-size: var(--fs-micro); }
+.lp-map-link { font-size: var(--fs-micro); color: var(--muted); margin-left: 4px; white-space: nowrap; }
 @media (max-width: 640px) {
   .learning-panel { padding: 12px 14px; }
-  .lp-intention { font-size: 16px; }
+  .lp-intention { font-size: var(--fs-body); }
 }
 
 /* ====== Sticky reference bar ====== */
@@ -580,7 +580,7 @@ button.std-chip[aria-expanded="true"] { outline: 2px solid var(--accent); outlin
   border-bottom: 1.5px solid var(--accent);
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
   padding: 6px 0;
-  font-size: 13px;
+  font-size: var(--fs-small);
 }
 .li-sticky-row { display: flex; align-items: center; gap: 10px; }
 .li-sticky-text { flex: 1; min-width: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
@@ -591,7 +591,7 @@ button.std-chip[aria-expanded="true"] { outline: 2px solid var(--accent); outlin
   border: none;
   background: none;
   cursor: pointer;
-  font-size: 14px;
+  font-size: var(--fs-small);
   color: var(--accent);
   padding: 2px 8px;
 }
@@ -611,7 +611,7 @@ button.std-chip[aria-expanded="true"] { outline: 2px solid var(--accent); outlin
 }
 .live-activity-tag {
   display: inline-block;
-  font-size: 10px;
+  font-size: var(--fs-micro);
   font-weight: 700;
   letter-spacing: 0.5px;
   text-transform: uppercase;
@@ -639,16 +639,16 @@ button.std-chip[aria-expanded="true"] { outline: 2px solid var(--accent); outlin
 .step-num, .step-time { display: inline-block; }
 .step-check-label { display: flex; align-items: flex-start; gap: 12px; cursor: pointer; }
 .step-check { width: 22px; height: 22px; flex: none; margin-top: 2px; accent-color: #6b8e3d; }
-.step-head { display: flex; flex-wrap: wrap; align-items: baseline; gap: 8px 12px; font-size: 17px; font-weight: 700; color: var(--ink); }
-.step-num { font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--deep-do); }
-.step-time { font-size: 13px; font-weight: 600; color: #6b6558; margin-left: auto; white-space: nowrap; }
+.step-head { display: flex; flex-wrap: wrap; align-items: baseline; gap: 8px 12px; font-size: var(--fs-body); font-weight: 700; color: var(--ink); }
+.step-num { font-size: var(--fs-micro); letter-spacing: 0.08em; text-transform: uppercase; color: var(--deep-do); }
+.step-time { font-size: var(--fs-small); font-weight: 600; color: #6b6558; margin-left: auto; white-space: nowrap; }
 .step-body { margin: 8px 0 0 34px; }
 .step-body p { margin: 6px 0; }
 .step-body ul { margin: 6px 0; padding-left: 20px; }
 .step-done { padding: 8px 10px; border-radius: 6px; background: var(--good); }
 .step.is-done .step-done { background: transparent; }
 .step-progress { font-weight: 700; color: var(--accent); margin: 8px 0 4px; }
-.step-reset { font: inherit; font-size: 13px; background: none; border: 1px solid #c9c3b4; border-radius: 6px; padding: 4px 10px; cursor: pointer; color: #6b6558; }
+.step-reset { font: inherit; font-size: var(--fs-small); background: none; border: 1px solid #c9c3b4; border-radius: 6px; padding: 4px 10px; cursor: pointer; color: #6b6558; }
 @media (max-width: 560px) { .step-body { margin-left: 0; } .step-time { margin-left: 0; } }
 
 /* ====== Systems Gallery cards (units/unit-1/systems-gallery.njk) ======
@@ -658,9 +658,9 @@ button.std-chip[aria-expanded="true"] { outline: 2px solid var(--accent); outlin
 .gallery-card { cursor: default; }
 .gallery-card:hover { transform: none; border-color: var(--border); }
 .gallery-card .entry-meta { margin-top: 0; margin-bottom: 10px; }
-.gc-fields { margin: 0; font-size: 14px; }
+.gc-fields { margin: 0; font-size: var(--fs-small); }
 .gc-fields dt {
-  font-size: 11px;
+  font-size: var(--fs-micro);
   font-weight: 700;
   letter-spacing: 0.06em;
   text-transform: uppercase;
@@ -670,18 +670,18 @@ button.std-chip[aria-expanded="true"] { outline: 2px solid var(--accent); outlin
 .gc-fields dd { margin: 2px 0 0; }
 .gc-sources { list-style: none; margin: 0; padding: 0; }
 .gc-sources li { margin-bottom: 6px; }
-.gc-origin { display: block; font-size: 12px; color: var(--muted); }
+.gc-origin { display: block; font-size: var(--fs-micro); color: var(--muted); }
 .gc-frame {
   margin: 4px 0 0 20px;
   padding: 0;
   font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
-  font-size: 12px;
+  font-size: var(--fs-micro);
 }
 .gc-frame li { margin-bottom: 5px; }
 .gc-frame-label {
   display: block;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-  font-size: 11px;
+  font-size: var(--fs-micro);
   font-weight: 700;
   color: var(--muted);
 }
