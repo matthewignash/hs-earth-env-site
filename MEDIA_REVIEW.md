@@ -183,6 +183,14 @@ Not used: NOAA Education ocean acidification collection (403 to the fetcher, PME
 
 ---
 
+### Confirmed: CNN story + WMO State of Global Water Resources 2025 (U5 B1, placed 2026-09-17)
+- CNN: https://www.cnn.com/2026/09/17/climate/water-cycle-wmo-report-rivers-groundwater-glaciers (Laura Paddison, "The water cycle you learned about in school is off balance", 17 Sep 2026). Verified HTTP 200 (redirects to edition.cnn.com) on 2026-09-17; the Saulo "savings account" quote, the 42% figure and the "since around 2016" claim all confirmed in the article text.
+- WMO: https://wmo.int/resources/publication-series/state-of-global-water-resources/2025 (State of Global Water Resources 2025, published 17 Sep 2026). Verified HTTP 200 on 2026-09-17. The page is script-rendered, so the figures were checked against CNN's text, not the report body; a future pass should open the PDF and confirm 42% and the 2016 start directly.
+- Placement: `units/unit-5/block-1.njk`. The bell ringer quotes the single Saulo line; both sources are Concepts link cards (linked, never hosted). The "check the news against the source" extension in Do uses the pair.
+- OPVL note: CNN is a news report about a report. Origin is the WMO; CNN is the messenger, so any number a student takes from the story should be checked against the WMO report itself. One caption in the CNN story places Petit-Goave, "southwest of Port-au-Prince", in Jamaica; it is in Haiti. That error is used deliberately in the Block 1 extension as a live "check even a trusted outlet" example, so do not report it to CNN until the block has run, or update the extension if it gets corrected.
+
+---
+
 ## Pending — librarian collaboration
 
 ### U0 Anchor Article specification — ✅ RESOLVED (2026-05-28)

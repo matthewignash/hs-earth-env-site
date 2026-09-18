@@ -2,12 +2,24 @@
 
 > **Purpose:** Living status doc. Tells you (and future Claude Code sessions) what's built, what's stubbed, what to build next, and in what order. The charter is in `CLAUDE.md` — do NOT modify that. Update this file at the end of each build session.
 
-**Last updated:** 2026-09-02 (Addenda 3–51 below. U0–U6 complete; U7 is next.)
+**Last updated:** 2026-09-17 (Addenda 3–52 below. U0–U6 complete; U7 is next.)
 
 
 
 
 
+
+---
+
+**Addendum 52 (2026-09-17): C43. U5 Block 1 rebuilt as a guided nine-step path with the WMO water-savings hook.**
+
+`units/unit-5/block-1.njk` rewritten (Cowork session, checked and committed here). The block now targets fast/slow reservoirs and residence times instead of the Cauvery dispute; the four-path choice board is replaced by a nine-step `.step-list` (the U1 Block 2b pattern, ticks in `localStorage` under `steps:<path>`); the bell ringer quotes WMO Secretary-General Celeste Saulo's "savings account" line from the State of Global Water Resources 2025 report (published 17 Sep 2026); Concepts carries a residence-time table, a "reservoir" EAL callout and real link cards for the CNN story and the WMO report (see `MEDIA_REVIEW.md`). The Cauvery primer moved to Block 6, which is where the case is taught; the Cauvery basin diagram is an optional extension in Block 1. `units/unit-5/index.njk` card description updated to match.
+
+**Checked on this side:** full `npm run build` green (check gate + Eleventy); nine `.step-check` inputs in the built page; bell ringer, learning panel and all five sections render in order at 1280 px and 390 px with no horizontal scroll (the table falls back to the existing `.block-section table` scroll rule on mobile); ticks persist across reload, "Clear my ticks" resets, progress line updates; both external URLs 200; the four internal links resolve; date label shows A: Fri Feb 26 / B: Wed Mar 3; step times sum to 76 min as the Do sub-line says; residence-time values match the standard reference table. Screenshots: `docs/screenshots/u5-block-1-desktop.png`, `docs/screenshots/u5-block-1-mobile.png`.
+
+**Knock-on fixes:** Step 4 said "in the right column" after asking students to draw a left/right line (ambiguous for EAL readers); now "on the side where they belong". Block 6's worked-example note said "talk to him" with two named teachers; now "them". `foundations/eal/u5.njk` gains Reservoir and Residence time rows (tagline count corrected from 16 to 21; it was already 19).
+
+**Still open:** the Block 1 Watch primer is a placeholder and needs a real video before 26 Feb 2027. The U5 multilingual table in `foundations/eal/vocabulary.njk` does not yet carry the two new terms. `ealTerms.js` has a U1 `reservoir` entry (element-cycle sense); a water-sense entry is only worth adding when a U5 page includes the key-terms partial. `ai-partners/the-hydrologist.njk` still says "used in Blocks 1–4", which remains true (Block 1 offers it as an extension). BoodleBox/Flint guides that list Block 1 activities live outside this repo and were not checked.
 
 ---
 
