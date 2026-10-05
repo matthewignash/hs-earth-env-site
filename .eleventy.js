@@ -56,25 +56,50 @@ module.exports = function (eleventyConfig) {
     return page ? meetingNumber(teachingBlocks, page) : 0;
   });
 
-  eleventyConfig.addFilter("rotationDay", function (days, courseDay) {
-    return days.find(function (d) { return d.n === courseDay; }) || {};
-  });
+
+
+  // Lost meetings. When a section falls behind the plan, its blocks run on later
+  // calendar meetings than their position says. Each entry shifts that rotation's
+  // dates from `fromMeeting` onward by a number of meetings. Slips stack.
+  // Oct 2026: both sections finished Mars (U1 Block 3) before the October break,
+  // so U1 Block 4 runs A Wed Oct 7 (meeting 16) and B Tue Oct 6 (meeting 14).
+  const ROTATION_SLIPS = [
+    { fromMeeting: 13, a: 3, b: 1 }
+  ];
+
+  const slipFor = (rotation, meeting) => ROTATION_SLIPS
+    .filter(function (s) { return meeting >= s.fromMeeting; })
+    .reduce(function (sum, s) { return sum + (s[rotation] || 0); }, 0);
+
+  // The calendar dates a course meeting actually runs on, after slips. Every
+  // filter below reads dates through this, never straight from the data file.
+  const dayFor = (days, meeting) => {
+    const find = (n) => days.find(function (x) { return x.n === n; }) || {};
+    const a = find(meeting + slipFor("a", meeting));
+    const b = find(meeting + slipFor("b", meeting));
+    if (!a.n && !b.n) return {};
+    return { n: meeting, a: a.a, aLabel: a.aLabel, b: b.b, bLabel: b.bLabel };
+  };
 
   // One formatter for every surface that shows a meeting's dates: block-page
   // headers, unit-landing block cards, and the unit schedule.
   const meetingLabel = (days, meeting) => {
-    const d = days.find(function (x) { return x.n === meeting; }) || {};
+    const d = dayFor(days, meeting);
     return "A: " + (d.aLabel || "date TBC") + " · B: " + (d.bLabel || "date TBC");
   };
 
   eleventyConfig.addFilter("meetingDateLabel", meetingLabel);
+
+  eleventyConfig.addFilter("rotationDay", function (days, courseDay) {
+    return dayFor(days, courseDay);
+  });
 
   // Short dates for notebook entry headers: "Fri Aug 14" -> "Aug 14". Strips the
   // weekday off the label rather than re-parsing the ISO field, so entry headers
   // and page headers cannot drift and there is no timezone surface. The last
   // meeting of the year is A-only, so b comes back empty and the cue drops it.
   eleventyConfig.addFilter("entryDates", function (days, meeting) {
-    const d = days.find(function (x) { return x.n === meeting; }) || {};
+    const d = dayFor(days, meeting);
     const strip = (label) => (label || "").split(" ").slice(1).join(" ");
     return { a: strip(d.aLabel), b: strip(d.bLabel) };
   });
@@ -108,7 +133,8 @@ module.exports = function (eleventyConfig) {
         meeting: meetingNumber(ordered, p),
         label: "Block " + (p.data.blockLabel || p.data.block),
         title: p.data.title,
-        url: p.url
+        url: p.url,
+        assessment: p.data.scheduleTag || ""
       };
     });
     api.getAll()
@@ -140,7 +166,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addFilter("unitSpan", function (rows, unit, days) {
     const unitRows = rows.filter(function (r) { return r.unit === unit; });
     if (!unitRows.length) return null;
-    const meetingOf = (row) => days.find(function (d) { return d.n === row.meeting; });
+    const meetingOf = (row) => { const d = dayFor(days, row.meeting); return d.n ? d : null; };
     const first = meetingOf(unitRows[0]);
     const last = meetingOf(unitRows[unitRows.length - 1]);
     if (!first || !last) return null;

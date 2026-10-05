@@ -4,6 +4,14 @@
 
 **Last updated:** 2026-09-17 (Addenda 3–52 below. U0–U6 complete; U7 is next.)
 
+### 2026-10-06: U1 three checkpoints + October date slip
+
+- **Dates.** Both sections finished Mars (U1 Block 3) before the October break. `ROTATION_SLIPS` in `.eleventy.js` shifts every meeting from 13 onward: A by 3 meetings, B by 1. U1 Block 4 is now A Wed Oct 7 / B Tue Oct 6, and Block 7 (first lock) is A Thu Oct 15 / B Wed Oct 14. All date filters read through `dayFor()`, so add another entry there for any future slip. `rotationDates.json` is untouched and stays the master calendar. **Every later unit moves too**, by 3 meetings on A and 1 on B.
+- **Three checkpoints** replace C39's two. CP1 Earth vs Mars opens Block 4 (K/U + C, and it carries the feedback for the collected Block 2 diagrams). CP2 Transit and Source closes Block 5 (K/U + T/T). CP3 One Criterion, Three Planets closes Block 6 (all three strands, rehearses the Block 7 lock). The assessment page table now has three rows, and there are callouts on B2, B4, B5, B6 and B7.
+- **`scheduleTag` frontmatter** on a block now feeds `row.assessment` in the unit calendar (B4 to B6 checkpoints, and "Component 1 locks" on B7).
+- The checkpoints are Google Forms built by `Unit 1_ Earth and Universe/Checkpoints/EES-U1-Checkpoint-Collector/` (Apps Script). The site only links to Classroom.
+- **Not changed:** the BoodleBox Part 1 due date (Oct 8) and Report due date (Oct 16) in the U1 BoodleBox/Flint guides. Both are now too early.
+
 
 
 
