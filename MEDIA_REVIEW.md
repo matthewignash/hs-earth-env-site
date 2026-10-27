@@ -191,6 +191,21 @@ Not used: NOAA Education ocean acidification collection (403 to the fetcher, PME
 
 ---
 
+### Confirmed: U2 textbook pass (placed 2026-10-27)
+Matt chose these on 2026-10-27, ahead of U2 Block 1 (B Thu 29 Oct, A Fri 30 Oct). All links were checked on 2026-10-27 in the in-app browser. Scripted `curl` gets 403 from Cloudflare bot protection on opentextbc.ca and ck12.org, so re-check those two in a browser, not a script.
+- **Earle, *Physical Geology*, 2nd ed.** (BCcampus, 2019), https://opentextbc.ca/physicalgeology2ed/. Licensed CC BY 4.0: figures may be excerpted on the site with attribution. Reading level is first-year university. The book root and all 15 sections linked from U2 Blocks 1 to 7 return 200, and each page title matches its section. **Slug corrections:** 17.2 is `17-2-landforms-and-coastal-erosion` and 17.3 is `17-3-landforms-and-coastal-deposition`; the "-of-" forms 404. The book's Pressbooks TOC (`/wp-json/pressbooks/v2/toc`) is the reliable slug list. **Figures used**, all marked "© Steven Earle. CC BY" in each section's Media Attributions:
+  - 5.1.5 honeycomb salt weathering, in the B1 Read card;
+  - 5.2.1 fresh vs weathered granite, in the B1 Read card (re-encoded from a 596 KB PNG to a 1000 px JPEG);
+  - 17.1.8 swash and backwash (longshore drift), in the B4 Read card.
+
+  Saved locally under `src/assets/img/u2/` and never hotlinked. Each carries a figure-number credit line linking to its section. Also placed on the U2 landing (Resources, first card) and in the library (U2 Selected Sources).
+- **CK-12 Earth Science for High School**, https://www.ck12.org/book/ck-12-earth-science-for-high-school/, and the lesson "Landforms from Wave Erosion and Deposition" (HS-ES). Both load with matching titles. The book's TOC lists 9.0 Weathering and Formation of Soil; 10.1 is "Water Erosion and Deposition" (`/section/10.1/`), as the B2 card says. CK-12 Curriculum Materials License: **link only**. Never copy its text or figures onto the site, and never feed it to AI tools. Placed as "Easier reading" grid cards on B1, B2 and B4. Per-section URLs (`/section/9.0/`, `/section/10.1/`) exist if the book-level link proves too coarse.
+- **OpenStax Chemistry 2e, 14.2 pH and pOH**, https://openstax.org/books/chemistry-2e/pages/14-2-ph-and-poh. Returns 200 with the matching title. Licensed CC BY 4.0, but OpenStax forbids uploading its content to AI tools, so the card meta says "read only, do not upload to AI tools". Placed as the B1 "Stretch" grid card.
+- **NASA Earth Observatory, "Flooding Persists in Southeast India"** (11 Dec 2015), https://science.nasa.gov/earth/earth-observatory/flooding-persists-in-southeast-india-87158/. Returns 200. Landsat 8 OLI false-colour images from 21 Oct and 8 Dec 2015, with a comparison slider. The imagery is public domain. Credit: images by Joshua Stevens, using Landsat data from the USGS; caption by Kathryn Hansen (both confirmed on the page). **OPVL point:** the caption says the area shown is "about 200 kilometers northwest of Chennai". It is the Somasila Reservoir area in Nellore district, Andhra Pradesh, not Chennai. A student citing it as a picture of Chennai's flood has misread the source. Placed as a grid card on B5, linked and not hosted.
+- **Not placed:** Down to Earth "Sea of plastic" (pending entry above) stays off every page until Matt has read it in full.
+
+---
+
 ## Pending — librarian collaboration
 
 ### U0 Anchor Article specification — ✅ RESOLVED (2026-05-28)

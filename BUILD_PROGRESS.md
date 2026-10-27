@@ -4,6 +4,54 @@
 
 **Last updated:** 2026-09-17 (Addenda 3–52 below. U0–U6 complete; U7 is next.)
 
+### 2026-10-27: U2 textbook and resources pass (+ Earle figures for B1 and B4)
+
+Matt chose Steven Earle's *Physical Geology*, 2nd ed. (BCcampus, CC BY 4.0) as the U2 textbook on 27 Oct, ahead of Block 1 (B Thu 29 Oct, A Fri 30 Oct). Sources, licences and verification are in `MEDIA_REVIEW.md` under "Confirmed: U2 textbook pass".
+
+- **"Everyone does this" textbook card on every block, B1 to B7**, always first in the group:
+  - B1 Earle 5.1 + 5.2
+  - B2 Earle 5.3 + 15.2
+  - B3 Earle 13.2, 13.3, 13.5
+  - B4 Earle 17.1, 17.2, 17.3, 17.5
+  - B5 Earle 5.4 + 5.6
+  - B6 Earle 13.4 (optional, river locations)
+  - B7 Earle 17.4
+
+  B5, B6 and B7 had no required group, so they got one, using the U1 B2 markup.
+- **New grid cards:**
+  - B1: CK-12 Ch 9 easier reading, plus the OpenStax Chem 2e 14.2 stretch ("read only, do not upload to AI tools").
+  - B2: CK-12 10.1, confirmed as "Water Erosion and Deposition".
+  - B4: CK-12 Waves lesson.
+  - B5: NASA Earth Observatory 2015 floods source.
+
+  Each block's instruction line gained one sentence naming the new cards, and the gate passes.
+- **Earle figures fill the B1 and B4 Read placeholders.** These were the planned next step. Matt said to use the recommended figures:
+  - B1: 5.1.5, honeycomb salt weathering. Mechanical weathering you can actually find on Chennai's coast, unlike frost wedging.
+  - B1: 5.2.1, the same granite fresh and weathered. Chemical weathering on one rock.
+  - B4: 17.1.8, swash and backwash, which shows longshore drift. Tied to the Chennai harbour breakwaters: Marina is wide to the south, the north shore erodes.
+
+  All are "© Steven Earle. CC BY", saved in `assets/img/u2/` (opentextbc blocks scripted downloads, so they were downloaded through the browser), with a credit line on each figure linking to its section. The Read cards are real now; title and meta are unchanged. New `has-figures` class in `block-page.css`: the card spans the whole grid row and its figures sit side by side on desktop and stack on mobile. These two cards moved to the end of their grids so the full-width card does not leave a gap. B4's Read used to be a monsoon-storm quick-ref placeholder; that topic is still covered by the Watch placeholder and the Interact.
+- **Knock-on:** B1 path D said "Use the vocabulary handout", but that handout was the Read placeholder now replaced. It now links the U2 vocabulary support page.
+- **Unit landing:** "Unit textbook: Physical Geology (Earle)" is the first Resources card. New `.section-card .card-meta` rule for its meta line.
+- **Library:** Earle entry with OPVL heads U2 Selected Sources.
+- **Slug corrections from the prompt:** 17.2 is `17-2-landforms-and-coastal-erosion/` and 17.3 is `17-3-landforms-and-coastal-deposition/`; the "-of-" forms 404. Neither URL is linked directly (the B4 card links 17.1), but both are recorded for future cards.
+- **Standards:** B3 and B4 are now `["HS-ESS2-5", "HS-ESS3-1"]`, and B9 is `["SEP-8", "HS-ESS3-1"]`. HS-ESS3-1's journey and `/foundations/standards-map/` now run U2 B3 · B4 · B5 · B9 before U3.
+- **Open gap: SEP-3.** No U2 block runs an investigation yet, so SEP-3 is deliberately not tagged anywhere. Whether one should is a design decision still open with Jayanthi.
+
+**Checked:**
+- `npm run build` is green (gate + Eleventy).
+- Every new card renders on B1 to B7, on the landing and in the library, at 1280 px and 390 px, with no horizontal scroll.
+- The three figures load.
+- All 14 new external links return 200. opentextbc and CK-12 were checked from the browser, because curl gets a Cloudflare 403 there.
+- Zero em dashes in touched student files.
+
+Screenshots: `docs/screenshots/u2-block-1-{desktop,mobile}.png` and `u2-block-4-{desktop,mobile}.png`. The mobile ones are a 390 px iframe capture, because headless Chrome will not lay out below about 500 px.
+
+**Still open:**
+- All other U2 placeholders: every Watch and Interact, the B2/B3 Reads, B7 Interact.
+- The CK-12 cards link to the book's table of contents. Per-section URLs exist (`/section/9.0/`, `/section/10.1/`) if Matt wants students dropped straight in.
+- The Down to Earth "Sea of plastic" article stays off every page until Matt has read it.
+
 ### 2026-10-06: U1 three checkpoints + October date slip
 
 - **Dates.** Both sections finished Mars (U1 Block 3) before the October break. `ROTATION_SLIPS` in `.eleventy.js` shifts every meeting from 13 onward: A by 3 meetings, B by 1. U1 Block 4 is now A Wed Oct 7 / B Tue Oct 6, and Block 7 (first lock) is A Thu Oct 15 / B Wed Oct 14. All date filters read through `dayFor()`, so add another entry there for any future slip. `rotationDates.json` is untouched and stays the master calendar. **Every later unit moves too**, by 3 meetings on A and 1 on B.

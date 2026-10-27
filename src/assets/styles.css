@@ -256,6 +256,7 @@ img { max-width: 100%; height: auto; display: block; }
   color: var(--primary-deep);
   margin-top: 8px;
 }
+.section-card .card-meta { font-size: var(--fs-micro); color: var(--ink-quiet); margin-top: 8px; }
 
 /* ====== Unit map dashboard ====== */
 /* Summative panel: same treatment as a block page's learning panel. */

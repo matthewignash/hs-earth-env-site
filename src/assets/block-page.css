@@ -185,6 +185,10 @@ a.entry-card:hover {
 .entry-grid .entry-card.kind-investigate { border-left: 4px solid var(--spine-concepts); }
 .entry-grid .entry-card.kind-read { border-left: 2px solid var(--spine-concepts); }
 .entry-grid .entry-card.kind-assessed { border-left: 4px solid var(--assessed); }
+/* A card that carries figures takes a whole row so the figures stay legible. */
+.entry-grid .entry-card.has-figures { grid-column: 1 / -1; display: flex; flex-wrap: wrap; column-gap: 20px; }
+.entry-card.has-figures > :not(figure) { flex-basis: 100%; }
+.entry-card.has-figures > figure { flex: 1 1 260px; }
 .entry-card .entry-title { font-weight: 700; margin-bottom: 4px; }
 .entry-card .entry-meta { font-size: var(--fs-micro); color: var(--ink-quiet); margin-top: 8px; }
 .prefer-text { font-size: var(--fs-micro); color: var(--ink-quiet); margin-top: 6px; }
