@@ -19,8 +19,8 @@ Matt chose Steven Earle's *Physical Geology*, 2nd ed. (BCcampus, CC BY 4.0) as t
 
   B5, B6 and B7 had no required group, so they got one, using the U1 B2 markup.
 - **New grid cards:**
-  - B1: CK-12 Ch 9 easier reading, plus the OpenStax Chem 2e 14.2 stretch ("read only, do not upload to AI tools").
-  - B2: CK-12 10.1, confirmed as "Water Erosion and Deposition".
+  - B1: CK-12 Ch 9 easier reading, linked straight to section 9.1 Weathering, plus the OpenStax Chem 2e 14.2 stretch ("read only, do not upload to AI tools").
+  - B2: CK-12 10.1, confirmed as "Water Erosion and Deposition" and linked straight to that section.
   - B4: CK-12 Waves lesson.
   - B5: NASA Earth Observatory 2015 floods source.
 
@@ -49,7 +49,6 @@ Screenshots: `docs/screenshots/u2-block-1-{desktop,mobile}.png` and `u2-block-4-
 
 **Still open:**
 - All other U2 placeholders: every Watch and Interact, the B2/B3 Reads, B7 Interact.
-- The CK-12 cards link to the book's table of contents. Per-section URLs exist (`/section/9.0/`, `/section/10.1/`) if Matt wants students dropped straight in.
 - The Down to Earth "Sea of plastic" article stays off every page until Matt has read it.
 
 ### 2026-10-06: U1 three checkpoints + October date slip
