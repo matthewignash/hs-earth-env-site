@@ -210,6 +210,23 @@ Both open on the lesson text in a browser.
 
 ---
 
+### Confirmed: U2 and U3 replan media (placed 2026-11-15)
+
+Added on branch `replan-nov-dec-2026`. Credits of record: `src/assets/img/u2/CREDITS.md` and `src/assets/img/u3/CREDITS.md`.
+
+- **Eight course videos, served from this repo** (`src/assets/video/u2/` and `u3/`, about 80 MB in total). Each has an `.mp4`, a `-poster.jpg` and English captions (`.en.vtt`), and plays through `partials/local-video.njk` with captions on by default. Narrated with an AI voice; script and slides by Ms. Jayanthi/Mr. Matt, and the page says so under each player.
+  - `u2-kickoff-chennai-coast`: Unit 2 landing and Block 1 Story. Seven real images, credits behind a disclosure.
+  - `u2-b1-weathering`, `u2-b2-erosion`, `u2-b3-rivers`, `u2-b4-coasts`: the Watch card on Unit 2 Blocks 1 to 4.
+  - `u3-b1-plate-boundaries`, `u3-b2-earthquakes-tsunamis`, `u3-b3-volcanoes`: the Watch card on Unit 3 Blocks 1 to 3.
+  - **Not yet checked by a person on the built site:** that each video's on-screen image credits are legible, and that the captions match the narration all the way through. The build only proves the files are present and wired.
+- **Chennai harbor satellite image** (`u2-chennai-harbor-s2cloudless-2016.jpg`), U2 Block 4, above the task. Sentinel-2 cloudless by EOX, CC BY 4.0 (2016 layer). The caption carries the credit line and the limitation that the mosaic has no single date.
+- **Three Gemini images, decorative only** (`u3-poster-header.jpg`, `u3-t1-cover.jpg`, `u3-t2-cover.jpg`). Each sits outside any task with the line "Image generated with Gemini, AISC. Decorative, not a diagram." and empty alt text.
+- **Two Cooum sources, new and not yet read by Matt**, linked from the U2 Block 3 task. Both returned a page on 2026-11-15:
+  - Chennai Rivers Restoration Trust, Cooum restoration page: https://crrt.tn.gov.in/cooum_restoration
+  - DT Next, "Trouble runneth deep in dying Adyar, Cooum rivers": https://www.dtnext.in/news/chennai/trouble-runneth-deep-in-dying-adyar-cooum-rivers-797027
+  - **Open both before the page goes live.**
+- **Three more Earle sections** linked as Read cards, all confirmed in a browser (the site blocks scripted requests): 10.4, 11.2 and 4.1. The 4.1 address was taken from the book's table of contents.
+
 ## Pending — librarian collaboration
 
 ### U0 Anchor Article specification — ✅ RESOLVED (2026-05-28)
