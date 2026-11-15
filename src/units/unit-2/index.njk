@@ -1,11 +1,13 @@
 ---
 layout: layouts/base.njk
 title: "Unit 2: Surface Processes (Reading the Landscape)"
-tagline: "Four weeks. We zoom in. Chennai under your feet. Students learn weathering / erosion / deposition, stratigraphy, watersheds, and the monsoon: then choose one of nine Chennai-area locations and write its Landscape Biography (past → present → 50-year projections) for a planning audience."
+tagline: "Four pages and a short Landscape Reading. We zoom in: Chennai under your feet. Weathering, erosion, rivers and coasts, then one Chennai-area location read across past, present and 50 years ahead, for a planning audience."
 breadcrumbs:
   - { url: /, label: Home }
   - { url: /units/, label: Units }
   - { label: "Unit 2: Surface Processes" }
+extraStylesheets:
+  - /assets/block-page.css
 anchorQuestion: "What story does a landscape tell, and how do you read it like a geologist?"
 ---
 
@@ -25,59 +27,63 @@ anchorQuestion: "What story does a landscape tell, and how do you read it like a
   </ul>
 </div>
 
+<p>Start here if you missed the opening.</p>
+{% set videoKey = "u2-kickoff" %}{% include "partials/local-video.njk" %}
+{% from "partials/disclosure.njk" import disclosure %}
+{% call disclosure("help", "Image credits for this video", "video-credits") %}
+{% include "partials/kickoff-credits.njk" %}
+{% endcall %}
+
 <div class="prose">
-  <p>Unit 2 launches <strong>Thread 4: Science, policy, and the public</strong>. For the first time, students write for a non-student audience: a hypothetical Greater Chennai Corporation planning meeting. The format choice (≤1500-word written, ≤6-min annotated Google Earth video, or large infographic) is deliberate UDL design: the rubric is identical across all three, so the deliverable assesses landscape-reading thinking, not writing stamina.</p>
-  <p>It also continues <strong>Thread 1: OPVL and AI Documentation</strong> with new source types: USGS, Geological Survey of India, ISRO Bhuvan satellite data, historical Google Earth imagery, and Chennai-local news. The geological-time perspective added in Block 3 lets students compare evidence across timescales their U0 + U1 sources never spanned.</p>
-  <p>Nine blocks, nine locations, one new AI partner (the <a href="/ai-partners/field-geologist/">Field Geologist</a>). The summative, the <a href="/units/unit-2/assessment-landscape-reading/">Landscape Reading</a>, is the structured biography. The planning-audience share-out in Block 9 is the second defense in the year-long defense arc and the first one with a non-academic audience role.</p>
+  <p>Unit 2 launches <strong>Thread 4: Science, policy, and the public</strong>. For the first time, students write for a non-student audience: a Greater Chennai Corporation planning meeting. The format choice (up to 600 words, a 3-minute annotated Google Earth video, or a one-page infographic) is deliberate UDL design: the rubric is identical across all three, so the deliverable assesses landscape-reading thinking, not writing stamina.</p>
+  <p>It also continues <strong>Thread 1: OPVL and AI Documentation</strong> with new source types: government pages, satellite imagery, historical Google Earth imagery, and Chennai-local news.</p>
+  <p>Four pages, nine locations, one new AI partner (the <a href="/ai-partners/field-geologist/">Field Geologist</a>). Each page works the same way: read it or watch it, then everyone does the same task. The summative, the <a href="/units/unit-2/assessment-landscape-reading/">Landscape Reading</a>, is a short-form biography of one location. Three checkpoints along the way give you feedback and do not go in the gradebook.</p>
 </div>
 
-<section aria-label="Unit 2 blocks" style="margin-top: 24px;">
-  <h2 class="landing-h2">The nine blocks</h2>
+<section aria-label="Unit 2 sequence" style="margin-top: 24px;">
+  <h2 class="landing-h2">The sequence this year</h2>
+  <div class="prose">
+  <table>
+    <caption class="sr-only">The Unit 2 class sequence, with the page to use and what is due at each class</caption>
+    <thead>
+      <tr><th scope="col">When</th><th scope="col">In class</th><th scope="col">Page to use</th><th scope="col">What is due</th></tr>
+    </thead>
+    <tbody>
+      {%- for s in 2 | sessionsFor %}
+      <tr>
+        <td>{{ s.code | sessionLabel }}</td>
+        <td>{{ s.inClass }}</td>
+        <td>{% for p in s.u2.pages %}<a href="{{ p.url }}">{{ p.label }}</a>{% if not loop.last %}<br>{% endif %}{% endfor %}</td>
+        <td>{{ s.u2.due }}</td>
+      </tr>
+      {%- endfor %}
+    </tbody>
+  </table>
+  </div>
+</section>
+
+<section aria-label="Unit 2 pages" style="margin-top: 24px;">
+  <h2 class="landing-h2">The four pages</h2>
   <div class="section-grid">
     <a class="section-card" href="/units/unit-2/block-1/">
       <div class="card-title">Block 1: Weathering</div>
-      <div class="card-desc">How rocks break down. Mechanical vs. chemical weathering, with tropical chemical weathering as the local relevant case. Photo-ID activity on 8 unfamiliar field photos.</div>
-      <div class="card-dates">{{ collections.teachingBlocks | blockDateLabel(2, 1, rotationDates.days) }}</div>
+      <div class="card-desc">How rocks break down. Mechanical vs. chemical weathering, with tropical chemical weathering as the local case. Task: two rocks, then one of yours.</div>
+      <div class="card-dates">{{ "R1" | sessionLabel }}</div>
     </a>
     <a class="section-card" href="/units/unit-2/block-2/">
       <div class="card-title">Block 2: Erosion</div>
-      <div class="card-desc">How Earth moves itself around. Water / wind / ice / gravity as agents. Marina Beach satellite sequence (2005-2025) as the worked example.</div>
-      <div class="card-dates">{{ collections.teachingBlocks | blockDateLabel(2, 2, rotationDates.days) }}</div>
+      <div class="card-desc">How Earth moves itself around. Water, wind, ice and gravity as agents. Task: one place, one agent. Checkpoint 1.</div>
+      <div class="card-dates">{{ "R1" | sessionLabel }}</div>
     </a>
     <a class="section-card" href="/units/unit-2/block-3/">
       <div class="card-title">Block 3: Rivers as Landscape Sculptors</div>
-      <div class="card-desc">River systems vocabulary. Cooum + Adyar case study. OPVL practice on three contested sources. Discussion: channelization or restoration?</div>
-      <div class="card-dates">{{ collections.teachingBlocks | blockDateLabel(2, 3, rotationDates.days) }}</div>
+      <div class="card-desc">River systems vocabulary. The Cooum and the Adyar. Task: two sources, one river.</div>
+      <div class="card-dates">{{ "R2" | sessionLabel }}</div>
     </a>
     <a class="section-card" href="/units/unit-2/block-4/">
       <div class="card-title">Block 4: Coasts</div>
-      <div class="card-desc">Where land meets ocean. Longshore drift, wave erosion, monsoon storms. Marina Beach + Mahabalipuram coast: two coastal stories.</div>
-      <div class="card-dates">{{ collections.teachingBlocks | blockDateLabel(2, 4, rotationDates.days) }}</div>
-    </a>
-    <a class="section-card" href="/units/unit-2/block-5/">
-      <div class="card-title">Block 5: Tropical Landscapes + Chennai Context</div>
-      <div class="card-desc">Why tropical landscapes are different (laterites, monsoon sediment cycles). Landscape Reading assigned today; students start considering their location choice.</div>
-      <div class="card-dates">{{ collections.teachingBlocks | blockDateLabel(2, 5, rotationDates.days) }}</div>
-    </a>
-    <a class="section-card" href="/units/unit-2/block-6/">
-      <div class="card-title">Block 6: Field Photo / Map Analysis</div>
-      <div class="card-desc">Lock your location. In-class work with Google Earth, historical imagery, and curated photos. Conferencing rotation + peer-check protocol.</div>
-      <div class="card-dates">{{ collections.teachingBlocks | blockDateLabel(2, 6, rotationDates.days) }}</div>
-    </a>
-    <a class="section-card" href="/units/unit-2/block-7/">
-      <div class="card-title">Block 7: Worked Example + OPVL</div>
-      <div class="card-desc">Ms. Jayanthi/Mr. Matt demos a complete Landscape Reading live. OPVL practice on your primary source. The highest-leverage teacher move of the unit.</div>
-      <div class="card-dates">{{ collections.teachingBlocks | blockDateLabel(2, 7, rotationDates.days) }}</div>
-    </a>
-    <a class="section-card" href="/units/unit-2/block-8/">
-      <div class="card-title">Block 8: Drafting + Peer Feedback</div>
-      <div class="card-desc">Full work day on the Landscape Reading. Conferencing rotation. Structured peer feedback round. Final submission format locked.</div>
-      <div class="card-dates">{{ collections.teachingBlocks | blockDateLabel(2, 8, rotationDates.days) }}</div>
-    </a>
-    <a class="section-card" href="/units/unit-2/block-9/">
-      <div class="card-title">Block 9: Share-Out + Unit Close</div>
-      <div class="card-desc">Landscape Readings submitted. Class share-out: 3 min + 2 min Q&A each, class plays the planning audience. Unit reflection + connect-forward to U3.</div>
-      <div class="card-dates">{{ collections.teachingBlocks | blockDateLabel(2, 9, rotationDates.days) }}</div>
+      <div class="card-desc">Where land meets ocean. Longshore drift, wave erosion, monsoon storms. Task: read the harbor. Checkpoint 2.</div>
+      <div class="card-dates">{{ "R2" | sessionLabel }}</div>
     </a>
   </div>
 </section>
@@ -87,7 +93,8 @@ anchorQuestion: "What story does a landscape tell, and how do you read it like a
   <div class="section-grid">
     <a class="section-card" href="/units/unit-2/assessment-landscape-reading/">
       <div class="card-title">Landscape Reading</div>
-      <div class="card-desc">Biography of one Chennai-area location: past processes → current processes → 50-year projections → recommendations. Choice of three deliverable formats. Planning-audience share-out in Block 9.</div>
+      <div class="card-desc">Short-form biography of one Chennai-area location: how it was made, what is shaping it now, one 50-year scenario, one recommendation. Choice of three formats. Checkpoint 3 runs in the drafting class.</div>
+      <div class="card-dates">{{ "R4" | sessionLabel }}</div>
     </a>
   </div>
 </section>
@@ -97,19 +104,15 @@ anchorQuestion: "What story does a landscape tell, and how do you read it like a
   <div class="section-grid">
     <a class="section-card" href="/ai-partners/field-geologist/">
       <div class="card-title">The Field Geologist</div>
-      <div class="card-desc">New this unit. Helps you interpret field photos, maps, and historical satellite imagery for your Landscape Biography. Used primarily in Blocks 6 + 7.</div>
+      <div class="card-desc">New this unit. Helps you interpret field photos, maps, and historical satellite imagery for your Landscape Reading. Most useful while you gather data and draft.</div>
     </a>
     <a class="section-card" href="/ai-partners/the-source-evaluator/">
       <div class="card-title">The Source Evaluator</div>
-      <div class="card-desc">OPVL on geological sources: USGS, Geological Survey of India, ISRO Bhuvan, historical maps, Chennai news.</div>
+      <div class="card-desc">OPVL on your sources: government pages, satellite imagery, historical maps, Chennai news.</div>
     </a>
     <a class="section-card" href="/ai-partners/the-skeptic/">
       <div class="card-title">The Skeptic</div>
-      <div class="card-desc">Stress-test your projections and recommendations before the planning-audience share-out.</div>
-    </a>
-    <a class="section-card" href="/ai-partners/defense-practice-partner/">
-      <div class="card-title">The Defense Practice Partner</div>
-      <div class="card-desc">Returns for the Block 9 share-out: rehearse your 3-minute pitch and the planning-audience questions.</div>
+      <div class="card-desc">Stress-test your projection and your recommendation before you submit.</div>
     </a>
   </div>
 </section>
@@ -128,11 +131,11 @@ anchorQuestion: "What story does a landscape tell, and how do you read it like a
     </a>
     <a class="section-card" href="/foundations/ai-documentation-protocol/">
       <div class="card-title">AI Documentation Protocol</div>
-      <div class="card-desc">Required for every Field Geologist conversation that feeds into the Landscape Biography.</div>
+      <div class="card-desc">Required for every Field Geologist conversation that feeds into the Landscape Reading.</div>
     </a>
     <a class="section-card" href="/foundations/the-rubric/">
       <div class="card-title">The Rubric</div>
-      <div class="card-desc">K/U / T/T / C across all four bands. C strand carries the planning-audience share-out weight.</div>
+      <div class="card-desc">K/U / T/T / C across all four bands. This year Communication is scored on the written product.</div>
     </a>
     <a class="section-card" href="/foundations/eal/u2/">
       <div class="card-title">U2 EAL Pre-Teach</div>
@@ -140,3 +143,16 @@ anchorQuestion: "What story does a landscape tell, and how do you read it like a
     </a>
   </div>
 </section>
+
+{% from "partials/disclosure.njk" import disclosure %}
+{% call disclosure("help", "The full-length unit (not taught this year)", "full-length-unit") %}
+  <p>These pages are from the full-length version of the unit. They are not being taught in 2026-27.</p>
+  <ul>
+    <li><a href="/units/unit-2/block-5/">Block 5: Tropical Landscapes + Chennai Context</a></li>
+    <li><a href="/units/unit-2/block-6/">Block 6: Field Photo / Map Analysis</a></li>
+    <li><a href="/units/unit-2/block-7/">Block 7: Worked Example + OPVL</a></li>
+    <li><a href="/units/unit-2/block-8/">Block 8: Drafting + Peer Feedback</a></li>
+    <li><a href="/units/unit-2/block-9/">Block 9: Share-Out + Unit Close</a></li>
+    <li><a href="/units/unit-2/assessment-landscape-reading-full/">Landscape Reading: the full-length version</a></li>
+  </ul>
+{% endcall %}

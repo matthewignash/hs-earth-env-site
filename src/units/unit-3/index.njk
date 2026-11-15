@@ -1,7 +1,7 @@
 ---
 layout: layouts/base.njk
 title: "Unit 3: Plate Tectonics & Natural Hazards"
-tagline: "Five weeks. Twelve blocks. Plate tectonics as a working theory with real engineering consequences: anchored on the Tectonic City Builder simulator."
+tagline: "A content unit, done mostly at home. Three pages on what the plates are doing and why each setting produces the hazards it does. Assessed by the Semester 1 final: one real event, one poster, one defense."
 breadcrumbs:
   - { url: /, label: Home }
   - { url: /units/, label: Units }
@@ -19,103 +19,67 @@ anchorQuestion: "How do you build for a planet that occasionally tries to destro
   <p class="cu-statement">A hazard becomes a disaster through the choices a society makes about where and how it builds.</p>
   <p class="gq-label">Questions that get you there</p>
   <ul class="guiding-questions">
-    <li><span class="gq-type">Factual</span> Which hazards does each plate boundary type produce, and which technologies protect against each one?</li>
+    <li><span class="gq-type">Factual</span> Which hazards does each plate boundary type produce?</li>
     <li><span class="gq-type">Conceptual</span> Why do the same buildings and the same technologies produce different outcomes at different boundaries?</li>
     <li><span class="gq-type">Debatable</span> With a fixed budget, which losses is it acceptable to design for rather than prevent?</li>
   </ul>
 </div>
 
 <div class="prose">
-  <p>Across five weeks (twelve 80-minute blocks), you investigate plate tectonics not as a textbook diagram but as a working theory with real engineering consequences. The unit is anchored on the <a href="/units/unit-3/tectonic-city-builder/">Tectonic City Builder</a>, a custom simulator where you plan and build cities on real plate boundaries (Tōhoku, Anatolian/Istanbul, Merapi, Cascadia, Hawaii), spend a fixed budget on housing and engineering technologies, and learn which decisions saved lives when the simulation runs the real disaster.</p>
-  <p>The simulator is paired with primary-source case studies: <a href="/reference/case-studies/tohoku-2011/">Tōhoku 2011</a>, Kobe 1995, Sumatra-Andaman 2004, Pinatubo 1991, Pompeii 79 CE. You don't memorize these. You use them as evidence to defend your engineering choices. Browse the full <a href="/reference/case-studies/">Case Study Library</a>.</p>
+  <p>This year Unit 3 is a content unit: Earth's layers and what moves the plates, the four settings (convergent, divergent, transform, hotspot), and why each setting produces the hazards it does. Most of it is done at home, in two take-homes across three pages. Each page works the same way: read it or watch it, then everyone does the same task. Two self-checks in Google Classroom are not graded and show you the answers.</p>
+  <p>The unit is paired with primary-source case studies: <a href="/reference/case-studies/tohoku-2011/">Tōhoku 2011</a>, Kobe 1995, Sumatra-Andaman 2004, Pinatubo 1991, Pompeii 79 CE. You don't memorize these. You use one of them as the evidence for your poster. Browse the full <a href="/reference/case-studies/">Case Study Library</a>.</p>
 </div>
 
-<section aria-label="Unit 3 blocks" style="margin-top: 24px;">
-  <h2 class="landing-h2">The twelve blocks</h2>
+<section aria-label="Unit 3 sequence" style="margin-top: 24px;">
+  <h2 class="landing-h2">The sequence this year</h2>
+  <div class="prose">
+  <table>
+    <caption class="sr-only">The Unit 3 class sequence, with the page to use and what is due at each class</caption>
+    <thead>
+      <tr><th scope="col">When</th><th scope="col">In class</th><th scope="col">Page to use</th><th scope="col">What is due</th></tr>
+    </thead>
+    <tbody>
+      {%- for s in 3 | sessionsFor %}
+      <tr>
+        <td>{{ s.code | sessionLabel }}</td>
+        <td>{{ s.inClass }}</td>
+        <td>{% for p in s.u3.pages %}<a href="{{ p.url }}">{{ p.label }}</a>{% if not loop.last %}<br>{% endif %}{% endfor %}</td>
+        <td>{{ s.u3.due }}</td>
+      </tr>
+      {%- endfor %}
+    </tbody>
+  </table>
+  </div>
+</section>
+
+<section aria-label="Unit 3 pages" style="margin-top: 24px;">
+  <h2 class="landing-h2">The three pages</h2>
   <div class="section-grid">
     <a class="section-card" href="/units/unit-3/block-1/">
-      <div class="card-title">Block 1: Inside Earth + Boundary Types</div>
-      <div class="card-desc">Earth's interior; the four plate boundary types; world-map plotting activity.</div>
-      <div class="card-dates">{{ collections.teachingBlocks | blockDateLabel(3, 1, rotationDates.days) }}</div>
+      <div class="card-title">Take-home 1: Inside Earth and Plate Boundaries</div>
+      <div class="card-desc">Earth's interior, what moves the plates, and the four settings. Task: four settings. Self-check 1.</div>
+      <div class="card-dates">{{ "R4" | sessionLabel }}</div>
     </a>
     <a class="section-card" href="/units/unit-3/block-2/">
-      <div class="card-title">Block 2: Subduction & Transform Deep Dive + Sim Demo</div>
-      <div class="card-desc">Where most coastal-city hazards come from. First look at the Tectonic City Builder.</div>
-      <div class="card-dates">{{ collections.teachingBlocks | blockDateLabel(3, 2, rotationDates.days) }}</div>
+      <div class="card-title">Take-home 2, part 1: Earthquakes and Tsunamis</div>
+      <div class="card-desc">Why a subduction earthquake can make a tsunami, and why an earthquake on a fault that slides sideways usually does not. Task: same planet, different hazards.</div>
+      <div class="card-dates">{{ "R5" | sessionLabel }}</div>
     </a>
     <a class="section-card" href="/units/unit-3/block-3/">
-      <div class="card-title">Block 3: Volcanism + Engineering Technologies</div>
-      <div class="card-desc">Shield vs. stratovolcano; the engineering toolkit and, critically, what each tech can't do.</div>
-      <div class="card-dates">{{ collections.teachingBlocks | blockDateLabel(3, 3, rotationDates.days) }}</div>
-    </a>
-    <a class="section-card" href="/units/unit-3/block-4/">
-      <div class="card-title">Block 4: Whole-Class Sim + First Independent Attempt</div>
-      <div class="card-desc">Stub. First hands-on sim: everyone on Tōhoku.</div>
-      <div class="card-dates">{{ collections.teachingBlocks | blockDateLabel(3, 4, rotationDates.days) }}</div>
-    </a>
-    <a class="section-card" href="/units/unit-3/block-5/">
-      <div class="card-title">Block 5: Case Study Jigsaw + Hazard Profile Due</div>
-      <div class="card-desc">Tōhoku 2011 · Sumatra-Andaman 2004 · Pinatubo 1991. First summative due.</div>
-      <div class="card-dates">{{ collections.teachingBlocks | blockDateLabel(3, 5, rotationDates.days) }}</div>
-    </a>
-    <a class="section-card" href="/units/unit-3/block-6/">
-      <div class="card-title">Block 6: Scenario Choice + Iteration #1</div>
-      <div class="card-desc">Stub. First portfolio iteration in your chosen scenario.</div>
-      <div class="card-dates">{{ collections.teachingBlocks | blockDateLabel(3, 6, rotationDates.days) }}</div>
-    </a>
-    <a class="section-card" href="/units/unit-3/block-7/">
-      <div class="card-title">Block 7: Cross-Scenario Discussion + Iteration #2</div>
-      <div class="card-desc">Stub. Second iteration; Comparative Reflection begins.</div>
-      <div class="card-dates">{{ collections.teachingBlocks | blockDateLabel(3, 7, rotationDates.days) }}</div>
-    </a>
-    <a class="section-card" href="/units/unit-3/block-8/">
-      <div class="card-title">Block 8: Case-Study Mastery + Comparative Reflection Due</div>
-      <div class="card-desc">Stub. Second case-study jigsaw (Kobe/Bhuj/Tangshan/Pompeii). Comparative Reflection due.</div>
-      <div class="card-dates">{{ collections.teachingBlocks | blockDateLabel(3, 8, rotationDates.days) }}</div>
-    </a>
-    <a class="section-card" href="/units/unit-3/block-9/">
-      <div class="card-title">Block 9: Iteration #3 + Defense Draft</div>
-      <div class="card-desc">Stub. Personal-best iteration; defense slide drafting.</div>
-      <div class="card-dates">{{ collections.teachingBlocks | blockDateLabel(3, 9, rotationDates.days) }}</div>
-    </a>
-    <a class="section-card" href="/units/unit-3/block-10/">
-      <div class="card-title">Block 10: Defense Rehearsal + Optional Final Iteration</div>
-      <div class="card-desc">Stub. Paired rehearsal with peer feedback; optional Iteration #4.</div>
-      <div class="card-dates">{{ collections.teachingBlocks | blockDateLabel(3, 10, rotationDates.days) }}</div>
-    </a>
-    <a class="section-card" href="/units/unit-3/block-11/">
-      <div class="card-title">Block 11: Final Defenses Day 1</div>
-      <div class="card-desc">Stub. ~10–12 student defenses.</div>
-      <div class="card-dates">{{ collections.teachingBlocks | blockDateLabel(3, 11, rotationDates.days) }}</div>
-    </a>
-    <a class="section-card" href="/units/unit-3/block-12/">
-      <div class="card-title">Block 12: Final Defenses Day 2 + Unit Reflection</div>
-      <div class="card-desc">Stub. Remaining defenses; unit close; preview of Unit 4.</div>
-      <div class="card-dates">{{ collections.teachingBlocks | blockDateLabel(3, 12, rotationDates.days) }}</div>
+      <div class="card-title">Take-home 2, part 2: Volcanoes</div>
+      <div class="card-desc">Why volcanoes line up above a subduction zone, and why those volcanoes tend to explode. Task: why here, and why so violent. Self-check 2.</div>
+      <div class="card-dates">{{ "R5" | sessionLabel }}</div>
     </a>
   </div>
 </section>
 
-<section aria-label="Unit 3 assessments" style="margin-top: 32px;">
-  <h2 class="landing-h2">Assessments</h2>
+<section aria-label="Unit 3 assessment" style="margin-top: 32px;">
+  <h2 class="landing-h2">Assessment</h2>
   <div class="section-grid">
-    <a class="section-card" href="/units/unit-3/assessment-hazard-profile/">
-      <div class="card-title">City Hazard Profile</div>
-      <div class="card-desc">Pick a real city facing a tectonic hazard; ≤500 words or 60–90 sec video. Due Block 5.</div>
-    </a>
-    <a class="section-card" href="/units/unit-3/assessment-engineering-portfolio/">
-      <div class="card-title">Engineering Design Portfolio + Final Defense</div>
-      <div class="card-desc">Three Sheet-logged sim attempts + journal + Comparative Reflection + 5-min Defense. Due Block 11 or 12.</div>
-    </a>
-  </div>
-</section>
-
-<section aria-label="Unit 3 simulator" style="margin-top: 32px;">
-  <h2 class="landing-h2">Simulator</h2>
-  <div class="section-grid">
-    <a class="section-card" href="/units/unit-3/tectonic-city-builder/">
-      <div class="card-title">Tectonic City Builder</div>
-      <div class="card-desc">Five scenarios. Auto-logged Sessions Sheet. Used across Blocks 4–10.</div>
+    <a class="section-card" href="/units/unit-3/assessment-one-event-one-boundary/">
+      <div class="card-title">Semester 1 Final: One Event, One Plate Boundary</div>
+      <div class="card-desc">One real earthquake, tsunami or eruption on one poster: key terms, cause and effect, solutions. Defended at a gallery walk in 4 minutes. A vocabulary quiz counts toward Knowledge.</div>
+      <div class="card-dates">{{ "R8" | sessionLabel }}</div>
     </a>
   </div>
 </section>
@@ -129,11 +93,11 @@ anchorQuestion: "How do you build for a planet that occasionally tries to destro
     </a>
     <a class="section-card" href="/foundations/the-rubric/">
       <div class="card-title">The Rubric</div>
-      <div class="card-desc">K/U / T/T / C: same strands as Unit 0; applied here to the Hazard Profile and the Engineering Portfolio criteria.</div>
+      <div class="card-desc">K/U / T/T / C: same strands as Unit 0; applied here to the poster and its defense.</div>
     </a>
     <a class="section-card" href="/foundations/ai-documentation-protocol/">
       <div class="card-title">AI Documentation Protocol</div>
-      <div class="card-desc">Still required. Engineering Coach use in iterations gets documented like any other AI use.</div>
+      <div class="card-desc">Still required. A Plate Tectonics Tutor conversation gets documented like any other AI use.</div>
     </a>
     <a class="section-card" href="/foundations/eal/u3/">
       <div class="card-title">U3 EAL Pre-Teach</div>
@@ -141,3 +105,22 @@ anchorQuestion: "How do you build for a planet that occasionally tries to destro
     </a>
   </div>
 </section>
+
+{% from "partials/disclosure.njk" import disclosure %}
+{% call disclosure("help", "The full-length unit (not taught this year)", "full-length-unit") %}
+  <p>These pages are from the full-length version of the unit. They are not being taught in 2026-27.</p>
+  <ul>
+    <li><a href="/units/unit-3/tectonic-city-builder/">Tectonic City Builder</a>: the simulator the full-length unit is built around</li>
+    <li><a href="/units/unit-3/block-4/">Block 4: Whole-Class Sim + First Independent Attempt</a></li>
+    <li><a href="/units/unit-3/block-5/">Block 5: Case Study Jigsaw + Hazard Profile Due</a></li>
+    <li><a href="/units/unit-3/block-6/">Block 6: Scenario Choice + Iteration #1</a></li>
+    <li><a href="/units/unit-3/block-7/">Block 7: Cross-Scenario Discussion + Iteration #2</a></li>
+    <li><a href="/units/unit-3/block-8/">Block 8: Case-Study Mastery + Comparative Reflection Due</a></li>
+    <li><a href="/units/unit-3/block-9/">Block 9: Iteration #3 + Defense Draft</a></li>
+    <li><a href="/units/unit-3/block-10/">Block 10: Defense Rehearsal + Optional Final Iteration</a></li>
+    <li><a href="/units/unit-3/block-11/">Block 11: Final Defenses Day 1</a></li>
+    <li><a href="/units/unit-3/block-12/">Block 12: Final Defenses Day 2 + Unit Reflection</a></li>
+    <li><a href="/units/unit-3/assessment-hazard-profile/">City Hazard Profile</a></li>
+    <li><a href="/units/unit-3/assessment-engineering-portfolio/">Engineering Design Portfolio + Final Defense</a></li>
+  </ul>
+{% endcall %}

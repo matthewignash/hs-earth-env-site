@@ -58,8 +58,8 @@
     "lens": "CCC-stability",
     "official": "Develop a model to illustrate how Earth's internal and surface processes operate at different spatial and temporal scales to form continental and ocean-floor features.",
     "plain": "I can explain how Earth's surface features are built and reshaped by processes working at very different speeds and sizes.",
-    "assessedAt": "Landscape Reading: biography past + current processes (K/U strand, Components 1–2 lock U2 Block 6)",
-    "onTrack": "Your location's biography names specific processes at specific timescales ('monsoon pulses move the beach yearly; the harbour changed it in decades'), not just 'erosion happened.'",
+    "assessedAt": "Landscape Reading, short form: how the place was made and what is shaping it now (K/U). Also the Semester 1 final, One Event, One Plate Boundary: the plate diagram and cause and effect (K/U)",
+    "onTrack": "Your location's biography names specific processes at specific timescales ('monsoon pulses move the beach yearly; the harbor changed it in decades'), not just 'erosion happened.'",
     "help": [
       {
         "label": "The Field Geologist",
@@ -100,7 +100,7 @@
     "lens": "CCC-structure",
     "official": "Plan and conduct an investigation of the properties of water and its effects on Earth materials and surface processes.",
     "plain": "I can investigate how water shapes rock, sediment, and land.",
-    "assessedAt": "Landscape Reading: river/coast process analysis for water-shaped locations (K/U + T/T, Components 1–4)",
+    "assessedAt": "Landscape Reading, short form: river and coast processes for water-shaped locations (K/U + T/T)",
     "onTrack": "You can point at a Chennai landform and name the specific water process responsible, with evidence from imagery or data.",
     "help": [
       {
@@ -115,8 +115,8 @@
     "lens": "CCC-cause",
     "official": "Construct an explanation based on evidence for how the availability of natural resources, occurrence of natural hazards, and changes in climate have influenced human activity.",
     "plain": "I can explain, with evidence, how resources, hazards, and climate have shaped where and how people live.",
-    "assessedAt": "Landscape Reading: projections + recommendations (T/T strand, Components 4–5 lock U2 Block 8)",
-    "onTrack": "Your 50-year projections connect physical processes to human decisions, and your recommendation names who would act and why.",
+    "assessedAt": "Landscape Reading, short form: the 50-year scenario and the recommendation (T/T). Also the Semester 1 final, One Event, One Plate Boundary: what people changed after the event, and whether it worked (T/T)",
+    "onTrack": "Your 50-year projection connects physical processes to human decisions, and your recommendation names what the city should monitor or protect, and why.",
     "help": [
       {
         "label": "The Skeptic",
@@ -194,8 +194,8 @@
     "lens": "CCC-patterns",
     "official": "Evaluate evidence of the past and current movements of continental and oceanic crust and the theory of plate tectonics to explain the ages of crustal rocks.",
     "plain": "I can use evidence (seafloor ages, GPS motion, fossil matches) to explain how plates move.",
-    "assessedAt": "City Hazard Profile (K/U)",
-    "onTrack": "Your hazard profile explains WHY your city's boundary behaves as it does, with evidence.",
+    "assessedAt": "Semester 1 final, One Event, One Plate Boundary: cause and effect on the poster, and the defense (K/U)",
+    "onTrack": "Your poster explains WHY the boundary behind your event behaves as it does, with evidence.",
     "help": [
       {
         "label": "The Plate Tectonics Tutor",
@@ -208,8 +208,8 @@
     "dimension": "idea",
     "official": "Analyze a major global challenge to specify qualitative and quantitative criteria and constraints for solutions that account for societal needs and wants.",
     "plain": "I can pin down what a solution must do (and what limits it) before I design.",
-    "assessedAt": "City Hazard Profile → Engineering Portfolio scenario setup",
-    "onTrack": "Your Hazard Profile names the criteria and constraints your design must satisfy.",
+    "assessedAt": "Not assessed in Unit 3 this year. The engineering design thread starts in Unit 4 or later. In the full-length unit: City Hazard Profile → Engineering Portfolio scenario setup",
+    "onTrack": "In the full-length unit: Your Hazard Profile names the criteria and constraints your design must satisfy.",
     "help": [
       {
         "label": "The Engineering Coach",
@@ -222,8 +222,8 @@
     "dimension": "idea",
     "official": "Design a solution to a complex real-world problem by breaking it down into smaller, more manageable problems that can be solved through engineering.",
     "plain": "I can break a big engineering problem into pieces I can actually solve.",
-    "assessedAt": "Engineering Design Portfolio: iterations 1–3 (T/T)",
-    "onTrack": "Each iteration attacks a named sub-problem, and your Division-of-Labour Plan shows the breakdown.",
+    "assessedAt": "Not assessed in Unit 3 this year. The engineering design thread starts in Unit 4 or later. In the full-length unit: Engineering Design Portfolio: iterations 1–3 (T/T)",
+    "onTrack": "In the full-length unit: Each iteration attacks a named sub-problem, and your Division-of-Labour Plan shows the breakdown.",
     "help": [
       {
         "label": "The Engineering Coach",
@@ -236,8 +236,8 @@
     "dimension": "idea",
     "official": "Evaluate a solution to a complex real-world problem based on prioritized criteria and trade-offs that account for a range of constraints, including cost, safety, reliability, and aesthetics, as well as possible social, cultural, and environmental impacts.",
     "plain": "I can judge a design by weighing its trade-offs: cost, safety, who it protects, who it leaves out.",
-    "assessedAt": "Final Defense (C + T/T)",
-    "onTrack": "Your defense names what your design sacrifices, not just what it achieves.",
+    "assessedAt": "Not assessed in Unit 3 this year. The engineering design thread starts in Unit 4 or later. In the full-length unit: Final Defense (C + T/T)",
+    "onTrack": "In the full-length unit: Your defense names what your design sacrifices, not just what it achieves.",
     "help": [
       {
         "label": "Defending Your Work",
@@ -251,8 +251,8 @@
     "lens": "CCC-systems",
     "official": "Use a computer simulation to model the impact of proposed solutions to a complex real-world problem with numerous criteria and constraints on interactions within and between systems relevant to the problem.",
     "plain": "I can use a simulation to test how my design choices play out before committing to them.",
-    "assessedAt": "Engineering Design Portfolio: logged sim iterations (T/T)",
-    "onTrack": "Each iteration is tested in the simulator and its outputs cited as evidence: changed, run, compared.",
+    "assessedAt": "Not assessed in Unit 3 this year. The engineering design thread starts in Unit 4 or later. In the full-length unit: Engineering Design Portfolio: logged sim iterations (T/T)",
+    "onTrack": "In the full-length unit: Each iteration is tested in the simulator and its outputs cited as evidence: changed, run, compared.",
     "help": [
       {
         "label": "Tectonic City Builder",
@@ -266,8 +266,8 @@
     "lens": "CCC-stability",
     "official": "Create a computational simulation to illustrate the relationships among management of natural resources, the sustainability of human populations, and biodiversity.",
     "plain": "I can use a computational model to explore how resource choices affect people and places.",
-    "assessedAt": "Tectonic City Builder budget trade-offs (formative)",
-    "onTrack": "Your sim budget decisions connect spending to who gets protected, and who doesn't.",
+    "assessedAt": "Not assessed in Unit 3 this year. The engineering design thread starts in Unit 4 or later. In the full-length unit: Tectonic City Builder budget trade-offs (formative)",
+    "onTrack": "In the full-length unit: Your sim budget decisions connect spending to who gets protected, and who doesn't.",
     "help": [
       {
         "label": "Tectonic City Builder",
