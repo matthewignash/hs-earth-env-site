@@ -3,11 +3,21 @@
    dates are derived. The entry title is the block title unless the page sets
    `notebookEntry`, which exists for titles that read badly as an index line.
    A and B rotations meet on different days, so both render and the student takes
-   their own. Meeting 82 is A-only, hence the guard on b. #}
+   their own. Meeting 82 is A-only, hence the guard on b.
+   A page with `asRun.inClass` frontmatter (which shadows the asRun data file) takes its date from that session instead, and a
+   `notRun` page has no entry to make. #}
+{% set entry = notebookEntry or title %}
+{% if asRun.inClass %}
+<div class="notebook-cue">
+  <p>Open your Class Notebook and type today's entry header as Heading 2:</p>
+  <p class="entry-header"><span>{{ (asRun.inClass | sessionDate).split(" ").slice(1).join(" ") }} | U{{ unit }} B{{ blockLabel or block }} | {{ entry }}</span></p>
+  <p>That date is Mr. Matt's class. In Ms. Jayanthi's classes, use the date of your own class.</p>
+</div>
+{% elif not notRun %}
 {% set meeting = collections.teachingBlocks | courseDay(unit, block) %}
 {% set dates = rotationDates.days | entryDates(meeting) %}
-{% set entry = notebookEntry or title %}
 <div class="notebook-cue">
   <p>Open your Class Notebook and type today's entry header as Heading 2:</p>
   <p class="entry-header"><span>A: {{ dates.a }} | U{{ unit }} B{{ blockLabel or block }} | {{ entry }}</span>{% if dates.b %}<span>B: {{ dates.b }} | U{{ unit }} B{{ blockLabel or block }} | {{ entry }}</span>{% endif %}</p>
 </div>
+{% endif %}

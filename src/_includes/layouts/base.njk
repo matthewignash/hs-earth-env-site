@@ -70,6 +70,7 @@
   {% if returnTo %}
   <p class="lesson-return">← Back to {% for r in returnTo %}{% if not loop.first %} · {% endif %}<a href="{{ r.url }}">{{ r.label }}</a>{% endfor %}</p>
   {% endif %}
+  {% include "partials/not-run-banner.njk" %}
   {%- set scheduleUnit = page.url | unitLandingNumber -%}
   {%- if scheduleUnit != null %}{% include "partials/unit-schedule.njk" %}{% endif %}
   {{ content | safe }}

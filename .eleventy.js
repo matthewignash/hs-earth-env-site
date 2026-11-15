@@ -1,3 +1,5 @@
+const asRun = require("./lib/as-run.js");
+
 module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy({ "src/assets": "assets" });
 
@@ -15,15 +17,17 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addCollection("standardsBlocks", function (api) {
     return api
       .getAll()
-      .filter(function (p) { return p.data.standards && p.data.block; })
+      .filter(function (p) { return p.data.standards && p.data.block && !p.data.notRun; })
       .sort(function (a, b) {
         return (a.data.unit - b.data.unit) || (a.data.block - b.data.block);
       });
   });
 
   // Teaching block pages only — not unit landings, assessments, or foundations.
+  // A notRun page still builds at its URL but takes no meeting and joins no trail.
   const isTeachingBlock = (p) =>
     p.data.layout === "layouts/block-page.njk" &&
+    !p.data.notRun &&
     p.data.unit !== undefined &&
     p.data.block !== undefined;
 
@@ -63,8 +67,12 @@ module.exports = function (eleventyConfig) {
   // dates from `fromMeeting` onward by a number of meetings. Slips stack.
   // Oct 2026: both sections finished Mars (U1 Block 3) before the October break,
   // so U1 Block 4 runs A Wed Oct 7 (meeting 16) and B Tue Oct 6 (meeting 14).
+  // Nov-Dec 2026: Units 2 and 3 were replanned onto as-run sessions (lib/as-run.js)
+  // and the semester assessment week, so Unit 4 Block 1 (meeting 27 once the
+  // not-run pages leave the collection) starts after the December break.
   const ROTATION_SLIPS = [
-    { fromMeeting: 13, a: 3, b: 1 }
+    { fromMeeting: 13, a: 3, b: 1 },
+    { fromMeeting: 27, a: 7, b: 8 }
   ];
 
   const slipFor = (rotation, meeting) => ROTATION_SLIPS
@@ -134,7 +142,8 @@ module.exports = function (eleventyConfig) {
         label: "Block " + (p.data.blockLabel || p.data.block),
         title: p.data.title,
         url: p.url,
-        assessment: p.data.scheduleTag || ""
+        assessment: p.data.scheduleTag || "",
+        session: (p.data.asRun || {}).inClass
       };
     });
     api.getAll()
@@ -149,6 +158,14 @@ module.exports = function (eleventyConfig) {
         });
       });
     return rows.sort(function (a, b) { return (a.unit - b.unit) || (a.meeting - b.meeting); });
+  });
+
+  // As-run sessions (Units 2 and 3, Nov-Dec 2026): see lib/as-run.js.
+  eleventyConfig.addFilter("sessionLabel", asRun.sessionLabel);
+  eleventyConfig.addFilter("sessionDate", asRun.sessionDate);
+  eleventyConfig.addFilter("sessionsFor", function (unit) { return asRun.sessionsFor(unit); });
+  eleventyConfig.addFilter("unitHomeUrl", function (url) {
+    return (String(url).match(/^\/units\/unit-\d+\//) || ["/units/"])[0];
   });
 
   eleventyConfig.addFilter("forUnit", function (rows, unit) {
@@ -166,6 +183,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addFilter("unitSpan", function (rows, unit, days) {
     const unitRows = rows.filter(function (r) { return r.unit === unit; });
     if (!unitRows.length) return null;
+    if (unitRows.some(function (r) { return r.session; })) return asRun.sessionSpan(unit);
     const meetingOf = (row) => { const d = dayFor(days, row.meeting); return d.n ? d : null; };
     const first = meetingOf(unitRows[0]);
     const last = meetingOf(unitRows[unitRows.length - 1]);

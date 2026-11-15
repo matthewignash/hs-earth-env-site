@@ -1,0 +1,8 @@
+{# Pages from the full-length unit that still build, because other pages link to
+   them, but are not taught this year. Set `notRun: true` in frontmatter. #}
+{% if notRun %}
+<div class="callout warn not-run">
+  <div class="callout-title">Not taught this year</div>
+  <p>This page is from the full-length version of the unit. It is not being taught in 2026-27. <a href="{{ page.url | unitHomeUrl }}">Back to the unit page</a></p>
+</div>
+{% endif %}

@@ -21,8 +21,12 @@
         {%- set day = rotationDates.days | rotationDay(row.meeting) %}
         <tr{% if row.assessment %} class="is-assessment"{% endif %}>
           <th scope="row"><a href="{{ row.url }}">{{ row.label }}</a>{% if row.assessment %} <span class="schedule-tag">{{ row.assessment }}</span>{% endif %}</th>
+          {%- if row.session %}
+          <td colspan="2">{{ row.session | sessionLabel }}</td>
+          {%- else %}
           <td>{{ day.aLabel or "date TBC" }}</td>
           <td>{{ day.bLabel or "date TBC" }}</td>
+          {%- endif %}
         </tr>
         {%- endfor %}
       </tbody>

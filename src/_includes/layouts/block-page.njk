@@ -47,7 +47,12 @@ extraStylesheets:
     <div class="meta">
       <span>Unit {{ unit }}{% if block %} · Block {{ blockLabel or block }} of {{ blocksTotal }}{% else %} · {{ scheduleLabel or "Orientation" }}{% endif %}</span>
       {% if minutes %}<span>⏰ {{ minutes }} minutes</span>{% endif %}
+      {%- if asRun.inClass %}
+      <span class="block-dates">{{ asRun.inClass | sessionLabel }}</span>
+      {% if asRun.home %}<span>At home first: after class on {{ asRun.home | sessionDate }} (Mr. Matt's class)</span>{% endif %}
+      {%- elif not notRun %}
       <span class="block-dates">{{ rotationDates.days | meetingDateLabel(courseDayNumber) }}</span>
+      {%- endif %}
     </div>
     {% if strands %}
     <div class="strand-chips">
@@ -61,6 +66,8 @@ extraStylesheets:
 </header>
 
 <main class="container">
+
+  {% include "partials/not-run-banner.njk" %}
 
   {% if bellRinger %}
   <div class="bell-ringer">
