@@ -1,0 +1,23 @@
+{# A video that lives in this repo, played by the browser's own player. No JavaScript.
+   Set `videoKey` to an entry in src/_data/videos.json before including:
+     {% set videoKey = "u2-b1" %}{% include "partials/local-video.njk" %}
+   Each entry's `base` has three files beside it: .mp4, -poster.jpg and .en.vtt.
+   An entry with no `base` renders the same card with a "being made" line and no
+   player, so a video can be pulled or added without a template change.
+   An entry's `heading` replaces the "Watch (about N min)" title, for a video that
+   is not one of the two Concepts cards (the Unit 2 kickoff). #}
+{% set v = videos[videoKey] %}
+<div class="entry-card kind-investigate local-video">
+  <div class="entry-title">{{ v.heading or ("Watch (about " ~ v.minutes ~ " min)") }}</div>
+  <div>{{ v.title }}</div>
+  {% if v.base %}
+  <video controls preload="metadata" poster="{{ v.base }}-poster.jpg">
+    <source src="{{ v.base }}.mp4" type="video/mp4">
+    <track kind="captions" src="{{ v.base }}.en.vtt" srclang="en" label="English" default>
+    <a href="{{ v.base }}.mp4">Open the video file</a>
+  </video>
+  <div class="entry-meta">Narrated with an AI voice. Script and slides by Ms. Jayanthi/Mr. Matt.</div>
+  {% else %}
+  <p>This video is being made. Use the reading for now.</p>
+  {% endif %}
+</div>

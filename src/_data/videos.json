@@ -1,0 +1,10 @@
+{
+  "u2-kickoff": { "title": "Chennai: a coast that moved", "minutes": 2, "heading": "Unit opening (2 min)", "base": "/assets/video/u2/u2-kickoff-chennai-coast" },
+  "u2-b1": { "title": "Weathering: how rocks break down", "minutes": 5, "base": "/assets/video/u2/u2-b1-weathering" },
+  "u2-b2": { "title": "Erosion: how material moves", "minutes": 5, "base": "/assets/video/u2/u2-b2-erosion" },
+  "u2-b3": { "title": "Rivers: how water shapes Chennai", "minutes": 5, "base": "/assets/video/u2/u2-b3-rivers" },
+  "u2-b4": { "title": "Coasts: waves, drift and the harbor", "minutes": 4, "base": "/assets/video/u2/u2-b4-coasts" },
+  "u3-b1": { "title": "Plate boundaries: inside Earth, and where plates meet", "minutes": 5, "base": "/assets/video/u3/u3-b1-plate-boundaries" },
+  "u3-b2": { "title": "Earthquakes and tsunamis", "minutes": 5, "base": "/assets/video/u3/u3-b2-earthquakes-tsunamis" },
+  "u3-b3": { "title": "Volcanoes: why some flow and some explode", "minutes": 4, "base": "/assets/video/u3/u3-b3-volcanoes" }
+}

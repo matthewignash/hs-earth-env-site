@@ -690,3 +690,7 @@ dialog.video-lightbox::backdrop {
   font-weight: 700;
   color: var(--ink-quiet);
 }
+
+/* Videos served from this repo (partials/local-video.njk). */
+.local-video video { display: block; width: 100%; height: auto; margin-top: 8px; }
+:not(.entry-grid) > .local-video { max-width: 720px; margin: 12px 0; }

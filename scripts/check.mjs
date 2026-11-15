@@ -2,7 +2,7 @@
 /**
  * The build gate. `npm run build` runs this first; any problem stops the build.
  *
- * Concepts (C1-C9): every Concepts instruction line is true of its cards.
+ * Concepts (C1-C10): every Concepts instruction line is true of its cards.
  * House rules (H1-H6): conventions that were written down once and came back anyway.
  */
 import { readFileSync, readdirSync, statSync } from "node:fs";
@@ -109,6 +109,16 @@ function checkConcepts(file) {
 
   // C9: Concepts must not borrow the Do section's vocabulary.
   if (DO_WORDS.test(plain)) fail("C9", `instruction line uses Do's wording: "${plain.match(DO_WORDS)[0]}"`);
+
+  // C10: "the reading or the video" means exactly that: one Read card, one
+  // local video, and nothing unbuilt beside them.
+  if (/the reading or the video/.test(plain)) {
+    const videos = (gridHtml.match(/partials\/local-video\.njk/g) || []).length;
+    const reads = grid.filter((c) => c.title.startsWith("Read"));
+    if (reads.length !== 1 || videos !== 1 || grid.length !== 1 || grid.some((c) => c.placeholder)) {
+      fail("C10", `"the reading or the video" needs one Read card and one local video, found ${reads.length} Read, ${videos} video, ${grid.length - reads.length} other`);
+    }
+  }
 
   if (grid.length === 0) warn("info", "no choosable cards left in the grid");
   if (required.length) warn("info", `${required.length} card(s) in the required group`);

@@ -30,7 +30,7 @@ bellRinger:
 standards:
   ngss: ["HS-ESS2-1"]
   ailit: []
-learningIntention: "I can identify mechanical and chemical weathering processes in field photos, distinguish them from erosion, and name a specific weathering process happening at AISC."
+learningIntention: "I can identify mechanical and chemical weathering processes in field photos, distinguish them from erosion, and name a specific weathering process happening at school or at home."
 successCriteria: ["I can tell mechanical weathering from chemical weathering in a field photo", "I can explain the difference between weathering and erosion in one sentence", "I can name one specific weathering process happening somewhere in Chennai"]
 powerSeeds: ["mechanical vs. chemical weathering"]
 asRun: { home: R0, inClass: R1 }
@@ -40,60 +40,33 @@ asRun: { home: R0, inClass: R1 }
   <span class="section-tag">Story</span>
   <h2>What today is about</h2>
   <p class="sub">The first process. Everything else in the unit follows from this one.</p>
+  <p>Start here if you missed the opening.</p>
+  {% set videoKey = "u2-kickoff" %}{% include "partials/local-video.njk" %}
+  {% from "partials/disclosure.njk" import disclosure %}
+  {% call disclosure("help", "Image credits for this video", "video-credits") %}
+  {% include "partials/kickoff-credits.njk" %}
+  {% endcall %}
   <p>Weathering is the rock-breaking step: before anything moves (erosion) and before anything settles (deposition), rocks have to come apart. <strong>Mechanical weathering</strong> (frost wedging, root prying, thermal stress) breaks rock physically; <strong>chemical weathering</strong> (dissolution, oxidation, hydrolysis) changes the rock chemically. In tropical Chennai, chemical weathering dominates: deep, persistent, humid conditions break rock down through chemistry more than through physics.</p>
-  <p>Today's anchor question ("<em>what stories does the landscape tell us?</em>") is the question driving the whole unit. Today we start with the smallest story: how a single rock breaks. By Block 9 you'll be telling the biography of an entire Chennai location.</p>
-  <p>This unit also introduces <strong>the Field Geologist</strong>, an AI partner that knows the nine Landscape Biography locations and thinks like someone standing at your site with a notebook. It asks what you observed before it discusses what anything means. Read its opening message on the partner page before your first conversation.</p>
+  <p>Today's anchor question ("<em>what stories does the landscape tell us?</em>") is the question driving the whole unit. Today we start with the smallest story: how a single rock breaks. By the end of the unit you'll be telling the biography of an entire Chennai location.</p>
+  <p>This unit also introduces <strong>the Field Geologist</strong>, an AI partner that knows the nine Landscape Reading locations and thinks like someone standing at your site with a notebook. It asks what you observed before it discusses what anything means. Read its opening message on the partner page before your first conversation.</p>
 </section>
 
 <section class="block-section concepts">
   <span class="section-tag">Concepts</span>
   <h2>Before you start the work</h2>
-  <p class="sub">Start with the Watch: projected for everyone. The Interact is a quick warm-up that follows it, and the Read is your reference for the photo-ID work. The easier reading and the chemistry stretch are there if you want them. Notes go in your Class Notebook as a Power outline.</p>
+  <p class="sub">Pick one: the reading or the video. They teach the same material.</p>
   {% include "partials/power-seeds.njk" %}
-  <div class="entry-grid">    <div class="entry-card placeholder kind-investigate">
-      <span class="placeholder-tag">Placeholder</span>
-      <div class="entry-title">Watch (6 min)</div>
-      <div>TBD: short demo of mechanical vs. chemical weathering: frost wedging vs. root prying vs. dissolution vs. oxidation, with field photo examples for each.</div>
-      <div class="entry-meta">Whole-class, projected.</div>
-    </div>
-    <div class="entry-card placeholder kind-investigate">
-      <span class="placeholder-tag">Placeholder</span>
-      <div class="entry-title">Interact (5 min warm-up)</div>
-      <div>TBD: photo-ID warm-up: 4 weathering-process images projected one at a time, 30 seconds each to name the process. Then the choice board.</div>
-      <div class="entry-meta">Whole-class, fast-paced.</div>
-    </div>
-    <a class="entry-card kind-read" href="https://www.ck12.org/book/ck-12-earth-science-for-high-school/section/9.1/" target="_blank" rel="noopener" style="text-decoration: none; color: inherit;">
-      <div class="entry-title">Easier reading: CK-12 Chapter 9, Weathering and Formation of Soil</div>
-      <div>The same ideas at a gentler reading level. Start here if the textbook feels heavy, then go back to Earle 5.1.</div>
-      <div class="entry-meta">Real link · CK-12 Earth Science for High School</div>
+  <div class="entry-grid">
+    <a class="entry-card kind-read" href="https://opentextbc.ca/physicalgeology2ed/chapter/5-1-mechanical-weathering/" target="_blank" rel="noopener" style="text-decoration: none; color: inherit;">
+      <div class="entry-title">Read (about 15 min)</div>
+      <div>Textbook: Weathering (Earle 5.1 and 5.2). Read 5.1 Mechanical Weathering and 5.2 Chemical Weathering. As you read, list every weathering process named and mark the ones that need water. Chennai is hot and wet, so expect chemical weathering to matter most here.</div>
+      <div class="entry-meta">Real link · Physical Geology, 2nd ed. (open textbook)</div>
     </a>
-    <a class="entry-card kind-read" href="https://openstax.org/books/chemistry-2e/pages/14-2-ph-and-poh" target="_blank" rel="noopener" style="text-decoration: none; color: inherit;">
-      <div class="entry-title">Stretch: why acid dissolves rock</div>
-      <div>For students who also take chemistry. Read the pH section of OpenStax Chemistry 2e 14.2, then explain in two sentences why slightly acidic rain speeds up chemical weathering.</div>
-      <div class="entry-meta">Real link · OpenStax Chemistry 2e · read only, do not upload to AI tools</div>
-    </a>
-    <div class="entry-card kind-read has-figures">
-      <div class="entry-title">Read (10 min)</div>
-      <div>Two figures from Earle. In the first, salt crystals growing in the pores have broken this sandstone into a honeycomb, a mechanical process you can find on Chennai's coast. The second shows the same granite fresh (left) and weathered (right); the feldspar has changed chemically into chalky clay. For each, name the process and the evidence you can see.</div>
-      <figure class="content-figure">
-        <img src="/assets/img/u2/u2-earle-5-1-5-honeycomb.jpg" alt="A flat sandstone surface covered in hundreds of small, closely packed round holes, like a honeycomb, with a rock hammer lying on it for scale.">
-        <figcaption>Figure 5.1.5, honeycomb weathering of sandstone, Gabriola Island, B.C. © Steven Earle, <a href="https://opentextbc.ca/physicalgeology2ed/chapter/5-1-mechanical-weathering/" target="_blank" rel="noopener"><em>Physical Geology</em>, 2nd ed.</a>, CC BY 4.0.</figcaption>
-      </figure>
-      <figure class="content-figure">
-        <img src="/assets/img/u2/u2-earle-5-2-1-granite.jpg" alt="Two close-ups of the same granitic rock side by side. Left, unweathered: glassy white and grey feldspar crystals with dark minerals. Right, weathered: the light minerals have turned dull and chalky, with the dark grains still scattered through.">
-        <figcaption>Figure 5.2.1, unweathered (left) and weathered (right) surfaces of the same granitic rock. © Steven Earle, <a href="https://opentextbc.ca/physicalgeology2ed/chapter/5-2-chemical-weathering/" target="_blank" rel="noopener"><em>Physical Geology</em>, 2nd ed.</a>, CC BY 4.0.</figcaption>
-      </figure>
-      <div class="entry-meta">Reference for the photo-ID activity.</div>
-    </div>
+    {% set videoKey = "u2-b1" %}{% include "partials/local-video.njk" %}
   </div>
   <div class="entry-required">
     <p class="entry-required-label">Everyone does this</p>
     <div class="entry-required-grid">
-    <a class="entry-card kind-read" href="https://opentextbc.ca/physicalgeology2ed/chapter/5-1-mechanical-weathering/" target="_blank" rel="noopener" style="text-decoration: none; color: inherit;">
-      <div class="entry-title">Textbook: Weathering (Earle 5.1 and 5.2)</div>
-      <div>Read 5.1 Mechanical Weathering and 5.2 Chemical Weathering. As you read, list every weathering process named and mark the ones that need water. Chennai is hot and wet, so expect chemical weathering to matter most here.</div>
-      <div class="entry-meta">Real link · Physical Geology, 2nd ed. (open textbook) · about 15 min</div>
-    </a>
     <a class="entry-card" href="/ai-partners/field-geologist/" style="text-decoration: none; color: inherit;">
       <div class="entry-title">Meet your new partner</div>
       <div>The Field Geologist: observation-first coaching for reading landscapes. Read the opening message and example exchange before you bring it your location.</div>
@@ -110,37 +83,32 @@ asRun: { home: R0, inClass: R1 }
 
 <section class="block-section do">
   <span class="section-tag">Do</span>
-  <h2>Today's work: choose one path</h2>
-  <p class="sub">All four paths end the same way: a labeled photo set or photo response that identifies specific weathering processes. The path you pick is about where you do the work.</p>
+  <h2>Today's work: everyone does this</h2>
   <div class="callout sketch-first">
     <div class="callout-title">Sketch first: no words</div>
     <p>Sketch first, no words (5 min, alone): one drawing that shows the DIFFERENCE between weathering and erosion. Compare with a partner (3 min): can they tell which side is which without you explaining? Note it in your Field Notebook, dated; today's work sharpens exactly this distinction.</p>
   </div>
-  <div class="choice-board">
-    <div class="choice">
-      <div class="choice-letter">A</div>
-      <div class="choice-title">8-photo identification (default)</div>
-      <div class="choice-detail">Pair work. Eight unfamiliar field photos. For each, identify the dominant weathering process and the single best piece of visual evidence. Pair discussion encouraged; submit one annotated set per pair.</div>
-      <span class="udl-tag">Pairs · Default</span>
-    </div>
-    <div class="choice">
-      <div class="choice-letter">B</div>
-      <div class="choice-title">AISC campus weathering walk</div>
-      <div class="choice-detail">Walk the AISC campus (or specific zone Ms. Jayanthi/Mr. Matt assigns). Photograph 3 weathering processes on the way. Label each with mechanism + evidence. Stretch: identify one example of chemical weathering specifically.</div>
-      <span class="udl-tag">Solo · Stretch</span>
-    </div>
-    <div class="choice">
-      <div class="choice-letter">C</div>
-      <div class="choice-title">Tropical-specific deep dive</div>
-      <div class="choice-detail">Research how laterite forms in tropical climates. Why is laterite so common in South India? Produce a half-page explainer with one diagram. Useful prep for Block 5's tropical-landscapes content.</div>
-      <span class="udl-tag">Solo · Choice</span>
-    </div>
-    <div class="choice">
-      <div class="choice-letter">D</div>
-      <div class="choice-title">Peer-help station</div>
-      <div class="choice-detail">Stuck on distinguishing weathering from erosion? Come to the peer-help table. Pair with a student who's solid on the distinction. Use the <a href="/foundations/eal/u2/">vocabulary support</a> page. Ms. Jayanthi/Mr. Matt floats. Cap ~6 students at a time.</div>
-      <span class="udl-tag">Pairs · Practice</span>
-    </div>
+  <p>Two figures from Earle. In the first, salt crystals growing in the pores have broken this sandstone into a honeycomb, a process you can find on Chennai's coast. The second shows the same granite fresh (left) and weathered (right).</p>
+  <figure class="content-figure">
+    <img src="/assets/img/u2/u2-earle-5-1-5-honeycomb.jpg" alt="A flat sandstone surface covered in hundreds of small, closely packed round holes, like a honeycomb, with a rock hammer lying on it for scale.">
+    <figcaption>Figure 5.1.5, honeycomb weathering of sandstone, Gabriola Island, B.C. © Steven Earle, <a href="https://opentextbc.ca/physicalgeology2ed/chapter/5-1-mechanical-weathering/" target="_blank" rel="noopener"><em>Physical Geology</em>, 2nd ed.</a>, CC BY 4.0.</figcaption>
+  </figure>
+  <figure class="content-figure">
+    <img src="/assets/img/u2/u2-earle-5-2-1-granite.jpg" alt="Two close-ups of the same granitic rock side by side. Left, unweathered: glassy white and grey feldspar crystals with dark minerals. Right, weathered: the light minerals have turned dull and chalky, with the dark grains still scattered through.">
+    <figcaption>Figure 5.2.1, unweathered (left) and weathered (right) surfaces of the same granitic rock. © Steven Earle, <a href="https://opentextbc.ca/physicalgeology2ed/chapter/5-2-chemical-weathering/" target="_blank" rel="noopener"><em>Physical Geology</em>, 2nd ed.</a>, CC BY 4.0.</figcaption>
+  </figure>
+  <div class="callout task">
+    <div class="callout-title">The task: Two rocks, then one of yours</div>
+    <p>Use the two figures on this page. For each, write whether the weathering is mechanical or chemical, the name of the process, and one thing you can see that proves it. Then find one weathered surface at school or at home and do the same for it. Notes go in your Class Notebook as a Power outline.</p>
+  </div>
+  <div class="callout support">
+    <div class="callout-title">If you want support</div>
+    <p><a href="https://www.ck12.org/book/ck-12-earth-science-for-high-school/section/9.1/" target="_blank" rel="noopener">Easier reading: CK-12 Chapter 9, Weathering and Formation of Soil</a>. The same ideas at a gentler reading level. Start here if the textbook feels heavy, then go back to Earle 5.1.</p>
+    <p>The <a href="/foundations/eal/u2/">vocabulary page</a> has the unit's key terms with sentence stems.</p>
+  </div>
+  <div class="callout extend">
+    <div class="callout-title">If you want to go further</div>
+    <p><a href="https://openstax.org/books/chemistry-2e/pages/14-2-ph-and-poh" target="_blank" rel="noopener">Why acid dissolves rock</a>. For students who also take chemistry. Read the pH section of OpenStax Chemistry 2e 14.2, then explain in two sentences why slightly acidic rain speeds up chemical weathering. Read only: do not upload it to AI tools.</p>
   </div>
   {% include "partials/notebook-cue.njk" %}
 </section>
@@ -148,14 +116,14 @@ asRun: { home: R0, inClass: R1 }
 <section class="block-section show">
   <span class="section-tag">Show</span>
   <h2>What you're submitting today</h2>
-  <p class="sub">Whichever path you chose, the artifact is the same shape: weathering processes named, with evidence.</p>
+  <p class="sub">Your three calls: the two figures and the surface you found.</p>
   <div class="submission-callout">
-    <div class="label">Exit ticket: AISC weathering observation</div>
-    <p>Name <strong>one specific</strong> weathering process happening on AISC's own grounds. Describe what you'd see if you went to look at it. One sentence is fine; the point is specificity, not length. "Chemical weathering" is too generic. "Iron oxidation rusting the metal railing by the science block back door" is the move.</p>
+    <div class="label">Three weathering calls, each with evidence</div>
+    <p>For each of the three: mechanical or chemical, the name of the process, and one thing you can see that proves it. This replaces a separate exit ticket. "Chemical weathering" on its own is too general. "Iron oxidation rusting the metal railing by the science block back door" is the move.</p>
     {% set submit = { id: "u2-b1", text: "Submit via Google Classroom" } %}{% include "partials/submit-link.njk" %}
   </div>
   <p class="rubric-meta">
-    <strong>Rubric link:</strong> Weathering vocabulary is K/U bedrock for the <a href="/units/unit-2/assessment-landscape-reading/">Landscape Reading</a>. Specificity is what separates the bands. See the <a href="/foundations/the-rubric/">rubric</a>: K/U 7-8 says <em>"discipline-specific vocabulary used accurately throughout."</em>
+    <strong>Rubric link:</strong> Weathering vocabulary is K/U bedrock for the <a href="/units/unit-2/assessment-landscape-reading/">Landscape Reading</a>. Specificity is what separates the bands. See the <a href="/foundations/the-rubric/">rubric</a>: K/U 7-8 says <em>"Course vocabulary is used accurately throughout."</em>
   </p>
 </section>
 

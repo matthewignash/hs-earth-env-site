@@ -4,8 +4,8 @@ unit: 3
 unitTitle: Plate Tectonics & Natural Hazards
 block: 3
 blocksTotal: 3
-title: Volcanism + Engineering Technologies
-minutes: 80
+title: Volcanoes
+blockLabel: "3 (Take-home 2, part 2)"
 week: 2
 day: A
 strands:
@@ -14,68 +14,49 @@ strands:
 breadcrumbs:
   - { url: /, label: Home }
   - { url: /units/unit-3/, label: "Unit 3: Plate Tectonics & Natural Hazards" }
-  - { label: "Block 3: Volcanism + Engineering Technologies" }
-prev: { url: /units/unit-3/block-2/, label: "Block 2: Subduction & Transform Deep Dive" }
-next: { url: /units/unit-3/block-4/, label: "Block 4: Whole-Class Sim + First Independent Attempt" }
+  - { label: "Take-home 2, part 2: Volcanoes" }
+prev: { url: /units/unit-3/block-2/, label: "Block 2: Earthquakes and Tsunamis" }
+next: { url: /units/unit-3/assessment-one-event-one-boundary/, label: "One Event, One Plate Boundary" }
 unitMapUrl: /units/unit-3/
 aiPartners:
   - { slug: plate-tectonics-tutor, label: "The Plate Tectonics Tutor" }
-  - { slug: engineering-coach, label: "The Engineering Coach" }
-bellRinger:
-  tag: "Retrieval"
-  minutes: 5
-  text: |
-    Sixty-second brain dump, no notes: the four plate boundary types, and the dominant hazard each one produces.<br><strong>Task:</strong> Write all four, then circle the one you're least sure about.
 standards:
-  ngss: ["HS-ESS3-1", "HS-ETS1-1"]
+  ngss: ["HS-ESS2-1", "HS-ESS3-1"]
   ailit: []
-learningIntention: "I can match every engineering technology in the simulator to the hazard(s) it protects against, AND name at least one scenario where each technology is useless."
-successCriteria: ["I can match each simulator technology to the hazards it protects against.", "I can name a scenario where each technology is useless.", "I can explain why no technology protects against everything."]
+learningIntention: "I can explain why volcanoes line up above a subduction zone, and why those volcanoes tend to be explosive."
+successCriteria: ["I can explain in steps why volcanoes line up above a subduction zone.", "I can explain why volcanoes above a subducting plate tend to explode.", "I can use one real eruption as my example."]
 asRun: { home: R4, inClass: R5 }
 ---
 
 <section class="block-section story">
   <span class="section-tag">Story</span>
-  <h2>What today is about</h2>
-  <p class="sub">The other major hazard family, and the move that surprises everyone.</p>
-  <p>So far we've talked about earthquakes and tsunamis, hazards we can engineer against. Today we add volcanism, and we introduce the engineering toolkit you'll use in the Tectonic City Builder. But here's the twist: <strong>some hazards have no engineering defense.</strong> You can't build a wall against a pyroclastic flow. Only distance and early warning save lives.</p>
-  <p>Naming what each technology does (and what it can't do) is the foundation for every decision you'll make in the simulator across Blocks 4–10. Get this wrong now, and you'll spend your budget on tech that doesn't protect against the hazard your city actually faces.</p>
-  <p>Today you also meet the unit's second AI partner: <strong>The Engineering Coach</strong>. Where the Plate Tectonics Tutor helps you understand the planet, the Coach helps you interrogate your design decisions: it will ask what your budget choices assume before it ever suggests a fix.</p>
+  <h2>What this page is about</h2>
+  <p class="sub">Take-home 2, part 2. The other major hazard family.</p>
+  <figure class="content-figure">
+    <img src="/assets/img/u3/u3-t2-cover.jpg" alt="">
+    <figcaption>Image generated with Gemini, AISC. Decorative, not a diagram.</figcaption>
+  </figure>
+  <p>So far we've talked about earthquakes and tsunamis. This page adds volcanism: why volcanoes line up above a subduction zone, and why those volcanoes tend to explode. And here is the hard part: <strong>some hazards have no engineering defense.</strong> You can't build a wall against a pyroclastic flow. Only distance and early warning save lives.</p>
 </section>
 
 <section class="block-section concepts">
   <span class="section-tag">Concepts</span>
   <h2>Before you start the work</h2>
-  <p class="sub">Pick one. They cover the same ground: how volcanism connects to the engineering technologies.</p>
-  <div class="entry-grid">    <div class="entry-card placeholder kind-investigate">
-      <span class="placeholder-tag">Placeholder</span>
-      <div class="entry-title">Watch (7 min)</div>
-      <div>TBD: shield vs. stratovolcano short video. Hawaii's effusive lava vs. Merapi's pyroclastic flow. Why the geology produces such different hazards.</div>
-      <div class="entry-meta">Captioned · Ms. Jayanthi/Mr. Matt recorded.</div>
-    </div>
-    <div class="entry-card placeholder kind-investigate">
-      <span class="placeholder-tag">Placeholder</span>
-      <div class="entry-title">Interact</div>
-      <div>TBD: interactive tech-card overview. Hover any engineering technology to see what it protects against and where it's useless.</div>
-      <div class="entry-meta">Whole-class projected or solo.</div>
-    </div>
+  <p class="sub">Pick one: the reading or the video. They teach the same material.</p>
+  <div class="entry-grid">
+    <a class="entry-card kind-read" href="https://opentextbc.ca/physicalgeology2ed/chapter/4-1-plate-tectonics-and-volcanism/" target="_blank" rel="noopener" style="text-decoration: none; color: inherit;">
+      <div class="entry-title">Read (about 15 min)</div>
+      <div>Textbook: Plate Tectonics and Volcanism (Earle 4.1). Where magma forms, and why volcanoes sit where they do.</div>
+      <div class="entry-meta">Real link · Physical Geology, 2nd ed. (open textbook)</div>
+    </a>
+    {% set videoKey = "u3-b3" %}{% include "partials/local-video.njk" %}
   </div>
   <div class="entry-required">
     <p class="entry-required-label">Everyone does this</p>
     <div class="entry-required-grid">
-    <a class="entry-card kind-read" href="/foundations/the-rubric/" style="text-decoration: none; color: inherit;">
-      <div class="entry-title">Read</div>
-      <div>The Rubric: preview the Engineering Portfolio criteria. Your tech-card decisions today feed straight into that rubric's "Engineering Reasoning" criterion.</div>
-      <div class="entry-meta">Real link · Foundations</div>
-    </a>
-    <a class="entry-card" href="/ai-partners/engineering-coach/" style="text-decoration: none; color: inherit;">
-      <div class="entry-title">Meet your new partner</div>
-      <div>The Engineering Coach: Socratic coach for design decisions, budget trade-offs, and iteration reasoning. Read the opening message and example exchange before your first sim attempt.</div>
-      <div class="entry-meta">Real link · AI Partner</div>
-    </a>
     <a class="entry-card" href="/foundations/eal/u3/" style="text-decoration: none; color: inherit;">
       <div class="entry-title">Vocabulary support</div>
-      <div>The U3 pre-teach: key terms with definitions and sentence stems. Pyroclastic, lahar, and base isolation are all in there.</div>
+      <div>The U3 pre-teach: key terms with definitions and sentence stems. Pyroclastic and lahar are both in there.</div>
       <div class="entry-meta">Real link · Foundations · EAL</div>
     </a>
     </div>
@@ -84,35 +65,22 @@ asRun: { home: R4, inClass: R5 }
 
 <section class="block-section do">
   <span class="section-tag">Do</span>
-  <h2>Today's work: choose one path</h2>
-  <p class="sub">Tech-card matching activity. Same goal: match every technology to its hazard and identify at least one scenario where it offers no protection.</p>
-  <div class="choice-board">
-    <div class="choice live-activity">
-      <span class="live-activity-tag">Live in class</span>
-      <div class="choice-letter">A</div>
-      <div class="choice-title">Printed card sort</div>
-      <div class="choice-detail">Physical card deck, provided in class: one card per technology (base isolation, shear walls, tsunami walls, deep foundations, lava berms, ash roofs, lahar diversion channels, pyroclastic shelters, early warning). Sort by hazard.</div>
-      <span class="udl-tag">Visual · Pair</span>
-    </div>
-    <div class="choice placeholder">
-      <span class="placeholder-tag">Placeholder</span>
-      <div class="choice-letter">B</div>
-      <div class="choice-title">Digital drag-and-drop</div>
-      <div class="choice-detail">TBD: same activity, drag-and-drop interface (Mentimeter / Padlet / similar). Useful if you're not at a paired table today.</div>
-      <span class="udl-tag">Digital · Solo or pair</span>
-    </div>
-    <div class="choice">
-      <div class="choice-letter">C</div>
-      <div class="choice-title">Name a tech, defend its limits</div>
-      <div class="choice-detail">Pick any one technology. Write 4 sentences: (1) what it is, (2) what it protects against, (3) one specific scenario where it would save lives, (4) one specific scenario where it would be useless. Trade with a partner.</div>
-      <span class="udl-tag">Text · Solo</span>
-    </div>
-    <div class="choice">
-      <div class="choice-letter">D</div>
-      <div class="choice-title">Paired discussion: the most surprising limit</div>
-      <div class="choice-detail">With a partner: which technology surprised you most by what it can't do? Why does that surprise hold up under scrutiny? Submit 3 bullet points.</div>
-      <span class="udl-tag">Dialogue · Pair</span>
-    </div>
+  <h2>Today's work: everyone does this</h2>
+  <div class="callout">
+    <div class="callout-title">Recall first</div>
+    <p>Sixty-second brain dump, no notes: the four plate boundary settings, and the hazards each one produces. Write all four in your Field Notebook, then circle the one you're least sure about.</p>
+  </div>
+  <div class="callout task">
+    <div class="callout-title">The task: Why here, and why so violent</div>
+    <p>In four steps, explain why volcanoes line up above a subduction zone. Then explain why those volcanoes tend to explode, using Pinatubo 1991 or Merapi 2010 as your example. Then take the second self-check in Google Classroom.</p>
+  </div>
+  <div class="callout support">
+    <div class="callout-title">If you want support</div>
+    <p>The <a href="/foundations/eal/u3/">vocabulary page</a> and the <a href="/ai-partners/plate-tectonics-tutor/">Plate Tectonics Tutor</a>.</p>
+  </div>
+  <div class="callout extend">
+    <div class="callout-title">If you want to go further</div>
+    <p>Pinatubo and Merapi both gave warnings. Why did people still die at each one?</p>
   </div>
   {% include "partials/notebook-cue.njk" %}
 </section>
@@ -120,14 +88,19 @@ asRun: { home: R4, inClass: R5 }
 <section class="block-section show">
   <span class="section-tag">Show</span>
   <h2>What you're submitting today</h2>
-  <p class="sub">Two things today: the map quiz is formative on K/U; the tech-card output feeds your Engineering Portfolio later.</p>
+  <p class="sub">Two explanations, with one real eruption as your example.</p>
   <div class="submission-callout">
-    <div class="label">Map quiz (formative) + tech-card output</div>
-    <p>Map quiz: identify boundary + dominant hazard for 8 unfamiliar coastal cities. Tech-card output: completed card sort OR your 4-sentence tech defense (Choice C) OR your paired discussion bullets (Choice D).</p>
+    <div class="label">The two explanations</div>
+    <p>Four steps on why volcanoes line up above a subduction zone, and your explanation of why those volcanoes tend to explode, using Pinatubo 1991 or Merapi 2010.</p>
     {% set submit = { id: "u3-b3", text: "Submit via Google Classroom" } %}{% include "partials/submit-link.njk" %}
   </div>
+  <div class="callout">
+    <div class="callout-title">Self-check: Take-home 2</div>
+    <p>Five questions in Google Classroom. It is not graded and shows you the answers.</p>
+    {% set submit = { id: "u3-t2-check", text: "Open the self-check in Google Classroom", pending: "Self-check" } %}{% include "partials/submit-link.njk" %}
+  </div>
   <p class="rubric-meta">
-    <strong>Rubric link:</strong> Today's <strong>K/U</strong> map quiz checks boundary-type fluency; the tech-card output is what your <strong>T/T</strong> Engineering Portfolio decisions will reference. See <a href="/foundations/the-rubric/">the rubric</a> for what each band looks like.
+    <strong>Rubric link:</strong> This is <strong>K/U</strong> practice for your poster for <a href="/units/unit-3/assessment-one-event-one-boundary/">One Event, One Plate Boundary</a>: explaining why this setting produced this hazard and not another. See the <a href="/foundations/the-rubric/">rubric</a>.
   </p>
 </section>
 
@@ -135,6 +108,6 @@ asRun: { home: R4, inClass: R5 }
   <span class="section-tag">Reflect</span>
   <h2>One question before you leave</h2>
   <p class="sub">Three to five minutes. Your answer is saved to your reflection journal, where you can read back everything you have written this year.</p>
-  <p class="sub">No grade. Save it. Block 4's first sim attempt will test what you noticed.</p>
+  <p class="sub">No grade. Save it. Your poster will test what you noticed.</p>
   {% include "partials/reflect.njk" %}
 </section>
