@@ -6,12 +6,25 @@ description: Course site for HS Earth & Environmental Science at AISC Chennai. C
 heroLayout: true
 ---
 
+<section class="next-block" aria-label="Next block">
+  <div class="next-block-tag">Next block</div>
+  <div id="next-block-body">
+    <p>Every class this week and next, with dates, pages and what is due, is on This Week.</p>
+  </div>
+  <p class="next-block-more"><a href="/this-week/">Open This Week →</a></p>
+</section>
+<script type="application/json" id="schedule-data">{{ collections.scheduleEntries | dump | safe }}</script>
+
 <div class="prose">
   <p>This site is the content hub. Daily workflow (assignments, submissions, grades) lives in Google Classroom. Use the navigation above to find what you need, or pick an entry point below.</p>
 </div>
 
 <section aria-label="Sections" style="margin-top: 24px;">
   <div class="section-grid">
+    <a class="section-card" href="/this-week/">
+      <div class="card-title">This Week</div>
+      <div class="card-desc">This week and next, class by class: what happens, which page to use, and what is due.</div>
+    </a>
     <a class="section-card" href="/units/">
       <div class="card-title">Course Units</div>
       <div class="card-desc">All eight units: block pages, assessments, and each unit's map.</div>

@@ -1,5 +1,6 @@
 module.exports = [
   { label: "Home", url: "/", match: "/" },
+  { label: "This Week", url: "/this-week/", match: "/this-week/" },
   { label: "Course Units", url: "/units/", match: "/units/" },
   { label: "Foundations", url: "/foundations/", match: "/foundations/" },
   { label: "Reference", url: "/reference/", match: "/reference/" },

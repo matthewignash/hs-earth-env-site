@@ -4,6 +4,23 @@
 
 **Last updated:** 2026-11-15 (U2 and U3 replan on branch `replan-nov-dec-2026`. Addenda 3–52 below. U0–U6 complete; U7 is next.)
 
+### 2026-11-15: This Week, the Home "next block" card and the Coming Up strip (branch `replan-nov-dec-2026`)
+
+Three things borrowed from the Grade 9 Biology and AP Chemistry sites, after a review of both.
+
+- **One dated list drives all three.** `lib/schedule.js` builds the `scheduleEntries` collection: two entries per ordinary block (A rotation, B rotation, through the slips) and one per as-run session for Units 2 and 3. Nothing is typed. Sessions gained a `milestone` field in `asRun.json`.
+- **`/this-week/`** (new, in the top nav). Every week of the year is in the page, so it is also the calendar and works without JavaScript. `assets/schedule.js` hides all but this week and next and adds a "Show the whole year" button. The calendar stub in Student Hub now points here.
+- **Home "next block" card.** The next class for each group that meets within a week of the first one. Without JavaScript it is a link to This Week.
+- **Coming Up strip** on every page, under the nav: the next three milestones with "in N days". Hidden without JavaScript. On a phone it shows the next one only.
+- New files: `lib/schedule.js`, `src/this-week.njk`, `src/assets/schedule.js`, `src/assets/schedule.css`.
+
+**Limits to know**
+
+- "Today" is the reader's own device date, so the site does not need a rebuild each day.
+- **Milestones are thin outside Units 2 and 3.** The strip reads `scheduleTag` on block pages, and only four blocks in the whole site have one. From January the strip stays empty until Units 4 to 6 get a `scheduleTag` on their assessment blocks.
+- **No homework line for ordinary blocks.** Only the as-run sessions carry "what is due". Other blocks show their title and link.
+- Ms. Jayanthi's classes appear in all three as soon as `jayanthiA` and `jayanthiB` are filled in `asRun.json`.
+
 ### 2026-11-15: Unit 2 and Unit 3 rebuilt as run in Nov-Dec 2026 (branch `replan-nov-dec-2026`, not pushed, not deployed)
 
 Brief: `../Nov-Dec 2026 Replan (U2 and U3)/5 - Site Update Prompt (Claude Code).md`. **The copy saved on disk was built, not the older copy that was pasted into the session.** The two disagreed (two Unit 3 pages against three; two finished videos against eight). Matt chose the saved file.

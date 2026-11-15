@@ -14,6 +14,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600&family=Source+Sans+3:ital,wght@0,400..700;1,400&display=swap">
   <link rel="stylesheet" href="/assets/styles.css">
+  <link rel="stylesheet" href="/assets/schedule.css">
   {% if extraStylesheets %}{% for href in extraStylesheets %}<link rel="stylesheet" href="{{ href }}">{% endfor %}{% endif %}
 </head>
 <body>
@@ -32,6 +33,13 @@
     {%- if loop.index == 1 %}<span class="spacer"></span>{% endif %}
   {%- endfor %}
 </nav>
+
+{# Filled in by assets/schedule.js from the milestone dates below; hidden without it. #}
+<aside class="coming-up" aria-label="Coming up" hidden>
+  <span class="coming-up-tag">Coming up</span>
+  <ul></ul>
+</aside>
+<script type="application/json" id="milestone-data">{{ collections.scheduleEntries | milestonesOnly | dump | safe }}</script>
 
 {% if customLayout %}
 <main id="main">
@@ -92,5 +100,6 @@
   <div class="site-footer-meta">{{ site.fullName }} · AY {{ site.year }}</div>
 </footer>
 
+<script src="/assets/schedule.js" defer></script>
 </body>
 </html>

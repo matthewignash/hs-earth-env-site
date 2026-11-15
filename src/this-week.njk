@@ -1,0 +1,38 @@
+---
+layout: layouts/base.njk
+title: This Week
+tagline: "This week and next, class by class: what happens, which page to use, and what is due."
+permalink: /this-week/
+breadcrumbs:
+  - { url: /, label: Home }
+  - { label: "This Week" }
+---
+{# Every week is in the page, so it works as the year calendar without JavaScript.
+   assets/schedule.js hides all but this week and next, and adds the toggle. #}
+
+<div class="prose">
+  <p>Units 0, 1 and 4 onward list two dates for each block, one for the A rotation and one for the B rotation. Your class follows one of them.</p>
+  {%- if not asRun.sessions[0].jayanthiA %}
+  <p>Units 2 and 3 show the dates for Mr. Matt's class. Ms. Jayanthi's classes: dates in Google Classroom.</p>
+  {%- endif %}
+  <p class="week-controls" hidden><button type="button" class="week-toggle" aria-pressed="false">Show the whole year</button></p>
+</div>
+
+{%- for week in collections.scheduleEntries | byWeek %}
+<section class="week" data-start="{{ week.start }}" aria-label="Week of {{ week.startLabel }}">
+  <h2 class="landing-h2"><span class="week-tag"></span>{{ week.startLabel }} to {{ week.endLabel }}</h2>
+  <ul class="week-list">
+    {%- for entry in week.entries %}
+    <li class="week-entry" data-date="{{ entry.date }}">
+      <div class="week-when">{{ entry.label }} · {{ entry.who }}</div>
+      <div class="week-title">{% if entry.url %}<a href="{{ entry.url }}">{{ entry.title }}</a>{% else %}{{ entry.title }}{% endif %}</div>
+      {%- if entry.pages %}
+      <div class="week-pages">Pages: {% for p in entry.pages %}<a href="{{ p.url }}">{{ p.label }}</a>{% if not loop.last %} · {% endif %}{% endfor %}</div>
+      {%- endif %}
+      {%- if entry.due %}<div class="week-due">{{ entry.due }}</div>{% endif %}
+      {%- if entry.milestone %}<a class="week-milestone" href="{{ entry.milestone.url }}">{{ entry.milestone.label }}</a>{% endif %}
+    </li>
+    {%- endfor %}
+  </ul>
+</section>
+{%- endfor %}

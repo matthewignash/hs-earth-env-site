@@ -1,4 +1,6 @@
 const asRun = require("./lib/as-run.js");
+const schedule = require("./lib/schedule.js");
+const rotationDays = require("./src/_data/rotationDates.json").days;
 
 module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy({ "src/assets": "assets" });
@@ -167,6 +169,23 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addFilter("unitHomeUrl", function (url) {
     return (String(url).match(/^\/units\/unit-\d+\//) || ["/units/"])[0];
   });
+
+  // Every dated class meeting, for This Week, the Home card and the Coming Up
+  // strip (lib/schedule.js). As-run pages are left out here: their sessions carry the dates.
+  eleventyConfig.addCollection("scheduleEntries", function (api) {
+    const ordered = api.getAll().filter(isTeachingBlock).sort(function (a, b) {
+      return (a.data.unit - b.data.unit) || (a.data.block - b.data.block);
+    });
+    const rows = ordered.filter(function (p) { return !(p.data.asRun || {}).inClass; }).map(function (p) {
+      return {
+        unit: p.data.unit, meeting: meetingNumber(ordered, p), url: p.url, title: p.data.title,
+        label: "Block " + (p.data.blockLabel || p.data.block), assessment: p.data.scheduleTag || ""
+      };
+    });
+    return schedule.entries(rows, function (meeting) { return dayFor(rotationDays, meeting); });
+  });
+  eleventyConfig.addFilter("byWeek", schedule.weeks);
+  eleventyConfig.addFilter("milestonesOnly", schedule.milestones);
 
   eleventyConfig.addFilter("forUnit", function (rows, unit) {
     return rows.filter(function (r) { return r.unit === unit; });

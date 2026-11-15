@@ -1,0 +1,83 @@
+/* Coming Up strip, Home "next block" card and This Week (assets/schedule.js). */
+
+.coming-up {
+  background: var(--primary-wash);
+  border-bottom: 1px solid var(--line);
+  padding: var(--s2) var(--s4);
+  font-size: var(--fs-small);
+}
+.coming-up-tag {
+  font-size: var(--fs-micro);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-quiet);
+}
+.coming-up ul { list-style: none; margin-top: var(--s1); }
+.coming-up li { display: flex; flex-wrap: wrap; gap: var(--s1) var(--s3); padding: 2px 0; }
+.coming-up-date { font-weight: 700; min-width: 6.5em; }
+.coming-up a { color: var(--primary-deep); font-weight: 600; }
+.coming-up-who { color: var(--ink-quiet); }
+.coming-up-in { margin-left: auto; color: var(--ink-quiet); }
+
+.next-block {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-left: 4px solid var(--primary);
+  border-radius: 8px;
+  padding: var(--s4);
+  margin-bottom: var(--s5);
+}
+.next-block-tag {
+  font-size: var(--fs-micro);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--primary-deep);
+  margin-bottom: var(--s2);
+}
+.next-block-row + .next-block-row { margin-top: var(--s3); padding-top: var(--s3); border-top: 1px solid var(--line); }
+.next-block-title { font-family: var(--font-head); font-weight: var(--head-weight); font-size: var(--fs-h3); line-height: 1.2; margin: var(--s1) 0; }
+.next-block-title a, .week-title a { color: var(--primary-deep); }
+.next-block-more { margin-top: var(--s3); font-weight: 600; }
+
+.week { margin-top: var(--s5); }
+.week-tag { color: var(--primary-deep); }
+.week-list { list-style: none; display: grid; gap: var(--s3); }
+.week-entry {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: var(--s3) var(--s4);
+}
+.week-when { font-size: var(--fs-small); color: var(--ink-quiet); font-weight: 600; }
+.week-title { font-weight: 700; font-size: var(--fs-lead); line-height: 1.3; }
+.week-pages, .week-due { font-size: var(--fs-small); margin-top: var(--s1); }
+.week-milestone {
+  display: inline-block;
+  margin-top: var(--s2);
+  padding: 2px var(--s2);
+  border-radius: 4px;
+  background: var(--primary-wash);
+  color: var(--primary-deep);
+  font-size: var(--fs-small);
+  font-weight: 700;
+  text-decoration: none;
+}
+.week-toggle {
+  font: inherit;
+  font-weight: 600;
+  padding: var(--s2) var(--s3);
+  border: 1px solid var(--primary);
+  border-radius: 6px;
+  background: var(--surface);
+  color: var(--primary-deep);
+  cursor: pointer;
+}
+.week-toggle:hover { background: var(--primary-wash); }
+
+/* On a phone the strip is one line of text: the next date only. */
+@media (max-width: 640px) {
+  .coming-up li:nth-child(n+2), .coming-up-who { display: none; }
+  .coming-up-date { min-width: 0; }
+}
