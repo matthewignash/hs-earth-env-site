@@ -2,7 +2,49 @@
 
 > **Purpose:** Living status doc. Tells you (and future Claude Code sessions) what's built, what's stubbed, what to build next, and in what order. The charter is in `CLAUDE.md` — do NOT modify that. Update this file at the end of each build session.
 
-**Last updated:** 2026-09-17 (Addenda 3–52 below. U0–U6 complete; U7 is next.)
+**Last updated:** 2026-11-15 (U2 and U3 replan on branch `replan-nov-dec-2026`. Addenda 3–52 below. U0–U6 complete; U7 is next.)
+
+### 2026-11-15: Unit 2 and Unit 3 rebuilt as run in Nov-Dec 2026 (branch `replan-nov-dec-2026`, not pushed, not deployed)
+
+Brief: `../Nov-Dec 2026 Replan (U2 and U3)/5 - Site Update Prompt (Claude Code).md`. **The copy saved on disk was built, not the older copy that was pasted into the session.** The two disagreed (two Unit 3 pages against three; two finished videos against eight). Matt chose the saved file.
+
+**What changed**
+
+- **Schedule (Phase 1).** `notRun: true` on U2 Blocks 5 to 9, U3 Blocks 4 to 12, the two old U3 assessment pages and the City Builder page. A `notRun` page leaves `teachingBlocks`, `unitSchedule` and `standardsBlocks`, still builds at its URL, shows a banner (`partials/not-run-banner.njk`) and shows no date and no notebook cue. `src/_data/asRun.json` holds sessions R0 to R8, each a meeting number read from the `b` column of `rotationDates.json` with no slips. `lib/as-run.js` turns a session code into a date or a label. The seven kept pages carry `asRun: { home, inClass }` frontmatter, and the block header, landing cards, unit calendar, unit span and notebook cue read it. One new `ROTATION_SLIPS` entry (`fromMeeting: 27, a: 7, b: 8`) puts U4 Block 1 on `A: Wed Jan 6 · B: Thu Jan 7`. The last built block (U6 Block 10) still has a date.
+- **Read or watch, then one task (Phase 2).** U2 Blocks 1 to 4 and U3 Blocks 1 to 3: the Concepts grid holds one Read card and one Watch card, the four-choice board is gone, and Do is one `task`, one `support`, one `extend`. `partials/local-video.njk` plays a file from `src/_data/videos.json` with the browser's own player, captions on, no JavaScript. Eight videos, about 80 MB, are in `src/assets/video/`.
+- **Checkpoints and the Landscape Reading (Phase 3).** Checkpoint callouts on U2 Block 2, U2 Block 4 and the Landscape Reading page (`u2-cp1` to `u2-cp3`). The Landscape Reading page is now the short form from file 3. The old page is `assessment-landscape-reading-full.njk`, `notRun`, linked once from the bottom of the new one. The pending text in `submit-link.njk` now reads "link posted in Google Classroom".
+- **Semester 1 final (Phase 4).** New page `unit-3/assessment-one-event-one-boundary.njk` from file 4: task sheet, nine event cards, vocabulary quiz section, stretch, rubric.
+- **Landings and cross-references (Phase 5).** Both unit landings rewritten with a sequence table built from `asRun.json`. Old blocks sit in one "full-length unit" disclosure. `standardsCatalog.json` reworded for nine standards.
+- **Assets (Phase 6).** `src/assets/img/u2/CREDITS.md`, `src/assets/img/u3/CREDITS.md`, and a "U2 and U3 replan media" entry in `MEDIA_REVIEW.md`.
+
+**New link ids, all empty in `classroomLinks.json`:** `u2-cp1`, `u2-cp2`, `u2-cp3`, `u3-t1-check`, `u3-t2-check`, `u3-vocab-quiz`, `s1-poster`.
+
+**Extended beyond the brief, and why**
+
+- **Gate rule C10.** The line "Pick one: the reading or the video" now fails the build unless the grid holds exactly one Read card and one `local-video` include. Without it the gate could not see the Watch card at all, because it is an include. Tested by deleting a video include: the build failed.
+- **`asRun.inClass`, not `asRun`, is what templates test.** A page's `asRun` frontmatter and the `asRun.json` data file share a name, so a bare `{% if asRun %}` was true on every page in the site and replaced every block's dates. Caught on the first build.
+- **`submit-link.njk` takes an optional `pending` label**, so a checkpoint or self-check does not read "Submit via Google Classroom".
+- **Bell ringers removed from U3 Blocks 2 and 3.** Both pages are done at home and their class (R5) opens with the vocabulary quiz, so "start here while attendance happens" was untrue. The same prompts are now "Predict first" and "Recall first" callouts above the task.
+- **U3 kept pages show their take-home label** through `blockLabel` ("Block 1 (Take-home 1)"), which also reaches the notebook cue.
+- **U3 Block 3 gained `HS-ESS2-1`** when `HS-ETS1-1` came off, so the page still names the standard its content serves.
+- **Unit 2 landing loads `block-page.css`** so the kickoff video card is styled there.
+- **American spelling** on touched lines: harbour to harbor (U2 Block 4, one catalog entry).
+- **Knock-on fixes:** `units/index.njk`, `foundations/standards-map.njk` (Unit 3 row), `foundations/the-rubric.njk`, `foundations/for-parents.njk`, `foundations/class-expectations.njk`, `foundations/eal/u3.njk`, `foundations/eal/index.njk`, `foundations/eal/teacher-guide.njk`, `student-hub/how-to-submit.njk` (U3 rows replaced, Landscape Reading row added), `ai-partners/field-geologist.njk`, `ai-partners/index.njk`, `ai-partners/engineering-coach.njk`, `ai-partners/plate-tectonics-tutor.njk`, `reference/index.njk`, `reference/library.njk`, `reference/simulator-hub/index.njk`, `reference/case-studies/tohoku-2011.njk`, `reference/glossary/liquefaction.njk`. Unit 2 landing: the Defense Practice Partner card is removed, because the short form has no share-out.
+
+**Left alone on purpose**
+
+- Worked examples that mention a "hazard profile" or an Engineering Portfolio defense: `ai-partners/defense-practice-partner.njk`, `foundations/ai-documentation-protocol.njk`, `foundations/defending-your-work.njk`, and two example sentences in `foundations/eal/vocabulary.njk`. They are examples of a move, not statements about this year.
+- The Unit 3 anchor question and its Conceptual and Debatable guiding questions still speak about building and budgets. The source files give no replacement, so only the Factual question was trimmed.
+
+**Missing from the source files, or needing Matt**
+
+1. **Eight of the nine Case Study Library cards are not on the site.** `/reference/case-studies/` has Tōhoku live and eight "Coming soon" stubs. The task sheet and U3 Block 2 both send students to the library for their event. The cards exist in `Unit 3_ Assessment Support/` and need posting in Google Classroom or building as pages.
+2. **Ms. Jayanthi's dates.** `jayanthiA` and `jayanthiB` are null on every session. Fill them with meeting numbers and every label changes.
+3. **The two Cooum sources** have not been read by Matt. Both loaded.
+4. **The Pallikaranai worked example** has no link on the site, so the new Landscape Reading page does not link it. It appears only in file 3's teacher notes.
+5. **Credits file names a file that does not exist.** `site-assets/img/CREDITS-images.md` says `u2-r2-chennai-harbor-s2cloudless-2016.jpg`; the file is `u2-chennai-harbor-s2cloudless-2016.jpg`. The site uses the real name.
+6. **Task sheets in files 3 and 4** type dates. The site computes them. The one that matters: the poster-week decision note about Fri Dec 4 in the older draft is moot, since R5 is Thu Dec 3 from the rotation.
+7. **No person has watched the eight videos end to end on the site.** The browser check proves each loads at 1920 x 1080, plays, and shows its captions track.
 
 ### 2026-10-27: U2 textbook and resources pass (+ Earle figures for B1 and B4)
 
