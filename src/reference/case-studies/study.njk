@@ -1,0 +1,62 @@
+---
+layout: layouts/base.njk
+pagination:
+  data: caseStudies
+  size: 1
+  alias: study
+permalink: "/reference/case-studies/{{ study.slug }}/"
+eleventyComputed:
+  title: "{{ study.title }}"
+  tagline: "{{ study.tagline }}"
+  breadcrumbs:
+    - { url: /, label: Home }
+    - { url: /reference/, label: Reference }
+    - { url: /reference/case-studies/, label: "Case Study Library" }
+    - { label: "{{ study.short }}" }
+---
+{# One page per entry in src/_data/caseStudies.json. The text is lifted from
+   "U3 Material: Case Study Library" (Unit 3_ Assessment Support). The Tōhoku
+   page predates this template and is its own file. #}
+
+<div class="prose">
+
+<h2>Event facts</h2>
+<table>
+  <tbody>
+    {%- for fact in study.facts %}
+    <tr><th scope="row">{{ fact[0] }}</th><td>{{ fact[1] }}</td></tr>
+    {%- endfor %}
+  </tbody>
+</table>
+
+<h2>What happened</h2>
+<p>{{ study.happened }}</p>
+
+<h2>What was learned</h2>
+<p>{{ study.learned }}</p>
+
+<h2>What people changed afterward</h2>
+<p>{{ study.changed }}</p>
+
+<h2>Primary sources for deeper study</h2>
+<ul>
+  {%- for source in study.sources %}
+  <li>{{ source }}</li>
+  {%- endfor %}
+</ul>
+
+<div class="callout warn">
+  <div class="callout-title">What AI may get wrong about this event</div>
+  <p>{{ study.ai }}</p>
+</div>
+
+<h2>OPVL of this page</h2>
+<p>This card is a source too, so here is its OPVL. Use the same format for any source you cite.</p>
+<ul>
+  <li><strong>Origin:</strong> AISC teacher-built reference (Ms. Jayanthi/Mr. Matt, 2026), drawing on USGS + Smithsonian + named peer-reviewed sources + news of record from the year of the event.</li>
+  <li><strong>Purpose:</strong> To support student learning of plate-boundary hazards in Unit 3.</li>
+  <li><strong>Value:</strong> Useful for quick context, as evidence on your poster for <a href="/units/unit-3/assessment-one-event-one-boundary/">One Event, One Plate Boundary</a>, and as cross-source <a href="/foundations/opvl-framework/">OPVL</a> practice.</li>
+  <li><strong>Limitations:</strong> Simplified for a high school audience; specific figures (body counts, magnitudes) may be revised in current sources. Always check primary sources before citing specific numbers in your work.</li>
+</ul>
+
+</div>

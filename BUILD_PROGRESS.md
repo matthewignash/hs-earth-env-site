@@ -38,7 +38,11 @@ Brief: `../Nov-Dec 2026 Replan (U2 and U3)/5 - Site Update Prompt (Claude Code).
 
 **Missing from the source files, or needing Matt**
 
-1. **Eight of the nine Case Study Library cards are not on the site.** `/reference/case-studies/` has Tōhoku live and eight "Coming soon" stubs. The task sheet and U3 Block 2 both send students to the library for their event. The cards exist in `Unit 3_ Assessment Support/` and need posting in Google Classroom or building as pages.
+1. ~~Eight of the nine Case Study Library cards are not on the site.~~ **Built the same day.** `src/_data/caseStudies.json` holds the eight cards and `reference/case-studies/study.njk` paginates one page per entry. Text is lifted from "U3 Material: Case Study Library". The library index lists all nine, and the nine event cards on the poster page link to them.
+   - Dropped from each card: "Used in U3 scenarios" (simulator), and the Engineering Portfolio wording in the OPVL and AI notes, which now names the poster.
+   - **Kobe's setting needs a decision.** The card says "Transform: strike-slip on the Nojima Fault". File 4's event table says "Fault beneath a city, near a subduction zone". The page shows both under the label "Setting", and "near-fault transform earthquakes" became "near-fault strike-slip earthquakes".
+   - Primary sources are names only, as in the card file. None has a link.
+   - The Tōhoku page still carries a visible "Placeholder" photo callout and its simulator section. It was left as it was.
 2. **Ms. Jayanthi's dates.** `jayanthiA` and `jayanthiB` are null on every session. Fill them with meeting numbers and every label changes.
 3. **The two Cooum sources** have not been read by Matt. Both loaded.
 4. **The Pallikaranai worked example** has no link on the site, so the new Landscape Reading page does not link it. It appears only in file 3's teacher notes.

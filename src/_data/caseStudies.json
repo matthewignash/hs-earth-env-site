@@ -1,0 +1,428 @@
+[
+ {
+  "slug": "sumatra-andaman-2004",
+  "short": "Sumatra-Andaman 2004",
+  "title": "Sumatra-Andaman earthquake and Indian Ocean tsunami: 26 December 2004",
+  "tagline": "The megathrust event that triggered the deadliest tsunami in recorded history.",
+  "card": "M9.1 megathrust + Indian Ocean tsunami. ~230,000 dead. Why early warning has to exist BEFORE the disaster.",
+  "facts": [
+   [
+    "Date",
+    "26 December 2004, 07:58 local time"
+   ],
+   [
+    "Location",
+    "Off the west coast of northern Sumatra, Indonesia"
+   ],
+   [
+    "Magnitude",
+    "M9.1 (Mw), the third-largest earthquake ever recorded by seismograph"
+   ],
+   [
+    "Depth",
+    "30 km below sea floor"
+   ],
+   [
+    "Plate boundary",
+    "Convergent: Indian Plate subducting beneath the Burma Plate, along the Sunda Trench"
+   ],
+   [
+    "Rupture length",
+    "~1,300 km of fault, one of the longest ever recorded"
+   ],
+   [
+    "Countries affected by the tsunami",
+    "14 directly: Indonesia, Sri Lanka, India, Thailand, Maldives, Somalia, Myanmar, Malaysia, Tanzania, Bangladesh, Kenya, South Africa, Seychelles, Madagascar"
+   ],
+   [
+    "Casualties",
+    "~230,000-280,000 dead across 14 countries (with substantial reporting uncertainty)"
+   ],
+   [
+    "Most affected",
+    "Aceh province, Indonesia: ~170,000 dead; Sri Lanka: ~35,000 dead; India: ~16,000 dead (mostly Tamil Nadu coast + Andaman/Nicobar islands)"
+   ]
+  ],
+  "happened": "Megathrust rupture along the Sunda Trench triggered an Indian Ocean tsunami. Waves traveled at jet-aircraft speeds across the open ocean, reaching distant coasts within hours. NO Indian Ocean tsunami warning system existed at the time: the Pacific had one but the Indian Ocean was considered low-risk. People on coasts had no warning. Run-up heights reached >30 m in places, sweeping inland for kilometers. The tsunami affected Tamil Nadu, including coastal areas near Chennai. Mahabalipuram's coast was substantially affected; the tsunami exposed previously-buried Pallava-era underwater structures.",
+  "learned": "Early warning systems matter, and they have to exist BEFORE the disaster, not after. The Indian Ocean Tsunami Warning System was built in the years following 2004; it's been activated multiple times since. The event also demonstrated that tsunamis are trans-oceanic events: a tsunami in Sumatra killed people in East Africa. Cross-border disaster preparation became a policy priority across the Indian Ocean basin.",
+  "changed": "Post-2004, multi-country investment in tsunami warning + evacuation infrastructure across the Indian Ocean. Tamil Nadu specifically built early-warning capabilities + raised seawalls in some segments. Building codes in coastal Tamil Nadu (and Chennai's coastal areas specifically) revised to require coastal-zone considerations.",
+  "sources": [
+   "USGS event page: \"M9.1, 2004 Sumatra-Andaman earthquake\"",
+   "Indian National Centre for Ocean Information Services (INCOIS) post-event analyses",
+   "NOAA tsunami archive",
+   "Various international reconnaissance reports (Australia, Indonesia, India)"
+  ],
+  "ai": "AI sources often give imprecise casualty figures: the death toll varies across sources from ~230,000 to ~280,000+ depending on whether missing persons are counted and which countries are included. AI may also describe \"the tsunami\" without specifying that Aceh's situation was uniquely devastating (closest to epicenter, no warning, fully exposed coastline). For specific country impacts, consult that country's official reports."
+ },
+ {
+  "slug": "alaska-1964",
+  "short": "Great Alaska 1964",
+  "title": "Great Alaska earthquake (Anchorage and Seward): 27 March 1964",
+  "tagline": "The second-largest earthquake ever recorded, and the liquefaction story.",
+  "card": "M9.2: second-largest quake ever recorded. The canonical case for liquefaction and lateral spreading.",
+  "facts": [
+   [
+    "Date",
+    "27 March 1964, 17:36 Alaska Standard Time"
+   ],
+   [
+    "Location",
+    "Northern Prince William Sound, Alaska, USA"
+   ],
+   [
+    "Magnitude",
+    "M9.2, the second-largest earthquake ever recorded by instrumentation (only the 1960 Valdivia earthquake at M9.5 was larger)"
+   ],
+   [
+    "Depth",
+    "~25 km below sea floor"
+   ],
+   [
+    "Plate boundary",
+    "Convergent: Pacific Plate subducting beneath the North American Plate"
+   ],
+   [
+    "Rupture length",
+    "~800 km along the subduction interface"
+   ],
+   [
+    "Casualties",
+    "~131 dead (relatively low for a M9.2: sparsely populated affected region)"
+   ],
+   [
+    "Tsunami",
+    "Tsunamis devastated Seward, Valdez, and Kodiak; reached the California coast"
+   ]
+  ],
+  "happened": "Megathrust rupture along the Aleutian-Alaska subduction zone. Vertical ground displacement of up to 11 m + horizontal of up to 20 m. In Anchorage, the Turnagain Heights neighborhood, built on saturated marine clay (Bootlegger Cove clay), flowed downhill in massive landslides; entire blocks of homes simply slid into Cook Inlet. The liquefaction + lateral spreading phenomenon was scientifically characterized for the first time at scale here. Tsunamis devastated Seward, Valdez, and Kodiak, and triggered the longest tsunami response coordination in U.S. history.",
+  "learned": "Liquefaction and lateral spreading on soft soils are as dangerous as the shaking itself. Don't build on saturated clay or fill in subduction-zone country. The Anchorage event drove fundamental research on soil mechanics + earthquake-induced landslides. Modern building codes for subduction-zone regions specifically address liquefaction potential. The event also drove development of the U.S. Pacific Tsunami Warning System.",
+  "changed": "Post-1964 Alaska codes were substantially revised. Anchorage's Turnagain Heights area was rebuilt under new codes; some areas were never rebuilt. The event's lessons on subduction-zone hazards inform current Cascadia subduction zone preparation in the Pacific Northwest (Oregon, Washington, British Columbia).",
+  "sources": [
+   "USGS event page: \"M9.2, 1964 Great Alaska earthquake\"",
+   "USGS Bootlegger Cove clay study (geotechnical foundational document)",
+   "EERI 1964 reconnaissance reports",
+   "NOAA Pacific Tsunami Warning Center historical archive"
+  ],
+  "ai": "AI sources may understate the importance of the Anchorage liquefaction story: it's the foundational case study for understanding earthquake-induced landslides on saturated soils. The Turnagain Heights destruction is THE example to cite when arguing about soil type in subduction-zone cities. AI may also conflate the 1964 Alaska event with the 1960 Valdivia (Chile) earthquake: different events, different magnitudes."
+ },
+ {
+  "slug": "kobe-1995",
+  "short": "Kobe 1995",
+  "title": "Great Hanshin (Kobe) earthquake: 17 January 1995",
+  "tagline": "The urban earthquake that rewrote Japan's seismic building code.",
+  "card": "M6.9 strike-slip beneath the city. 6,000+ dead. Why \"earthquake-resistant\" codes failed.",
+  "facts": [
+   [
+    "Date",
+    "17 January 1995, 05:46 JST"
+   ],
+   [
+    "Location",
+    "Beneath Kobe + nearby Awaji Island, Hyōgo Prefecture, Japan"
+   ],
+   [
+    "Magnitude",
+    "M6.9 (Mw)"
+   ],
+   [
+    "Depth",
+    "~16 km below surface"
+   ],
+   [
+    "Setting",
+    "Strike-slip on the Nojima Fault (part of the broader Median Tectonic Line system): a fault beneath a city, near a subduction zone"
+   ],
+   [
+    "Maximum intensity",
+    "JMA scale 7 (highest level on Japan's intensity scale at the time)"
+   ],
+   [
+    "Casualties",
+    "~6,434 dead, ~43,792 injured"
+   ],
+   [
+    "Displaced",
+    "~300,000 evacuees at peak"
+   ],
+   [
+    "Economic damage",
+    "~US$100 billion (then-current dollars)"
+   ],
+   [
+    "Buildings destroyed",
+    "~152,000 (full collapse + severe damage)"
+   ]
+  ],
+  "happened": "Strike-slip rupture directly beneath Japan's second-largest port city. The Hanshin Expressway, a \"modern\" elevated highway, collapsed onto its side over a ~600 m stretch. Many \"earthquake-resistant\" buildings failed because their codes (pre-1981) accounted for vertical loads but underestimated horizontal forces from near-fault directivity. Old wooden homes burned in post-quake fires. The Kobe port, Japan's busiest at the time, was substantially damaged, disrupting Japan's economy for months. Most casualties were elderly residents in older wooden homes; the elevated-highway collapse killed truck drivers + early commuters.",
+  "learned": "Earthquake engineering is only as good as the assumptions in the code. Kobe demonstrated that Japan's pre-1981 building codes, which dominated the building stock, were inadequate for near-fault strike-slip earthquakes. Kobe rewrote Japan's seismic code; later quakes (Tōhoku 2011) saw far better building performance because of what Kobe taught. The event also demonstrated that older infrastructure (highways, port facilities) needs continuous retrofit, not just new-build compliance with current codes.",
+  "changed": "Post-Kobe, Japan launched a massive retrofit program for pre-1981 buildings + infrastructure. Base isolation systems (which decouple buildings from ground motion) became more widely adopted. The event also drove research into near-fault ground-motion modeling: the directivity effects observed at Kobe weren't well-understood before.",
+  "sources": [
+   "USGS event page: \"M6.9, Kobe earthquake 1995\"",
+   "Japan Meteorological Agency post-event report",
+   "Nakamura (1995), early seismological analysis",
+   "Comartin et al. (1995), EERI reconnaissance report",
+   "Various Japanese government white papers on post-Kobe code revision"
+  ],
+  "ai": "AI sources may understate the magnitude of the building-code failure. Kobe wasn't just \"unlucky\": it exposed systematic underestimation of near-fault ground motion in Japan's code. AI may also conflate Kobe with later urban earthquakes (Chi-Chi 1999, Christchurch 2011); each has distinct lessons. For the code-revision history specifically, look at Japanese government sources."
+ },
+ {
+  "slug": "bhuj-2001",
+  "short": "Bhuj 2001",
+  "title": "Bhuj (Gujarat) earthquake: 26 January 2001",
+  "tagline": "The intraplate quake that exposed building-code enforcement failures.",
+  "card": "M7.7 intraplate quake. 20,000+ dead. The case for building-code enforcement.",
+  "facts": [
+   [
+    "Date",
+    "26 January 2001, 08:46 IST (India's Republic Day)"
+   ],
+   [
+    "Location",
+    "Near Bhuj, Kutch district, Gujarat state, India"
+   ],
+   [
+    "Magnitude",
+    "M7.7 (Mw)"
+   ],
+   [
+    "Depth",
+    "~16 km below surface"
+   ],
+   [
+    "Plate boundary",
+    "INTRAPLATE: not on a plate boundary. Reactivated ancient fault within the Indian Plate, ~400 km from the nearest active boundary"
+   ],
+   [
+    "Casualties",
+    "~20,085 dead (Indian government), with estimates ranging higher in some sources"
+   ],
+   [
+    "Injured",
+    "~167,000"
+   ],
+   [
+    "Displaced",
+    "~600,000+"
+   ],
+   [
+    "Buildings damaged",
+    "~340,000 collapsed; ~860,000 damaged"
+   ]
+  ],
+  "happened": "An intraplate earthquake of unusual magnitude: the reactivation of an ancient fault buried beneath thick sediments. Building collapse was widespread across Gujarat, particularly in cities like Ahmedabad, ~250 km from the epicenter, where poorly-reinforced concrete-frame apartments with \"soft story\" ground floors (open parking) pancaked. The death toll in distant Ahmedabad reflected building-quality issues, not seismic intensity: buildings were not designed for the shaking they received because the area had been considered low-risk.",
+  "learned": "Hazard isn't only at plate boundaries. Intraplate earthquakes happen, and when they hit unprepared regions the consequences are catastrophic. Post-Bhuj, India strengthened building code enforcement, though unevenly across states. The event also demonstrated the \"soft story\" problem: open parking on the ground floor of multi-story buildings creates a structural weak point that pancakes during earthquakes. This lesson recurs in subsequent earthquakes globally.",
+  "changed": "Bhuj exposed the gap between building codes (which India had) and enforcement (which was patchy). The reconstruction of Bhuj itself became a case study in earthquake-resilient rebuilding; the city was rebuilt with seismic-resilient design as the default. National building code revisions followed. Gujarat established a State Disaster Management Authority that became a model for other Indian states.",
+  "sources": [
+   "USGS event page: \"M7.7, Gujarat earthquake 2001\"",
+   "EERI (Earthquake Engineering Research Institute) reconnaissance report",
+   "Indian Meteorological Department reports",
+   "Geological Survey of India studies of Kutch tectonics"
+  ],
+  "ai": "AI sources sometimes describe Bhuj as a \"plate boundary earthquake\". It's not: it's intraplate. This matters because the lesson generalizes differently: plate-boundary earthquakes are expected and locations are known; intraplate earthquakes happen where they're not anticipated. AI may also conflate the death toll across different official + unofficial estimates."
+ },
+ {
+  "slug": "tangshan-1976",
+  "short": "Tangshan 1976",
+  "title": "Tangshan earthquake: 28 July 1976",
+  "tagline": "The urban catastrophe that exposed total unpreparedness.",
+  "card": "M7.6 intraplate. Official 240,000+ dead. The price of unprepared cities.",
+  "facts": [
+   [
+    "Date",
+    "28 July 1976, 03:42 China Standard Time"
+   ],
+   [
+    "Location",
+    "Tangshan, Hebei Province, China (eastern China)"
+   ],
+   [
+    "Magnitude",
+    "M7.6 (Mw)"
+   ],
+   [
+    "Depth",
+    "~15-19 km"
+   ],
+   [
+    "Plate boundary",
+    "INTRAPLATE: within the Eurasian Plate, ~1,000 km from active plate boundaries"
+   ],
+   [
+    "Casualties (official)",
+    "~240,000 dead, the official Chinese government figure"
+   ],
+   [
+    "Casualties (some estimates)",
+    "Up to ~700,000: some Western seismologists estimate higher"
+   ],
+   [
+    "Buildings destroyed",
+    "~85% of the city's residential buildings"
+   ]
+  ],
+  "happened": "The 1976 Tangshan earthquake remains one of the deadliest natural disasters of the 20th century. The city had almost no earthquake-resistant construction: most residential buildings were unreinforced masonry. The event hit at night when most people were asleep + indoors, maximizing casualties. The city of Tangshan (population ~1 million at the time) was effectively destroyed. China's recovery + reconstruction effort was massive but slow.",
+  "learned": "Unprepared cities pay catastrophic prices. Modern China's much stronger seismic codes were partially driven by the lessons of Tangshan. The event also demonstrated the consequences of intraplate seismic risk being underestimated: Tangshan wasn't on anyone's high-risk list before 1976. Subsequent Chinese seismology has identified many similar intraplate faults across northern China.",
+  "changed": "Post-Tangshan, China invested heavily in seismic resilience for both new construction + retrofit of existing buildings. The 2008 Sichuan earthquake (M8.0) demonstrated both progress (modern buildings performed better) and limits (school buildings in particular failed catastrophically, exposing enforcement gaps).",
+  "sources": [
+   "USGS historical earthquakes archive, Tangshan 1976 entry",
+   "Chen et al. studies of the Tangshan rupture",
+   "Chinese seismology references (some only in Chinese)",
+   "EERI historical reconnaissance reports"
+  ],
+  "ai": "Casualty figures for Tangshan are politically + historically contested. The official Chinese figure of 240,000 has been challenged by some Western seismologists who estimate higher; the actual figure is genuinely uncertain. AI may give one figure with false confidence. Be explicit about the uncertainty range."
+ },
+ {
+  "slug": "pinatubo-1991",
+  "short": "Pinatubo 1991",
+  "title": "Pinatubo eruption: 15 June 1991",
+  "tagline": "The second-largest volcanic eruption of the 20th century, but evacuation saved tens of thousands of lives.",
+  "card": "VEI 6 eruption. ~800 dead, but tens of thousands saved by acting on early warnings.",
+  "facts": [
+   [
+    "Date",
+    "Climactic eruption: 15 June 1991 (preceded by weeks of escalating activity)"
+   ],
+   [
+    "Location",
+    "Mount Pinatubo, Luzon, Philippines"
+   ],
+   [
+    "VEI",
+    "6 (the second-largest 20th-century eruption; only El Chichón 1982 + Novarupta 1912 are comparable)"
+   ],
+   [
+    "Volcano type",
+    "Stratovolcano: a composite cone of the kind that produces pyroclastic flows + lahars"
+   ],
+   [
+    "Plate boundary",
+    "Convergent: Philippine Sea Plate subducting beneath the Sunda Plate"
+   ],
+   [
+    "Casualties (direct)",
+    "~800 deaths, most from roof collapses under ash + heavy rain (Typhoon Yunya hit during the eruption)"
+   ],
+   [
+    "Casualties (indirect, longer-term)",
+    "Several thousand additional from lahars + disease in displaced populations"
+   ],
+   [
+    "Displaced",
+    "~200,000 evacuated in advance"
+   ],
+   [
+    "Global climate effect",
+    "Stratospheric aerosols cooled global temperatures by ~0.5°C for 1-2 years"
+   ]
+  ],
+  "happened": "Mount Pinatubo had been dormant for ~500 years and was widely considered extinct. Sustained earthquake swarms + small steam eruptions in April-May 1991 triggered Philippine Institute of Volcanology and Seismology (PHIVOLCS) + USGS collaboration. Joint monitoring + risk assessment led to the largest pre-emptive volcanic evacuation in modern history. Clark Air Base and Subic Bay Naval Base, major U.S. military facilities, were evacuated before the climactic eruption. The June 15 eruption coincided with Typhoon Yunya hitting Luzon, dropping heavy rain that mixed with ash to create roof-collapsing wet deposits. Approximately 800 direct casualties occurred, but tens of thousands of additional lives were saved by the evacuation. Lahars (volcanic mudflows) continued to threaten the region for years.",
+  "learned": "Volcanology + early warning + acting on warnings = lives saved. Pinatubo is THE positive case study: when you have monitoring, scientific judgment, and political will to evacuate, mass casualty events become survivable. Pyroclastic flows are unsurvivable up close; distance + advance evacuation is the only defense. The 200,000 people who were evacuated before June 15 are the population whose lives were saved.",
+  "changed": "Pinatubo is also a case study in volcano monitoring technology + scientific judgment. The decision to recommend evacuation came from a combination of seismic monitoring, gas measurements, ground deformation observations, and expert judgment; none of these alone would have been sufficient. The event also drove subsequent investment in global volcano monitoring (especially for under-monitored volcanoes in developing countries).",
+  "sources": [
+   "USGS Pinatubo case study (extensive: USGS co-led the response)",
+   "PHIVOLCS (Philippine Institute of Volcanology and Seismology) post-event documentation",
+   "Smithsonian Global Volcanism Program",
+   "Newhall + Punongbayan (1996), Fire and Mud (book-length monograph on the event)"
+  ],
+  "ai": "AI sources often understate the role of advance evacuation in Pinatubo's relatively low casualty count. The framing matters: Pinatubo wasn't a \"lucky\" small eruption. It was a massive eruption where good science + good response prevented catastrophe. The contrast between Pinatubo (warned) and Pompeii (not warned) is the strongest argument for monitoring + early warning investment."
+ },
+ {
+  "slug": "merapi-2010",
+  "short": "Merapi 2010",
+  "title": "Merapi eruption sequence: October to November 2010",
+  "tagline": "Even with sophisticated monitoring, the closest residents face an unsurvivable hazard.",
+  "card": "Pyroclastic flows to 17 km. ~350 dead. The hard question is convincing people to leave.",
+  "facts": [
+   [
+    "Date",
+    "Climactic eruptions: 26 October to 5 November 2010"
+   ],
+   [
+    "Location",
+    "Mount Merapi, central Java, Indonesia (~30 km from Yogyakarta)"
+   ],
+   [
+    "VEI",
+    "4"
+   ],
+   [
+    "Volcano type",
+    "Stratovolcano, one of the most active volcanoes in Indonesia"
+   ],
+   [
+    "Plate boundary",
+    "Convergent: Indo-Australian Plate subducting beneath the Sunda Plate"
+   ],
+   [
+    "Casualties",
+    "~350 dead (most from pyroclastic flows that reached up to 17 km from summit)"
+   ],
+   [
+    "Displaced",
+    "~350,000+ evacuees from danger zones"
+   ],
+   [
+    "Pyroclastic flow reach",
+    "Up to 17 km, significantly farther than historical norms for Merapi"
+   ]
+  ],
+  "happened": "Merapi is one of the most-monitored volcanoes in Indonesia. The 2010 eruption sequence was anticipated by escalating monitoring data. Authorities ordered evacuation of villages within Merapi's traditional 7 km danger zone. The 2010 eruption was unusual: pyroclastic flows reached up to 17 km from the summit, far beyond the historical danger zone. Villages thought to be safely outside the danger zone were destroyed. The most prominent casualty was Mbah Maridjan, the volcano's spiritual guardian (juru kunci), who refused to evacuate. ~350 people died, mostly in the unexpected reach of pyroclastic flows. Lahars (volcanic mudflows) contaminated water supplies + destroyed villages downstream for years afterward.",
+  "learned": "Even with sophisticated monitoring, the closest \"danger zone\" residents face an unsurvivable hazard. The harder question isn't engineering: it's how authorities convince people to leave, AND how monitoring identifies the actual danger zone vs. the historical one. Merapi's 2010 reach was unprecedented in modern records, suggesting that historical hazard maps may underestimate worst-case scenarios. The Mbah Maridjan story (refusing to evacuate, dying in the eruption) highlights the cultural-religious dimensions of evacuation: not all people will leave on government orders.",
+  "changed": "Post-2010 Merapi monitoring + evacuation procedures revised. Indonesian authorities widened the standard exclusion zone for similar volcanoes. The lahars problem, which causes more long-term damage than the initial eruption, drove investment in sabo dams (sediment-control structures) to slow lahar progression.",
+  "sources": [
+   "BPPTKG (Indonesian Center for Volcanology and Geological Hazard Mitigation) Merapi monitoring data",
+   "Smithsonian Global Volcanism Program Merapi entry",
+   "Surono et al. (2012), The 2010 explosive eruption of Java's Merapi volcano (peer-reviewed)",
+   "Indonesian government post-event reviews"
+  ],
+  "ai": "AI sources often emphasize the Mbah Maridjan story but understate the systemic failure that the 2010 pyroclastic flows reached 17 km, well beyond the warning zone. This is a key lesson: hazard maps based on historical data may be inadequate for unusually large events. For Merapi specifically, BPPTKG (the Indonesian monitoring agency) is the authoritative source."
+ },
+ {
+  "slug": "pompeii-79",
+  "short": "Pompeii 79 CE",
+  "title": "Pompeii and Herculaneum: 24-25 August 79 CE",
+  "tagline": "The historical anchor for what happens without volcanic monitoring.",
+  "card": "Vesuvius. The case for volcanology itself: without the science, communities can't classify their hazards.",
+  "facts": [
+   [
+    "Date",
+    "24-25 August 79 CE (some scholars argue October-November 79 CE based on harvest evidence; debate ongoing)"
+   ],
+   [
+    "Location",
+    "Mount Vesuvius, Campania region, Italy"
+   ],
+   [
+    "VEI",
+    "5"
+   ],
+   [
+    "Volcano type",
+    "Stratovolcano"
+   ],
+   [
+    "Plate boundary",
+    "Convergent: African Plate subducting beneath the Eurasian Plate"
+   ],
+   [
+    "Casualties (estimates)",
+    "~2,000-16,000+, with substantial uncertainty given lack of contemporary census data"
+   ],
+   [
+    "Cities destroyed",
+    "Pompeii (buried in ~6 m of ash + pumice); Herculaneum (buried by pyroclastic flows that vaporized organic material)"
+   ]
+  ],
+  "happened": "Mount Vesuvius had been quiet for ~700 years before 79 CE. The Romans had no concept of \"active volcano\": Vesuvius was widely thought to be a normal mountain. The eruption began with a Plinian eruption column dropping ash + pumice on Pompeii (which buried slowly over a day). Herculaneum was hit by pyroclastic flows the next morning: superheated gas + rock avalanches that killed everything in their paths within minutes. Pompeii was covered in ~6 m of pyroclastic material; Herculaneum was buried under tens of meters. The dead are preserved as plaster casts (Pompeii) or carbonized remains (Herculaneum). Pliny the Younger's letters to Tacitus describe his uncle Pliny the Elder's death during the eruption, providing the earliest detailed eyewitness account of a major volcanic event.",
+  "learned": "Without the science of volcanology, communities can't even classify their hazards. Modern volcanology (the Volcanic Explosivity Index, magma chamber monitoring, satellite ground-deformation observation, gas chemistry) exists in part because of careful study of Vesuvius's deposits. Pompeii is the historical anchor for understanding what happens to communities that have no monitoring + no warning. The cities were destroyed not by chance but by absence of knowledge.",
+  "changed": "There was no engineering response in 79 CE: the science didn't exist. The lessons drawn from Pompeii informed centuries of subsequent volcanic study. Modern Vesuvius is one of the most-monitored volcanoes in the world. The Italian Civil Protection has detailed evacuation plans for the ~3 million people who live within Vesuvius's potential danger zone (Naples + surrounding areas).",
+  "sources": [
+   "Pliny the Younger's letters to Tacitus (primary historical source, ~110 CE)",
+   "Sigurdsson et al. (1985), detailed reconstruction of the eruption",
+   "Smithsonian Global Volcanism Program Vesuvius entry",
+   "Italian Civil Protection Vesuvius emergency planning documentation",
+   "Numerous archaeological + volcanological monographs"
+  ],
+  "ai": "AI sources sometimes treat the 79 CE event as well-documented in casualty terms. It wasn't. Casualty estimates range from ~2,000 to ~16,000+ depending on assumptions. AI may also conflate the Pompeii (ash-burial) and Herculaneum (pyroclastic-flow) destruction mechanisms: they were different. The recent academic debate about the date (August vs. October-November 79 CE) is worth acknowledging if dating matters to your analysis."
+ }
+]
