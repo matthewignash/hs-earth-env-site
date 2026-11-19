@@ -2,7 +2,29 @@
 
 > **Purpose:** Living status doc. Tells you (and future Claude Code sessions) what's built, what's stubbed, what to build next, and in what order. The charter is in `CLAUDE.md` — do NOT modify that. Update this file at the end of each build session.
 
-**Last updated:** 2026-11-15 (U2 and U3 replan on branch `replan-nov-dec-2026`. Addenda 3–52 below. U0–U6 complete; U7 is next.)
+**Last updated:** 2026-11-19 (C44 on branch `c44-field-geologist`, not pushed. Addenda 3–52 below. U0–U6 complete; U7 is next.)
+
+### 2026-11-19: C44 (branch `c44-field-geologist`, not pushed, not deployed)
+
+Brief: `../Claude Code Prompt - U2 Field Geologist, Rock Age Fix and R1 Materials (C44).md`. Session R1 (Thu 19 Nov) assigned the short-form Landscape Reading, handed out the printed task sheet and the weathering and erosion note guide, and launched the Field Geologist on Flint.
+
+**What changed**
+
+- **Mahabalipuram rock correction (Phase 1, must ship before Block 4 on Mon 23 Nov).** The Unit 2 pages called the rocks "Cretaceous-age granites" and, on the full-length page, "~1300-million-year-old granites". They are Precambrian charnockite and granite gneiss. Fixed in `block-4.njk` (Story), `assessment-landscape-reading-full.njk` (locations table and the "Be specific" example) and `assessment-landscape-reading.njk` (locations table now says "Very old rock", matching the printed handout).
+- **Field Geologist page (Phase 2).** Use window is now R1 to R4 via `sessionLabel`. New "Four things to know" list and a paragraph on the Location Data Cards, under the launch button. First example prompt replaced with the short-form Adyar prompt; second now says "I found a photo". Opening message, example exchange and closing documentation message unchanged (they match the Flint activity). Unit 2 landing card adds "It cannot see your images: describe first."
+- **Landscape Reading page (Phase 3).** Line under "When things happen" pointing to the printed copy and Classroom. Paragraph on the Location Data Cards after "You may propose another place". "Using AI" ends in a "Working with the Field Geologist" callout. **The "If you visit your location" section, with its Safety and Ethics list, is deleted:** no site visits this year. No other line on the page suggests visiting.
+- **Blocks 1 and 2 (Phase 4).** Block 1 task names the printed note guide and where to find it; Block 2 Do opens with "Keep using the printed note guide from Block 1. Part 2 is erosion." `powerSeeds` unchanged.
+
+**Phase 1 sweep** (`Cretaceous`, `Jurassic`, `1300-million`, `1300 million`, case-insensitive, outside `node_modules`, `_site` and `.git`): three hits, all about Mahabalipuram, all fixed.
+
+- `src/units/unit-2/block-4.njk:42` (Cretaceous)
+- `src/units/unit-2/assessment-landscape-reading-full.njk:90` (Cretaceous)
+- `src/units/unit-2/assessment-landscape-reading-full.njk:115` (1300-million)
+- No Unit 1 or Unit 3 geologic-time hits exist in the repo.
+
+**Left alone, worth a look:** `block-9.njk:114` (a `notRun` page) says "what brought the granites to Mahabalipuram". Not a sweep hit and not an age claim, but "granites" is looser than "granite gneiss".
+
+**`flintUrl` is still empty.** The brief arrived with the `PASTE_FLINT_ACTIVITY_LINK` placeholder unfilled, so the page shows "links coming soon". Set `flintUrl` in `src/ai-partners/field-geologist.njk` frontmatter to switch the button to "Launch on Flint".
 
 ### 2026-11-15: This Week, the Home "next block" card and the Coming Up strip (branch `replan-nov-dec-2026`)
 
