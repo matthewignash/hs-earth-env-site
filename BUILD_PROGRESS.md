@@ -2,7 +2,29 @@
 
 > **Purpose:** Living status doc. Tells you (and future Claude Code sessions) what's built, what's stubbed, what to build next, and in what order. The charter is in `CLAUDE.md` — do NOT modify that. Update this file at the end of each build session.
 
-**Last updated:** 2026-11-19 (C44 on branch `c44-field-geologist`, not pushed. Addenda 3–52 below. U0–U6 complete; U7 is next.)
+**Last updated:** 2026-11-23 (C45 on branch `c45-google-earth-b4`, not pushed. Addenda 3–52 below. U0–U6 complete; U7 is next.)
+
+### 2026-11-23: C45 (branch `c45-google-earth-b4`, not pushed, not deployed)
+
+Block 4's "Read the harbor" task is replaced by a Google Earth observation task, for session R2 (Mon 23 Nov). Story, Concepts, learning intention, success criteria, Checkpoint 2, Location locked and Reflect are unchanged.
+
+**The Google Earth project.** "EES Chennai Over Time (1985 to 2026)", set up by Mr. Matt on Mon 23 Nov. Shared view-only with AISC Staff and Students, so it opens only for AISC accounts. It has a Surface water layer and three markers in Map contents: Stop 1 (Chennai Port and Marina Beach coast), Stop 2 (Cooum River mouth) and Stop 3 (lakes and wetlands of south Chennai, on Pallikaranai Marsh). The page links the `@13.0913,80.2829` view URL, which opens on Stop 1 with the 31 Dec 1985 image showing. **Do not swap it for the Share-button link**, which opens zoomed out over Africa with historical imagery off. The link sits in the page, not in `classroomLinks.json`, because it is not a Classroom link.
+
+**What changed**
+
+- **Do (Phase 1).** New task callout "The task: Chennai from 1985 to now": open the project, close the popups, double-click Stop 1 then Stop 2, compare 1985 with the newest image, toggle Surface water, record two observations per stop. Prompts for each stop, a six-column observation table with four empty rows (plain `<table>`, styled by the existing `.block-section table` rule; it scrolls sideways below the mobile breakpoint), and a "Be a careful observer" list. Four observations, not six: R2 also carries Block 3 and Checkpoint 2.
+- **Support callout.** "Using the tools" paragraph (timeline buttons, Surface water, ruler, search fallback), then the Sentinel-2 harbor figure moved from the top of Do, unchanged, under "Lost? This labeled image shows the same stretch of coast, north up." The longshore drift paragraph, Earle Figure 17.1.8 and the CK-12 line are unchanged.
+- **Extend callout.** Stop 3 (Pallikaranai) is here, plus your own Landscape Reading location, plus the existing Mahabalipuram comparison.
+- **Show (Phase 2).** Submission is "Your observation table and screenshots": four observations, two per stop, each with a screenshot showing the image date. Submit id `u2-b4` unchanged.
+
+**Phase 3 sweep** (`Read the harbor`, `marked harbor image`, `harbor image`, `marked image`, `sand arrow`, `harbor walls`, plus every Block 4 mention in `unit-2/index.njk`, `asRun.json`, `how-to-submit.njk`, `this-week.njk`, `assessment-landscape-reading.njk`, `unitSpine.json`):
+
+- `src/units/unit-2/index.njk:85`: "Task: read the harbor." became "Task: Chennai from 1985 to now." Changed.
+- `src/_data/asRun.json` R2: `inClass` ("Rivers and coasts in Chennai. Location locked") and `due` ("Checkpoint 2, in class. Your location, with one reason") do not name the harbor task. Left alone.
+- `src/assets/img/u2/CREDITS.md:28` and the captions `u2-b4-coasts.en.vtt:166`, `u2-kickoff-chennai-coast.en.vtt:31`: "harbor walls" in history and narration, not the task. Left alone.
+- `how-to-submit.njk`, `this-week.njk`, `assessment-landscape-reading.njk`, `unitSpine.json`: no hits.
+
+**Ms. Jayanthi's sections.** If they already did the old harbor task, its wording is no longer on the site. Nothing in the repo records her R2 date.
 
 ### 2026-11-19: C44 (branch `c44-field-geologist`, not pushed, not deployed)
 
