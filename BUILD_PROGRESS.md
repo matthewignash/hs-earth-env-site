@@ -2,7 +2,27 @@
 
 > **Purpose:** Living status doc. Tells you (and future Claude Code sessions) what's built, what's stubbed, what to build next, and in what order. The charter is in `CLAUDE.md` — do NOT modify that. Update this file at the end of each build session.
 
-**Last updated:** 2026-11-23 (C45 on branch `c45-google-earth-b4`, not pushed. Addenda 3–52 below. U0–U6 complete; U7 is next.)
+**Last updated:** 2026-11-23 (C46 on branch `c46-event-research`, not pushed; C45 merged to `main`. Addenda 3–52 below. U0–U6 complete; U7 is next.)
+
+### 2026-11-23: C46 (branch `c46-event-research`, not pushed, not deployed)
+
+New page "Choose Your Event: Starting Research" at `/units/unit-3/event-research/`, for students choosing their One Event, One Plate Boundary event in session R3 (Wed 25 Nov). One tab per Case Study Library event plus "How to choose": checked starting sources, three research questions tied to the poster parts, and one caution. Content and markup were supplied in `../C46 Event Research Page/` and copied unchanged.
+
+**New files**
+
+- `src/_data/eventResearch.json`: the nine events, their sources and questions.
+- `src/units/unit-3/event-research.njk`: the page. Without JavaScript the tab row stays hidden and all ten panels show in order under a "Jump to" list.
+- `src/assets/event-tabs.js`: the tabs. Each tab sets the address to `#<slug>`, and loading `#<slug>` opens that tab.
+- `src/assets/styles.css`: event tab styles appended after the class switcher block (role tokens and `--fs-*` only).
+- `src/_data/classroomLinks.json`: new empty key `s1-event-choice`. Until it is filled the page shows "Event choice question (link posted in Google Classroom)".
+
+**Links added**
+
+- One Event page, Step 1: a paragraph pointing to the new page. Step 2, first item: "the Case Study Library card and the starting sources for your event". Step 1 still says Ms. Jayanthi/Mr. Matt confirm the event before students leave class.
+- Unit 3 landing: a card "Choose your event: starting research" in the Assessment section, after the One Event card, dated R3.
+- `asRun.json` R3: "Choose your event" added first in `u3.pages`, so it shows on This Week and in the Unit 3 schedule.
+
+**Sources.** All 42 external links (41 on the event tabs, 1 on How to choose) were checked on 23 Nov 2026. Recheck them before next year.
 
 ### 2026-11-23: C45 (branch `c45-google-earth-b4`, not pushed, not deployed)
 
