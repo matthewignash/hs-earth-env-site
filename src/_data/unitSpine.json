@@ -27,7 +27,7 @@
       },
       {
         "block": 4,
-        "produces": "Topic locked; Sources 1–2 OPVL'd and peer-checked",
+        "produces": "Topic locked; OPVLs completed for Sources 1–2 and peer-checked",
         "feeds": "Sources 1 and 2 of the dossier",
         "event": "Topic conferences run in class"
       },
