@@ -13,7 +13,7 @@
     { "code": "R3", "milestone": { "label": "Checkpoint 3: Source and Evidence for My Location", "url": "/units/unit-2/assessment-landscape-reading/" }, "n": 30, "jayanthiA": null, "jayanthiB": null,
       "inClass": "Landscape Reading drafting",
       "u2": { "pages": [{ "url": "/units/unit-2/assessment-landscape-reading/", "label": "Landscape Reading" }], "due": "Checkpoint 3, in class. Sections 1 and 2 drafted" },
-      "u3": { "pages": [{ "url": "/units/unit-3/block-1/", "label": "Take-home 1: Inside Earth and Plate Boundaries" }], "due": "At home afterward: Take-home 1 and its self-check" } },
+      "u3": { "pages": [{ "url": "/units/unit-3/event-research/", "label": "Choose your event" }, { "url": "/units/unit-3/block-1/", "label": "Take-home 1: Inside Earth and Plate Boundaries" }], "due": "At home afterward: Take-home 1 and its self-check" } },
     { "code": "R4", "milestone": { "label": "Landscape Reading due", "url": "/units/unit-2/assessment-landscape-reading/" }, "n": 31, "jayanthiA": null, "jayanthiB": null,
       "inClass": "Peer check and submit. Then plate boundaries",
       "u2": { "pages": [{ "url": "/units/unit-2/assessment-landscape-reading/", "label": "Landscape Reading" }], "due": "Landscape Reading submitted, 40 minutes into class" },
