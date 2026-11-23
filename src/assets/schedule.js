@@ -46,14 +46,16 @@
 
   /* The next meeting for each group that has one within a week of the first:
      Mr. Matt's class and Ms. Jayanthi's classes in Units 2 and 3, the A and B
-     rotations elsewhere. A group whose next class is weeks away is left out. */
+     rotations elsewhere. On a class day the group's following class shows too,
+     so students can see ahead. A group whose next class is weeks away is left out. */
   function nextBlock() {
     var body = document.getElementById("next-block-body");
     var seen = {};
     var ahead = upcoming(read("schedule-data"));
     var next = ahead.filter(function (e) {
-      if (seen[e.who] || daysUntil(e.date) - daysUntil(ahead[0].date) > 7) return false;
-      return (seen[e.who] = true);
+      if (seen[e.who] === "done" || daysUntil(e.date) - daysUntil(ahead[0].date) > 7) return false;
+      seen[e.who] = !seen[e.who] && daysUntil(e.date) === 0 ? "today" : "done";
+      return true;
     });
     if (!body || !next.length) return;
     body.replaceChildren.apply(body, next.map(nextBlockRow));
