@@ -1,0 +1,101 @@
+---
+layout: layouts/base.njk
+title: "Choose Your Event: Starting Research"
+tagline: "Nine events, one tab each. Every tab has checked sources to start from, three questions to research and one thing to watch out for."
+breadcrumbs:
+  - { url: /, label: Home }
+  - { url: /units/, label: Units }
+  - { url: /units/unit-3/, label: "Unit 3: Plate Tectonics & Natural Hazards" }
+  - { url: /units/unit-3/assessment-one-event-one-boundary/, label: "One Event, One Plate Boundary" }
+  - { label: "Choose your event" }
+---
+{# One tab per event in src/_data/eventResearch.json. Without JavaScript the tab row
+   stays hidden and every panel shows in order, with a jump list at the top.
+   Sources were checked on 23 Nov 2026. #}
+
+<div class="prose">
+<p>Use this page to choose your event for <a href="/units/unit-3/assessment-one-event-one-boundary/">One Event, One Plate Boundary</a>, then to start your research. The sources on each tab are a starting set, not the full list: you still need to find at least one source yourself.</p>
+<p class="event-jump" data-event-jump><strong>Jump to:</strong> <a href="#choose">How to choose</a>{% for e in eventResearch.events %} · <a href="#{{ e.slug }}">{{ e.tab }}</a>{% endfor %}</p>
+</div>
+
+<div class="event-tabs" data-event-tabs>
+  <div class="event-tablist" role="tablist" aria-label="Events" hidden>
+    <button type="button" role="tab" id="tab-choose" aria-controls="choose" aria-selected="true">How to choose</button>
+    {%- for e in eventResearch.events %}
+    <button type="button" role="tab" id="tab-{{ e.slug }}" aria-controls="{{ e.slug }}" aria-selected="false" tabindex="-1">{{ e.tab }}</button>
+    {%- endfor %}
+  </div>
+
+  <section class="event-panel prose" id="choose" role="tabpanel" aria-labelledby="tab-choose">
+    <h2>How to choose</h2>
+    <ol>
+      <li>Open three tabs that interest you. Spend about three minutes on each.</li>
+      <li>On each tab, check that you could find three things: a map of the plates, a source that counts as data, and something people changed afterward. Your poster needs all three.</li>
+      <li>Rank your top three in the Google Classroom question, with one reason for your first choice. Ms. Jayanthi/Mr. Matt confirm your event. No more than two students in a class can take the same event, so your second and third choices matter.</li>
+    </ol>
+    {% set submit = { id: "s1-event-choice", text: "Rank your top three in Google Classroom", pending: "Event choice question" } %}{% include "partials/submit-link.njk" %}
+
+    <table>
+      <thead><tr><th scope="col">Event</th><th scope="col">Setting</th><th scope="col">Main hazard</th><th scope="col">What makes it different</th></tr></thead>
+      <tbody>
+        {%- for c in eventResearch.choose %}
+        {%- for e in eventResearch.events %}{% if e.slug == c.slug %}
+        <tr><td><a href="#{{ e.slug }}">{{ e.tab }}</a></td><td>{{ e.setting }}</td><td>{{ e.hazard }}</td><td>{{ c.challenge }}</td></tr>
+        {%- endif %}{% endfor %}
+        {%- endfor %}
+      </tbody>
+    </table>
+
+    <div class="callout">
+      <div class="callout-title">About the 2004 tsunami</div>
+      <p>The 2004 tsunami killed people along the Tamil Nadu coast, including in Chennai, and some families here remember it. If you would rather not work on that event, you can pass on it without giving a reason.</p>
+    </div>
+
+    <h3>What counts as data</h3>
+    <p>A measured record, a map, or an official event report. A news article or an encyclopedia is useful, but it is not data. Sources marked <span class="source-data">Counts as data</span> on this page meet that rule.</p>
+
+    <h3>Useful for every event</h3>
+    <ul class="source-list">
+      {%- for s in eventResearch.shared %}
+      <li><a href="{{ s.url }}" target="_blank" rel="noopener">{{ s.title }}</a> <span class="source-kind">{{ s.kind }}</span>{% if s.data %} <span class="source-data">Counts as data</span>{% endif %}<br><span class="source-pub">{{ s.publisher }}</span><br>{{ s.use }}</li>
+      {%- endfor %}
+      <li><a href="/reference/case-studies/">Case Study Library</a><br><span class="source-pub">This site</span><br>One card per event: facts, what happened, what was learned, and what AI may get wrong.</li>
+      <li><a href="/foundations/opvl-framework/">OPVL</a><br><span class="source-pub">This site</span><br>Write one or two lines of OPVL for every source you use, on your source page.</li>
+    </ul>
+    <p>If you use the class AI platform to find or explain a source, log it in your AI Documentation as you go. Your plate diagram must be drawn by you.</p>
+  </section>
+
+  {%- for e in eventResearch.events %}
+  <section class="event-panel prose" id="{{ e.slug }}" role="tabpanel" aria-labelledby="tab-{{ e.slug }}">
+    <h2>{{ e.title }}</h2>
+    <p class="event-meta"><strong>Setting:</strong> {{ e.setting }} · <strong>Main hazard:</strong> {{ e.hazard }}</p>
+    <p>{{ e.why }}</p>
+
+    <h3>Start with these sources</h3>
+    <ul class="source-list">
+      {%- for s in e.sources %}
+      <li><a href="{{ s.url }}" target="_blank" rel="noopener">{{ s.title }}</a> <span class="source-kind">{{ s.kind }}</span>{% if s.data %} <span class="source-data">Counts as data</span>{% endif %}<br><span class="source-pub">{{ s.publisher }}</span><br>{{ s.use }}</li>
+      {%- endfor %}
+    </ul>
+
+    <h3>Questions to research</h3>
+    <table>
+      <thead><tr><th scope="col">Poster part</th><th scope="col">Question</th></tr></thead>
+      <tbody>
+        <tr><td>Cause and effect: the cause</td><td>{{ e.questions.cause }}</td></tr>
+        <tr><td>Cause and effect: the effect</td><td>{{ e.questions.effect }}</td></tr>
+        <tr><td>Solutions</td><td>{{ e.questions.solution }}</td></tr>
+      </tbody>
+    </table>
+
+    <div class="callout warn">
+      <div class="callout-title">Watch out</div>
+      <p>{{ e.watch }}</p>
+    </div>
+
+    <p>Next: the <a href="/reference/case-studies/{{ e.slug }}/">case study card for this event</a>, with event facts and what AI may get wrong.</p>
+  </section>
+  {%- endfor %}
+</div>
+
+<script src="/assets/event-tabs.js" defer></script>

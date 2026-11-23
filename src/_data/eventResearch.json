@@ -1,0 +1,524 @@
+{
+ "events": [
+  {
+   "slug": "sumatra-andaman-2004",
+   "tab": "Sumatra 2004",
+   "title": "Sumatra-Andaman earthquake and Indian Ocean tsunami, 2004",
+   "setting": "Subduction zone",
+   "hazard": "Tsunami. Reached the Chennai coast",
+   "why": "The tsunami crossed the Bay of Bengal and reached the coast you live on. Many measurements exist, so the challenge is choosing the strongest evidence, not finding some.",
+   "sources": [
+    {
+     "title": "Earthquake summary map: M9.1 Sumatra-Andaman Islands, 26 December 2004 (PDF)",
+     "publisher": "U.S. Geological Survey",
+     "url": "https://earthquake.usgs.gov/product/poster/20041226/us/1457989040172/poster.pdf",
+     "kind": "Map",
+     "data": true,
+     "use": "A tectonic setting map with the plates named and how fast they move. Start your Where and Cause sections here."
+    },
+    {
+     "title": "Tsunami Generation from the 2004 M=9.1 Sumatra-Andaman Earthquake",
+     "publisher": "USGS Pacific Coastal and Marine Science Center",
+     "url": "https://www.usgs.gov/centers/pcmsc/science/tsunami-generation-2004-m91-sumatra-andaman-earthquake",
+     "kind": "Explainer",
+     "data": false,
+     "use": "Why this earthquake made such a large tsunami. Read it before you draw your diagram."
+    },
+    {
+     "title": "Indian Ocean Tsunami Remembered",
+     "publisher": "U.S. Geological Survey",
+     "url": "https://www.usgs.gov/news/featured-story/indian-ocean-tsunami-remembered-scientists-reflect-2004-indian-ocean-killed",
+     "kind": "Explainer",
+     "data": false,
+     "use": "Scientists look back at what the tsunami did and what they learned from it."
+    },
+    {
+     "title": "Impact of Tsunami 2004 in Coastal Villages of Nagapattinam District, India (PDF)",
+     "publisher": "Tamil Nadu Agricultural University",
+     "url": "https://core.ac.uk/download/27012827.pdf",
+     "kind": "Measured record",
+     "data": true,
+     "use": "Run-up heights and how far the sea came inland on the Tamil Nadu coast. Useful for your Effect section."
+    },
+    {
+     "title": "Tsunami Ready",
+     "publisher": "Indian National Centre for Ocean Information Services (INCOIS)",
+     "url": "https://tsunami.incois.gov.in/TEWS/abouttsunamiready.jsp",
+     "kind": "What changed",
+     "data": false,
+     "use": "India's tsunami warning center and community preparedness program. Start your Solutions section here."
+    }
+   ],
+   "questions": {
+    "cause": "Which plate is sinking beneath which? Use the summary map to find the direction and speed of each plate.",
+    "effect": "How long did the tsunami take to reach different coasts, and why did some places flood farther inland than others?",
+    "solution": "What can India's warning system do now that nobody could do in 2004? What can it still not do?"
+   },
+   "watch": "The USGS gives the magnitude as 9.1; other sources say 9.1 to 9.3. Say which source you used. Death tolls also differ by source and by the year they were published."
+  },
+  {
+   "slug": "tohoku-2011",
+   "tab": "Tōhoku 2011",
+   "title": "Tōhoku earthquake and tsunami, 2011",
+   "setting": "Subduction zone",
+   "hazard": "Tsunami, nuclear accident",
+   "why": "Japan was one of the best-prepared countries in the world, and the tsunami still went over many of its defenses. A good choice for a poster that asks whether the solutions worked.",
+   "sources": [
+    {
+     "title": "M 9.1: 2011 Great Tohoku Earthquake, Japan",
+     "publisher": "U.S. Geological Survey",
+     "url": "https://earthquake.usgs.gov/earthquakes/eventpage/official20110311054624120_30",
+     "kind": "Official event report",
+     "data": true,
+     "use": "Location, depth, shaking maps and a tectonic summary that names the plates."
+    },
+    {
+     "title": "On This Day: 2011 Japan Earthquake and Tsunami",
+     "publisher": "NOAA National Centers for Environmental Information",
+     "url": "https://www.ncei.noaa.gov/news/day-2011-japan-earthquake-and-tsunami",
+     "kind": "Official event report",
+     "data": true,
+     "use": "NOAA's summary from its tsunami database, including wave height and cost."
+    },
+    {
+     "title": "Lessons Learned from the 2011 Great East Japan Tsunami: Performance of Tsunami Countermeasures, Coastal Buildings, and Tsunami Evacuation in Japan (PDF)",
+     "publisher": "Suppasri and others, Tohoku University",
+     "url": "https://open.metu.edu.tr/bitstream/handle/11511/38606/index.pdf",
+     "kind": "What changed",
+     "data": false,
+     "use": "A research paper on which seawalls, breakwaters and evacuation plans held and which failed. Read the abstract and the conclusions first."
+    },
+    {
+     "title": "Massive 2011 Tohoku earthquake spurred development of modern tsunami forecast systems",
+     "publisher": "NOAA Pacific Marine Environmental Laboratory",
+     "url": "https://www.pmel.noaa.gov/node/2075",
+     "kind": "What changed",
+     "data": false,
+     "use": "How tsunami forecasting changed because of this event."
+    },
+    {
+     "title": "Japan Impacts from the 2011 Tohoku Earthquake and Tsunami",
+     "publisher": "ArcGIS StoryMap",
+     "url": "https://storymaps.arcgis.com/stories/2bf182c1ae194ca29cd4c65f6ee47918",
+     "kind": "Explainer",
+     "data": false,
+     "use": "A map tour of the coast. It contains images and video of the tsunami."
+    }
+   ],
+   "questions": {
+    "cause": "Which two plates meet off northeast Japan, and what kind of fault moved?",
+    "effect": "Why did the tsunami cause far more deaths than the shaking did?",
+    "solution": "Pick one defense: a seawall, a breakwater or an evacuation route. Did it work in 2011? What evidence tells you?"
+   },
+   "watch": "Early reports gave the magnitude as 8.9 or 9.0; the USGS figure is now 9.1. The nuclear accident is a big topic of its own. Keep it to one part of your poster, or the plate tectonics gets lost."
+  },
+  {
+   "slug": "alaska-1964",
+   "tab": "Alaska 1964",
+   "title": "Great Alaska earthquake, 1964",
+   "setting": "Subduction zone",
+   "hazard": "Shaking, liquefaction, tsunami",
+   "why": "The second-largest earthquake ever recorded with instruments. Studying it helped scientists understand subduction zones, so the history of the science is part of the story.",
+   "sources": [
+    {
+     "title": "M 9.2: The 1964 Prince William Sound, Alaska Earthquake",
+     "publisher": "U.S. Geological Survey",
+     "url": "https://earthquake.usgs.gov/earthquakes/eventpage/iscgem869809",
+     "kind": "Official event report",
+     "data": true,
+     "use": "The official location, depth and magnitude, with links to maps and photos."
+    },
+    {
+     "title": "The 1964 Great Alaska Earthquake and Tsunamis: A Modern Perspective and Enduring Legacies (Fact Sheet 2014-3018)",
+     "publisher": "U.S. Geological Survey",
+     "url": "https://pubs.usgs.gov/fs/2014/3018",
+     "kind": "Official event report",
+     "data": true,
+     "use": "A short summary of what happened and what changed afterward."
+    },
+    {
+     "title": "1964 Great Alaska Earthquake and Tsunami",
+     "publisher": "USGS Alaska Science Center",
+     "url": "https://usgs.gov/centers/alaska-science-center/science/1964-great-alaska-earthquake-and-tsunami",
+     "kind": "Explainer",
+     "data": false,
+     "use": "Videos and photos, including a talk by the geologist who first explained the earthquake as a subduction event."
+    },
+    {
+     "title": "Great Alaska Earthquake",
+     "publisher": "NOAA National Centers for Environmental Information",
+     "url": "https://ncei.noaa.gov/news/great-alaska-earthquake",
+     "kind": "What changed",
+     "data": false,
+     "use": "How the disaster led to a new tsunami warning center. Start your Solutions section here."
+    }
+   ],
+   "questions": {
+    "cause": "How did the land move during the earthquake? Look for places that rose and places that sank.",
+    "effect": "Most deaths came from tsunamis, not from shaking. Where did those tsunamis come from?",
+    "solution": "What does a tsunami warning center do that did not exist in 1964? How fast can a warning go out now?"
+   },
+   "watch": "Death counts differ between sources, for example 128 and 131. Times are given in Alaska time or in UTC, which puts the date on 27 or 28 March. Both are right; say which you use."
+  },
+  {
+   "slug": "kobe-1995",
+   "tab": "Kobe 1995",
+   "title": "Great Hanshin (Kobe) earthquake, 1995",
+   "setting": "Fault beneath a city, near a subduction zone",
+   "hazard": "Shaking, fire",
+   "why": "A modern city whose building rules had changed several times before the earthquake. A good choice for a poster about why some buildings fail and others survive.",
+   "sources": [
+    {
+     "title": "Reference sheet: the Great Hanshin-Awaji Earthquake (PDF)",
+     "publisher": "International Institute of Seismology and Earthquake Engineering, Building Research Institute, Japan",
+     "url": "https://iisee.kenken.go.jp/symposium/pdf/Reference_5_201202_Hanshin.pdf",
+     "kind": "Official event report",
+     "data": true,
+     "use": "Damage figures and building lessons from Japan's own building research institute."
+    },
+    {
+     "title": "Special Publication 901: the 1995 Hyogoken-Nanbu (Kobe) earthquake (PDF)",
+     "publisher": "U.S. National Institute of Standards and Technology",
+     "url": "https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication901.pdf",
+     "kind": "Official event report",
+     "data": true,
+     "use": "A long engineering report. Use the contents page to find the section on buildings and building law."
+    },
+    {
+     "title": "1995 Kobe earthquake, Japan",
+     "publisher": "University of Washington",
+     "url": "https://depts.washington.edu/liquefy/html/quakes/kobe/kobe.html",
+     "kind": "Explainer",
+     "data": false,
+     "use": "What happened to the port when the ground liquefied."
+    },
+    {
+     "title": "Lessons from the Great Hanshin-Awaji Earthquake (PDF)",
+     "publisher": "Japan International Cooperation Agency (JICA)",
+     "url": "https://www.jica.go.jp/kansai/drlc/publication/dnb8qn00000029zb-att/lesson_hanshinawaji_en.pdf",
+     "kind": "What changed",
+     "data": false,
+     "use": "Japan's own summary of what it changed after 1995."
+    },
+    {
+     "title": "Kobe Earthquake",
+     "publisher": "National Geographic Education",
+     "url": "https://education.nationalgeographic.org/resource/kobe-earthquake/",
+     "kind": "Explainer",
+     "data": false,
+     "use": "A short overview to read first."
+    }
+   ],
+   "questions": {
+    "cause": "Kobe is on land, not on a trench. Which fault moved, and how is it connected to the plates around Japan?",
+    "effect": "Which buildings collapsed and which did not? Look for the year each was built.",
+    "solution": "What did Japan change after 1995, and how would you know whether it worked?"
+   },
+   "watch": "The magnitude is 6.9 on the moment magnitude scale and 7.2 or 7.3 on other scales. These are different scales, not a disagreement. Say which scale you use."
+  },
+  {
+   "slug": "bhuj-2001",
+   "tab": "Bhuj 2001",
+   "title": "Bhuj (Gujarat) earthquake, 2001",
+   "setting": "Inside a plate, away from the boundary",
+   "hazard": "Shaking, building collapse",
+   "why": "An earthquake in India, far from any plate edge. Explaining why it happened at all is the puzzle, so this is a strong choice if you like a challenge.",
+   "sources": [
+    {
+     "title": "26 January 2001 Bhuj earthquake, Gujarat, India",
+     "publisher": "Roger Bilham, University of Colorado",
+     "url": "https://cires1.colorado.edu/~bilham/Gujarat2001.html",
+     "kind": "Map",
+     "data": true,
+     "use": "Fault maps, an earlier earthquake in the same region in 1819, and notes on intensity. It is a researcher's working page, so check its dates."
+    },
+    {
+     "title": "The Mw 7.7 Bhuj earthquake: Global lessons for earthquake hazard in intra-plate regions",
+     "publisher": "Schweig and others, U.S. Geological Survey",
+     "url": "https://pubs.usgs.gov/publication/70025930",
+     "kind": "Explainer",
+     "data": false,
+     "use": "Why earthquakes inside plates are hard to plan for. Read the abstract."
+    },
+    {
+     "title": "Initial Geotechnical Observations of the Bhuj, India, Earthquake of January 26, 2001",
+     "publisher": "Geotechnical Extreme Events Reconnaissance (GEER)",
+     "url": "https://geerassociation.org/components/com_geer_reports/geerfiles/Bhuj_2001/Introduction.htm",
+     "kind": "Official event report",
+     "data": true,
+     "use": "A field team's report on ground failure, dams, ports and bridges."
+    },
+    {
+     "title": "Bhuj, January 26, 2001, M7.7 Earthquake",
+     "publisher": "Earthquake Engineering Research Institute (EERI)",
+     "url": "https://learningfromearthquakes.org/?p=2035",
+     "kind": "Official event report",
+     "data": false,
+     "use": "Reconnaissance reports, a recovery report and photos."
+    },
+    {
+     "title": "Rising up from the ashes: Gujarat ramps up disaster preparedness",
+     "publisher": "World Bank",
+     "url": "https://www.worldbank.org/en/news/feature/2016/05/23/rising-up-from-the-ashes-gujarat-ramps-up-disaster-preparedness",
+     "kind": "What changed",
+     "data": false,
+     "use": "The disaster management institutions Gujarat set up after 2001. Start your Solutions section here."
+    }
+   ],
+   "questions": {
+    "cause": "If Bhuj is not on a plate boundary, where did the stress come from? Which plate is pushing on which?",
+    "effect": "Why was damage reported far from the epicenter, in cities such as Ahmedabad?",
+    "solution": "What did Gujarat set up after 2001? Would it help in the next earthquake?"
+   },
+   "watch": "Death tolls range from about 13,800 to over 20,000, depending on the source and when it was written. The magnitude is given as 7.6 or 7.7. Report the range and its sources, not one number."
+  },
+  {
+   "slug": "tangshan-1976",
+   "tab": "Tangshan 1976",
+   "title": "Tangshan earthquake, 1976",
+   "setting": "Inside a plate",
+   "hazard": "Shaking, building collapse",
+   "why": "One of the deadliest earthquakes in recorded history, inside a plate, in a city nobody had marked as high risk. This tab has the hardest source work on the list.",
+   "sources": [
+    {
+     "title": "The Great Tangshan Earthquake of 1976 (EERL Report 2002-001)",
+     "publisher": "Liu, Housner, Xie and He (editors), California Institute of Technology",
+     "url": "https://authors.library.caltech.edu/records/ztgde-n9a10",
+     "kind": "Official event report",
+     "data": true,
+     "use": "A full engineering report, free to download. Use the table of contents. Do not try to read it all."
+    },
+    {
+     "title": "Tangshan earthquake of 1976",
+     "publisher": "Encyclopaedia Britannica",
+     "url": "https://www.britannica.com/event/Tangshan-earthquake-of-1976",
+     "kind": "Explainer",
+     "data": false,
+     "use": "A short overview. An encyclopedia is a place to start, not a source of data."
+    },
+    {
+     "title": "Tangshan earthquake",
+     "publisher": "EBSCO Research Starters",
+     "url": "https://www.ebsco.com/research-starters/earth-and-atmospheric-sciences/tangshan-earthquake",
+     "kind": "Explainer",
+     "data": false,
+     "use": "Compare the magnitude it gives with the Caltech report and the case study card. Why might they differ?"
+    },
+    {
+     "title": "Global Significant Earthquake Database",
+     "publisher": "NOAA National Centers for Environmental Information",
+     "url": "https://ncei.noaa.gov/products/natural-hazards/tsunamis-earthquakes-volcanoes",
+     "kind": "Measured record",
+     "data": true,
+     "use": "Search for Tangshan to see the database record for deaths and damage."
+    }
+   ],
+   "questions": {
+    "cause": "Tangshan is about 1,000 km from the nearest plate boundary. What could build up stress there?",
+    "effect": "Why did the time of day and the type of buildings matter so much?",
+    "solution": "What did China change after 1976? Use the 2008 Sichuan earthquake to judge whether it worked."
+   },
+   "watch": "The official death toll and outside estimates differ by hundreds of thousands. The magnitude is given anywhere from 7.5 to 8.0. Never use one number without saying where it came from."
+  },
+  {
+   "slug": "pinatubo-1991",
+   "tab": "Pinatubo 1991",
+   "title": "Pinatubo eruption, 1991",
+   "setting": "Volcano above a subduction zone",
+   "hazard": "Ash, pyroclastic flows, lahars",
+   "why": "The second-largest eruption of the 20th century. Scientists forecast it and people were evacuated, and the danger went on for years afterward.",
+   "sources": [
+    {
+     "title": "The Cataclysmic 1991 Eruption of Mount Pinatubo, Philippines (Fact Sheet 113-97)",
+     "publisher": "U.S. Geological Survey",
+     "url": "https://pubs.usgs.gov/fs/1997/fs113-97",
+     "kind": "Official event report",
+     "data": true,
+     "use": "What happened, the warning signs and the effects, in two pages."
+    },
+    {
+     "title": "Lahars of Mount Pinatubo, Philippines (Fact Sheet 114-97)",
+     "publisher": "U.S. Geological Survey",
+     "url": "https://pubs.usgs.gov/fs/1997/fs114-97",
+     "kind": "Official event report",
+     "data": true,
+     "use": "Why rain turned the ash into mudflows that kept burying villages."
+    },
+    {
+     "title": "Pinatubo",
+     "publisher": "Smithsonian Global Volcanism Program",
+     "url": "https://volcano.si.edu/volcano.cfm?vn=273083",
+     "kind": "Measured record",
+     "data": true,
+     "use": "The eruption record and the tectonic setting."
+    },
+    {
+     "title": "Pinatubo 25 Years Later: Eight Ways the Eruption Broke Ground",
+     "publisher": "Eos (American Geophysical Union)",
+     "url": "https://eos.org/articles/pinatubo-25-years-later-eight-ways-the-eruption-broke-ground",
+     "kind": "What changed",
+     "data": false,
+     "use": "How the eruption changed the way scientists respond to volcanic crises."
+    }
+   ],
+   "questions": {
+    "cause": "Which plate is sinking beneath Luzon, and how does that produce magma that explodes?",
+    "effect": "Why did roofs collapse, and why did lahars keep happening long after the eruption ended?",
+    "solution": "What warning signs did scientists watch, and how did they decide when to evacuate?"
+   },
+   "watch": "Pinatubo also cooled global temperatures for a while. That is real, but keep it short: your poster is about the plate setting and the local hazard."
+  },
+  {
+   "slug": "merapi-2010",
+   "tab": "Merapi 2010",
+   "title": "Merapi eruption, 2010",
+   "setting": "Volcano above a subduction zone",
+   "hazard": "Pyroclastic flows",
+   "why": "One of Indonesia's most active volcanoes, with hundreds of thousands of people living on and around it. A story about forecasting and hard evacuation decisions.",
+   "sources": [
+    {
+     "title": "Merapi",
+     "publisher": "Smithsonian Global Volcanism Program",
+     "url": "https://volcano.si.edu/volcano.cfm?vn=263250",
+     "kind": "Measured record",
+     "data": true,
+     "use": "The eruption record, the tectonic setting and how many people live nearby."
+    },
+    {
+     "title": "Successful Crisis Response by Indonesia's First-Class Volcano Response Team",
+     "publisher": "USGS Volcano Disaster Assistance Program",
+     "url": "https://volcanoes.usgs.gov/vdap/merapi.html",
+     "kind": "What changed",
+     "data": false,
+     "use": "How the evacuation zone was decided in 2010. Start your Solutions section here."
+    },
+    {
+     "title": "The 2010 explosive eruption of Java's Merapi volcano: a '100-year' event",
+     "publisher": "Surono and others, U.S. Geological Survey record",
+     "url": "https://www.usgs.gov/publications/2010-explosive-eruption-javas-merapi-volcano-100-year-event",
+     "kind": "Official event report",
+     "data": true,
+     "use": "The scientific paper. Read the abstract for the warning signs and the numbers."
+    },
+    {
+     "title": "Revolutionizing Volcano Monitoring in Indonesia",
+     "publisher": "U.S. Geological Survey",
+     "url": "https://usgs.gov/news/revolutionizing-volcano-monitoring-indonesia",
+     "kind": "Explainer",
+     "data": false,
+     "use": "How Indonesian and U.S. scientists monitor the volcano."
+    }
+   ],
+   "questions": {
+    "cause": "Which plate is sinking beneath Java? How does a lava dome grow and then collapse?",
+    "effect": "Why are pyroclastic flows so much deadlier than lava flows?",
+    "solution": "How did scientists decide how far to move people? What did moving cost the people who left?"
+   },
+   "watch": "Merapi erupts often, including in recent years. Check that every source you use is about 2010, not another eruption."
+  },
+  {
+   "slug": "pompeii-79",
+   "tab": "Pompeii 79 CE",
+   "title": "Pompeii and Herculaneum, 79 CE",
+   "setting": "Volcano above a subduction zone",
+   "hazard": "Pyroclastic flows, ash",
+   "why": "No instruments existed, so the evidence is ash layers, buried towns and one eyewitness who wrote it down. The same volcano is still active, with hundreds of thousands of people living around it.",
+   "sources": [
+    {
+     "title": "Pliny the Younger, Letters 6.16 and 6.20 (translated by Cynthia Damon)",
+     "publisher": "University of Virginia",
+     "url": "https://pompeii.iath.virginia.edu/pliny.html",
+     "kind": "Eyewitness",
+     "data": false,
+     "use": "The only eyewitness account. Use it as evidence, and do its OPVL carefully: who wrote it, when, and why?"
+    },
+    {
+     "title": "Vesuvius",
+     "publisher": "Smithsonian Global Volcanism Program",
+     "url": "https://volcano.si.edu/volcano.cfm?vn=211020",
+     "kind": "Measured record",
+     "data": true,
+     "use": "The eruption record and the tectonic setting."
+    },
+    {
+     "title": "Vesuvius",
+     "publisher": "Istituto Nazionale di Geofisica e Vulcanologia (INGV), Italy",
+     "url": "https://www.ingv.it/en/Vesuvius-sum",
+     "kind": "Explainer",
+     "data": false,
+     "use": "How Italy's national volcano institute describes and monitors Vesuvius today."
+    },
+    {
+     "title": "Are you prepared? Volcanic risk at Vesuvius",
+     "publisher": "Italian Civil Protection Department",
+     "url": "https://www.protezionecivile.gov.it/en/approfondimento/are-you-prepared-volcanic-risk-vesuvius/",
+     "kind": "What changed",
+     "data": false,
+     "use": "Today's plan for the people around Vesuvius. Start your Solutions section here."
+    },
+    {
+     "title": "Map of National Emergency Planning for Vesuvius",
+     "publisher": "Italian Civil Protection Department",
+     "url": "https://mappe.protezionecivile.gov.it/en/risks-maps-and-dashboards/national-planning-vesuvius/",
+     "kind": "Map",
+     "data": true,
+     "use": "The red and yellow zones on a map."
+    }
+   ],
+   "questions": {
+    "cause": "Which plate is sinking beneath southern Italy? Check more than one source, because they do not all describe it the same way.",
+    "effect": "How did people die in Herculaneum compared with Pompeii? What evidence tells us?",
+    "solution": "Nothing could be done in 79 CE. What is the plan now for the people who live around Vesuvius, and could it work?"
+   },
+   "watch": "The date is debated: many sources say 24 August, and newer evidence points to October. AI tools often give August as certain. AI tools also invent lines from Pliny's letters, so quote only from the letters themselves."
+  }
+ ],
+ "shared": [
+  {
+   "title": "Natural Hazards: tsunamis, earthquakes and volcanoes",
+   "publisher": "NOAA National Centers for Environmental Information",
+   "url": "https://ncei.noaa.gov/products/natural-hazards/tsunamis-earthquakes-volcanoes",
+   "kind": "Measured record",
+   "data": true,
+   "use": "Searchable databases and an interactive map of significant earthquakes, tsunamis and eruptions. Every event on this page is in it."
+  }
+ ],
+ "choose": [
+  {
+   "slug": "sumatra-andaman-2004",
+   "challenge": "Many sources, so the work is choosing the best. The tsunami reached the Chennai coast."
+  },
+  {
+   "slug": "tohoku-2011",
+   "challenge": "Rich Solutions part: some defenses held and some did not."
+  },
+  {
+   "slug": "alaska-1964",
+   "challenge": "An older event. How scientists came to understand it is part of the story."
+  },
+  {
+   "slug": "kobe-1995",
+   "challenge": "Linking a fault under a city to the bigger plate picture takes care."
+  },
+  {
+   "slug": "bhuj-2001",
+   "challenge": "\"Which boundary?\" has no simple answer. Good if you like a puzzle."
+  },
+  {
+   "slug": "tangshan-1976",
+   "challenge": "Fewer English sources, and the numbers are disputed. The hardest source work."
+  },
+  {
+   "slug": "pinatubo-1991",
+   "challenge": "A forecast and an evacuation, then hazards that lasted for years."
+  },
+  {
+   "slug": "merapi-2010",
+   "challenge": "Forecasting and evacuation decisions under pressure."
+  },
+  {
+   "slug": "pompeii-79",
+   "challenge": "No instruments, so the evidence is deposits, ruins and one eyewitness."
+  }
+ ]
+}
