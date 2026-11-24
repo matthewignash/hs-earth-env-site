@@ -2,7 +2,17 @@
 
 > **Purpose:** Living status doc. Tells you (and future Claude Code sessions) what's built, what's stubbed, what to build next, and in what order. The charter is in `CLAUDE.md` — do NOT modify that. Update this file at the end of each build session.
 
-**Last updated:** 2026-11-23 (C46 on branch `c46-event-research`, not pushed; C45 merged to `main`. Addenda 3–52 below. U0–U6 complete; U7 is next.)
+**Last updated:** 2026-11-24 (C47 Part A on branch `c47a-u2-finish`, not pushed; C46 and C45 merged to `main`. Addenda 3–52 below. U0–U6 complete; U7 is next.)
+
+### 2026-11-24: C47 Part A (branch `c47a-u2-finish`, not pushed, not deployed)
+
+The Landscape Reading finishes over three classes, one main job each: R3 (Wed 25 Nov, sub) drafting and Checkpoint 2, R4 (Tue 1 Dec) work day and Checkpoint 3, R5 (Thu 3 Dec) submission in the first 20 minutes, then the Unit 3 launch. No Unit 3 work before R5. The rivers and coasts checkpoint is dropped. Checkpoint 1 moves to R2, where it was sat on paper. Plan: `Nov-Dec 2026 Replan (U2 and U3)/6 - Revised Sequence 25 Nov to 9 Dec`.
+
+- **Step 1, `asRun.json`.** R1 to R5 rewritten as specified: R1 loses its milestone; R2 carries Checkpoint 1; R3 and R4 are Landscape Reading only, with Checkpoints 2 and 3 as milestones; R5 carries the Landscape Reading and the Unit 3 launch (One Event page and Choose your event). The R5 "Vocabulary quiz" milestone is gone until Part B places the quiz. **Extension:** the Unit 3 Take-home headers took their dates from their own `asRun` frontmatter (Block 1 `home: R3, inClass: R4`; Blocks 2 and 3 `home: R4, inClass: R5`), not from the session lists, so they still showed Nov 25 and Dec 1. All three are now `asRun: { inClass: R5 }` and show Thu Dec 3. Part B may want `home`/`inClass` split again once R6 is settled.
+- **Step 2, Landscape Reading page.** "When things happen" lists R1 to R5. Due line: R5, first 20 minutes, no presentation. The old Checkpoint 3 callout became two: Checkpoint 2 (draft, R3, `u2-cp2`) and Checkpoint 3 (source page, R4, `u2-cp3`). Peer check moved to R5, "In class, before you submit". The Checkpoint 3 text says "Ms. Jayanthi/Mr. Matt reads your source page" (the prompt said "Mr. Matt"; house style wins).
+- **Step 3, Unit 2 landing and blocks.** Block 2 card drops Checkpoint 1; Block 3 card (first on R2) gains "Checkpoint 1 (on paper)"; Block 4 card drops Checkpoint 2; the Landscape Reading card says "Checkpoints 2 and 3 are drafts of the Reading itself" and is dated R5. The sequence table is built from `asRun`, so it now reads Checkpoint 1 Mon Nov 23, Checkpoint 2 Wed Nov 25, Checkpoint 3 Tue Dec 1. Block 4's "Checkpoint 2: Rivers and Coasts" callout is removed. Block 2's Checkpoint 1 callout is dated R2 and says "Sat on paper in class".
+- **Step 4, other pages.** How to Submit: Landscape Reading due R5, "in the first 20 minutes of class". Unit 3 landing: Take-home 1 and Choose your event cards dated R5. **Extension:** the Field Geologist page said it is used "until you submit it (R4)"; now R5. Home's next-class card reads `asRun`: Wednesday is drafting only, and "Choose your event" appears only under Thu Dec 3.
+- **Step 5.** Build and gate pass. Left for Part B: the One Event page still lists "Vocabulary quiz and task launch" on R5 and the R6 to R8 gallery-walk timeline; How to Submit still names the gallery walk on R8; the One Event card on the Unit 3 landing is still dated R8.
 
 ### 2026-11-23: C46 (branch `c46-event-research`, not pushed, not deployed)
 
