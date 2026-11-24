@@ -1,7 +1,7 @@
 ---
 layout: layouts/base.njk
 title: "Semester 1 Final: One Event, One Plate Boundary"
-tagline: Choose one real earthquake, tsunami or volcanic eruption. Explain what caused it, what it did, and what people did about it. One poster, defended at a gallery walk in 4 minutes.
+tagline: Choose one real earthquake, tsunami or volcanic eruption. Explain what caused it, what it did, and what people did about it. One poster, submitted in class.
 breadcrumbs:
   - { url: /, label: Home }
   - { url: /units/, label: Units }
@@ -19,21 +19,20 @@ breadcrumbs:
 <div class="callout">
   <div class="callout-title">When things happen</div>
   <ul>
-    <li><strong>Vocabulary quiz and task launch:</strong> {{ "R5" | sessionLabel }}</li>
-    <li><strong>Poster work block:</strong> {{ "R6" | sessionLabel }}</li>
-    <li><strong>Poster due, rehearsal:</strong> {{ "R7" | sessionLabel }}</li>
-    <li><strong>Gallery walk and defenses:</strong> {{ "R8" | sessionLabel }}</li>
+    <li><strong>Task launch, event chosen, mini checkpoint 1:</strong> {{ "R5" | sessionLabel }}</li>
+    <li><strong>Vocabulary quiz, mini checkpoint 2:</strong> {{ "R6" | sessionLabel }}</li>
+    <li><strong>Mini checkpoint 3, poster submitted in class:</strong> {{ "R7" | sessionLabel }}</li>
   </ul>
 </div>
 
 <h2>Your task</h2>
-<p>Choose one real earthquake, tsunami or volcanic eruption. Explain what caused it, what it did, and what people did about it. Put your work on one poster, then defend it at a gallery walk in 4 minutes: about 2 minutes to explain, then 2 minutes of questions.</p>
+<p>Choose one real earthquake, tsunami or volcanic eruption. Explain what caused it, what it did, and what people did about it. Put your work on one poster and submit it in class.</p>
 <p>This replaces the written exam. It uses what you learned about sources in Unit 0, Earth systems in Unit 1, and plate tectonics in Unit 3.</p>
 {% set submit = { id: "s1-poster", text: "Submit via Google Classroom" } %}{% include "partials/submit-link.njk" %}
 
 <h2>Vocabulary quiz</h2>
-<p>{{ "R5" | sessionLabel }}</p>
-<p>20 terms, 15 minutes, notebook closed. It counts toward Knowledge and Understanding. The terms come from the unit vocabulary list on the <a href="/foundations/eal/u3/">vocabulary page</a> and the three Unit 3 pages.</p>
+<p>{{ "R6" | sessionLabel }}</p>
+<p>20 terms, in the first 15 minutes of class, notebook closed. It counts toward Knowledge and Understanding. The terms come from the unit vocabulary list on the <a href="/foundations/eal/u3/">vocabulary page</a> and the three Unit 3 pages.</p>
 {% set submit = { id: "u3-vocab-quiz", text: "Open the vocabulary quiz in Google Classroom", pending: "Vocabulary quiz" } %}{% include "partials/submit-link.njk" %}
 
 <h2>Step 1: Choose your event</h2>
@@ -110,6 +109,7 @@ breadcrumbs:
 <ul>
   <li>Where: a map showing the event and the plates involved.</li>
   <li>Cause: a diagram of what the plates were doing, drawn by you. Show the plates, the direction each one moves, and where the energy or magma came from.</li>
+  <li>Your plate diagram is drawn by hand, in class, on {{ "R6" | sessionDate }} (Mr. Matt's class).</li>
   <li>Effect: what happened at the surface and to people. Explain why this setting produced this hazard and not a different one.</li>
   <li>Include at least two pieces of evidence, each with a short citation next to it.</li>
 </ul>
@@ -133,16 +133,31 @@ breadcrumbs:
   <p>You may decide that what you found is a chain and not a loop. If you can show why it does not close, that counts.</p>
 </div>
 
-<h2>Step 4: Defend your poster</h2>
-<p>Prepare using <a href="/foundations/defending-your-work/">Defending Your Work in This Class</a>.</p>
-<ul>
-  <li>Expect all five question types: comprehension check, evidence challenge, position challenge, a hard or trap question, and clarification.</li>
-  <li>Prepare an "I don't know, but here's how I'd find out" answer for three questions you might get.</li>
-  <li>You may hold one index card. You may ask for a question to be said another way.</li>
-</ul>
+<h2>Three mini checkpoints</h2>
+<p>Each one is feedback only and does not go in the gradebook.</p>
+
+<div class="callout checkpoint">
+  <div class="callout-title">Mini checkpoint 1: My event and its setting</div>
+  <p>{{ "R5" | sessionLabel }}</p>
+  <p>End of class, in a Google Form, open notes. Your event; which plates; the kind of setting; one sentence on what the plates are doing; one source that counts as data.</p>
+  {% set submit = { id: "u3-mini1", text: "Open mini checkpoint 1 in Google Classroom", pending: "Mini checkpoint 1" } %}{% include "partials/submit-link.njk" %}
+</div>
+
+<div class="callout checkpoint">
+  <div class="callout-title">Mini checkpoint 2: Cause and Effect</div>
+  <p>{{ "R6" | sessionLabel }}</p>
+  <p>End of class. A photo of your hand-drawn plate diagram, and your Effect paragraph with two pieces of evidence, each cited. At least one piece of evidence must be data. The diagram you draw in this class is the one scored for K/U with your poster.</p>
+  {% set submit = { id: "u3-mini2", text: "Open mini checkpoint 2 in Google Classroom", pending: "Mini checkpoint 2" } %}{% include "partials/submit-link.njk" %}
+</div>
+
+<div class="callout checkpoint">
+  <div class="callout-title">Mini checkpoint 3: Solutions and sources</div>
+  <p>{{ "R7" | sessionLabel }}</p>
+  <p>About 30 minutes into class, in the room. A partner checks your Solutions part and your source page against the Before you submit list while Ms. Jayanthi/Mr. Matt circulates. Nothing to submit separately.</p>
+</div>
 
 <h2>Using AI</h2>
-<p>You may use AI to find sources, check your reasoning, practice your defense and edit your wording.</p>
+<p>You may use AI to find sources, check your reasoning and edit your wording.</p>
 <p>You may not use AI to draw or generate your plate boundary diagram. The diagram is your model, and it is what is being assessed.</p>
 <p>Check any number AI gives you against your card or a source. Each card lists what AI often gets wrong about that event.</p>
 <p>Document every AI use with the <a href="/student-hub/ai-documentation-template/">AI Documentation Template</a> from Unit 0. If you used AI and the documentation is missing, your work will be returned as incomplete and your score held until it is submitted.</p>
@@ -161,11 +176,10 @@ breadcrumbs:
   <li>At least three sources, one of them data, one I found myself.</li>
   <li>Source page with OPVL.</li>
   <li>AI Documentation, if I used AI.</li>
-  <li>Three "I don't know, but here's how I'd find out" answers prepared.</li>
 </ul>
 
 <h2>Rubric</h2>
-<p>Each strand is scored on the department 8-point scale and reported separately. The strands are not added together. The poster and the questions are scored together: the answers can raise or lower a band set by the poster.</p>
+<p>Each strand is scored on the department 8-point scale and reported separately. The strands are not added together. The poster is scored with the vocabulary quiz (K/U) and the diagram you drew in class at mini checkpoint 2 (K/U).</p>
 
 <h3>Knowledge and Understanding (K/U)</h3>
 <p><em>The student recalls facts, terms and definitions while also explaining concepts, ideas, processes, themes, and the like. The student learns and performs skills related to their studies.</em></p>
@@ -177,7 +191,6 @@ breadcrumbs:
     <tr><td>The plate diagram is accurate and complete: the right plates, the right directions of motion, and the source of the energy or magma.</td><td>The diagram is accurate. One element is vague or missing.</td><td>The diagram is partly accurate, or shows the wrong setting.</td><td>The diagram is mostly inaccurate, missing, or not the student's own.</td></tr>
     <tr><td>Explains each step from plate motion to hazard accurately, and why this setting produced this hazard and not another.</td><td>Explains most steps accurately.</td><td>Explains some steps. The link from setting to hazard is asserted, not explained.</td><td>Little accurate explanation.</td></tr>
     <tr><td>Six to eight key terms are used precisely, where they are needed.</td><td>Most terms are used correctly.</td><td>Terms are listed or defined but not used, or used with errors.</td><td>Terms are largely absent or misused.</td></tr>
-    <tr><td>Answers comprehension questions clearly and correctly, including on points the student did not prepare.</td><td>Answers most comprehension questions correctly.</td><td>Answers some. Relies on reading the poster.</td><td>Cannot explain the poster's content when asked.</td></tr>
   </tbody>
 </table>
 <p>The vocabulary quiz also informs the K/U band.</p>
@@ -192,7 +205,6 @@ breadcrumbs:
     <tr><td>Uses data, not only news reports. OPVL notes show real evaluation, and at least one Limitation changes how a source is used.</td><td>Uses at least one data source with sound OPVL.</td><td>Presents evidence but does not judge it. OPVL is descriptive.</td><td>Little evidence, or evidence unrelated to the event.</td></tr>
     <tr><td>Evaluates whether the change made after the event worked, with evidence, including side effects or limits.</td><td>Names a specific change and gives a reasoned judgment of it.</td><td>Names a change but does not evaluate it.</td><td>No specific change named.</td></tr>
     <tr><td>The recommendation follows from the analysis. States a meaningful unknown and how it could be investigated.</td><td>Gives a reasonable recommendation and states an unknown.</td><td>The recommendation or the unknown is generic ("more research is needed").</td><td>No recommendation and no unknown.</td></tr>
-    <tr><td>Under questioning, weighs a challenge and revises a position when given a better argument, explaining why.</td><td>Responds to challenges with reasoning.</td><td>Defends by repeating the poster.</td><td>Cannot respond to challenges.</td></tr>
   </tbody>
 </table>
 <p>Stretch: a correct feedback loop with the sign test, or a well-argued case that a proposed loop is only a chain, is strong evidence for the 7-8 band in the second and third rows.</p>
@@ -206,7 +218,6 @@ breadcrumbs:
   <tbody>
     <tr><td>The title is a clear claim. The three parts are easy to find, and the main idea is visible at a glance.</td><td>Organized and readable, with a clear claim.</td><td>Some organization, but the main idea is hard to find or the text is too dense.</td><td>Disorganized or mostly unreadable.</td></tr>
     <tr><td>Evidence is cited next to each claim, and the source page is complete.</td><td>Most evidence is cited.</td><td>Citations are incomplete or only on the source page.</td><td>Sources are missing or not cited.</td></tr>
-    <tr><td>The 2-minute explanation is clear and well paced. Answers are concise and organized. The tone suits the subject.</td><td>The explanation is clear. Answers are mostly organized.</td><td>The explanation is hard to follow or read aloud from the poster.</td><td>No clear explanation. Answers are hard to follow.</td></tr>
   </tbody>
 </table>
 
