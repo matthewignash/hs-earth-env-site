@@ -19,15 +19,12 @@
     { "code": "R5", "milestone": { "label": "Landscape Reading due", "url": "/units/unit-2/assessment-landscape-reading/" }, "n": 32, "jayanthiA": null, "jayanthiB": null,
       "inClass": "Landscape Reading submitted in the first 20 minutes. Then Unit 3 and the Semester 1 Final launch",
       "u2": { "pages": [{ "url": "/units/unit-2/assessment-landscape-reading/", "label": "Landscape Reading" }], "due": "Landscape Reading, submitted in the first 20 minutes of class" },
-      "u3": { "pages": [{ "url": "/units/unit-3/assessment-one-event-one-boundary/", "label": "One Event, One Plate Boundary" }, { "url": "/units/unit-3/event-research/", "label": "Choose your event" }], "due": "Your event, chosen and confirmed in class" } },
-    { "code": "R6", "n": 33, "jayanthiA": null, "jayanthiB": null,
-      "inClass": "Poster work block",
-      "u3": { "pages": [{ "url": "/units/unit-3/assessment-one-event-one-boundary/", "label": "One Event, One Plate Boundary" }], "due": "Plate diagram checked by a peer" } },
+      "u3": { "pages": [{ "url": "/units/unit-3/assessment-one-event-one-boundary/", "label": "One Event, One Plate Boundary" }, { "url": "/units/unit-3/event-research/", "label": "Choose your event" }, { "url": "/units/unit-3/block-1/", "label": "Take-home 1: Inside Earth and Plate Boundaries" }, { "url": "/units/unit-3/block-2/", "label": "Take-home 2, part 1: Earthquakes and Tsunamis" }, { "url": "/units/unit-3/block-3/", "label": "Take-home 2, part 2: Volcanoes" }], "due": "Unit 3 mini checkpoint 1, in class. At home afterward: Take-home 1, then only the Take-home 2 part that matches your event (part 1 for an earthquake or tsunami, part 2 for a volcano), with self-checks" } },
+    { "code": "R6", "milestone": { "label": "Unit 3 mini checkpoint 2: Cause and Effect", "url": "/units/unit-3/assessment-one-event-one-boundary/" }, "n": 33, "jayanthiA": null, "jayanthiB": null,
+      "inClass": "Vocabulary quiz. Cause and Effect: draw your plate diagram by hand, in class",
+      "u3": { "pages": [{ "url": "/units/unit-3/assessment-one-event-one-boundary/", "label": "One Event, One Plate Boundary" }], "due": "Vocabulary quiz, in class. Mini checkpoint 2: a photo of your hand-drawn diagram and your Effect paragraph, with two cited pieces of evidence" } },
     { "code": "R7", "milestone": { "label": "Poster due", "url": "/units/unit-3/assessment-one-event-one-boundary/" }, "n": 34, "jayanthiA": null, "jayanthiB": null,
-      "inClass": "Poster due, rehearsal",
-      "u3": { "pages": [{ "url": "/units/unit-3/assessment-one-event-one-boundary/", "label": "One Event, One Plate Boundary" }], "due": "Poster, at the start of class" } },
-    { "code": "R8", "milestone": { "label": "Gallery walk and defenses", "url": "/units/unit-3/assessment-one-event-one-boundary/" }, "n": 35, "jayanthiA": null, "jayanthiB": null,
-      "inClass": "Gallery walk and defenses",
-      "u3": { "pages": [{ "url": "/units/unit-3/assessment-one-event-one-boundary/", "label": "One Event, One Plate Boundary" }], "due": "Your 4-minute defense" } }
+      "inClass": "Solutions and source page. Mini checkpoint 3. Poster submitted in class",
+      "u3": { "pages": [{ "url": "/units/unit-3/assessment-one-event-one-boundary/", "label": "One Event, One Plate Boundary" }], "due": "Mini checkpoint 3, in class. Poster submitted at the end of class" } }
   ]
 }
