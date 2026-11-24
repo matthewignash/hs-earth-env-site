@@ -16,14 +16,15 @@ breadcrumbs:
   <ul>
     <li><strong>Assigned:</strong> {{ "R1" | sessionLabel }}</li>
     <li><strong>Location locked:</strong> {{ "R2" | sessionLabel }}</li>
-    <li><strong>Drafting, and Checkpoint 3:</strong> {{ "R3" | sessionLabel }}</li>
-    <li><strong>Peer check and submission:</strong> {{ "R4" | sessionLabel }}</li>
+    <li><strong>Drafting, and Checkpoint 2:</strong> {{ "R3" | sessionLabel }}</li>
+    <li><strong>Work day, and Checkpoint 3:</strong> {{ "R4" | sessionLabel }}</li>
+    <li><strong>Peer check and submission:</strong> {{ "R5" | sessionLabel }}</li>
   </ul>
 </div>
 
 <p>A printed copy of this task sheet and rubric was handed out when the task was assigned. A copy is in Google Classroom.</p>
 
-<p><strong>Due:</strong> {{ "R4" | sessionLabel }}, 40 minutes into class, in Google Classroom.</p>
+<p><strong>Due:</strong> {{ "R5" | sessionLabel }}, in the first 20 minutes of class, in Google Classroom. There is no presentation.</p>
 <p><strong>Length:</strong> up to 600 words, or a 3-minute annotated Google Earth video, or a one-page infographic. The rubric is the same for all three.</p>
 {% set submit = { id: "u2-landscape", text: "Submit via Google Classroom" } %}{% include "partials/submit-link.njk" %}
 
@@ -85,9 +86,16 @@ breadcrumbs:
 <p>List your sources on a separate page. Write one or two lines of <a href="/foundations/opvl-framework/">OPVL</a> for each. Name the Limitation that matters most for how you used the source.</p>
 
 <div class="callout checkpoint">
-  <div class="callout-title">Checkpoint 3: Source and Evidence for My Location</div>
+  <div class="callout-title">Checkpoint 2: Landscape Reading draft</div>
   <p>{{ "R3" | sessionLabel }}</p>
-  <p>Last 20 minutes of the drafting block. Open notes. It is about your own location, so bring your sources.</p>
+  <p>Draft Section 2 first, then Section 1. Section 2: two processes, each with something you can see at your place and the image source and date. Section 1: three time points, each with a heading. At the top, write one line saying what you will do differently because of your Checkpoint 1 feedback. Turn in your document at the end of class. Feedback only, not graded.</p>
+  {% set submit = { id: "u2-cp2", text: "Open Checkpoint 2 in Google Classroom", pending: "Checkpoint 2" } %}{% include "partials/submit-link.njk" %}
+</div>
+
+<div class="callout checkpoint">
+  <div class="callout-title">Checkpoint 3: Source page</div>
+  <p>{{ "R4" | sessionLabel }}</p>
+  <p>Checkpoint 3 is part of your Landscape Reading, not a separate quiz. Finish your source page: one or two lines of OPVL for each source, and the Limitation that matters most for how you used it. Turn in your whole document at the end of class. Ms. Jayanthi/Mr. Matt reads your source page and the sentences that use those sources. Feedback only, not graded.</p>
   {% set submit = { id: "u2-cp3", text: "Open Checkpoint 3 in Google Classroom", pending: "Checkpoint 3" } %}{% include "partials/submit-link.njk" %}
 </div>
 
@@ -107,7 +115,7 @@ breadcrumbs:
 </div>
 
 <h2>Peer check</h2>
-<p>In class: {{ "R4" | sessionLabel }}. Swap with a partner and answer four questions about their Reading:</p>
+<p>In class, before you submit: {{ "R5" | sessionLabel }}. Swap with a partner and answer four questions about their Reading:</p>
 <ol>
   <li>Can you find three time points in Section 1?</li>
   <li>Does each process in Section 2 point to something visible, with a date?</li>
