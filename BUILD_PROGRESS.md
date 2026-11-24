@@ -2,7 +2,17 @@
 
 > **Purpose:** Living status doc. Tells you (and future Claude Code sessions) what's built, what's stubbed, what to build next, and in what order. The charter is in `CLAUDE.md` — do NOT modify that. Update this file at the end of each build session.
 
-**Last updated:** 2026-11-24 (C47 Part A on branch `c47a-u2-finish`, not pushed; C46 and C45 merged to `main`. Addenda 3–52 below. U0–U6 complete; U7 is next.)
+**Last updated:** 2026-11-24 (C47 Part B on branch `c47b-u3-mini-checkpoints`, not pushed; C47 Part A merged and live. Addenda 3–52 below. U0–U6 complete; U7 is next.)
+
+### 2026-11-24: C47 Part B (branch `c47b-u3-mini-checkpoints`, not pushed, not deployed)
+
+The Semester 1 Final has three mini checkpoints and no defense, in every section. Decisions applied: vocabulary quiz on R6 (Mon 7 Dec), first 15 minutes; R8 (Fri 11 Dec) removed from `asRun.json`; Ms. Jayanthi's sections have no defense either.
+
+- **Step 1, `asRun.json`.** R5 adds the three Take-home pages and mini checkpoint 1 to `u3`; its milestone stays "Landscape Reading due" (one milestone per session). R6 is the vocabulary quiz and mini checkpoint 2 (hand-drawn diagram in class). R7 is mini checkpoint 3 and the poster submitted in class. R8 is gone; no page references it.
+- **Step 2, One Event page.** Tagline ends "One poster, submitted in class." "When things happen" lists R5, R6, R7. Your task drops the defense. Step 3 adds "Your plate diagram is drawn by hand, in class, on Mon Dec 7 (Mr. Matt's class)"; the parenthesis follows the block-page header pattern, because `sessionDate` is Mr. Matt's date only. New "Three mini checkpoints" section after Step 3: checkpoints 1 and 2 have submit links `u3-mini1` and `u3-mini2` (new, empty keys in `classroomLinks.json`); checkpoint 3 is a partner check in the room with nothing to submit. Step 4 (Defend your poster) removed. Using AI drops "practice your defense". Before you submit drops the three "I don't know" answers. Rubric lead now says the poster is scored with the vocabulary quiz and the mini checkpoint 2 diagram (both K/U); K/U row 4, T/T row 4 and C row 3 deleted. **Extension:** the Vocabulary quiz section was still dated R5 with "15 minutes"; it now reads R6, "in the first 15 minutes of class" (DECISION 1).
+- **Step 3, other pages.** Unit 3 landing: tagline ends "one real event, one poster"; the One Event card drops the gallery walk and is dated R7; the Rubric card says "applied here to the poster". How to Submit: "Poster: submitted in class, R7". **Extension:** the How to Submit format cell also said "defended in 4 minutes at a gallery walk"; now "One poster, A3 or A2, printed or digital".
+- **Search for defense, defend, gallery** in `src/units/unit-3/`, `eventResearch.json` and How to Submit. Left alone: Take-home 2 part 2 ("some hazards have no engineering defense") and three `eventResearch.json` lines about sea defenses, which are about hazards, not the poster. Not in the current plan, reported only: legacy Blocks 5, 6 and 8 to 12, the Engineering Portfolio, the Hazard Profile and the Tectonic City Builder page all describe the old 5-minute defense; How to Submit line 60 links the Portfolio "+ Final Defense", and line 72 mentions "the defense day" in the general alternative-format note.
+- **Step 4.** Build and gate pass. This Week: Dec 3 (Landscape Reading due, Unit 3 launch, Take-homes, mini checkpoint 1), Dec 7 (quiz, mini checkpoint 2), Dec 9 (mini checkpoint 3, poster); no Dec 11 entry. Unit 3 Take-home headers stay Thu Dec 3. No page shows "date TBC".
 
 ### 2026-11-24: C47 Part A (branch `c47a-u2-finish`, not pushed, not deployed)
 
